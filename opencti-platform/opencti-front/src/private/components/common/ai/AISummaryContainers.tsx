@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { graphql, useSubscription } from 'react-relay';
 import parse from 'html-react-parser';
+import DOMPurify from 'dompurify';
 import Grid from '@mui/material/Grid';
 import Alert from '@mui/material/Alert';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
@@ -139,7 +140,7 @@ const AISummaryContainersComponent = ({
           </Grid>
         )}
       </Alert>
-      {parse(content)}
+      <section>{parse(content)}</section>
       {!loading && (
         <>
           <Divider />
@@ -185,13 +186,20 @@ const AISummaryContainers = ({ busId, isContainer, filters, loading, setLoading 
     const finalContent = (newContent ?? '')
       .replace('```html', '')
       .replace('```', '')
-      .replace('<html>', '')
+      .replace('<!DOCTYPE html>', '')
+      .replace(/<html.*?>/, '')
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      .replace(/<head>.*<\/head>/s, '')
       .replace('</html>', '')
       .replace('<body>', '')
       .replace('</body>', '')
       .trim();
-    return setContent(finalContent ?? '');
+    const safeContent = DOMPurify.sanitize(finalContent);
+    console.log({ safeContent });
+    return setContent(safeContent);
   };
+
   const subConfig = useMemo<GraphQLSubscriptionConfig<AISummaryContainersSubscription>>(
     () => ({
       subscription,
