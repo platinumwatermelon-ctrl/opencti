@@ -8232,6 +8232,7 @@ type Query {
   disseminationList(id: ID!): DisseminationList
   disseminationLists(first: Int, after: ID, orderBy: DisseminationListOrdering, orderMode: OrderingMode, filters: FilterGroup, search: String): DisseminationListConnection
   savedFilters(first: Int, after: ID, orderBy: SavedFilterOrdering, orderMode: OrderingMode, filters: FilterGroup, search: String): SavedFilterConnection
+  pirs(first: Int, after: ID, orderBy: PIROrdering, orderMode: OrderingMode, filters: FilterGroup, search: String): PIRConnection
 }
 
 type Subscription {
@@ -9085,6 +9086,7 @@ type Mutation {
   savedFilterDelete(id: ID!): ID
   requestAccessAdd(input: RequestAccessAddInput!): ID
   requestAccessConfigure(input: RequestAccessConfigureInput!): RequestAccessConfiguration
+  pirAdd(input: PIRAddInput!): PIR
 }
 
 type Channel implements BasicObject & StixObject & StixCoreObject & StixDomainObject {
@@ -12789,4 +12791,34 @@ input RequestAccessConfigureInput {
   approved_status_id: ID
   declined_status_id: ID
   approval_admin: [ID]
+}
+
+type PIR implements InternalObject & BasicObject {
+  id: ID!
+  entity_type: String!
+  standard_id: String!
+  parent_types: [String!]!
+  name: String!
+  pirCriteria: String!
+  pirFilters: String!
+}
+
+enum PIROrdering {
+  name
+}
+
+type PIRConnection {
+  pageInfo: PageInfo!
+  edges: [PIREdge!]!
+}
+
+type PIREdge {
+  cursor: String!
+  node: PIR!
+}
+
+input PIRAddInput {
+  name: String!
+  pirCriteria: String!
+  pirFilters: String!
 }
