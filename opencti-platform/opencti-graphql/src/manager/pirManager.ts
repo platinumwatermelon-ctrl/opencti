@@ -1,19 +1,20 @@
-import { type ManagerDefinition, registerManager } from './managerModule';
-import { executionContext, SYSTEM_USER } from '../utils/access';
+import { type BasicStoreEntityPIR, ENTITY_TYPE_PIR, type ParsedPIR, type PirDependency } from '../modules/pir/pir-types';
+import { type ManagerDefinition, type ManagerStreamScheduler } from './managerModule';
 import type { DataEvent, SseEvent } from '../types/event';
-import { isStixMatchFilterGroup } from '../utils/filtering/filtering-stix/stix-filtering';
+import { executionContext, SYSTEM_USER } from '../utils/access';
 import { ABSTRACT_STIX_CORE_OBJECT, STIX_TYPE_RELATION } from '../schema/general';
-import { stixObjectOrRelationshipDeleteRefRelation } from '../domain/stixObjectOrStixRelationship';
-import { STIX_EXT_OCTI } from '../types/stix-2-1-extensions';
+import { flagSource, parsePir, updatePirDependencies } from '../modules/pir/pir-utils';
+import { patchAttribute } from '../database/middleware';
+import { logApp } from '../config/conf';
+import { isStixMatchFilterGroup } from '../utils/filtering/filtering-stix/stix-filtering';
 import { RELATION_IN_PIR } from '../schema/stixRefRelationship';
 import type { AuthContext } from '../types/user';
+import { STIX_EXT_OCTI } from '../types/stix-2-1-extensions';
 import { FunctionalError } from '../config/errors';
-import { findById } from '../domain/stixCoreObject';
-import { listRelationsPaginated } from '../database/middleware-loader';
-import { type BasicStoreEntityPIR, ENTITY_TYPE_PIR, type ParsedPIR, type PirDependency } from '../modules/pir/pir-types';
+import { internalLoadById, listRelationsPaginated } from '../database/middleware-loader';
+import type { BasicStoreCommon } from '../types/store';
 import { EditOperation } from '../generated/graphql';
-import { flagSource, updatePirDependencies } from '../modules/pir/pir-utils';
-import { getEntitiesListFromCache } from '../database/cache';
+import { stixObjectOrRelationshipDeleteRefRelation } from '../domain/stixObjectOrStixRelationship';
 
 const PIR_MANAGER_ID = 'PIR_MANAGER';
 const PIR_MANAGER_LABEL = 'PIR Manager';
@@ -44,8 +45,8 @@ const onRelationCreated = async (
   const relationshipId: string = relationship.extensions?.[STIX_EXT_OCTI]?.id;
   if (!relationshipId) throw FunctionalError(`Cannot flag the source with PIR ${pir.id}, no relationship id found`);
 
-  const source = await findById(context, SYSTEM_USER, sourceId);
-  const sourceFlagged = (source[RELATION_IN_PIR] ?? []).length > 0;
+  const source = await internalLoadById<BasicStoreCommon>(context, SYSTEM_USER, sourceId);
+  const sourceFlagged = (source[RELATION_IN_PIR] ?? []).includes(pir.id);
   console.log('[POC PIR] Event create matching', { source, relationship, matchingCriteria });
 
   const pirDependencies = matchingCriteria.map((criterion) => ({
@@ -95,18 +96,17 @@ const onRelationDeleted = async (context: AuthContext, relationship: any, pir: B
       // update dependencies
       await updatePirDependencies(context, sourceId, pir, newRelDependencies);
       console.log('[POC PIR] PIR rel updated', { newRelDependencies });
-    } // nothing to do
+    } // else nothing to do
   }
 };
 
-/**
- * Handler called every {PIR_MANAGER_INTERVAL} with new events received.
- *
- * @param streamEvents The new events received since last call to the handler.
- */
-const pirManagerHandler = async (streamEvents: Array<SseEvent<DataEvent>>) => {
+const newPirManagerHandler = async (
+  pir: BasicStoreEntityPIR,
+  streamEvents: Array<SseEvent<DataEvent>>,
+  lastEventId: string // TODO PIR: use this to not missing messages
+) => {
+  const parsedPir = parsePir(pir);
   const context = executionContext(PIR_MANAGER_CONTEXT);
-  const allPIR = await getEntitiesListFromCache<BasicStoreEntityPIR>(context, SYSTEM_USER, ENTITY_TYPE_PIR);
 
   // Keep only events for relationships.
   const eventsContent = streamEvents
@@ -114,74 +114,69 @@ const pirManagerHandler = async (streamEvents: Array<SseEvent<DataEvent>>) => {
     .filter((e) => e.data.type === STIX_TYPE_RELATION);
 
   if (eventsContent.length > 0) {
-    // Loop through all PIR one by one.
-    await Promise.all(allPIR.map(async (pir) => {
-      const parsedPir: ParsedPIR = {
-        ...pir,
-        pirFilters: JSON.parse(pir.pirFilters),
-        pirCriteria: pir.pirCriteria.map((c) => ({
-          ...c,
-          filters: JSON.parse(c.filters),
-        })),
-      };
-
-      // Check every event received to see if it matches the PIR.
-      await Promise.all(eventsContent.map(async (event) => {
-        const { data } = event;
-        // Check PIR filters (filters that do not count as criteria).
-        const eventMatchesPirFilters = await isStixMatchFilterGroup(context, SYSTEM_USER, data, parsedPir.pirFilters);
-        if (eventMatchesPirFilters) {
-          // Check PIR criteria one by one (because we need to know which one matches or not).
-          const matchingCriteria: typeof parsedPir.pirCriteria = [];
-          // eslint-disable-next-line no-restricted-syntax
-          for (const pirCriterion of parsedPir.pirCriteria) {
-            const isMatch = await isStixMatchFilterGroup(context, SYSTEM_USER, data, pirCriterion.filters);
-            if (isMatch) {
-              matchingCriteria.push(pirCriterion);
-            }
-          }
-          // If the event matches PIR, do the right thing depending on the type of event.
-          if (matchingCriteria.length > 0) {
-            switch (event.type) {
-              case 'create':
-                await onRelationCreated(context, data, pir, matchingCriteria);
-                break;
-              case 'delete':
-                await onRelationDeleted(context, data, pir);
-                break;
-              default: // Nothing to do.
-            }
+    // Check every event received to see if it matches the PIR.
+    await Promise.all(eventsContent.map(async ({ data, type }) => {
+      // Check PIR filters (filters that do not count as criteria).
+      const eventMatchesPirFilters = await isStixMatchFilterGroup(context, SYSTEM_USER, data, parsedPir.pirFilters);
+      if (eventMatchesPirFilters) {
+        // Check PIR criteria one by one (because we need to know which one matches or not).
+        const matchingCriteria: typeof parsedPir.pirCriteria = [];
+        // eslint-disable-next-line no-restricted-syntax
+        for (const pirCriterion of parsedPir.pirCriteria) {
+          const isMatch = await isStixMatchFilterGroup(context, SYSTEM_USER, data, pirCriterion.filters);
+          if (isMatch) {
+            matchingCriteria.push(pirCriterion);
           }
         }
-      }));
+        // If the event matches PIR, do the right thing depending on the type of event.
+        if (matchingCriteria.length > 0) {
+          switch (type) {
+            case 'create':
+              await onRelationCreated(context, data, pir, matchingCriteria);
+              break;
+            case 'delete':
+              await onRelationDeleted(context, data, pir);
+              break;
+            default: // Nothing to do.
+          }
+        }
+      }
     }));
-  } else {
-    // TODO PIR: remove this else when no need for debugging anymore.
-    console.log('[POC PIR] Nothing to do, get some rest');
   }
+
+  // Save the last processed event
+  logApp.debug(`[OPENCTI-MODULE] PIR Manager ${pir.name} - Saving last event processed: ${lastEventId}`);
+  await patchAttribute(context, SYSTEM_USER, pir.id, ENTITY_TYPE_PIR, { lastEventId });
 };
 
-// Configuration of the manager.
-const PIR_MANAGER_DEFINITION: ManagerDefinition = {
-  id: PIR_MANAGER_ID,
-  label: PIR_MANAGER_LABEL,
-  executionContext: PIR_MANAGER_CONTEXT,
-  enabledByConfig: PIR_MANAGER_ENABLED,
-  enabled(): boolean {
-    return this.enabledByConfig;
-  },
-  enabledToStart(): boolean {
-    return this.enabledByConfig;
-  },
-  streamSchedulerHandler: {
-    handler: pirManagerHandler,
-    streamProcessorStartFrom: () => 'live',
-    interval: PIR_MANAGER_INTERVAL,
-    lockKey: PIR_MANAGER_LOCK_KEY,
-    streamOpts: {
-      withInternal: true
+export const createPirManager = (pir: BasicStoreEntityPIR): ManagerDefinition => {
+  const id = `${PIR_MANAGER_ID}__${pir.id}`;
+  const label = `${PIR_MANAGER_LABEL} ${pir.id}`;
+  const lockKey = `${PIR_MANAGER_LOCK_KEY}__${pir.id}`;
+
+  const handler: ManagerStreamScheduler['handler'] = (...args) => {
+    return newPirManagerHandler(pir, ...args);
+  };
+
+  return {
+    id,
+    label,
+    executionContext: PIR_MANAGER_CONTEXT,
+    enabledByConfig: PIR_MANAGER_ENABLED,
+    enabled(): boolean {
+      return this.enabledByConfig;
+    },
+    enabledToStart(): boolean {
+      return this.enabledByConfig;
+    },
+    streamSchedulerHandler: {
+      handler,
+      streamProcessorStartFrom: () => pir.lastEventId ?? 'live',
+      interval: PIR_MANAGER_INTERVAL,
+      lockKey,
+      streamOpts: {
+        withInternal: true
+      }
     }
-  }
+  };
 };
-// Automatically register manager on start.
-registerManager(PIR_MANAGER_DEFINITION);
