@@ -34,7 +34,7 @@ const IngestionRss = lazy(() => import('./IngestionRss'));
 const IngestionTaxiis = lazy(() => import('./IngestionTaxiis'));
 const IngestionTaxiiCollections = lazy(() => import('./IngestionTaxiiCollections'));
 const Playbooks = lazy(() => import('./Playbooks'));
-const RootPlaybook = lazy(() => import('./playbooks/Root'));
+const Playbook = lazy(() => import('./playbooks/Playbook'));
 const RootImport = lazy(() => import('./import/Root'));
 const Management = lazy(() => import('./Management'));
 
@@ -177,7 +177,7 @@ const Root = () => {
         />
         <Route
           path="/processing/automation/:playbookId"
-          element={boundaryWrapper(RootPlaybook)}
+          element={boundaryWrapper(Playbook)}
         />
         <Route
           path="/processing/csv_mapper"

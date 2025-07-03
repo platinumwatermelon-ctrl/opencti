@@ -18,29 +18,20 @@ import { Field, Form, Formik } from 'formik';
 import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
 import { useNavigate } from 'react-router-dom';
-import Drawer from '../../common/drawer/Drawer';
-import { commitMutation } from '../../../../relay/environment';
+import { useTheme } from '@mui/material/styles';
+import { PlaybooksLinesPaginationQuery$variables } from '@components/data/__generated__/PlaybooksLinesPaginationQuery.graphql';
+import { FormikConfig } from 'formik/dist/types';
+import Drawer, { DrawerControlledDialProps } from '../../common/drawer/Drawer';
 import TextField from '../../../../components/TextField';
 import { insertNode } from '../../../../utils/store';
 import { useFormatter } from '../../../../components/i18n';
 import { resolveLink } from '../../../../utils/Entity';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { PlaybookCreationMutation } from './__generated__/PlaybookCreationMutation.graphql';
 
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles((theme) => ({
-  buttons: {
-    marginTop: 20,
-    textAlign: 'right',
-  },
-  button: {
-    marginLeft: theme.spacing(2),
-  },
-}));
-
-const PlaybookCreationMutation = graphql`
+const playbookCreationMutation = graphql`
   mutation PlaybookCreationMutation($input: PlaybookAddInput!) {
     playbookAdd(input: $input) {
       id
@@ -49,25 +40,44 @@ const PlaybookCreationMutation = graphql`
   }
 `;
 
-const playbookCreationValidation = (t) => Yup.object().shape({
-  name: Yup.string().required(t('This field is required')),
-  description: Yup.string().nullable(),
-});
-
-const CreatePlaybookControlledDial = (props) => (
+const CreatePlaybookControlledDial = (props: DrawerControlledDialProps) => (
   <CreateEntityControlledDial
     entityType='Playbook'
     {...props}
   />
 );
 
-const PlaybookCreation = ({ paginationOptions }) => {
-  const classes = useStyles();
+interface PlaybookCreationProps {
+  paginationOptions: PlaybooksLinesPaginationQuery$variables
+}
+
+interface PlaybookCreationFormData {
+  name: string,
+  description: string,
+}
+
+const PlaybookCreation = ({ paginationOptions }: PlaybookCreationProps) => {
   const { t_i18n } = useFormatter();
   const navigate = useNavigate();
-  const onSubmit = (values, { setSubmitting, resetForm }) => {
-    commitMutation({
-      mutation: PlaybookCreationMutation,
+  const theme = useTheme();
+
+  const [createMutation] = useApiMutation<PlaybookCreationMutation>(playbookCreationMutation);
+
+  const playbookCreationValidation = Yup.object().shape({
+    name: Yup.string().required(t_i18n('This field is required')),
+    description: Yup.string().nullable(),
+  });
+
+  const initialValues = {
+    name: '',
+    description: '',
+  };
+
+  const onSubmit: FormikConfig<PlaybookCreationFormData>['onSubmit'] = (
+    values,
+    { setSubmitting, resetForm },
+  ) => {
+    createMutation({
       variables: {
         input: values,
       },
@@ -79,14 +89,14 @@ const PlaybookCreation = ({ paginationOptions }) => {
           'playbookAdd',
         );
       },
-      setSubmitting,
       onCompleted: (response) => {
         setSubmitting(false);
         resetForm();
-        navigate(`${resolveLink('Playbook')}/${response.playbookAdd.id}`);
+        navigate(`${resolveLink('Playbook')}/${response?.playbookAdd?.id}`);
       },
     });
   };
+
   return (
     <Drawer
       title={t_i18n('Create a playbook')}
@@ -94,11 +104,8 @@ const PlaybookCreation = ({ paginationOptions }) => {
     >
       {({ onClose }) => (
         <Formik
-          initialValues={{
-            name: '',
-            description: '',
-          }}
-          validationSchema={playbookCreationValidation(t_i18n)}
+          initialValues={initialValues}
+          validationSchema={playbookCreationValidation}
           onSubmit={(values, formikHelpers) => {
             onSubmit(values, formikHelpers);
             onClose();
@@ -122,12 +129,11 @@ const PlaybookCreation = ({ paginationOptions }) => {
                 fullWidth={true}
                 style={{ marginTop: 20 }}
               />
-              <div className={classes.buttons}>
+              <div style={{ marginTop: 20, justifyContent: 'end', display: 'flex', gap: theme.spacing(2) }}>
                 <Button
                   variant="contained"
                   onClick={handleReset}
                   disabled={isSubmitting}
-                  classes={{ root: classes.button }}
                 >
                   {t_i18n('Cancel')}
                 </Button>
@@ -136,7 +142,6 @@ const PlaybookCreation = ({ paginationOptions }) => {
                   color="secondary"
                   onClick={submitForm}
                   disabled={isSubmitting}
-                  classes={{ root: classes.button }}
                 >
                   {t_i18n('Create')}
                 </Button>

@@ -70,6 +70,7 @@ const PlaybookHeaderComponent = ({
   relay: RelayRefetchProp;
 }) => {
   const theme = useTheme();
+  const { t_i18n, nsdt, n } = useFormatter();
 
   useEffect(() => {
     // Refresh
@@ -80,10 +81,11 @@ const PlaybookHeaderComponent = ({
       subscription.unsubscribe();
     };
   }, []);
+
   const [openLastExecutions, setOpenLastExecutions] = useState(false);
   const [openExecution, setOpenExecution] = useState<string | null>(null);
   const [rawData, setRawData] = useState<string | null | undefined>(null);
-  const { t_i18n, nsdt, n } = useFormatter();
+
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ display: 'flex', flex: 1, alignItems: 'center' }}>
