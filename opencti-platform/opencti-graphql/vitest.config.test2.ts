@@ -20,8 +20,7 @@ export const buildTestConfig = (include: string[]) => defineConfig({
     },
     poolOptions: {
       forks: {
-        minForks: 2,
-        maxForks: 4
+        singleFork: true
       },
     },
     sequence: {
@@ -41,4 +40,4 @@ export const buildTestConfig = (include: string[]) => defineConfig({
   },
 });
 
-export default buildTestConfig(['\'tests/(01|02)-*/**/*-test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']);
+export default buildTestConfig(['tests/(03|04|05|06)-*/**/*-test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']);

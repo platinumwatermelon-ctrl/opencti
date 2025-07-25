@@ -29,6 +29,7 @@
     "test:watch:resume": "SKIP_CLEANUP_PLATFORM=true vitest watch --config vitest.config.dev.ts",
     "test:watch": "vitest watch --config vitest.config.dev.ts",
     "test": "vitest --silent --bail 1 run --config vitest.config.test.ts --coverage",
+    "testbis": "vitest --silent --bail 1 run --config vitest.config.test2.ts --coverage",
     "wait-api": "node build/script-wait-for-api.js"
   },
   "pkg": {
