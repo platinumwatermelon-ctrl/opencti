@@ -97,6 +97,13 @@ import { ENTITY_TYPE_CONTAINER_FEEDBACK } from '../case/feedback/feedback-types'
 import { PLAYBOOK_SEND_EMAIL_TEMPLATE_COMPONENT } from './components/send-email-template-component';
 import { convertMembersToUsers, extractBundleBaseElement } from './playbook-utils';
 
+const extractBundleBaseElement = (instanceId: string, bundle: StixBundle): StixObject => {
+  const baseData = bundle.objects.find((o) => o.id === instanceId);
+  if (!baseData) throw FunctionalError('Playbook base element no longer accessible');
+  return baseData;
+};
+
+
 // region built in playbook components
 interface LoggerConfiguration {
   level: string
