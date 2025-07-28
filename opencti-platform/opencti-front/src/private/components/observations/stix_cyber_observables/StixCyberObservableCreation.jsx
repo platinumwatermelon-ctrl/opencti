@@ -529,6 +529,8 @@ const StixCyberObservableCreation = ({
                 initialValues[attribute.value] = null;
               } else if (includes(attribute.value, booleanAttributes)) {
                 initialValues[attribute.value] = false;
+              } else if (attribute.value === 'iban') {
+                extraFieldsToValidate = { iban: Yup.string().required() };
               } else if (attribute.value === 'hashes') {
                 initialValues.hashes_MD5 = '';
                 initialValues['hashes_SHA-1'] = '';
