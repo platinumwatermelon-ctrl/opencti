@@ -903,6 +903,7 @@ interface ListArgs {
   [key: string]: any;
 }
 
+// If context user not in platform org, only retrieve users in the same orgs as context user
 export const applyOrganizationRestriction = async (
   context: AuthContext,
   user: AuthUser,
