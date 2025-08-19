@@ -903,6 +903,7 @@ interface ListArgs {
   [key: string]: any;
 }
 
+// log
 export const applyOrganizationRestriction = async (
   context: AuthContext,
   user: AuthUser,
