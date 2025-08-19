@@ -903,6 +903,7 @@ interface ListArgs {
   [key: string]: any;
 }
 
+// apply filter to only access users in the same orgs
 export const applyOrganizationRestriction = async (
   context: AuthContext,
   user: AuthUser,
