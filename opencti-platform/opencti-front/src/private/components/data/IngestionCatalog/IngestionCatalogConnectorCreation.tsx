@@ -46,10 +46,6 @@ const ingestionCatalogConnectorCreationMutation = graphql`
           key
           value
       }
-      ...on Connector {
-        id
-        manager_contract_image
-      }
     }
   }
 `;
@@ -59,6 +55,7 @@ interface IngestionCatalogConnectorCreationProps {
   open: boolean;
   onClose: () => void;
   catalogId: string;
+  deploymentCount?: number
 }
 
 export interface ManagedConnectorValues extends BasicUserHandlingValues {
@@ -68,7 +65,7 @@ export interface ManagedConnectorValues extends BasicUserHandlingValues {
   confidence_level?: string;
 }
 
-const IngestionCatalogConnectorCreation = ({ connector, open, onClose, catalogId }: IngestionCatalogConnectorCreationProps) => {
+const IngestionCatalogConnectorCreation = ({ connector, open, onClose, catalogId, deploymentCount = 0 }: IngestionCatalogConnectorCreationProps) => {
   const { t_i18n } = useFormatter();
   const theme = useTheme<Theme>();
   const [compiledValidator, setCompiledValidator] = useState<Validator | undefined>(undefined);
@@ -148,7 +145,19 @@ const IngestionCatalogConnectorCreation = ({ connector, open, onClose, catalogId
       open={open}
       onClose={onClose}
       header={
-        <div style={{ position: 'absolute', right: theme.spacing(1) }}>
+        <Stack flex={1} direction="row" justifyContent="flex-end" spacing={theme.spacing(1)} paddingRight={1}>
+          <Button
+            size="small"
+            color="warning"
+            variant="contained"
+            startIcon={<Launch />}
+            href={`./connectors?ci=${connector.container_image}`}
+            target="blank"
+            rel="noopener noreferrer"
+            disabled={deploymentCount === 0}
+          >
+            ({deploymentCount}) {t_i18n('Connector(s) registered')}
+          </Button>
           <Button
             size="large"
             variant="contained"
@@ -169,7 +178,7 @@ const IngestionCatalogConnectorCreation = ({ connector, open, onClose, catalogId
           >
             <LibraryBooksOutlined />
           </IconButton>
-        </div>
+        </Stack>
       }
     >
       <Stack gap={1}>
