@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import IngestionMenu from '@components/data/IngestionMenu';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { IngestionCatalogQuery, IngestionCatalogQuery$data } from '@components/data/__generated__/IngestionCatalogQuery.graphql';
@@ -8,6 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Stack } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import Grid from '@mui/material/Grid2';
+import IngestionCatalogConnectorCreation from '@components/data/IngestionCatalog/IngestionCatalogConnectorCreation';
 import { ConnectorManagerStatusProvider, useConnectorManagerStatus } from '@components/data/connectors/ConnectorManagerStatusContext';
 import NoConnectorManagersBanner from '@components/data/connectors/NoConnectorManagersBanner';
 import Breadcrumbs from '../../../components/Breadcrumbs';
@@ -162,6 +163,9 @@ const IngestionCatalogComponent = ({
 
   const { hasRegisteredManagers } = useConnectorManagerStatus();
 
+  const [selectedConnector, setSelectedConnector] = useState<IngestionConnector | null>(null);
+  const [selectedCatalogId, setSelectedCatalogId] = useState<string>('');
+
   setTitle(t_i18n('Connector catalog | Ingestion | Data'));
 
   const { catalogs, connectors } = usePreloadedQuery(
@@ -173,6 +177,16 @@ const IngestionCatalogComponent = ({
     catalogs,
     searchParams,
   });
+
+  const handleOpenDeployDialog = (connector: IngestionConnector, catalogId: string) => {
+    setSelectedConnector(connector);
+    setSelectedCatalogId(catalogId);
+  };
+
+  const handleCloseDeployDialog = () => {
+    setSelectedConnector(null);
+    setSelectedCatalogId('');
+  };
 
   const allContracts: IngestionConnector[] = [];
 
@@ -220,6 +234,7 @@ const IngestionCatalogComponent = ({
                     dataListId={catalog.id}
                     isEnterpriseEdition={isEnterpriseEdition}
                     deploymentCount={deploymentCount}
+                    onClickDeploy={() => handleOpenDeployDialog(contract, catalog.id)}
                   />
                 </Grid>
               );
@@ -231,6 +246,17 @@ const IngestionCatalogComponent = ({
           <CatalogsEmptyState />
         )}
       </PageContainer>
+
+      {
+        selectedConnector && (
+          <IngestionCatalogConnectorCreation
+            open={!!selectedConnector}
+            connector={selectedConnector}
+            onClose={handleCloseDeployDialog}
+            catalogId={selectedCatalogId}
+          />
+        )
+      }
     </div>
   );
 };
