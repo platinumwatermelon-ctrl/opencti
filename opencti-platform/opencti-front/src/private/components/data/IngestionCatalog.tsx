@@ -254,6 +254,7 @@ const IngestionCatalogComponent = ({
             connector={selectedConnector}
             onClose={handleCloseDeployDialog}
             catalogId={selectedCatalogId}
+            deploymentCount={deploymentCounts.get(selectedConnector.container_image)}
           />
         )
       }

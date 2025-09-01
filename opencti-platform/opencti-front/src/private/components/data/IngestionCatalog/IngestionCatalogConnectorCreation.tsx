@@ -154,12 +154,12 @@ const IngestionCatalogConnectorCreation = ({ connector, open, onClose, catalogId
             href={`./connectors?ci=${connector.container_image}`}
             target="blank"
             rel="noopener noreferrer"
-            disabled={deploymentCount === 0}
+            disabled
           >
             ({deploymentCount}) {t_i18n('Connector(s) registered')}
           </Button>
           <Button
-            size="large"
+            size="small"
             variant="contained"
             startIcon={<Launch />}
             href={connector.subscription_link}
