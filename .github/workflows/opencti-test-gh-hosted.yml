@@ -79,26 +79,26 @@ jobs:
 #          cd client-python ;
 #          echo "[INFO] using client-python on branch $(git branch --show-current)" ;
 #          git log -n 1 ;
+#
+#    - name: Test step with docker
+#      continue-on-error: true
+#      uses: docker://nikolaik/python-nodejs:python3.11-nodejs22-alpine
+#      env:
+#        MY_HELLO_VAR: "Hello"
+#      with:
+#        entrypoint: /bin/sh
+#        args: -c 'echo "This is a test"'
 
-    - name: Test step with docker
-      continue-on-error: true
-      uses: docker://nikolaik/python-nodejs:python3.11-nodejs22-alpine
-      env:
-        MY_HELLO_VAR: "Hello"
-      with:
-        entrypoint: /bin/sh
-        args: -c 'echo "This is a test"'
-
-    - name: Check total memory usage
+    - name: Check memory and docker status
       run: |
           sleep 10
-          echo " ********* ********* free memory"; sleep 1
+          echo -e "\n *********\n ********* free memory"; sleep 1
           free -m
-          echo " ********* ********* docker ps"; sleep 1
+          echo -e "\n *********\n ********* docker ps"; sleep 1
           docker ps
-          echo " ********* ********* docker stat"; sleep 1
+          echo -e "\n *********\n ********* docker stat"; sleep 1
           docker stats --no-stream        
-          echo " ********* ********* ps"; sleep 1
+          echo -e "\n *********\n ********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
 
     - name: Start container raw-start
@@ -124,26 +124,30 @@ jobs:
           -e EXPIRATION_SCHEDULER__ENABLED=false \
           -e SUBSCRIPTION_SCHEDULER__ENABLED=false \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-          sh -c 'set -x && \
-            echo "Runner Name= $RUNNER_NAME" && \
-            echo "$(date) raw start"  && \
-            sleep 10 && \
-            ls -lart && \
-            apk add build-base git libffi-dev cargo && \
-            pwd  && \
-            mkdir -p /tmp/raw-start-platform/ && \
-            cp -a /home/workspace/platform-reference/* /tmp/raw-start-platform/ && \
-            ls -lart && \
-            ls -lart /tmp/raw-start-platform/ && \
-            cd client-python && \
-            pip install -r requirements.txt && \
-            pip install -e .[dev,doc] && \
-            cd /tmp/raw-start-platform/opencti-graphql && \
-            yarn install && \
-            yarn install:python && \
-            echo " *********  ********** STARTING OPENCTI INSTANCE"
-            NODE_OPTIONS=--max_old_space_size=6000 yarn start && true && \
-            tail -f /dev/null '
+          sh -c 'set -x 
+            echo "Runner Name= $RUNNER_NAME" 
+            echo "$(date) raw start"  
+            cd /home/workspace
+            ls -lart 
+            sleep 1
+            apk add build-base git libffi-dev cargo 
+            mkdir -p /tmp/raw-start-platform/ 
+            cp -a /home/workspace/platform-reference/* /tmp/raw-start-platform/ 
+            ls -lart 
+            sleep 1
+            ls -lart /tmp/raw-start-platform/ 
+            sleep 1
+            cd client-python 
+            pip install -r requirements.txt 
+            pip install -e .[dev,doc] 
+            sleep 1
+            cd /tmp/raw-start-platform/opencti-graphql 
+            yarn install 
+            yarn install:python 
+            echo -e "\n *********\n ********* STARTING OPENCTI INSTANCE"; sleep 1
+            NODE_OPTIONS=--max_old_space_size=6000 yarn start && true 
+            tail -f /dev/null 
+            '
 
 
 
@@ -151,17 +155,17 @@ jobs:
       continue-on-error: true
       run: |
           sleep 60
-          echo " ********* ********* free memory"; sleep 1
+          echo -e "\n *********\n ********* free memory"; sleep 1
           free -m
-          echo " ********* ********* docker ps"; sleep 1
+          echo -e "\n *********\n ********* docker ps"; sleep 1
           docker ps
-          echo " ********* ********* docker stat"; sleep 1
+          echo -e "\n *********\n ********* docker stat"; sleep 1
           docker stats --no-stream        
-          echo " ********* ********* ps"; sleep 1
+          echo -e "\n *********\n ********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
-          echo " ********* ********* logs Minio "; sleep 1
+          echo -e "\n *********\n ********* logs Minio "; sleep 1
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
-          echo " ********* ********* logs raw start "; sleep 1
+          echo -e "\n *********\n ********* logs raw start "; sleep 1
           docker logs opencti-raw-start
         
 
