@@ -51,6 +51,7 @@ jobs:
             cd client-python 
             echo "[INFO] using client-python on branch $(git branch --show-current)" 
             git log -n 1 
+            '
 
 
 #    - name: Run the dependency checkout  process with addnab  Dockeraction
