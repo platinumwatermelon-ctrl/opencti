@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [[ -z "$1" ]] || [[ -z "$2" ]] || [[ -z "$3" ]]
+if [[ -z "$1" ]] || [[ -z "$3" ]]
 then
-    echo "[CLONE-DEPS] This scripts $0 requires 3 parameters: branch_name:$1, pr_target_branch: $2, workspace:$3 (optional: PR_number:$4)"
+    echo "[CLONE-DEPS] This scripts $0 requires 2 parameters: branch_name:$1, (optional: pr_target_branch: $2), workspace:$3 (optional: PR_number:$4)"
     exit 0
 fi
 
@@ -111,7 +111,7 @@ clone_for_push_build() {
     git clone -b $CONNECTOR_BRANCH https://github.com/OpenCTI-Platform/connectors.git ${CONNECTOR_DIR}
 }
 
-echo "[CLONE-DEPS] START; with PR_BRANCH_NAME=${PR_BRANCH_NAME},PR_TARGET_BRANCH=${PR_TARGET_BRANCH}, PR_NUMBER=${PR_NUMBER}, OPENCTI_DIR=${OPENCTI_DIR}."
+echo "[CLONE-DEPS] START; with PR_BRANCH_NAME=${PR_BRANCH_NAME},PR_TARGET_BRANCH=${PR_TARGET_BRANCH}, PR_NUMBER=${PR_NUMBER}, WORKSPACE=${WORKSPACE}."
 if [[ -z ${PR_NUMBER} ]] || [[ ${PR_NUMBER} == "" ]]
 then
     # No PR number from Drone = "Push build".

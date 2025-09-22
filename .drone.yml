@@ -1,7 +1,11 @@
 ---
 kind: pipeline
 name: opencti-tests
-
+trigger:
+  branch:
+    exclude:
+    - oob/ci-split-test
+    
 steps:
   - name: Runner information
     image: alpine:3.19
