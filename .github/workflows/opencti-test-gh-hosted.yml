@@ -32,7 +32,7 @@ jobs:
       run: |
         docker run \
           --name depndency-checkout \
-          -v ${{ github.workspace }}:/home/workspace \
+          -v ${{ github.workspace }}:${{ github.workspace }} \
           -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c 'set -x
