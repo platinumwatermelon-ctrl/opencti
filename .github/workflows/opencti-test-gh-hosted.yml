@@ -34,6 +34,9 @@ jobs:
           --name depndency-checkout \
           -v ${{ github.workspace }}:${{ github.workspace }} \
           -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+          -e GITHUB_REF_NAME=${GITHUB_REF_NAME} \
+          -e GITHUB_BASE_REF=${GITHUB_BASE_REF} \
+          -e GITHUB_PR_NUMBER=${{ github.event.pull_request.number }} \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c 'set -x
             echo "Runner Name= $RUNNER_NAME"
@@ -45,8 +48,8 @@ jobs:
             apk add git github-cli 
             chmod 777 scripts/*   
             git config --global --add safe.directory ${{ github.workspace }} 
-            echo Launching clonde-dependencies.sh "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" 
-            ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" 
+            echo Launching clonde-dependencies.sh   "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${GITHUB_PR_NUMBER}" 
+            ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${GITHUB_PR_NUMBER}" 
             ls -lart 
             cd client-python 
             echo "[INFO] using client-python on branch $(git branch --show-current)" 
