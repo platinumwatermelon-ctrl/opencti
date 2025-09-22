@@ -28,6 +28,12 @@ jobs:
     - name: OpenCTI checkout
       uses: actions/checkout@v4
 
+    - name: Set up Docker Compose for backends
+      run: |
+         cd opencti-platform/opencti-ci 
+         docker compose up -d
+
+
     - name: Run the dependency checkout with docker run
       run: |
         docker run \
@@ -95,7 +101,7 @@ jobs:
           echo -e "\n *********\n ********* free memory"; sleep 1
           free -m
           echo -e "\n *********\n ********* docker ps"; sleep 1
-          docker ps
+          docker ps -a
           echo -e "\n *********\n ********* docker stat"; sleep 1
           docker stats --no-stream        
           echo -e "\n *********\n ********* ps"; sleep 1
@@ -129,22 +135,21 @@ jobs:
             echo "$(date) raw start"  
             cd /home/workspace
             ls -lart 
-            sleep 1
             apk add build-base git libffi-dev cargo 
+            sleep 2
             mkdir -p /tmp/raw-start-platform/ 
             cp -a /home/workspace/platform-reference/* /tmp/raw-start-platform/ 
-            ls -lart 
-            sleep 1
             ls -lart /tmp/raw-start-platform/ 
-            sleep 1
             cd client-python 
             pip install -r requirements.txt 
             pip install -e .[dev,doc] 
-            sleep 1
+            sleep 2
             cd /tmp/raw-start-platform/opencti-graphql 
             yarn install 
+            sleep 2
             yarn install:python 
-            echo -e "\n *********\n ********* STARTING OPENCTI INSTANCE"; sleep 1
+            sleep 2
+            echo -e "\n *********\n ********* STARTING OPENCTI INSTANCE"; sleep 5
             NODE_OPTIONS=--max_old_space_size=6000 yarn start && true 
             tail -f /dev/null 
             '
@@ -158,43 +163,49 @@ jobs:
           echo -e "\n *********\n ********* free memory"; sleep 1
           free -m
           echo -e "\n *********\n ********* docker ps"; sleep 1
-          docker ps
+          docker ps -a
           echo -e "\n *********\n ********* docker stat"; sleep 1
           docker stats --no-stream        
           echo -e "\n *********\n ********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
-          echo -e "\n *********\n ********* logs Minio "; sleep 1
+          echo -e "\n *********\n ********* logs Minio "; sleep 5
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
+          echo -e "\n *********\n ********* logs Elastic search "; sleep 5
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
+          echo -e "\n *********\n ********* logs RabbitMQ "; sleep 5
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
+          echo -e "\n *********\n ********* logs Redis "; sleep 5
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
           echo -e "\n *********\n ********* logs raw start "; sleep 1
           docker logs opencti-raw-start
         
 
         
-
-    services:
-      redis:
-        image: redis:8.0.0
-        ports:
-          - 6379:6379
-        # Set health checks to wait until redis has started
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-      elastic:
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.18.2
-        ports:
-          - 9200:9200
-        options: --health-cmd="curl http://localhost:9200/_cluster/health"
-        env:
-          discovery.type: single-node
-          xpack.security.enabled: false
-          ES_JAVA_OPTS: -Xms2g -Xmx2g
-      minio:
-        image: minio/minio:RELEASE.2023-07-07T07-13-57Z
-        env:
-          MINIO_ROOT_USER: ChangeMe
-          MINIO_ROOT_PASSWORD: ChangeMe
-      rabbitmq:
-        image: rabbitmq:4.1-management
+#
+#    services:
+#      redis:
+#        image: redis:8.0.0
+#        ports:
+#          - 6379:6379
+#        # Set health checks to wait until redis has started
+#        options: >-
+#          --health-cmd "redis-cli ping"
+#          --health-interval 10s
+#          --health-timeout 5s
+#          --health-retries 5
+#      elastic:
+#        image: docker.elastic.co/elasticsearch/elasticsearch:8.18.2
+#        ports:
+#          - 9200:9200
+#        options: --health-cmd="curl http://localhost:9200/_cluster/health"
+#        env:
+#          discovery.type: single-node
+#          xpack.security.enabled: false
+#          ES_JAVA_OPTS: -Xms2g -Xmx2g
+#      minio:
+#        image: minio/minio:RELEASE.2023-07-07T07-13-57Z
+#        env:
+#          MINIO_ROOT_USER: ChangeMe
+#          MINIO_ROOT_PASSWORD: ChangeMe
+#      rabbitmq:
+#        image: rabbitmq:4.1-management
