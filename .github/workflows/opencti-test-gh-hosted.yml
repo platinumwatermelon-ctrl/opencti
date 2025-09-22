@@ -20,7 +20,6 @@ jobs:
           tree  ${{ github.workspace }}/..
           echo " pwd $(pwd) " 
           ls -larth
-          ls  ${GITHUB_WORKSPACE} -larth  2>/dev/null || true
           ps aux | sort -nk +4 | tail -5
           env
           free -m
@@ -45,8 +44,8 @@ jobs:
           apk add git github-cli ; 
           chmod 777 scripts/* ;         
           git config --global --add safe.directory ${{ github.workspace }}
-          echo "Launching clonde-dependencies.sh  ${{ github.head_ref }} ${{ github.base_ref }} $(pwd) ${{ github.event.pull_request.number }}" ; 
-          ./scripts/clone-dependencies.sh  "${{ github.head_ref }}" ${{ github.base_ref }} "$(pwd)" "${{ github.event.pull_request.number }}" ;
+          echo "Launching clonde-dependencies.sh  ${{ github.ref_name }} ${{ github.base_ref }} $(pwd) ${{ github.event.pull_request.number }}" ; 
+          ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" ;
           ls -lart ;
           cd client-python ;
           echo "[INFO] using client-python on branch $(git branch --show-current)" ;
@@ -59,14 +58,18 @@ jobs:
         MY_HELLO_VAR: "Hello"
       with:
         entrypoint: /bin/sh
-        args: -c 'echo "This is a test - ${MY_HELLO_VAR}"'
+        args: -c 'echo This is a test - ${MY_HELLO_VAR} '
 
     - name: Check total memory usage
       run: |
           sleep 60
-          docker ps
+          echo "\n********* free memory"; sleep 1
           free -m
+          echo "\n********* docker ps"; sleep 1
+          docker ps
+          echo "\n********* docker stat"; sleep 1
           docker stats --no-stream        
+          echo "\n********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
 
     - name: Start container raw-start
@@ -109,6 +112,7 @@ jobs:
             cd /tmp/raw-start-platform/opencti-graphql && \
             yarn install && \
             yarn install:python && \
+            echo "\n ********** STARTING OPENCTI INSTANCE"
             NODE_OPTIONS=--max_old_space_size=6000 yarn start && true && \
             tail -f /dev/null '
 
@@ -118,58 +122,22 @@ jobs:
       continue-on-error: true
       run: |
           sleep 60
-          docker ps -a 
+          echo "\n********* free memory"; sleep 1
           free -m
-          docker stats --no-stream
+          echo "\n********* docker ps"; sleep 1
+          docker ps
+          echo "\n********* docker stat"; sleep 1
+          docker stats --no-stream        
+          echo "\n********* ps"; sleep 1
+          ps aux | sort -nk +4 | tail -10
+          echo "\n********* logs raw start "; sleep 1
+          docker logs opencti-raw-start
+          echo "\n********* logs Minio "; sleep 1
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
+          echo "\n********* logs raw start "; sleep 1
           docker logs opencti-raw-start
         
 
-    - name: Start container live-start
-      run: |
-        docker run -d \
-          --name opencti-live-start \
-          -v ${{ github.workspace }}:/home/workspace \
-          -e APP__PORT=4100 \
-          -e APP__ADMIN__PASSWORD=admin \
-          -e APP__ENABLED_DEV_FEATURES='["*"]' \
-          -e APP__CHILD_LOCKING_PROCESS__ENABLED=false \
-          -e APP__ADMIN__TOKEN=bfa014e0-e02e-4aa6-a42b-603b19dcf159 \
-          -e APP__APP_LOG__EXTENDED_ERROR_MESSAGE=true \
-          -e APP__HEALTH_ACCESS_KEY=cihealthkey \
-          -e REDIS__HOSTNAME=redis \
-          -e REDIS__NAMESPACE=live-start \
-          -e ELASTICSEARCH__URL=http://elastic:9200 \
-          -e ELASTICSEARCH__INDEX_PREFIX=live-start \
-          -e MINIO__ENDPOINT=minio \
-          -e MINIO__BUCKET_NAME=live-start-bucket \
-          -e RABBITMQ__HOSTNAME=rabbitmq \
-          -e RABBITMQ__QUEUE_PREFIX=live-start \
-          -e EXPIRATION_SCHEDULER__ENABLED=false \
-          -e SUBSCRIPTION_SCHEDULER__ENABLED=false \
-          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-          sh -c 'set -x && \
-            echo "Runner Name= $RUNNER_NAME" && \
-            echo "$(date) live start"  && \
-            sleep 10 && \
-            ls -lart && \
-            apk add build-base git libffi-dev cargo && \
-            mkdir -p /tmp/live-start-platform/ && \
-            cp -a /home/workspace/platform-reference/* /tmp/live-start-platform/ && \
-            cd client-python && \
-            pip install -r requirements.txt && \
-            pip install -e .[dev,doc] && \
-            cd /tmp/live-start-platform/opencti-graphql && \
-            yarn install && \
-            yarn install:python && \
-            NODE_OPTIONS=--max_old_space_size=6000 yarn start && true && \
-            tail -f /dev/null '
-        
-
-    - name: Check total memory usage
-      run: |
-          sleep 60
-          free -m
-          docker stats --no-stream
         
 
     services:
