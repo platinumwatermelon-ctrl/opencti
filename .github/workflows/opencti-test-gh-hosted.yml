@@ -28,48 +28,73 @@ jobs:
     - name: OpenCTI checkout
       uses: actions/checkout@v4
 
-    - name: Run the dependency checkout  process with addnab  Dockeraction
-      uses: addnab/docker-run-action@v3
-      with:
-        image: nikolaik/python-nodejs:python3.11-nodejs22-alpine
-        options: -v ${{ github.workspace }}:${{ github.workspace }} -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -x ;
-          echo "Runner Name= $RUNNER_NAME"
-          echo "$(date) dependencies-checkout" ; 
-          echo "Workspace  github.workspace  = ${{ github.workspace }}" ;
-          ls  ${{ github.workspace }} -larth  2>/dev/null || true ;
-          cd ${{ github.workspace }};
-          cp -R opencti-platform platform-reference ; 
-          apk add git github-cli ; 
-          chmod 777 scripts/* ;         
-          git config --global --add safe.directory ${{ github.workspace }}
-          echo "Launching clonde-dependencies.sh  ${{ github.ref_name }} ${{ github.base_ref }} $(pwd) ${{ github.event.pull_request.number }}" ; 
-          ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" ;
-          ls -lart ;
-          cd client-python ;
-          echo "[INFO] using client-python on branch $(git branch --show-current)" ;
-          git log -n 1 ;
+    - name: Run the dependency checkout with docker run
+      run: |
+        docker run \
+          --name depndency-checkout \
+          -v ${{ github.workspace }}:/home/workspace \
+          -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
+          sh -c 'set -x
+            echo "Runner Name= $RUNNER_NAME"
+            echo "$(date) dependencies-checkout" 
+            echo "Workspace  github.workspace  = ${{ github.workspace }}" 
+            ls  ${{ github.workspace }} -larth  2>/dev/null || true 
+            cd ${{ github.workspace }}
+            cp -R opencti-platform platform-reference  
+            apk add git github-cli 
+            chmod 777 scripts/*   
+            git config --global --add safe.directory ${{ github.workspace }} 
+            echo "Launching clonde-dependencies.sh "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" 
+            ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" 
+            ls -lart 
+            cd client-python 
+            echo "[INFO] using client-python on branch $(git branch --show-current)" 
+            git log -n 1 
 
-    - name: Test step with docker://
+
+#    - name: Run the dependency checkout  process with addnab  Dockeraction
+#      uses: addnab/docker-run-action@v3
+#      with:
+#        image: nikolaik/python-nodejs:python3.11-nodejs22-alpine
+#        options: -v ${{ github.workspace }}:${{ github.workspace }} -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+#        run: |
+#          set -x ;
+#          echo "Runner Name= $RUNNER_NAME"
+#          echo "$(date) dependencies-checkout" ;
+#          echo "Workspace  github.workspace  = ${{ github.workspace }}" ;
+#          ls  ${{ github.workspace }} -larth  2>/dev/null || true ;
+#          cd ${{ github.workspace }};
+#          cp -R opencti-platform platform-reference ;
+#          apk add git github-cli ;
+#          chmod 777 scripts/* ;
+#          git config --global --add safe.directory ${{ github.workspace }}
+#          echo "Launching clonde-dependencies.sh "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" ;
+#          ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" ;
+#          ls -lart ;
+#          cd client-python ;
+#          echo "[INFO] using client-python on branch $(git branch --show-current)" ;
+#          git log -n 1 ;
+
+    - name: Test step with docker
       continue-on-error: true
       uses: docker://nikolaik/python-nodejs:python3.11-nodejs22-alpine
       env:
         MY_HELLO_VAR: "Hello"
       with:
         entrypoint: /bin/sh
-        args: -c 'echo This is a test - ${MY_HELLO_VAR} '
+        args: -c 'echo "This is a test"'
 
     - name: Check total memory usage
       run: |
-          sleep 60
-          echo "\n********* free memory"; sleep 1
+          sleep 10
+          echo " ********* ********* free memory"; sleep 1
           free -m
-          echo "\n********* docker ps"; sleep 1
+          echo " ********* ********* docker ps"; sleep 1
           docker ps
-          echo "\n********* docker stat"; sleep 1
+          echo " ********* ********* docker stat"; sleep 1
           docker stats --no-stream        
-          echo "\n********* ps"; sleep 1
+          echo " ********* ********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
 
     - name: Start container raw-start
@@ -112,7 +137,7 @@ jobs:
             cd /tmp/raw-start-platform/opencti-graphql && \
             yarn install && \
             yarn install:python && \
-            echo "\n ********** STARTING OPENCTI INSTANCE"
+            echo " *********  ********** STARTING OPENCTI INSTANCE"
             NODE_OPTIONS=--max_old_space_size=6000 yarn start && true && \
             tail -f /dev/null '
 
@@ -122,19 +147,17 @@ jobs:
       continue-on-error: true
       run: |
           sleep 60
-          echo "\n********* free memory"; sleep 1
+          echo " ********* ********* free memory"; sleep 1
           free -m
-          echo "\n********* docker ps"; sleep 1
+          echo " ********* ********* docker ps"; sleep 1
           docker ps
-          echo "\n********* docker stat"; sleep 1
+          echo " ********* ********* docker stat"; sleep 1
           docker stats --no-stream        
-          echo "\n********* ps"; sleep 1
+          echo " ********* ********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
-          echo "\n********* logs raw start "; sleep 1
-          docker logs opencti-raw-start
-          echo "\n********* logs Minio "; sleep 1
+          echo " ********* ********* logs Minio "; sleep 1
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
-          echo "\n********* logs raw start "; sleep 1
+          echo " ********* ********* logs raw start "; sleep 1
           docker logs opencti-raw-start
         
 
