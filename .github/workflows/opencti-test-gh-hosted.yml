@@ -150,7 +150,7 @@ jobs:
             yarn install:python 
             sleep 2
             echo -e "\n *********\n ********* STARTING OPENCTI INSTANCE"; sleep 5
-            NODE_OPTIONS=--max_old_space_size=6000 yarn start && true 
+            NODE_OPTIONS=--max_old_space_size=6000 yarn start 
             tail -f /dev/null 
             '
 
@@ -177,8 +177,12 @@ jobs:
           echo -e "\n *********\n ********* logs Redis "; sleep 5
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
           echo -e "\n *********\n ********* logs raw start "; sleep 1
+          echo "$(date)"  
           docker logs opencti-raw-start
-        
+          sleep 60        
+          echo -e "\n *********\n ********* logs raw start "; sleep 1
+          echo "$(date) "  
+          docker logs opencti-raw-start
 
         
 #
