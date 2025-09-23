@@ -28,13 +28,13 @@ export SUBSCRIPTION_SCHEDULER__ENABLED=false
 export APP__ENABLED_DEV_FEATURES='["*"]'
 
 # Backend endpoint
-export REDIS__HOSTNAME=redis
+export REDIS__HOSTNAME=opencti-ci-redis
 export REDIS__NAMESPACE=${BASE_NAME}-start
-export ELASTICSEARCH__URL=http://elastic:9200
+export ELASTICSEARCH__URL=http://opencti-ci-elastic:9200
 export ELASTICSEARCH__INDEX_PREFIX=${BASE_NAME}-start
-export MINIO__ENDPOINT=minio
+export MINIO__ENDPOINT=opencti-ci-minio
 export MINIO__BUCKET_NAME=${BASE_NAME}-start-bucket
-export RABBITMQ__HOSTNAME=rabbitmq
+export RABBITMQ__HOSTNAME=opencti-ci-rabbitmq
 export RABBITMQ__QUEUE_PREFIX=${BASE_NAME}-start
 
 cd /home/workspace

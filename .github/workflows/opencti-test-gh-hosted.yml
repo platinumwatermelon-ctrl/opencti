@@ -62,30 +62,13 @@ jobs:
             git log -n 1 
             '
 
-    - name: Memory, container and process and containers infos
-      continue-on-error: true
-      run: |
-          echo -e "\n *********\n ********* free memory"; sleep 1
-          free -m
-          echo -e "\n *********\n ********* docker ps"; sleep 1
-          docker ps -a
-          echo -e "\n *********\n ********* docker stat"; sleep 1
-          docker stats --no-stream        
-          echo -e "\n *********\n ********* ps"; sleep 1
-          ps aux | sort -nk +4 | tail -10
-
     - name: Start container raw-start
       run: |
         docker run -d \
           --name opencti-raw-start \
           -v "${{ github.workspace }}:/home/workspace" \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-          sh -c 'set -x
-            ls -larth /home/workspace/opencti-platform/opencti-ci
-            chmod u+x /home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh
-            ls -larth /home/workspace/opencti-platform/opencti-ci
-            /home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw
-          '
+          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
 
     - name: Log backend start
       continue-on-error: true
@@ -100,22 +83,23 @@ jobs:
           echo -e "\n *********\n ********* logs Redis "; sleep 2
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
 
-    - name: Memory, container and process and containers infos
+    - name: Memory, container and process infos
       continue-on-error: true
       run: |
-          echo -e "\n *********\n ********* free memory"; sleep 1
+          echo -e "\n *********\n ********* free memory"
           free -m
-          echo -e "\n *********\n ********* docker ps"; sleep 1
+          echo -e "\n *********\n ********* docker ps"
           docker ps -a
-          echo -e "\n *********\n ********* docker stat"; sleep 1
+          echo -e "\n *********\n ********* docker stat"
           docker stats --no-stream        
-          echo -e "\n *********\n ********* ps"; sleep 1
+          echo -e "\n *********\n ********* ps"
           ps aux | sort -nk +4 | tail -10
         
 
-    - name: Memory, container and process and containers infos
+    - name: Logs opencti raw start
       continue-on-error: true
       run: |
+          set -x
           sleep 10
           echo -e "\n *********\n ********* logs raw start "; sleep 1
           echo "$(date)"  
