@@ -81,7 +81,7 @@ jobs:
           --name opencti-raw-start \
           -v "${{ github.workspace }}:/home/workspace" \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh'
+          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
 
 
     - name: Check total memory usage
