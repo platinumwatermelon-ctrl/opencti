@@ -100,12 +100,24 @@ jobs:
       continue-on-error: true
       run: |
           set -x
-          sleep 10
+          sleep 60
           echo -e "\n *********\n ********* logs raw start "; sleep 1
           echo "$(date)"  
           docker logs opencti-raw-start
-          sleep 60        
+          sleep 120        
           echo -e "\n *********\n ********* logs raw start "; sleep 1
           echo "$(date) "  
           docker logs opencti-raw-start
 
+
+    - name: Memory, container and process infos
+      continue-on-error: true
+      run: |
+          echo -e "\n *********\n ********* free memory"
+          free -m
+          echo -e "\n *********\n ********* docker ps"
+          docker ps -a
+          echo -e "\n *********\n ********* docker stat"
+          docker stats --no-stream        
+          echo -e "\n *********\n ********* ps"
+          ps aux | sort -nk +4 | tail -10
