@@ -63,38 +63,6 @@ jobs:
             '
 
 
-#    - name: Run the dependency checkout  process with addnab  Dockeraction
-#      uses: addnab/docker-run-action@v3
-#      with:
-#        image: nikolaik/python-nodejs:python3.11-nodejs22-alpine
-#        options: -v ${{ github.workspace }}:${{ github.workspace }} -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-#        run: |
-#          set -x ;
-#          echo "Runner Name= $RUNNER_NAME"
-#          echo "$(date) dependencies-checkout" ;
-#          echo "Workspace  github.workspace  = ${{ github.workspace }}" ;
-#          ls  ${{ github.workspace }} -larth  2>/dev/null || true ;
-#          cd ${{ github.workspace }};
-#          cp -R opencti-platform platform-reference ;
-#          apk add git github-cli ;
-#          chmod 777 scripts/* ;
-#          git config --global --add safe.directory ${{ github.workspace }}
-#          echo "Launching clonde-dependencies.sh "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" ;
-#          ./scripts/clone-dependencies.sh  "${GITHUB_REF_NAME}" "${GITHUB_BASE_REF}" "$(pwd)" "${{ github.event.pull_request.number }}" ;
-#          ls -lart ;
-#          cd client-python ;
-#          echo "[INFO] using client-python on branch $(git branch --show-current)" ;
-#          git log -n 1 ;
-#
-#    - name: Test step with docker
-#      continue-on-error: true
-#      uses: docker://nikolaik/python-nodejs:python3.11-nodejs22-alpine
-#      env:
-#        MY_HELLO_VAR: "Hello"
-#      with:
-#        entrypoint: /bin/sh
-#        args: -c 'echo "This is a test"'
-
     - name: Check memory and docker status
       run: |
           sleep 10
@@ -112,48 +80,8 @@ jobs:
         docker run -d \
           --name opencti-raw-start \
           -v ${{ github.workspace }}:/home/workspace \
-          -e APP__PORT=4100 \
-          -e APP__ADMIN__PASSWORD=admin \
-          -e APP__ENABLED_DEV_FEATURES='["*"]' \
-          -e APP__CHILD_LOCKING_PROCESS__ENABLED=false \
-          -e APP__ADMIN__TOKEN=bfa014e0-e02e-4aa6-a42b-603b19dcf159 \
-          -e APP__APP_LOG__EXTENDED_ERROR_MESSAGE=true \
-          -e APP__HEALTH_ACCESS_KEY=cihealthkey \
-          -e REDIS__HOSTNAME=redis \
-          -e REDIS__NAMESPACE=raw-start \
-          -e ELASTICSEARCH__URL=http://elastic:9200 \
-          -e ELASTICSEARCH__INDEX_PREFIX=raw-start \
-          -e MINIO__ENDPOINT=minio \
-          -e MINIO__BUCKET_NAME=raw-start-bucket \
-          -e RABBITMQ__HOSTNAME=rabbitmq \
-          -e RABBITMQ__QUEUE_PREFIX=raw-start \
-          -e EXPIRATION_SCHEDULER__ENABLED=false \
-          -e SUBSCRIPTION_SCHEDULER__ENABLED=false \
-          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-          sh -c 'set -x 
-            echo "Runner Name= $RUNNER_NAME" 
-            echo "$(date) raw start"  
-            cd /home/workspace
-            ls -lart 
-            apk add build-base git libffi-dev cargo 
-            sleep 2
-            mkdir -p /tmp/raw-start-platform/ 
-            cp -a /home/workspace/platform-reference/* /tmp/raw-start-platform/ 
-            ls -lart /tmp/raw-start-platform/ 
-            cd client-python 
-            pip install -r requirements.txt 
-            pip install -e .[dev,doc] 
-            sleep 2
-            cd /tmp/raw-start-platform/opencti-graphql 
-            yarn install 
-            sleep 2
-            yarn install:python 
-            sleep 2
-            echo -e "\n *********\n ********* STARTING OPENCTI INSTANCE"; sleep 5
-            NODE_OPTIONS=--max_old_space_size=6000 yarn start 
-            tail -f /dev/null 
-            '
-
+          nikolaik/python-nodejs:python3.11-nodejs22-alpine \        
+          sh -c 'opencti-platform/opencti-ci/start-opencti-instance.sh'
 
 
     - name: Check total memory usage
