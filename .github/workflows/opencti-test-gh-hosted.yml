@@ -62,10 +62,9 @@ jobs:
             git log -n 1 
             '
 
-
-    - name: Check memory and docker status
+    - name: Memory, container and process and containers infos
+      continue-on-error: true
       run: |
-          sleep 10
           echo -e "\n *********\n ********* free memory"; sleep 1
           free -m
           echo -e "\n *********\n ********* docker ps"; sleep 1
@@ -81,13 +80,29 @@ jobs:
           --name opencti-raw-start \
           -v "${{ github.workspace }}:/home/workspace" \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
+          sh -c 'set -x
+            ls -larth /home/workspace/opencti-platform/opencti-ci
+            chmod u+x /home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh
+            ls -larth /home/workspace/opencti-platform/opencti-ci
+            /home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw
+          '
 
-
-    - name: Check total memory usage
+    - name: Log backend start
       continue-on-error: true
       run: |
-          sleep 60
+          sleep 10;
+          echo -e "\n *********\n ********* logs Minio "; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
+          echo -e "\n *********\n ********* logs Elastic search "; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
+          echo -e "\n *********\n ********* logs RabbitMQ "; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
+          echo -e "\n *********\n ********* logs Redis "; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
+
+    - name: Memory, container and process and containers infos
+      continue-on-error: true
+      run: |
           echo -e "\n *********\n ********* free memory"; sleep 1
           free -m
           echo -e "\n *********\n ********* docker ps"; sleep 1
@@ -96,14 +111,12 @@ jobs:
           docker stats --no-stream        
           echo -e "\n *********\n ********* ps"; sleep 1
           ps aux | sort -nk +4 | tail -10
-          echo -e "\n *********\n ********* logs Minio "; sleep 5
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
-          echo -e "\n *********\n ********* logs Elastic search "; sleep 5
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
-          echo -e "\n *********\n ********* logs RabbitMQ "; sleep 5
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
-          echo -e "\n *********\n ********* logs Redis "; sleep 5
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
+        
+
+    - name: Memory, container and process and containers infos
+      continue-on-error: true
+      run: |
+          sleep 10
           echo -e "\n *********\n ********* logs raw start "; sleep 1
           echo "$(date)"  
           docker logs opencti-raw-start
@@ -112,32 +125,3 @@ jobs:
           echo "$(date) "  
           docker logs opencti-raw-start
 
-        
-#
-#    services:
-#      redis:
-#        image: redis:8.0.0
-#        ports:
-#          - 6379:6379
-#        # Set health checks to wait until redis has started
-#        options: >-
-#          --health-cmd "redis-cli ping"
-#          --health-interval 10s
-#          --health-timeout 5s
-#          --health-retries 5
-#      elastic:
-#        image: docker.elastic.co/elasticsearch/elasticsearch:8.18.2
-#        ports:
-#          - 9200:9200
-#        options: --health-cmd="curl http://localhost:9200/_cluster/health"
-#        env:
-#          discovery.type: single-node
-#          xpack.security.enabled: false
-#          ES_JAVA_OPTS: -Xms2g -Xmx2g
-#      minio:
-#        image: minio/minio:RELEASE.2023-07-07T07-13-57Z
-#        env:
-#          MINIO_ROOT_USER: ChangeMe
-#          MINIO_ROOT_PASSWORD: ChangeMe
-#      rabbitmq:
-#        image: rabbitmq:4.1-management
