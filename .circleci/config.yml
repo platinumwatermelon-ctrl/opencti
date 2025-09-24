@@ -813,6 +813,8 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branches:
+              ignore: oob/ci-split-test
       - build_platform:
           filters:
             tags:
