@@ -68,11 +68,18 @@ jobs:
           echo -e "\n\n *********\n ********* logs Minio \n"; sleep 2
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
           echo -e "\n\n *********\n ********* logs Elastic search \n"; sleep 2
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elasticsearch | awk '{print $1}')
           echo -e "\n\n *********\n ********* logs RabbitMQ \n"; sleep 2
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
           echo -e "\n\n *********\n ********* logs Redis \n"; sleep 2
           docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
+          
+          echo -e "\n\n *********\n ********* test backend endpoint \n"; sleep 2
+          set -x
+          docker run --rm --network my-network curlimages/curl curl http://elasticsearch:9200
+          docker run --rm --network my-network curlimages/curl curl http://redis:6379
+          docker run --rm --network my-network curlimages/curl curl http://rabbitmq:5672
+          docker run --rm --network my-network curlimages/curl curl http://elasticsearch:9200
 
     - name: Start OpenCTI sync instances
       run: |
@@ -129,7 +136,7 @@ jobs:
           set -x
           echo "$(date)"  
           cd opencti-platform/opencti-ci
-          ./wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 180 10
+          ./wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 300 10
           ./wait-for-opencsti-instance-startup.sh http://localhost:4200/health?health_access_key=cihealthkey 180 10
           ./wait-for-opencsti-instance-startup.sh http://localhost:4300/health?health_access_key=cihealthkey 180 10
           ./wait-for-opencsti-instance-startup.sh http://localhost:4400/health?health_access_key=cihealthkey 180 10
