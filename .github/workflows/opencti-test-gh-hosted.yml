@@ -45,9 +45,7 @@ jobs:
           -e GITHUB_PR_NUMBER=${{ github.event.pull_request.number }} \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c 'set -x
-            echo "Runner Name= $RUNNER_NAME"
-            echo "$(date) dependencies-checkout" 
-            echo "Workspace  github.workspace  = ${{ github.workspace }}" 
+            echo "$(date) dependencies-checkout in github.workspace  = ${{ github.workspace }}" 
             ls  ${{ github.workspace }} -larth  2>/dev/null || true 
             cd ${{ github.workspace }}
             cp -R opencti-platform platform-reference  
@@ -62,13 +60,28 @@ jobs:
             git log -n 1 
             '
 
-    - name: Start container raw-start
+    - name: Start OpenCTI sync instances
       run: |
         docker run -d \
           --name opencti-raw-start \
           -v "${{ github.workspace }}:/home/workspace" \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
+        docker run -d \
+          --name opencti-live-start \
+          -v "${{ github.workspace }}:/home/workspace" \
+          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
+          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh live'
+        docker run -d \
+          --name opencti-direct-start \
+          -v "${{ github.workspace }}:/home/workspace" \
+          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
+          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh direct'
+        docker run -d \
+          --name opencti-restore-start \
+          -v "${{ github.workspace }}:/home/workspace" \
+          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
+          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh restore'
 
     - name: Log backend start
       continue-on-error: true
@@ -86,38 +99,58 @@ jobs:
     - name: Memory, container and process infos
       continue-on-error: true
       run: |
-          echo -e "\n *********\n ********* free memory"
-          free -m
           echo -e "\n *********\n ********* docker ps"
           docker ps -a
           echo -e "\n *********\n ********* docker stat"
           docker stats --no-stream        
           echo -e "\n *********\n ********* ps"
           ps aux | sort -nk +4 | tail -10
+          echo -e "\n *********\n ********* free memory"
+          free -m
         
 
-    - name: Logs opencti raw start
+    - name: Wait for OpenCTI sync instances to start
       continue-on-error: true
       run: |
-          set -x
+          echo "$(date)"  
           sleep 60
           echo -e "\n *********\n ********* logs raw start "; sleep 1
-          echo "$(date)"  
           docker logs opencti-raw-start
-          sleep 120        
+          sleep 60        
           echo -e "\n *********\n ********* logs raw start "; sleep 1
           echo "$(date) "  
           docker logs opencti-raw-start
 
 
+    - name: Logs opencti live start
+      continue-on-error: true
+      run: |
+          echo "$(date)"  
+          docker logs opencti-live-start
+    - name: Logs opencti live start
+      continue-on-error: true
+      run: |
+          echo "$(date)"  
+          docker logs opencti-live-start
+    - name: Logs opencti live start
+      continue-on-error: true
+      run: |
+          echo "$(date)"  
+          docker logs opencti-live-start
+    - name: Logs opencti live start
+      continue-on-error: true
+      run: |
+          echo "$(date)"  
+          docker logs opencti-live-start
+
     - name: Memory, container and process infos
       continue-on-error: true
       run: |
-          echo -e "\n *********\n ********* free memory"
-          free -m
           echo -e "\n *********\n ********* docker ps"
           docker ps -a
           echo -e "\n *********\n ********* docker stat"
           docker stats --no-stream        
           echo -e "\n *********\n ********* ps"
           ps aux | sort -nk +4 | tail -10
+          echo -e "\n *********\n ********* free memory"
+          free -m
