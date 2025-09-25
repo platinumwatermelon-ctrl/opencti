@@ -61,6 +61,19 @@ jobs:
             git log -n 1 
             '
 
+    - name: Log backend start
+      continue-on-error: true
+      run: |
+          sleep 20;
+          echo -e "\n\n *********\n ********* logs Minio \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
+          echo -e "\n\n *********\n ********* logs Elastic search \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
+          echo -e "\n\n *********\n ********* logs RabbitMQ \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
+          echo -e "\n\n *********\n ********* logs Redis \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
+
     - name: Start OpenCTI sync instances
       run: |
         docker run -d \
@@ -70,6 +83,7 @@ jobs:
           --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
+        sleep 5
         docker run -d \
           --name opencti-live-start \
           -v "${{ github.workspace }}:/home/workspace" \
@@ -77,6 +91,7 @@ jobs:
           --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh live'
+        sleep 5
         docker run -d \
           --name opencti-direct-start \
           -v "${{ github.workspace }}:/home/workspace" \
@@ -84,6 +99,7 @@ jobs:
           --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh direct'
+        sleep 5
         docker run -d \
           --name opencti-restore-start \
           -v "${{ github.workspace }}:/home/workspace" \
@@ -91,19 +107,6 @@ jobs:
           --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh restore'
-
-    - name: Log backend start
-      continue-on-error: true
-      run: |
-          sleep 10;
-          echo -e "\n *********\n ********* logs Minio "; sleep 2
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
-          echo -e "\n *********\n ********* logs Elastic search "; sleep 2
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
-          echo -e "\n *********\n ********* logs RabbitMQ "; sleep 2
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
-          echo -e "\n *********\n ********* logs Redis "; sleep 2
-          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
 
     - name: Memory, container and process infos
       continue-on-error: true
@@ -126,32 +129,45 @@ jobs:
           set -x
           echo "$(date)"  
           cd opencti-platform/opencti-ci
-          ./wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 300 10
+          ./wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 180 10
           ./wait-for-opencsti-instance-startup.sh http://localhost:4200/health?health_access_key=cihealthkey 180 10
           ./wait-for-opencsti-instance-startup.sh http://localhost:4300/health?health_access_key=cihealthkey 180 10
           ./wait-for-opencsti-instance-startup.sh http://localhost:4400/health?health_access_key=cihealthkey 180 10
+
+
+    - name: Log backend
+      continue-on-error: true
+      run: |
+          echo -e "\n\n *********\n ********* logs Minio \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep minio | awk '{print $1}')
+          echo -e "\n\n *********\n ********* logs Elastic search \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep elastic | awk '{print $1}')
+          echo -e "\n\n *********\n ********* logs RabbitMQ \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep rabbit | awk '{print $1}')
+          echo -e "\n\n *********\n ********* logs Redis \n"; sleep 2
+          docker logs $(docker ps -a --format '{{.ID}} {{.Image}}' | grep redis | awk '{print $1}')
         
 
-    - name: Logs opencti live start
+    - name: Logs opencti raw start
       continue-on-error: true
       run: |
           echo "$(date)"  
           docker logs opencti-live-start
-    - name: Logs opencti live start
+    - name: Logs opencti raw start
       continue-on-error: true
       run: |
           echo "$(date)"  
           docker logs opencti-live-start
-    - name: Logs opencti live start
+    - name: Logs opencti direct start
       continue-on-error: true
       run: |
           echo "$(date)"  
-          docker logs opencti-live-start
-    - name: Logs opencti live start
+          docker logs opencti-direct-start
+    - name: Logs opencti restore start
       continue-on-error: true
       run: |
           echo "$(date)"  
-          docker logs opencti-live-start
+          docker logs opencti-restore-start
 
     - name: Memory, container and process infos
       continue-on-error: true

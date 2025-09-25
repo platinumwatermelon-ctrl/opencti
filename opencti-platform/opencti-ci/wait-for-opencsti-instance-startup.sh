@@ -13,9 +13,9 @@ fi
 START=$(date +%s)
 
 while :; do
-  ELAPSED=$(( $(date +%s) - START ))
+  elapsed=$(( $(date +%s) - START ))
 
-  if [ "$ELAPSED" -ge "$TIMEOUT" ]; then
+  if [ "$elapsed" -ge "$TIMEOUT" ]; then
     echo "Timeout after ${TIMEOUT}s"
     exit 1
   fi
