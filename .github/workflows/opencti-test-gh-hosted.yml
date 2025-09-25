@@ -112,6 +112,8 @@ jobs:
           docker ps -a
           echo -e "\n *********\n ********* docker stat"
           docker stats --no-stream        
+          echo -e "\n *********\n ********* docker network"
+          docker network inspect runner-docker-network
           echo -e "\n *********\n ********* ps"
           ps aux | sort -nk +4 | tail -10
           echo -e "\n *********\n ********* free memory"

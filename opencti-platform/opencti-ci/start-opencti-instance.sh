@@ -30,7 +30,7 @@ export APP__ENABLED_DEV_FEATURES='["*"]'
 # Backend endpoint
 export REDIS__HOSTNAME=redis
 export REDIS__NAMESPACE=${BASE_NAME}-start
-export ELASTICSEARCH__URL=http://elastic:9200
+export ELASTICSEARCH__URL=http://elasticsearch:9200
 export ELASTICSEARCH__INDEX_PREFIX=${BASE_NAME}-start
 export MINIO__ENDPOINT=minio
 export MINIO__BUCKET_NAME=${BASE_NAME}-start-bucket
