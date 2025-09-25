@@ -28,13 +28,13 @@ export SUBSCRIPTION_SCHEDULER__ENABLED=false
 export APP__ENABLED_DEV_FEATURES='["*"]'
 
 # Backend endpoint
-export REDIS__HOSTNAME=opencti-ci-redis
+export REDIS__HOSTNAME=redis
 export REDIS__NAMESPACE=${BASE_NAME}-start
-export ELASTICSEARCH__URL=http://opencti-ci-elastic:9200
+export ELASTICSEARCH__URL=http://elastic:9200
 export ELASTICSEARCH__INDEX_PREFIX=${BASE_NAME}-start
-export MINIO__ENDPOINT=opencti-ci-minio
+export MINIO__ENDPOINT=minio
 export MINIO__BUCKET_NAME=${BASE_NAME}-start-bucket
-export RABBITMQ__HOSTNAME=opencti-ci-rabbitmq
+export RABBITMQ__HOSTNAME=rabbitmq
 export RABBITMQ__QUEUE_PREFIX=${BASE_NAME}-start
 
 cd /home/workspace
@@ -44,14 +44,14 @@ mkdir -p /tmp/platform/
 echo -e "\n ********* Copy reference platform locally"; sleep 1
 cp -a /home/workspace/platform-reference/* /tmp/platform/
 ls -lart /tmp/platform/
-echo -e "\n ********* Install client python"; sleep 1
+echo -e "\n **************** \n ** Install client python \n ****************"; sleep 1
 cd client-python
 pip install -r requirements.txt
 pip install -e .[dev,doc]
 cd /tmp/platform/opencti-graphql
-echo -e "\n ********* Install client python"; sleep 1
+echo -e "\n **************** \n ** Yan install \n ****************"; sleep 1
 yarn install
 yarn install:python
-echo -e "\n *********\n ********* STARTING ${BASE_NAME}-opencti INSTANCE"; sleep 5
+echo -e "\n **************** \n **  STARTING ${BASE_NAME}-opencti INSTANCE \n ****************"; sleep 1
 NODE_OPTIONS=--max_old_space_size=6000 yarn start
 

@@ -65,21 +65,25 @@ jobs:
         docker run -d \
           --name opencti-raw-start \
           -v "${{ github.workspace }}:/home/workspace" \
+          -p 4100:4100 \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
         docker run -d \
           --name opencti-live-start \
           -v "${{ github.workspace }}:/home/workspace" \
+          -p 4200:4100 \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh live'
         docker run -d \
           --name opencti-direct-start \
           -v "${{ github.workspace }}:/home/workspace" \
+          -p 4300:4100 \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh direct'
         docker run -d \
           --name opencti-restore-start \
           -v "${{ github.workspace }}:/home/workspace" \
+          -p 4400:4100 \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh restore'
 
@@ -115,10 +119,10 @@ jobs:
           set -x
           echo "$(date)"  
           wget --server-response "http://opencti-raw-start:4100/health?health_access_key=cihealthkey" -O opencti-raw-start-health 
-          wait-for-opencsti-instance-startup.sh http://opencti-raw-start:4100/health?health_access_key=cihealthkey 180 10
-          wait-for-opencsti-instance-startup.sh http://opencti-live-start:4100/health?health_access_key=cihealthkey 180 10
-          wait-for-opencsti-instance-startup.sh http://opencti-direct-start:4100/health?health_access_key=cihealthkey 180 10
-          wait-for-opencsti-instance-startup.sh http://opencti-restore-start:4100/health?health_access_key=cihealthkey 180 10
+          wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 180 10
+          wait-for-opencsti-instance-startup.sh http://localhost:4200/health?health_access_key=cihealthkey 180 10
+          wait-for-opencsti-instance-startup.sh http://localhost:4300/health?health_access_key=cihealthkey 180 10
+          wait-for-opencsti-instance-startup.sh http://localhost:4400/health?health_access_key=cihealthkey 180 10
         
 
     - name: Logs opencti live start
