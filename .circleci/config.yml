@@ -58,6 +58,9 @@ jobs:
           command: BRANCH_VERSION=${CIRCLE_BRANCH}; echo ${BRANCH_VERSION}
       - run:
           working_directory: ~/opencti/opencti-platform/opencti-graphql
+          command: TAG_VERSION="6.8.0"; yarn build
+      - run:
+          working_directory: ~/opencti/opencti-platform/opencti-graphql
           command: |
             export CIRCLE_TAG="6.8.0"
             echo ${CIRCLE_TAG}
