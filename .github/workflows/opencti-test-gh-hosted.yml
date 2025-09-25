@@ -114,11 +114,10 @@ jobs:
         
 
     - name: Wait for OpenCTI sync instances to start
-      continue-on-error: true
       run: |
           set -x
           echo "$(date)"  
-          wget --server-response "http://opencti-raw-start:4100/health?health_access_key=cihealthkey" -O opencti-raw-start-health 
+          wget --server-response "http://localhost:4100/health?health_access_key=cihealthkey" -O opencti-raw-start-health 
           wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 180 10
           wait-for-opencsti-instance-startup.sh http://localhost:4200/health?health_access_key=cihealthkey 180 10
           wait-for-opencsti-instance-startup.sh http://localhost:4300/health?health_access_key=cihealthkey 180 10
