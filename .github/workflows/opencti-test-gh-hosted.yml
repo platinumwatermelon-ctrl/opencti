@@ -118,7 +118,6 @@ jobs:
       run: |
           set -x
           echo "$(date)"  
-          wget --server-response "http://localhost:4100/health?health_access_key=cihealthkey" -O opencti-raw-start-health 
           wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 300 10
           wait-for-opencsti-instance-startup.sh http://localhost:4200/health?health_access_key=cihealthkey 180 10
           wait-for-opencsti-instance-startup.sh http://localhost:4300/health?health_access_key=cihealthkey 180 10
