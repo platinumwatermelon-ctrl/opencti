@@ -49,16 +49,10 @@ jobs:
           command: yarn install
       - run:
           working_directory: ~/opencti/opencti-platform/opencti-graphql
-          command: echo ${CIRCLE_TAG};
-      - run:
-          working_directory: ~/opencti/opencti-platform/opencti-graphql
-          command: echo ${BRANCH_VERSION}
-      - run:
-          working_directory: ~/opencti/opencti-platform/opencti-graphql
-          command: BRANCH_VERSION=${CIRCLE_BRANCH}; echo ${BRANCH_VERSION}
-      - run:
-          working_directory: ~/opencti/opencti-platform/opencti-graphql
           command: TAG_VERSION="6.8.0"; yarn build
+      - run:
+          working_directory: ~/opencti/opencti-platform/opencti-graphql
+          command: TAG_VERSION="6.8.0" yarn build
       - run:
           working_directory: ~/opencti/opencti-platform/opencti-graphql
           command: |
