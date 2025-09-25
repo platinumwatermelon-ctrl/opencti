@@ -49,7 +49,21 @@ jobs:
           command: yarn install
       - run:
           working_directory: ~/opencti/opencti-platform/opencti-graphql
-          command: TAG_VERSION=${CIRCLE_TAG}; yarn build
+          command: echo ${CIRCLE_TAG};
+      - run:
+          working_directory: ~/opencti/opencti-platform/opencti-graphql
+          command: echo ${BRANCH_VERSION}
+      - run:
+          working_directory: ~/opencti/opencti-platform/opencti-graphql
+          command: BRANCH_VERSION=${CIRCLE_BRANCH}; echo ${BRANCH_VERSION}
+      - run:
+          working_directory: ~/opencti/opencti-platform/opencti-graphql
+          command: |
+            export CIRCLE_TAG="6.8.0"
+            echo ${CIRCLE_TAG}
+            export TAG_VERSION=${CIRCLE_TAG}
+            echo ${TAG_VERSION} 
+            yarn build
       - slack/notify:
           event: fail
           template: basic_fail_1
@@ -816,7 +830,7 @@ workflows:
             tags:
               only: /[0-9]+(\.[0-9]+)+(\.[0-9]+)*/
             branches:
-              ignore: /.*/
+              only: oob/ci-release-manifest
           requires:
             - build_frontend
       - build_platform_rolling:
