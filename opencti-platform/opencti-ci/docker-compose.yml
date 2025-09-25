@@ -3,6 +3,8 @@ services:
     container_name: redis
     image: redis:8.0.3
     restart: unless-stopped
+    networks:
+      - runner-docker-network
     ports:
       - 6379:6379
   elasticsearch:
@@ -20,12 +22,16 @@ services:
       nofile:
         soft: 65536
         hard: 65536
+    networks:
+      - runner-docker-network
     ports:
       - 9200:9200
       - 9300:9300
   minio:
     container_name: minio
     image: minio/minio:latest
+    networks:
+      - runner-docker-network
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -44,6 +50,12 @@ services:
     container_name: rabbitmq
     image: rabbitmq:4.1-management
     restart: unless-stopped
+    networks:
+      - runner-docker-network
     ports:
       - 5672:5672
       - 15672:15672
+
+networks:
+  runner-docker-network:
+    external: true

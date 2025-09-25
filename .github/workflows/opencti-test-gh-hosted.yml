@@ -30,7 +30,8 @@ jobs:
 
     - name: Set up Docker Compose for backends
       run: |
-         cd opencti-platform/opencti-ci 
+         cd opencti-platform/opencti-ci         
+         docker network create runner-docker-network
          docker compose up -d
 
 
@@ -66,24 +67,28 @@ jobs:
           --name opencti-raw-start \
           -v "${{ github.workspace }}:/home/workspace" \
           -p 4100:4100 \
+          --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
         docker run -d \
           --name opencti-live-start \
           -v "${{ github.workspace }}:/home/workspace" \
           -p 4200:4100 \
+          --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh live'
         docker run -d \
           --name opencti-direct-start \
           -v "${{ github.workspace }}:/home/workspace" \
           -p 4300:4100 \
+          --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh direct'
         docker run -d \
           --name opencti-restore-start \
           -v "${{ github.workspace }}:/home/workspace" \
           -p 4400:4100 \
+          --network runner-docker-network \
           nikolaik/python-nodejs:python3.11-nodejs22-alpine \
           sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh restore'
 
