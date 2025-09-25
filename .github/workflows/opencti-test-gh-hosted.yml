@@ -118,6 +118,7 @@ jobs:
       run: |
           set -x
           echo "$(date)"  
+          cd opencti-platform/opencti-ci
           wait-for-opencsti-instance-startup.sh http://localhost:4100/health?health_access_key=cihealthkey 300 10
           wait-for-opencsti-instance-startup.sh http://localhost:4200/health?health_access_key=cihealthkey 180 10
           wait-for-opencsti-instance-startup.sh http://localhost:4300/health?health_access_key=cihealthkey 180 10
