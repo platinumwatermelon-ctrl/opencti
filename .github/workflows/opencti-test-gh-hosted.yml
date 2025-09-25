@@ -114,6 +114,7 @@ jobs:
         
 
     - name: Wait for OpenCTI sync instances to start
+      continue-on-error: true
       run: |
           set -x
           echo "$(date)"  

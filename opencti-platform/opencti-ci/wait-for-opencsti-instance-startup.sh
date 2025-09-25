@@ -20,14 +20,19 @@ while :; do
     exit 1
   fi
 
-  CODE=$(wget --server-response -O /dev/null "$URL" 2>&1 \
-    | awk '/^  HTTP/{print $2; exit}')
+  # Capture wget output quietly
+  output=$(wget --tries=1 --server-response --spider -O /dev/null "$URL" 2>&1)
+  # Extract HTTP code if present
+  code=$(printf "%s" "$output" | awk '/^  HTTP/{print $2; exit}')
 
-  echo "[$ELAPSED s] HTTP $CODE"
-
-  if [ "$CODE" -eq 200 ] 2>/dev/null; then
-    echo "Success after ${ELAPSED}s"
-    exit 0
+  if [ -n "$code" ]; then
+    echo "[$elapsed s] HTTP $code"
+    if [ "$code" -eq 200 ]; then
+      echo "Success after ${elapsed}s"
+      exit 0
+    fi
+  else
+    echo "[$elapsed s] ERROR (no HTTP response)"
   fi
 
   sleep "$INTERVAL"
