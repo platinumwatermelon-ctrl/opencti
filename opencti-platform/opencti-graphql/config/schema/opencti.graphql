@@ -2211,7 +2211,7 @@ type Connector implements BasicObject & InternalObject {
   metrics:[Metric]
   # Connector
   name: String!
-  title: String!
+  identifier: String!
   active: Boolean
   auto: Boolean
   only_contextual: Boolean
