@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import JsonMapperRepresentationAttributeForm from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributeForm';
-import { getAttributeLabel } from '@components/data/jsonMapper/representations/attributes/AttributeUtils';
+import JsonMapperRepresentationAttributeForm from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributeForm';
+import { getAttributeLabel } from '@private/components/data/jsonMapper/representations/attributes/AttributeUtils';
 import { Field } from 'formik';
-import JsonMapperRepresentationAttributeRefForm from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributeRefForm';
-import { JsonMapperRepresentationFormData } from '@components/data/jsonMapper/representations/Representation';
+import JsonMapperRepresentationAttributeRefForm from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributeRefForm';
+import { JsonMapperRepresentationFormData } from '@private/components/data/jsonMapper/representations/Representation';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$key,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import makeStyles from '@mui/styles/makeStyles';
 import { useTheme } from '@mui/styles';
 import { useJsonMappersData } from '../../jsonMappers.data';

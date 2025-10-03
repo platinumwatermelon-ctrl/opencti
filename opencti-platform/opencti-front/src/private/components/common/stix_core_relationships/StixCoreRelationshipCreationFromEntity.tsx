@@ -11,19 +11,19 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import { GlobeModel, HexagonOutline } from 'mdi-material-ui';
-import { StixCoreRelationshipCreationFromEntityQuery$data } from '@components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationFromEntityQuery.graphql';
+import { StixCoreRelationshipCreationFromEntityQuery$data } from '@private/components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationFromEntityQuery.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import { UsePreloadedPaginationFragment } from 'src/utils/hooks/usePreloadedPaginationFragment';
 import { usePaginationLocalStorage } from 'src/utils/hooks/useLocalStorage';
-import BulkRelationDialogContainer from '@components/common/bulk/dialog/BulkRelationDialogContainer';
+import BulkRelationDialogContainer from '@private/components/common/bulk/dialog/BulkRelationDialogContainer';
 import {
   StixCoreRelationshipCreationFromEntityStixCoreObjectsLinesQuery$variables,
-} from '@components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationFromEntityStixCoreObjectsLinesQuery.graphql';
+} from '@private/components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationFromEntityStixCoreObjectsLinesQuery.graphql';
 import {
   StixCoreRelationshipCreationFromEntityStixCoreObjectsLines_data$data,
-} from '@components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationFromEntityStixCoreObjectsLines_data.graphql';
+} from '@private/components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationFromEntityStixCoreObjectsLines_data.graphql';
 import { PaginationOptions } from 'src/components/list_lines';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { getMainRepresentative } from 'src/utils/defaultRepresentatives';
 import Loader, { LoaderVariant } from 'src/components/Loader';
 import { commitMutation, handleErrorInForm, QueryRenderer } from '../../../../relay/environment';

@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import { IntrusionSetsCardsPaginationQuery } from '@components/threats/intrusion_sets/__generated__/IntrusionSetsCardsPaginationQuery.graphql';
-import { IntrusionSetsCards_data$key } from '@components/threats/intrusion_sets/__generated__/IntrusionSetsCards_data.graphql';
-import { StixDomainObjectBookmarksQuery$data } from '@components/common/stix_domain_objects/__generated__/StixDomainObjectBookmarksQuery.graphql';
+import { IntrusionSetsCardsPaginationQuery } from '@private/components/threats/intrusion_sets/__generated__/IntrusionSetsCardsPaginationQuery.graphql';
+import { IntrusionSetsCards_data$key } from '@private/components/threats/intrusion_sets/__generated__/IntrusionSetsCards_data.graphql';
+import { StixDomainObjectBookmarksQuery$data } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectBookmarksQuery.graphql';
 import ListCardsContent from '../../../../components/list_cards/ListCardsContent';
 import IntrusionSetCard from './IntrusionSetCard';
 import { GenericAttackCardDummy } from '../../common/cards/GenericAttackCard';

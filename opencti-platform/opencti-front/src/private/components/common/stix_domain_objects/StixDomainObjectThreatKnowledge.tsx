@@ -19,17 +19,17 @@ import Switch from '@mui/material/Switch';
 import makeStyles from '@mui/styles/makeStyles';
 import {
   StixDomainObjectThreatKnowledgeContainersNumberQuery$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectThreatKnowledgeContainersNumberQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectThreatKnowledgeContainersNumberQuery.graphql';
 import {
   StixDomainObjectThreatKnowledgeStixCoreRelationshipsNumberQuery$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectThreatKnowledgeStixCoreRelationshipsNumberQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectThreatKnowledgeStixCoreRelationshipsNumberQuery.graphql';
 import {
   StixDomainObjectThreatKnowledgeQueryStixRelationshipsQuery$data,
   StixDomainObjectThreatKnowledgeQueryStixRelationshipsQuery$variables,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectThreatKnowledgeQueryStixRelationshipsQuery.graphql';
-import StixDomainObjectDiamond from '@components/common/stix_domain_objects/StixDomainObjectDiamond';
-import { stixDomainObjectThreatDiamondQuery } from '@components/common/stix_domain_objects/StixDomainObjectThreatDiamondQuery';
-import { StixDomainObjectThreatDiamondQuery$data } from '@components/common/stix_domain_objects/__generated__/StixDomainObjectThreatDiamondQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectThreatKnowledgeQueryStixRelationshipsQuery.graphql';
+import StixDomainObjectDiamond from '@private/components/common/stix_domain_objects/StixDomainObjectDiamond';
+import { stixDomainObjectThreatDiamondQuery } from '@private/components/common/stix_domain_objects/StixDomainObjectThreatDiamondQuery';
+import { StixDomainObjectThreatDiamondQuery$data } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectThreatDiamondQuery.graphql';
 import { QueryRenderer } from '../../../../relay/environment';
 import { monthsAgo } from '../../../../utils/Time';
 import { useFormatter } from '../../../../components/i18n';

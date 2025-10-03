@@ -14,9 +14,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React from 'react';
-import LocationField from '@components/common/form/LocationField';
-import SectorField from '@components/common/form/SectorField';
-import ConfidenceField from '@components/common/form/ConfidenceField';
+import LocationField from '@private/components/common/form/LocationField';
+import SectorField from '@private/components/common/form/SectorField';
+import ConfidenceField from '@private/components/common/form/ConfidenceField';
 import { useFormatter } from '../../../../components/i18n';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 

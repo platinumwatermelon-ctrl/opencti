@@ -1,10 +1,10 @@
-import { PublicDashboards_PublicDashboard$data } from '@components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboards_PublicDashboard.graphql';
+import { PublicDashboards_PublicDashboard$data } from '@private/components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboards_PublicDashboard.graphql';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { IconButton, Menu, MenuItem, MenuProps } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { graphql } from 'react-relay';
-import { PublicDashboardsListQuery$variables } from '@components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboardsListQuery.graphql';
+import { PublicDashboardsListQuery$variables } from '@private/components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboardsListQuery.graphql';
 import { useFormatter } from '../../../../../components/i18n';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
 import useDeletion from '../../../../../utils/hooks/useDeletion';

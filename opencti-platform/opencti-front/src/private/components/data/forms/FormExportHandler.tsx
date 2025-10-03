@@ -1,6 +1,6 @@
 import fileDownload from 'js-file-download';
 import { graphql } from 'react-relay';
-import { FormExportHandlerQuery$data } from '@components/data/forms/__generated__/FormExportHandlerQuery.graphql';
+import { FormExportHandlerQuery$data } from '@private/components/data/forms/__generated__/FormExportHandlerQuery.graphql';
 import { fetchQuery } from '../../../../relay/environment';
 
 interface formToExport {

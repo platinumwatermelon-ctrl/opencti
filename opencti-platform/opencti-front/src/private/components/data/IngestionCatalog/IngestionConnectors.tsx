@@ -1,5 +1,5 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { IngestionConnectorsQuery } from '@components/data/IngestionCatalog/__generated__/IngestionConnectorsQuery.graphql';
+import { IngestionConnectorsQuery } from '@private/components/data/IngestionCatalog/__generated__/IngestionConnectorsQuery.graphql';
 import React from 'react';
 
 export const ingestionConnectorsQuery = graphql`

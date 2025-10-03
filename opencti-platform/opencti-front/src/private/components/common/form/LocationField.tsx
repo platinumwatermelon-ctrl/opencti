@@ -3,7 +3,7 @@ import React, { ChangeEvent, HTMLAttributes, useState } from 'react';
 import { Field } from 'formik';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import EntityTypeSelectAdornment from '@components/common/form/EntityTypeSelectAdornment';
+import EntityTypeSelectAdornment from '@private/components/common/form/EntityTypeSelectAdornment';
 import { useFormatter } from '../../../../components/i18n';
 import { FieldOption } from '../../../../utils/field';
 import { fetchQuery } from '../../../../relay/environment';

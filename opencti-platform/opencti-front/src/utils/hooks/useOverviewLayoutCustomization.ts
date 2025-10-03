@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useFragment } from 'react-relay';
-import { EntitySettingSettings_entitySetting$key } from '@components/settings/sub_types/entity_setting/__generated__/EntitySettingSettings_entitySetting.graphql';
-import { entitySettingFragment } from '@components/settings/sub_types/entity_setting/EntitySettingSettings';
+import { EntitySettingSettings_entitySetting$key } from '@private/components/settings/sub_types/entity_setting/__generated__/EntitySettingSettings_entitySetting.graphql';
+import { entitySettingFragment } from '@private/components/settings/sub_types/entity_setting/EntitySettingSettings';
 import useAuth from './useAuth';
 
 type OverviewWidgetLayout = { key: string, width: number, label: string };

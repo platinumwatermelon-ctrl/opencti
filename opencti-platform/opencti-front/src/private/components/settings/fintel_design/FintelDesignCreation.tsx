@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { FintelDesignsLinesPaginationQuery$variables } from '@components/settings/fintel_design/__generated__/FintelDesignsLinesPaginationQuery.graphql';
+import { FintelDesignsLinesPaginationQuery$variables } from '@private/components/settings/fintel_design/__generated__/FintelDesignsLinesPaginationQuery.graphql';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { graphql } from 'react-relay';
 import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
 import { Field, Form, Formik } from 'formik';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material';
-import { FintelDesignCreationAddMutation } from '@components/settings/fintel_design/__generated__/FintelDesignCreationAddMutation.graphql';
+import { FintelDesignCreationAddMutation } from '@private/components/settings/fintel_design/__generated__/FintelDesignCreationAddMutation.graphql';
 import { useNavigate } from 'react-router-dom';
 import { useFormatter } from '../../../../components/i18n';
 import { insertNode } from '../../../../utils/store';

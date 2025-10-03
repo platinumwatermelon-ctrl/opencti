@@ -1,6 +1,6 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { CSSProperties } from 'react';
-import { StixCoreObjectsPolarAreaDistributionQuery } from '@components/common/stix_core_objects/__generated__/StixCoreObjectsPolarAreaDistributionQuery.graphql';
+import { StixCoreObjectsPolarAreaDistributionQuery } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectsPolarAreaDistributionQuery.graphql';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import WidgetContainer from '../../../../components/dashboard/WidgetContainer';
 import { useFormatter } from '../../../../components/i18n';

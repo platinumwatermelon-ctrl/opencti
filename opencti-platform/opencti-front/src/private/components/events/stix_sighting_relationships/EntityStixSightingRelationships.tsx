@@ -2,9 +2,9 @@ import React, { FunctionComponent } from 'react';
 import {
   EntityStixSightingRelationshipsLinesPaginationQuery,
   EntityStixSightingRelationshipsLinesPaginationQuery$variables,
-} from '@components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipsLinesPaginationQuery.graphql';
+} from '@private/components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipsLinesPaginationQuery.graphql';
 import makeStyles from '@mui/styles/makeStyles';
-import { EntityStixSightingRelationshipLineDummy } from '@components/events/stix_sighting_relationships/EntityStixSightingRelationshipLine';
+import { EntityStixSightingRelationshipLineDummy } from '@private/components/events/stix_sighting_relationships/EntityStixSightingRelationshipLine';
 import ListLines from '../../../../components/list_lines/ListLines';
 import EntityStixSightingRelationshipsLines, { entityStixSightingRelationshipsLinesQuery } from './EntityStixSightingRelationshipsLines';
 import StixSightingRelationshipCreationFromEntity from './StixSightingRelationshipCreationFromEntity';

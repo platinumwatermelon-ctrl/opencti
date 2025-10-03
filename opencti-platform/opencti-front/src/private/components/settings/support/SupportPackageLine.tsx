@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { SupportPackageLine_node$key } from '@components/settings/support/__generated__/SupportPackageLine_node.graphql';
+import { SupportPackageLine_node$key } from '@private/components/settings/support/__generated__/SupportPackageLine_node.graphql';
 import ListItemText from '@mui/material/ListItemText';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -11,7 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import CircularProgress from '@mui/material/CircularProgress';
 import Chip from '@mui/material/Chip';
-import { SupportPackageLineForceZipMutation$data } from '@components/settings/support/__generated__/SupportPackageLineForceZipMutation.graphql';
+import { SupportPackageLineForceZipMutation$data } from '@private/components/settings/support/__generated__/SupportPackageLineForceZipMutation.graphql';
 import { APP_BASE_PATH, handleError, MESSAGING$ } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import { deleteNode } from '../../../../utils/store';

@@ -8,7 +8,7 @@ import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import useForceUpdate from '@components/common/bulk/useForceUpdate';
+import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
 import StixCoreObjectContentRoot from '../../common/stix_core_objects/StixCoreObjectContentRoot';
 import AdministrativeArea from './AdministrativeArea';
 import AdministrativeAreaKnowledge from './AdministrativeAreaKnowledge';

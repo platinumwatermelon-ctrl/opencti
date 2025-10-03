@@ -16,8 +16,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import React from 'react';
 import Grid from '@mui/material/Grid2';
 import { graphql, useFragment } from 'react-relay';
-import StixCoreObjectsDonut from '@components/common/stix_core_objects/StixCoreObjectsDonut';
-import PirRelationshipsDonut from '@components/pir/PirRelationshipsDonut';
+import StixCoreObjectsDonut from '@private/components/common/stix_core_objects/StixCoreObjectsDonut';
+import PirRelationshipsDonut from '@private/components/pir/PirRelationshipsDonut';
 import { PirOverviewTopSourcesFragment$key } from './__generated__/PirOverviewTopSourcesFragment.graphql';
 import Paper from '../../../../components/Paper';
 import { useFormatter } from '../../../../components/i18n';

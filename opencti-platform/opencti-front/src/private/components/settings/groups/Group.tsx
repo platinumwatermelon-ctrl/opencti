@@ -13,7 +13,7 @@ import * as R from 'ramda';
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
-import GroupConfidenceLevel from '@components/settings/groups/GroupConfidenceLevel';
+import GroupConfidenceLevel from '@private/components/settings/groups/GroupConfidenceLevel';
 import { uniq } from 'ramda';
 import { ListItemButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';

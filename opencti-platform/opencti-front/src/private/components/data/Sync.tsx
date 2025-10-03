@@ -2,7 +2,7 @@ import React from 'react';
 import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/styles';
 import { Theme } from 'src/components/Theme';
-import { SyncLinesPaginationQuery$data, SyncLinesPaginationQuery$variables } from '@components/data/sync/__generated__/SyncLinesPaginationQuery.graphql';
+import { SyncLinesPaginationQuery$data, SyncLinesPaginationQuery$variables } from '@private/components/data/sync/__generated__/SyncLinesPaginationQuery.graphql';
 import { QueryRenderer } from '../../../relay/environment';
 import ListLines from '../../../components/list_lines/ListLines';
 import SyncLines, { SyncLinesQuery } from './sync/SyncLines';

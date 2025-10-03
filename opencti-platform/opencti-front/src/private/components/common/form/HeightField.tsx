@@ -6,8 +6,8 @@ import { AddOutlined, DeleteOutlined } from '@mui/icons-material';
 import { graphql } from 'react-relay';
 import {
   ThreatActorIndividualEditionBiographics_ThreatActorIndividual$data,
-} from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
-import { MeasureInput } from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualCreationMutation.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
+import { MeasureInput } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualCreationMutation.graphql';
 import { GenericContext } from '../model/GenericContextModel';
 import { useFormatter } from '../../../../components/i18n';
 import { SubscriptionFocus } from '../../../../components/Subscription';

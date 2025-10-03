@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import { PrecisionManufacturingOutlined } from '@mui/icons-material';
-import { StixCoreObjectEnrollPlaybookLinesQuery$data } from '@components/common/stix_core_objects/__generated__/StixCoreObjectEnrollPlaybookLinesQuery.graphql';
+import { StixCoreObjectEnrollPlaybookLinesQuery$data } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectEnrollPlaybookLinesQuery.graphql';
 import EETooltip from '../entreprise_edition/EETooltip';
 import Drawer from '../drawer/Drawer';
 import { QueryRenderer } from '../../../../relay/environment';

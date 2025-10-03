@@ -15,7 +15,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React from 'react';
 import { graphql } from 'react-relay';
-import { PirRelationshipsMultiAreaChartTimeSeriesQuery$data } from '@components/pir/__generated__/PirRelationshipsMultiAreaChartTimeSeriesQuery.graphql';
+import { PirRelationshipsMultiAreaChartTimeSeriesQuery$data } from '@private/components/pir/__generated__/PirRelationshipsMultiAreaChartTimeSeriesQuery.graphql';
 import { QueryRenderer } from '../../../relay/environment';
 import { useFormatter } from '../../../components/i18n';
 import { monthsAgo, now } from '../../../utils/Time';

@@ -13,10 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 import { AutoFix } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
-import { EntityStixSightingRelationshipLine_node$key } from '@components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipLine_node.graphql';
+import { EntityStixSightingRelationshipLine_node$key } from '@private/components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipLine_node.graphql';
 import {
   EntityStixSightingRelationshipsLinesPaginationQuery$variables,
-} from '@components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipsLinesPaginationQuery.graphql';
+} from '@private/components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipsLinesPaginationQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
 import ItemConfidence from '../../../../components/ItemConfidence';

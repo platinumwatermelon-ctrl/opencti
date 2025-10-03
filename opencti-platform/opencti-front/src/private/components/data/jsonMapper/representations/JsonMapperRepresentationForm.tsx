@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { FieldProps } from 'formik';
-import JsonMapperRepresentationAttributesForm from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
+import JsonMapperRepresentationAttributesForm from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
 import MUIAutocomplete from '@mui/material/Autocomplete';
 import { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
@@ -11,14 +11,14 @@ import { DeleteOutlined, ExpandMoreOutlined } from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import classNames from 'classnames';
-import { representationLabel } from '@components/data/jsonMapper/representations/RepresentationUtils';
+import { representationLabel } from '@private/components/data/jsonMapper/representations/RepresentationUtils';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import { JsonMapperRepresentationFormData } from '@components/data/jsonMapper/representations/Representation';
-import { JsonMapperRepresentationAttributeFormData } from '@components/data/jsonMapper/representations/attributes/Attribute';
+import { JsonMapperRepresentationFormData } from '@private/components/data/jsonMapper/representations/Representation';
+import { JsonMapperRepresentationAttributeFormData } from '@private/components/data/jsonMapper/representations/attributes/Attribute';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$data,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import { useFormatter } from '../../../../../components/i18n';
 import ItemIcon from '../../../../../components/ItemIcon';
 import type { Theme } from '../../../../../components/Theme';

@@ -3,7 +3,7 @@ import { AddOutlined, CancelOutlined } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
 import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
-import WidgetFilters from '@components/widgets/WidgetFilters';
+import WidgetFilters from '@private/components/widgets/WidgetFilters';
 import Button from '@mui/material/Button';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
-import { SecurityPlatformDetails_securityPlatform$data } from '@components/entities/securityPlatforms/__generated__/SecurityPlatformDetails_securityPlatform.graphql';
+import { SecurityPlatformDetails_securityPlatform$data } from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformDetails_securityPlatform.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';

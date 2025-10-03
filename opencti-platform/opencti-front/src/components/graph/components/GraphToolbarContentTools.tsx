@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { DeleteOutlined, LinkOutlined, VisibilityOutlined } from '@mui/icons-material';
 import { GraphQLTaggedNode } from 'relay-runtime/lib/query/RelayModernGraphQLTag';
-import StixCoreRelationshipCreation from '@components/common/stix_core_relationships/StixCoreRelationshipCreation';
-import StixNestedRefRelationshipCreationFromKnowledgeGraph from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromKnowledgeGraph';
-import StixNestedRefRelationshipCreation from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreation';
-import StixSightingRelationshipCreation from '@components/events/stix_sighting_relationships/StixSightingRelationshipCreation';
-import InvestigationAddStixCoreObjects from '@components/workspaces/investigations/InvestigationAddStixCoreObjects';
+import StixCoreRelationshipCreation from '@private/components/common/stix_core_relationships/StixCoreRelationshipCreation';
+import StixNestedRefRelationshipCreationFromKnowledgeGraph from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromKnowledgeGraph';
+import StixNestedRefRelationshipCreation from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreation';
+import StixSightingRelationshipCreation from '@private/components/events/stix_sighting_relationships/StixSightingRelationshipCreation';
+import InvestigationAddStixCoreObjects from '@private/components/workspaces/investigations/InvestigationAddStixCoreObjects';
 import GraphToolbarEditObject from './GraphToolbarEditObject';
 import GraphToolbarItem from './GraphToolbarItem';
 import { useFormatter } from '../../i18n';

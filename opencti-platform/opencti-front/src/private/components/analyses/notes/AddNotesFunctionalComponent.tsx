@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Button, Dialog, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton } from '@mui/material';
 import { Add } from '@mui/icons-material';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from 'src/components/i18n';
 import SearchInput from 'src/components/SearchInput';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { QueryRenderer } from 'src/relay/environment';
 import { insertNode } from 'src/utils/store';
-import { NotesLinesPaginationQuery$variables } from '@components/analyses/__generated__/NotesLinesPaginationQuery.graphql';
+import { NotesLinesPaginationQuery$variables } from '@private/components/analyses/__generated__/NotesLinesPaginationQuery.graphql';
 import AddNotesLines, { addNotesLinesQuery } from './AddNotesLines';
 import { AddNotesLinesQuery$data } from './__generated__/AddNotesLinesQuery.graphql';
 import { NoteCreationForm } from './NoteCreation';

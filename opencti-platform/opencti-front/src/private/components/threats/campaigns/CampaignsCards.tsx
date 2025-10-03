@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import { StixDomainObjectBookmarksQuery$data } from '@components/common/stix_domain_objects/__generated__/StixDomainObjectBookmarksQuery.graphql';
-import { CampaignsCardsPaginationQuery } from '@components/threats/campaigns/__generated__/CampaignsCardsPaginationQuery.graphql';
-import { CampaignsCards_data$key } from '@components/threats/campaigns/__generated__/CampaignsCards_data.graphql';
+import { StixDomainObjectBookmarksQuery$data } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectBookmarksQuery.graphql';
+import { CampaignsCardsPaginationQuery } from '@private/components/threats/campaigns/__generated__/CampaignsCardsPaginationQuery.graphql';
+import { CampaignsCards_data$key } from '@private/components/threats/campaigns/__generated__/CampaignsCards_data.graphql';
 import ListCardsContent from '../../../../components/list_cards/ListCardsContent';
 import CampaignCard from './CampaignCard';
 import { GenericAttackCardDummy } from '../../common/cards/GenericAttackCard';

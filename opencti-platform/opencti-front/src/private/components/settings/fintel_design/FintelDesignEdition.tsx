@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import FintelDesignEditionOverview from '@components/settings/fintel_design/FintelDesignEditionOverview';
-import Drawer from '@components/common/drawer/Drawer';
+import FintelDesignEditionOverview from '@private/components/settings/fintel_design/FintelDesignEditionOverview';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { graphql } from 'react-relay';
-import { FintelDesignEditionFocusMutation } from '@components/settings/fintel_design/__generated__/FintelDesignEditionFocusMutation.graphql';
+import { FintelDesignEditionFocusMutation } from '@private/components/settings/fintel_design/__generated__/FintelDesignEditionFocusMutation.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { useFormatter } from '../../../../components/i18n';
 import { FintelDesignEditionOverview_fintelDesign$key } from './__generated__/FintelDesignEditionOverview_fintelDesign.graphql';

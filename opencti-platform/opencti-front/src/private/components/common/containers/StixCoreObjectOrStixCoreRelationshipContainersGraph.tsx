@@ -1,9 +1,9 @@
 import { graphql, useFragment } from 'react-relay';
 import React, { CSSProperties, useMemo, useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { useSettingsMessagesBannerHeight } from '@components/settings/settings_messages/SettingsMessagesBanner';
-import { stixDomainObjectMutationFieldPatch } from '@components/common/stix_domain_objects/StixDomainObjectEditionOverview';
-import { StixDomainObjectEditionOverviewFieldPatchMutation } from '@components/common/stix_domain_objects/__generated__/StixDomainObjectEditionOverviewFieldPatchMutation.graphql';
+import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
+import { stixDomainObjectMutationFieldPatch } from '@private/components/common/stix_domain_objects/StixDomainObjectEditionOverview';
+import { StixDomainObjectEditionOverviewFieldPatchMutation } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectEditionOverviewFieldPatchMutation.graphql';
 import Alert from '@mui/material/Alert';
 import { GraphProvider } from '../../../../components/graph/GraphContext';
 import { getObjectsToParse } from '../../../../components/graph/utils/graphUtils';

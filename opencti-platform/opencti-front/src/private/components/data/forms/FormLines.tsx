@@ -1,8 +1,8 @@
 import { graphql, PreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import { FormLinesPaginationQuery, FormLinesPaginationQuery$variables } from '@components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
-import { FormLines_data$key } from '@components/data/forms/__generated__/FormLines_data.graphql';
-import { FormLineComponent, FormLineDummy } from '@components/data/forms/FormLine';
+import { FormLinesPaginationQuery, FormLinesPaginationQuery$variables } from '@private/components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
+import { FormLines_data$key } from '@private/components/data/forms/__generated__/FormLines_data.graphql';
+import { FormLineComponent, FormLineDummy } from '@private/components/data/forms/FormLine';
 import { UseLocalStorageHelpers } from '../../../../utils/hooks/useLocalStorage';
 import { DataColumns } from '../../../../components/list_lines';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';

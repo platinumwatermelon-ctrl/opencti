@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import { StixRelationshipsDonutDistributionQuery$data } from '@components/common/stix_relationships/__generated__/StixRelationshipsDonutDistributionQuery.graphql';
+import { StixRelationshipsDonutDistributionQuery$data } from '@private/components/common/stix_relationships/__generated__/StixRelationshipsDonutDistributionQuery.graphql';
 import { QueryRenderer } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import { buildFiltersAndOptionsForWidgets } from '../../../../utils/filters/filtersUtils';

@@ -1,8 +1,8 @@
 import { graphql, commitMutation } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import SecurityPlatformEditionContainer from '@components/entities/securityPlatforms/SecurityPlatformEditionContainer';
-import { securityPlatformEditionOverviewFocus } from '@components/entities/securityPlatforms/SecurityPlatformEditionOverview';
-import { SecurityPlatformEditionContainerQuery$data } from '@components/entities/securityPlatforms/__generated__/SecurityPlatformEditionContainerQuery.graphql';
+import SecurityPlatformEditionContainer from '@private/components/entities/securityPlatforms/SecurityPlatformEditionContainer';
+import { securityPlatformEditionOverviewFocus } from '@private/components/entities/securityPlatforms/SecurityPlatformEditionOverview';
+import { SecurityPlatformEditionContainerQuery$data } from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformEditionContainerQuery.graphql';
 import { environment, QueryRenderer } from '../../../../relay/environment';
 import EditEntityControlledDial from '../../../../components/EditEntityControlledDial';
 import Loader, { LoaderVariant } from '../../../../components/Loader';

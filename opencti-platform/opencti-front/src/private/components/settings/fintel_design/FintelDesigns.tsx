@@ -1,14 +1,14 @@
 import { graphql } from 'react-relay';
 import React from 'react';
-import CustomizationMenu from '@components/settings/CustomizationMenu';
+import CustomizationMenu from '@private/components/settings/CustomizationMenu';
 import {
   FintelDesignsLinesPaginationQuery,
   FintelDesignsLinesPaginationQuery$variables,
-} from '@components/settings/fintel_design/__generated__/FintelDesignsLinesPaginationQuery.graphql';
-import FintelDesignCreation from '@components/settings/fintel_design/FintelDesignCreation';
-import { FintelDesignsLines_data$data } from '@components/settings/fintel_design/__generated__/FintelDesignsLines_data.graphql';
-import { FintelDesignsLine_node$data } from '@components/settings/fintel_design/__generated__/FintelDesignsLine_node.graphql';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
+} from '@private/components/settings/fintel_design/__generated__/FintelDesignsLinesPaginationQuery.graphql';
+import FintelDesignCreation from '@private/components/settings/fintel_design/FintelDesignCreation';
+import { FintelDesignsLines_data$data } from '@private/components/settings/fintel_design/__generated__/FintelDesignsLines_data.graphql';
+import { FintelDesignsLine_node$data } from '@private/components/settings/fintel_design/__generated__/FintelDesignsLine_node.graphql';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import { useFormatter } from '../../../../components/i18n';
 import { emptyFilterGroup, useBuildEntityTypeBasedFilterContext } from '../../../../utils/filters/filtersUtils';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';

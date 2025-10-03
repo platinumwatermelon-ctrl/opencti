@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
-import StixDomainObjectKnowledge from '@components/common/stix_domain_objects/StixDomainObjectKnowledge';
-import { SecurityPlatformKnowledge_securityPlatform$key } from '@components/entities/securityPlatforms/__generated__/SecurityPlatformKnowledge_securityPlatform.graphql';
+import StixDomainObjectKnowledge from '@private/components/common/stix_domain_objects/StixDomainObjectKnowledge';
+import { SecurityPlatformKnowledge_securityPlatform$key } from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformKnowledge_securityPlatform.graphql';
 import EntityStixCoreRelationships from '../../common/stix_core_relationships/EntityStixCoreRelationships';
 import StixCoreRelationship from '../../common/stix_core_relationships/StixCoreRelationship';
 import StixDomainObjectAttackPatterns from '../../common/stix_domain_objects/StixDomainObjectAttackPatterns';

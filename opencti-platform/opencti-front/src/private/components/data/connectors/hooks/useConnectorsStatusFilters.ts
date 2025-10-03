@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ConnectorsStatusFilterState } from '@components/data/connectors/ConnectorsStatusFilters';
-import { ConnectorsListQuery } from '@components/data/connectors/__generated__/ConnectorsListQuery.graphql';
-import { ConnectorsStateQuery } from '@components/data/connectors/__generated__/ConnectorsStateQuery.graphql';
+import { ConnectorsStatusFilterState } from '@private/components/data/connectors/ConnectorsStatusFilters';
+import { ConnectorsListQuery } from '@private/components/data/connectors/__generated__/ConnectorsListQuery.graphql';
+import { ConnectorsStateQuery } from '@private/components/data/connectors/__generated__/ConnectorsStateQuery.graphql';
 
 type Connector =
   NonNullable<ConnectorsListQuery['response']['connectors']>[number]

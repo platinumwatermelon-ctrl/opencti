@@ -3,10 +3,10 @@ import { graphql } from 'react-relay';
 import {
   RelationshipsStixCoreRelationshipsLinesPaginationQuery,
   RelationshipsStixCoreRelationshipsLinesPaginationQuery$variables,
-} from '@components/data/__generated__/RelationshipsStixCoreRelationshipsLinesPaginationQuery.graphql';
-import { RelationshipsStixCoreRelationshipsLines_data$data } from '@components/data/__generated__/RelationshipsStixCoreRelationshipsLines_data.graphql';
+} from '@private/components/data/__generated__/RelationshipsStixCoreRelationshipsLinesPaginationQuery.graphql';
+import { RelationshipsStixCoreRelationshipsLines_data$data } from '@private/components/data/__generated__/RelationshipsStixCoreRelationshipsLines_data.graphql';
 import { AutoFix } from 'mdi-material-ui';
-import { getDraftModeColor } from '@components/common/draft/DraftChip';
+import { getDraftModeColor } from '@private/components/common/draft/DraftChip';
 import { useTheme } from '@mui/styles';
 import useAuth from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

@@ -15,7 +15,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { PirEditionMutation } from './__generated__/PirEditionMutation.graphql';
 import { PirEditionFragment$key } from './__generated__/PirEditionFragment.graphql';
 import { useFormatter } from '../../../../components/i18n';

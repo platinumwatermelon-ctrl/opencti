@@ -1,6 +1,6 @@
 import React from 'react';
-import { IndividualsLinesPaginationQuery, IndividualsLinesPaginationQuery$variables } from '@components/entities/individuals/__generated__/IndividualsLinesPaginationQuery.graphql';
-import { IndividualLineDummy } from '@components/entities/individuals/IndividualLine';
+import { IndividualsLinesPaginationQuery, IndividualsLinesPaginationQuery$variables } from '@private/components/entities/individuals/__generated__/IndividualsLinesPaginationQuery.graphql';
+import { IndividualLineDummy } from '@private/components/entities/individuals/IndividualLine';
 import ListLines from '../../../components/list_lines/ListLines';
 import IndividualsLines, { individualsLinesQuery } from './individuals/IndividualsLines';
 import IndividualCreation from './individuals/IndividualCreation';

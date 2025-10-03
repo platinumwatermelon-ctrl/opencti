@@ -5,7 +5,7 @@ import { useTheme } from '@mui/styles';
 import InputLabel from '@mui/material/InputLabel';
 import { CloseOutlined, FullscreenOutlined } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
-import TextFieldAskAI from '@components/common/form/TextFieldAskAI';
+import TextFieldAskAI from '@private/components/common/form/TextFieldAskAI';
 import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';
 import FormHelperText from '@mui/material/FormHelperText';

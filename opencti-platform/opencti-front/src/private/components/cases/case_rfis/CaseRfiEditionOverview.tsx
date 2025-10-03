@@ -3,7 +3,7 @@ import { FormikConfig } from 'formik/dist/types';
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import * as Yup from 'yup';
-import { GenericContext } from '@components/common/model/GenericContextModel';
+import { GenericContext } from '@private/components/common/model/GenericContextModel';
 import DateTimePickerField from '../../../../components/DateTimePickerField';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownField from '../../../../components/fields/MarkdownField';

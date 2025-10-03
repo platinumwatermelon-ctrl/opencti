@@ -5,7 +5,7 @@ import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import {
   EntityStixCoreRelationshipsIndicatorsContextualViewLinesQuery$variables,
-} from '@components/common/stix_core_relationships/views/indicators/__generated__/EntityStixCoreRelationshipsIndicatorsContextualViewLinesQuery.graphql';
+} from '@private/components/common/stix_core_relationships/views/indicators/__generated__/EntityStixCoreRelationshipsIndicatorsContextualViewLinesQuery.graphql';
 import ItemPatternType from '../../../../../../components/ItemPatternType';
 import EntityStixCoreRelationshipsIndicatorsContextualViewLines from './EntityStixCoreRelationshipsIndicatorsContextualViewLines';
 import { DataColumns, PaginationOptions } from '../../../../../../components/list_lines';

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { WorkspacesLinesPaginationQuery, WorkspacesLinesPaginationQuery$variables } from '@components/workspaces/__generated__/WorkspacesLinesPaginationQuery.graphql';
-import { WorkspacesLines_data$data } from '@components/workspaces/__generated__/WorkspacesLines_data.graphql';
-import WorkspacePopover from '@components/workspaces/WorkspacePopover';
+import { WorkspacesLinesPaginationQuery, WorkspacesLinesPaginationQuery$variables } from '@private/components/workspaces/__generated__/WorkspacesLinesPaginationQuery.graphql';
+import { WorkspacesLines_data$data } from '@private/components/workspaces/__generated__/WorkspacesLines_data.graphql';
+import WorkspacePopover from '@private/components/workspaces/WorkspacePopover';
 import WorkspaceCreation from './WorkspaceCreation';
 import Security from '../../../utils/Security';
 import { EXPLORE, EXPLORE_EXUPDATE, INVESTIGATION_INUPDATE } from '../../../utils/hooks/useGranted';

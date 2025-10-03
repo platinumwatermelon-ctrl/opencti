@@ -1,16 +1,16 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { GenericAttackCardDummy } from '@components/common/cards/GenericAttackCard';
+import { GenericAttackCardDummy } from '@private/components/common/cards/GenericAttackCard';
 import {
   ThreatActorsGroupCardsPaginationQuery,
   ThreatActorsGroupCardsPaginationQuery$variables,
-} from '@components/threats/threat_actors_group/__generated__/ThreatActorsGroupCardsPaginationQuery.graphql';
-import { ThreatActorGroupCardFragment } from '@components/threats/threat_actors_group/ThreatActorGroupCard';
-import { ThreatActorsGroupCards_data$data } from '@components/threats/threat_actors_group/__generated__/ThreatActorsGroupCards_data.graphql';
+} from '@private/components/threats/threat_actors_group/__generated__/ThreatActorsGroupCardsPaginationQuery.graphql';
+import { ThreatActorGroupCardFragment } from '@private/components/threats/threat_actors_group/ThreatActorGroupCard';
+import { ThreatActorsGroupCards_data$data } from '@private/components/threats/threat_actors_group/__generated__/ThreatActorsGroupCards_data.graphql';
 import Tooltip from '@mui/material/Tooltip';
 import { ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
 import ToggleButton from '@mui/material/ToggleButton';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import ListCards from '../../../components/list_cards/ListCards';
 import ThreatActorsGroupCards, { ThreatActorsGroupCardsFragment, threatActorsGroupCardsQuery } from './threat_actors_group/ThreatActorsGroupCards';
 import ThreatActorGroupCreation from './threat_actors_group/ThreatActorGroupCreation';

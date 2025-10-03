@@ -4,8 +4,8 @@ import { graphql } from 'react-relay';
 import {
   SearchStixCoreObjectsLinesPaginationQuery,
   SearchStixCoreObjectsLinesPaginationQuery$variables,
-} from '@components/__generated__/SearchStixCoreObjectsLinesPaginationQuery.graphql';
-import { SearchStixCoreObjectsLines_data$data } from '@components/__generated__/SearchStixCoreObjectsLines_data.graphql';
+} from '@private/components/__generated__/SearchStixCoreObjectsLinesPaginationQuery.graphql';
+import { SearchStixCoreObjectsLines_data$data } from '@private/components/__generated__/SearchStixCoreObjectsLines_data.graphql';
 import { usePaginationLocalStorage } from '../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../utils/hooks/useQueryLoading';
 import useAuth from '../../utils/hooks/useAuth';

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
-import { TasksEditionOverview_task$key } from '@components/cases/tasks/__generated__/TasksEditionOverview_task.graphql';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
+import { TasksEditionOverview_task$key } from '@private/components/cases/tasks/__generated__/TasksEditionOverview_task.graphql';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';

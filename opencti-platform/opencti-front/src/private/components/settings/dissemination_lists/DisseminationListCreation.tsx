@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { FormikConfig } from 'formik';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
-import { formatEmailsForApi } from '@components/settings/dissemination_lists/DisseminationListUtils';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
+import { formatEmailsForApi } from '@private/components/settings/dissemination_lists/DisseminationListUtils';
 import { graphql } from 'react-relay';
-import { DisseminationListsLinesPaginationQuery$variables } from '@components/settings/dissemination_lists/__generated__/DisseminationListsLinesPaginationQuery.graphql';
-import DisseminationListForm from '@components/settings/dissemination_lists/DisseminationListForm';
+import { DisseminationListsLinesPaginationQuery$variables } from '@private/components/settings/dissemination_lists/__generated__/DisseminationListsLinesPaginationQuery.graphql';
+import DisseminationListForm from '@private/components/settings/dissemination_lists/DisseminationListForm';
 import { useFormatter } from '../../../../components/i18n';
 import { insertNode } from '../../../../utils/store';
 import { handleErrorInForm } from '../../../../relay/environment';

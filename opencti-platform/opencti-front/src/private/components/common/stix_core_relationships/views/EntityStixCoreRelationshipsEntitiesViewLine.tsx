@@ -8,7 +8,7 @@ import { KeyboardArrowRight } from '@mui/icons-material';
 import ListItem from '@mui/material/ListItem';
 import Skeleton from '@mui/material/Skeleton';
 import { graphql, useFragment } from 'react-relay';
-import { DraftChip } from '@components/common/draft/DraftChip';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
 import { ListItemButton } from '@mui/material';
 import ItemMarkings from '../../../../../components/ItemMarkings';
 import StixCoreObjectLabels from '../../stix_core_objects/StixCoreObjectLabels';

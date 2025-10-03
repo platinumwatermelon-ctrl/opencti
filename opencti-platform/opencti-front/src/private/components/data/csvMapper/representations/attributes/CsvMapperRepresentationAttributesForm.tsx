@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import CsvMapperRepresentationAttributeForm from '@components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributeForm';
-import { getAttributeLabel } from '@components/data/csvMapper/representations/attributes/AttributeUtils';
+import CsvMapperRepresentationAttributeForm from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributeForm';
+import { getAttributeLabel } from '@private/components/data/csvMapper/representations/attributes/AttributeUtils';
 import { Field } from 'formik';
-import CsvMapperRepresentationAttributeRefForm from '@components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributeRefForm';
-import { CsvMapperRepresentationFormData } from '@components/data/csvMapper/representations/Representation';
+import CsvMapperRepresentationAttributeRefForm from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributeRefForm';
+import { CsvMapperRepresentationFormData } from '@private/components/data/csvMapper/representations/Representation';
 import {
   CsvMapperRepresentationAttributesForm_allSchemaAttributes$key,
-} from '@components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import { useCsvMappersData } from '../../csvMappers.data';
 import { useFormatter } from '../../../../../../components/i18n';
 

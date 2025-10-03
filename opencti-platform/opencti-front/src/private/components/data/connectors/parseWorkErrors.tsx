@@ -1,5 +1,5 @@
 import { fetchQuery, graphql } from 'react-relay';
-import { parseWorkErrorsQuery$data } from '@components/data/connectors/__generated__/parseWorkErrorsQuery.graphql';
+import { parseWorkErrorsQuery$data } from '@private/components/data/connectors/__generated__/parseWorkErrorsQuery.graphql';
 import JSON5 from 'json5';
 import { WorkMessages } from './ConnectorWorks';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';

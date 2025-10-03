@@ -1,6 +1,6 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import Drawer, { DrawerVariant } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerVariant } from '@private/components/common/drawer/Drawer';
 import FormEdition from './FormEdition';
 import { FormEditionContainerQuery } from './__generated__/FormEditionContainerQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';

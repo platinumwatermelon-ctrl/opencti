@@ -7,7 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { CogOutline } from 'mdi-material-ui';
 import IconButton from '@mui/material/IconButton';
 import { Badge } from '@mui/material';
-import { CsvMapperRepresentationAttributeFormData } from '@components/data/csvMapper/representations/attributes/Attribute';
+import { CsvMapperRepresentationAttributeFormData } from '@private/components/data/csvMapper/representations/attributes/Attribute';
 import { useFormatter } from '../../../../../../components/i18n';
 
 interface CsvMapperRepresentationDialogOptionProps {

@@ -1,9 +1,9 @@
-import { JsonMapperEdit, JsonMapperFormData } from '@components/data/jsonMapper/JsonMapper';
-import { formDataToJsonMapperRepresentation, jsonMapperRepresentationToFormData } from '@components/data/jsonMapper/representations/RepresentationUtils';
+import { JsonMapperEdit, JsonMapperFormData } from '@private/components/data/jsonMapper/JsonMapper';
+import { formDataToJsonMapperRepresentation, jsonMapperRepresentationToFormData } from '@private/components/data/jsonMapper/representations/RepresentationUtils';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$data,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
-import { JsonMapperEditionContainerFragment_jsonMapper$data } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+import { JsonMapperEditionContainerFragment_jsonMapper$data } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
 import { isNotEmptyField } from '../../../../utils/utils';
 import { useComputeDefaultValues } from '../../../../utils/hooks/useDefaultValues';
 

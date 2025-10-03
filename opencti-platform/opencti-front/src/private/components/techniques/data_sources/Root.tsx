@@ -9,7 +9,7 @@ import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import StixCoreObjectContentRoot from '@components/common/stix_core_objects/StixCoreObjectContentRoot';
+import StixCoreObjectContentRoot from '@private/components/common/stix_core_objects/StixCoreObjectContentRoot';
 import StixDomainObjectHeader from '../../common/stix_domain_objects/StixDomainObjectHeader';
 import FileManager from '../../common/files/FileManager';
 import StixCoreObjectHistory from '../../common/stix_core_objects/StixCoreObjectHistory';

@@ -3,7 +3,7 @@ import { Autocomplete, Stack, TextField } from '@mui/material';
 import { FilterListOffOutlined } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import { getConnectorMetadata, IngestionConnectorType } from '@components/data/IngestionCatalog/utils/ingestionConnectorTypeMetadata';
+import { getConnectorMetadata, IngestionConnectorType } from '@private/components/data/IngestionCatalog/utils/ingestionConnectorTypeMetadata';
 import { useTheme } from '@mui/material/styles';
 import { useFormatter } from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';

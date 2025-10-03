@@ -2,7 +2,7 @@ import MoreVert from '@mui/icons-material/MoreVert';
 import React, { UIEvent, useState } from 'react';
 import { IconButton, Menu, MenuItem, PopoverProps } from '@mui/material';
 import Button from '@mui/material/Button';
-import useEmailTemplateDelete from '@components/settings/email_template/useEmailTemplateDelete';
+import useEmailTemplateDelete from '@private/components/settings/email_template/useEmailTemplateDelete';
 import { useFormatter } from '../../../../components/i18n';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import stopEvent from '../../../../utils/domEvent';

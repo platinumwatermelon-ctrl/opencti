@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Chart from '@components/common/charts/Chart';
+import Chart from '@private/components/common/charts/Chart';
 import { ApexOptions } from 'apexcharts';
 import moment from 'moment';
 import { useTheme } from '@mui/styles';

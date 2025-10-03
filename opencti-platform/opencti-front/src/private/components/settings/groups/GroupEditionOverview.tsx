@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import * as Yup from 'yup';
 import { ObjectShape } from 'yup';
-import { GenericContext } from '@components/common/model/GenericContextModel';
+import { GenericContext } from '@private/components/common/model/GenericContextModel';
 import FormHelperText from '@mui/material/FormHelperText';
 import { useTheme } from '@mui/styles';
 import { InformationOutline } from 'mdi-material-ui';

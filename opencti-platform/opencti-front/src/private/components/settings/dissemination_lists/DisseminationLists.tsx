@@ -1,14 +1,14 @@
 import React from 'react';
-import AccessesMenu from '@components/settings/AccessesMenu';
+import AccessesMenu from '@private/components/settings/AccessesMenu';
 import { graphql } from 'react-relay';
 import {
   DisseminationListsLinesPaginationQuery,
   DisseminationListsLinesPaginationQuery$variables,
-} from '@components/settings/dissemination_lists/__generated__/DisseminationListsLinesPaginationQuery.graphql';
-import { DisseminationListsLine_node$data } from '@components/settings/dissemination_lists/__generated__/DisseminationListsLine_node.graphql';
-import DisseminationListCreation from '@components/settings/dissemination_lists/DisseminationListCreation';
-import DisseminationListPopover from '@components/settings/dissemination_lists/DisseminationListPopover';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
+} from '@private/components/settings/dissemination_lists/__generated__/DisseminationListsLinesPaginationQuery.graphql';
+import { DisseminationListsLine_node$data } from '@private/components/settings/dissemination_lists/__generated__/DisseminationListsLine_node.graphql';
+import DisseminationListCreation from '@private/components/settings/dissemination_lists/DisseminationListCreation';
+import DisseminationListPopover from '@private/components/settings/dissemination_lists/DisseminationListPopover';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import DataTable from '../../../../components/dataGrid/DataTable';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import { useFormatter } from '../../../../components/i18n';

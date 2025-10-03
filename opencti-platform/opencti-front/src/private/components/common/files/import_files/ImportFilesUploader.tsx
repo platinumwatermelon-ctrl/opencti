@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import ImportFilesDropzone from '@components/common/files/import_files/ImportFilesDropzone';
-import ImportFilesFreeText from '@components/common/files/import_files/ImportFilesFreeText';
-import ImportFilesList from '@components/common/files/import_files/ImportFilesList';
-import { useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
-import { ImportFilesContextQuery$data } from '@components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
+import ImportFilesDropzone from '@private/components/common/files/import_files/ImportFilesDropzone';
+import ImportFilesFreeText from '@private/components/common/files/import_files/ImportFilesFreeText';
+import ImportFilesList from '@private/components/common/files/import_files/ImportFilesList';
+import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
+import { ImportFilesContextQuery$data } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
 
 export type FileWithConnectors = {
   file: File;

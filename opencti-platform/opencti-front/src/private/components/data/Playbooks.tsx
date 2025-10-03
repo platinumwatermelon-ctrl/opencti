@@ -14,10 +14,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React, { FunctionComponent } from 'react';
-import ProcessingMenu from '@components/data/ProcessingMenu';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
+import ProcessingMenu from '@private/components/data/ProcessingMenu';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import { graphql } from 'react-relay';
-import PlaybookPopover from '@components/data/playbooks/PlaybookPopover';
+import PlaybookPopover from '@private/components/data/playbooks/PlaybookPopover';
 import { PlaybooksLines_data$data } from './__generated__/PlaybooksLines_data.graphql';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import Security from '../../../utils/Security';

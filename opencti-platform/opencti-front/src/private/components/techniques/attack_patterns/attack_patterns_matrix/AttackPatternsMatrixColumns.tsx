@@ -3,15 +3,15 @@ import { Box, ListItemIcon, ListItemText, Menu, MenuItem, Typography } from '@mu
 import { AddCircleOutlineOutlined, InfoOutlined } from '@mui/icons-material';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { Link } from 'react-router-dom';
-import { AttackPatternsMatrixProps, attackPatternsMatrixQuery } from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
-import AccordionAttackPattern from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixAccordion';
-import AttackPatternsMatrixBadge from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixBadge';
-import AttackPatternsMatrixColumnsElement from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumsElement';
-import { AttackPatternsMatrixQuery } from '@components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
+import { AttackPatternsMatrixProps, attackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
+import AccordionAttackPattern from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixAccordion';
+import AttackPatternsMatrixBadge from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixBadge';
+import AttackPatternsMatrixColumnsElement from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumsElement';
+import { AttackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
 import {
   AttackPatternsMatrixColumns_data$data,
   AttackPatternsMatrixColumns_data$key,
-} from '@components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixColumns_data.graphql';
+} from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixColumns_data.graphql';
 import { truncate } from '../../../../../utils/String';
 import { MESSAGING$ } from '../../../../../relay/environment';
 import { UserContext } from '../../../../../utils/hooks/useAuth';

@@ -22,7 +22,7 @@ import { PopoverProps } from '@mui/material/Popover';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { ListItem, ListItemButton } from '@mui/material';
-import { getDraftModeColor } from '@components/common/draft/DraftChip';
+import { getDraftModeColor } from '@private/components/common/draft/DraftChip';
 import { useTheme } from '@mui/styles';
 import type { OverridableStringUnion } from '@mui/types';
 import DialogTitle from '@mui/material/DialogTitle';

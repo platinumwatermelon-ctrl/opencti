@@ -5,7 +5,7 @@ import { Theme } from '@mui/material/styles/createTheme';
 import IconButton from '@mui/material/IconButton';
 import { UploadFileOutlined } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip';
-import ImportFilesDialog from '@components/common/files/import_files/ImportFilesDialog';
+import ImportFilesDialog from '@private/components/common/files/import_files/ImportFilesDialog';
 import { useFormatter } from './i18n';
 
 interface UploadImportProps {

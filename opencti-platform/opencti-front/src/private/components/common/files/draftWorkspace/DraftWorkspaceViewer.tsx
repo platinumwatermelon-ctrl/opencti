@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
-import Drafts from '@components/drafts/Drafts';
+import Drafts from '@private/components/drafts/Drafts';
 import { KNOWLEDGE_KNASKIMPORT } from '../../../../../utils/hooks/useGranted';
 import Security from '../../../../../utils/Security';
 import useDraftContext from '../../../../../utils/hooks/useDraftContext';

@@ -15,8 +15,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { boundaryWrapper } from '@components/Error';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
+import { boundaryWrapper } from '@private/components/Error';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import Pirs from './Pirs';
 import Pir from './Pir';
 import Loader from '../../../components/Loader';

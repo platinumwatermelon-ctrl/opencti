@@ -12,9 +12,9 @@ import IconButton from '@mui/material/IconButton';
 import {
   ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity$data,
   ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity$key,
-} from '@components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity.graphql';
+} from '@private/components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity.graphql';
 import { Theme } from '@mui/material/styles/createTheme';
-import { DraftChip } from '@components/common/draft/DraftChip';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
 import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';

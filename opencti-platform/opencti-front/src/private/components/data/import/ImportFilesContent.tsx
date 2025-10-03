@@ -1,11 +1,11 @@
 import { graphql } from 'react-relay';
 import React, { useState } from 'react';
-import ImportMenu from '@components/data/ImportMenu';
-import { ImportFilesContentQuery, ImportFilesContentQuery$variables } from '@components/data/import/__generated__/ImportFilesContentQuery.graphql';
-import { ImportFilesContentLines_data$data } from '@components/data/import/__generated__/ImportFilesContentLines_data.graphql';
-import { ImportFilesContentFileLine_file$data } from '@components/data/import/__generated__/ImportFilesContentFileLine_file.graphql';
-import ImportActionsPopover from '@components/common/files/ImportActionsPopover';
-import ImportFilesDialog from '@components/common/files/import_files/ImportFilesDialog';
+import ImportMenu from '@private/components/data/ImportMenu';
+import { ImportFilesContentQuery, ImportFilesContentQuery$variables } from '@private/components/data/import/__generated__/ImportFilesContentQuery.graphql';
+import { ImportFilesContentLines_data$data } from '@private/components/data/import/__generated__/ImportFilesContentLines_data.graphql';
+import { ImportFilesContentFileLine_file$data } from '@private/components/data/import/__generated__/ImportFilesContentFileLine_file.graphql';
+import ImportActionsPopover from '@private/components/common/files/ImportActionsPopover';
+import ImportFilesDialog from '@private/components/common/files/import_files/ImportFilesDialog';
 import { useFormatter } from '../../../../components/i18n';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { emptyFilterGroup, isFilterGroupNotEmpty, useRemoveIdAndIncorrectKeysFromFilterGroupObject } from '../../../../utils/filters/filtersUtils';

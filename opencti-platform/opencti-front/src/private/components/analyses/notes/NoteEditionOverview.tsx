@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { GenericContext } from '@components/common/model/GenericContextModel';
+import { GenericContext } from '@private/components/common/model/GenericContextModel';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownField from '../../../../components/fields/MarkdownField';
 import { SubscriptionFocus } from '../../../../components/Subscription';

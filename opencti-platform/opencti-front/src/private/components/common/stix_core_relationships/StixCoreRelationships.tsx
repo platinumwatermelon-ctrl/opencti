@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { AutoFix } from 'mdi-material-ui';
 import { graphql } from 'react-relay';
-import { getDraftModeColor } from '@components/common/draft/DraftChip';
+import { getDraftModeColor } from '@private/components/common/draft/DraftChip';
 import { useTheme } from '@mui/styles';
 import { StixCoreRelationshipsLinesPaginationQuery, StixCoreRelationshipsLinesPaginationQuery$variables } from './__generated__/StixCoreRelationshipsLinesPaginationQuery.graphql';
 import { StixCoreRelationshipsLines_data$data } from './__generated__/StixCoreRelationshipsLines_data.graphql';

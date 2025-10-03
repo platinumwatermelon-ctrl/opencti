@@ -1,5 +1,5 @@
 import React, { createContext, Dispatch, ReactNode, useContext, useEffect, useState } from 'react';
-import { FintelTemplateWidget } from '@components/settings/sub_types/fintel_templates/FintelTemplateWidgetsList';
+import { FintelTemplateWidget } from '@private/components/settings/sub_types/fintel_templates/FintelTemplateWidgetsList';
 import type { Widget, WidgetContext, WidgetDataSelection, WidgetParameters, WidgetPerspective } from '../../../utils/widget/widget';
 import { emptyFilterGroup, SELF_ID } from '../../../utils/filters/filtersUtils';
 import { getCurrentDataSelectionLimit } from '../../../utils/widget/widgetUtils';

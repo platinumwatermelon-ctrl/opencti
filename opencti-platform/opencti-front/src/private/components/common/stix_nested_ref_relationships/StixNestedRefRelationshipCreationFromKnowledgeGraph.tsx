@@ -1,14 +1,14 @@
-import { stixNestedRefRelationshipCreationResolveQuery } from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreation';
+import { stixNestedRefRelationshipCreationResolveQuery } from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreation';
 import IconButton from '@mui/material/IconButton';
 import { ReadMoreOutlined } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip';
 import React from 'react';
 import {
   StixNestedRefRelationshipCreationResolveQuery,
-} from '@components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipCreationResolveQuery.graphql';
+} from '@private/components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipCreationResolveQuery.graphql';
 import { NodeObject } from 'react-force-graph-2d';
 import StixNestedRefRelationshipCreationFromKnowledgeGraphContent
-  from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromKnowledgeGraphContent';
+  from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromKnowledgeGraphContent';
 import { useFormatter } from '../../../../components/i18n';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../../components/Loader';

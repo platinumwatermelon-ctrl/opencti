@@ -1,7 +1,7 @@
 import makeStyles from '@mui/styles/makeStyles';
 import React, { MouseEvent, useState } from 'react';
-import FeedbackCreation from '@components/cases/feedbacks/FeedbackCreation';
-import EnterpriseEditionAgreement from '@components/common/entreprise_edition/EnterpriseEditionAgreement';
+import FeedbackCreation from '@private/components/cases/feedbacks/FeedbackCreation';
+import EnterpriseEditionAgreement from '@private/components/common/entreprise_edition/EnterpriseEditionAgreement';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';

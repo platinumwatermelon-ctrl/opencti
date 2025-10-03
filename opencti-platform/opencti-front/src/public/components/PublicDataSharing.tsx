@@ -1,8 +1,8 @@
 import makeStyles from '@mui/styles/makeStyles';
 import { useTheme } from '@mui/styles';
-import PublicStreamLines from '@components/data/stream/PublicStreamLines';
-import PublicTaxiiLines from '@components/data/taxii/PublicTaxiiLines';
-import PublicFeedLines from '@components/data/feeds/PublicFeedLines';
+import PublicStreamLines from '@private/components/data/stream/PublicStreamLines';
+import PublicTaxiiLines from '@private/components/data/taxii/PublicTaxiiLines';
+import PublicFeedLines from '@private/components/data/feeds/PublicFeedLines';
 import React from 'react';
 import { loadQuery, usePreloadedQuery } from 'react-relay';
 import type { Theme } from '../../components/Theme';

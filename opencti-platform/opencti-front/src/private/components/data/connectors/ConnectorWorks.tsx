@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { interval } from 'rxjs';
 import makeStyles from '@mui/styles/makeStyles';
-import ConnectorWorkLine from '@components/data/connectors/ConnectorWorkLine';
+import ConnectorWorkLine from '@private/components/data/connectors/ConnectorWorkLine';
 import { ConnectorWorksQuery$variables } from './__generated__/ConnectorWorksQuery.graphql';
 import { ConnectorWorks_data$data } from './__generated__/ConnectorWorks_data.graphql';
 import { useFormatter } from '../../../../components/i18n';

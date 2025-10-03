@@ -1,6 +1,6 @@
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import ObjectMembersField, { OptionMember } from '@components/common/form/ObjectMembersField';
+import ObjectMembersField, { OptionMember } from '@private/components/common/form/ObjectMembersField';
 import FormHelperText from '@mui/material/FormHelperText';
 import { Field, FieldArray, FieldProps, Formik } from 'formik';
 import MenuItem from '@mui/material/MenuItem';
@@ -11,7 +11,7 @@ import List from '@mui/material/List';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { FormikHelpers } from 'formik/dist/types';
-import AuthorizedMembersFieldListItem from '@components/common/form/AuthorizedMembersFieldListItem';
+import AuthorizedMembersFieldListItem from '@private/components/common/form/AuthorizedMembersFieldListItem';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import SelectField from '../../../../components/fields/SelectField';
 import { useFormatter } from '../../../../components/i18n';

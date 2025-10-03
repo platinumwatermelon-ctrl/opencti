@@ -10,7 +10,7 @@ import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import useApiMutation from 'src/utils/hooks/useApiMutation';
 import { useTheme } from '@mui/material/styles';
 import { ExternalReferencesLinesPaginationQuery$variables } from '../__generated__/ExternalReferencesLinesPaginationQuery.graphql';

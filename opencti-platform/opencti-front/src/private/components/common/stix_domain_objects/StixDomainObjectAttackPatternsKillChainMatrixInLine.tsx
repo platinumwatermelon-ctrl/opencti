@@ -2,16 +2,16 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import {
   stixDomainObjectAttackPatternsKillChainContainerFragment,
   stixDomainObjectAttackPatternsKillChainContainerLineFragment,
-} from '@components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainContainer';
-import { stixDomainObjectAttackPatternsKillChainQuery } from '@components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChain';
+} from '@private/components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainContainer';
+import { stixDomainObjectAttackPatternsKillChainQuery } from '@private/components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChain';
 import {
   StixDomainObjectAttackPatternsKillChainQuery,
   StixDomainObjectAttackPatternsKillChainQuery$variables,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
 import {
   StixDomainObjectAttackPatternsKillChainContainer_data$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
-import StixCoreRelationshipCreationFromEntity from '@components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
+import StixCoreRelationshipCreationFromEntity from '@private/components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import DataTable from '../../../../components/dataGrid/DataTable';
 import { UsePreloadedPaginationFragment } from '../../../../utils/hooks/usePreloadedPaginationFragment';

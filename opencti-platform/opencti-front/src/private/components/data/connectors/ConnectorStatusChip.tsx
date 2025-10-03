@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConnectorsStateQuery$data } from '@components/data/connectors/__generated__/ConnectorsStateQuery.graphql';
+import { ConnectorsStateQuery$data } from '@private/components/data/connectors/__generated__/ConnectorsStateQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import ItemBoolean from '../../../../components/ItemBoolean';
 import { computeConnectorStatus } from '../../../../utils/Connector';

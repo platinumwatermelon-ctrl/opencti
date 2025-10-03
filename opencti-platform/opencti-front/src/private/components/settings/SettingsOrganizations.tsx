@@ -1,6 +1,6 @@
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { SettingsOrganizationLineDummy } from '@components/settings/organizations/SettingsOrganizationLine';
+import { SettingsOrganizationLineDummy } from '@private/components/settings/organizations/SettingsOrganizationLine';
 import ListLines from '../../../components/list_lines/ListLines';
 import SettingsOrganizationsLines, { settingsOrganizationsLinesQuery } from './organizations/SettingsOrganizationsLines';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';

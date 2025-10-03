@@ -1,4 +1,4 @@
-import { JsonMapperEditionContainerFragment_jsonMapper$data } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
+import { JsonMapperEditionContainerFragment_jsonMapper$data } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
 import { DefaultValues } from '../../../../../../utils/defaultValues';
 
 type Mutable<T> = { -readonly [P in keyof T]: T[P]; };

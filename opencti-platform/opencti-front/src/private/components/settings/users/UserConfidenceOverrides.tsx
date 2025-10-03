@@ -1,5 +1,5 @@
 import React from 'react';
-import { EffectiveConfidenceLevelSourceType } from '@components/settings/users/__generated__/User_user.graphql';
+import { EffectiveConfidenceLevelSourceType } from '@private/components/settings/users/__generated__/User_user.graphql';
 import { Link } from 'react-router-dom';
 import { useFormatter } from '../../../../components/i18n';
 

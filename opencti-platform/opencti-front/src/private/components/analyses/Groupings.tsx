@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { GroupingsLinesPaginationQuery, GroupingsLinesPaginationQuery$variables } from '@components/analyses/__generated__/GroupingsLinesPaginationQuery.graphql';
-import { GroupingsLines_data$data } from '@components/analyses/__generated__/GroupingsLines_data.graphql';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+import { GroupingsLinesPaginationQuery, GroupingsLinesPaginationQuery$variables } from '@private/components/analyses/__generated__/GroupingsLinesPaginationQuery.graphql';
+import { GroupingsLines_data$data } from '@private/components/analyses/__generated__/GroupingsLines_data.graphql';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import GroupingCreation from './groupings/GroupingCreation';
 import useAuth from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

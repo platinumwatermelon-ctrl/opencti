@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
-import StixDomainObjectAttackPatternsKillChainContainer from '@components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainContainer';
+import StixDomainObjectAttackPatternsKillChainContainer from '@private/components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainContainer';
 import {
   StixDomainObjectAttackPatternsKillChainQuery,
   StixDomainObjectAttackPatternsKillChainQuery$variables,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { stixDomainObjectAttackPatternsKillChainQuery } from './StixDomainObjectAttackPatternsKillChain';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';

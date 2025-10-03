@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Grid from '@mui/material/Grid';
-import { ThreatActorGroup_ThreatActorGroup$key } from '@components/threats/threat_actors_group/__generated__/ThreatActorGroup_ThreatActorGroup.graphql';
+import { ThreatActorGroup_ThreatActorGroup$key } from '@private/components/threats/threat_actors_group/__generated__/ThreatActorGroup_ThreatActorGroup.graphql';
 import ThreatActorGroupDetails from './ThreatActorGroupDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';

@@ -1,9 +1,9 @@
-import { SecurityPlatformsPaginationQuery$variables } from '@components/entities/__generated__/SecurityPlatformsPaginationQuery.graphql';
+import { SecurityPlatformsPaginationQuery$variables } from '@private/components/entities/__generated__/SecurityPlatformsPaginationQuery.graphql';
 import React, { FunctionComponent, useState } from 'react';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import SecurityPlatformCreationForm from '@components/entities/securityPlatforms/SecurityPlatformCreationForm';
+import SecurityPlatformCreationForm from '@private/components/entities/securityPlatforms/SecurityPlatformCreationForm';
 import { useFormatter } from '../../../../components/i18n';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
 import { insertNode } from '../../../../utils/store';

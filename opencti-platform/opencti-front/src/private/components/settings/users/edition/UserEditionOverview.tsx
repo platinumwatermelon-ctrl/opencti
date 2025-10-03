@@ -5,7 +5,7 @@ import * as R from 'ramda';
 import * as Yup from 'yup';
 import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
-import { UserEditionOverview_user$data } from '@components/settings/users/edition/__generated__/UserEditionOverview_user.graphql';
+import { UserEditionOverview_user$data } from '@private/components/settings/users/edition/__generated__/UserEditionOverview_user.graphql';
 import { useTheme } from '@mui/styles';
 import TextField from '../../../../../components/TextField';
 import SelectField from '../../../../../components/fields/SelectField';

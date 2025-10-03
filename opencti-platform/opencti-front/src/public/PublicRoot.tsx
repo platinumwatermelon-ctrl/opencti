@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { loadQuery, usePreloadedQuery } from 'react-relay';
 import { Route, Routes } from 'react-router-dom';
-import { boundaryWrapper } from '@components/Error';
+import { boundaryWrapper } from '@private/components/Error';
 import { ConnectedThemeProvider } from '../components/AppThemeProvider';
 import { ConnectedIntlProvider } from '../components/AppIntlProvider';
 import { environment } from '../relay/environment';

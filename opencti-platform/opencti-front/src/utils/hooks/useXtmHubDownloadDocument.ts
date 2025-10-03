@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { DialogConnectivityLostStatus } from '@components/xtm_hub/dialog/connectivity-lost';
+import { DialogConnectivityLostStatus } from '@private/components/xtm_hub/dialog/connectivity-lost';
 import XtmHubClient from '../xtm-hub-client';
 import { UserContext } from './useAuth';
 import useGranted, { SETTINGS_SETMANAGEXTMHUB } from './useGranted';

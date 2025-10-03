@@ -1,7 +1,7 @@
 import React from 'react';
 import Alert from '@mui/material/Alert';
 import makeStyles from '@mui/styles/makeStyles';
-import { RetentionLinesPaginationQuery, RetentionLinesPaginationQuery$variables } from '@components/settings/retention/__generated__/RetentionLinesPaginationQuery.graphql';
+import { RetentionLinesPaginationQuery, RetentionLinesPaginationQuery$variables } from '@private/components/settings/retention/__generated__/RetentionLinesPaginationQuery.graphql';
 import { RetentionLineDummy } from './retention/RetentionLine';
 import ListLines from '../../../components/list_lines/ListLines';
 import RetentionLines, { RetentionLinesQuery } from './retention/RetentionLines';

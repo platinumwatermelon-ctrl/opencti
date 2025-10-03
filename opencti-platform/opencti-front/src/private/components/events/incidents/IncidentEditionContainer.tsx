@@ -3,9 +3,9 @@ import { createFragmentContainer, graphql, PreloadedQuery, usePreloadedQuery } f
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
-import { IncidentEditionOverview_incident$key } from '@components/events/incidents/__generated__/IncidentEditionOverview_incident.graphql';
-import { IncidentEditionDetails_incident$key } from '@components/events/incidents/__generated__/IncidentEditionDetails_incident.graphql';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
+import { IncidentEditionOverview_incident$key } from '@private/components/events/incidents/__generated__/IncidentEditionOverview_incident.graphql';
+import { IncidentEditionDetails_incident$key } from '@private/components/events/incidents/__generated__/IncidentEditionDetails_incident.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import IncidentEditionOverview from './IncidentEditionOverview';
 import IncidentEditionDetails from './IncidentEditionDetails';

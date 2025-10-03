@@ -8,7 +8,7 @@ import Skeleton from '@mui/material/Skeleton';
 import { graphql, useFragment } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
 import * as R from 'ramda';
-import { DraftChip } from '@components/common/draft/DraftChip';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
 import { ListItemButton } from '@mui/material';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';

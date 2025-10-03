@@ -1,35 +1,35 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery, useQueryLoader, UseQueryLoaderLoadQueryOptions } from 'react-relay';
 import Grid from '@mui/material/Grid';
-import StixCoreObjectMappableContent from '@components/common/stix_core_objects/StixCoreObjectMappableContent';
+import StixCoreObjectMappableContent from '@private/components/common/stix_core_objects/StixCoreObjectMappableContent';
 import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
-import ContainerStixCoreObjectsSuggestedMapping, { containerStixCoreObjectsSuggestedMappingQuery } from '@components/common/containers/ContainerStixCoreObjectsSuggestedMapping';
+import ContainerStixCoreObjectsSuggestedMapping, { containerStixCoreObjectsSuggestedMappingQuery } from '@private/components/common/containers/ContainerStixCoreObjectsSuggestedMapping';
 import {
   ContainerStixCoreObjectsSuggestedMappingQuery,
   ContainerStixCoreObjectsSuggestedMappingQuery$data,
   ContainerStixCoreObjectsSuggestedMappingQuery$variables,
-} from '@components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingQuery.graphql';
+} from '@private/components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingQuery.graphql';
 import { Subject, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
-import ContainerStixCoreObjectsMapping from '@components/common/containers/ContainerStixCoreObjectsMapping';
-import { ContainerAddStixCoreObjectsLine_node$data } from '@components/common/containers/__generated__/ContainerAddStixCoreObjectsLine_node.graphql';
-import ContainerAddStixCoreObjects from '@components/common/containers/ContainerAddStixCoreObjects';
+import ContainerStixCoreObjectsMapping from '@private/components/common/containers/ContainerStixCoreObjectsMapping';
+import { ContainerAddStixCoreObjectsLine_node$data } from '@private/components/common/containers/__generated__/ContainerAddStixCoreObjectsLine_node.graphql';
+import ContainerAddStixCoreObjects from '@private/components/common/containers/ContainerAddStixCoreObjects';
 import {
   ContainerMappingContent_container$data,
   ContainerMappingContent_container$key,
-} from '@components/common/containers/__generated__/ContainerMappingContent_container.graphql';
-import { ContainerMappingContentQuery$data } from '@components/common/containers/__generated__/ContainerMappingContentQuery.graphql';
-import { ContainerMappingContentFieldPatchMutation } from '@components/common/containers/__generated__/ContainerMappingContentFieldPatchMutation.graphql';
+} from '@private/components/common/containers/__generated__/ContainerMappingContent_container.graphql';
+import { ContainerMappingContentQuery$data } from '@private/components/common/containers/__generated__/ContainerMappingContentQuery.graphql';
+import { ContainerMappingContentFieldPatchMutation } from '@private/components/common/containers/__generated__/ContainerMappingContentFieldPatchMutation.graphql';
 import {
   ContainerMappingContentAddSuggestedMappingRelationsMutation,
-} from '@components/common/containers/__generated__/ContainerMappingContentAddSuggestedMappingRelationsMutation.graphql';
-import { ContainerMappingContentAskSuggestedMappingMutation } from '@components/common/containers/__generated__/ContainerMappingContentAskSuggestedMappingMutation.graphql';
-import { ContainerMappingContentClearSuggestedMappingMutation } from '@components/common/containers/__generated__/ContainerMappingContentClearSuggestedMappingMutation.graphql';
+} from '@private/components/common/containers/__generated__/ContainerMappingContentAddSuggestedMappingRelationsMutation.graphql';
+import { ContainerMappingContentAskSuggestedMappingMutation } from '@private/components/common/containers/__generated__/ContainerMappingContentAskSuggestedMappingMutation.graphql';
+import { ContainerMappingContentClearSuggestedMappingMutation } from '@private/components/common/containers/__generated__/ContainerMappingContentClearSuggestedMappingMutation.graphql';
 import {
   ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity$data,
-} from '@components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity.graphql';
-import ContainerStixCoreObjectsMappingHeader from '@components/common/containers/ContainerStixCoreObjectsMappingHeader';
+} from '@private/components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity.graphql';
+import ContainerStixCoreObjectsMappingHeader from '@private/components/common/containers/ContainerStixCoreObjectsMappingHeader';
 import { useFormatter } from '../../../../components/i18n';
 import { MESSAGING$ } from '../../../../relay/environment';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';

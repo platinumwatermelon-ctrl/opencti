@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
-import { OrganizationDetails_organization$data } from '@components/entities/organizations/__generated__/OrganizationDetails_organization.graphql';
+import { OrganizationDetails_organization$data } from '@private/components/entities/organizations/__generated__/OrganizationDetails_organization.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';

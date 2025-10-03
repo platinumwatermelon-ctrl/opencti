@@ -15,8 +15,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import { graphql } from 'react-relay';
 import React, { ReactNode } from 'react';
-import PirRadialScore from '@components/pir/pir_knowledge/PirRadialScore';
-import PirCriteriaDisplay from '@components/pir/PirCriteriaDisplay';
+import PirRadialScore from '@private/components/pir/pir_knowledge/PirRadialScore';
+import PirCriteriaDisplay from '@private/components/pir/PirCriteriaDisplay';
 import { PirKnowledgeEntities_SourcesFlaggedFragment$data } from './__generated__/PirKnowledgeEntities_SourcesFlaggedFragment.graphql';
 import {
   PirKnowledgeEntitiesSourcesFlaggedListQuery,

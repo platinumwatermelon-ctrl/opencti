@@ -1,10 +1,10 @@
 import { v4 as uuid } from 'uuid';
-import { CsvMapperRepresentationType } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
-import { CsvMapperRepresentation, CsvMapperRepresentationEdit, CsvMapperRepresentationFormData } from '@components/data/csvMapper/representations/Representation';
-import { csvMapperAttributeToFormData, formDataToCsvMapperAttribute } from '@components/data/csvMapper/representations/attributes/AttributeUtils';
+import { CsvMapperRepresentationType } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+import { CsvMapperRepresentation, CsvMapperRepresentationEdit, CsvMapperRepresentationFormData } from '@private/components/data/csvMapper/representations/Representation';
+import { csvMapperAttributeToFormData, formDataToCsvMapperAttribute } from '@private/components/data/csvMapper/representations/attributes/AttributeUtils';
 import {
   CsvMapperRepresentationAttributesForm_allSchemaAttributes$data,
-} from '@components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import { isEmptyField } from '../../../../../utils/utils';
 import { useComputeDefaultValues } from '../../../../../utils/hooks/useDefaultValues';
 

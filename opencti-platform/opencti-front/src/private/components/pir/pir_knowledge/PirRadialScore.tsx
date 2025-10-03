@@ -13,7 +13,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
-import Chart from '@components/common/charts/Chart';
+import Chart from '@private/components/common/charts/Chart';
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import type { Theme } from '../../../../components/Theme';

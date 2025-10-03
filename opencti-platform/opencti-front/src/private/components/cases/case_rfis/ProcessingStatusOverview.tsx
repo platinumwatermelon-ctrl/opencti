@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import React from 'react';
-import { declineRequestAccessMutation, validateRequestAccessMutation } from '@components/cases/CaseUtils';
+import { declineRequestAccessMutation, validateRequestAccessMutation } from '@private/components/cases/CaseUtils';
 import ItemStatus from '../../../../components/ItemStatus';
 import { useFormatter } from '../../../../components/i18n';
 import { CaseRfi_caseRfi$data } from './__generated__/CaseRfi_caseRfi.graphql';

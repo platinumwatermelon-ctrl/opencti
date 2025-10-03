@@ -11,10 +11,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 import MoreVert from '@mui/icons-material/MoreVert';
 
 import { PopoverProps } from '@mui/material/Popover';
-import { IngestionTaxiiCollectionPopoverEditionQuery$data } from '@components/data/ingestionTaxiiCollection/__generated__/IngestionTaxiiCollectionPopoverEditionQuery.graphql';
+import { IngestionTaxiiCollectionPopoverEditionQuery$data } from '@private/components/data/ingestionTaxiiCollection/__generated__/IngestionTaxiiCollectionPopoverEditionQuery.graphql';
 import {
   IngestionTaxiiCollectionLinesPaginationQuery$variables,
-} from '@components/data/ingestionTaxiiCollection/__generated__/IngestionTaxiiCollectionLinesPaginationQuery.graphql';
+} from '@private/components/data/ingestionTaxiiCollection/__generated__/IngestionTaxiiCollectionLinesPaginationQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { QueryRenderer } from '../../../../relay/environment';
 import { deleteNode } from '../../../../utils/store';

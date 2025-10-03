@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { TaxiiLinesPaginationQuery$data } from '@components/data/taxii/__generated__/TaxiiLinesPaginationQuery.graphql';
+import { TaxiiLinesPaginationQuery$data } from '@private/components/data/taxii/__generated__/TaxiiLinesPaginationQuery.graphql';
 import Box from '@mui/material/Box';
 import { QueryRenderer } from '../../../relay/environment';
 import { buildViewParamsFromUrlAndStorage, saveViewParameters } from '../../../utils/ListParameters';

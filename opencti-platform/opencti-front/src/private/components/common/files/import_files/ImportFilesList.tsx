@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import { Alert, Box, Collapse, Grid, IconButton, List, ListItem, MenuItem, Select, Tooltip, Typography } from '@mui/material';
 import { TransitionGroup } from 'react-transition-group';
 import { DeleteOutlined, UploadFileOutlined } from '@mui/icons-material';
-import { CSV_MAPPER_NAME } from '@components/common/files/import_files/ImportFilesDialog';
+import { CSV_MAPPER_NAME } from '@private/components/common/files/import_files/ImportFilesDialog';
 import { useTheme } from '@mui/styles';
-import { useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
-import { ImportFilesContextQuery$data } from '@components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
+import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
+import { ImportFilesContextQuery$data } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
 import { useFormatter } from '../../../../../components/i18n';
 import type { Theme } from '../../../../../components/Theme';
 

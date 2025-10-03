@@ -2,7 +2,7 @@ import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field } from 'formik';
-import { JsonMapperFieldSearchQuery } from '@components/common/form/__generated__/JsonMapperFieldSearchQuery.graphql';
+import { JsonMapperFieldSearchQuery } from '@private/components/common/form/__generated__/JsonMapperFieldSearchQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';

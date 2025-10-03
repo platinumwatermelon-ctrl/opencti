@@ -1,4 +1,4 @@
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { Add } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import React, { FunctionComponent, useState } from 'react';

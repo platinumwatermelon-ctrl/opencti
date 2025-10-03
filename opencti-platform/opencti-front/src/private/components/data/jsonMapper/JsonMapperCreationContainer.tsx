@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import Drawer from '@components/common/drawer/Drawer';
-import JsonMapperCreation from '@components/data/jsonMapper/JsonMapperCreation';
-import { jsonMappers_MappersQuery$variables } from '@components/data/jsonMapper/__generated__/jsonMappers_MappersQuery.graphql';
+import Drawer from '@private/components/common/drawer/Drawer';
+import JsonMapperCreation from '@private/components/data/jsonMapper/JsonMapperCreation';
+import { jsonMappers_MappersQuery$variables } from '@private/components/data/jsonMapper/__generated__/jsonMappers_MappersQuery.graphql';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { jsonMapperEditionContainerQuery } from '@components/data/jsonMapper/JsonMapperEditionContainer';
-import { JsonMapperEditionContainerQuery } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerQuery.graphql';
+import { jsonMapperEditionContainerQuery } from '@private/components/data/jsonMapper/JsonMapperEditionContainer';
+import { JsonMapperEditionContainerQuery } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 
 interface JsonMapperCreationProps {

@@ -1,9 +1,9 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
 import { Field } from 'formik';
-import { EmailTemplateFieldQuery } from '@components/common/form/__generated__/EmailTemplateFieldQuery.graphql';
+import { EmailTemplateFieldQuery } from '@private/components/common/form/__generated__/EmailTemplateFieldQuery.graphql';
 import useEnterpriseEdition from 'src/utils/hooks/useEnterpriseEdition';
-import EETooltip from '@components/common/entreprise_edition/EETooltip';
+import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import { useFormatter } from '../../../../components/i18n';

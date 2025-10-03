@@ -3,19 +3,19 @@ import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
 import {
   ThreatActorIndividualEditionOverview_ThreatActorIndividual$key,
-} from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionOverview_ThreatActorIndividual.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionOverview_ThreatActorIndividual.graphql';
 import {
   ThreatActorIndividualEditionDetails_ThreatActorIndividual$key,
-} from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionDetails_ThreatActorIndividual.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionDetails_ThreatActorIndividual.graphql';
 import {
   ThreatActorIndividualEditionDemographics_ThreatActorIndividual$key,
-} from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionDemographics_ThreatActorIndividual.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionDemographics_ThreatActorIndividual.graphql';
 import {
   ThreatActorIndividualEditionBiographics_ThreatActorIndividual$key,
-} from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
 import ErrorNotFound from '../../../../components/ErrorNotFound';

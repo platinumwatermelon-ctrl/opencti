@@ -3,8 +3,8 @@ import { graphql } from 'react-relay';
 import {
   StixSightingRelationshipsLinesPaginationQuery,
   StixSightingRelationshipsLinesPaginationQuery$variables,
-} from '@components/events/__generated__/StixSightingRelationshipsLinesPaginationQuery.graphql';
-import { StixSightingRelationshipsLines_data$data } from '@components/events/__generated__/StixSightingRelationshipsLines_data.graphql';
+} from '@private/components/events/__generated__/StixSightingRelationshipsLinesPaginationQuery.graphql';
+import { StixSightingRelationshipsLines_data$data } from '@private/components/events/__generated__/StixSightingRelationshipsLines_data.graphql';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import { useBuildEntityTypeBasedFilterContext, emptyFilterGroup, useGetDefaultFilterObject } from '../../../utils/filters/filtersUtils';
 import { useFormatter } from '../../../components/i18n';

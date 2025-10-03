@@ -9,10 +9,10 @@ import makeStyles from '@mui/styles/makeStyles';
 import {
   stixCoreObjectTriggersUtilsPaginationQuery$data,
   stixCoreObjectTriggersUtilsPaginationQuery as TriggerQuery,
-} from '@components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtilsPaginationQuery.graphql';
-import { stixCoreObjectTriggersFragment } from '@components/common/stix_core_objects/stixCoreObjectTriggersUtils';
+} from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtilsPaginationQuery.graphql';
+import { stixCoreObjectTriggersFragment } from '@private/components/common/stix_core_objects/stixCoreObjectTriggersUtils';
 import { useRefetchableFragment } from 'react-relay';
-import { stixCoreObjectTriggersUtils_triggers$key as FragmentKey } from '@components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtils_triggers.graphql';
+import { stixCoreObjectTriggersUtils_triggers$key as FragmentKey } from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtils_triggers.graphql';
 import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import useGranted, { SETTINGS_SETACCESSES } from '../../../../utils/hooks/useGranted';

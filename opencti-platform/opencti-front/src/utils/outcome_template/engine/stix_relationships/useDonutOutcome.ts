@@ -1,7 +1,7 @@
-import { stixRelationshipsDonutsDistributionQuery } from '@components/common/stix_relationships/StixRelationshipsDonut';
+import { stixRelationshipsDonutsDistributionQuery } from '@private/components/common/stix_relationships/StixRelationshipsDonut';
 import { useTheme } from '@mui/styles';
 import { ApexOptions } from 'apexcharts';
-import { StixRelationshipsDonutDistributionQuery$data } from '@components/common/stix_relationships/__generated__/StixRelationshipsDonutDistributionQuery.graphql';
+import { StixRelationshipsDonutDistributionQuery$data } from '@private/components/common/stix_relationships/__generated__/StixRelationshipsDonutDistributionQuery.graphql';
 import { fetchQuery } from '../../../../relay/environment';
 import type { Theme } from '../../../../components/Theme';
 import useDistributionGraphData from '../../../hooks/useDistributionGraphData';

@@ -3,12 +3,12 @@ import { graphql } from 'react-relay';
 import { Box } from '@mui/material';
 import {
   StixCyberObservableNestedEntitiesTablePaginationQuery,
-} from '@components/observations/stix_cyber_observables/__generated__/StixCyberObservableNestedEntitiesTablePaginationQuery.graphql';
+} from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservableNestedEntitiesTablePaginationQuery.graphql';
 import {
   StixCyberObservableNestedEntitiesTable_data$data,
-} from '@components/observations/stix_cyber_observables/__generated__/StixCyberObservableNestedEntitiesTable_data.graphql';
-import StixNestedRefRelationshipPopover from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipPopover';
-import { DraftChip } from '@components/common/draft/DraftChip';
+} from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservableNestedEntitiesTable_data.graphql';
+import StixNestedRefRelationshipPopover from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipPopover';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
 import DataTable from '../../../../components/dataGrid/DataTable';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import { UsePreloadedPaginationFragment } from '../../../../utils/hooks/usePreloadedPaginationFragment';

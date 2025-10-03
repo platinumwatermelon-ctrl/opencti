@@ -7,7 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { CogOutline } from 'mdi-material-ui';
 import IconButton from '@mui/material/IconButton';
 import { Badge } from '@mui/material';
-import { JsonMapperRepresentationAttributeFormData } from '@components/data/jsonMapper/representations/attributes/Attribute';
+import { JsonMapperRepresentationAttributeFormData } from '@private/components/data/jsonMapper/representations/attributes/Attribute';
 import { useFormatter } from '../../../../../../components/i18n';
 
 interface JsonMapperRepresentationDialogOptionProps {

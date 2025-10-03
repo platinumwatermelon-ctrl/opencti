@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { Badge } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { interval } from 'rxjs';
-import { StixCoreObjectActiveBackgroundTasksQuery } from '@components/common/stix_core_objects/__generated__/StixCoreObjectActiveBackgroundTasksQuery.graphql';
+import { StixCoreObjectActiveBackgroundTasksQuery } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectActiveBackgroundTasksQuery.graphql';
 import { TEN_SECONDS } from '../../../../utils/Time';
 
 const stixCoreObjectActiveBackgroundTasksQuery = graphql`

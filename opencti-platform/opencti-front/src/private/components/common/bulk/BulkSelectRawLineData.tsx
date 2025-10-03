@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Chip from '@mui/material/Chip';
-import { BulkEntityTypeInfo, entityNameHeaderWidth, entityTypeHeaderWidth, matchHeaderWidth } from '@components/common/bulk/dialog/BulkRelationDialog';
+import { BulkEntityTypeInfo, entityNameHeaderWidth, entityTypeHeaderWidth, matchHeaderWidth } from '@private/components/common/bulk/dialog/BulkRelationDialog';
 import { DeleteOutlined } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import { Autocomplete } from '@mui/material';

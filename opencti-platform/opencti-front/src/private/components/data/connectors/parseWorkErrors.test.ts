@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getLevel, parseError } from '@components/data/connectors/parseWorkErrors';
+import { getLevel, parseError } from '@private/components/data/connectors/parseWorkErrors';
 
 describe('Function: getLevel', () => {
   it('should return Critical', () => {

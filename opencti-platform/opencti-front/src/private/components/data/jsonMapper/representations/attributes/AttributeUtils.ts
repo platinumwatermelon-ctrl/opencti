@@ -2,11 +2,11 @@ import {
   JsonMapperRepresentationAttribute,
   JsonMapperRepresentationAttributeEdit,
   JsonMapperRepresentationAttributeFormData,
-} from '@components/data/jsonMapper/representations/attributes/Attribute';
-import { JsonMapperRepresentationFormData } from '@components/data/jsonMapper/representations/Representation';
+} from '@private/components/data/jsonMapper/representations/attributes/Attribute';
+import { JsonMapperRepresentationFormData } from '@private/components/data/jsonMapper/representations/Representation';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$data,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import { SchemaAttribute } from './JsonMapperRepresentationAttributesForm';
 import { isNotEmptyField } from '../../../../../../utils/utils';
 import { defaultValuesToStringArray } from '../../../../../../utils/defaultValues';

@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import makeStyles from '@mui/styles/makeStyles';
-import { FormLinesPaginationQuery$variables } from '@components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
+import { FormLinesPaginationQuery$variables } from '@private/components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
 import { ConnectionHandler } from 'relay-runtime';
 import { FormEditionContainerQuery } from './__generated__/FormEditionContainerQuery.graphql';
 import FormEditionContainer, { formEditionContainerQuery } from './FormEditionContainer';

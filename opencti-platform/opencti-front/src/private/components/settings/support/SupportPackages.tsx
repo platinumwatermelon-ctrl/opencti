@@ -6,8 +6,8 @@ import Paper from '@mui/material/Paper';
 import {
   SupportPackageLinesPaginationQuery,
   SupportPackageLinesPaginationQuery$variables,
-} from '@components/settings/support/__generated__/SupportPackageLinesPaginationQuery.graphql';
-import SupportPackageLines, { supportPackageLinesQuery } from '@components/settings/support/SupportPackageLines';
+} from '@private/components/settings/support/__generated__/SupportPackageLinesPaginationQuery.graphql';
+import SupportPackageLines, { supportPackageLinesQuery } from '@private/components/settings/support/SupportPackageLines';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import Alert from '@mui/material/Alert';
 import Tooltip from '@mui/material/Tooltip';

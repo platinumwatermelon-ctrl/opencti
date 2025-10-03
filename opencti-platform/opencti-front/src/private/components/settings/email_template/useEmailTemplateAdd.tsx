@@ -1,6 +1,6 @@
 import { graphql } from 'react-relay';
 import { useState } from 'react';
-import { useEmailTemplateAddMutation } from '@components/settings/email_template/__generated__/useEmailTemplateAddMutation.graphql';
+import { useEmailTemplateAddMutation } from '@private/components/settings/email_template/__generated__/useEmailTemplateAddMutation.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 
 const emailTemplateAddMutation = graphql`

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ListFiltersWithoutLocalStorage from '@components/common/lists/ListFiltersWithoutLocalStorage';
+import ListFiltersWithoutLocalStorage from '@private/components/common/lists/ListFiltersWithoutLocalStorage';
 import { uniq } from 'ramda';
 import { constructHandleAddFilter, constructHandleRemoveFilter, emptyFilterGroup, FilterSearchContext, FiltersVariant } from '../../../../utils/filters/filtersUtils';
 import FiltersElement, { FilterElementsInputValue } from './FiltersElement';

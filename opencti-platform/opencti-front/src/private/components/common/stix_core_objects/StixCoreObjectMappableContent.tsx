@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import { Field, Form, Formik } from 'formik';
-import CommitMessage from '@components/common/form/CommitMessage';
+import CommitMessage from '@private/components/common/form/CommitMessage';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { FormikConfig } from 'formik/dist/types';
-import { ExternalReferencesValues } from '@components/common/form/ExternalReferencesField';
-import { StixCoreObjectMappableContentFieldPatchMutation } from '@components/common/stix_core_objects/__generated__/StixCoreObjectMappableContentFieldPatchMutation.graphql';
-import { ContainerMappingContent_container$data } from '@components/common/containers/__generated__/ContainerMappingContent_container.graphql';
+import { ExternalReferencesValues } from '@private/components/common/form/ExternalReferencesField';
+import { StixCoreObjectMappableContentFieldPatchMutation } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectMappableContentFieldPatchMutation.graphql';
+import { ContainerMappingContent_container$data } from '@private/components/common/containers/__generated__/ContainerMappingContent_container.graphql';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { createStyles } from '@mui/styles';

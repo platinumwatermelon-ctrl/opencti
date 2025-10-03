@@ -4,9 +4,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React from 'react';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import Button from '@mui/material/Button';
-import AssociatedEntityField, { AssociatedEntityOption } from '@components/common/form/AssociatedEntityField';
+import AssociatedEntityField, { AssociatedEntityOption } from '@private/components/common/form/AssociatedEntityField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import { useFormatter } from '../../../../components/i18n';
 

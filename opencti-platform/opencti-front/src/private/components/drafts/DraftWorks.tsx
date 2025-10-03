@@ -1,7 +1,7 @@
 import React, { FunctionComponent, Suspense } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import { DraftWorksQuery } from '@components/drafts/__generated__/DraftWorksQuery.graphql';
-import { DraftWorksFragment$data } from '@components/drafts/__generated__/DraftWorksFragment.graphql';
+import { DraftWorksQuery } from '@private/components/drafts/__generated__/DraftWorksQuery.graphql';
+import { DraftWorksFragment$data } from '@private/components/drafts/__generated__/DraftWorksFragment.graphql';
 import Chip from '@mui/material/Chip';
 import { useTheme } from '@mui/styles';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';

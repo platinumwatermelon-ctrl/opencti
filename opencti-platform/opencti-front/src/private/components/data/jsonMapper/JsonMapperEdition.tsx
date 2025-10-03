@@ -2,15 +2,15 @@ import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import * as R from 'ramda';
 import { FormikConfig } from 'formik/dist/types';
-import JsonMapperForm from '@components/data/jsonMapper/JsonMapperForm';
-import { JsonMapperFormData } from '@components/data/jsonMapper/JsonMapper';
-import { formDataToJsonMapper, jsonMapperToFormData } from '@components/data/jsonMapper/JsonMapperUtils';
-import { useJsonMappersData } from '@components/data/jsonMapper/jsonMappers.data';
-import { JsonMapperRepresentationAttributesFormFragment } from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
-import { JsonMapperEditionContainerFragment_jsonMapper$data } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
+import JsonMapperForm from '@private/components/data/jsonMapper/JsonMapperForm';
+import { JsonMapperFormData } from '@private/components/data/jsonMapper/JsonMapper';
+import { formDataToJsonMapper, jsonMapperToFormData } from '@private/components/data/jsonMapper/JsonMapperUtils';
+import { useJsonMappersData } from '@private/components/data/jsonMapper/jsonMappers.data';
+import { JsonMapperRepresentationAttributesFormFragment } from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
+import { JsonMapperEditionContainerFragment_jsonMapper$data } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$key,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import formikFieldToEditInput from '../../../../utils/FormikUtils';
 import { useComputeDefaultValues } from '../../../../utils/hooks/useDefaultValues';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';

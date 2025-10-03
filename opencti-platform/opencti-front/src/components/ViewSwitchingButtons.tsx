@@ -5,7 +5,7 @@ import { LibraryBooksOutlined, ViewModuleOutlined } from '@mui/icons-material';
 import { FormatListGroup, Group, RelationManyToMany, VectorPolygon } from 'mdi-material-ui';
 import { ToggleButtonGroup } from '@mui/material';
 import { ListViewIcon, SublistViewIcon } from 'filigran-icon';
-import FiligranIcon from '@components/common/FiligranIcon';
+import FiligranIcon from '@private/components/common/FiligranIcon';
 import { useFormatter } from './i18n';
 
 interface ViewSwitchingButtonsProps {

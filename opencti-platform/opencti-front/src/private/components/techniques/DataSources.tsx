@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { DataSourcesLines_data$data } from '@components/techniques/__generated__/DataSourcesLines_data.graphql';
-import { DataSourcesLinesPaginationQuery, DataSourcesLinesPaginationQuery$variables } from '@components/techniques/__generated__/DataSourcesLinesPaginationQuery.graphql';
+import { DataSourcesLines_data$data } from '@private/components/techniques/__generated__/DataSourcesLines_data.graphql';
+import { DataSourcesLinesPaginationQuery, DataSourcesLinesPaginationQuery$variables } from '@private/components/techniques/__generated__/DataSourcesLinesPaginationQuery.graphql';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import Security from '../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';

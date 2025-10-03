@@ -7,7 +7,7 @@ import { Delete, InfoOutlined } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import { Tooltip } from '@mui/material';
 import React from 'react';
-import { isGenericOption } from '@components/common/form/AuthorizedMembersField';
+import { isGenericOption } from '@private/components/common/form/AuthorizedMembersField';
 import SelectField from '../../../../components/fields/SelectField';
 import ItemIcon from '../../../../components/ItemIcon';
 import useAuth from '../../../../utils/hooks/useAuth';

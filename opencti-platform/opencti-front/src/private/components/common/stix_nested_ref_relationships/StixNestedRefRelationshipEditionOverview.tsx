@@ -8,10 +8,10 @@ import * as Yup from 'yup';
 import { useTheme } from '@mui/styles';
 import {
   StixNestedRefRelationshipEditionOverview_stixRefRelationship$key,
-} from '@components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipEditionOverview_stixRefRelationship.graphql';
+} from '@private/components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipEditionOverview_stixRefRelationship.graphql';
 import {
   StixNestedRefRelationshipEditionOverviewQuery,
-} from '@components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipEditionOverviewQuery.graphql';
+} from '@private/components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipEditionOverviewQuery.graphql';
 import { buildDate } from '../../../../utils/Time';
 import { useFormatter } from '../../../../components/i18n';
 import { SubscriptionAvatars, SubscriptionFocus } from '../../../../components/Subscription';

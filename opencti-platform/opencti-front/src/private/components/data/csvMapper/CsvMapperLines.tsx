@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, usePaginationFragment } from 'react-relay';
-import { CsvMapperLines_csvMapper$key } from '@components/data/csvMapper/__generated__/CsvMapperLines_csvMapper.graphql';
-import CsvMapperLine from '@components/data/csvMapper/CsvMapperLine';
-import LineDummy from '@components/common/LineDummy';
-import { useCsvMappersData } from '@components/data/csvMapper/csvMappers.data';
-import { csvMappers_MappersQuery, csvMappers_MappersQuery$variables } from '@components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
+import { CsvMapperLines_csvMapper$key } from '@private/components/data/csvMapper/__generated__/CsvMapperLines_csvMapper.graphql';
+import CsvMapperLine from '@private/components/data/csvMapper/CsvMapperLine';
+import LineDummy from '@private/components/common/LineDummy';
+import { useCsvMappersData } from '@private/components/data/csvMapper/csvMappers.data';
+import { csvMappers_MappersQuery, csvMappers_MappersQuery$variables } from '@private/components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
 import { DataColumns } from '../../../../components/list_lines';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 

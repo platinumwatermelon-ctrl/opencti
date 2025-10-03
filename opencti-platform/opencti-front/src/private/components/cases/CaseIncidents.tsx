@@ -3,9 +3,9 @@ import { graphql } from 'react-relay';
 import {
   CaseIncidentsLinesCasesPaginationQuery,
   CaseIncidentsLinesCasesPaginationQuery$variables,
-} from '@components/cases/__generated__/CaseIncidentsLinesCasesPaginationQuery.graphql';
-import { CaseIncidentsLinesCases_data$data } from '@components/cases/__generated__/CaseIncidentsLinesCases_data.graphql';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+} from '@private/components/cases/__generated__/CaseIncidentsLinesCasesPaginationQuery.graphql';
+import { CaseIncidentsLinesCases_data$data } from '@private/components/cases/__generated__/CaseIncidentsLinesCases_data.graphql';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import useAuth from '../../../utils/hooks/useAuth';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IngestionConnector } from '@components/data/IngestionCatalog';
+import { IngestionConnector } from '@private/components/data/IngestionCatalog';
 import { resolveLink } from '../../../../../utils/Entity';
 
 interface CatalogState {

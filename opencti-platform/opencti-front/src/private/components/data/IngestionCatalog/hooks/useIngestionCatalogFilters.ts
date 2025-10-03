@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FilterState } from '@components/data/IngestionCatalog/IngestionCatalogFilters';
-import { IngestionConnector } from '@components/data/IngestionCatalog';
-import { IngestionConnectorsCatalogsQuery } from '@components/data/IngestionCatalog/__generated__/IngestionConnectorsCatalogsQuery.graphql';
+import { FilterState } from '@private/components/data/IngestionCatalog/IngestionCatalogFilters';
+import { IngestionConnector } from '@private/components/data/IngestionCatalog';
+import { IngestionConnectorsCatalogsQuery } from '@private/components/data/IngestionCatalog/__generated__/IngestionConnectorsCatalogsQuery.graphql';
 import { MESSAGING$ } from '../../../../../relay/environment';
 import { useFormatter } from '../../../../../components/i18n';
 

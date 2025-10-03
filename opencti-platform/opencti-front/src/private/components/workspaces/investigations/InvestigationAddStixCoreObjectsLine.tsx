@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Skeleton from '@mui/material/Skeleton';
 import { CheckCircleOutlined, CircleOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
-import { InvestigationAddStixCoreObjectsLine_node$data } from '@components/workspaces/investigations/__generated__/InvestigationAddStixCoreObjectsLine_node.graphql';
+import { InvestigationAddStixCoreObjectsLine_node$data } from '@private/components/workspaces/investigations/__generated__/InvestigationAddStixCoreObjectsLine_node.graphql';
 import { ListItemButton } from '@mui/material';
 import StixCoreObjectLabels from '../../common/stix_core_objects/StixCoreObjectLabels';
 import ItemIcon from '../../../../components/ItemIcon';

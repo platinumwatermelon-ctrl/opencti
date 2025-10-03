@@ -3,10 +3,10 @@ import { graphql } from 'react-relay';
 import {
   EntityStixCoreRelationshipsIndicatorsEntitiesViewQuery,
   EntityStixCoreRelationshipsIndicatorsEntitiesViewQuery$variables,
-} from '@components/common/stix_core_relationships/views/indicators/__generated__/EntityStixCoreRelationshipsIndicatorsEntitiesViewQuery.graphql';
+} from '@private/components/common/stix_core_relationships/views/indicators/__generated__/EntityStixCoreRelationshipsIndicatorsEntitiesViewQuery.graphql';
 import {
   EntityStixCoreRelationshipsIndicatorsEntitiesView_data$data,
-} from '@components/common/stix_core_relationships/views/indicators/__generated__/EntityStixCoreRelationshipsIndicatorsEntitiesView_data.graphql';
+} from '@private/components/common/stix_core_relationships/views/indicators/__generated__/EntityStixCoreRelationshipsIndicatorsEntitiesView_data.graphql';
 import Tooltip from '@mui/material/Tooltip';
 import { LibraryBooksOutlined } from '@mui/icons-material';
 import ToggleButton from '@mui/material/ToggleButton';

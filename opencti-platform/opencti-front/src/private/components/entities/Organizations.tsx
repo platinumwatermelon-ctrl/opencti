@@ -2,8 +2,8 @@ import React from 'react';
 import {
   OrganizationsLinesPaginationQuery,
   OrganizationsLinesPaginationQuery$variables,
-} from '@components/entities/organizations/__generated__/OrganizationsLinesPaginationQuery.graphql';
-import { OrganizationLineDummy } from '@components/entities/organizations/OrganizationLine';
+} from '@private/components/entities/organizations/__generated__/OrganizationsLinesPaginationQuery.graphql';
+import { OrganizationLineDummy } from '@private/components/entities/organizations/OrganizationLine';
 import ListLines from '../../../components/list_lines/ListLines';
 import OrganizationsLines, { organizationsLinesQuery } from './organizations/OrganizationsLines';
 import OrganizationCreation from './organizations/OrganizationCreation';

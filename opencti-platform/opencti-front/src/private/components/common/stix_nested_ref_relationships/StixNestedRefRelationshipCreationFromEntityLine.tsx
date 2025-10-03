@@ -10,8 +10,8 @@ import Skeleton from '@mui/material/Skeleton';
 import {
   StixNestedRefRelationshipCreationFromEntityLine_node$data,
   StixNestedRefRelationshipCreationFromEntityLine_node$key,
-} from '@components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipCreationFromEntityLine_node.graphql';
-import { DraftChip } from '@components/common/draft/DraftChip';
+} from '@private/components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipCreationFromEntityLine_node.graphql';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
 import StixCoreObjectLabels from '../stix_core_objects/StixCoreObjectLabels';
 import { APP_BASE_PATH } from '../../../../relay/environment';
 import ItemIcon from '../../../../components/ItemIcon';

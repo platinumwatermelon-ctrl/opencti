@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
-import EEGuard from '@components/common/entreprise_edition/EEGuard';
+import EEGuard from '@private/components/common/entreprise_edition/EEGuard';
 import Loader from '../../../../components/Loader';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
 import SubType from './SubType';

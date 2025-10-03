@@ -1,10 +1,10 @@
 import { EditOutlined } from '@mui/icons-material';
 import React, { useState } from 'react';
-import StixDomainObjectEdition from '@components/common/stix_domain_objects/StixDomainObjectEdition';
-import StixCyberObservableEdition from '@components/observations/stix_cyber_observables/StixCyberObservableEdition';
-import StixCoreRelationshipEdition from '@components/common/stix_core_relationships/StixCoreRelationshipEdition';
-import StixSightingRelationshipEdition from '@components/events/stix_sighting_relationships/StixSightingRelationshipEdition';
-import StixNestedRefRelationshipEdition from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipEdition';
+import StixDomainObjectEdition from '@private/components/common/stix_domain_objects/StixDomainObjectEdition';
+import StixCyberObservableEdition from '@private/components/observations/stix_cyber_observables/StixCyberObservableEdition';
+import StixCoreRelationshipEdition from '@private/components/common/stix_core_relationships/StixCoreRelationshipEdition';
+import StixSightingRelationshipEdition from '@private/components/events/stix_sighting_relationships/StixSightingRelationshipEdition';
+import StixNestedRefRelationshipEdition from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipEdition';
 import { GraphQLTaggedNode } from 'relay-runtime/lib/query/RelayModernGraphQLTag';
 import GraphToolbarItem from './GraphToolbarItem';
 import { useFormatter } from '../../i18n';

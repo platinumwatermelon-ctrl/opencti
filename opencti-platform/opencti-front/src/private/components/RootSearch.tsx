@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import { NoMatch } from '@components/Error';
+import { NoMatch } from '@private/components/Error';
 import Search from './Search';
 import SearchContainerQuery from './search/SearchContainerQuery';
 import SearchIndexedFiles from './search/SearchIndexedFiles';

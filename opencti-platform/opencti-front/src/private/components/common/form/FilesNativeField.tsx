@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import { FilesNativeFieldQuery$data } from '@components/common/form/__generated__/FilesNativeFieldQuery.graphql';
+import { FilesNativeFieldQuery$data } from '@private/components/common/form/__generated__/FilesNativeFieldQuery.graphql';
 import makeStyles from '@mui/styles/makeStyles';
 import { FileOutline } from 'mdi-material-ui';
 import { fetchQuery } from '../../../../relay/environment';

@@ -8,7 +8,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { ListItemButton } from '@mui/material';
 import { DataColumns } from '../../../../../components/list_lines';
 import { AuditLine_node$data, AuditLine_node$key } from './__generated__/AuditLine_node.graphql';

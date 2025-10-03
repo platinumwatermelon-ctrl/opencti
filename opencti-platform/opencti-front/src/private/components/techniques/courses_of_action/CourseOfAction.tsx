@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Grid from '@mui/material/Grid';
-import { CourseOfAction_courseOfAction$key } from '@components/techniques/courses_of_action/__generated__/CourseOfAction_courseOfAction.graphql';
+import { CourseOfAction_courseOfAction$key } from '@private/components/techniques/courses_of_action/__generated__/CourseOfAction_courseOfAction.graphql';
 import CourseOfActionDetails from './CourseOfActionDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { ObservedDatasLinesPaginationQuery, ObservedDatasLinesPaginationQuery$variables } from '@components/events/__generated__/ObservedDatasLinesPaginationQuery.graphql';
-import { ObservedDatasLines_data$data } from '@components/events/__generated__/ObservedDatasLines_data.graphql';
+import { ObservedDatasLinesPaginationQuery, ObservedDatasLinesPaginationQuery$variables } from '@private/components/events/__generated__/ObservedDatasLinesPaginationQuery.graphql';
+import { ObservedDatasLines_data$data } from '@private/components/events/__generated__/ObservedDatasLines_data.graphql';
 import ObservedDataCreation from './observed_data/ObservedDataCreation';
 import Security from '../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';

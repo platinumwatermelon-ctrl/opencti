@@ -3,10 +3,10 @@ import { Field, FieldArray } from 'formik';
 import { IconButton } from '@mui/material';
 import { AddOutlined, DeleteOutlined } from '@mui/icons-material';
 import { graphql } from 'react-relay';
-import { MeasureInput } from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualCreationMutation.graphql';
+import { MeasureInput } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualCreationMutation.graphql';
 import {
   ThreatActorIndividualEditionBiographics_ThreatActorIndividual$data,
-} from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
 import Button from '@mui/material/Button';
 import { useFormatter } from '../../../../components/i18n';
 import { SubscriptionFocus } from '../../../../components/Subscription';

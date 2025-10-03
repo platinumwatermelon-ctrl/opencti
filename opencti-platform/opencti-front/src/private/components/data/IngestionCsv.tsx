@@ -1,12 +1,12 @@
 import makeStyles from '@mui/styles/makeStyles';
 import Alert from '@mui/material/Alert';
 import React, { useContext } from 'react';
-import IngestionMenu from '@components/data/IngestionMenu';
-import IngestionCsvLines, { ingestionCsvLinesQuery } from '@components/data/ingestionCsv/IngestionCsvLines';
-import { IngestionCsvLinesPaginationQuery, IngestionCsvLinesPaginationQuery$variables } from '@components/data/ingestionCsv/__generated__/IngestionCsvLinesPaginationQuery.graphql';
-import { IngestionCsvLineDummy } from '@components/data/ingestionCsv/IngestionCsvLine';
-import { IngestionCsvCreationContainer } from '@components/data/ingestionCsv/IngestionCsvCreation';
-import IngestionCsvImport from '@components/data/ingestionCsv/IngestionCsvImport';
+import IngestionMenu from '@private/components/data/IngestionMenu';
+import IngestionCsvLines, { ingestionCsvLinesQuery } from '@private/components/data/ingestionCsv/IngestionCsvLines';
+import { IngestionCsvLinesPaginationQuery, IngestionCsvLinesPaginationQuery$variables } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvLinesPaginationQuery.graphql';
+import { IngestionCsvLineDummy } from '@private/components/data/ingestionCsv/IngestionCsvLine';
+import { IngestionCsvCreationContainer } from '@private/components/data/ingestionCsv/IngestionCsvCreation';
+import IngestionCsvImport from '@private/components/data/ingestionCsv/IngestionCsvImport';
 import { useFormatter } from '../../../components/i18n';
 import useAuth, { UserContext } from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

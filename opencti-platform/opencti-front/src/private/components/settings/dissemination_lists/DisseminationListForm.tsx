@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { FormikHelpers } from 'formik/dist/types';
 import { useTheme } from '@mui/styles';
 import { Field, Formik } from 'formik';
-import { disseminationListValidator } from '@components/settings/dissemination_lists/DisseminationListUtils';
+import { disseminationListValidator } from '@private/components/settings/dissemination_lists/DisseminationListUtils';
 import Button from '@mui/material/Button';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';

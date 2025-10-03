@@ -1,7 +1,7 @@
 import Tooltip from '@mui/material/Tooltip';
 import React from 'react';
-import { DraftChip } from '@components/common/draft/DraftChip';
-import { DraftVersion } from '@components/common/cards/GenericAttackCard';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
+import { DraftVersion } from '@private/components/common/cards/GenericAttackCard';
 import { APP_BASE_PATH } from '../relay/environment';
 
 export interface toEdgesLocated {

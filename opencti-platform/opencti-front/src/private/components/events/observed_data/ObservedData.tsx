@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Grid from '@mui/material/Grid';
-import { ObservedData_observedData$key } from '@components/events/observed_data/__generated__/ObservedData_observedData.graphql';
+import { ObservedData_observedData$key } from '@private/components/events/observed_data/__generated__/ObservedData_observedData.graphql';
 import ObservedDataDetails from './ObservedDataDetails';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';

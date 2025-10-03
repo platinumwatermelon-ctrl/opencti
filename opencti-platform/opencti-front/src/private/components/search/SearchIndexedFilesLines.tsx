@@ -17,8 +17,8 @@ import React, { FunctionComponent } from 'react';
 import {
   SearchIndexedFilesLinesPaginationQuery,
   SearchIndexedFilesLinesPaginationQuery$variables,
-} from '@components/search/__generated__/SearchIndexedFilesLinesPaginationQuery.graphql';
-import { SearchIndexedFilesLines_data$key } from '@components/search/__generated__/SearchIndexedFilesLines_data.graphql';
+} from '@private/components/search/__generated__/SearchIndexedFilesLinesPaginationQuery.graphql';
+import { SearchIndexedFilesLines_data$key } from '@private/components/search/__generated__/SearchIndexedFilesLines_data.graphql';
 import { graphql, PreloadedQuery } from 'react-relay';
 import ListLinesContent from '../../../components/list_lines/ListLinesContent';
 import usePreloadedPaginationFragment from '../../../utils/hooks/usePreloadedPaginationFragment';

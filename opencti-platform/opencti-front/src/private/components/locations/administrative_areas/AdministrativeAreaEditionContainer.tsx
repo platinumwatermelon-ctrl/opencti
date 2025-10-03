@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
 import {
   AdministrativeAreaEditionOverview_administrativeArea$key,
-} from '@components/locations/administrative_areas/__generated__/AdministrativeAreaEditionOverview_administrativeArea.graphql';
+} from '@private/components/locations/administrative_areas/__generated__/AdministrativeAreaEditionOverview_administrativeArea.graphql';
 import AdministrativeAreaEditionOverview from './AdministrativeAreaEditionOverview';
 import { useFormatter } from '../../../../components/i18n';
 import ErrorNotFound from '../../../../components/ErrorNotFound';

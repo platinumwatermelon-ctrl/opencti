@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql, useQueryLoader } from 'react-relay';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import { deleteNode } from '../../../../utils/store';
 import { NotifierLine_node$data } from './__generated__/NotifierLine_node.graphql';

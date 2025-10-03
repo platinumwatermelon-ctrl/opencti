@@ -3,7 +3,7 @@ import React, { FunctionComponent, useRef } from 'react';
 import { useTheme } from '@mui/styles';
 import ToggleButton from '@mui/material/ToggleButton';
 import { FileUploadOutlined } from '@mui/icons-material';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { FormEditionContainerQuery } from './__generated__/FormEditionContainerQuery.graphql';
 import { formEditionContainerQuery } from './FormEditionContainer';
 import { FormEditionFragment_form$data, FormEditionFragment_form$key } from './__generated__/FormEditionFragment_form.graphql';

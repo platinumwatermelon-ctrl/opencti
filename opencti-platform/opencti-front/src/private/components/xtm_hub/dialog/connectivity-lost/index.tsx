@@ -1,6 +1,6 @@
 import React from 'react';
-import XtmHubDialogConnectivityLostAuthorizedRegister from '@components/xtm_hub/dialog/connectivity-lost/AuthorizedRegister';
-import XtmHubDialogConnectivityLostUnauthorizedRegister from '@components/xtm_hub/dialog/connectivity-lost/UnauthorizedRegister';
+import XtmHubDialogConnectivityLostAuthorizedRegister from '@private/components/xtm_hub/dialog/connectivity-lost/AuthorizedRegister';
+import XtmHubDialogConnectivityLostUnauthorizedRegister from '@private/components/xtm_hub/dialog/connectivity-lost/UnauthorizedRegister';
 
 export enum DialogConnectivityLostStatus {
   unknown = 'unknown',

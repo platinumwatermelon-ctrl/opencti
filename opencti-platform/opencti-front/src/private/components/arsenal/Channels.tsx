@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import { ChannelsLines_data$data } from '@components/arsenal/__generated__/ChannelsLines_data.graphql';
-import { ChannelsLinesPaginationQuery, ChannelsLinesPaginationQuery$variables } from '@components/arsenal/__generated__/ChannelsLinesPaginationQuery.graphql';
+import { ChannelsLines_data$data } from '@private/components/arsenal/__generated__/ChannelsLines_data.graphql';
+import { ChannelsLinesPaginationQuery, ChannelsLinesPaginationQuery$variables } from '@private/components/arsenal/__generated__/ChannelsLinesPaginationQuery.graphql';
 import ChannelCreation from './channels/ChannelCreation';
 import Security from '../../../utils/Security';
 import { KNOWLEDGE_KNPARTICIPATE, KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';

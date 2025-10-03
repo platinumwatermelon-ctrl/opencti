@@ -12,8 +12,8 @@ import { Launch, LockPattern, ProgressWrench } from 'mdi-material-ui';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
   StixDomainObjectAttackPatternsKillChainContainer_data$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
-import { StixDomainObjectAttackPatternsKillChainQuery$variables } from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
+import { StixDomainObjectAttackPatternsKillChainQuery$variables } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
 import { ListItemButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import ItemMarkings from '../../../../components/ItemMarkings';

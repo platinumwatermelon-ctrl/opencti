@@ -1,30 +1,30 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@mui/material';
 import { FormikConfig, FormikErrors, useFormik } from 'formik';
-import { AssociatedEntityOption } from '@components/common/form/AssociatedEntityField';
-import ImportFilesUploader from '@components/common/files/import_files/ImportFilesUploader';
-import ImportFilesOptions from '@components/common/files/import_files/ImportFilesOptions';
+import { AssociatedEntityOption } from '@private/components/common/form/AssociatedEntityField';
+import ImportFilesUploader from '@private/components/common/files/import_files/ImportFilesUploader';
+import ImportFilesOptions from '@private/components/common/files/import_files/ImportFilesOptions';
 import { graphql, UseMutationConfig, usePreloadedQuery } from 'react-relay';
 import { Link } from 'react-router-dom';
-import ImportFilesStepper from '@components/common/files/import_files/ImportFilesStepper';
-import ImportFilesUploadProgress from '@components/common/files/import_files/ImportFilesUploadProgress';
-import ImportFilesToggleMode from '@components/common/files/import_files/ImportFilesToggleMode';
-import ImportFilesFormSelector from '@components/common/files/import_files/ImportFilesFormSelector';
-import ImportFilesFormView from '@components/common/files/import_files/ImportFilesFormView';
-import { draftCreationMutation } from '@components/drafts/DraftCreation';
-import { DraftCreationMutation, DraftCreationMutation$data } from '@components/drafts/__generated__/DraftCreationMutation.graphql';
-import { draftContextBannerMutation } from '@components/drafts/DraftContextBanner';
-import { DraftContextBannerMutation } from '@components/drafts/__generated__/DraftContextBannerMutation.graphql';
-import { ImportFilesProvider, importFilesQuery, useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
-import { ImportFilesContextQuery } from '@components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
+import ImportFilesStepper from '@private/components/common/files/import_files/ImportFilesStepper';
+import ImportFilesUploadProgress from '@private/components/common/files/import_files/ImportFilesUploadProgress';
+import ImportFilesToggleMode from '@private/components/common/files/import_files/ImportFilesToggleMode';
+import ImportFilesFormSelector from '@private/components/common/files/import_files/ImportFilesFormSelector';
+import ImportFilesFormView from '@private/components/common/files/import_files/ImportFilesFormView';
+import { draftCreationMutation } from '@private/components/drafts/DraftCreation';
+import { DraftCreationMutation, DraftCreationMutation$data } from '@private/components/drafts/__generated__/DraftCreationMutation.graphql';
+import { draftContextBannerMutation } from '@private/components/drafts/DraftContextBanner';
+import { DraftContextBannerMutation } from '@private/components/drafts/__generated__/DraftContextBannerMutation.graphql';
+import { ImportFilesProvider, importFilesQuery, useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
+import { ImportFilesContextQuery } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
 import {
   ImportFilesDialogGlobalMutation,
   ImportFilesDialogGlobalMutation$variables,
-} from '@components/common/files/import_files/__generated__/ImportFilesDialogGlobalMutation.graphql';
+} from '@private/components/common/files/import_files/__generated__/ImportFilesDialogGlobalMutation.graphql';
 import {
   ImportFilesDialogEntityMutation,
   ImportFilesDialogEntityMutation$variables,
-} from '@components/common/files/import_files/__generated__/ImportFilesDialogEntityMutation.graphql';
+} from '@private/components/common/files/import_files/__generated__/ImportFilesDialogEntityMutation.graphql';
 import { Close } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import { useFormatter } from '../../../../../components/i18n';

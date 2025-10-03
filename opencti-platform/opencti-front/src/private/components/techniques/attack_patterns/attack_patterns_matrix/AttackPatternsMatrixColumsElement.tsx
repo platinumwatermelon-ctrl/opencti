@@ -1,12 +1,12 @@
 import { Box, Typography } from '@mui/material';
-import AttackPatternsMatrixShouldCoverIcon from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixShouldCoverIcon';
+import AttackPatternsMatrixShouldCoverIcon from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixShouldCoverIcon';
 import React, { useState } from 'react';
 import {
   FilteredAttackPattern,
   FilteredSubAttackPattern,
   getBoxStyles,
   MinimalAttackPattern,
-} from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumns';
+} from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumns';
 import { useTheme } from '@mui/material/styles';
 import type { Theme } from '../../../../../components/Theme';
 

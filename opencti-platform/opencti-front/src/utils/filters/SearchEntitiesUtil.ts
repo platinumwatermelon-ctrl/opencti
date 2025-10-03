@@ -1,4 +1,4 @@
-import { FilterOptionValue } from '@components/common/lists/FilterAutocomplete';
+import { FilterOptionValue } from '@private/components/common/lists/FilterAutocomplete';
 import { isStixObjectTypes, ME_FILTER_VALUE } from './filtersUtils';
 
 // eslint-disable-next-line import/prefer-default-export

@@ -1,11 +1,11 @@
 import { graphql } from 'react-relay';
 import React from 'react';
-import { ImportWorkbenchesContentQuery, ImportWorkbenchesContentQuery$variables } from '@components/data/import/__generated__/ImportWorkbenchesContentQuery.graphql';
-import StixCoreObjectLabels from '@components/common/stix_core_objects/StixCoreObjectLabels';
-import { ImportWorkbenchesContentFileLine_file$data } from '@components/data/import/__generated__/ImportWorkbenchesContentFileLine_file.graphql';
-import ImportMenu from '@components/data/ImportMenu';
-import WorkbenchCreation from '@components/common/files/workbench/WorkbenchCreation';
-import ImportActionsPopover from '@components/common/files/ImportActionsPopover';
+import { ImportWorkbenchesContentQuery, ImportWorkbenchesContentQuery$variables } from '@private/components/data/import/__generated__/ImportWorkbenchesContentQuery.graphql';
+import StixCoreObjectLabels from '@private/components/common/stix_core_objects/StixCoreObjectLabels';
+import { ImportWorkbenchesContentFileLine_file$data } from '@private/components/data/import/__generated__/ImportWorkbenchesContentFileLine_file.graphql';
+import ImportMenu from '@private/components/data/ImportMenu';
+import WorkbenchCreation from '@private/components/common/files/workbench/WorkbenchCreation';
+import ImportActionsPopover from '@private/components/common/files/ImportActionsPopover';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import { useFormatter } from '../../../../components/i18n';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';

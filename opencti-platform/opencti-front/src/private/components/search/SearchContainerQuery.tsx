@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import EEChip from '@components/common/entreprise_edition/EEChip';
+import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import Badge from '@mui/material/Badge';
 import { useTheme } from '@mui/styles';

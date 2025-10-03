@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import Alert from '@mui/material/Alert';
-import CustomizationMenu from '@components/settings/CustomizationMenu';
+import CustomizationMenu from '@private/components/settings/CustomizationMenu';
 import RulesHeader from './RulesHeader';
 import { RulesQuery } from './__generated__/RulesQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';

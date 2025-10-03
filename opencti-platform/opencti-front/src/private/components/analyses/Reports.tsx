@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { ReportsLinesPaginationQuery, ReportsLinesPaginationQuery$variables } from '@components/analyses/__generated__/ReportsLinesPaginationQuery.graphql';
-import { ReportsLines_data$data } from '@components/analyses/__generated__/ReportsLines_data.graphql';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+import { ReportsLinesPaginationQuery, ReportsLinesPaginationQuery$variables } from '@private/components/analyses/__generated__/ReportsLinesPaginationQuery.graphql';
+import { ReportsLines_data$data } from '@private/components/analyses/__generated__/ReportsLines_data.graphql';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import ReportCreation from './reports/ReportCreation';
 import Security from '../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';

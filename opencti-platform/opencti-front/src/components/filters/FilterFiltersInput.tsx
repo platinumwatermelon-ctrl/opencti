@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useRef } from 'react';
-import Filters from '@components/common/lists/Filters';
+import Filters from '@private/components/common/lists/Filters';
 import Box from '@mui/material/Box';
 import { Filter, FilterGroup, handleFilterHelpers } from '../../utils/filters/filtersHelpers-types';
 import { emptyFilterGroup, isFilterGroupNotEmpty, sanitizeFiltersStructure, useAvailableFilterKeysForEntityTypes } from '../../utils/filters/filtersUtils';

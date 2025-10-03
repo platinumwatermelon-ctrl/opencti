@@ -12,7 +12,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
-import { UserHistoryLine_node$key } from '@components/settings/users/__generated__/UserHistoryLine_node.graphql';
+import { UserHistoryLine_node$key } from '@private/components/settings/users/__generated__/UserHistoryLine_node.graphql';
 import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';

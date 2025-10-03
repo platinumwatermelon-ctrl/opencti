@@ -5,7 +5,7 @@ import React, { FunctionComponent } from 'react';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { ListItemButton } from '@mui/material';
-import { RequestAccessConfigurationEdition_requestAccess$key } from '@components/settings/sub_types/workflow/__generated__/RequestAccessConfigurationEdition_requestAccess.graphql';
+import { RequestAccessConfigurationEdition_requestAccess$key } from '@private/components/settings/sub_types/workflow/__generated__/RequestAccessConfigurationEdition_requestAccess.graphql';
 import ItemIcon from '../../../../../components/ItemIcon';
 import { hexToRGB } from '../../../../../utils/Colors';
 import { useFormatter } from '../../../../../components/i18n';

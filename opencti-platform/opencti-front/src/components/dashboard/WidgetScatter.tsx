@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { ApexOptions } from 'apexcharts';
 import { useTheme } from '@mui/material/styles';
-import Chart from '@components/common/charts/Chart';
+import Chart from '@private/components/common/charts/Chart';
 import { scatterChartOptions } from '../../utils/Charts';
 import type { Theme } from '../Theme';
 

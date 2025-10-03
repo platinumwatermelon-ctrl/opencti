@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { QueryRenderer } from '../../../../relay/environment';
 import StixDomainObjectsExportsContent, { stixDomainObjectsExportsContentQuery } from './StixDomainObjectsExportsContent';
 import {

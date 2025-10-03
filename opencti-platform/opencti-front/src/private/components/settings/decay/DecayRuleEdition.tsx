@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
 import { Field, FieldArray, Form, Formik } from 'formik';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import * as R from 'ramda';
 import { AddOutlined, Delete } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
@@ -10,7 +10,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 import { InformationOutline } from 'mdi-material-ui';
 import { FormikConfig } from 'formik/dist/types';
-import ObservableTypesField from '@components/common/form/ObservableTypesField';
+import ObservableTypesField from '@private/components/common/form/ObservableTypesField';
 import decayRuleValidator from './DecayRuleValidator';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownField from '../../../../components/fields/MarkdownField';

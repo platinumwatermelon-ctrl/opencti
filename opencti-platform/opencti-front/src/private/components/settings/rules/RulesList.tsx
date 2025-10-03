@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Typography from '@mui/material/Typography';
-import RulesListItem from '@components/settings/rules/RulesListItem';
+import RulesListItem from '@private/components/settings/rules/RulesListItem';
 import { useTheme } from '@mui/material/styles';
-import RulesStatusChangeDialog, { RulesStatusChangeDialogProps } from '@components/settings/rules/RulesStatusChangeDialog';
+import RulesStatusChangeDialog, { RulesStatusChangeDialogProps } from '@private/components/settings/rules/RulesStatusChangeDialog';
 import { RulesList_data$data, RulesList_data$key } from './__generated__/RulesList_data.graphql';
 import { RULES_LOCAL_STORAGE_KEY } from './rules-utils';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';

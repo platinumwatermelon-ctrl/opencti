@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImportMode, useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
+import { ImportMode, useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import { Box, Card, CardActionArea, CardContent } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { RouteOutlined, UploadFileOutlined, DescriptionOutlined } from '@mui/icons-material';

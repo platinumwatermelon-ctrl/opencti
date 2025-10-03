@@ -2,14 +2,14 @@ import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import {
   StixDomainObjectAttackPatternsKillChainContainer_data$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
 import {
   StixDomainObjectAttackPatternsKillChainQuery,
   StixDomainObjectAttackPatternsKillChainQuery$data,
   StixDomainObjectAttackPatternsKillChainQuery$variables,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
-import { AttackPatternsMatrixQuery } from '@components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
-import { attackPatternsMatrixQuery } from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
+import { AttackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
+import { attackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
 import StixDomainObjectAttackPatternsKillChain, { stixDomainObjectAttackPatternsKillChainQuery } from './StixDomainObjectAttackPatternsKillChain';
 import { FilterGroup } from '../../../../utils/filters/filtersHelpers-types';
 import { UseLocalStorageHelpers } from '../../../../utils/hooks/useLocalStorage';

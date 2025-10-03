@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Chip from '@mui/material/Chip';
 import { CancelOutlined, PersonOutline } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
-import { stixDomainObjectMutation } from '@components/common/stix_domain_objects/StixDomainObjectHeader';
+import { stixDomainObjectMutation } from '@private/components/common/stix_domain_objects/StixDomainObjectHeader';
 import Tooltip from '@mui/material/Tooltip';
 import { truncate } from '../utils/String';
 import useGranted, { KNOWLEDGE_KNUPDATE } from '../utils/hooks/useGranted';

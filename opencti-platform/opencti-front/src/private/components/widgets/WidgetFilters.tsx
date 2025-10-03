@@ -1,7 +1,7 @@
-import Filters from '@components/common/lists/Filters';
+import Filters from '@private/components/common/lists/Filters';
 import React, { FunctionComponent, useEffect } from 'react';
 import { Box } from '@mui/material';
-import { useWidgetConfigContext } from '@components/widgets/WidgetConfigContext';
+import { useWidgetConfigContext } from '@private/components/widgets/WidgetConfigContext';
 import useFiltersState from '../../../utils/filters/useFiltersState';
 import { isFilterGroupNotEmpty, useAvailableFilterKeysForEntityTypes } from '../../../utils/filters/filtersUtils';
 import FilterIconButton from '../../../components/FilterIconButton';

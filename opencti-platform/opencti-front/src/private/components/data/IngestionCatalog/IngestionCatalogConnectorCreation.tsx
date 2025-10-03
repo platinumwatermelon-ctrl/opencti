@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import Button from '@mui/material/Button';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTheme } from '@mui/styles';
 import { FormikHelpers } from 'formik/dist/types';
@@ -18,18 +18,18 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import {
   IngestionCatalogConnectorCreationMutation,
   IngestionCatalogConnectorCreationMutation$data,
-} from '@components/data/IngestionCatalog/__generated__/IngestionCatalogConnectorCreationMutation.graphql';
-import IngestionCreationUserHandling, { BasicUserHandlingValues } from '@components/data/IngestionCreationUserHandling';
-import { IngestionConnector, IngestionTypedProperty } from '@components/data/IngestionCatalog';
+} from '@private/components/data/IngestionCatalog/__generated__/IngestionCatalogConnectorCreationMutation.graphql';
+import IngestionCreationUserHandling, { BasicUserHandlingValues } from '@private/components/data/IngestionCreationUserHandling';
+import { IngestionConnector, IngestionTypedProperty } from '@private/components/data/IngestionCatalog';
 import { Launch } from 'mdi-material-ui';
 import IconButton from '@mui/material/IconButton';
 import { HubOutlined, LibraryBooksOutlined } from '@mui/icons-material';
-import ConnectorDeploymentBanner from '@components/data/connectors/ConnectorDeploymentBanner';
+import ConnectorDeploymentBanner from '@private/components/data/connectors/ConnectorDeploymentBanner';
 import Tooltip from '@mui/material/Tooltip';
-import JsonFormArrayRenderer, { jsonFormArrayTester } from '@components/data/IngestionCatalog/utils/JsonFormArrayRenderer';
-import buildContractConfiguration from '@components/data/connectors/utils/buildContractConfiguration';
-import JsonFormUnsupportedType, { jsonFormUnsupportedTypeTester } from '@components/data/IngestionCatalog/utils/JsonFormUnsupportedType';
-import { JsonFormPasswordRenderer, jsonFormPasswordTester } from '@components/data/IngestionCatalog/utils/JsonFormPasswordRenderer';
+import JsonFormArrayRenderer, { jsonFormArrayTester } from '@private/components/data/IngestionCatalog/utils/JsonFormArrayRenderer';
+import buildContractConfiguration from '@private/components/data/connectors/utils/buildContractConfiguration';
+import JsonFormUnsupportedType, { jsonFormUnsupportedTypeTester } from '@private/components/data/IngestionCatalog/utils/JsonFormUnsupportedType';
+import { JsonFormPasswordRenderer, jsonFormPasswordTester } from '@private/components/data/IngestionCatalog/utils/JsonFormPasswordRenderer';
 import { MESSAGING$ } from '../../../../relay/environment';
 import { RelayError } from '../../../../relay/relayTypes';
 import type { Theme } from '../../../../components/Theme';

@@ -1,6 +1,6 @@
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent } from 'react';
-import EEChip from '@components/common/entreprise_edition/EEChip';
+import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import { useFormatter } from '../../../../components/i18n';
 
 // Deprecated - https://mui.com/system/styles/basics/

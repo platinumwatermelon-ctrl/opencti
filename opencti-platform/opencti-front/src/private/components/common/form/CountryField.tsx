@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { Field } from 'formik';
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql } from 'react-relay';
-import { CountryFieldSearchQuery$data } from '@components/common/form/__generated__/CountryFieldSearchQuery.graphql';
+import { CountryFieldSearchQuery$data } from '@private/components/common/form/__generated__/CountryFieldSearchQuery.graphql';
 import { fetchQuery } from '../../../../relay/environment';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import { useFormatter } from '../../../../components/i18n';

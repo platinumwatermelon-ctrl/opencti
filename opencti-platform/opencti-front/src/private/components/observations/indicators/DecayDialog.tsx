@@ -11,8 +11,8 @@ import Paper from '@mui/material/Paper';
 import { SxProps } from '@mui/material';
 import { Theme } from '@mui/material/styles/createTheme';
 import { useTheme } from '@mui/styles';
-import { IndicatorDetails_indicator$data } from '@components/observations/indicators/__generated__/IndicatorDetails_indicator.graphql';
-import DecayChart, { DecayHistory } from '@components/settings/decay/DecayChart';
+import { IndicatorDetails_indicator$data } from '@private/components/observations/indicators/__generated__/IndicatorDetails_indicator.graphql';
+import DecayChart, { DecayHistory } from '@private/components/settings/decay/DecayChart';
 import { useFormatter } from '../../../../components/i18n';
 
 interface DecayDialogContentProps {

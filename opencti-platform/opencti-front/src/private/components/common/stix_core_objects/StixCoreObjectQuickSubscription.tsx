@@ -17,14 +17,14 @@ import { pick, uniq } from 'ramda';
 import React, { FunctionComponent, useState } from 'react';
 import { useRefetchableFragment } from 'react-relay';
 import * as Yup from 'yup';
-import Drawer from '@components/common/drawer/Drawer';
-import { stixCoreObjectTriggersFragment } from '@components/common/stix_core_objects/stixCoreObjectTriggersUtils';
+import Drawer from '@private/components/common/drawer/Drawer';
+import { stixCoreObjectTriggersFragment } from '@private/components/common/stix_core_objects/stixCoreObjectTriggersUtils';
 import {
   stixCoreObjectTriggersUtilsPaginationQuery as TriggerQuery,
   stixCoreObjectTriggersUtilsPaginationQuery$data,
   stixCoreObjectTriggersUtilsPaginationQuery$variables,
-} from '@components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtilsPaginationQuery.graphql';
-import { stixCoreObjectTriggersUtils_triggers$key as FragmentKey } from '@components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtils_triggers.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtilsPaginationQuery.graphql';
+import { stixCoreObjectTriggersUtils_triggers$key as FragmentKey } from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtils_triggers.graphql';
 import { ListItemButton, SvgIconPropsColorOverrides } from '@mui/material';
 import ListItem from '@mui/material/ListItem';
 import AutocompleteField from '../../../../components/AutocompleteField';

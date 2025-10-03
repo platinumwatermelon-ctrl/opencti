@@ -1,5 +1,5 @@
 import { graphql } from 'react-relay';
-import { useGroupingKnowledgeGraphEditMutation } from '@components/analyses/groupings/__generated__/useGroupingKnowledgeGraphEditMutation.graphql';
+import { useGroupingKnowledgeGraphEditMutation } from '@private/components/analyses/groupings/__generated__/useGroupingKnowledgeGraphEditMutation.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 
 const groupingKnowledgeGraphEdit = graphql`

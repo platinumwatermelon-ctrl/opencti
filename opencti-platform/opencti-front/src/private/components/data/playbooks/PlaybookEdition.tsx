@@ -14,9 +14,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React from 'react';
-import PlaybookEditionForm, { playbookEditionFormQuery } from '@components/data/playbooks/PlaybookEditionForm';
-import Drawer from '@components/common/drawer/Drawer';
-import { PlaybookEditionFormQuery } from '@components/data/playbooks/__generated__/PlaybookEditionFormQuery.graphql';
+import PlaybookEditionForm, { playbookEditionFormQuery } from '@private/components/data/playbooks/PlaybookEditionForm';
+import Drawer from '@private/components/common/drawer/Drawer';
+import { PlaybookEditionFormQuery } from '@private/components/data/playbooks/__generated__/PlaybookEditionFormQuery.graphql';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import EditEntityControlledDial from '../../../../components/EditEntityControlledDial';
 import { useFormatter } from '../../../../components/i18n';

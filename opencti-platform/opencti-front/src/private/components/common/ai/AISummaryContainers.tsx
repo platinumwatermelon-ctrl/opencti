@@ -8,7 +8,7 @@ import { AutoModeOutlined, ContentCopyOutlined } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import { AISummaryContainersContainersAskAiSummaryQuery$data } from '@components/common/ai/__generated__/AISummaryContainersContainersAskAiSummaryQuery.graphql';
+import { AISummaryContainersContainersAskAiSummaryQuery$data } from '@private/components/common/ai/__generated__/AISummaryContainersContainersAskAiSummaryQuery.graphql';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';

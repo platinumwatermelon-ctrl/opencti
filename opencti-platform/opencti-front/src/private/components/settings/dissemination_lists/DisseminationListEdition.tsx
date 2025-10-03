@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { FormikConfig } from 'formik';
-import { DisseminationListsLine_node$data } from '@components/settings/dissemination_lists/__generated__/DisseminationListsLine_node.graphql';
-import { formatEmailsForApi, formatEmailsForFront } from '@components/settings/dissemination_lists/DisseminationListUtils';
-import DisseminationListForm, { DisseminationListFormData, DisseminationListFormInputKeys } from '@components/settings/dissemination_lists/DisseminationListForm';
+import { DisseminationListsLine_node$data } from '@private/components/settings/dissemination_lists/__generated__/DisseminationListsLine_node.graphql';
+import { formatEmailsForApi, formatEmailsForFront } from '@private/components/settings/dissemination_lists/DisseminationListUtils';
+import DisseminationListForm, { DisseminationListFormData, DisseminationListFormInputKeys } from '@private/components/settings/dissemination_lists/DisseminationListForm';
 import { handleErrorInForm } from '../../../../relay/environment';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { useFormatter } from '../../../../components/i18n';

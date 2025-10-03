@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Tooltip from '@mui/material/Tooltip';
-import { ToolDetails_tool$key } from '@components/arsenal/tools/__generated__/ToolDetails_tool.graphql';
+import { ToolDetails_tool$key } from '@private/components/arsenal/tools/__generated__/ToolDetails_tool.graphql';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
 import StixCoreObjectKillChainPhasesView from '../../common/stix_core_objects/StixCoreObjectKillChainPhasesView';

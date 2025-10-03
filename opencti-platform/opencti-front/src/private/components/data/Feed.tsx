@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import { FeedLinesPaginationQuery$data } from '@components/data/feeds/__generated__/FeedLinesPaginationQuery.graphql';
+import { FeedLinesPaginationQuery$data } from '@private/components/data/feeds/__generated__/FeedLinesPaginationQuery.graphql';
 import { QueryRenderer } from '../../../relay/environment';
 import { buildViewParamsFromUrlAndStorage, saveViewParameters } from '../../../utils/ListParameters';
 import ListLines from '../../../components/list_lines/ListLines';

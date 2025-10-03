@@ -1,13 +1,13 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { RelatedContainerNode } from '@components/common/containers/related_containers/RelatedContainers';
+import { RelatedContainerNode } from '@private/components/common/containers/related_containers/RelatedContainers';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import {
   RelatedContainersDetailsQuery,
   RelatedContainersDetailsQuery$variables,
-} from '@components/common/containers/related_containers/__generated__/RelatedContainersDetailsQuery.graphql';
-import RelatedContainersDetailsTable from '@components/common/containers/related_containers/RelatedContainersDetailsTable';
+} from '@private/components/common/containers/related_containers/__generated__/RelatedContainersDetailsQuery.graphql';
+import RelatedContainersDetailsTable from '@private/components/common/containers/related_containers/RelatedContainersDetailsTable';
 import { useFormatter } from '../../../../../components/i18n';
 import ExpandableMarkdown from '../../../../../components/ExpandableMarkdown';
 import ItemMarkings from '../../../../../components/ItemMarkings';

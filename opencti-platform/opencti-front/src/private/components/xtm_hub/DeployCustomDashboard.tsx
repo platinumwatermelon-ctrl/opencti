@@ -1,8 +1,8 @@
 import React from 'react';
-import { importMutation } from '@components/workspaces/WorkspaceCreation';
+import { importMutation } from '@private/components/workspaces/WorkspaceCreation';
 import { useNavigate, useParams } from 'react-router-dom';
-import { WorkspaceCreationImportMutation } from '@components/workspaces/__generated__/WorkspaceCreationImportMutation.graphql';
-import XtmHubDialogConnectivityLost from '@components/xtm_hub/dialog/connectivity-lost';
+import { WorkspaceCreationImportMutation } from '@private/components/workspaces/__generated__/WorkspaceCreationImportMutation.graphql';
+import XtmHubDialogConnectivityLost from '@private/components/xtm_hub/dialog/connectivity-lost';
 import { resolveLink } from '../../../utils/Entity';
 import { MESSAGING$ } from '../../../relay/environment';
 import useApiMutation from '../../../utils/hooks/useApiMutation';

@@ -1,7 +1,7 @@
 import React from 'react';
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { useTheme } from '@mui/styles';
 import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';

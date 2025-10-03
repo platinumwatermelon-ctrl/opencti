@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { graphql } from 'react-relay';
-import { UsersLinesPaginationQuery, UsersLinesPaginationQuery$variables } from '@components/settings/__generated__/UsersLinesPaginationQuery.graphql';
-import { UsersLine_node$data } from '@components/settings/__generated__/UsersLine_node.graphql';
+import { UsersLinesPaginationQuery, UsersLinesPaginationQuery$variables } from '@private/components/settings/__generated__/UsersLinesPaginationQuery.graphql';
+import { UsersLine_node$data } from '@private/components/settings/__generated__/UsersLine_node.graphql';
 import { AccountCircleOutlined, ManageAccountsOutlined, PersonOutlined } from '@mui/icons-material';
 import SettingsOrganizationUserCreation from './users/SettingsOrganizationUserCreation';
 import EnterpriseEdition from '../common/entreprise_edition/EnterpriseEdition';

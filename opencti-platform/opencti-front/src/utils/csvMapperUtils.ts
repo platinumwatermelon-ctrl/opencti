@@ -1,4 +1,4 @@
-import { CsvMapperFieldOption } from '@components/common/form/CsvMapperField';
+import { CsvMapperFieldOption } from '@private/components/common/form/CsvMapperField';
 
 export const USER_CHOICE_MARKING_CONFIG = 'user-choice';
 export const resolveHasUserChoiceParsedCsvMapper = (option: CsvMapperFieldOption) => {

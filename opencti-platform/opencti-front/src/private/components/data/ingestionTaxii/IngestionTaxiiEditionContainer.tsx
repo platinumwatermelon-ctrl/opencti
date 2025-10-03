@@ -1,8 +1,8 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import Drawer, { DrawerVariant } from '@components/common/drawer/Drawer';
-import IngestionTaxiiEdition from '@components/data/ingestionTaxii/IngestionTaxiiEdition';
-import { IngestionTaxiiEditionContainerQuery } from '@components/data/ingestionTaxii/__generated__/IngestionTaxiiEditionContainerQuery.graphql';
+import Drawer, { DrawerVariant } from '@private/components/common/drawer/Drawer';
+import IngestionTaxiiEdition from '@private/components/data/ingestionTaxii/IngestionTaxiiEdition';
+import { IngestionTaxiiEditionContainerQuery } from '@private/components/data/ingestionTaxii/__generated__/IngestionTaxiiEditionContainerQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
 

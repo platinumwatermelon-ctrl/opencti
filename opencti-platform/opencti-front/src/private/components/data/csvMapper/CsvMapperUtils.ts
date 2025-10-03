@@ -1,9 +1,9 @@
-import { CsvMapperEdit, CsvMapperFormData } from '@components/data/csvMapper/CsvMapper';
-import { csvMapperRepresentationToFormData, formDataToCsvMapperRepresentation } from '@components/data/csvMapper/representations/RepresentationUtils';
+import { CsvMapperEdit, CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
+import { csvMapperRepresentationToFormData, formDataToCsvMapperRepresentation } from '@private/components/data/csvMapper/representations/RepresentationUtils';
 import {
   CsvMapperRepresentationAttributesForm_allSchemaAttributes$data,
-} from '@components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
-import { CsvMapperEditionContainerFragment_csvMapper$data } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+} from '@private/components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+import { CsvMapperEditionContainerFragment_csvMapper$data } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
 import { isNotEmptyField } from '../../../../utils/utils';
 import { useComputeDefaultValues } from '../../../../utils/hooks/useDefaultValues';
 

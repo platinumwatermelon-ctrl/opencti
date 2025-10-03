@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { Grid2 as Grid } from '@mui/material';
-import DangerZoneBlock from '@components/common/danger_zone/DangerZoneBlock';
+import DangerZoneBlock from '@private/components/common/danger_zone/DangerZoneBlock';
 import Typography from '@mui/material/Typography';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';

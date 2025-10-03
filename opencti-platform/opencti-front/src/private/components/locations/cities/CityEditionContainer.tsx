@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
-import { CityEditionOverview_city$key } from '@components/locations/cities/__generated__/CityEditionOverview_city.graphql';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
+import { CityEditionOverview_city$key } from '@private/components/locations/cities/__generated__/CityEditionOverview_city.graphql';
 import CityEditionOverview from './CityEditionOverview';
 import { useFormatter } from '../../../../components/i18n';
 import ErrorNotFound from '../../../../components/ErrorNotFound';

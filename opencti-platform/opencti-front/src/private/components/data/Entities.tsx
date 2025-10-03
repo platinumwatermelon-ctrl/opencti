@@ -2,9 +2,9 @@ import React from 'react';
 import {
   EntitiesStixDomainObjectsLinesPaginationQuery,
   EntitiesStixDomainObjectsLinesPaginationQuery$variables,
-} from '@components/data/entities/__generated__/EntitiesStixDomainObjectsLinesPaginationQuery.graphql';
-import { EntitiesStixDomainObjectsLines_data$data } from '@components/data/entities/__generated__/EntitiesStixDomainObjectsLines_data.graphql';
-import { entitiesFragment } from '@components/data/entities/EntitiesStixDomainObjectLine';
+} from '@private/components/data/entities/__generated__/EntitiesStixDomainObjectsLinesPaginationQuery.graphql';
+import { EntitiesStixDomainObjectsLines_data$data } from '@private/components/data/entities/__generated__/EntitiesStixDomainObjectsLines_data.graphql';
+import { entitiesFragment } from '@private/components/data/entities/EntitiesStixDomainObjectLine';
 import { entitiesStixDomainObjectsLinesFragment, entitiesStixDomainObjectsLinesQuery } from './entities/EntitiesStixDomainObjectsLines';
 import useAuth from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

@@ -1,10 +1,10 @@
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import React from 'react';
 import { FormikConfig } from 'formik/dist/types';
 import { useNavigate } from 'react-router-dom';
-import EmailTemplateForm, { EmailTemplateFormInputKeys, EmailTemplateFormInputs } from '@components/settings/email_template/EmailTemplateForm';
-import useEmailTemplateAdd from '@components/settings/email_template/useEmailTemplateAdd';
-import useEmailTemplateEdit from '@components/settings/email_template/useEmailTemplateEdit';
+import EmailTemplateForm, { EmailTemplateFormInputKeys, EmailTemplateFormInputs } from '@private/components/settings/email_template/EmailTemplateForm';
+import useEmailTemplateAdd from '@private/components/settings/email_template/useEmailTemplateAdd';
+import useEmailTemplateEdit from '@private/components/settings/email_template/useEmailTemplateEdit';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { useFormatter } from '../../../../components/i18n';
 import { handleError, MESSAGING$ } from '../../../../relay/environment';

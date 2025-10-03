@@ -1,10 +1,10 @@
 import { v4 as uuid } from 'uuid';
-import { JsonMapperRepresentationType } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
-import { JsonMapperRepresentation, JsonMapperRepresentationEdit, JsonMapperRepresentationFormData } from '@components/data/jsonMapper/representations/Representation';
-import { formDataToJsonMapperAttribute, jsonMapperAttributeToFormData } from '@components/data/jsonMapper/representations/attributes/AttributeUtils';
+import { JsonMapperRepresentationType } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
+import { JsonMapperRepresentation, JsonMapperRepresentationEdit, JsonMapperRepresentationFormData } from '@private/components/data/jsonMapper/representations/Representation';
+import { formDataToJsonMapperAttribute, jsonMapperAttributeToFormData } from '@private/components/data/jsonMapper/representations/attributes/AttributeUtils';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$data,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import { isEmptyField } from '../../../../../utils/utils';
 import { useComputeDefaultValues } from '../../../../../utils/hooks/useDefaultValues';
 

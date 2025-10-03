@@ -32,7 +32,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import { useTheme } from '@mui/material';
 import ListItemButton from '@mui/material/ListItemButton';
-import PlaybookEdition from '@components/data/playbooks/PlaybookEdition';
+import PlaybookEdition from '@private/components/data/playbooks/PlaybookEdition';
 import Drawer from '../../common/drawer/Drawer';
 import { PlaybookHeader_playbook$data } from './__generated__/PlaybookHeader_playbook.graphql';
 import { useFormatter } from '../../../../components/i18n';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import { ToolsLines_data$data } from '@components/arsenal/__generated__/ToolsLines_data.graphql';
-import { ToolsLinesPaginationQuery, ToolsLinesPaginationQuery$variables } from '@components/arsenal/__generated__/ToolsLinesPaginationQuery.graphql';
+import { ToolsLines_data$data } from '@private/components/arsenal/__generated__/ToolsLines_data.graphql';
+import { ToolsLinesPaginationQuery, ToolsLinesPaginationQuery$variables } from '@private/components/arsenal/__generated__/ToolsLinesPaginationQuery.graphql';
 import ToolCreation from './tools/ToolCreation';
 import Security from '../../../utils/Security';
 import { KNOWLEDGE_KNPARTICIPATE, KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';

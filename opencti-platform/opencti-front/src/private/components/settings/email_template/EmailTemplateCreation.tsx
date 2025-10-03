@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
-import { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
-import { EmailTemplatesLinesPaginationQuery$variables } from '@components/settings/email_template/__generated__/EmailTemplatesLinesPaginationQuery.graphql';
-import EmailTemplateFormDrawer from '@components/settings/email_template/EmailTemplateFormDrawer';
+import { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
+import { EmailTemplatesLinesPaginationQuery$variables } from '@private/components/settings/email_template/__generated__/EmailTemplatesLinesPaginationQuery.graphql';
+import EmailTemplateFormDrawer from '@private/components/settings/email_template/EmailTemplateFormDrawer';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
 import { insertNode } from '../../../../utils/store';

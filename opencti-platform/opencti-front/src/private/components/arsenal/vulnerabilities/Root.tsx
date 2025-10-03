@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
-import useForceUpdate from '@components/common/bulk/useForceUpdate';
+import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
 import StixCoreObjectContentRoot from '../../common/stix_core_objects/StixCoreObjectContentRoot';
 import Vulnerability from './Vulnerability';
 import VulnerabilityKnowledge from './VulnerabilityKnowledge';

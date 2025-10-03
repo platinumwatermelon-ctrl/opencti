@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/styles';
-import { LocationDetails_location$key } from '@components/locations/__generated__/LocationDetails_location.graphql';
+import { LocationDetails_location$key } from '@private/components/locations/__generated__/LocationDetails_location.graphql';
 import { graphql, useFragment } from 'react-relay';
 import ExpandableMarkdown from '../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../components/i18n';

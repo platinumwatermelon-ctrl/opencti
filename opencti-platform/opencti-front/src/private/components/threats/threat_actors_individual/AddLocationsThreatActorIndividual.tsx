@@ -5,9 +5,9 @@ import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import {
   AddLocationsThreatActorIndividualLinesQuery,
   AddLocationsThreatActorIndividualLinesQuery$variables,
-} from '@components/threats/threat_actors_individual/__generated__/AddLocationsThreatActorIndividualLinesQuery.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/AddLocationsThreatActorIndividualLinesQuery.graphql';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import { ThreatActorIndividualLocations_locations$data } from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividualLocations_locations.graphql';
+import { ThreatActorIndividualLocations_locations$data } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualLocations_locations.graphql';
 import Drawer from '../../common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';

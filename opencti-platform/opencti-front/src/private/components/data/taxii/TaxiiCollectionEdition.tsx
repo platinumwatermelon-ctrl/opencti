@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import Box from '@mui/material/Box';
 import makeStyles from '@mui/styles/makeStyles';
-import { TaxiiCollectionEdition_taxiiCollection$data } from '@components/data/taxii/__generated__/TaxiiCollectionEdition_taxiiCollection.graphql';
+import { TaxiiCollectionEdition_taxiiCollection$data } from '@private/components/data/taxii/__generated__/TaxiiCollectionEdition_taxiiCollection.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import ObjectMembersField from '../../common/form/ObjectMembersField';
 import { useFormatter } from '../../../../components/i18n';

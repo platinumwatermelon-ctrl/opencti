@@ -1,16 +1,16 @@
 import React, { FunctionComponent, useState } from 'react';
-import { ThreatActorIndividual_ThreatActorIndividual$data } from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
+import { ThreatActorIndividual_ThreatActorIndividual$data } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
 import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
-import Drawer from '@components/common/drawer/Drawer';
-import CountryCreation from '@components/locations/countries/CountryCreation';
+import Drawer from '@private/components/common/drawer/Drawer';
+import CountryCreation from '@private/components/locations/countries/CountryCreation';
 import AddThreatActorIndividualDemographicLines, {
   addIndividualsThreatActorIndividualLinesQuery,
-} from '@components/threats/threat_actors_individual/AddThreatActorIndividualDemographicLines';
+} from '@private/components/threats/threat_actors_individual/AddThreatActorIndividualDemographicLines';
 import {
   AddThreatActorIndividualDemographicLinesQuery,
   AddThreatActorIndividualDemographicLinesQuery$variables,
-} from '@components/threats/threat_actors_individual/__generated__/AddThreatActorIndividualDemographicLinesQuery.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/AddThreatActorIndividualDemographicLinesQuery.graphql';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import SearchInput from '../../../../components/SearchInput';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useTheme } from '@mui/styles';
 import { CancelOutlined, PersonOutline } from '@mui/icons-material';
 import Chip from '@mui/material/Chip';
-import { stixDomainObjectMutation } from '@components/common/stix_domain_objects/StixDomainObjectHeader';
+import { stixDomainObjectMutation } from '@private/components/common/stix_domain_objects/StixDomainObjectHeader';
 import Tooltip from '@mui/material/Tooltip';
 import FieldOrEmpty from './FieldOrEmpty';
 import type { Theme } from './Theme';

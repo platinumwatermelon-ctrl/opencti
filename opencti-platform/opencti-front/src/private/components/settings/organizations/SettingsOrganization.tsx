@@ -11,7 +11,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import { ListItemButton } from '@mui/material';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';

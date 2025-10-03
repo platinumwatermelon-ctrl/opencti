@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
-import { FeedbackEditionOverview_case$key } from '@components/cases/feedbacks/__generated__/FeedbackEditionOverview_case.graphql';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
+import { FeedbackEditionOverview_case$key } from '@private/components/cases/feedbacks/__generated__/FeedbackEditionOverview_case.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
 import FeedbackEditionOverview from './FeedbackEditionOverview';

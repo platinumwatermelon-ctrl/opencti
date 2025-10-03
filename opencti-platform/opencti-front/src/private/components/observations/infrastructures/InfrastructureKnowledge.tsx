@@ -5,7 +5,7 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
-import StixCoreObjectKnowledgeBar from '@components/common/stix_core_objects/StixCoreObjectKnowledgeBar';
+import StixCoreObjectKnowledgeBar from '@private/components/common/stix_core_objects/StixCoreObjectKnowledgeBar';
 import EntityStixCoreRelationships from '../../common/stix_core_relationships/EntityStixCoreRelationships';
 import StixDomainObjectThreatKnowledge from '../../common/stix_domain_objects/StixDomainObjectThreatKnowledge';
 import StixCoreRelationship from '../../common/stix_core_relationships/StixCoreRelationship';

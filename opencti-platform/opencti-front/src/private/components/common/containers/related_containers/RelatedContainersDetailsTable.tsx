@@ -3,8 +3,8 @@ import Typography from '@mui/material/Typography';
 import { graphql } from 'react-relay';
 import {
   RelatedContainersDetailsTableLinesPaginationQuery,
-} from '@components/common/containers/related_containers/__generated__/RelatedContainersDetailsTableLinesPaginationQuery.graphql';
-import { RelatedContainersDetailsTableLines_data$data } from '@components/common/containers/related_containers/__generated__/RelatedContainersDetailsTableLines_data.graphql';
+} from '@private/components/common/containers/related_containers/__generated__/RelatedContainersDetailsTableLinesPaginationQuery.graphql';
+import { RelatedContainersDetailsTableLines_data$data } from '@private/components/common/containers/related_containers/__generated__/RelatedContainersDetailsTableLines_data.graphql';
 import { useNavigate } from 'react-router-dom';
 import { useFormatter } from '../../../../../components/i18n';
 import DataTable from '../../../../../components/dataGrid/DataTable';

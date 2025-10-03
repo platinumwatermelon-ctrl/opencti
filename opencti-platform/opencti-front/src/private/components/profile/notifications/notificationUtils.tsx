@@ -1,7 +1,7 @@
 import { deepPurple, green, indigo, red } from '@mui/material/colors';
 import { BellCogOutline, BellOutline, BellPlusOutline, BellRemoveOutline, FileTableBoxMultipleOutline } from 'mdi-material-ui';
 import React from 'react';
-import { NotificationsLine_node$data } from '@components/profile/__generated__/NotificationsLine_node.graphql';
+import { NotificationsLine_node$data } from '@private/components/profile/__generated__/NotificationsLine_node.graphql';
 
 export const colors: Record<string, string> = {
   none: green[500],

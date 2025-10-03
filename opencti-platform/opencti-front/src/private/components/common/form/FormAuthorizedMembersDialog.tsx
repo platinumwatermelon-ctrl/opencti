@@ -1,10 +1,10 @@
 import ToggleButton from '@mui/material/ToggleButton';
 import { LockPersonOutlined } from '@mui/icons-material';
 import React, { useState } from 'react';
-import FormAuthorizedMembers, { FormAuthorizedMembersInputs } from '@components/common/form/FormAuthorizedMembers';
+import FormAuthorizedMembers, { FormAuthorizedMembersInputs } from '@private/components/common/form/FormAuthorizedMembers';
 import { FormikHelpers } from 'formik/dist/types';
 import { GraphQLTaggedNode } from 'relay-runtime/lib/query/RelayModernGraphQLTag';
-import EETooltip from '@components/common/entreprise_edition/EETooltip';
+import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import { useFormatter } from '../../../../components/i18n';
 import { AuthorizedMemberOption, Creator } from '../../../../utils/authorizedMembers';
 import { handleErrorInForm } from '../../../../relay/environment';

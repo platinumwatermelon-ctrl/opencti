@@ -10,7 +10,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { Field, Formik, FormikHelpers } from 'formik';
 import DialogTitle from '@mui/material/DialogTitle';
 import * as Yup from 'yup';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import TextField from '../../../../components/TextField';
 import { useFormatter } from '../../../../components/i18n';

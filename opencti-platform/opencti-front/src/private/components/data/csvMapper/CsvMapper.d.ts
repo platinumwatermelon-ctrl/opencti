@@ -1,5 +1,5 @@
-import { CsvMapperRepresentationEdit, CsvMapperRepresentationFormData } from '@components/data/csvMapper/representations/Representation';
-import { CsvMapperEditionContainerFragment_csvMapper$data } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+import { CsvMapperRepresentationEdit, CsvMapperRepresentationFormData } from '@private/components/data/csvMapper/representations/Representation';
+import { CsvMapperEditionContainerFragment_csvMapper$data } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
 
 export type CsvMapperEdit = Omit<CsvMapperEditionContainerFragment_csvMapper$data, ' $fragmentType' | 'errors' | 'representations'> & {
   representations: CsvMapperRepresentationEdit[]

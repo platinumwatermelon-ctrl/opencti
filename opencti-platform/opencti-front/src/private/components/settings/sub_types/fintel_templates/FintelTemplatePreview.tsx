@@ -3,7 +3,7 @@ import { Paper } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import { graphql, useFragment } from 'react-relay';
-import { FintelDesign } from '@components/common/form/FintelDesignField';
+import { FintelDesign } from '@private/components/common/form/FintelDesignField';
 import { useFintelTemplateContext } from './FintelTemplateContext';
 import type { Theme } from '../../../../../components/Theme';
 import { useFormatter } from '../../../../../components/i18n';

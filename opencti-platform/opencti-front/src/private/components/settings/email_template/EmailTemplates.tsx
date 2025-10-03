@@ -1,13 +1,13 @@
 import React from 'react';
-import AccessesMenu from '@components/settings/AccessesMenu';
+import AccessesMenu from '@private/components/settings/AccessesMenu';
 import { graphql } from 'react-relay';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
-import EmailTemplateCreation from '@components/settings/email_template/EmailTemplateCreation';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
+import EmailTemplateCreation from '@private/components/settings/email_template/EmailTemplateCreation';
 import {
   EmailTemplatesLinesPaginationQuery,
   EmailTemplatesLinesPaginationQuery$variables,
-} from '@components/settings/email_template/__generated__/EmailTemplatesLinesPaginationQuery.graphql';
-import { EmailTemplatesLine_node$data } from '@components/settings/email_template/__generated__/EmailTemplatesLine_node.graphql';
+} from '@private/components/settings/email_template/__generated__/EmailTemplatesLinesPaginationQuery.graphql';
+import { EmailTemplatesLine_node$data } from '@private/components/settings/email_template/__generated__/EmailTemplatesLine_node.graphql';
 import DataTable from '../../../../components/dataGrid/DataTable';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import { useFormatter } from '../../../../components/i18n';

@@ -1,11 +1,11 @@
 import { graphql, useFragment } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { Form, Formik } from 'formik';
 import Button from '@mui/material/Button';
 import { FormikConfig } from 'formik/dist/types';
-import StatusTemplateFieldScoped from '@components/settings/sub_types/workflow/StatusTemplateFieldScoped';
-import GroupField, { GroupFieldOption } from '@components/common/form/GroupField';
+import StatusTemplateFieldScoped from '@private/components/settings/sub_types/workflow/StatusTemplateFieldScoped';
+import GroupField, { GroupFieldOption } from '@private/components/common/form/GroupField';
 import { useFormatter } from '../../../../../components/i18n';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
 import { handleErrorInForm } from '../../../../../relay/environment';

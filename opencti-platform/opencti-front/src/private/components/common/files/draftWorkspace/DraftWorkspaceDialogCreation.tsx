@@ -9,7 +9,7 @@ import { graphql } from 'react-relay';
 import * as Yup from 'yup';
 import { FormikConfig } from 'formik/dist/types';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import { DraftsLinesPaginationQuery$variables } from '@components/drafts/__generated__/DraftsLinesPaginationQuery.graphql';
+import { DraftsLinesPaginationQuery$variables } from '@private/components/drafts/__generated__/DraftsLinesPaginationQuery.graphql';
 import { useFormatter } from '../../../../../components/i18n';
 import TextField from '../../../../../components/TextField';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';

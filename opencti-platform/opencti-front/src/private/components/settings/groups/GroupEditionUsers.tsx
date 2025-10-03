@@ -1,10 +1,10 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import Checkbox from '@mui/material/Checkbox';
-import { GroupEditionContainer_group$data } from '@components/settings/groups/__generated__/GroupEditionContainer_group.graphql';
-import { GroupUsersLinesQuery$variables } from '@components/settings/users/__generated__/GroupUsersLinesQuery.graphql';
-import { toolBarUsersLinesSearchQuery } from '@components/data/DataTableToolBar';
-import { DataTableToolBarUsersLinesSearchQuery } from '@components/data/__generated__/DataTableToolBarUsersLinesSearchQuery.graphql';
+import { GroupEditionContainer_group$data } from '@private/components/settings/groups/__generated__/GroupEditionContainer_group.graphql';
+import { GroupUsersLinesQuery$variables } from '@private/components/settings/users/__generated__/GroupUsersLinesQuery.graphql';
+import { toolBarUsersLinesSearchQuery } from '@private/components/data/DataTableToolBar';
+import { DataTableToolBarUsersLinesSearchQuery } from '@private/components/data/__generated__/DataTableToolBarUsersLinesSearchQuery.graphql';
 import { deleteNodeFromId, insertNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DataTableWithoutFragment from '../../../../components/dataGrid/DataTableWithoutFragment';

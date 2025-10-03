@@ -3,7 +3,7 @@ import { graphql, useFragment } from 'react-relay';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import RoleEditionOverview from './RoleEditionOverview';
 import RoleEditionCapabilities, { roleEditionCapabilitiesLinesSearch } from './RoleEditionCapabilities';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';

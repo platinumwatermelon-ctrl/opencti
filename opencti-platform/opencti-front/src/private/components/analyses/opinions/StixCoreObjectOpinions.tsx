@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import Typography from '@mui/material/Typography';
-import StixCoreObjectOpinionsList, { stixCoreObjectOpinionsListQuery } from '@components/analyses/opinions/StixCoreObjectOpinionsList';
-import StixCoreObjectOpinionsRadarDialog from '@components/analyses/opinions/StixCoreObjectOpinionsRadarDialog';
+import StixCoreObjectOpinionsList, { stixCoreObjectOpinionsListQuery } from '@private/components/analyses/opinions/StixCoreObjectOpinionsList';
+import StixCoreObjectOpinionsRadarDialog from '@private/components/analyses/opinions/StixCoreObjectOpinionsRadarDialog';
 import StixCoreObjectOpinionsRadar, { stixCoreObjectOpinionsRadarDistributionQuery } from './StixCoreObjectOpinionsRadar';
 import useVocabularyCategory from '../../../../utils/hooks/useVocabularyCategory';
 import {

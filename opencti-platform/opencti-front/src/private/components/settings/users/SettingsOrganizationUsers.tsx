@@ -3,14 +3,14 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { AccountCircleOutlined, AdminPanelSettingsOutlined, ManageAccountsOutlined, PersonOutlined } from '@mui/icons-material';
-import SettingsOrganizationUserCreation from '@components/settings/users/SettingsOrganizationUserCreation';
-import { SettingsOrganization_organization$data } from '@components/settings/organizations/__generated__/SettingsOrganization_organization.graphql';
+import SettingsOrganizationUserCreation from '@private/components/settings/users/SettingsOrganizationUserCreation';
+import { SettingsOrganization_organization$data } from '@private/components/settings/organizations/__generated__/SettingsOrganization_organization.graphql';
 import { graphql } from 'react-relay';
 import {
   SettingsOrganizationUsersPaginationQuery,
   SettingsOrganizationUsersPaginationQuery$variables,
-} from '@components/settings/users/__generated__/SettingsOrganizationUsersPaginationQuery.graphql';
-import { SettingsOrganizationUsersLine_node$data } from '@components/settings/users/__generated__/SettingsOrganizationUsersLine_node.graphql';
+} from '@private/components/settings/users/__generated__/SettingsOrganizationUsersPaginationQuery.graphql';
+import { SettingsOrganizationUsersLine_node$data } from '@private/components/settings/users/__generated__/SettingsOrganizationUsersLine_node.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';

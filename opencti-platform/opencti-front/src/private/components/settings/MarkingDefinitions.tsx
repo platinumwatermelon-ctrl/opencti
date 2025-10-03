@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import Tooltip from '@mui/material/Tooltip';
-import { MarkingDefinitionsLine_node$data } from '@components/settings/__generated__/MarkingDefinitionsLine_node.graphql';
-import DangerZoneChip from '@components/common/danger_zone/DangerZoneChip';
+import { MarkingDefinitionsLine_node$data } from '@private/components/settings/__generated__/MarkingDefinitionsLine_node.graphql';
+import DangerZoneChip from '@private/components/common/danger_zone/DangerZoneChip';
 import { useTheme } from '@mui/material/styles';
 import { MarkingDefinitionsLinesPaginationQuery } from './__generated__/MarkingDefinitionsLinesPaginationQuery.graphql';
 import MarkingDefinitionPopover from './marking_definitions/MarkingDefinitionPopover';

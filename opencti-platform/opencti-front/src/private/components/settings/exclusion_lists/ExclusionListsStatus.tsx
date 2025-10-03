@@ -1,5 +1,5 @@
 import { graphql, PreloadedQuery, usePreloadedQuery, UseQueryLoaderLoadQueryOptions } from 'react-relay';
-import { ExclusionListsStatusQuery, ExclusionListsStatusQuery$variables } from '@components/settings/exclusion_lists/__generated__/ExclusionListsStatusQuery.graphql';
+import { ExclusionListsStatusQuery, ExclusionListsStatusQuery$variables } from '@private/components/settings/exclusion_lists/__generated__/ExclusionListsStatusQuery.graphql';
 import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/styles';
 import React, { FunctionComponent, useEffect } from 'react';

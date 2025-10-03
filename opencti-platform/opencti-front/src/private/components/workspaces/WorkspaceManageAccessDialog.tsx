@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { FormikHelpers } from 'formik/dist/types';
 import { graphql, useFragment } from 'react-relay';
-import FormAuthorizedMembers, { FormAuthorizedMembersInputs } from '@components/common/form/FormAuthorizedMembers';
-import { InvestigationGraph_fragment$data } from '@components/workspaces/investigations/__generated__/InvestigationGraph_fragment.graphql';
+import FormAuthorizedMembers, { FormAuthorizedMembersInputs } from '@private/components/common/form/FormAuthorizedMembers';
+import { InvestigationGraph_fragment$data } from '@private/components/workspaces/investigations/__generated__/InvestigationGraph_fragment.graphql';
 import { WorkspaceManageAccessDialog_authorizedMembers$key } from './__generated__/WorkspaceManageAccessDialog_authorizedMembers.graphql';
 import { handleErrorInForm } from '../../../relay/environment';
 import { authorizedMembersToOptions } from '../../../utils/authorizedMembers';

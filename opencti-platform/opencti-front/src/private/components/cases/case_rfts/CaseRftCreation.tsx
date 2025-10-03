@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
@@ -9,8 +9,8 @@ import { RecordSourceSelectorProxy } from 'relay-runtime';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { handleErrorInForm } from 'src/relay/environment';
-import { CaseRftsLinesCasesPaginationQuery$variables } from '@components/cases/__generated__/CaseRftsLinesCasesPaginationQuery.graphql';
-import AuthorizedMembersField from '@components/common/form/AuthorizedMembersField';
+import { CaseRftsLinesCasesPaginationQuery$variables } from '@private/components/cases/__generated__/CaseRftsLinesCasesPaginationQuery.graphql';
+import AuthorizedMembersField from '@private/components/common/form/AuthorizedMembersField';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import DateTimePickerField from '../../../../components/DateTimePickerField';

@@ -8,7 +8,7 @@ import AlertTitle from '@mui/material/AlertTitle';
 import Alert from '@mui/material/Alert';
 import makeStyles from '@mui/styles/makeStyles';
 import Box from '@mui/material/Box';
-import { StreamCollectionEdition_streamCollection$data } from '@components/data/stream/__generated__/StreamCollectionEdition_streamCollection.graphql';
+import { StreamCollectionEdition_streamCollection$data } from '@private/components/data/stream/__generated__/StreamCollectionEdition_streamCollection.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import ObjectMembersField from '../../common/form/ObjectMembersField';
 import { useFormatter } from '../../../../components/i18n';

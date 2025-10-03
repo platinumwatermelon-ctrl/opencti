@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import StixNestedRefRelationshipCreationFromEntityContainer from '@components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromEntityContainer';
+import StixNestedRefRelationshipCreationFromEntityContainer from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromEntityContainer';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import SearchInput from '../../../../components/SearchInput';

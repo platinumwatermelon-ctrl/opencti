@@ -12,12 +12,12 @@ import ExportButtons from 'src/components/ExportButtons';
 import { useGetCurrentUserAccessRight } from 'src/utils/authorizedMembers';
 import { truncate } from 'src/utils/String';
 import WorkspaceWidgetConfig from 'src/private/components/workspaces/dashboards/WorkspaceWidgetConfig';
-import { WorkspaceHeaderToStixReportBundleQuery$data } from '@components/workspaces/workspaceHeader/__generated__/WorkspaceHeaderToStixReportBundleQuery.graphql';
-import WorkspaceKebabMenu from '@components/workspaces/WorkspaceKebabMenu';
-import WorkspaceHeaderTagManager from '@components/workspaces/workspaceHeader/WorkspaceHeaderTagManager';
+import { WorkspaceHeaderToStixReportBundleQuery$data } from '@private/components/workspaces/workspaceHeader/__generated__/WorkspaceHeaderToStixReportBundleQuery.graphql';
+import WorkspaceKebabMenu from '@private/components/workspaces/WorkspaceKebabMenu';
+import WorkspaceHeaderTagManager from '@private/components/workspaces/workspaceHeader/WorkspaceHeaderTagManager';
 import Button from '@mui/material/Button';
-import WorkspaceEditionContainer from '@components/workspaces/WorkspaceEditionContainer';
-import { WorkspaceHeaderFragment$key } from '@components/workspaces/workspaceHeader/__generated__/WorkspaceHeaderFragment.graphql';
+import WorkspaceEditionContainer from '@private/components/workspaces/WorkspaceEditionContainer';
+import { WorkspaceHeaderFragment$key } from '@private/components/workspaces/workspaceHeader/__generated__/WorkspaceHeaderFragment.graphql';
 import { useFormatter } from '../../../../components/i18n';
 
 const workspaceHeaderFragment = graphql`

@@ -14,14 +14,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React from 'react';
-import SearchIndexedFilesLines, { searchIndexedFilesLinesQuery } from '@components/search/SearchIndexedFilesLines';
+import SearchIndexedFilesLines, { searchIndexedFilesLinesQuery } from '@private/components/search/SearchIndexedFilesLines';
 import {
   SearchIndexedFilesLinesPaginationQuery,
   SearchIndexedFilesLinesPaginationQuery$variables,
-} from '@components/search/__generated__/SearchIndexedFilesLinesPaginationQuery.graphql';
-import { SearchIndexedFileLine_node$data } from '@components/search/__generated__/SearchIndexedFileLine_node.graphql';
+} from '@private/components/search/__generated__/SearchIndexedFilesLinesPaginationQuery.graphql';
+import { SearchIndexedFileLine_node$data } from '@private/components/search/__generated__/SearchIndexedFileLine_node.graphql';
 import { Link, useParams } from 'react-router-dom';
-import EnterpriseEdition from '@components/common/entreprise_edition/EnterpriseEdition';
+import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Button from '@mui/material/Button';

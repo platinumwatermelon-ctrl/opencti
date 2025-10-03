@@ -1,11 +1,11 @@
 import React from 'react';
-import CourseOfActionCreation from '@components/techniques/courses_of_action/CourseOfActionCreation';
+import CourseOfActionCreation from '@private/components/techniques/courses_of_action/CourseOfActionCreation';
 import { graphql } from 'react-relay';
-import { CoursesOfActionLines_data$data } from '@components/techniques/__generated__/CoursesOfActionLines_data.graphql';
+import { CoursesOfActionLines_data$data } from '@private/components/techniques/__generated__/CoursesOfActionLines_data.graphql';
 import {
   CoursesOfActionLinesPaginationQuery,
   CoursesOfActionLinesPaginationQuery$variables,
-} from '@components/techniques/__generated__/CoursesOfActionLinesPaginationQuery.graphql';
+} from '@private/components/techniques/__generated__/CoursesOfActionLinesPaginationQuery.graphql';
 import Security from '../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

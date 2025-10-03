@@ -1,12 +1,12 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { GenericAttackCardDummy } from '@components/common/cards/GenericAttackCard';
+import { GenericAttackCardDummy } from '@private/components/common/cards/GenericAttackCard';
 import ToggleButton from '@mui/material/ToggleButton';
 import Tooltip from '@mui/material/Tooltip';
 import { ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
-import { IntrusionSetCardFragment } from '@components/threats/intrusion_sets/IntrusionSetCard';
-import { IntrusionSetsCards_data$data } from '@components/threats/intrusion_sets/__generated__/IntrusionSetsCards_data.graphql';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+import { IntrusionSetCardFragment } from '@private/components/threats/intrusion_sets/IntrusionSetCard';
+import { IntrusionSetsCards_data$data } from '@private/components/threats/intrusion_sets/__generated__/IntrusionSetsCards_data.graphql';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import { IntrusionSetsCardsPaginationQuery, IntrusionSetsCardsPaginationQuery$variables } from './intrusion_sets/__generated__/IntrusionSetsCardsPaginationQuery.graphql';
 import ListCards from '../../../components/list_cards/ListCards';
 import IntrusionSetsCards, { intrusionSetsCardsFragment, intrusionSetsCardsQuery } from './intrusion_sets/IntrusionSetsCards';

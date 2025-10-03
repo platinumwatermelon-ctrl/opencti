@@ -2,15 +2,15 @@ import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import * as R from 'ramda';
 import { FormikConfig } from 'formik/dist/types';
-import { CsvMapperEditionContainerFragment_csvMapper$data } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
-import CsvMapperForm from '@components/data/csvMapper/CsvMapperForm';
-import { CsvMapperFormData } from '@components/data/csvMapper/CsvMapper';
-import { csvMapperToFormData, formDataToCsvMapper } from '@components/data/csvMapper/CsvMapperUtils';
-import { useCsvMappersData } from '@components/data/csvMapper/csvMappers.data';
+import { CsvMapperEditionContainerFragment_csvMapper$data } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+import CsvMapperForm from '@private/components/data/csvMapper/CsvMapperForm';
+import { CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
+import { csvMapperToFormData, formDataToCsvMapper } from '@private/components/data/csvMapper/CsvMapperUtils';
+import { useCsvMappersData } from '@private/components/data/csvMapper/csvMappers.data';
 import {
   CsvMapperRepresentationAttributesForm_allSchemaAttributes$key,
-} from '@components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
-import { CsvMapperRepresentationAttributesFormFragment } from '@components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributesForm';
+} from '@private/components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+import { CsvMapperRepresentationAttributesFormFragment } from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributesForm';
 import formikFieldToEditInput from '../../../../utils/FormikUtils';
 import { useComputeDefaultValues } from '../../../../utils/hooks/useDefaultValues';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';

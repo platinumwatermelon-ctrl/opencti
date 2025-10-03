@@ -2,21 +2,21 @@ import React, { FC, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import { FormikHelpers } from 'formik/dist/types';
-import { FileManagerExportMutation } from '@components/common/files/__generated__/FileManagerExportMutation.graphql';
-import { StixCoreObjectFileExportQuery } from '@components/common/stix_core_objects/__generated__/StixCoreObjectFileExportQuery.graphql';
+import { FileManagerExportMutation } from '@private/components/common/files/__generated__/FileManagerExportMutation.graphql';
+import { StixCoreObjectFileExportQuery } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectFileExportQuery.graphql';
 import StixCoreObjectFileExportForm, {
   ConnectorOption,
   FileOption,
   StixCoreObjectFileExportFormInputs,
   StixCoreObjectFileExportFormProps,
-} from '@components/common/form/StixCoreObjectFileExportForm';
+} from '@private/components/common/form/StixCoreObjectFileExportForm';
 import {
   StixCoreObjectContentFilesUploadStixCoreObjectMutation,
   StixCoreObjectContentFilesUploadStixCoreObjectMutation$variables,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectContentFilesUploadStixCoreObjectMutation.graphql';
-import { stixCoreObjectContentFilesUploadStixCoreObjectMutation } from '@components/common/stix_core_objects/StixCoreObjectContentFiles';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectContentFilesUploadStixCoreObjectMutation.graphql';
+import { stixCoreObjectContentFilesUploadStixCoreObjectMutation } from '@private/components/common/stix_core_objects/StixCoreObjectContentFiles';
 import axios from 'axios';
-import StixCoreObjectAskAI from '@components/common/stix_core_objects/StixCoreObjectAskAI';
+import StixCoreObjectAskAI from '@private/components/common/stix_core_objects/StixCoreObjectAskAI';
 import { fileManagerExportMutation } from '../files/FileManager';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { useFormatter } from '../../../../components/i18n';

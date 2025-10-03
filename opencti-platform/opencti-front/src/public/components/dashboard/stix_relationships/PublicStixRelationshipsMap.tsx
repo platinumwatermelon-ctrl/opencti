@@ -1,6 +1,6 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React from 'react';
-import LocationMiniMapTargets from '@components/common/location/LocationMiniMapTargets';
+import LocationMiniMapTargets from '@private/components/common/location/LocationMiniMapTargets';
 import WidgetNoData from '../../../../components/dashboard/WidgetNoData';
 import { computeLevel } from '../../../../utils/Number';
 import type { PublicWidgetContainerProps } from '../PublicWidgetContainerProps';

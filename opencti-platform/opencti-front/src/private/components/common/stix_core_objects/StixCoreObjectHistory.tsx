@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import {
   StixCoreObjectHistoryLinesQuery,
   StixCoreObjectHistoryLinesQuery$variables,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectHistoryLinesQuery.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectHistoryLinesQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectHistoryLines, { stixCoreObjectHistoryLinesQuery } from './StixCoreObjectHistoryLines';
 import SearchInput from '../../../../components/SearchInput';

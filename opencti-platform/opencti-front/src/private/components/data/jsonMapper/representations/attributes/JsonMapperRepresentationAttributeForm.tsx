@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import JsonMapperRepresentationAttributeOptions from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributeOptions';
+import JsonMapperRepresentationAttributeOptions from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributeOptions';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, FieldProps } from 'formik';
-import JsonMapperRepresentationDialogOption from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationDialogOption';
-import { JsonMapperRepresentationAttributeFormData } from '@components/data/jsonMapper/representations/attributes/Attribute';
-import { SchemaAttribute } from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
+import JsonMapperRepresentationDialogOption from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationDialogOption';
+import { JsonMapperRepresentationAttributeFormData } from '@private/components/data/jsonMapper/representations/attributes/Attribute';
+import { SchemaAttribute } from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
 import { useFormatter } from '../../../../../../components/i18n';
 import { isEmptyField } from '../../../../../../utils/utils';
 import TextField from '../../../../../../components/TextField';

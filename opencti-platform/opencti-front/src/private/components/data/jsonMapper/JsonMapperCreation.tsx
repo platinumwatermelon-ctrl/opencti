@@ -1,18 +1,18 @@
 import React, { FunctionComponent } from 'react';
 import { FormikConfig } from 'formik';
 import { graphql, useFragment } from 'react-relay';
-import { JsonMapperFormData } from '@components/data/jsonMapper/JsonMapper';
-import { jsonMappers_MappersQuery$variables } from '@components/data/jsonMapper/__generated__/jsonMappers_MappersQuery.graphql';
-import { useJsonMappersData } from '@components/data/jsonMapper/jsonMappers.data';
-import { JsonMapperRepresentationAttributesFormFragment } from '@components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
-import { formDataToJsonMapper, jsonMapperToFormData } from '@components/data/jsonMapper/JsonMapperUtils';
-import JsonMapperForm from '@components/data/jsonMapper/JsonMapperForm';
-import { jsonMapperEditionContainerFragment } from '@components/data/jsonMapper/JsonMapperEditionContainer';
-import { JsonMapperEditionContainerFragment_jsonMapper$key } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
-import { JsonMapperAddInput } from '@components/data/jsonMapper/__generated__/JsonMapperCreationContainerMutation.graphql';
+import { JsonMapperFormData } from '@private/components/data/jsonMapper/JsonMapper';
+import { jsonMappers_MappersQuery$variables } from '@private/components/data/jsonMapper/__generated__/jsonMappers_MappersQuery.graphql';
+import { useJsonMappersData } from '@private/components/data/jsonMapper/jsonMappers.data';
+import { JsonMapperRepresentationAttributesFormFragment } from '@private/components/data/jsonMapper/representations/attributes/JsonMapperRepresentationAttributesForm';
+import { formDataToJsonMapper, jsonMapperToFormData } from '@private/components/data/jsonMapper/JsonMapperUtils';
+import JsonMapperForm from '@private/components/data/jsonMapper/JsonMapperForm';
+import { jsonMapperEditionContainerFragment } from '@private/components/data/jsonMapper/JsonMapperEditionContainer';
+import { JsonMapperEditionContainerFragment_jsonMapper$key } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
+import { JsonMapperAddInput } from '@private/components/data/jsonMapper/__generated__/JsonMapperCreationContainerMutation.graphql';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$key,
-} from '@components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+} from '@private/components/data/jsonMapper/representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { useComputeDefaultValues } from '../../../../utils/hooks/useDefaultValues';
 import { handleErrorInForm } from '../../../../relay/environment';

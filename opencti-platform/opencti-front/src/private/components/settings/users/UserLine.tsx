@@ -8,7 +8,7 @@ import Skeleton from '@mui/material/Skeleton';
 import { PersonOutlined, AccountCircleOutlined, KeyboardArrowRightOutlined, HorizontalRule, Security, ReportGmailerrorred, ManageAccountsOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
-import { UserLine_node$data } from '@components/settings/users/__generated__/UserLine_node.graphql';
+import { UserLine_node$data } from '@private/components/settings/users/__generated__/UserLine_node.graphql';
 import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import { DataColumns } from '../../../../components/list_lines';

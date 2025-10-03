@@ -7,30 +7,30 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton';
 import {
   StixDomainObjectAttackPatternsKillChainContainer_data$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
 import Box from '@mui/material/Box';
 import {
   StixDomainObjectAttackPatternsKillChainQuery,
   StixDomainObjectAttackPatternsKillChainQuery$variables,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
-import StixDomainObjectAttackPatternsKillChainMatrixInline from '@components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainMatrixInLine';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainQuery.graphql';
+import StixDomainObjectAttackPatternsKillChainMatrixInline from '@private/components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainMatrixInLine';
 import { ListViewIcon, SublistViewIcon } from 'filigran-icon';
-import FiligranIcon from '@components/common/FiligranIcon';
+import FiligranIcon from '@private/components/common/FiligranIcon';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import { attackPatternsMatrixColumnsFragment } from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumns';
+import { attackPatternsMatrixColumnsFragment } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumns';
 import * as R from 'ramda';
-import { AttackPatternsMatrixColumns_data$key } from '@components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixColumns_data.graphql';
-import StixCoreRelationships from '@components/common/stix_core_relationships/StixCoreRelationships';
-import { AttackPatternsMatrixQuery } from '@components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
-import { attackPatternsMatrixQuery } from '@components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
-import EntitySelect, { EntityOption } from '@components/common/form/EntitySelect';
+import { AttackPatternsMatrixColumns_data$key } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixColumns_data.graphql';
+import StixCoreRelationships from '@private/components/common/stix_core_relationships/StixCoreRelationships';
+import { AttackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
+import { attackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
+import EntitySelect, { EntityOption } from '@private/components/common/form/EntitySelect';
 import { IconButton } from '@mui/material';
 import {
   StixDomainObjectAttackPatternsKillChainOverlapQuery$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainOverlapQuery.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainOverlapQuery.graphql';
 import StixCoreObjectsExports from '../stix_core_objects/StixCoreObjectsExports';
 import SearchInput from '../../../../components/SearchInput';
 import Security from '../../../../utils/Security';

@@ -1,8 +1,8 @@
 import React, { createContext, ReactNode, useCallback, useContext, useState } from 'react';
-import { FileWithConnectors } from '@components/common/files/import_files/ImportFilesUploader';
+import { FileWithConnectors } from '@private/components/common/files/import_files/ImportFilesUploader';
 import { graphql, PreloadedQuery } from 'react-relay';
-import { ImportFilesContextQuery } from '@components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
-import { ImportFilesContextGuessMimeTypeQuery$data } from '@components/common/files/import_files/__generated__/ImportFilesContextGuessMimeTypeQuery.graphql';
+import { ImportFilesContextQuery } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
+import { ImportFilesContextGuessMimeTypeQuery$data } from '@private/components/common/files/import_files/__generated__/ImportFilesContextGuessMimeTypeQuery.graphql';
 import useGranted from '../../../../../utils/hooks/useGranted';
 import useQueryLoading from '../../../../../utils/hooks/useQueryLoading';
 import useDraftContext from '../../../../../utils/hooks/useDraftContext';

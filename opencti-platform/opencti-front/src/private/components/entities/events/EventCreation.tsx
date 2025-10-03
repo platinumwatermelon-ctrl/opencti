@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
-import ConfidenceField from '@components/common/form/ConfidenceField';
+import ConfidenceField from '@private/components/common/form/ConfidenceField';
 import { useFormatter } from '../../../../components/i18n';
 import { handleErrorInForm } from '../../../../relay/environment';
 import CreatedByField from '../../common/form/CreatedByField';

@@ -6,8 +6,8 @@ import ItemIcon from 'src/components/ItemIcon';
 import useApiMutation from 'src/utils/hooks/useApiMutation';
 import {
   AddThreatActorIndividualDemographicLines_data$key,
-} from '@components/threats/threat_actors_individual/__generated__/AddThreatActorIndividualDemographicLines_data.graphql';
-import { ThreatActorIndividual_ThreatActorIndividual$data } from '@components/threats/threat_actors_individual/__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
+} from '@private/components/threats/threat_actors_individual/__generated__/AddThreatActorIndividualDemographicLines_data.graphql';
+import { ThreatActorIndividual_ThreatActorIndividual$data } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
 import { deleteNodeFromEdge } from '../../../../utils/store';
 
 export const scoRelationshipAdd = graphql`

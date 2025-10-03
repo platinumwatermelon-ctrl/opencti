@@ -3,7 +3,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
-import GroupWithNullConfidenceLevelAlertContent from '@components/settings/platform_alerts/GroupWithNullConfidenceLevelAlertContent';
+import GroupWithNullConfidenceLevelAlertContent from '@private/components/settings/platform_alerts/GroupWithNullConfidenceLevelAlertContent';
 import { useFormatter } from '../../../../components/i18n';
 import { RootSettings$data } from '../../../__generated__/RootSettings.graphql';
 import Transition from '../../../../components/Transition';

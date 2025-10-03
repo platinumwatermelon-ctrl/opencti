@@ -3,15 +3,15 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 
-import { GroupUsersLinesQuery$variables } from '@components/settings/users/__generated__/GroupUsersLinesQuery.graphql';
-import { initialStaticPaginationForGroupUsers } from '@components/settings/users/GroupUsers';
-import { toolBarUsersLinesSearchQuery } from '@components/data/DataTableToolBar';
+import { GroupUsersLinesQuery$variables } from '@private/components/settings/users/__generated__/GroupUsersLinesQuery.graphql';
+import { initialStaticPaginationForGroupUsers } from '@private/components/settings/users/GroupUsers';
+import { toolBarUsersLinesSearchQuery } from '@private/components/data/DataTableToolBar';
 import {
   DataTableToolBarUsersLinesSearchQuery,
   DataTableToolBarUsersLinesSearchQuery$variables,
-} from '@components/data/__generated__/DataTableToolBarUsersLinesSearchQuery.graphql';
+} from '@private/components/data/__generated__/DataTableToolBarUsersLinesSearchQuery.graphql';
 import GroupEditionConfidence from './GroupEditionConfidence';
 import GroupEditionOverview from './GroupEditionOverview';
 import Loader, { LoaderVariant } from '../../../../components/Loader';

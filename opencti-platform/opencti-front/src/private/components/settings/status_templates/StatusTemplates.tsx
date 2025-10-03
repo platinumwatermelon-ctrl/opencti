@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import StatusTemplatePopover from '@components/settings/status_templates/StatusTemplatePopover';
+import StatusTemplatePopover from '@private/components/settings/status_templates/StatusTemplatePopover';
 import { FactCheckOutlined } from '@mui/icons-material';
-import { StatusTemplatesLine_node$data } from '@components/settings/status_templates/__generated__/StatusTemplatesLine_node.graphql';
+import { StatusTemplatesLine_node$data } from '@private/components/settings/status_templates/__generated__/StatusTemplatesLine_node.graphql';
 import StatusTemplateCreation from './StatusTemplateCreation';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { CommonProps } from '@mui/material/OverridableComponent';
 import { ButtonOwnProps } from '@mui/material/Button/Button';
 import { useFormatter } from './i18n';

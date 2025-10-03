@@ -1,6 +1,6 @@
 import { FieldProps } from 'formik';
 import React from 'react';
-import EntitySelect, { EntityOption } from '@components/common/form/EntitySelect';
+import EntitySelect, { EntityOption } from '@private/components/common/form/EntitySelect';
 
 interface EntitySelectFieldProps extends FieldProps<EntityOption | null> {
   label: string

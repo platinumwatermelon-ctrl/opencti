@@ -10,7 +10,7 @@ import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
 import { InfoOutlined } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip';
-import { ParsedWorkMessage, ResolvedEntity } from '@components/data/connectors/parseWorkErrors';
+import { ParsedWorkMessage, ResolvedEntity } from '@private/components/data/connectors/parseWorkErrors';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import ItemCopy from '../../../../components/ItemCopy';

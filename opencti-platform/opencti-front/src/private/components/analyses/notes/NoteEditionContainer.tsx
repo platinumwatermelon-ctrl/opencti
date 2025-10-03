@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import NoteEditionOverview from './NoteEditionOverview';
 import { NoteEditionContainer_note$data } from './__generated__/NoteEditionContainer_note.graphql';

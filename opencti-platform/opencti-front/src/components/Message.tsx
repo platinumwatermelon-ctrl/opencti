@@ -5,7 +5,7 @@ import { LogoXtmOneIcon } from 'filigran-icon';
 import { useTheme } from '@mui/styles';
 import { Formik, Form } from 'formik';
 import Button from '@mui/material/Button/Button';
-import FiligranIcon from '@components/common/FiligranIcon';
+import FiligranIcon from '@private/components/common/FiligranIcon';
 import { MESSAGING$ } from '../relay/environment';
 import { useFormatter } from './i18n';
 import type { Theme } from './Theme';

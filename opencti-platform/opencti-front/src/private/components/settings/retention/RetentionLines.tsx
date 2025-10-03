@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import { RetentionLinesPaginationQuery, RetentionLinesPaginationQuery$variables } from '@components/settings/retention/__generated__/RetentionLinesPaginationQuery.graphql';
-import { RetentionLines_data$key } from '@components/settings/retention/__generated__/RetentionLines_data.graphql';
+import { RetentionLinesPaginationQuery, RetentionLinesPaginationQuery$variables } from '@private/components/settings/retention/__generated__/RetentionLinesPaginationQuery.graphql';
+import { RetentionLines_data$key } from '@private/components/settings/retention/__generated__/RetentionLines_data.graphql';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 import { RetentionLine, RetentionLineDummy } from './RetentionLine';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';

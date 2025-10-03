@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { DraftTasksQuery, DraftTasksQuery$variables } from '@components/drafts/__generated__/DraftTasksQuery.graphql';
-import { DraftTasksLines_data$data } from '@components/drafts/__generated__/DraftTasksLines_data.graphql';
+import { DraftTasksQuery, DraftTasksQuery$variables } from '@private/components/drafts/__generated__/DraftTasksQuery.graphql';
+import { DraftTasksLines_data$data } from '@private/components/drafts/__generated__/DraftTasksLines_data.graphql';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import { emptyFilterGroup } from '../../../utils/filters/filtersUtils';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

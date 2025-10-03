@@ -8,7 +8,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useQueryLoader } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikHelpers } from 'formik/dist/types';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import TextField from '../../../../components/TextField';

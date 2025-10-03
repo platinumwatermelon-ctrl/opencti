@@ -1,6 +1,6 @@
 import { graphql, PreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import { DecayRulesLines_data$key } from '@components/settings/decay/__generated__/DecayRulesLines_data.graphql';
+import { DecayRulesLines_data$key } from '@private/components/settings/decay/__generated__/DecayRulesLines_data.graphql';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';
 import { DataColumns } from '../../../../components/list_lines';

@@ -1,4 +1,4 @@
-import { IngestionConnectorsQuery$data } from '@components/data/IngestionCatalog/__generated__/IngestionConnectorsQuery.graphql';
+import { IngestionConnectorsQuery$data } from '@private/components/data/IngestionCatalog/__generated__/IngestionConnectorsQuery.graphql';
 
 type Connector = NonNullable<IngestionConnectorsQuery$data['connectors']>[number];
 

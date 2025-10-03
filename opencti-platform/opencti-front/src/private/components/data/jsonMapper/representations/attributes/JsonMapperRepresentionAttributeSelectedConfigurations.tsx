@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { SubdirectoryArrowRight } from 'mdi-material-ui';
-import { JsonAttrPathConfiguration } from '@components/data/jsonMapper/representations/attributes/Attribute';
+import { JsonAttrPathConfiguration } from '@private/components/data/jsonMapper/representations/attributes/Attribute';
 import { useFormatter } from '../../../../../../components/i18n';
 
 interface JsonMapperRepresentationAttributeSelectedConfigurationsProps {

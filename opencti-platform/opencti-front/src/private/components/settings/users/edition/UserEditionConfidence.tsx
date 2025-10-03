@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import UserConfidenceLevelField from '@components/settings/users/edition/UserConfidenceLevelField';
-import { UserEdition_user$data } from '@components/settings/users/__generated__/UserEdition_user.graphql';
+import UserConfidenceLevelField from '@private/components/settings/users/edition/UserConfidenceLevelField';
+import { UserEdition_user$data } from '@private/components/settings/users/__generated__/UserEdition_user.graphql';
 import { Field, FieldArray, Form, Formik } from 'formik';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import * as Yup from 'yup';
-import { userMutationFieldPatch } from '@components/settings/users/edition/UserEditionOverview';
-import ConfidenceOverrideField from '@components/settings/users/edition/ConfidenceOverrideField';
+import { userMutationFieldPatch } from '@private/components/settings/users/edition/UserEditionOverview';
+import ConfidenceOverrideField from '@private/components/settings/users/edition/ConfidenceOverrideField';
 import { fieldSpacingContainerStyle } from '../../../../../utils/field';
 import { useFormatter } from '../../../../../components/i18n';
 import { isEmptyField, isNotEmptyField } from '../../../../../utils/utils';

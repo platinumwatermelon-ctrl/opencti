@@ -1,6 +1,6 @@
 import { useFragment } from 'react-relay';
-import { CsvMapperFormData } from '@components/data/csvMapper/CsvMapper';
-import { useCsvMappersData } from '@components/data/csvMapper/csvMappers.data';
+import { CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
+import { useCsvMappersData } from '@private/components/data/csvMapper/csvMappers.data';
 import {
   CsvMapperRepresentationAttributesForm_allSchemaAttributes$key,
 } from '../csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';

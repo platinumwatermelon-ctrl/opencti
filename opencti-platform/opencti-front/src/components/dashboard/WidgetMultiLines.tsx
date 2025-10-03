@@ -1,5 +1,5 @@
 import { useTheme } from '@mui/styles';
-import Chart from '@components/common/charts/Chart';
+import Chart from '@private/components/common/charts/Chart';
 import { ApexOptions } from 'apexcharts';
 import React, { useMemo } from 'react';
 import type { Theme } from '../Theme';

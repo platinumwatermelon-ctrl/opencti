@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
-import StixCoreObjectContentHeader from '@components/common/stix_core_objects/StixCoreObjectContentHeader';
+import StixCoreObjectContentHeader from '@private/components/common/stix_core_objects/StixCoreObjectContentHeader';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import StixCoreObjectContent from '@components/common/stix_core_objects/StixCoreObjectContent';
-import { StixCoreObjectContent_stixCoreObject$key } from '@components/common/stix_core_objects/__generated__/StixCoreObjectContent_stixCoreObject.graphql';
-import ContainerMappingContent, { containerContentQuery } from '@components/common/containers/ContainerMappingContent';
-import { ContainerMappingContentQuery$data } from '@components/common/containers/__generated__/ContainerMappingContentQuery.graphql';
+import StixCoreObjectContent from '@private/components/common/stix_core_objects/StixCoreObjectContent';
+import { StixCoreObjectContent_stixCoreObject$key } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectContent_stixCoreObject.graphql';
+import ContainerMappingContent, { containerContentQuery } from '@private/components/common/containers/ContainerMappingContent';
+import { ContainerMappingContentQuery$data } from '@private/components/common/containers/__generated__/ContainerMappingContentQuery.graphql';
 import { QueryRenderer } from '../../../../relay/environment';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 

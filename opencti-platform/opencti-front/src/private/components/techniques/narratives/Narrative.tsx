@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Grid from '@mui/material/Grid';
-import { Narrative_narrative$key } from '@components/techniques/narratives/__generated__/Narrative_narrative.graphql';
+import { Narrative_narrative$key } from '@private/components/techniques/narratives/__generated__/Narrative_narrative.graphql';
 import NarrativeDetails from './NarrativeDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';

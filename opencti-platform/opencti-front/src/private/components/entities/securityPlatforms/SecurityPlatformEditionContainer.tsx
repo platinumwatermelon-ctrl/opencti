@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import Drawer, { DrawerControlledDialType } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
 import { createFragmentContainer, graphql } from 'react-relay';
 import {
   SecurityPlatformEditionContainer_securityPlatform$data,
-} from '@components/entities/securityPlatforms/__generated__/SecurityPlatformEditionContainer_securityPlatform.graphql';
-import SecurityPlatformEditionOverview from '@components/entities/securityPlatforms/SecurityPlatformEditionOverview';
+} from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformEditionContainer_securityPlatform.graphql';
+import SecurityPlatformEditionOverview from '@private/components/entities/securityPlatforms/SecurityPlatformEditionOverview';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
 

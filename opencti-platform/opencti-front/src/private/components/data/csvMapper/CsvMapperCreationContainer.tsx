@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import Drawer from '@components/common/drawer/Drawer';
-import CsvMapperCreation from '@components/data/csvMapper/CsvMapperCreation';
-import { csvMappers_MappersQuery$variables } from '@components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
+import Drawer from '@private/components/common/drawer/Drawer';
+import CsvMapperCreation from '@private/components/data/csvMapper/CsvMapperCreation';
+import { csvMappers_MappersQuery$variables } from '@private/components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { CsvMapperEditionContainerQuery } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerQuery.graphql';
-import { csvMapperEditionContainerQuery } from '@components/data/csvMapper/CsvMapperEditionContainer';
-import { CsvMappersImportQuery$data } from '@components/data/__generated__/CsvMappersImportQuery.graphql';
+import { CsvMapperEditionContainerQuery } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerQuery.graphql';
+import { csvMapperEditionContainerQuery } from '@private/components/data/csvMapper/CsvMapperEditionContainer';
+import { CsvMappersImportQuery$data } from '@private/components/data/__generated__/CsvMappersImportQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 
 interface CsvMapperCreationProps {

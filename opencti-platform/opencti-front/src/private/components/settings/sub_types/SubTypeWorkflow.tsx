@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
 import makeStyles from '@mui/styles/makeStyles';
 import Skeleton from '@mui/material/Skeleton';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import SubTypeWorkflowStatusAdd from './SubTypeWorkflowStatusAdd';
 import { hexToRGB } from '../../../../utils/Colors';
 import { SubTypeWorkflowEditionQuery } from './__generated__/SubTypeWorkflowEditionQuery.graphql';

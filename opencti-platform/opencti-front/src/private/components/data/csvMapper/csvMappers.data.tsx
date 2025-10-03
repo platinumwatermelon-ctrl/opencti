@@ -1,7 +1,7 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { createContext, ReactNode, useContext } from 'react';
-import { csvMappers_MappersQuery, csvMappers_MappersQuery$data } from '@components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
-import { csvMappers_SchemaAttributesQuery, csvMappers_SchemaAttributesQuery$data } from '@components/data/csvMapper/__generated__/csvMappers_SchemaAttributesQuery.graphql';
+import { csvMappers_MappersQuery, csvMappers_MappersQuery$data } from '@private/components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
+import { csvMappers_SchemaAttributesQuery, csvMappers_SchemaAttributesQuery$data } from '@private/components/data/csvMapper/__generated__/csvMappers_SchemaAttributesQuery.graphql';
 
 export const mappersQuery = graphql`
   query csvMappers_MappersQuery(

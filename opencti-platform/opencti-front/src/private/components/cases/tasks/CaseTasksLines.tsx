@@ -12,7 +12,7 @@ import { Form, Formik } from 'formik';
 import React, { FunctionComponent, MutableRefObject, useState } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
 import { GridTypeMap } from '@mui/material';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import { handleErrorInForm } from '../../../../relay/environment';

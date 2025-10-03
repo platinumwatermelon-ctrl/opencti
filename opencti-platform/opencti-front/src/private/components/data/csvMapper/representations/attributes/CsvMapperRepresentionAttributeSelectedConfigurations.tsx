@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { SubdirectoryArrowRight } from 'mdi-material-ui';
-import { CsvMapperRepresentationAttributeFormData } from '@components/data/csvMapper/representations/attributes/Attribute';
+import { CsvMapperRepresentationAttributeFormData } from '@private/components/data/csvMapper/representations/attributes/Attribute';
 import { useFormatter } from '../../../../../../components/i18n';
 
 interface CsvMapperRepresentationAttributeSelectedConfigurationsProps {

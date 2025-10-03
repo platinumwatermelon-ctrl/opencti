@@ -3,7 +3,7 @@ import { CloudUploadOutlined } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useTheme } from '@mui/styles';
-import { useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
+import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import type { Theme } from '../../../../../components/Theme';
 import { useFormatter } from '../../../../../components/i18n';
 

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { boundaryWrapper } from '@components/Error';
+import { boundaryWrapper } from '@private/components/Error';
 import { useIsHiddenEntity } from '../../../utils/hooks/useEntitySettings';
 import Loader from '../../../components/Loader';
 

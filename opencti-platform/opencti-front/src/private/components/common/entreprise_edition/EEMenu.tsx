@@ -1,4 +1,4 @@
-import EEChip from '@components/common/entreprise_edition/EEChip';
+import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import React, { ReactElement } from 'react';
 import { Stack } from '@mui/material';
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { graphql } from 'react-relay';
-import ManagementMenu from '@components/data/ManagementMenu';
+import ManagementMenu from '@private/components/data/ManagementMenu';
 import {
   ManagementDefinitionsLinesPaginationQuery,
   ManagementDefinitionsLinesPaginationQuery$variables,
-} from '@components/data/__generated__/ManagementDefinitionsLinesPaginationQuery.graphql';
-import { ManagementDefinitionsLines_data$data } from '@components/data/__generated__/ManagementDefinitionsLines_data.graphql';
+} from '@private/components/data/__generated__/ManagementDefinitionsLinesPaginationQuery.graphql';
+import { ManagementDefinitionsLines_data$data } from '@private/components/data/__generated__/ManagementDefinitionsLines_data.graphql';
 import EnterpriseEdition from '../common/entreprise_edition/EnterpriseEdition';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import AlertInfo from '../../../components/AlertInfo';

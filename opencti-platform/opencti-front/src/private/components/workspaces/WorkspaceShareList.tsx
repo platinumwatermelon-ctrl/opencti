@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { WorkspaceShareListQuery } from '@components/workspaces/__generated__/WorkspaceShareListQuery.graphql';
+import { WorkspaceShareListQuery } from '@private/components/workspaces/__generated__/WorkspaceShareListQuery.graphql';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';

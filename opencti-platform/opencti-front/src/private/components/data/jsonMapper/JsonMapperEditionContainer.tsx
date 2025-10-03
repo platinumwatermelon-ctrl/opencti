@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import JsonMapperEdition from '@components/data/jsonMapper/JsonMapperEdition';
-import Drawer from '@components/common/drawer/Drawer';
-import { JsonMapperEditionContainerQuery } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerQuery.graphql';
-import { JsonMapperEditionContainerFragment_jsonMapper$key } from '@components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
+import JsonMapperEdition from '@private/components/data/jsonMapper/JsonMapperEdition';
+import Drawer from '@private/components/common/drawer/Drawer';
+import { JsonMapperEditionContainerQuery } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerQuery.graphql';
+import { JsonMapperEditionContainerFragment_jsonMapper$key } from '@private/components/data/jsonMapper/__generated__/JsonMapperEditionContainerFragment_jsonMapper.graphql';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { useFormatter } from '../../../../components/i18n';
 

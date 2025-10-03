@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql, useQueryLoader } from 'react-relay';
 import Tooltip from '@mui/material/Tooltip';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { TriggersLinesPaginationQuery$variables } from './__generated__/TriggersLinesPaginationQuery.graphql';

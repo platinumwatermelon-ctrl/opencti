@@ -3,11 +3,11 @@ import React, { FunctionComponent, useEffect } from 'react';
 import {
   SupportPackageLinesPaginationQuery,
   SupportPackageLinesPaginationQuery$variables,
-} from '@components/settings/support/__generated__/SupportPackageLinesPaginationQuery.graphql';
-import { SupportPackageLines_data$key } from '@components/settings/support/__generated__/SupportPackageLines_data.graphql';
-import SupportPackageLine from '@components/settings/support/SupportPackageLine';
+} from '@private/components/settings/support/__generated__/SupportPackageLinesPaginationQuery.graphql';
+import { SupportPackageLines_data$key } from '@private/components/settings/support/__generated__/SupportPackageLines_data.graphql';
+import SupportPackageLine from '@private/components/settings/support/SupportPackageLine';
 import { interval } from 'rxjs';
-import LineDummy from '@components/common/LineDummy';
+import LineDummy from '@private/components/common/LineDummy';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';
 import { UseLocalStorageHelpers } from '../../../../utils/hooks/useLocalStorage';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';

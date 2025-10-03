@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { ContainerStixDomainObjectLine_node$data } from '@components/common/containers/__generated__/ContainerStixDomainObjectLine_node.graphql';
+import { ContainerStixDomainObjectLine_node$data } from '@private/components/common/containers/__generated__/ContainerStixDomainObjectLine_node.graphql';
 import {
   ContainerStixDomainObjectsLinesQuery,
   ContainerStixDomainObjectsLinesQuery$variables,
-} from '@components/common/containers/__generated__/ContainerStixDomainObjectsLinesQuery.graphql';
-import { ContainerStixDomainObjectLineDummy } from '@components/common/containers/ContainerStixDomainObjectLine';
-import { ContainerStixDomainObjects_container$key } from '@components/common/containers/__generated__/ContainerStixDomainObjects_container.graphql';
+} from '@private/components/common/containers/__generated__/ContainerStixDomainObjectsLinesQuery.graphql';
+import { ContainerStixDomainObjectLineDummy } from '@private/components/common/containers/ContainerStixDomainObjectLine';
+import { ContainerStixDomainObjects_container$key } from '@private/components/common/containers/__generated__/ContainerStixDomainObjects_container.graphql';
 import ListLines from '../../../../components/list_lines/ListLines';
 import ContainerStixDomainObjectsLines, { containerStixDomainObjectsLinesQuery } from './ContainerStixDomainObjectsLines';
 import ToolBar from '../../data/ToolBar';

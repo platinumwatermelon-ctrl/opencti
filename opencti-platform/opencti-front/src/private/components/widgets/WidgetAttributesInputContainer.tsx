@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import WidgetAttributesInput from '@components/widgets/WidgetAttributesInput';
-import { WidgetAttributesInputContainerInstanceQuery } from '@components/widgets/__generated__/WidgetAttributesInputContainerInstanceQuery.graphql';
+import WidgetAttributesInput from '@private/components/widgets/WidgetAttributesInput';
+import { WidgetAttributesInputContainerInstanceQuery } from '@private/components/widgets/__generated__/WidgetAttributesInputContainerInstanceQuery.graphql';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../components/Loader';
 import type { WidgetColumn } from '../../../utils/widget/widget';

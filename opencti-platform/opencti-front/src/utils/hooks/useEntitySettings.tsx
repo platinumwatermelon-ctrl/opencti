@@ -4,7 +4,7 @@ import { ObjectSchema, ObjectShape, Schema } from 'yup';
 import {
   EntitySettingSettings_entitySetting$data,
   EntitySettingSettings_entitySetting$key,
-} from '@components/settings/sub_types/entity_setting/__generated__/EntitySettingSettings_entitySetting.graphql';
+} from '@private/components/settings/sub_types/entity_setting/__generated__/EntitySettingSettings_entitySetting.graphql';
 import { entitySettingFragment } from '../../private/components/settings/sub_types/entity_setting/EntitySettingSettings';
 import useAuth from './useAuth';
 import { useFormatter } from '../../components/i18n';

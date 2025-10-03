@@ -15,7 +15,7 @@ import { DialogTitle } from '@mui/material';
 import DialogContent from '@mui/material/DialogContent';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import EETooltip from '@components/common/entreprise_edition/EETooltip';
+import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import { Link } from 'react-router-dom';
 import ObjectOrganizationField from '../form/ObjectOrganizationField';
 import { commitMutation, MESSAGING$, QueryRenderer } from '../../../../relay/environment';

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import React from 'react';
 import DialogActions from '@mui/material/DialogActions';
-import { CGUStatus, experienceFieldPatch } from '@components/settings/Experience';
+import { CGUStatus, experienceFieldPatch } from '@private/components/settings/Experience';
 import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import Checkbox from '@mui/material/Checkbox';

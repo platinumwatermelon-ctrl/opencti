@@ -17,15 +17,15 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
-import { StixCoreObjectMappableContentFieldPatchMutation } from '@components/common/stix_core_objects/__generated__/StixCoreObjectMappableContentFieldPatchMutation.graphql';
+import { StixCoreObjectMappableContentFieldPatchMutation } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectMappableContentFieldPatchMutation.graphql';
 import {
   StixCoreObjectAskAIContainerReportMutation,
   StixCoreObjectAskAIContainerReportMutation$data,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectAskAIContainerReportMutation.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectAskAIContainerReportMutation.graphql';
 import type {
   StixCoreObjectContentFilesUploadStixCoreObjectMutation,
   StixCoreObjectContentFilesUploadStixCoreObjectMutation$data,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectContentFilesUploadStixCoreObjectMutation.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectContentFilesUploadStixCoreObjectMutation.graphql';
 import { stixCoreObjectContentFilesUploadStixCoreObjectMutation } from './StixCoreObjectContentFiles';
 import { stixCoreObjectMappableContentFieldPatchMutation } from './StixCoreObjectMappableContent';
 import FilesNativeField from '../form/FilesNativeField';

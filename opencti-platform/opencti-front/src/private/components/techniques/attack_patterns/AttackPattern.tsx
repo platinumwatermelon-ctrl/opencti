@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Grid from '@mui/material/Grid';
-import { AttackPattern_attackPattern$key } from '@components/techniques/attack_patterns/__generated__/AttackPattern_attackPattern.graphql';
+import { AttackPattern_attackPattern$key } from '@private/components/techniques/attack_patterns/__generated__/AttackPattern_attackPattern.graphql';
 import AttackPatternDetails from './AttackPatternDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';

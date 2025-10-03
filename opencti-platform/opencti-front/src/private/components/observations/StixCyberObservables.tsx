@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import { React } from 'mdi-material-ui';
-import { StixCyberObservablesLines_data$data } from '@components/observations/stix_cyber_observables/__generated__/StixCyberObservablesLines_data.graphql';
-import { stixCyberObservableLineFragment } from '@components/observations/stix_cyber_observables/StixCyberObservableLine';
-import { StixCyberObservablesLinesSearchQuery$data } from '@components/observations/stix_cyber_observables/__generated__/StixCyberObservablesLinesSearchQuery.graphql';
-import { StixCyberObservableLine_node$data } from '@components/observations/stix_cyber_observables/__generated__/StixCyberObservableLine_node.graphql';
+import { StixCyberObservablesLines_data$data } from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservablesLines_data.graphql';
+import { stixCyberObservableLineFragment } from '@private/components/observations/stix_cyber_observables/StixCyberObservableLine';
+import { StixCyberObservablesLinesSearchQuery$data } from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservablesLinesSearchQuery.graphql';
+import { StixCyberObservableLine_node$data } from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservableLine_node.graphql';
 import StixCyberObservableCreation from './stix_cyber_observables/StixCyberObservableCreation';
 import Security from '../../../utils/Security';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

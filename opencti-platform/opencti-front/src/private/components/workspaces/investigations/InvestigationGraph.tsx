@@ -1,11 +1,11 @@
 import { graphql, PreloadedQuery, useFragment } from 'react-relay';
 import React, { CSSProperties, Suspense, useEffect, useMemo, useRef, useState } from 'react';
-import { useSettingsMessagesBannerHeight } from '@components/settings/settings_messages/SettingsMessagesBanner';
+import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
 import { useTheme } from '@mui/material/styles';
-import { knowledgeGraphStixCoreObjectQuery, knowledgeGraphStixRelationshipQuery } from '@components/common/containers/KnowledgeGraphQuery';
-import fetchMetaObjectsCount from '@components/workspaces/investigations/utils/fetchMetaObjectsCount';
-import WorkspaceHeader from '@components/workspaces/workspaceHeader/WorkspaceHeader';
-import { useInvestigationState } from '@components/workspaces/investigations/utils/useInvestigationState';
+import { knowledgeGraphStixCoreObjectQuery, knowledgeGraphStixRelationshipQuery } from '@private/components/common/containers/KnowledgeGraphQuery';
+import fetchMetaObjectsCount from '@private/components/workspaces/investigations/utils/fetchMetaObjectsCount';
+import WorkspaceHeader from '@private/components/workspaces/workspaceHeader/WorkspaceHeader';
+import { useInvestigationState } from '@private/components/workspaces/investigations/utils/useInvestigationState';
 import { InvestigationGraphObjectsQuery } from './__generated__/InvestigationGraphObjectsQuery.graphql';
 import { InvestigationGraphObjects_fragment$key } from './__generated__/InvestigationGraphObjects_fragment.graphql';
 import { InvestigationGraphQuery$data } from './__generated__/InvestigationGraphQuery.graphql';

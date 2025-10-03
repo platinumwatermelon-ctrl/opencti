@@ -1,11 +1,11 @@
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import Alert from '@mui/material/Alert';
-import IngestionMenu from '@components/data/IngestionMenu';
-import { FormLinesPaginationQuery, FormLinesPaginationQuery$variables } from '@components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
-import FormLines, { formLinesQuery } from '@components/data/forms/FormLines';
-import FormCreationContainer from '@components/data/forms/FormCreationContainer';
-import { FormLineDummy } from '@components/data/forms/FormLine';
+import IngestionMenu from '@private/components/data/IngestionMenu';
+import { FormLinesPaginationQuery, FormLinesPaginationQuery$variables } from '@private/components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
+import FormLines, { formLinesQuery } from '@private/components/data/forms/FormLines';
+import FormCreationContainer from '@private/components/data/forms/FormCreationContainer';
+import { FormLineDummy } from '@private/components/data/forms/FormLine';
 import { useFormatter } from '../../../components/i18n';
 import useAuth from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

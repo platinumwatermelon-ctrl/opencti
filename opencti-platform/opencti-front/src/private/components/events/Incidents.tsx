@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import { IncidentsLinesQuery, IncidentsLinesQuery$variables } from './incidents/__generated__/IncidentsLinesQuery.graphql';
 import { IncidentsLines_data$data } from './incidents/__generated__/IncidentsLines_data.graphql';
 import { incidentLineFragment } from './incidents/IncidentLine';

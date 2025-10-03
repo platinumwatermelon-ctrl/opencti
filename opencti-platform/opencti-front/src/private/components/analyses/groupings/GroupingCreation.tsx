@@ -1,15 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import Button from '@mui/material/Button';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
 import { useNavigate } from 'react-router-dom';
-import { GroupingsLinesPaginationQuery$variables } from '@components/analyses/__generated__/GroupingsLinesPaginationQuery.graphql';
-import AuthorizedMembersField from '@components/common/form/AuthorizedMembersField';
+import { GroupingsLinesPaginationQuery$variables } from '@private/components/analyses/__generated__/GroupingsLinesPaginationQuery.graphql';
+import AuthorizedMembersField from '@private/components/common/form/AuthorizedMembersField';
 import Typography from '@mui/material/Typography';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import { handleErrorInForm } from '../../../../relay/environment';

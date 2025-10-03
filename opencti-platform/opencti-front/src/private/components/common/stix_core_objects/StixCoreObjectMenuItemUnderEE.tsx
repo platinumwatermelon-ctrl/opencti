@@ -1,5 +1,5 @@
 import MenuItem from '@mui/material/MenuItem';
-import EETooltip from '@components/common/entreprise_edition/EETooltip';
+import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import React, { FunctionComponent } from 'react';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import { useFormatter } from '../../../../components/i18n';

@@ -1,9 +1,9 @@
 import { Field, Form, Formik } from 'formik';
 import React, { FunctionComponent } from 'react';
 import * as Yup from 'yup';
-import { FintelDesign_fintelDesign$data } from '@components/settings/fintel_design/__generated__/FintelDesign_fintelDesign.graphql';
+import { FintelDesign_fintelDesign$data } from '@private/components/settings/fintel_design/__generated__/FintelDesign_fintelDesign.graphql';
 import { graphql } from 'react-relay';
-import CustomFileUploader from '@components/common/files/CustomFileUploader';
+import CustomFileUploader from '@private/components/common/files/CustomFileUploader';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import ColorPickerField from '../../../../components/ColorPickerField';
 import { useFormatter } from '../../../../components/i18n';

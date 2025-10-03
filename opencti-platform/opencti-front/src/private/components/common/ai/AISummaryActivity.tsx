@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { AutoModeOutlined, ContentCopyOutlined, HistoryOutlined } from '@mui/icons-material';
-import { AISummaryActivityStixCoreObjectAskAiActivityQuery$data } from '@components/common/ai/__generated__/AISummaryActivityStixCoreObjectAskAiActivityQuery.graphql';
+import { AISummaryActivityStixCoreObjectAskAiActivityQuery$data } from '@private/components/common/ai/__generated__/AISummaryActivityStixCoreObjectAskAiActivityQuery.graphql';
 import Tooltip from '@mui/material/Tooltip';
 import { AISummaryActivitySubscription, AISummaryActivitySubscription$data } from './__generated__/AISummaryActivitySubscription.graphql';
 import { useFormatter } from '../../../../components/i18n';

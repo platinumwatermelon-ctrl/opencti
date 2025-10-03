@@ -1,13 +1,13 @@
 import React, { CSSProperties, ReactNode } from 'react';
 import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
-import StixCoreObjectLabels from '@components/common/stix_core_objects/StixCoreObjectLabels';
+import StixCoreObjectLabels from '@private/components/common/stix_core_objects/StixCoreObjectLabels';
 import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
-import { DraftChip } from '@components/common/draft/DraftChip';
+import { DraftChip } from '@private/components/common/draft/DraftChip';
 import { HorizontalRule, Security } from '@mui/icons-material';
-import { Pirs_PirFragment$data } from '@components/pir/__generated__/Pirs_PirFragment.graphql';
+import { Pirs_PirFragment$data } from '@private/components/pir/__generated__/Pirs_PirFragment.graphql';
 import ItemCvssScore from '../ItemCvssScore';
 import type { DataTableColumn } from './dataTableTypes';
 import { DataTableProps, DataTableVariant } from './dataTableTypes';

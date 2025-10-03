@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import { useQueryLoader } from 'react-relay';
-import { LogsOrdering, OrderingMode, UserHistoryLinesQuery, UserHistoryLinesQuery$variables } from '@components/settings/users/__generated__/UserHistoryLinesQuery.graphql';
+import { LogsOrdering, OrderingMode, UserHistoryLinesQuery, UserHistoryLinesQuery$variables } from '@private/components/settings/users/__generated__/UserHistoryLinesQuery.graphql';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import { StorageOutlined } from '@mui/icons-material';

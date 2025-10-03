@@ -3,7 +3,7 @@ import Drawer from '@mui/material/Drawer';
 import { useTheme } from '@mui/styles';
 import {
   StixNestedRefRelationshipEditionOverviewQuery,
-} from '@components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipEditionOverviewQuery.graphql';
+} from '@private/components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipEditionOverviewQuery.graphql';
 import StixNestedRefRelationshipEditionOverview, { stixNestedRefRelationshipEditionQuery } from './StixNestedRefRelationshipEditionOverview';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import type { Theme } from '../../../../components/Theme';

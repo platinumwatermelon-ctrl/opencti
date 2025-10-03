@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Alert } from '@mui/material';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
-import { ImportFilesFormViewQuery } from '@components/common/files/import_files/__generated__/ImportFilesFormViewQuery.graphql';
+import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
+import { ImportFilesFormViewQuery } from '@private/components/common/files/import_files/__generated__/ImportFilesFormViewQuery.graphql';
 import FormView from '../../../data/forms/view/FormView';
 import { useFormatter } from '../../../../../components/i18n';
 import useQueryLoading from '../../../../../utils/hooks/useQueryLoading';

@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { Box } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
-import ExternalReferenceDeletion from '@components/analyses/external_references/ExternalReferenceDeletion';
+import ExternalReferenceDeletion from '@private/components/analyses/external_references/ExternalReferenceDeletion';
 import { truncate } from '../../../../utils/String';
 import { ExternalReferenceHeader_externalReference$data } from './__generated__/ExternalReferenceHeader_externalReference.graphql';
 import PopoverMenu from '../../../../components/PopoverMenu';

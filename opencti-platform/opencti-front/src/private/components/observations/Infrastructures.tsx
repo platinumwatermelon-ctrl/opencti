@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import { InfrastructuresLines_data$data } from '@components/observations/__generated__/InfrastructuresLines_data.graphql';
+import { InfrastructuresLines_data$data } from '@private/components/observations/__generated__/InfrastructuresLines_data.graphql';
 import {
   InfrastructuresLinesPaginationQuery,
   InfrastructuresLinesPaginationQuery$variables,
-} from '@components/observations/__generated__/InfrastructuresLinesPaginationQuery.graphql';
+} from '@private/components/observations/__generated__/InfrastructuresLinesPaginationQuery.graphql';
 import useAuth from '../../../utils/hooks/useAuth';
 import InfrastructureCreation from './infrastructures/InfrastructureCreation';
 import Security from '../../../utils/Security';

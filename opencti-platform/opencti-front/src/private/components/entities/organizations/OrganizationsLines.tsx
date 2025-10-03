@@ -3,8 +3,8 @@ import { graphql, PreloadedQuery } from 'react-relay';
 import {
   OrganizationsLinesPaginationQuery,
   OrganizationsLinesPaginationQuery$variables,
-} from '@components/entities/organizations/__generated__/OrganizationsLinesPaginationQuery.graphql';
-import { OrganizationsLines_data$key } from '@components/entities/organizations/__generated__/OrganizationsLines_data.graphql';
+} from '@private/components/entities/organizations/__generated__/OrganizationsLinesPaginationQuery.graphql';
+import { OrganizationsLines_data$key } from '@private/components/entities/organizations/__generated__/OrganizationsLines_data.graphql';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 import { OrganizationLine, OrganizationLineDummy } from './OrganizationLine';
 import { DataColumns } from '../../../../components/list_lines';

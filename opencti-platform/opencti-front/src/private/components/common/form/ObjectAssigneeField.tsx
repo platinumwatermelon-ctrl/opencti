@@ -2,7 +2,7 @@ import React, { FunctionComponent, useContext, useState } from 'react';
 import { Field } from 'formik';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import { ObjectAssigneeFieldMembersSearchQuery$data } from '@components/common/form/__generated__/ObjectAssigneeFieldMembersSearchQuery.graphql';
+import { ObjectAssigneeFieldMembersSearchQuery$data } from '@private/components/common/form/__generated__/ObjectAssigneeFieldMembersSearchQuery.graphql';
 import { fetchQuery } from '../../../../relay/environment';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import { useFormatter } from '../../../../components/i18n';

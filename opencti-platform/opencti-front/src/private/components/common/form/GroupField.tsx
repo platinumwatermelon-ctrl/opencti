@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Field } from 'formik';
 import { graphql } from 'react-relay';
-import { GroupFieldQuery$data } from '@components/common/form/__generated__/GroupFieldQuery.graphql';
+import { GroupFieldQuery$data } from '@private/components/common/form/__generated__/GroupFieldQuery.graphql';
 import makeStyles from '@mui/styles/makeStyles';
 import { fetchQuery } from '../../../../relay/environment';
 import AutocompleteField from '../../../../components/AutocompleteField';

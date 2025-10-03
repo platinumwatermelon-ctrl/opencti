@@ -2,7 +2,7 @@ import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
 import { Field, Form, Formik } from 'formik';
 import { Dialog, DialogTitle, DialogContent, MenuItem, DialogActions, Button } from '@mui/material';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import React from 'react';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import SelectField from '../../../../components/fields/SelectField';

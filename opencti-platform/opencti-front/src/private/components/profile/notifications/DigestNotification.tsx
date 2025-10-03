@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { NotificationsLine_node$data } from '@components/profile/__generated__/NotificationsLine_node.graphql';
+import { NotificationsLine_node$data } from '@private/components/profile/__generated__/NotificationsLine_node.graphql';
 import Chip from '@mui/material/Chip';
 import { deepPurple, green, red } from '@mui/material/colors';
 import { iconSelector } from './notificationUtils';

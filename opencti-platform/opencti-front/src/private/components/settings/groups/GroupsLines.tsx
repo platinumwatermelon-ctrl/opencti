@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, createPaginationContainer, RelayPaginationProp } from 'react-relay';
 import { pathOr } from 'ramda';
-import { GroupsLines_data$data } from '@components/settings/groups/__generated__/GroupsLines_data.graphql';
+import { GroupsLines_data$data } from '@private/components/settings/groups/__generated__/GroupsLines_data.graphql';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 import { GroupLine, GroupLineDummy } from './GroupLine';
 import { DataColumns, PaginationOptions } from '../../../../components/list_lines';

@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { useParams } from 'react-router-dom';
 import { graphql } from 'react-relay';
-import { DraftRelationshipsLines_data$data } from '@components/drafts/__generated__/DraftRelationshipsLines_data.graphql';
+import { DraftRelationshipsLines_data$data } from '@private/components/drafts/__generated__/DraftRelationshipsLines_data.graphql';
 import {
   DraftRelationshipsLinesPaginationQuery,
   DraftRelationshipsLinesPaginationQuery$variables,
-} from '@components/drafts/__generated__/DraftRelationshipsLinesPaginationQuery.graphql';
+} from '@private/components/drafts/__generated__/DraftRelationshipsLinesPaginationQuery.graphql';
 import useAuth from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';

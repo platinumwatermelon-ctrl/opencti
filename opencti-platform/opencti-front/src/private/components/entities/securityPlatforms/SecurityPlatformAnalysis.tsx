@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { SecurityPlatformAnalysis_securityPlatform$key } from '@components/entities/securityPlatforms/__generated__/SecurityPlatformAnalysis_securityPlatform.graphql';
+import { SecurityPlatformAnalysis_securityPlatform$key } from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformAnalysis_securityPlatform.graphql';
 import StixCoreObjectOrStixCoreRelationshipContainers from '../../common/containers/StixCoreObjectOrStixCoreRelationshipContainers';
 
 interface SecurityPlatformAnalysisComponentProps {

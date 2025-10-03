@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Chip, Grid, Paper, Typography } from '@mui/material';
-import AddThreatActorIndividualDemographic from '@components/threats/threat_actors_individual/AddThreatActorIndividualDemographic';
+import AddThreatActorIndividualDemographic from '@private/components/threats/threat_actors_individual/AddThreatActorIndividualDemographic';
 import { useFormatter } from '../../../../components/i18n';
 import { ThreatActorIndividual_ThreatActorIndividual$data } from './__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';

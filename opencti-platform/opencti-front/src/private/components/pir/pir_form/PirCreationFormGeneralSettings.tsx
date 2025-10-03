@@ -17,7 +17,7 @@ import { Field, useFormikContext } from 'formik';
 import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { PirCreationFormData } from '@components/pir/pir_form/pir-form-utils';
+import { PirCreationFormData } from '@private/components/pir/pir_form/pir-form-utils';
 import Alert from '@mui/material/Alert';
 import { AlertTitle } from '@mui/material';
 import MarkdownField from '../../../../components/fields/MarkdownField';

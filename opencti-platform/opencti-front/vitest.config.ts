@@ -13,7 +13,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, './src/private/components'),
+      '@private/components': path.resolve(__dirname, './src/private/components'),
+      '@components': path.resolve(__dirname, './src/components'),
     },
   }
 })

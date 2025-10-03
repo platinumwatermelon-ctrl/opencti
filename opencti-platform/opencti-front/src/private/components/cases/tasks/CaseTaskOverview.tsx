@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import ContainerStixObjectsOrStixRelationships from '@components/common/containers/ContainerStixObjectsOrStixRelationships';
+import ContainerStixObjectsOrStixRelationships from '@private/components/common/containers/ContainerStixObjectsOrStixRelationships';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
 import { CaseTaskOverview_task$data, CaseTaskOverview_task$key } from './__generated__/CaseTaskOverview_task.graphql';

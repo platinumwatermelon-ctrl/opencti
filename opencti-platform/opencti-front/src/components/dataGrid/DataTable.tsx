@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { useSettingsMessagesBannerHeight } from '@components/settings/settings_messages/SettingsMessagesBanner';
-import DataTableToolBar from '@components/data/DataTableToolBar';
+import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
+import DataTableToolBar from '@private/components/data/DataTableToolBar';
 import { OperationType } from 'relay-runtime';
 import { GraphQLTaggedNode } from 'react-relay';
 import { useTheme } from '@mui/styles';

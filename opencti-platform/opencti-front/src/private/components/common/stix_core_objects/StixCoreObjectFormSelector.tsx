@@ -5,7 +5,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { AssignmentOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import { StixCoreObjectFormsFormsQuery$data } from '@components/common/stix_core_objects/__generated__/StixCoreObjectFormsFormsQuery.graphql';
+import { StixCoreObjectFormsFormsQuery$data } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectFormsFormsQuery.graphql';
 import Drawer from '../drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 

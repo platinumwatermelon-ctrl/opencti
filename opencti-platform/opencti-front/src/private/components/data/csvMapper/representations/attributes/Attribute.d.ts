@@ -1,4 +1,4 @@
-import { CsvMapperEditionContainerFragment_csvMapper$data } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+import { CsvMapperEditionContainerFragment_csvMapper$data } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
 import { DefaultValues } from '../../../../../../utils/defaultValues';
 
 export type CsvMapperRepresentationAttribute = CsvMapperEditionContainerFragment_csvMapper$data['representations'][number]['attributes'][number];

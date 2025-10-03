@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import { graphql, useFragment } from 'react-relay';
-import { useEmailTemplateContext } from '@components/settings/email_template/EmailTemplateContext';
+import { useEmailTemplateContext } from '@private/components/settings/email_template/EmailTemplateContext';
 import RichTextField from '../../../../components/fields/RichTextField';
 import { EmailTemplateContentEditor_template$key } from './__generated__/EmailTemplateContentEditor_template.graphql';
 

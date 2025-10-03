@@ -1,9 +1,9 @@
 import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import EnterpriseEditionAgreement from '@components/common/entreprise_edition/EnterpriseEditionAgreement';
+import EnterpriseEditionAgreement from '@private/components/common/entreprise_edition/EnterpriseEditionAgreement';
 import { RocketLaunchOutlined } from '@mui/icons-material';
-import FeedbackCreation from '@components/cases/feedbacks/FeedbackCreation';
+import FeedbackCreation from '@private/components/cases/feedbacks/FeedbackCreation';
 import classNames from 'classnames';
 import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../../../components/i18n';

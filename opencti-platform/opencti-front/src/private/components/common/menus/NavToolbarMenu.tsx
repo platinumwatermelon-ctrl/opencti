@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
-import EEChip from '@components/common/entreprise_edition/EEChip';
+import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import { Stack } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useFormatter } from '../../../../components/i18n';

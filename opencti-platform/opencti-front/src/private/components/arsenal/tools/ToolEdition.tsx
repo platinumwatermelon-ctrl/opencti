@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { ToolEditionContainerQuery } from '@components/arsenal/tools/__generated__/ToolEditionContainerQuery.graphql';
+import { ToolEditionContainerQuery } from '@private/components/arsenal/tools/__generated__/ToolEditionContainerQuery.graphql';
 import ToolEditionContainer, { toolEditionQuery } from './ToolEditionContainer';
 import { toolEditionOverviewFocus } from './ToolEditionOverview';
 import Loader, { LoaderVariant } from '../../../../components/Loader';

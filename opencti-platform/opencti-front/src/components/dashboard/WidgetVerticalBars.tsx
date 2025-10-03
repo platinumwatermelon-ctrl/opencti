@@ -1,4 +1,4 @@
-import Chart from '@components/common/charts/Chart';
+import Chart from '@private/components/common/charts/Chart';
 import React, { useMemo } from 'react';
 import { useTheme } from '@mui/styles';
 import { ApexOptions } from 'apexcharts';

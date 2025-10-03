@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Tooltip } from '@mui/material';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
-import { OptionsFormValues } from '@components/common/files/import_files/ImportFilesDialog';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
+import { OptionsFormValues } from '@private/components/common/files/import_files/ImportFilesDialog';
 import { Field, FormikContextType, FormikProvider } from 'formik';
 import MenuItem from '@mui/material/MenuItem';
-import StixCoreObjectsField from '@components/common/form/StixCoreObjectsField';
-import { useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
+import StixCoreObjectsField from '@private/components/common/form/StixCoreObjectsField';
+import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import { InformationOutline } from 'mdi-material-ui';
 import { useFormatter } from '../../../../../components/i18n';
 import { fieldSpacingContainerStyle } from '../../../../../utils/field';

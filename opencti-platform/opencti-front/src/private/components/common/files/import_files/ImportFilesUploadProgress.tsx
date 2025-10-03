@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, LinearProgress, List, ListItem, Typography } from '@mui/material';
 import { CancelOutlined, CheckCircleOutlined, UploadFileOutlined } from '@mui/icons-material';
-import { useImportFilesContext } from '@components/common/files/import_files/ImportFilesContext';
+import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 
 interface ImportFilesUploadProgressProps {
   currentCount: number;

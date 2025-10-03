@@ -1,20 +1,20 @@
 import { createFragmentContainer, graphql } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import { getSecurityPlatformValidator, SECURITY_PLATFORM_TYPE } from '@components/entities/securityPlatforms/SecurityPlatformUtils';
+import { getSecurityPlatformValidator, SECURITY_PLATFORM_TYPE } from '@private/components/entities/securityPlatforms/SecurityPlatformUtils';
 import { FormikConfig } from 'formik/dist/types';
 import { Field, Form, Formik } from 'formik';
-import OpenVocabField from '@components/common/form/OpenVocabField';
-import CreatedByField from '@components/common/form/CreatedByField';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
-import { ExternalReferencesValues } from '@components/common/form/ExternalReferencesField';
-import CommitMessage from '@components/common/form/CommitMessage';
+import OpenVocabField from '@private/components/common/form/OpenVocabField';
+import CreatedByField from '@private/components/common/form/CreatedByField';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
+import { ExternalReferencesValues } from '@private/components/common/form/ExternalReferencesField';
+import CommitMessage from '@private/components/common/form/CommitMessage';
 import {
   SecurityPlatformEditionOverview_securityPlatform$data,
-} from '@components/entities/securityPlatforms/__generated__/SecurityPlatformEditionOverview_securityPlatform.graphql';
+} from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformEditionOverview_securityPlatform.graphql';
 import {
   SecurityPlatformEditionContainer_securityPlatform$data,
-} from '@components/entities/securityPlatforms/__generated__/SecurityPlatformEditionContainer_securityPlatform.graphql';
-import StatusField from '@components/common/form/StatusField';
+} from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformEditionContainer_securityPlatform.graphql';
+import StatusField from '@private/components/common/form/StatusField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsMandatoryAttribute } from '../../../../utils/hooks/useEntitySettings';

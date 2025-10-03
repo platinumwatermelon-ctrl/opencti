@@ -1,5 +1,5 @@
 import React from 'react';
-import NavToolbarMenu, { MenuEntry } from '@components/common/menus/NavToolbarMenu';
+import NavToolbarMenu, { MenuEntry } from '@private/components/common/menus/NavToolbarMenu';
 
 const ManagementMenu = () => {
   const entries: MenuEntry[] = [

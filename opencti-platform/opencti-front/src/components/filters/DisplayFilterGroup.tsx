@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import Box from '@mui/material/Box';
 import { Stack } from '@mui/material';
-import CodeBlock from '@components/common/CodeBlock';
+import CodeBlock from '@private/components/common/CodeBlock';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { useFormatter } from '../i18n';

@@ -6,7 +6,7 @@ import { makeStyles } from '@mui/styles';
 import React, { useRef, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import Tooltip from '@mui/material/Tooltip';
-import { SettingsMessagesLine_settingsMessage$data } from '@components/settings/settings_messages/__generated__/SettingsMessagesLine_settingsMessage.graphql';
+import { SettingsMessagesLine_settingsMessage$data } from '@private/components/settings/settings_messages/__generated__/SettingsMessagesLine_settingsMessage.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { DataColumns } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';

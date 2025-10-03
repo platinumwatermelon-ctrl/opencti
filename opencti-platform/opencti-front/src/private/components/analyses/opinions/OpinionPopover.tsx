@@ -13,7 +13,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import IconButton from '@mui/material/IconButton';
 import { Formik } from 'formik';
 import { PopoverProps } from '@mui/material/Popover';
-import { OpinionEditionContainerQuery$data } from '@components/analyses/opinions/__generated__/OpinionEditionContainerQuery.graphql';
+import { OpinionEditionContainerQuery$data } from '@private/components/analyses/opinions/__generated__/OpinionEditionContainerQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { QueryRenderer } from '../../../../relay/environment';
 import { opinionEditionQuery } from './OpinionEdition';

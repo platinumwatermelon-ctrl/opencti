@@ -10,7 +10,7 @@ import { graphql, useFragment } from 'react-relay';
 import {
   StixCoreObjectKnowledgeBar_stixCoreObject$data,
   StixCoreObjectKnowledgeBar_stixCoreObject$key,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectKnowledgeBar_stixCoreObject.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectKnowledgeBar_stixCoreObject.graphql';
 import { useTheme } from '@mui/styles';
 import Box from '@mui/material/Box';
 import { useFormatter } from '../../../../components/i18n';

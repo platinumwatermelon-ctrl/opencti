@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import SubTypeStatusPopover from '@components/settings/sub_types/SubTypeWorkflowPopover';
+import SubTypeStatusPopover from '@private/components/settings/sub_types/SubTypeWorkflowPopover';
 import { graphql, useFragment } from 'react-relay';
 import { useFormatter } from '../../../../../components/i18n';
 import { StatusScopeEnum } from '../../../../../utils/statusConstants';

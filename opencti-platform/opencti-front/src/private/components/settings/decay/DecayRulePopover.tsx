@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
-import DecayRuleDeletion from '@components/settings/decay/DecayRuleDeletion';
+import DecayRuleDeletion from '@private/components/settings/decay/DecayRuleDeletion';
 import { DecayRule_decayRule$data } from './__generated__/DecayRule_decayRule.graphql';
 import { decayRuleEditionMutation } from './DecayRuleEdition';
 import { useFormatter } from '../../../../components/i18n';

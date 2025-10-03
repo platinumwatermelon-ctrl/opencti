@@ -9,7 +9,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import { BullseyeArrow, ArmFlexOutline } from 'mdi-material-ui';
 import ListItemText from '@mui/material/ListItemText';
 import { useTheme } from '@mui/material/styles';
-import { IntrusionSetDetails_intrusionSet$data } from '@components/threats/intrusion_sets/__generated__/IntrusionSetDetails_intrusionSet.graphql';
+import { IntrusionSetDetails_intrusionSet$data } from '@private/components/threats/intrusion_sets/__generated__/IntrusionSetDetails_intrusionSet.graphql';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
 import IntrusionSetLocations from './IntrusionSetLocations';

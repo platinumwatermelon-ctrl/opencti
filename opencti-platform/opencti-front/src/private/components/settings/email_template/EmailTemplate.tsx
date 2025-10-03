@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { useParams } from 'react-router-dom';
-import { EmailTemplateQuery } from '@components/settings/email_template/__generated__/EmailTemplateQuery.graphql';
-import { EmailTemplateProvider } from '@components/settings/email_template/EmailTemplateContext';
-import EmailTemplateHeader from '@components/settings/email_template/EmailTemplateHeader';
-import EmailTemplateTabs from '@components/settings/email_template/EmailTemplateTabs';
-import EmailTemplateContentEditor from '@components/settings/email_template/EmailTemplateContentEditor';
-import EmailTemplateAttributesSidebar, { EMAIL_TEMPLATE_SIDEBAR_WIDTH } from '@components/settings/email_template/EmailTemplateAttributesSidebar';
+import { EmailTemplateQuery } from '@private/components/settings/email_template/__generated__/EmailTemplateQuery.graphql';
+import { EmailTemplateProvider } from '@private/components/settings/email_template/EmailTemplateContext';
+import EmailTemplateHeader from '@private/components/settings/email_template/EmailTemplateHeader';
+import EmailTemplateTabs from '@private/components/settings/email_template/EmailTemplateTabs';
+import EmailTemplateContentEditor from '@private/components/settings/email_template/EmailTemplateContentEditor';
+import EmailTemplateAttributesSidebar, { EMAIL_TEMPLATE_SIDEBAR_WIDTH } from '@private/components/settings/email_template/EmailTemplateAttributesSidebar';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader from '../../../../components/Loader';

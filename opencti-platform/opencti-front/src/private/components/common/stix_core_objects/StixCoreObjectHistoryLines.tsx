@@ -4,8 +4,8 @@ import Paper from '@mui/material/Paper';
 import {
   StixCoreObjectHistoryLinesQuery,
   StixCoreObjectHistoryLinesQuery$variables,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectHistoryLinesQuery.graphql';
-import { StixCoreObjectHistoryLines_data$key } from '@components/common/stix_core_objects/__generated__/StixCoreObjectHistoryLines_data.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectHistoryLinesQuery.graphql';
+import { StixCoreObjectHistoryLines_data$key } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectHistoryLines_data.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectHistoryLine from './StixCoreObjectHistoryLine';
 import { FIVE_SECONDS } from '../../../../utils/Time';

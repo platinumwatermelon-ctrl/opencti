@@ -3,8 +3,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useTheme } from '@mui/styles';
-import { boundaryWrapper, NoMatch } from '@components/Error';
-import PlatformCriticalAlertDialog from '@components/settings/platform_alerts/PlatformCriticalAlertDialog';
+import { boundaryWrapper, NoMatch } from '@private/components/Error';
+import PlatformCriticalAlertDialog from '@private/components/settings/platform_alerts/PlatformCriticalAlertDialog';
 import TopBar from './components/nav/TopBar';
 import LeftBar from './components/nav/LeftBar';
 import Message from '../components/Message';
@@ -26,7 +26,7 @@ const RootCases = lazy(() => import('./components/cases/Root'));
 const RootEvents = lazy(() => import('./components/events/Root'));
 const RootObservations = lazy(() => import('./components/observations/Root'));
 const RootProfile = lazy(() => import('./components/profile/Root'));
-const RootSearch = lazy(() => import('@components/RootSearch'));
+const RootSearch = lazy(() => import('@private/components/RootSearch'));
 const RootThreats = lazy(() => import('./components/threats/Root'));
 const RootArsenal = lazy(() => import('./components/arsenal/Root'));
 const RootTechnique = lazy(() => import('./components/techniques/Root'));
@@ -39,7 +39,7 @@ const RootWorkspaces = lazy(() => import('./components/workspaces/Root'));
 const RootSettings = lazy(() => import('./components/settings/Root'));
 const RootAudit = lazy(() => import('./components/settings/activity/audit/Root'));
 const RootPir = lazy(() => import('./components/pir/Root'));
-const RootXTMHub = lazy(() => import('@components/xtm_hub/Root'));
+const RootXTMHub = lazy(() => import('@private/components/xtm_hub/Root'));
 
 interface IndexProps {
   settings: RootSettings$data

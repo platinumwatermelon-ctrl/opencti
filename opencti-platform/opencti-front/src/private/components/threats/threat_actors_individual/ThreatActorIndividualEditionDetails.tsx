@@ -6,7 +6,7 @@ import { FormikConfig } from 'formik/dist/types';
 import {
   ThreatActorIndividualMutationRelationDelete,
   threatActorIndividualRelationAddMutation,
-} from '@components/threats/threat_actors_individual/ThreatActorIndividualEditionOverview';
+} from '@private/components/threats/threat_actors_individual/ThreatActorIndividualEditionOverview';
 import { useTheme } from '@mui/styles';
 import { GenericContext } from '../../common/model/GenericContextModel';
 import { isNone, useFormatter } from '../../../../components/i18n';

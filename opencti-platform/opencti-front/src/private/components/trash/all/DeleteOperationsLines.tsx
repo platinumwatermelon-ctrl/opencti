@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import { DeleteOperationLine, DeleteOperationLineDummy } from '@components/trash/all/DeleteOperationLine';
+import { DeleteOperationLine, DeleteOperationLineDummy } from '@private/components/trash/all/DeleteOperationLine';
 import type { DeleteOperationsLines_data$key } from './__generated__/DeleteOperationsLines_data.graphql';
 import type { DeleteOperationsLinesPaginationQuery, DeleteOperationsLinesPaginationQuery$variables } from './__generated__/DeleteOperationsLinesPaginationQuery.graphql';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';

@@ -1,18 +1,18 @@
 import { Field, Form, Formik } from 'formik';
 import Button from '@mui/material/Button';
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { securityPlatformCreationMutation } from '@components/entities/securityPlatforms/SecurityPlatformCreation';
+import { securityPlatformCreationMutation } from '@private/components/entities/securityPlatforms/SecurityPlatformCreation';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import {
   SecurityPlatformCreationMutation,
   SecurityPlatformCreationMutation$variables,
-} from '@components/entities/securityPlatforms/__generated__/SecurityPlatformCreationMutation.graphql';
+} from '@private/components/entities/securityPlatforms/__generated__/SecurityPlatformCreationMutation.graphql';
 import { FormikConfig } from 'formik/dist/types';
-import OpenVocabField from '@components/common/form/OpenVocabField';
-import CreatedByField from '@components/common/form/CreatedByField';
-import ObjectLabelField from '@components/common/form/ObjectLabelField';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
-import { getSecurityPlatformValidator, SECURITY_PLATFORM_TYPE } from '@components/entities/securityPlatforms/SecurityPlatformUtils';
+import OpenVocabField from '@private/components/common/form/OpenVocabField';
+import CreatedByField from '@private/components/common/form/CreatedByField';
+import ObjectLabelField from '@private/components/common/form/ObjectLabelField';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
+import { getSecurityPlatformValidator, SECURITY_PLATFORM_TYPE } from '@private/components/entities/securityPlatforms/SecurityPlatformUtils';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import { useFormatter } from '../../../../components/i18n';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';

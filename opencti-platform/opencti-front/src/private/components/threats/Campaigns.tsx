@@ -1,12 +1,12 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { GenericAttackCardDummy } from '@components/common/cards/GenericAttackCard';
+import { GenericAttackCardDummy } from '@private/components/common/cards/GenericAttackCard';
 import ToggleButton from '@mui/material/ToggleButton';
 import Tooltip from '@mui/material/Tooltip';
 import { ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
-import { CampaignsCards_data$data } from '@components/threats/campaigns/__generated__/CampaignsCards_data.graphql';
-import { CampaignCardFragment } from '@components/threats/campaigns/CampaignCard';
-import StixCoreObjectForms from '@components/common/stix_core_objects/StixCoreObjectForms';
+import { CampaignsCards_data$data } from '@private/components/threats/campaigns/__generated__/CampaignsCards_data.graphql';
+import { CampaignCardFragment } from '@private/components/threats/campaigns/CampaignCard';
+import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import { CampaignsCardsPaginationQuery, CampaignsCardsPaginationQuery$variables } from './campaigns/__generated__/CampaignsCardsPaginationQuery.graphql';
 import ListCards from '../../../components/list_cards/ListCards';
 import CampaignsCards, { campaignsCardsFragment, campaignsCardsQuery } from './campaigns/CampaignsCards';

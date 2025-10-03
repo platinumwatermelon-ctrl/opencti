@@ -1,11 +1,11 @@
 import { graphql, PreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import { IngestionJsonLineComponent, IngestionJsonLineDummy } from '@components/data/ingestionJson/IngestionJsonLine';
+import { IngestionJsonLineComponent, IngestionJsonLineDummy } from '@private/components/data/ingestionJson/IngestionJsonLine';
 import {
   IngestionJsonLinesPaginationQuery,
   IngestionJsonLinesPaginationQuery$variables,
-} from '@components/data/ingestionJson/__generated__/IngestionJsonLinesPaginationQuery.graphql';
-import { IngestionJsonLines_data$key } from '@components/data/ingestionJson/__generated__/IngestionJsonLines_data.graphql';
+} from '@private/components/data/ingestionJson/__generated__/IngestionJsonLinesPaginationQuery.graphql';
+import { IngestionJsonLines_data$key } from '@private/components/data/ingestionJson/__generated__/IngestionJsonLines_data.graphql';
 import { UseLocalStorageHelpers } from '../../../../utils/hooks/useLocalStorage';
 import { DataColumns } from '../../../../components/list_lines';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';

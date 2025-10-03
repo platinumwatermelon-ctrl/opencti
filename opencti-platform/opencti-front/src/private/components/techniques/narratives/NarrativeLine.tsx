@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
 import Skeleton from '@mui/material/Skeleton';
 import { useTheme } from '@mui/material/styles';
-import StixCoreObjectLabels from '@components/common/stix_core_objects/StixCoreObjectLabels';
+import StixCoreObjectLabels from '@private/components/common/stix_core_objects/StixCoreObjectLabels';
 import Tooltip from '@mui/material/Tooltip';
 import Checkbox from '@mui/material/Checkbox';
 import { graphql, useFragment } from 'react-relay';

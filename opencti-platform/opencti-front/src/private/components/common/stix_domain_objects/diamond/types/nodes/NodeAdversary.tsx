@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 import * as R from 'ramda';
 import { NodeProps, Position } from 'reactflow';
 import Typography from '@mui/material/Typography';
-import getFilterFromEntityTypeAndNodeType, { DiamondNodeType } from '@components/common/stix_domain_objects/diamond/getFilterFromEntityTypeAndNodeType';
-import NodeContainer from '@components/common/stix_domain_objects/diamond/types/nodes/NodeContainer';
+import getFilterFromEntityTypeAndNodeType, { DiamondNodeType } from '@private/components/common/stix_domain_objects/diamond/getFilterFromEntityTypeAndNodeType';
+import NodeContainer from '@private/components/common/stix_domain_objects/diamond/types/nodes/NodeContainer';
 import { useFormatter } from '../../../../../../../components/i18n';
 import { emptyFilled } from '../../../../../../../utils/String';
 

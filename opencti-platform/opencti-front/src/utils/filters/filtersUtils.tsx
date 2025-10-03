@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import { v4 as uuid } from 'uuid';
-import { FilterOptionValue } from '@components/common/lists/FilterAutocomplete';
+import { FilterOptionValue } from '@private/components/common/lists/FilterAutocomplete';
 import React from 'react';
 import { subDays } from 'date-fns';
 import { useFormatter } from '../../components/i18n';

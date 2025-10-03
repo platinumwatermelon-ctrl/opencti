@@ -3,7 +3,7 @@ import { graphql, useFragment } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { FormikConfig } from 'formik/dist/types';
-import { GenericContext } from '@components/common/model/GenericContextModel';
+import { GenericContext } from '@private/components/common/model/GenericContextModel';
 import { useFormatter } from '../../../../components/i18n';
 import { SubscriptionFocus } from '../../../../components/Subscription';
 import { convertAssignees, convertCreatedBy, convertMarkings, convertStatus } from '../../../../utils/edition';

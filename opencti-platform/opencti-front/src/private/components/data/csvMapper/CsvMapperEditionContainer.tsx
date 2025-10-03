@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import CsvMapperEdition from '@components/data/csvMapper/CsvMapperEdition';
-import { CsvMapperEditionContainerFragment_csvMapper$key } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
-import { CsvMapperEditionContainerQuery } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerQuery.graphql';
-import Drawer from '@components/common/drawer/Drawer';
+import CsvMapperEdition from '@private/components/data/csvMapper/CsvMapperEdition';
+import { CsvMapperEditionContainerFragment_csvMapper$key } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+import { CsvMapperEditionContainerQuery } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerQuery.graphql';
+import Drawer from '@private/components/common/drawer/Drawer';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { useFormatter } from '../../../../components/i18n';
 

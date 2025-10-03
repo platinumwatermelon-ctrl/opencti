@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import { ToolEditionOverview_tool$key } from '@components/arsenal/tools/__generated__/ToolEditionOverview_tool.graphql';
+import { ToolEditionOverview_tool$key } from '@private/components/arsenal/tools/__generated__/ToolEditionOverview_tool.graphql';
 import Drawer, { DrawerControlledDialType } from '../../common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import ToolEditionOverview from './ToolEditionOverview';

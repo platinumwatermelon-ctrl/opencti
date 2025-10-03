@@ -16,7 +16,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import React from 'react';
-import EnterpriseEditionButton from '@components/common/entreprise_edition/EnterpriseEditionButton';
+import EnterpriseEditionButton from '@private/components/common/entreprise_edition/EnterpriseEditionButton';
 import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../../../components/i18n';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';

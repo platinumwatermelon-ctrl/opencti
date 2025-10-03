@@ -16,14 +16,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import makeStyles from '@mui/styles/makeStyles';
 import Alert from '@mui/material/Alert';
 import React from 'react';
-import IngestionMenu from '@components/data/IngestionMenu';
-import IngestionJsonLines, { ingestionJsonLinesQuery } from '@components/data/ingestionJson/IngestionJsonLines';
+import IngestionMenu from '@private/components/data/IngestionMenu';
+import IngestionJsonLines, { ingestionJsonLinesQuery } from '@private/components/data/ingestionJson/IngestionJsonLines';
 import {
   IngestionJsonLinesPaginationQuery,
   IngestionJsonLinesPaginationQuery$variables,
-} from '@components/data/ingestionJson/__generated__/IngestionJsonLinesPaginationQuery.graphql';
-import { IngestionJsonLineDummy } from '@components/data/ingestionJson/IngestionJsonLine';
-import { IngestionJsonCreationContainer } from '@components/data/ingestionJson/IngestionJsonCreation';
+} from '@private/components/data/ingestionJson/__generated__/IngestionJsonLinesPaginationQuery.graphql';
+import { IngestionJsonLineDummy } from '@private/components/data/ingestionJson/IngestionJsonLine';
+import { IngestionJsonCreationContainer } from '@private/components/data/ingestionJson/IngestionJsonCreation';
 import { useFormatter } from '../../../components/i18n';
 import useAuth from '../../../utils/hooks/useAuth';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';

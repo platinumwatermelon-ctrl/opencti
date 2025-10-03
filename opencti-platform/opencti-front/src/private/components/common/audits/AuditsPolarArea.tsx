@@ -15,7 +15,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { CSSProperties } from 'react';
-import { AuditsPolarAreaDistributionQuery } from '@components/common/audits/__generated__/AuditsPolarAreaDistributionQuery.graphql';
+import { AuditsPolarAreaDistributionQuery } from '@private/components/common/audits/__generated__/AuditsPolarAreaDistributionQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import WidgetContainer from '../../../../components/dashboard/WidgetContainer';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';

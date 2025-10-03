@@ -4,7 +4,7 @@ import React from 'react';
 import { AutoFix, Database, GraphOutline } from 'mdi-material-ui';
 import { useTheme } from '@mui/material/styles';
 import { SettingsSuggestOutlined } from '@mui/icons-material';
-import Chart from '@components/common/charts/Chart';
+import Chart from '@private/components/common/charts/Chart';
 import Paper from '@mui/material/Paper';
 import { ApexOptions } from 'apexcharts';
 import RulesHeaderGridCard from './RulesHeaderGridCard';

@@ -5,7 +5,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { parse } from 'src/utils/Time';
-import { InvestigationGraph_fragment$data } from '@components/workspaces/investigations/__generated__/InvestigationGraph_fragment.graphql';
+import { InvestigationGraph_fragment$data } from '@private/components/workspaces/investigations/__generated__/InvestigationGraph_fragment.graphql';
 import { EXPLORE_EXUPDATE, INVESTIGATION_INUPDATE } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import { useFormatter } from '../../../../components/i18n';

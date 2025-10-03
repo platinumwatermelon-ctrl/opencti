@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Field, Form, Formik, FormikConfig } from 'formik';
 import { graphql } from 'react-relay';
 import { useTheme } from '@mui/styles';
-import MyOrganizationField from '@components/common/form/MyOrganizationField';
+import MyOrganizationField from '@private/components/common/form/MyOrganizationField';
 import * as Yup from 'yup';
 import { useFormatter } from './i18n';
 import TextField from './TextField';

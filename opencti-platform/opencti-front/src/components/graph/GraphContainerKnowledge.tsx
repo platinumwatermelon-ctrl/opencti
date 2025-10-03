@@ -1,10 +1,10 @@
 import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { graphql, PreloadedQuery, useFragment } from 'react-relay';
 import { useTheme } from '@mui/material/styles';
-import { useSettingsMessagesBannerHeight } from '@components/settings/settings_messages/SettingsMessagesBanner';
-import ContainerHeader from '@components/common/containers/ContainerHeader';
-import { knowledgeGraphStixCoreObjectQuery, knowledgeGraphStixRelationshipQuery } from '@components/common/containers/KnowledgeGraphQuery';
-import { ContainerHeader_container$key } from '@components/common/containers/__generated__/ContainerHeader_container.graphql';
+import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
+import ContainerHeader from '@private/components/common/containers/ContainerHeader';
+import { knowledgeGraphStixCoreObjectQuery, knowledgeGraphStixRelationshipQuery } from '@private/components/common/containers/KnowledgeGraphQuery';
+import { ContainerHeader_container$key } from '@private/components/common/containers/__generated__/ContainerHeader_container.graphql';
 import { deserializeObjectB64 } from '../../utils/object';
 import { getObjectsToParse } from './utils/graphUtils';
 import useDebounceCallback from '../../utils/hooks/useDebounceCallback';

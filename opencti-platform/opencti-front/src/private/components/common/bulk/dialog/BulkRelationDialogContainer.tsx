@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import BulkRelationDialog from '@components/common/bulk/dialog/BulkRelationDialog';
+import BulkRelationDialog from '@private/components/common/bulk/dialog/BulkRelationDialog';
 import { PaginationOptions } from 'src/components/list_lines';
 import { useFormatter } from 'src/components/i18n';
-import { TargetEntity } from '@components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
+import { TargetEntity } from '@private/components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
 
 type BulkRelationDialogContainerProps = {
   stixDomainObjectId: string;

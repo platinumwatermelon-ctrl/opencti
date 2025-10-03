@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
-import { FeedbacksLinesPaginationQuery, FeedbacksLinesPaginationQuery$variables } from '@components/cases/__generated__/FeedbacksLinesPaginationQuery.graphql';
-import { FeedbacksLines_data$data } from '@components/cases/__generated__/FeedbacksLines_data.graphql';
+import { FeedbacksLinesPaginationQuery, FeedbacksLinesPaginationQuery$variables } from '@private/components/cases/__generated__/FeedbacksLinesPaginationQuery.graphql';
+import { FeedbacksLines_data$data } from '@private/components/cases/__generated__/FeedbacksLines_data.graphql';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import useAuth from '../../../utils/hooks/useAuth';

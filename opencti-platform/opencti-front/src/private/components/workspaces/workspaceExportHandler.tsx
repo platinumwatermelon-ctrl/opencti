@@ -1,6 +1,6 @@
 import fileDownload from 'js-file-download';
 import { graphql } from 'react-relay';
-import { workspaceExportHandlerQuery$data } from '@components/workspaces/__generated__/workspaceExportHandlerQuery.graphql';
+import { workspaceExportHandlerQuery$data } from '@private/components/workspaces/__generated__/workspaceExportHandlerQuery.graphql';
 import { fetchQuery } from '../../../relay/environment';
 
 interface workspaceToExport {

@@ -2,12 +2,12 @@ import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { graphql, useFragment } from 'react-relay';
 import * as Yup from 'yup';
-import CountryField from '@components/common/form/CountryField';
+import CountryField from '@private/components/common/form/CountryField';
 import {
   ThreatActorIndividualEditionOverviewFocus,
   ThreatActorIndividualMutationRelationDelete,
   threatActorIndividualRelationAddMutation,
-} from '@components/threats/threat_actors_individual/ThreatActorIndividualEditionOverview';
+} from '@private/components/threats/threat_actors_individual/ThreatActorIndividualEditionOverview';
 import { GenericContext } from '../../common/model/GenericContextModel';
 import { useFormatter } from '../../../../components/i18n';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';

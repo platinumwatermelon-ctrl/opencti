@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import { TasksLinesPaginationQuery, TasksLinesPaginationQuery$variables } from '@components/cases/__generated__/TasksLinesPaginationQuery.graphql';
-import { TasksLines_data$data } from '@components/cases/__generated__/TasksLines_data.graphql';
-import { TasksLine_node$data } from '@components/cases/tasks/__generated__/TasksLine_node.graphql';
+import { TasksLinesPaginationQuery, TasksLinesPaginationQuery$variables } from '@private/components/cases/__generated__/TasksLinesPaginationQuery.graphql';
+import { TasksLines_data$data } from '@private/components/cases/__generated__/TasksLines_data.graphql';
+import { TasksLine_node$data } from '@private/components/cases/tasks/__generated__/TasksLine_node.graphql';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import { TaskFragment } from './tasks/TasksLine';

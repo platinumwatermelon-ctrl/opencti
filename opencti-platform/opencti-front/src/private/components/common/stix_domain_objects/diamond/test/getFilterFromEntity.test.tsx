@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import getFilterFromEntityTypeAndNodeType, { DiamondEntityType, DiamondNodeType } from '@components/common/stix_domain_objects/diamond/getFilterFromEntityTypeAndNodeType';
+import getFilterFromEntityTypeAndNodeType, { DiamondEntityType, DiamondNodeType } from '@private/components/common/stix_domain_objects/diamond/getFilterFromEntityTypeAndNodeType';
 
 describe('get the filters from Threat-actor-group, containing a diamond ', () => {
   const entityType = DiamondEntityType.threatActorGroup;

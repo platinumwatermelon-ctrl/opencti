@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
 import { Field, FieldArray, Form, Formik, FormikConfig } from 'formik';
-import Drawer, { DrawerControlledDialProps } from '@components/common/drawer/Drawer';
+import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import Button from '@mui/material/Button';
 import * as R from 'ramda';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 import { InformationOutline } from 'mdi-material-ui';
-import ObservableTypesField from '@components/common/form/ObservableTypesField';
+import ObservableTypesField from '@private/components/common/form/ObservableTypesField';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownField from '../../../../components/fields/MarkdownField';
 import TextField from '../../../../components/TextField';

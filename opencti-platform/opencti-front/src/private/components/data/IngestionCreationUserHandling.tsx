@@ -4,11 +4,11 @@ import { Field, useFormikContext } from 'formik';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
-import CreatorField from '@components/common/form/CreatorField';
-import ConfidenceField from '@components/common/form/ConfidenceField';
+import CreatorField from '@private/components/common/form/CreatorField';
+import ConfidenceField from '@private/components/common/form/ConfidenceField';
 import {
   IngestionCreationUserHandlingDefaultGroupForIngestionUsersQuery,
-} from '@components/data/__generated__/IngestionCreationUserHandlingDefaultGroupForIngestionUsersQuery.graphql';
+} from '@private/components/data/__generated__/IngestionCreationUserHandlingDefaultGroupForIngestionUsersQuery.graphql';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { type FieldOption, fieldSpacingContainerStyle } from '../../../utils/field';

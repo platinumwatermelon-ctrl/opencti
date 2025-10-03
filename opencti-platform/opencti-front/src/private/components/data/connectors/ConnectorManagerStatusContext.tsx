@@ -1,7 +1,7 @@
 import React, { createContext, ReactNode, useContext, useEffect } from 'react';
 import { graphql, useLazyLoadQuery } from 'react-relay';
 import { interval } from 'rxjs';
-import { ConnectorManagerStatusContextQuery } from '@components/data/connectors/__generated__/ConnectorManagerStatusContextQuery.graphql';
+import { ConnectorManagerStatusContextQuery } from '@private/components/data/connectors/__generated__/ConnectorManagerStatusContextQuery.graphql';
 import { FIVE_SECONDS } from '../../../../utils/Time';
 
 export const connectorManagerStatusQuery = graphql`

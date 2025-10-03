@@ -16,7 +16,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import { graphql, useFragment } from 'react-relay';
 import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import FormAuthorizedMembersDialog from '@components/common/form/FormAuthorizedMembersDialog';
+import FormAuthorizedMembersDialog from '@private/components/common/form/FormAuthorizedMembersDialog';
 import PirPopover from './PirPopover';
 import PirEdition from './pir_form/PirEdition';
 import { PirHeaderFragment$key } from './__generated__/PirHeaderFragment.graphql';

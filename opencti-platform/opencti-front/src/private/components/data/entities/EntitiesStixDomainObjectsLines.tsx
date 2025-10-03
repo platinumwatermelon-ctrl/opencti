@@ -3,9 +3,9 @@ import { graphql, PreloadedQuery } from 'react-relay';
 import {
   EntitiesStixDomainObjectsLinesPaginationQuery,
   EntitiesStixDomainObjectsLinesPaginationQuery$variables,
-} from '@components/data/entities/__generated__/EntitiesStixDomainObjectsLinesPaginationQuery.graphql';
-import { EntitiesStixDomainObjectsLines_data$key } from '@components/data/entities/__generated__/EntitiesStixDomainObjectsLines_data.graphql';
-import { EntitiesStixDomainObjectLine_node$data } from '@components/data/entities/__generated__/EntitiesStixDomainObjectLine_node.graphql';
+} from '@private/components/data/entities/__generated__/EntitiesStixDomainObjectsLinesPaginationQuery.graphql';
+import { EntitiesStixDomainObjectsLines_data$key } from '@private/components/data/entities/__generated__/EntitiesStixDomainObjectsLines_data.graphql';
+import { EntitiesStixDomainObjectLine_node$data } from '@private/components/data/entities/__generated__/EntitiesStixDomainObjectLine_node.graphql';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 import { EntitiesStixDomainObjectLine, EntitiesStixDomainObjectLineDummy } from './EntitiesStixDomainObjectLine';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';

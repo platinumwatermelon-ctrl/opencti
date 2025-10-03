@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import React, { Suspense, useEffect } from 'react';
-import ObjectMarkingField from '@components/common/form/ObjectMarkingField';
+import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import InputAdornment from '@mui/material/InputAdornment';
 import Button from '@mui/material/Button';
 import { FormikConfig } from 'formik/dist/types';
@@ -9,7 +9,7 @@ import Alert from '@mui/material/Alert';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import MenuItem from '@mui/material/MenuItem';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import { PublicDashboardCreationFormDashboardsQuery } from '@components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboardCreationFormDashboardsQuery.graphql';
+import { PublicDashboardCreationFormDashboardsQuery } from '@private/components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboardCreationFormDashboardsQuery.graphql';
 import { useFormatter } from '../../../../../components/i18n';
 import TextField from '../../../../../components/TextField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../../utils/field';

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { TargetEntity } from '@components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
+import { TargetEntity } from '@private/components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
 import {
   StixDomainObjectAttackPatternsKillChainContainer_data$data,
-} from '@components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
+} from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
 import AttackPatternsMatrix from '../../techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
 
 interface StixDomainObjectAttackPatternsKillChainMatrixProps {

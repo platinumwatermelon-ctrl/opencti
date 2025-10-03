@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { v4 as uuid } from 'uuid';
-import { FintelTemplateWidget } from '@components/settings/sub_types/fintel_templates/FintelTemplateWidgetsList';
+import { FintelTemplateWidget } from '@private/components/settings/sub_types/fintel_templates/FintelTemplateWidgetsList';
 import type { Widget, WidgetContext } from '../../../utils/widget/widget';
 import WidgetUpsert from './WidgetUpsert';
 import { WidgetConfigProvider, WidgetConfigType } from './WidgetConfigContext';

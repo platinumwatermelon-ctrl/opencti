@@ -19,7 +19,7 @@ import { createFragmentContainer, graphql } from 'react-relay';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
-import { SearchIndexedFileLine_node$data } from '@components/search/__generated__/SearchIndexedFileLine_node.graphql';
+import { SearchIndexedFileLine_node$data } from '@private/components/search/__generated__/SearchIndexedFileLine_node.graphql';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { MoreVertOutlined, OpenInNewOutlined } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';

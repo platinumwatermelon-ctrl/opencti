@@ -1,8 +1,8 @@
 import { graphql, PreloadedQuery, useFragment } from 'react-relay';
 import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { useSettingsMessagesBannerHeight } from '@components/settings/settings_messages/SettingsMessagesBanner';
-import { knowledgeCorrelationStixCoreObjectQuery, knowledgeCorrelationStixCoreRelationshipQuery } from '@components/common/containers/KnowledgeCorrelationQuery';
+import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
+import { knowledgeCorrelationStixCoreObjectQuery, knowledgeCorrelationStixCoreRelationshipQuery } from '@private/components/common/containers/KnowledgeCorrelationQuery';
 import type { Theme } from '../Theme';
 import Graph from './Graph';
 import GraphToolbar from './GraphToolbar';

@@ -17,7 +17,7 @@ import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { Grid2 as Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { PirOverviewDetailsRedisFragment$key } from '@components/pir/pir_overview/__generated__/PirOverviewDetailsRedisFragment.graphql';
+import { PirOverviewDetailsRedisFragment$key } from '@private/components/pir/pir_overview/__generated__/PirOverviewDetailsRedisFragment.graphql';
 import { InformationOutline } from 'mdi-material-ui';
 import Tooltip from '@mui/material/Tooltip';
 import Chip from '@mui/material/Chip';

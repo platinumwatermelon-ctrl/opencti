@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, usePaginationFragment } from 'react-relay';
-import JsonMapperLine from '@components/data/jsonMapper/JsonMapperLine';
-import LineDummy from '@components/common/LineDummy';
-import { useJsonMappersData } from '@components/data/jsonMapper/jsonMappers.data';
-import { jsonMappers_MappersQuery, jsonMappers_MappersQuery$variables } from '@components/data/jsonMapper/__generated__/jsonMappers_MappersQuery.graphql';
-import { JsonMapperLines_jsonMapper$key } from '@components/data/jsonMapper/__generated__/JsonMapperLines_jsonMapper.graphql';
+import JsonMapperLine from '@private/components/data/jsonMapper/JsonMapperLine';
+import LineDummy from '@private/components/common/LineDummy';
+import { useJsonMappersData } from '@private/components/data/jsonMapper/jsonMappers.data';
+import { jsonMappers_MappersQuery, jsonMappers_MappersQuery$variables } from '@private/components/data/jsonMapper/__generated__/jsonMappers_MappersQuery.graphql';
+import { JsonMapperLines_jsonMapper$key } from '@private/components/data/jsonMapper/__generated__/JsonMapperLines_jsonMapper.graphql';
 import { DataColumns } from '../../../../components/list_lines';
 import ListLinesContent from '../../../../components/list_lines/ListLinesContent';
 

@@ -1,7 +1,7 @@
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import React, { FunctionComponent } from 'react';
 import { Field } from 'formik';
-import { FintelDesignFieldQuery } from '@components/common/form/__generated__/FintelDesignFieldQuery.graphql';
+import { FintelDesignFieldQuery } from '@private/components/common/form/__generated__/FintelDesignFieldQuery.graphql';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import { useFormatter } from '../../../../components/i18n';

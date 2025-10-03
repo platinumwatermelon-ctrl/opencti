@@ -6,12 +6,12 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { graphql, useFragment } from 'react-relay';
 import Tooltip from '@mui/material/Tooltip';
-import RelatedContainersDetails from '@components/common/containers/related_containers/RelatedContainersDetails';
-import Drawer from '@components/common/drawer/Drawer';
+import RelatedContainersDetails from '@private/components/common/containers/related_containers/RelatedContainersDetails';
+import Drawer from '@private/components/common/drawer/Drawer';
 import {
   RelatedContainersFragment_container_connection$data,
   RelatedContainersFragment_container_connection$key,
-} from '@components/common/containers/related_containers/__generated__/RelatedContainersFragment_container_connection.graphql';
+} from '@private/components/common/containers/related_containers/__generated__/RelatedContainersFragment_container_connection.graphql';
 import { useTheme } from '@mui/styles';
 import Loader from 'src/components/Loader';
 import type { Theme } from '../../../../../components/Theme';

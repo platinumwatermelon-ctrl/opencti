@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
-import Drawer from '@components/common/drawer/Drawer';
+import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';
 import AddDataComponentsLines, { addDataComponentsLinesQuery } from './AddDataComponentsLines';

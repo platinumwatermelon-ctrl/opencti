@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { useTheme } from '@mui/material/styles';
-import { pirLogRedirectUri } from '@components/pir/pir-history-utils';
+import { pirLogRedirectUri } from '@private/components/pir/pir-history-utils';
 import PirHistoryMessage from '../PirHistoryMessage';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';

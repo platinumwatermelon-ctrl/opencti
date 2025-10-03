@@ -1,19 +1,19 @@
 import React, { FunctionComponent } from 'react';
 import { FormikConfig } from 'formik';
 import { graphql, useFragment } from 'react-relay';
-import { CsvMapperFormData } from '@components/data/csvMapper/CsvMapper';
-import { CsvMapperAddInput } from '@components/data/csvMapper/__generated__/CsvMapperCreationContainerMutation.graphql';
-import { csvMappers_MappersQuery$variables } from '@components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
-import { CsvMapperEditionContainerFragment_csvMapper$key } from '@components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
-import { useCsvMappersData } from '@components/data/csvMapper/csvMappers.data';
+import { CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
+import { CsvMapperAddInput } from '@private/components/data/csvMapper/__generated__/CsvMapperCreationContainerMutation.graphql';
+import { csvMappers_MappersQuery$variables } from '@private/components/data/csvMapper/__generated__/csvMappers_MappersQuery.graphql';
+import { CsvMapperEditionContainerFragment_csvMapper$key } from '@private/components/data/csvMapper/__generated__/CsvMapperEditionContainerFragment_csvMapper.graphql';
+import { useCsvMappersData } from '@private/components/data/csvMapper/csvMappers.data';
 import {
   CsvMapperRepresentationAttributesForm_allSchemaAttributes$key,
-} from '@components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
-import { CsvMapperRepresentationAttributesFormFragment } from '@components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributesForm';
-import { csvMapperToFormData, formDataToCsvMapper } from '@components/data/csvMapper/CsvMapperUtils';
-import CsvMapperForm from '@components/data/csvMapper/CsvMapperForm';
-import { csvMapperEditionContainerFragment } from '@components/data/csvMapper/CsvMapperEditionContainer';
-import { CsvMappersImportQuery$data } from '@components/data/__generated__/CsvMappersImportQuery.graphql';
+} from '@private/components/data/csvMapper/representations/attributes/__generated__/CsvMapperRepresentationAttributesForm_allSchemaAttributes.graphql';
+import { CsvMapperRepresentationAttributesFormFragment } from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributesForm';
+import { csvMapperToFormData, formDataToCsvMapper } from '@private/components/data/csvMapper/CsvMapperUtils';
+import CsvMapperForm from '@private/components/data/csvMapper/CsvMapperForm';
+import { csvMapperEditionContainerFragment } from '@private/components/data/csvMapper/CsvMapperEditionContainer';
+import { CsvMappersImportQuery$data } from '@private/components/data/__generated__/CsvMappersImportQuery.graphql';
 import { insertNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { handleErrorInForm } from '../../../../relay/environment';

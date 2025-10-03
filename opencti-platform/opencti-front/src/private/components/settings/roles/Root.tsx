@@ -3,12 +3,12 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
 import { graphql, PreloadedQuery, useLazyLoadQuery, usePreloadedQuery } from 'react-relay';
-import AccessesMenu from '@components/settings/AccessesMenu';
+import AccessesMenu from '@private/components/settings/AccessesMenu';
 import Typography from '@mui/material/Typography';
 import { Box, styled } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
-import RoleDeletionDialog from '@components/settings/roles/RoleDeletionDialog';
-import RoleEdition from '@components/settings/roles/RoleEdition';
+import RoleDeletionDialog from '@private/components/settings/roles/RoleDeletionDialog';
+import RoleEdition from '@private/components/settings/roles/RoleEdition';
 import { useTheme } from '@mui/styles';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../../components/Loader';

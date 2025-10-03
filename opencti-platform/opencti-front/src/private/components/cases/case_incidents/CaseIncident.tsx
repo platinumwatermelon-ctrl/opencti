@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useFragment } from 'react-relay';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import { CaseUtils_case$key } from '@components/cases/__generated__/CaseUtils_case.graphql';
+import { CaseUtils_case$key } from '@private/components/cases/__generated__/CaseUtils_case.graphql';
 import { useTheme } from '@mui/material/styles';
 import { useFormatter } from '../../../../components/i18n';
 import { convertMarkings } from '../../../../utils/edition';

@@ -19,9 +19,9 @@ import useApiMutation from 'src/utils/hooks/useApiMutation';
 import {
   type BackgroundTaskActionInput,
   type StixCoreObjectContainerTaskAddMutation,
-} from '@components/common/stix_core_objects/__generated__/StixCoreObjectContainerTaskAddMutation.graphql';
+} from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectContainerTaskAddMutation.graphql';
 import { AutocompleteInputChangeReason } from '@mui/material/useAutocomplete/useAutocomplete';
-import { StixCoreObjectContainerContainersQuery$data } from '@components/common/stix_core_objects/__generated__/StixCoreObjectContainerContainersQuery.graphql';
+import { StixCoreObjectContainerContainersQuery$data } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectContainerContainersQuery.graphql';
 import StixDomainObjectCreation from '../stix_domain_objects/StixDomainObjectCreation';
 import { useFormatter } from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';

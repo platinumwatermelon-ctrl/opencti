@@ -12,7 +12,7 @@ import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import { CheckCircleOutlined } from '@mui/icons-material';
-import { ContainerStixCoreObjectsSuggestedMappingQuery$data } from '@components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingQuery.graphql';
+import { ContainerStixCoreObjectsSuggestedMappingQuery$data } from '@private/components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingQuery.graphql';
 import Transition from '../../../../components/Transition';
 import { useFormatter } from '../../../../components/i18n';
 
