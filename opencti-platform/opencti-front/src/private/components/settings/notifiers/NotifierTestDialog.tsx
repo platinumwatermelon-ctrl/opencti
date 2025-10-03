@@ -1,11 +1,3 @@
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
@@ -13,6 +5,7 @@ import { useFormatter } from '../../../../components/i18n';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import type { Theme } from '../../../../components/Theme';
 import { NotifierTestDialogQuery } from './__generated__/NotifierTestDialogQuery.graphql';
+import { Button, Chip, Dialog, DialogContent, DialogTitle, MenuItem, Select, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

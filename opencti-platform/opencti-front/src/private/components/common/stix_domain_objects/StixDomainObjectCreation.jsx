@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import * as R from 'ramda';
 import { graphql, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import MenuItem from '@mui/material/MenuItem';
-import { Select } from '@mui/material';
 import { ConnectionHandler } from 'relay-runtime';
 import Alert from '@mui/lab/Alert';
 import { useFormatter } from '../../../../components/i18n';
@@ -49,6 +44,7 @@ import { CaseRftCreationForm } from '../../cases/case_rfts/CaseRftCreation';
 import { ThreatActorIndividualCreationForm } from '../../threats/threat_actors_individual/ThreatActorIndividualCreation';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
 import BulkTextModalButton from '../../../../components/fields/BulkTextField/BulkTextModalButton';
+import { Dialog, DialogContent, DialogTitle, MenuItem, Select } from '@components';
 
 export const stixDomainObjectCreationAllTypesQuery = graphql`
   query StixDomainObjectCreationAllTypesQuery {

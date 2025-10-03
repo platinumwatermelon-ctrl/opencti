@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Drawer from '@mui/material/Drawer';
 import MenuList from '@mui/material/MenuList';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import { graphql, useFragment } from 'react-relay';
 import {
@@ -12,12 +8,12 @@ import {
   StixCoreObjectKnowledgeBar_stixCoreObject$key,
 } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectKnowledgeBar_stixCoreObject.graphql';
 import { useTheme } from '@mui/styles';
-import Box from '@mui/material/Box';
 import { useFormatter } from '../../../../components/i18n';
 import useAuth from '../../../../utils/hooks/useAuth';
 import { useSettingsMessagesBannerHeight } from '../../settings/settings_messages/SettingsMessagesBanner';
 import ItemIcon from '../../../../components/ItemIcon';
 import type { Theme } from '../../../../components/Theme';
+import { Box, Drawer, ListItemIcon, ListItemText, MenuItem } from '@components';
 
 const stixCoreObjectKnowledgeBarFragment = graphql`
   fragment StixCoreObjectKnowledgeBar_stixCoreObject on StixCoreObject

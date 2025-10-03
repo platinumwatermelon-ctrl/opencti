@@ -1,8 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
@@ -10,6 +7,7 @@ import { DataComponentDetails_dataComponent$data, DataComponentDetails_dataCompo
 import DataComponentDataSource from './DataComponentDataSource';
 import DataComponentAttackPatterns from './DataComponentAttackPatterns';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Grid, Paper, Typography } from '@components';
 
 const DataComponentDetailsFragment = graphql`
   fragment DataComponentDetails_dataComponent on DataComponent {
@@ -55,7 +53,7 @@ const DataComponentDetails: FunctionComponent<DataComponentDetailsProps> = ({
         variant="outlined"
       >
         <Grid container={true} spacing={3}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
@@ -63,7 +61,7 @@ const DataComponentDetails: FunctionComponent<DataComponentDetailsProps> = ({
               <ExpandableMarkdown source={data.description} limit={300} />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <DataComponentDataSource dataComponent={data} />
             <DataComponentAttackPatterns dataComponent={data} />
           </Grid>

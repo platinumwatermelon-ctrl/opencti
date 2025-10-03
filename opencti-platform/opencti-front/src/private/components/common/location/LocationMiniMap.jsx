@@ -3,8 +3,6 @@ import * as PropTypes from 'prop-types';
 import { compose, flatten, propOr, pluck, uniq, pipe } from 'ramda';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import { MapContainer, TileLayer, GeoJSON, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import countries from '../../../../static/geo/countries.json';
@@ -15,6 +13,7 @@ import CityDark from '../../../../static/images/leaflet/city_dark.png';
 import MarkerDark from '../../../../static/images/leaflet/marker_dark.png';
 import CityLight from '../../../../static/images/leaflet/city_light.png';
 import MarkerLight from '../../../../static/images/leaflet/marker_light.png';
+import { Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {

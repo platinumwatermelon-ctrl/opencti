@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { createFragmentContainer, graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
 import { IncidentEditionOverview_incident$key } from '@private/components/events/incidents/__generated__/IncidentEditionOverview_incident.graphql';
 import { IncidentEditionDetails_incident$key } from '@private/components/events/incidents/__generated__/IncidentEditionDetails_incident.graphql';
@@ -12,7 +9,7 @@ import IncidentEditionDetails from './IncidentEditionDetails';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
 import { IncidentEditionContainerQuery } from './__generated__/IncidentEditionContainerQuery.graphql';
-
+import { Box, Tab, Tabs } from '@components';
 interface IncidentEditionContainerProps {
   queryRef: PreloadedQuery<IncidentEditionContainerQuery>
   handleClose: () => void

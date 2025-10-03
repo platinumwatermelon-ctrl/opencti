@@ -1,7 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 
@@ -29,6 +26,7 @@ import useGranted, { SETTINGS_SETACCESSES } from '../../../../utils/hooks/useGra
 import SearchInput from '../../../../components/SearchInput';
 import { useDataTablePaginationLocalStorage } from '../../../../components/dataGrid/dataTableHooks';
 import EditEntityControlledDial from '../../../../components/EditEntityControlledDial';
+import { Box, Tab, Tabs } from '@components';
 
 export const groupEditionContainerQuery = graphql`
   query GroupEditionContainerQuery($id: String!) {

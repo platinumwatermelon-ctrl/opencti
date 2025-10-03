@@ -1,19 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, FieldProps } from 'formik';
 import CsvMapperRepresentationAttributesForm from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributesForm';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { SelectChangeEvent } from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
 import makeStyles from '@mui/styles/makeStyles';
-import Tooltip from '@mui/material/Tooltip';
-import { Accordion, AccordionDetails } from '@mui/material';
 import { DeleteOutlined, ExpandMoreOutlined } from '@mui/icons-material';
-import Typography from '@mui/material/Typography';
-import AccordionSummary from '@mui/material/AccordionSummary';
 import classNames from 'classnames';
 import { representationLabel } from '@private/components/data/csvMapper/representations/RepresentationUtils';
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 import { CsvMapperRepresentationFormData } from '@private/components/data/csvMapper/representations/Representation';
 import CsvMapperConditionalEntityMapping from '@private/components/data/csvMapper/representations/CsvMapperConditionalEntityMapping';
 import { useFormatter } from '../../../../../components/i18n';
@@ -22,6 +14,7 @@ import type { Theme } from '../../../../../components/Theme';
 import useDeletion from '../../../../../utils/hooks/useDeletion';
 import DeleteDialog from '../../../../../components/DeleteDialog';
 import { FieldOption } from '../../../../../utils/field';
+import { Accordion, AccordionDetails, AccordionSummary, Button, IconButton, Autocomplete as MUIAutocomplete, TextField, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

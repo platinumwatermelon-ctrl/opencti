@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import Paper from '@mui/material/Paper';
 import { interval } from 'rxjs';
 import { UserHistoryLinesQuery, UserHistoryLinesQuery$variables } from '@private/components/settings/users/__generated__/UserHistoryLinesQuery.graphql';
 import { UserHistoryLines_data$key } from '@private/components/settings/users/__generated__/UserHistoryLines_data.graphql';
@@ -10,6 +9,7 @@ import UserHistoryLine from './UserHistoryLine';
 import { FIVE_SECONDS } from '../../../../utils/Time';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';
 import type { Theme } from '../../../../components/Theme';
+import { Paper } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

@@ -1,13 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { LibraryBooksOutlined, ViewModuleOutlined } from '@mui/icons-material';
 import { FormatListGroup, Group, RelationManyToMany, VectorPolygon } from 'mdi-material-ui';
-import { ToggleButtonGroup } from '@mui/material';
 import { ListViewIcon, SublistViewIcon } from 'filigran-icon';
 import FiligranIcon from '@private/components/common/FiligranIcon';
 import { useFormatter } from './i18n';
-
+import { ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 interface ViewSwitchingButtonsProps {
   handleChangeView?: (value: string) => void;
   disableCards?: boolean,

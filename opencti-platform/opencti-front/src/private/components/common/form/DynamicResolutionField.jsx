@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Grid from '@mui/material/Grid';
 import * as R from 'ramda';
-import TextField from '@mui/material/TextField';
 import { useField } from 'formik';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { v4 as uuid } from 'uuid';
 import { fetchQuery } from '../../../../relay/environment';
 import { stixDomainObjectsLinesSearchQuery } from '../stix_domain_objects/StixDomainObjectsLines';
@@ -19,6 +10,7 @@ import { convertFromStixType, convertToStixType } from '../../../../utils/String
 import { useFormatter } from '../../../../components/i18n';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import { isEmptyField } from '../../../../utils/utils';
+import { Grid, List, ListItem, ListItemIcon, ListItemText, MenuItem, Select, TextField, Typography } from '@components';
 
 const inlineStyles = {
   type: {
@@ -168,7 +160,7 @@ const DynamicResolutionField = ({
     <div style={style}>
       <Typography variant="h4">{title}</Typography>
       <Grid container={true} spacing={3}>
-        <Grid item xs={5}>
+        <Grid size={5}>
           <TextField
             error={!R.isNil(meta.error)}
             helperText={helperText}
@@ -182,7 +174,7 @@ const DynamicResolutionField = ({
             }}
           />
         </Grid>
-        <Grid item xs={7}>
+        <Grid size={7}>
           {(field.value || []).length > 0 ? (
             <List style={{ marginTop: 0 }}>
               {(field.value || []).map((item) => (

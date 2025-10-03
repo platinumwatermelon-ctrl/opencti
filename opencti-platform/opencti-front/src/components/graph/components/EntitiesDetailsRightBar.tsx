@@ -1,17 +1,10 @@
 import React, { useEffect, useMemo } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Drawer from '@mui/material/Drawer';
 import { Theme } from '@mui/material/styles/createTheme';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { useTheme } from '@mui/styles';
-import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import { OpenInNewOutlined } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
-import { Typography } from '@mui/material';
 import EntityDetails from './EntityDetails';
 import RelationshipDetails from './RelationshipDetails';
 import { useFormatter } from '../../i18n';
@@ -21,6 +14,7 @@ import BasicRelationshipDetails from './BasicRelationshipDetails';
 import { GraphLink, GraphNode, isGraphLink, isGraphNode } from '../graph.types';
 import { useGraphContext } from '../GraphContext';
 import useGraphInteractions from '../utils/useGraphInteractions';
+import { Drawer, FormControl, IconButton, InputLabel, MenuItem, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,12 +1,9 @@
-import Button from '@mui/material/Button';
 import { FilterListOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Popover from '@mui/material/Popover';
-import Tooltip from '@mui/material/Tooltip';
 import { RayEndArrow, RayStartArrow } from 'mdi-material-ui';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { useFormatter } from '../../../../components/i18n';
+import { Button, IconButton, Popover, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

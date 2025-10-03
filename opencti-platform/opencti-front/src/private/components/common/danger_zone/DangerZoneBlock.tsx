@@ -1,12 +1,11 @@
 import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import DangerZoneChip from '@private/components/common/danger_zone/DangerZoneChip';
 import type { Theme } from '../../../../components/Theme';
 import { hexToRGB } from '../../../../utils/Colors';
 import { useFormatter } from '../../../../components/i18n';
 import useSensitiveModifications, { SensitiveConfigType } from '../../../../utils/hooks/useSensitiveModifications';
-
+import { Typography } from '@components';
 interface DangerZoneBlockProps {
   title?: ReactNode
   component?: ((props: { disabled?: boolean, style?: React.CSSProperties }) => ReactElement) | ReactNode

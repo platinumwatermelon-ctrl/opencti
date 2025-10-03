@@ -1,12 +1,8 @@
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useWidgetConfigContext } from './WidgetConfigContext';
 import { useFormatter } from '../../../components/i18n';
 import { fintelTemplatesWidgetVisualizationTypes, renderWidgetIcon, workspacesWidgetVisualizationTypes } from '../../../utils/widget/widgetUtils';
+import { Card, CardActionArea, CardContent, Grid, Typography } from '@components';
 
 const WidgetCreationTypes = () => {
   const { t_i18n } = useFormatter();
@@ -28,7 +24,7 @@ const WidgetCreationTypes = () => {
       style={{ marginTop: 20, marginBottom: 20 }}
     >
       {visualizationTypes.map((visualizationType) => (
-        <Grid key={visualizationType.key} item xs={4}>
+        <Grid key={visualizationType.key} size={4}>
           <Card
             variant="outlined"
             style={{

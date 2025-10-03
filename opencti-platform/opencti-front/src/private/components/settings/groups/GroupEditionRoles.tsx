@@ -1,15 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql, usePreloadedQuery } from 'react-relay';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
 import { Security } from '@mui/icons-material';
 import { PreloadedQuery } from 'react-relay/relay-hooks/EntryPointTypes';
 import { GroupEditionRoles_group$data } from './__generated__/GroupEditionRoles_group.graphql';
 import { GroupEditionRolesLinesSearchQuery } from './__generated__/GroupEditionRolesLinesSearchQuery.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Checkbox, List, ListItem, ListItemIcon, ListItemText } from '@components';
 
 const groupEditionAddRoles = graphql`
     mutation GroupEditionRolesRelationAddMutation(

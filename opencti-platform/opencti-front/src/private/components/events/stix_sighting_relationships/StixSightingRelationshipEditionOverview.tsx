@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import * as Yup from 'yup';
 import makeStyles from '@mui/styles/makeStyles';
@@ -32,6 +30,7 @@ import CommitMessage from '../../common/form/CommitMessage';
 import type { Theme } from '../../../../components/Theme';
 import { StixSightingRelationshipEditionOverviewQuery } from './__generated__/StixSightingRelationshipEditionOverviewQuery.graphql';
 import AlertConfidenceForEntity from '../../../../components/AlertConfidenceForEntity';
+import { IconButton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

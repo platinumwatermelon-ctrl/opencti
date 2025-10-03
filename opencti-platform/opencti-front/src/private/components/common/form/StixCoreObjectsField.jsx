@@ -2,15 +2,9 @@ import React, { useState } from 'react';
 import * as R from 'ramda';
 import { Field } from 'formik';
 import { graphql } from 'react-relay';
-import InputAdornment from '@mui/material/InputAdornment';
 import { PaletteOutlined } from '@mui/icons-material';
-import Popover from '@mui/material/Popover';
 import MenuList from '@mui/material/MenuList';
-import MenuItem from '@mui/material/MenuItem';
-import Checkbox from '@mui/material/Checkbox';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
-import IconButton from '@mui/material/IconButton';
 import ItemIcon from '../../../../components/ItemIcon';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import { useFormatter } from '../../../../components/i18n';
@@ -18,6 +12,7 @@ import AutocompleteField from '../../../../components/AutocompleteField';
 import { fetchQuery } from '../../../../relay/environment';
 import useAttributes from '../../../../utils/hooks/useAttributes';
 import { displayEntityTypeForTranslation } from '../../../../utils/String';
+import { Checkbox, IconButton, InputAdornment, ListItemText, MenuItem, Popover } from '@components';
 
 export const stixCoreObjectsFieldSearchQuery = graphql`
   query StixCoreObjectsFieldSearchQuery($search: String, $types: [String]) {

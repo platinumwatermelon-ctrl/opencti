@@ -2,12 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { Link, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, useLazyLoadQuery, usePreloadedQuery, useQueryLoader, useSubscription } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { styled } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import { useTheme } from '@mui/styles';
 import ConvertUser from './ConvertUser';
 import UserDeletionDialog from './UserDeletionDialog';
@@ -24,6 +19,7 @@ import Breadcrumbs from '../../../../components/Breadcrumbs';
 import UserEdition from './UserEdition';
 import PopoverMenu from '../../../../components/PopoverMenu';
 import UserHistoryTab from './UserHistoryTab';
+import { Box, MenuItem, Tab, Tabs, Typography } from '@components';
 
 const userEditionQuery = graphql`
   query RootUserEditionQuery($id: String!) {

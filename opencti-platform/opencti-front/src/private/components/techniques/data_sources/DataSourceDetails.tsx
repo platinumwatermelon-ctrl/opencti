@@ -1,8 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
@@ -10,6 +7,7 @@ import { DataSourceDetails_dataSource$data, DataSourceDetails_dataSource$key } f
 import DataSourceDataComponents from './DataSourceDataComponents';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Grid, Paper, Typography } from '@components';
 
 const DataSourceDetailsFragment = graphql`
   fragment DataSourceDetails_dataSource on DataSource {
@@ -57,7 +55,7 @@ const DataSourceDetailsComponent: FunctionComponent<DataSourceDetailsProps> = ({
         variant="outlined"
       >
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
@@ -65,7 +63,7 @@ const DataSourceDetailsComponent: FunctionComponent<DataSourceDetailsProps> = ({
               <ExpandableMarkdown source={data.description} limit={300} />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Platforms')}
             </Typography>
@@ -97,7 +95,7 @@ const DataSourceDetailsComponent: FunctionComponent<DataSourceDetailsProps> = ({
               ))}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <DataSourceDataComponents dataSource={data} />
           </Grid>
         </Grid>

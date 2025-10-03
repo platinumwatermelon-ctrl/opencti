@@ -1,10 +1,9 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
 import { ExpandMore } from '@mui/icons-material';
-import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import type { Theme } from './Theme';
 import PaperHeader, { PaperHeaderProps } from './PaperHeader';
-
+import { Accordion, AccordionDetails, AccordionSummary } from '@components';
 interface PaperAccordionProps extends PaperHeaderProps, PropsWithChildren {
   preview: ReactNode
 }

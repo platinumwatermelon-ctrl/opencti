@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import { Alert, Box, Collapse, Grid, IconButton, List, ListItem, MenuItem, Select, Tooltip, Typography } from '@mui/material';
 import { TransitionGroup } from 'react-transition-group';
 import { DeleteOutlined, UploadFileOutlined } from '@mui/icons-material';
 import { CSV_MAPPER_NAME } from '@private/components/common/files/import_files/ImportFilesDialog';
@@ -8,7 +7,7 @@ import { useImportFilesContext } from '@private/components/common/files/import_f
 import { ImportFilesContextQuery$data } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
 import { useFormatter } from '../../../../../components/i18n';
 import type { Theme } from '../../../../../components/Theme';
-
+import { Alert, Box, Collapse, Grid, IconButton, List, ListItem, MenuItem, Select, Tooltip, Typography } from '@components';
 interface ImportFilesListProps {
   connectorsForImport: ImportFilesContextQuery$data['connectorsForImport'];
 }
@@ -70,22 +69,22 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
           <Collapse key="header" >
             <ListItem divider>
               <Grid container columnSpacing={2}>
-                <Grid item xs={0.5}></Grid>
-                <Grid item xs={fileNameColumnSize}>
+                <Grid size={0.5}></Grid>
+                <Grid size={fileNameColumnSize}>
                   <Typography fontWeight="bold">
                     {t_i18n('Files')}
                   </Typography>
                 </Grid>
                 {importMode !== 'auto' && (
                   <>
-                    <Grid item xs={3}>
+                    <Grid size={3}>
                       <Typography fontWeight="bold">
                         {t_i18n('Connectors')}
                       </Typography>
                     </Grid>
 
                     {isConfigurationColumn && (
-                      <Grid item xs={3}>
+                      <Grid size={3}>
                         <Typography fontWeight="bold">
                           {t_i18n('Configuration')}
                         </Typography>
@@ -93,7 +92,7 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
                     )}
                   </>
                 )}
-                <Grid item xs={0.5}></Grid>
+                <Grid size={0.5}></Grid>
               </Grid>
             </ListItem>
           </Collapse>
@@ -108,12 +107,12 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
               <ListItem divider dense>
                 <Grid container alignItems="center" columnSpacing={2}>
                   {/* Column 1: File Icon */}
-                  <Grid item xs={0.5} sx={{ display: 'flex' }}>
+                  <Grid size={0.5} sx={{ display: 'flex' }}>
                     <UploadFileOutlined color="primary"/>
                   </Grid>
 
                   {/* Column 2: File Name */}
-                  <Grid item xs={fileNameColumnSize}>
+                  <Grid size={fileNameColumnSize}>
                     <Tooltip title={file.name}>
                       <Box sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>
                         {file.name}
@@ -126,7 +125,7 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
                         canSelectConnectors ? (
                           <>
                             {/* Column 3: Select - Show all connectors but disable those that haven't matching file type */}
-                            <Grid item xs={3}>
+                            <Grid size={3}>
                               <Select
                                 variant="standard"
                                 fullWidth
@@ -161,7 +160,7 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
                             {/* Column 4: Select - CSV Mapper */}
                             {isConfigurationColumn
                               && (
-                                <Grid item xs={3}>
+                                <Grid size={3}>
                                   {!!connectors.filter((c) => c?.name === CSV_MAPPER_NAME).length && (
                                     <Select
                                       variant="standard"
@@ -192,7 +191,7 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
                               )}
                           </>
                         ) : (
-                          <Grid item xs={isConfigurationColumn ? 6 : 3}>
+                          <Grid size={isConfigurationColumn ? 6 : 3}>
                             <Alert
                               variant="outlined"
                               severity="warning"
@@ -211,7 +210,7 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
                     </>
                   )}
                   {/* Column 5: Delete Button */}
-                  <Grid item xs={0.5}>
+                  <Grid size={0.5}>
                     <IconButton edge="end" onClick={() => removeFile(file.name)} color="primary">
                       <DeleteOutlined/>
                     </IconButton>

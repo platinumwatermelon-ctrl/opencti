@@ -2,9 +2,6 @@ import React, { Suspense, useMemo } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, PreloadedQuery, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { RootSectorQuery } from '@private/components/entities/sectors/__generated__/RootSectorQuery.graphql';
 import { RootSectorSubscription } from '@private/components/entities/sectors/__generated__/RootSectorSubscription.graphql';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
@@ -28,6 +25,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import SectorEdition from './SectorEdition';
 import SectorDeletion from './SectorDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootSectorSubscription($id: ID!) {

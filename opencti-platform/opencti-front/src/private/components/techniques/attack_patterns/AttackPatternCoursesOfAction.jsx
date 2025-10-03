@@ -1,21 +1,15 @@
 import React from 'react';
 import { filter } from 'ramda';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
 import { LinkOff } from '@mui/icons-material';
 import { ProgressWrench } from 'mdi-material-ui';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { ListItemButton } from '@mui/material';
 import AddCoursesOfAction from './AddCoursesOfAction';
 import { addCoursesOfActionMutationRelationDelete } from './AddCoursesOfActionLines';
 import { commitMutation } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 const AttackPatternCoursesOfActionComponent = ({ attackPattern }) => {
   const { t_i18n } = useFormatter();

@@ -1,7 +1,5 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { Field, FieldArray } from 'formik';
-import Button from '@mui/material/Button';
-import { IconButton } from '@mui/material';
 import { AddOutlined, DeleteOutlined } from '@mui/icons-material';
 import { graphql } from 'react-relay';
 import {
@@ -16,6 +14,7 @@ import { commitMutation, defaultCommitMutation } from '../../../../relay/environ
 import useUserMetric from '../../../../utils/hooks/useUserMetric';
 import DateTimePickerField from '../../../../components/DateTimePickerField';
 import { isNotEmptyField } from '../../../../utils/utils';
+import { Button, IconButton } from '@components';
 
 export const individualHeightMutation = graphql`
   mutation HeightFieldIndividualMutation($id: ID!, $input: [EditInput]!) {

@@ -3,22 +3,8 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import IconButton from '@mui/material/IconButton';
 import { BrushOutlined, Delete } from '@mui/icons-material';
-import DialogActions from '@mui/material/DialogActions';
-import Dialog from '@mui/material/Dialog';
 import { graphql } from 'react-relay';
 import Slide from '@mui/material/Slide';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
@@ -31,6 +17,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import ItemCopy from '../../../../components/ItemCopy';
 import ItemMarkings from '../../../../components/ItemMarkings';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, IconButton, List, ListItem, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />
@@ -128,7 +115,7 @@ class StixCyberObservableOverview extends Component {
         </Typography>
         <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
           <Grid container={true} spacing={3}>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('Marking')}
               </Typography>
@@ -160,7 +147,7 @@ class StixCyberObservableOverview extends Component {
                 entity_type={stixCyberObservable.entity_type}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('Observable type')}
               </Typography>

@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, PreloadedQuery } from 'react-relay';
 import { Link } from 'react-router-dom';
@@ -28,6 +27,7 @@ import { resolveLink } from '../../../../../utils/Entity';
 import { isFilterGroupNotEmpty, useRemoveIdAndIncorrectKeysFromFilterGroupObject } from '../../../../../utils/filters/filtersUtils';
 import { FilterGroup } from '../../../../../utils/filters/filtersHelpers-types';
 import ItemEntityType from '../../../../../components/ItemEntityType';
+import { Chip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

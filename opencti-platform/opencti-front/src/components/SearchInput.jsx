@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
 import { BiotechOutlined, ContentPasteSearchOutlined, Search } from '@mui/icons-material';
 import { LogoXtmOneIcon } from 'filigran-icon';
-import IconButton from '@mui/material/IconButton';
 import { Link, useLocation } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
-import Tooltip from '@mui/material/Tooltip';
 import { useTheme } from '@mui/styles';
 import useEnterpriseEdition from '../utils/hooks/useEnterpriseEdition';
 import EETooltip from '../private/components/common/entreprise_edition/EETooltip';
@@ -18,6 +14,7 @@ import EnterpriseEditionAgreement from '../private/components/common/entreprise_
 import FeedbackCreation from '../private/components/cases/feedbacks/FeedbackCreation';
 import Loader from './Loader';
 import useAI from '../utils/hooks/useAI';
+import { IconButton, InputAdornment, TextField, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

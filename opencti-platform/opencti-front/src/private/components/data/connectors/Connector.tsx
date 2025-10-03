@@ -1,25 +1,10 @@
 import React, { FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { createRefetchContainer, graphql, RelayRefetchProp } from 'react-relay';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
 import { interval } from 'rxjs';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import { useTheme } from '@mui/styles';
 import { Link } from 'react-router-dom';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import { ListItemButton } from '@mui/material';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Alert from '@mui/material/Alert';
 import UpdateIcon from '@mui/icons-material/Update';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import ConnectorPopover from '@private/components/data/connectors/ConnectorPopover';
 import ConnectorStatusChip from '@private/components/data/connectors/ConnectorStatusChip';
 import Filters from '../../common/lists/Filters';
@@ -50,6 +35,7 @@ import { Connector_connector$data } from './__generated__/Connector_connector.gr
 import { ConnectorUpdateTriggerMutation, EditInput } from './__generated__/ConnectorUpdateTriggerMutation.graphql';
 import { ConnectorUpdateStatusMutation } from './__generated__/ConnectorUpdateStatusMutation.graphql';
 import { ConnectorWorksQuery$data, ConnectorWorksQuery$variables } from './__generated__/ConnectorWorksQuery.graphql';
+import { Alert, Box, Button, Chip, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tab, Tabs, Tooltip, Typography } from '@components';
 
 // Type extension for organization node with authorized_authorities
 interface OrganizationNodeWithAuthorities {
@@ -268,7 +254,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
   const ConnectorOverview = () => (
     <>
       <Grid container={true} spacing={3} style={{ marginBottom: 20 }}>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Basic information')}
           </Typography>
@@ -279,7 +265,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
           }} className={'paper-for-grid'} variant="outlined"
           >
             <Grid container={true} spacing={3}>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Type')}
                 </Typography>
@@ -296,13 +282,13 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                   label={connector.connector_type}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Last update')}
                 </Typography>
                 {nsdt(connector.updated_at)}
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Only contextual')}
                 </Typography>
@@ -311,7 +297,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                   label={connectorOnlyContextualStatus.label}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Automatic trigger')}
                 </Typography>
@@ -320,7 +306,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                   label={connectorTriggerStatus.label}
                 />
               </Grid>
-              <Grid item xs={connectorFiltersEnabled ? 6 : 12}>
+              <Grid size={connectorFiltersEnabled ? 6 : 12}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Scope')}
                 </Typography>
@@ -340,7 +326,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                 ))}
               </Grid>
               {connectorFiltersEnabled && (
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Trigger filters')}
@@ -373,7 +359,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
               )}
               <Security needs={[SETTINGS_SETACCESSES]}>
                 <>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Associated user')}
                     </Typography>
@@ -394,7 +380,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                       <FieldOrEmpty source={connector.connector_user}>{null}</FieldOrEmpty>
                     )}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Max confidence level')}
                     </Typography>
@@ -406,7 +392,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                       <FieldOrEmpty source={connector.connector_user}>{null}</FieldOrEmpty>
                     )}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n("User's roles")}
                     </Typography>
@@ -440,7 +426,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                       <FieldOrEmpty source={connector.connector_user}>{null}</FieldOrEmpty>
                     )}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n("User's groups")}
                     </Typography>
@@ -478,7 +464,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                       <FieldOrEmpty source={connector.connector_user}>{null}</FieldOrEmpty>
                     )}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n("User's organizations")}
                     </Typography>
@@ -517,7 +503,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Details')}
           </Typography>
@@ -529,7 +515,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
           >
             <Grid container={true} spacing={3}>
               {connector.connector_info?.buffering && (
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Alert severity="warning" icon={<UpdateIcon color="warning" />} style={{ alignItems: 'center' }}>
                   <div>
                     <strong>{t_i18n('Buffering: ')}</strong>
@@ -538,7 +524,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                 </Alert>
               </Grid>
               )}
-              <Grid item={true} xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('State')}
                 </Typography>
@@ -551,7 +537,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                   </pre>
                 </Tooltip>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 {!connector.connector_info && (
                   connector.connector_state
                 && connectorStateConverted !== null
@@ -606,7 +592,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                   )
                 )}
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Next run')}
                 </Typography>
@@ -634,7 +620,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
                 </Typography>
                 )}
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Server capacity')}
                 </Typography>
@@ -652,7 +638,7 @@ const ConnectorComponent: FunctionComponent<ConnectorComponentProps> = ({ connec
               }
               </Grid>
               {connector.is_managed && connector.manager_current_status === 'started' && connector.manager_connector_uptime != null && (
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Uptime')}
                   </Typography>

@@ -1,4 +1,3 @@
-import ToggleButton from '@mui/material/ToggleButton';
 import { LockPersonOutlined } from '@mui/icons-material';
 import React, { useState } from 'react';
 import FormAuthorizedMembers, { FormAuthorizedMembersInputs } from '@private/components/common/form/FormAuthorizedMembers';
@@ -12,7 +11,7 @@ import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import useAuth from '../../../../utils/hooks/useAuth';
-
+import { ToggleButton } from '@components';
 interface FormAuthorizedMembersDialogProps {
   id: string;
   mutation: GraphQLTaggedNode;

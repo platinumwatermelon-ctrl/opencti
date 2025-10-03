@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { PopoverProps } from '@mui/material/Popover';
@@ -17,6 +14,7 @@ import { deleteNode } from '../../../../utils/store';
 import { StatusTemplatePopoverEditionQuery$data } from './__generated__/StatusTemplatePopoverEditionQuery.graphql';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
+import { IconButton, Menu, MenuItem } from '@components';
 
 const statusTemplatePopoverDeletionMutation = graphql`
   mutation StatusTemplatePopoverDeletionMutation($id: ID!) {

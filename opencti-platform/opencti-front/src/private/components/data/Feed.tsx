@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Box from '@mui/material/Box';
 import { FeedLinesPaginationQuery$data } from '@private/components/data/feeds/__generated__/FeedLinesPaginationQuery.graphql';
 import { QueryRenderer } from '../../../relay/environment';
 import { buildViewParamsFromUrlAndStorage, saveViewParameters } from '../../../utils/ListParameters';
@@ -14,6 +13,7 @@ import { useFormatter } from '../../../components/i18n';
 import { TAXIIAPI_SETCOLLECTIONS } from '../../../utils/hooks/useGranted';
 import Security from '../../../utils/Security';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { Box } from '@components';
 
 const Feed = () => {
   const { t_i18n } = useFormatter();

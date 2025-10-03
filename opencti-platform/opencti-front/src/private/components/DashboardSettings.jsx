@@ -1,12 +1,6 @@
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import ListSubheader from '@mui/material/ListSubheader';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
 import React from 'react';
 import { graphql } from 'react-relay';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
 import { createStyles } from '@mui/styles';
 import { useFormatter } from '../../components/i18n';
@@ -16,6 +10,7 @@ import useGranted, { EXPLORE, KNOWLEDGE } from '../../utils/hooks/useGranted';
 import Security from '../../utils/Security';
 import ItemIcon from '../../components/ItemIcon';
 import useApiMutation from '../../utils/hooks/useApiMutation';
+import { FormControl, InputLabel, ListItemIcon, ListItemText, MenuItem, Select } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

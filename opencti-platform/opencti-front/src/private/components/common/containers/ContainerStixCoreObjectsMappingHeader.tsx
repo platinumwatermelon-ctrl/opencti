@@ -1,21 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Box from '@mui/material/Box';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import { CheckCircleOutlined } from '@mui/icons-material';
 import { ContainerStixCoreObjectsSuggestedMappingQuery$data } from '@private/components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingQuery.graphql';
 import Transition from '../../../../components/Transition';
 import { useFormatter } from '../../../../components/i18n';
-
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControlLabel, FormGroup, Switch, Tooltip } from '@components';
 interface ContainerStixCoreObjectsMappingHeaderProps {
   suggestedMappingData: ContainerStixCoreObjectsSuggestedMappingQuery$data;
   validateDisabled: boolean,

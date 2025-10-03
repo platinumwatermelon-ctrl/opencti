@@ -1,13 +1,7 @@
 import { graphql, loadQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import ListItemText from '@mui/material/ListItemText';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Chip from '@mui/material/Chip';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItem from '@mui/material/ListItem';
-import { IconButton, Tooltip } from '@mui/material';
 import { ContentCopy, OpenInNew } from 'mdi-material-ui';
-import Typography from '@mui/material/Typography';
 import { environment } from '../../../../relay/environment';
 import { PublicStreamLinesQuery } from './__generated__/PublicStreamLinesQuery.graphql';
 import ListLines from '../../../../components/list_lines/ListLines';
@@ -18,6 +12,7 @@ import { useFormatter } from '../../../../components/i18n';
 import { PublicStreamLines_node$key } from './__generated__/PublicStreamLines_node.graphql';
 import { copyToClipboard } from '../../../../utils/utils';
 import ItemIcon from '../../../../components/ItemIcon';
+import { Chip, IconButton, ListItem, ListItemIcon, ListItemText, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

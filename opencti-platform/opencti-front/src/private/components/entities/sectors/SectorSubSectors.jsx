@@ -1,14 +1,8 @@
 import React from 'react';
 import { filter } from 'ramda';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Domain, LinkOff } from '@mui/icons-material';
 import { graphql, createFragmentContainer } from 'react-relay';
 import { AutoFix } from 'mdi-material-ui';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import { ListItemButton } from '@mui/material';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import AddSubSector from './AddSubSector';
 import { addSubSectorsMutationRelationDelete } from './AddSubSectorsLines';
@@ -16,6 +10,7 @@ import { commitMutation } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
+import { IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 const SectorSubSectorsComponent = ({ sector }) => {
   const { t_i18n } = useFormatter();

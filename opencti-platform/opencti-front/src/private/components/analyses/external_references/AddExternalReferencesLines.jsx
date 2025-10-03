@@ -3,18 +3,15 @@ import * as PropTypes from 'prop-types';
 import { createPaginationContainer, graphql } from 'react-relay';
 import { compose, filter, head, map } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { CheckCircle } from '@mui/icons-material';
 import { ConnectionHandler } from 'relay-runtime';
-import { ListItemButton } from '@mui/material';
 import { truncate } from '../../../../utils/String';
 import inject18n from '../../../../components/i18n';
 import { commitMutation } from '../../../../relay/environment';
 import ExternalReferenceCreation from './ExternalReferenceCreation';
 import { isNotEmptyField } from '../../../../utils/utils';
 import ItemIcon from '../../../../components/ItemIcon';
+import { List, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 const styles = (theme) => ({
   icon: {

@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import CircularProgress from '@mui/material/CircularProgress';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { useTheme } from '@mui/styles';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +13,7 @@ import { getMainRepresentative, isFieldForIdentifier } from '../../../../utils/d
 import { itemColor } from '../../../../utils/Colors';
 import { buildFiltersAndOptionsForWidgets } from '../../../../utils/filters/filtersUtils';
 import { NO_DATA_WIDGET_MESSAGE } from '../../../../components/dashboard/WidgetNoData';
+import { Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -18,18 +18,8 @@ import * as R from 'ramda';
 import { Form, Formik } from 'formik';
 import { graphql, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import Grid from '@mui/material/Grid';
 import { Delete } from '@mui/icons-material';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Alert from '@mui/material/Alert';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/styles';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import ActivityMenu from '../../ActivityMenu';
 import type { Theme } from '../../../../../components/Theme';
 import { useFormatter } from '../../../../../components/i18n';
@@ -47,6 +37,7 @@ import { SETTINGS_SECURITYACTIVITY } from '../../../../../utils/hooks/useGranted
 import Security from '../../../../../utils/Security';
 import useConnectedDocumentModifier from '../../../../../utils/hooks/useConnectedDocumentModifier';
 import { FieldOption } from '../../../../../utils/field';
+import { Alert, Grid, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -142,7 +133,7 @@ ConfigurationComponentProps
           <ActivityMenu />
           <Breadcrumbs elements={[{ label: t_i18n('Settings') }, { label: t_i18n('Activity') }, { label: t_i18n('Configuration'), current: true }]} />
           <Grid container={true} spacing={3}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="h4" gutterBottom={true}>
                 {t_i18n('Extended activity logging')}
               </Typography>
@@ -170,8 +161,7 @@ ConfigurationComponentProps
                           <Grid container={true} spacing={0}>
                             <Grid
                               key="users"
-                              item
-                              xs={4}
+                              size={4}
                               style={{ padding: 4 }}
                             >
                               <CreatorField
@@ -183,8 +173,7 @@ ConfigurationComponentProps
                             </Grid>
                             <Grid
                               key="groups"
-                              item
-                              xs={4}
+                              size={4}
                               style={{ padding: 4 }}
                             >
                               <GroupField
@@ -196,8 +185,7 @@ ConfigurationComponentProps
                             </Grid>
                             <Grid
                               key="organizations"
-                              item
-                              xs={4}
+                              size={4}
                               style={{ padding: 4 }}
                             >
                               <ObjectOrganizationField

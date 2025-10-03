@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import ToolDetails from './ToolDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
@@ -10,6 +9,7 @@ import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../commo
 import { Tool_tool$key } from './__generated__/Tool_tool.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 const toolFragment = graphql`
   fragment Tool_tool on Tool {
@@ -83,19 +83,19 @@ const Tool: React.FC<ToolProps> = ({ toolData }) => {
             switch (key) {
               case 'details':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <ToolDetails tools={tool} />
                   </Grid>
                 );
               case 'basicInformation':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixDomainObjectOverview stixDomainObject={tool} />
                   </Grid>
                 );
               case 'latestCreatedRelationships':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <SimpleStixObjectOrStixRelationshipStixCoreRelationships
                       stixObjectOrStixRelationshipId={tool.id}
                       stixObjectOrStixRelationshipLink={`/dashboard/arsenal/tools/${tool.id}/knowledge`}
@@ -104,7 +104,7 @@ const Tool: React.FC<ToolProps> = ({ toolData }) => {
                 );
               case 'latestContainers':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixRelationshipLastContainers
                       stixCoreObjectOrStixRelationshipId={tool.id}
                     />
@@ -112,7 +112,7 @@ const Tool: React.FC<ToolProps> = ({ toolData }) => {
                 );
               case 'externalReferences':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectExternalReferences
                       stixCoreObjectId={tool.id}
                     />
@@ -120,7 +120,7 @@ const Tool: React.FC<ToolProps> = ({ toolData }) => {
                 );
               case 'mostRecentHistory':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectLatestHistory
                       stixCoreObjectId={tool.id}
                     />
@@ -128,7 +128,7 @@ const Tool: React.FC<ToolProps> = ({ toolData }) => {
                 );
               case 'notes':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixCoreRelationshipNotes
                       stixCoreObjectOrStixCoreRelationshipId={tool.id}
                       defaultMarkings={tool.objectMarking ?? []}

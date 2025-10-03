@@ -1,21 +1,12 @@
 import { graphql, useQueryLoader } from 'react-relay';
 import React, { Dispatch, FunctionComponent, UIEvent, useState } from 'react';
 import { PopoverProps } from '@mui/material/Popover';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import { Button } from '@mui/material';
-import DialogActions from '@mui/material/DialogActions';
 import IngestionCsvEditionContainer, { ingestionCsvEditionContainerQuery } from '@private/components/data/ingestionCsv/IngestionCsvEditionContainer';
 import { ingestionCsvEditionPatch } from '@private/components/data/ingestionCsv/IngestionCsvEdition';
 import { IngestionCsvLinesPaginationQuery$variables } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvLinesPaginationQuery.graphql';
 import { IngestionCsvEditionContainerQuery } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvEditionContainerQuery.graphql';
 import { IngestionCsvCreationContainer } from '@private/components/data/ingestionCsv/IngestionCsvCreation';
-import DialogTitle from '@mui/material/DialogTitle';
 import fileDownload from 'js-file-download';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { deleteNode } from '../../../../utils/store';
@@ -27,6 +18,7 @@ import useDeletion from '../../../../utils/hooks/useDeletion';
 import stopEvent from '../../../../utils/domEvent';
 import { fetchQuery } from '../../../../relay/environment';
 import { IngestionCsvPopoverExportQuery$data } from './__generated__/IngestionCsvPopoverExportQuery.graphql';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Menu, MenuItem } from '@components';
 
 const ingestionCsvPopoverDeletionMutation = graphql`
   mutation IngestionCsvPopoverDeletionMutation($id: ID!) {

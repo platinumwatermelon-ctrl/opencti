@@ -5,19 +5,7 @@ import * as R from 'ramda';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import { ArrowRightAlt, EditOutlined, ExpandLessOutlined, ExpandMoreOutlined } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import IconButton from '@mui/material/IconButton';
 import { DraftChip } from '../draft/DraftChip';
 import { itemColor } from '../../../../utils/Colors';
 import { resolveLink } from '../../../../utils/Entity';
@@ -47,6 +35,7 @@ import StixCoreRelationshipObjectLabelsView from './StixCoreRelationshipLabelsVi
 import Transition from '../../../../components/Transition';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import withRouter from '../../../../utils/compat_router/withRouter';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid, IconButton, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   container: {
@@ -246,7 +235,7 @@ class StixCoreRelationshipContainer extends Component {
           spacing={3}
           classes={{ container: classes.gridContainer }}
         >
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h4" gutterBottom={true} sx={{ float: 'left' }}>
               {t('Relationship')}{stixCoreRelationship.draftVersion && (<DraftChip/>)}
             </Typography>
@@ -394,7 +383,7 @@ class StixCoreRelationshipContainer extends Component {
               <Divider style={{ marginTop: 30 }} />
               <div style={{ padding: 15 }}>
                 <Grid container={true} spacing={3}>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t('Marking')}
                     </Typography>
@@ -416,7 +405,7 @@ class StixCoreRelationshipContainer extends Component {
                     </Typography>
                     {nsdt(stixCoreRelationship.stop_time)}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <StixCoreRelationshipSharing
                       elementId={stixCoreRelationship.id}
                     />
@@ -448,13 +437,13 @@ class StixCoreRelationshipContainer extends Component {
               </div>
             </Paper>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h4" gutterBottom={true}>
               {t('Details')}
             </Typography>
             <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
               <Grid container={true} spacing={3}>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t('Confidence level')}
                   </Typography>
@@ -497,7 +486,7 @@ class StixCoreRelationshipContainer extends Component {
                   </Typography>
                   {nsdt(stixCoreRelationship.updated_at)}
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t('Processing status')}
                   </Typography>
@@ -534,27 +523,27 @@ class StixCoreRelationshipContainer extends Component {
           </Grid>
           {stixCoreRelationship.x_opencti_inferences == null && (
             <>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <StixCoreRelationshipStixCoreRelationships
                   entityId={stixCoreRelationship.id}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <StixCoreObjectOrStixRelationshipLastContainers
                   stixCoreObjectOrStixRelationshipId={stixCoreRelationship.id}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <StixCoreRelationshipExternalReferences
                   stixCoreRelationshipId={stixCoreRelationship.id}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <StixCoreRelationshipLatestHistory
                   stixCoreRelationshipId={stixCoreRelationship.id}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <StixCoreObjectOrStixCoreRelationshipNotes
                   stixCoreObjectOrStixCoreRelationshipId={stixCoreRelationship.id}
                   isRelationship={true}

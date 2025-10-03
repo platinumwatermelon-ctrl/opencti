@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
 import { MapOutlined, TableChartOutlined } from '@mui/icons-material';
 import { graphql, createRefetchContainer } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
 import inject18n from '../../../../components/i18n';
 import StixCoreRelationshipCreationFromEntity from '../stix_core_relationships/StixCoreRelationshipCreationFromEntity';
 import SearchInput from '../../../../components/SearchInput';
@@ -14,6 +12,7 @@ import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import StixDomainObjectVictimologyRegionsList from './StixDomainObjectVictimologyRegionsList';
 import StixDomainObjectVictimologyRegionsMap from './StixDomainObjectVictimologyRegionsMap';
 import ExportButtons from '../../../../components/ExportButtons';
+import { IconButton, Tooltip } from '@components';
 
 const styles = (theme) => ({
   container: {

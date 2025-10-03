@@ -1,11 +1,6 @@
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import React, { BaseSyntheticEvent, useRef, useState } from 'react';
 import { useTheme } from '@mui/styles';
-import Tooltip from '@mui/material/Tooltip';
 import { Add as AddIcon, CloudUploadOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
 import { graphql, useFragment } from 'react-relay';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import VisuallyHiddenInput from '@private/components/common/VisuallyHiddenInput';
@@ -20,6 +15,7 @@ import useEnterpriseEdition from '../../../../../utils/hooks/useEnterpriseEditio
 import useFintelTemplateImport from './useFintelTemplateImport';
 import { handleError, MESSAGING$ } from '../../../../../relay/environment';
 import { resolveLink } from '../../../../../utils/Entity';
+import { Grid, IconButton, Paper, Tooltip, Typography } from '@components';
 
 export const fintelTemplatesFragmentParams = { orderBy: 'name', orderMode: 'asc' };
 
@@ -102,7 +98,7 @@ const FintelTemplatesGrid = ({ data }: FintelTemplatesGridProps) => {
         accept={'application/JSON'}
         onChange={onUpload}
       />
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Typography
           variant="h4"
           gutterBottom={true}

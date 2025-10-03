@@ -1,4 +1,4 @@
-import { Alert, Drawer, IconButton, ListItem, ListItemText, SxProps, Toolbar, Tooltip, Typography } from '@mui/material';
+import { SxProps, Toolbar } from '@mui/material';
 import React from 'react';
 import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
 import { useTheme } from '@mui/styles';
@@ -7,6 +7,7 @@ import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import { renderWidgetIcon } from '../../../../utils/widget/widgetUtils';
 import { MESSAGING$ } from '../../../../relay/environment';
+import { Alert, Drawer, IconButton, ListItem, ListItemText, Tooltip, Typography } from '@components';
 
 export const EMAIL_TEMPLATE_SIDEBAR_WIDTH = 350;
 

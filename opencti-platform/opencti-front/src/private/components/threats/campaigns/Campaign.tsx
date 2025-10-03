@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import CampaignDetails from './CampaignDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
@@ -10,6 +9,7 @@ import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../commo
 import { Campaign_campaign$key } from './__generated__/Campaign_campaign.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 const campaignFragment = graphql`
   fragment Campaign_campaign on Campaign {
@@ -83,19 +83,19 @@ const CampaignComponent = ({
             switch (key) {
               case 'details':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <CampaignDetails campaign={campaign} />
                   </Grid>
                 );
               case 'basicInformation':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixDomainObjectOverview stixDomainObject={campaign} />
                   </Grid>
                 );
               case 'latestCreatedRelationships':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <SimpleStixObjectOrStixRelationshipStixCoreRelationships
                       stixObjectOrStixRelationshipId={campaign.id}
                       stixObjectOrStixRelationshipLink={`/dashboard/threats/campaigns/${campaign.id}/knowledge`}
@@ -104,7 +104,7 @@ const CampaignComponent = ({
                 );
               case 'latestContainers':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixRelationshipLastContainers
                       stixCoreObjectOrStixRelationshipId={campaign.id}
                     />
@@ -112,7 +112,7 @@ const CampaignComponent = ({
                 );
               case 'externalReferences':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectExternalReferences
                       stixCoreObjectId={campaign.id}
                     />
@@ -120,7 +120,7 @@ const CampaignComponent = ({
                 );
               case 'mostRecentHistory':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectLatestHistory
                       stixCoreObjectId={campaign.id}
                     />
@@ -128,7 +128,7 @@ const CampaignComponent = ({
                 );
               case 'notes':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixCoreRelationshipNotes
                       stixCoreObjectOrStixCoreRelationshipId={campaign.id}
                       defaultMarkings={campaign.objectMarking ?? []}

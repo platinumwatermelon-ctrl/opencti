@@ -1,9 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import MuiTextField from '@mui/material/TextField';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { Field, FieldProps } from 'formik';
 import { CsvMapperColumnBasedFormData, CsvMapperRepresentationFormData } from '@private/components/data/csvMapper/representations/Representation';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import { alphabet } from '@private/components/data/csvMapper/representations/attributes/AttributeUtils';
 import { useCsvMapperContext } from '@private/components/data/csvMapper/CsvMapperContext';
@@ -13,7 +10,7 @@ import TextField from '../../../../../components/TextField';
 import SwitchField from '../../../../../components/fields/SwitchField';
 import type { Theme } from '../../../../../components/Theme';
 import { FieldOption } from '../../../../../utils/field';
-
+import { Autocomplete as MUIAutocomplete, TextField as MuiTextField, Tooltip } from '@components';
 interface CsvMapperConditionalEntityMappingProps
   extends FieldProps<CsvMapperColumnBasedFormData> {
   representation: CsvMapperRepresentationFormData;

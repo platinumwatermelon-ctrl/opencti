@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { PreloadedQuery } from 'react-relay';
-import List from '@mui/material/List';
 import { NarrativesLines_data$key } from '@private/components/techniques/narratives/__generated__/NarrativesLines_data.graphql';
 import * as R from 'ramda';
 import { NarrativesLinesPaginationQuery } from './__generated__/NarrativesLinesPaginationQuery.graphql';
 import { narrativesLinesFragment, narrativesLinesQuery } from './NarrativesLines';
 import NarrativeWithSubnarrativeLine, { NarrativeWithSubnarrativeLineDummy } from './NarrativeWithSubnarrativeLine';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';
+import { List } from '@components';
 
 export interface SubNarrativeNode {
   description: string | null | undefined;

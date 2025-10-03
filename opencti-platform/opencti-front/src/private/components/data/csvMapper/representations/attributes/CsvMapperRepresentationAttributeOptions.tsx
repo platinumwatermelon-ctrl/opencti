@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import DialogContentText from '@mui/material/DialogContentText';
 import { Field, FormikProps } from 'formik';
 import DefaultValueField from '@private/components/common/form/DefaultValueField';
 import { CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
@@ -7,7 +6,7 @@ import { SchemaAttribute } from '@private/components/data/csvMapper/representati
 import CsvMapperDefaultMarking from '@private/components/data/csvMapper/representations/attributes/CsvMapperDefaultMarking';
 import CsvMapperRepresentationAttributeOption from './CsvMapperRepresentationAttributeOption';
 import { useFormatter } from '../../../../../../components/i18n';
-
+import { DialogContentText } from '@components';
 interface CsvMapperRepresentationAttributeOptionsProps {
   schemaAttribute: SchemaAttribute;
   attributeName: string;

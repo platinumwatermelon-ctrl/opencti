@@ -1,22 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import * as R from 'ramda';
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { ArrowDropDown, ArrowDropUp, FileDownloadOutlined, KeyboardArrowRightOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Link } from 'react-router-dom';
-import Chip from '@mui/material/Chip';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
 import { Subject, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
-import { ListItemButton, ToggleButtonGroup } from '@mui/material';
 import { graphql } from 'react-relay';
 import { allEntitiesKeyList } from './common/bulk/utils/querySearchEntityByText';
 import ItemIcon from '../../components/ItemIcon';
@@ -33,6 +21,7 @@ import { export_max_size } from '../../utils/utils';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import useConnectedDocumentModifier from '../../utils/hooks/useConnectedDocumentModifier';
 import { chipInListBasicStyle } from '../../utils/chipStyle';
+import { Box, Chip, Grid, LinearProgress, List, ListItem, ListItemButton, ListItemIcon, ListItemText, TextField, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 const SEARCH$ = new Subject().pipe(debounce(() => timer(500)));
 
@@ -548,7 +537,7 @@ const SearchBulk = () => {
           spacing={3}
           classes={{ container: classes.gridContainer }}
         >
-          <Grid item xs={2} style={{ marginTop: -20 }}>
+          <Grid size={2} style={{ marginTop: -20 }}>
             <TextField
               onChange={handleChangeTextField}
               value={textFieldValue}
@@ -559,7 +548,7 @@ const SearchBulk = () => {
               variant="outlined"
             />
           </Grid>
-          <Grid item xs={10} style={{ marginTop: -20 }}>
+          <Grid size={10} style={{ marginTop: -20 }}>
             <Box style={{ width: '100%', marginTop: 2 }}>
               <LinearProgress
                 variant={loading ? 'indeterminate' : 'determinate'}

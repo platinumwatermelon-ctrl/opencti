@@ -1,15 +1,11 @@
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
 import React, { type Dispatch, type SetStateAction, Suspense, useCallback, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
-import { ButtonGroup } from '@mui/material';
-import Button from '@mui/material/Button';
 import { TableTuneIcon } from 'filigran-icon';
 import { useFormatter } from '../i18n';
 import { NumberOfElements } from '../../utils/hooks/useLocalStorage';
 import NestedMenuButton from '../nested_menu/NestedMenuButton';
 import { useDataTableContext } from './components/DataTableContext';
+import { Box, Button, ButtonGroup, Tooltip, Typography } from '@components';
 
 const DataTablePagination = ({
   page,

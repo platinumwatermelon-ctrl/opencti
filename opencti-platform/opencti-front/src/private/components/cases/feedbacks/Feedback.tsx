@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import FeedbackDetails from './FeedbackDetails';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import ContainerStixObjectsOrStixRelationships from '../../common/containers/ContainerStixObjectsOrStixRelationships';
@@ -8,6 +7,7 @@ import StixCoreObjectExternalReferences from '../../analyses/external_references
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import { Feedback_case$key } from './__generated__/Feedback_case.graphql';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 const feedbackFragment = graphql`
   fragment Feedback_case on Feedback {
@@ -90,7 +90,7 @@ const Feedback: React.FC<FeedbackProps> = ({ feedbackData, enableReferences }) =
             switch (key) {
               case 'details':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <FeedbackDetails
                       feedbackData={feedback}
                     />
@@ -98,7 +98,7 @@ const Feedback: React.FC<FeedbackProps> = ({ feedbackData, enableReferences }) =
                 );
               case 'basicInformation':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixDomainObjectOverview
                       stixDomainObject={feedback}
                       displayAssignees={true}
@@ -108,7 +108,7 @@ const Feedback: React.FC<FeedbackProps> = ({ feedbackData, enableReferences }) =
                 );
               case 'relatedEntities':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <ContainerStixObjectsOrStixRelationships
                       isSupportParticipation={false}
                       container={feedback}
@@ -118,7 +118,7 @@ const Feedback: React.FC<FeedbackProps> = ({ feedbackData, enableReferences }) =
                 );
               case 'externalReferences':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectExternalReferences
                       stixCoreObjectId={feedback.id}
                     />
@@ -126,7 +126,7 @@ const Feedback: React.FC<FeedbackProps> = ({ feedbackData, enableReferences }) =
                 );
               case 'mostRecentHistory':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectLatestHistory
                       stixCoreObjectId={feedback.id}
                     />

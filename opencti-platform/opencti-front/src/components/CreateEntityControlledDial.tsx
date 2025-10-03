@@ -1,10 +1,9 @@
-import { Button } from '@mui/material';
 import React, { FunctionComponent } from 'react';
 import { useTheme } from '@mui/styles';
 import { Theme } from '@mui/material/styles/createTheme';
 import { DrawerControlledDialProps } from '../private/components/common/drawer/Drawer';
 import { useFormatter } from './i18n';
-
+import { Button } from '@components';
 interface CreateEntityControlledDialProps extends DrawerControlledDialProps {
   entityType: string;
   color?: 'primary' | 'inherit' | 'secondary' | 'success' | 'error' | 'info' | 'warning';

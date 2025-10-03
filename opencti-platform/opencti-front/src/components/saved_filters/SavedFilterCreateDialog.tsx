@@ -1,11 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import { useFormatter } from 'src/components/i18n';
-import TextField from '@mui/material/TextField';
 import { graphql } from 'react-relay';
 import { useDataTableContext } from 'src/components/dataGrid/components/DataTableContext';
 import { insertNode } from 'src/utils/store';
@@ -13,6 +7,7 @@ import { type SavedFiltersSelectionData } from 'src/components/saved_filters/Sav
 import { SavedFilterCreateDialogMutation$data } from 'src/components/saved_filters/__generated__/SavedFilterCreateDialogMutation.graphql';
 import useApiMutation from '../../utils/hooks/useApiMutation';
 import getSavedFilterScopeFilter from './getSavedFilterScopeFilter';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@components';
 
 const savedFilterCreateDialogMutation = graphql`
   mutation SavedFilterCreateDialogMutation($input: SavedFilterAddInput!) {

@@ -1,11 +1,5 @@
-import Typography from '@mui/material/Typography';
 import React, { CSSProperties } from 'react';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import { RestartAlt } from '@mui/icons-material';
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import { useFragment } from 'react-relay';
 import { useTheme } from '@mui/styles';
 import EntitySettingsOverviewLayoutCustomization, {
@@ -18,7 +12,7 @@ import useApiMutation from '../../../../../utils/hooks/useApiMutation';
 import { EntitySettingsOverviewLayoutCustomization_entitySetting$key } from './__generated__/EntitySettingsOverviewLayoutCustomization_entitySetting.graphql';
 import ErrorNotFound from '../../../../../components/ErrorNotFound';
 import type { Theme } from '../../../../../components/Theme';
-
+import { Box, Grid, IconButton, Paper, Tooltip, Typography } from '@components';
 interface EntitySettingCustomOverviewProps {
   entitySettingsData: EntitySettingsOverviewLayoutCustomization_entitySetting$key;
 }
@@ -60,7 +54,7 @@ const EntitySettingCustomOverview: React.FC<EntitySettingCustomOverviewProps> = 
 
   return layout ? (
     <>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Typography variant="h4" gutterBottom={true} sx={{ marginBottom: 3 }}>
           <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
             <span>{t_i18n('Overview layout customization')}</span>
@@ -87,7 +81,7 @@ const EntitySettingCustomOverview: React.FC<EntitySettingCustomOverviewProps> = 
           />
         </Paper>
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Typography variant="h4" gutterBottom={true} sx={{ marginTop: 1, marginBottom: 2 }}>
           {t_i18n('Preview')}
         </Typography>
@@ -98,7 +92,7 @@ const EntitySettingCustomOverview: React.FC<EntitySettingCustomOverviewProps> = 
         >
           <Grid container>
             {layout.map(({ key, width, label }) => (
-              <Grid item xs={width} key={key}>
+              <Grid size={width} key={key}>
                 <Paper
                   className={'paper-for-grid'}
                   style={{

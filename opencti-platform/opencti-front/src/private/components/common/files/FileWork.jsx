@@ -6,13 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
 import CircularProgress from '@mui/material/CircularProgress';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { ArchitectureOutlined, CheckCircleOutlined, DeleteOutlined, WarningOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import Slide from '@mui/material/Slide';
 import { useNavigate } from 'react-router-dom';
 import { commitMutation } from '../../../../relay/environment';
@@ -20,6 +14,7 @@ import inject18n, { useFormatter } from '../../../../components/i18n';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
+import { IconButton, List, ListItem, ListItemIcon, ListItemText, Tooltip } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />

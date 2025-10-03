@@ -1,12 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Tooltip from '@mui/material/Tooltip';
 import { ToolDetails_tool$key } from '@private/components/arsenal/tools/__generated__/ToolDetails_tool.graphql';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
@@ -14,6 +7,7 @@ import StixCoreObjectKillChainPhasesView from '../../common/stix_core_objects/St
 import { truncate } from '../../../../utils/String';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';
+import { Grid, List, ListItem, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const ToolDetailsFragment = graphql`
  fragment ToolDetails_tool on Tool {
@@ -56,7 +50,7 @@ const ToolDetails: FunctionComponent<ToolDetailsProps> = ({ tools }) => {
         }}
       >
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
@@ -74,7 +68,7 @@ const ToolDetails: FunctionComponent<ToolDetailsProps> = ({ tools }) => {
               </Tooltip>
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Tool types')}
             </Typography>

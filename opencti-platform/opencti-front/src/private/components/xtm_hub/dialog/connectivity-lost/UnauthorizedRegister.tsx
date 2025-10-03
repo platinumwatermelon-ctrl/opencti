@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { useFormatter } from '../../../../../components/i18n';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 interface Props {
   open: boolean;
   onCancel: () => void

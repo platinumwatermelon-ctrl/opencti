@@ -1,13 +1,10 @@
 import Filters from '@private/components/common/lists/Filters';
 import React from 'react';
-import Tooltip from '@mui/material/Tooltip';
 import { FileDownloadOutlined } from '@mui/icons-material';
-import ToggleButton from '@mui/material/ToggleButton';
 import StixDomainObjectsExports from '@private/components/common/stix_domain_objects/StixDomainObjectsExports';
 import StixCoreRelationshipsExports from '@private/components/common/stix_core_relationships/StixCoreRelationshipsExports';
 import StixCoreObjectsExports from '@private/components/common/stix_core_objects/StixCoreObjectsExports';
 import StixCyberObservablesExports from '@private/components/observations/stix_cyber_observables/StixCyberObservablesExports';
-import { ToggleButtonGroup } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { Theme } from '@mui/material/styles/createTheme';
 import FilterIconButton from '../FilterIconButton';
@@ -21,6 +18,7 @@ import { ExportContext } from '../../utils/ExportContextProvider';
 import DataTablePagination from './DataTablePagination';
 import { isFilterGroupNotEmpty } from '../../utils/filters/filtersUtils';
 import { useDataTableContext } from './components/DataTableContext';
+import { ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 export const DataTableDisplayFilters = ({
   availableFilterKeys,

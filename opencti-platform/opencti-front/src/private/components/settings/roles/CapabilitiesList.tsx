@@ -1,9 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import DangerZoneChip from '@private/components/common/danger_zone/DangerZoneChip';
 import { useFormatter } from '../../../../components/i18n';
 import { roleEditionCapabilitiesLinesSearch } from './RoleEditionCapabilities';
@@ -11,7 +7,7 @@ import { RoleEditionCapabilitiesLinesSearchQuery } from './__generated__/RoleEdi
 import { Role_role$data } from './__generated__/Role_role.graphql';
 import ItemIcon from '../../../../components/ItemIcon';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
-
+import { List, ListItem, ListItemIcon, ListItemText } from '@components';
 interface CapabilitiesListProps {
   queryRef: PreloadedQuery<RoleEditionCapabilitiesLinesSearchQuery>;
   role: Role_role$data;

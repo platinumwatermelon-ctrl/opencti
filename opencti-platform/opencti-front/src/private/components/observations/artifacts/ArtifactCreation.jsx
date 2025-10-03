@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
@@ -20,6 +16,7 @@ import { insertNode } from '../../../../utils/store';
 import CustomFileUploader from '../../common/files/CustomFileUploader';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button, Drawer, IconButton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

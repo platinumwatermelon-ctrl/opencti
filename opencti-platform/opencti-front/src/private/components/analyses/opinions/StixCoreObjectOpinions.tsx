@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import Typography from '@mui/material/Typography';
 import StixCoreObjectOpinionsList, { stixCoreObjectOpinionsListQuery } from '@private/components/analyses/opinions/StixCoreObjectOpinionsList';
 import StixCoreObjectOpinionsRadarDialog from '@private/components/analyses/opinions/StixCoreObjectOpinionsRadarDialog';
 import StixCoreObjectOpinionsRadar, { stixCoreObjectOpinionsRadarDistributionQuery } from './StixCoreObjectOpinionsRadar';
@@ -13,7 +12,7 @@ import { StixCoreObjectOpinionsListQuery, StixCoreObjectOpinionsListQuery$variab
 import { useFormatter } from '../../../../components/i18n';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { StixCoreObjectOpinionsOpenVocabQuery } from './__generated__/StixCoreObjectOpinionsOpenVocabQuery.graphql';
-
+import { Typography } from '@components';
 interface StixCoreObjectOpinionsProps {
   stixCoreObjectId: string
   queryVocabulariesRef: PreloadedQuery<StixCoreObjectOpinionsOpenVocabQuery>

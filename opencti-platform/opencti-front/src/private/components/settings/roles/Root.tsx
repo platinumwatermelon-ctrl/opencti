@@ -4,9 +4,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
 import { graphql, PreloadedQuery, useLazyLoadQuery, usePreloadedQuery } from 'react-relay';
 import AccessesMenu from '@private/components/settings/AccessesMenu';
-import Typography from '@mui/material/Typography';
-import { Box, styled } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
+import { styled } from '@mui/material';
 import RoleDeletionDialog from '@private/components/settings/roles/RoleDeletionDialog';
 import RoleEdition from '@private/components/settings/roles/RoleEdition';
 import { useTheme } from '@mui/styles';
@@ -23,6 +21,7 @@ import Breadcrumbs from '../../../../components/Breadcrumbs';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
 import PopoverMenu from '../../../../components/PopoverMenu';
 import type { Theme } from '../../../../components/Theme';
+import { Box, MenuItem, Typography } from '@components';
 
 const roleQuery = graphql`
   query RootRoleQuery($id: String!) {

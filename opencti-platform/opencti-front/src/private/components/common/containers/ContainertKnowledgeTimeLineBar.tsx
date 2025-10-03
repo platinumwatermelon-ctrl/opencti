@@ -1,9 +1,5 @@
 import React, { FunctionComponent, SyntheticEvent, useEffect, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import { RelationManyToMany, CalendarMultiselectOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import Drawer from '@mui/material/Drawer';
-import Divider from '@mui/material/Divider';
 import { makeStyles } from '@mui/styles';
 import SearchInput from '../../../../components/SearchInput';
 import { useFormatter } from '../../../../components/i18n';
@@ -12,6 +8,7 @@ import Filters from '../lists/Filters';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import useAuth, { FilterDefinition, UserContext } from '../../../../utils/hooks/useAuth';
 import { Filter, FilterGroup } from '../../../../utils/filters/filtersHelpers-types';
+import { Divider, Drawer, IconButton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

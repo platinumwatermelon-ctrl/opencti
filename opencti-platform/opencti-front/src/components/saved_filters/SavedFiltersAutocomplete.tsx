@@ -1,13 +1,9 @@
 import React, { SyntheticEvent } from 'react';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { DeleteOutlined } from '@mui/icons-material';
 import { AutocompleteOptionType, SavedFiltersSelectionData } from 'src/components/saved_filters/SavedFilterSelection';
-import { Autocomplete } from '@mui/material';
-import TextField from '@mui/material/TextField';
 import { useFormatter } from 'src/components/i18n';
 import { AutocompleteInputChangeReason } from '@mui/material/useAutocomplete/useAutocomplete';
+import { Autocomplete, IconButton, TextField, Tooltip, Typography } from '@components';
 
 type SavedFiltersAutocompleteProps = {
   isDisabled?: boolean;

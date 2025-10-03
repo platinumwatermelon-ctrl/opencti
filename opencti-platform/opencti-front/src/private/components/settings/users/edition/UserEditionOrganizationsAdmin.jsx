@@ -16,16 +16,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import { createFragmentContainer, graphql } from 'react-relay';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Checkbox from '@mui/material/Checkbox';
 import { AccountBalanceOutlined } from '@mui/icons-material';
 import EnterpriseEdition from '../../../common/entreprise_edition/EnterpriseEdition';
 import useEnterpriseEdition from '../../../../../utils/hooks/useEnterpriseEdition';
 import { useFormatter } from '../../../../../components/i18n';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
+import { Checkbox, List, ListItem, ListItemIcon, ListItemText } from '@components';
 
 const userEditionOrganizationsAdminAddMutation = graphql`
   mutation UserEditionOrganizationsAdminAddMutation(

@@ -1,11 +1,8 @@
 import ApexCharts, { ApexOptions } from 'apexcharts';
 import React, { CSSProperties, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import { FileDownloadOutlined } from '@mui/icons-material';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { useFormatter } from '../../../../components/i18n';
-
+import { IconButton, Menu, MenuItem } from '@components';
 interface ExportPopoverProps {
   chart?: ApexCharts;
   series?: ApexOptions['series'];

@@ -1,5 +1,4 @@
 import { Close } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
 import makeStyles from '@mui/styles/makeStyles';
 import * as R from 'ramda';
 import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react';
@@ -13,6 +12,7 @@ import { SettingsMessagesBannerQuery } from './__generated__/SettingsMessagesBan
 import { MessageFromLocalStorage } from '../../../../utils/hooks/useLocalStorageModel';
 import { isEmptyField } from '../../../../utils/utils';
 import { extractUrlsFromText } from '../../../../utils/String';
+import { IconButton } from '@components';
 
 export const settingsMessagesQuery = graphql`
   query SettingsMessagesBannerQuery {

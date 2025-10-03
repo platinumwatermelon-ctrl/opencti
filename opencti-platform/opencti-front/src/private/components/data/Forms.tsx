@@ -1,6 +1,5 @@
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Alert from '@mui/material/Alert';
 import IngestionMenu from '@private/components/data/IngestionMenu';
 import { FormLinesPaginationQuery, FormLinesPaginationQuery$variables } from '@private/components/data/forms/__generated__/FormLinesPaginationQuery.graphql';
 import FormLines, { formLinesQuery } from '@private/components/data/forms/FormLines';
@@ -15,6 +14,7 @@ import Security from '../../../utils/Security';
 import { INGESTION_SETINGESTIONS } from '../../../utils/hooks/useGranted';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { Alert } from '@components';
 
 const useStyles = makeStyles(() => ({
   container: {

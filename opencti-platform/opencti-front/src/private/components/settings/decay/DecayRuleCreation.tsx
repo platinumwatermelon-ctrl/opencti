@@ -2,15 +2,10 @@ import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
 import { Field, FieldArray, Form, Formik, FormikConfig } from 'formik';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
-import Button from '@mui/material/Button';
 import * as R from 'ramda';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import makeStyles from '@mui/styles/makeStyles';
 import { AddOutlined, Delete } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
 import { InformationOutline } from 'mdi-material-ui';
 import ObservableTypesField from '@private/components/common/form/ObservableTypesField';
 import { useFormatter } from '../../../../components/i18n';
@@ -25,6 +20,7 @@ import decayRuleValidator from './DecayRuleValidator';
 import { DecayRulesLinesPaginationQuery$variables } from './__generated__/DecayRulesLinesPaginationQuery.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Box, Button, IconButton, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

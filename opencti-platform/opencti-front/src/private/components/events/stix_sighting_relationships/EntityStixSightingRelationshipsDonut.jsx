@@ -5,8 +5,6 @@ import { graphql } from 'react-relay';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
 import CircularProgress from '@mui/material/CircularProgress';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import * as R from 'ramda';
 import Chart from '../../common/charts/Chart';
 import { QueryRenderer } from '../../../../relay/environment';
@@ -14,6 +12,7 @@ import inject18n from '../../../../components/i18n';
 import { donutChartOptions } from '../../../../utils/Charts';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import { NO_DATA_WIDGET_MESSAGE } from '../../../../components/dashboard/WidgetNoData';
+import { Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {

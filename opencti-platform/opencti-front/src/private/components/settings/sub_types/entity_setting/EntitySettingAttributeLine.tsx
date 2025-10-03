@@ -1,14 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import ListItemText from '@mui/material/ListItemText';
-import ListItem from '@mui/material/ListItem';
-import Skeleton from '@mui/material/Skeleton';
-import { ListItemButton } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { LockPersonOutlined, NorthEastOutlined, ShortTextOutlined } from '@mui/icons-material';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
-import Box from '@mui/material/Box';
 import { DataColumns } from '../../../../../components/list_lines';
 import type { Theme } from '../../../../../components/Theme';
 import ErrorNotFound from '../../../../../components/ErrorNotFound';
@@ -17,6 +11,7 @@ import { EntitySettingAttributeLine_attribute$key } from './__generated__/Entity
 import { EntitySettingAttributes_entitySetting$data } from './__generated__/EntitySettingAttributes_entitySetting.graphql';
 import { INPUT_AUTHORIZED_MEMBERS } from '../../../../../utils/authorizedMembers';
 import useEnterpriseEdition from '../../../../../utils/hooks/useEnterpriseEdition';
+import { Box, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

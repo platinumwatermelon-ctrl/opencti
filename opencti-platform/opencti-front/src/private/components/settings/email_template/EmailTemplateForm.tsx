@@ -2,12 +2,12 @@ import React, { FunctionComponent } from 'react';
 import { FormikHelpers } from 'formik/dist/types';
 import { useTheme } from '@mui/styles';
 import { Field, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import TextField from '../../../../components/TextField';
 import MarkdownField from '../../../../components/fields/MarkdownField';
+import { Button } from '@components';
 
 export interface EmailTemplateFormInputs {
   name: string;

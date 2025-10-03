@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FunctionComponent, useState } from 'react';
-import { Button } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
@@ -8,7 +7,7 @@ import { TriggersLinesPaginationQuery$variables } from './__generated__/Triggers
 import TriggerDigestCreation from './TriggerDigestCreation';
 import TriggerLiveCreation from './TriggerLiveCreation';
 import { TriggerLiveCreationKnowledgeMutation$data } from './__generated__/TriggerLiveCreationKnowledgeMutation.graphql';
-
+import { Button } from '@components';
 interface TriggerCreationProps {
   contextual?: boolean;
   hideSpeedDial?: boolean;

@@ -1,20 +1,16 @@
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import CreatorField from '@private/components/common/form/CreatorField';
-import Button from '@mui/material/Button';
 import Drawer from '@private/components/common/drawer/Drawer';
 import React, { useMemo } from 'react';
 import { useTheme } from '@mui/styles';
 import { graphql } from 'react-relay';
 import { FormikHelpers } from 'formik/dist/types';
-import Alert from '@mui/material/Alert';
-import Typography from '@mui/material/Typography';
 import { JsonForms } from '@jsonforms/react';
 import { materialRenderers } from '@jsonforms/material-renderers';
 import { Validator } from '@cfworker/json-schema';
 import { IngestionConnector, IngestionTypedProperty } from '@private/components/data/IngestionCatalog';
 import { JsonSchema } from '@jsonforms/core';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import JsonFormArrayRenderer, { jsonFormArrayTester } from '@private/components/data/IngestionCatalog/utils/JsonFormArrayRenderer';
 import reconcileManagedConnectorContractDataWithSchema from '@private/components/data/connectors/utils/reconcileManagedConnectorContractDataWithSchema';
 import buildContractConfiguration from '@private/components/data/connectors/utils/buildContractConfiguration';
@@ -28,6 +24,7 @@ import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
 import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import { MESSAGING$ } from '../../../../relay/environment';
+import { AccordionDetails, Alert, Button, Typography } from '@components';
 
 type ManagerContractProperty = [string, IngestionTypedProperty];
 

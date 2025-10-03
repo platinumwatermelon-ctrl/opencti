@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Drawer from '@mui/material/Drawer';
 import { useTheme } from '@mui/styles';
 import {
   StixNestedRefRelationshipEditionOverviewQuery,
@@ -8,7 +7,7 @@ import StixNestedRefRelationshipEditionOverview, { stixNestedRefRelationshipEdit
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import type { Theme } from '../../../../components/Theme';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
-
+import { Drawer } from '@components';
 interface StixNestedRefRelationshipEditionProps {
   stixNestedRefRelationshipId: string,
   open: boolean,

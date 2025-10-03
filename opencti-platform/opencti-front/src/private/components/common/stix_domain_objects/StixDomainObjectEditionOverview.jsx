@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import * as R from 'ramda';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import * as Yup from 'yup';
 import makeStyles from '@mui/styles/makeStyles';
@@ -21,6 +19,7 @@ import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import ConfidenceField from '../form/ConfidenceField';
 import { convertMarkings } from '../../../../utils/edition';
 import useAttributes from '../../../../utils/hooks/useAttributes';
+import { IconButton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

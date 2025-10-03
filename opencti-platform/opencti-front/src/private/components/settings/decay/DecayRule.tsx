@@ -1,10 +1,5 @@
 import React from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import DecayChart, { DecayHistory } from '@private/components/settings/decay/DecayChart';
 import { useParams } from 'react-router-dom';
@@ -22,6 +17,7 @@ import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import type { Theme } from '../../../../components/Theme';
+import { Box, Grid, Paper, Tooltip, Typography } from '@components';
 
 const decayRuleQuery = graphql`
   query DecayRuleQuery($id: String!) {
@@ -117,7 +113,7 @@ const DecayRuleComponent = ({ queryRef }: DecayRuleComponentProps) => {
         spacing={3}
         style={{ marginBottom: 20 }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Box sx={{ display: 'flex', height: '100%', flexDirection: 'column' }}>
             <Typography variant="h4" gutterBottom={true}>
               {t_i18n('Configuration')}
@@ -130,13 +126,13 @@ const DecayRuleComponent = ({ queryRef }: DecayRuleComponentProps) => {
             }} variant="outlined"
             >
               <Grid container={true} spacing={3}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Description')}
                   </Typography>
                   <ExpandableMarkdown source={decayRule.description} limit={300} />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3" gutterBottom={true}>
                     <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                       <span>{t_i18n('Indicator observable types')}</span>
@@ -153,19 +149,19 @@ const DecayRuleComponent = ({ queryRef }: DecayRuleComponentProps) => {
                     </span>
                   </FieldOrEmpty>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Lifetime (in days)')}
                   </Typography>
                   {decayRule.decay_lifetime}
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Decay factor')}
                   </Typography>
                   {decayRule.decay_pound}
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Reaction points')}
                   </Typography>
@@ -173,7 +169,7 @@ const DecayRuleComponent = ({ queryRef }: DecayRuleComponentProps) => {
                     <span>{decayRule.decay_points?.join(', ')}</span>
                   </FieldOrEmpty>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Revoke score')}
                   </Typography>
@@ -183,7 +179,7 @@ const DecayRuleComponent = ({ queryRef }: DecayRuleComponentProps) => {
             </Paper>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Impact')}
           </Typography>

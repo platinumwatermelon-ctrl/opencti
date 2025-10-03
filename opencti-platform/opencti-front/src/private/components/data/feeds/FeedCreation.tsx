@@ -1,26 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import { AddOutlined, CancelOutlined } from '@mui/icons-material';
 import * as Yup from 'yup';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { ConnectionHandler } from 'relay-runtime';
 import * as R from 'ramda';
-import MenuItem from '@mui/material/MenuItem';
-import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MuiTextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
-import AlertTitle from '@mui/material/AlertTitle';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Alert from '@mui/material/Alert';
-import Box from '@mui/material/Box';
 import makeStyles from '@mui/styles/makeStyles';
 import { FormikConfig } from 'formik/dist/types';
 import { FeedCreationAllTypesQuery$data } from '@private/components/data/feeds/__generated__/FeedCreationAllTypesQuery.graphql';
@@ -53,6 +38,7 @@ import type { Theme } from '../../../../components/Theme';
 import { PaginationOptions } from '../../../../components/list_lines';
 import { FilterDefinition } from '../../../../utils/hooks/useAuth';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Alert, AlertTitle, Box, Button, FormControl, FormControlLabel, Grid, IconButton, InputAdornment, InputLabel, MenuItem, TextField as MuiTextField, Select, Switch, Tooltip } from '@components';
 
 export const feedCreationAllTypesQuery = graphql`
     query FeedCreationAllTypesQuery {

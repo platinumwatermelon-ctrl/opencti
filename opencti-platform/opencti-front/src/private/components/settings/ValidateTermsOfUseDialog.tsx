@@ -1,19 +1,11 @@
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React from 'react';
-import DialogActions from '@mui/material/DialogActions';
 import { CGUStatus, experienceFieldPatch } from '@private/components/settings/Experience';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
-import Checkbox from '@mui/material/Checkbox';
-import { FormControlLabel } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import { useFormatter } from '../../../components/i18n';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
 import { FieldOption } from '../../../utils/field';
 import useAuth from '../../../utils/hooks/useAuth';
+import { Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, FormControlLabel, IconButton, Typography } from '@components';
 
 type ValidateTermsOfUseDialogProps = {
   open: boolean;

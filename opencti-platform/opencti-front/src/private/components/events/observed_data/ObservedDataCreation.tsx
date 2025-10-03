@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
@@ -28,6 +27,7 @@ import useDefaultValues from '../../../../utils/hooks/useDefaultValues';
 import CustomFileUploader from '../../common/files/CustomFileUploader';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

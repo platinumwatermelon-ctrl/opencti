@@ -1,10 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, PreloadedQuery } from 'react-relay';
-import Chip from '@mui/material/Chip';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
 import { Position_position$data } from './__generated__/Position_position.graphql';
@@ -14,6 +10,7 @@ import usePreloadedFragment from '../../../../utils/hooks/usePreloadedFragment';
 import { PositionDetails_positionRelationships$key } from './__generated__/PositionDetails_positionRelationships.graphql';
 import { isNotEmptyField } from '../../../../utils/utils';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Chip, Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -163,13 +160,13 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
             <ExpandableMarkdown source={position.description} limit={300} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Latitude')}
             </Typography>
@@ -180,7 +177,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Longitude')}
             </Typography>
@@ -191,7 +188,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Street address')}
             </Typography>
@@ -202,7 +199,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Postal code')}
             </Typography>
@@ -210,7 +207,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               <ExpandableMarkdown source={position.postal_code} limit={300} />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('City')}
             </Typography>
@@ -224,7 +221,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               ))}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Country')}
             </Typography>
@@ -238,7 +235,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               ))}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Region')}
             </Typography>
@@ -252,7 +249,7 @@ const PositionDetails: FunctionComponent<PositionDetailsProps> = ({
               ))}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('entity_Administrative-Area')}
             </Typography>

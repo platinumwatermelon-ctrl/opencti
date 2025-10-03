@@ -6,9 +6,6 @@ import React, { useMemo } from 'react';
 import { Route, useParams, Routes, Link, useLocation, Navigate } from 'react-router-dom';
 import { graphql, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import StixCoreObjectContentRoot from '@private/components/common/stix_core_objects/StixCoreObjectContentRoot';
 import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
 import InfrastructureKnowledge from './InfrastructureKnowledge';
@@ -29,6 +26,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import InfrastructureEdition from './InfrastructureEdition';
 import InfrastructureDeletion from './InfrastructureDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootInfrastructureSubscription($id: ID!) {

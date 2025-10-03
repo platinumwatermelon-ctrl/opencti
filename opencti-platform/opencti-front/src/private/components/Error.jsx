@@ -1,14 +1,13 @@
 import React from 'react';
 import { compose, includes, map } from 'ramda';
 import * as PropTypes from 'prop-types';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 import { graphql } from 'react-relay';
 import { Link } from 'react-router-dom';
 import ErrorNotFound from '../../components/ErrorNotFound';
 import { useFormatter } from '../../components/i18n';
 import { commitMutation } from '../../relay/environment';
 import withRouter from '../../utils/compat_router/withRouter';
+import { Alert, AlertTitle } from '@components';
 
 // Highest level of error catching, do not rely on any tierce (intl, theme, ...) pure fallback
 export const HighLevelError = () => (

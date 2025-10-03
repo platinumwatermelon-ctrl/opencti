@@ -1,15 +1,9 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
 import { graphql, useFragment } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
 import Drawer from '@private/components/common/drawer/Drawer';
-import { ListItemButton } from '@mui/material';
 import { DataColumns } from '../../../../../components/list_lines';
 import { AuditLine_node$data, AuditLine_node$key } from './__generated__/AuditLine_node.graphql';
 import type { Theme } from '../../../../../components/Theme';
@@ -17,6 +11,7 @@ import { useFormatter } from '../../../../../components/i18n';
 import ItemIcon from '../../../../../components/ItemIcon';
 import MarkdownDisplay from '../../../../../components/MarkdownDisplay';
 import { useGenerateAuditMessage } from '../../../../../utils/history';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

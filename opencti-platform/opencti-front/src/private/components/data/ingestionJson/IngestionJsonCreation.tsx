@@ -1,12 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik, FormikErrors } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import MenuItem from '@mui/material/MenuItem';
 import makeStyles from '@mui/styles/makeStyles';
-import Alert from '@mui/material/Alert';
-import Box from '@mui/material/Box';
 import { FormikConfig } from 'formik/dist/types';
 import JsonMapperField, { jsonMapperQuery } from '@private/components/common/form/JsonMapperField';
 import IngestionJsonMapperTestDialog from '@private/components/data/ingestionJson/IngestionJsonMapperTestDialog';
@@ -18,8 +14,6 @@ import { IngestionJsonEditionFragment_ingestionJson$key } from '@private/compone
 import { IngestionJsonEditionContainerQuery } from '@private/components/data/ingestionJson/__generated__/IngestionJsonEditionContainerQuery.graphql';
 import { IngestionAuthType } from '@private/components/data/ingestionJson/__generated__/IngestionJsonCreationMutation.graphql';
 import { JsonMapperFieldSearchQuery } from '@private/components/common/form/__generated__/JsonMapperFieldSearchQuery.graphql';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 import { HeaderFieldAdd } from '@private/components/common/form/HeaderField';
 import { QueryAttributeFieldAdd } from '@private/components/common/form/QueryAttributeField';
 import IngestionSchedulingField from '@private/components/data/IngestionSchedulingField';
@@ -41,6 +35,7 @@ import { BASIC_AUTH, CERT_AUTH, extractCA, extractCert, extractKey, extractPassw
 import useAuth from '../../../../utils/hooks/useAuth';
 import PasswordTextField from '../../../../components/PasswordTextField';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Alert, Box, Button, FormControlLabel, MenuItem, Switch } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

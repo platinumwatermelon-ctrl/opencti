@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import StixNestedRefRelationshipCreationFromEntityContainer from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreationFromEntityContainer';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import SearchInput from '../../../../components/SearchInput';
 import StixCyberObservableNestedEntitiesTable from './StixCyberObservableNestedEntitiesTable';
 import { useFormatter } from '../../../../components/i18n';
-
+import { Paper, Typography } from '@components';
 interface StixCyberObservableNestedEntitiesProps {
   entityId: string;
   entityType: string;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
@@ -23,6 +22,7 @@ import ItemIcon from '../../../../../components/ItemIcon';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../../utils/field';
 import type { Theme } from '../../../../../components/Theme';
 import CreateEntityControlledDial from '../../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 const workbenchCreationMutation = graphql`
   mutation WorkbenchCreationMutation(

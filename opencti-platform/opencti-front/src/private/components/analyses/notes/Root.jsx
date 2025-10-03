@@ -1,9 +1,6 @@
 import React, { useMemo } from 'react';
 import { Link, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, useSubscription } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { useFormatter } from '../../../../components/i18n';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import StixCoreRelationship from '../../common/stix_core_relationships/StixCoreRelationship';
@@ -18,6 +15,7 @@ import Security, { CollaborativeSecurity } from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import NoteEdition from './NoteEdition';
 import NoteDeletion from './NoteDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
     subscription RootNoteSubscription($id: ID!) {

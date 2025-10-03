@@ -1,5 +1,4 @@
 import makeStyles from '@mui/styles/makeStyles';
-import Alert from '@mui/material/Alert';
 import React, { useContext } from 'react';
 import IngestionMenu from '@private/components/data/IngestionMenu';
 import IngestionCsvLines, { ingestionCsvLinesQuery } from '@private/components/data/ingestionCsv/IngestionCsvLines';
@@ -19,6 +18,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
 import { isNotEmptyField } from '../../../utils/utils';
 import GradientButton from '../../../components/GradientButton';
+import { Alert } from '@components';
 
 const LOCAL_STORAGE_KEY = 'ingestionCsvs';
 

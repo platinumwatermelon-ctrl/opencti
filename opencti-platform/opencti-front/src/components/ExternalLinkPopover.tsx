@@ -1,12 +1,7 @@
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React, { FunctionComponent } from 'react';
 import { useFormatter } from './i18n';
 import Transition from './Transition';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText } from '@components';
 interface ExternalLinkPopoverProps {
   displayExternalLink: boolean;
   externalLink: string | URL | undefined;

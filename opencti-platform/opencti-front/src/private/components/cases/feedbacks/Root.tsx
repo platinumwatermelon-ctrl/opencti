@@ -2,13 +2,10 @@
 // TODO Remove this when V6
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import Box from '@mui/material/Box';
 import React, { useMemo } from 'react';
 import { Link, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import StixCoreRelationship from '@private/components/common/stix_core_relationships/StixCoreRelationship';
 import StixCoreObjectContentRoot from '@private/components/common/stix_core_objects/StixCoreObjectContentRoot';
 import Security from 'src/utils/Security';
@@ -30,6 +27,7 @@ import { getCurrentTab, getPaddingRight } from '../../../../utils/utils';
 import FeedbackEdition from './FeedbackEdition';
 import { useGetCurrentUserAccessRight } from '../../../../utils/authorizedMembers';
 import FeedbackDeletion from './FeedbackDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootFeedbackSubscription($id: ID!) {

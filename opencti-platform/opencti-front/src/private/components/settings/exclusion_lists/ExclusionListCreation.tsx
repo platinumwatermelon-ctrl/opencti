@@ -4,11 +4,8 @@ import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { graphql } from 'react-relay';
 import { Field, Form, Formik, FormikConfig } from 'formik';
 import { availableEntityTypes, exclusionListCreationValidator } from '@private/components/settings/exclusion_lists/ExclusionListUtils';
-import Button from '@mui/material/Button';
 import { ExclusionListsLinesPaginationQuery$variables } from '@private/components/settings/exclusion_lists/__generated__/ExclusionListsLinesPaginationQuery.graphql';
 import CustomFileUploader from '@private/components/common/files/CustomFileUploader';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { insertNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { handleErrorInForm } from '../../../../relay/environment';
@@ -21,6 +18,7 @@ import useSchema from '../../../../utils/hooks/useSchema';
 import { now } from '../../../../utils/Time';
 import ItemIcon from '../../../../components/ItemIcon';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button, FormControlLabel, Switch } from '@components';
 
 const exclusionListCreationFileMutation = graphql`
   mutation ExclusionListCreationFileAddMutation($input: ExclusionListFileAddInput!) {

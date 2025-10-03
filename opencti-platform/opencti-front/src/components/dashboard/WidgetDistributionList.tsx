@@ -1,16 +1,12 @@
-import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import React from 'react';
 import { useTheme } from '@mui/styles';
-import { ListItemButton } from '@mui/material';
 import ItemIcon from '../ItemIcon';
 import { computeLink } from '../../utils/Entity';
 import type { Theme } from '../Theme';
 import { useFormatter } from '../i18n';
 import { getMainRepresentative } from '../../utils/defaultRepresentatives';
-
+import { List, ListItemButton, ListItemIcon, ListItemText } from '@components';
 interface WidgetDistributionListProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any[]

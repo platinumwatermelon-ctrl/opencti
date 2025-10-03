@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { createRefetchContainer, graphql, RelayRefetchProp } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import { interval } from 'rxjs';
 import makeStyles from '@mui/styles/makeStyles';
 import ConnectorWorkLine from '@private/components/data/connectors/ConnectorWorkLine';
@@ -9,6 +7,7 @@ import { ConnectorWorksQuery$variables } from './__generated__/ConnectorWorksQue
 import { ConnectorWorks_data$data } from './__generated__/ConnectorWorks_data.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { FIVE_SECONDS } from '../../../../utils/Time';
+import { Paper, Typography } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

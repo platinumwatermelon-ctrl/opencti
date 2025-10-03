@@ -1,18 +1,13 @@
 import { MessageOutlined, MoreVert } from '@mui/icons-material';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
 import { DataColumns } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
 import { SettingsMessagesLine_settingsMessage$key } from './__generated__/SettingsMessagesLine_settingsMessage.graphql';
 import SettingsMessagesPopover from './SettingsMessagesPopover';
+import { Box, IconButton, ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,10 +1,8 @@
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import MenuItem from '@mui/material/MenuItem';
 import { graphql, PreloadedQuery } from 'react-relay';
-import { Box, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import ListLines from '../../../../components/list_lines/ListLines';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
@@ -28,6 +26,7 @@ import useDeletion from '../../../../utils/hooks/useDeletion';
 import type { Theme } from '../../../../components/Theme';
 import PopoverMenu from '../../../../components/PopoverMenu';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Box, MenuItem, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

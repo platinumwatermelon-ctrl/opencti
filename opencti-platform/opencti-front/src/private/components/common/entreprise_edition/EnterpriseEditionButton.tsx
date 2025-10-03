@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import EnterpriseEditionAgreement from '@private/components/common/entreprise_edition/EnterpriseEditionAgreement';
@@ -10,6 +9,7 @@ import { useFormatter } from '../../../../components/i18n';
 import useGranted, { SETTINGS_SETPARAMETERS } from '../../../../utils/hooks/useGranted';
 import useAuth from '../../../../utils/hooks/useAuth';
 import type { Theme } from '../../../../components/Theme';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,14 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import { SettingsOrganization_organization$data } from './__generated__/SettingsOrganization_organization.graphql';
+import { Chip, Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -47,7 +44,7 @@ SettingsOrganizationDetailsProps
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Organization type')}
             </Typography>

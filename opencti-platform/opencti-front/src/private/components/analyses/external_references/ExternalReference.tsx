@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import ExternalReferenceOverview from './ExternalReferenceOverview';
 import ExternalReferenceDetails from './ExternalReferenceDetails';
@@ -12,6 +11,7 @@ import ExternalReferenceStixCoreObjects from './ExternalReferenceStixCoreObjects
 import { ExternalReference_externalReference$data } from './__generated__/ExternalReference_externalReference.graphql';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -59,19 +59,19 @@ ExternalReferenceComponentProps
           switch (key) {
             case 'basicInformation':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <ExternalReferenceOverview externalReference={externalReference} />
                 </Grid>
               );
             case 'details':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <ExternalReferenceDetails externalReference={externalReference} />
                 </Grid>
               );
             case 'linkedObjects':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <ExternalReferenceStixCoreObjects
                     externalReference={externalReference}
                   />
@@ -79,7 +79,7 @@ ExternalReferenceComponentProps
               );
             case 'uploadedFiles':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <ExternalReferenceFileImportViewer
                     externalReference={externalReference}
                     connectorsImport={connectorsImport}

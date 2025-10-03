@@ -1,17 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
-import Divider from '@mui/material/Divider';
 import RelatedContainers from '../../common/containers/related_containers/RelatedContainers';
 import StixRelationshipsHorizontalBars from '../../common/stix_relationships/StixRelationshipsHorizontalBars';
 import { useFormatter } from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { emptyFilterGroup } from '../../../../utils/filters/filtersUtils';
+import { Chip, Divider, Grid, Paper, Typography } from '@components';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -95,7 +91,7 @@ const ReportDetails = ({ report }) => {
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3} style={{ marginBottom: 20 }}>
-          <Grid item xs={6} ref={ref}>
+          <Grid size={6} ref={ref}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
@@ -126,8 +122,7 @@ const ReportDetails = ({ report }) => {
             {fldt(reportData.published)}
           </Grid>
           <Grid
-            item
-            xs={6}
+            size={6}
             style={{ minHeight: 200, maxHeight: height }}
           >
             <StixRelationshipsHorizontalBars

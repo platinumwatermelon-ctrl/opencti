@@ -1,11 +1,6 @@
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useFragment } from 'react-relay';
 import React, { FunctionComponent, ReactNode, useState } from 'react';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
-import Tooltip from '@mui/material/Tooltip';
 import { MoreVert } from '@mui/icons-material';
 import IngestionCsvPopover from '@private/components/data/ingestionCsv/IngestionCsvPopover';
 import { IngestionCsvLinesPaginationQuery$variables } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvLinesPaginationQuery.graphql';
@@ -17,6 +12,7 @@ import { DataColumns } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
 import { INGESTION_SETINGESTIONS } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
+import { ListItem, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

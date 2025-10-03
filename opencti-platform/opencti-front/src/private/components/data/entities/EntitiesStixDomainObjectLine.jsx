@@ -1,14 +1,8 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import Skeleton from '@mui/material/Skeleton';
 import { Link } from 'react-router-dom';
 import { KeyboardArrowRight } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectLabels from '../../common/stix_core_objects/StixCoreObjectLabels';
 import ItemIcon from '../../../../components/ItemIcon';
@@ -16,6 +10,7 @@ import ItemMarkings from '../../../../components/ItemMarkings';
 import { resolveLink } from '../../../../utils/Entity';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import ItemEntityType from '../../../../components/ItemEntityType';
+import { Checkbox, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

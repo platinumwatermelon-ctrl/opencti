@@ -1,12 +1,4 @@
 import { WarningOutlined } from '@mui/icons-material';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { InformationOutline } from 'mdi-material-ui';
 import * as R from 'ramda';
@@ -15,7 +7,6 @@ import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
 import GroupConfidenceLevel from '@private/components/settings/groups/GroupConfidenceLevel';
 import { uniq } from 'ramda';
-import { ListItemButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';
@@ -30,6 +21,7 @@ import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { checkIsMarkingAllowed } from '../../../../utils/markings/markingsFiltering';
 import type { Theme } from '../../../../components/Theme';
 import MarkingIcon from '../../../../utils/MarkingIcon';
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -151,13 +143,13 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Basic information')}
           </Typography>
           <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
             <Grid container={true} spacing={3}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Description')}
                 </Typography>
@@ -166,10 +158,10 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   limit={400}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <GroupHiddenTypesChipList groupData={group}/>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Auto new markings')}
                 </Typography>
@@ -178,7 +170,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   label={group.auto_new_marking ? t_i18n('Yes') : t_i18n('No')}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Default membership')}
                 </Typography>
@@ -190,13 +182,13 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Permissions')}
           </Typography>
           <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
             <Grid container={true} spacing={3}>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Roles')}
                 </Typography>
@@ -217,7 +209,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   ))}
                 </List>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Default dashboard')}
                 </Typography>
@@ -251,7 +243,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   </List>
                 </FieldOrEmpty>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}
@@ -264,7 +256,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   confidenceLevel={group.group_confidence_level}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('No creators accumulation')}
                 </Typography>
@@ -273,7 +265,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   label={group.no_creators ? t_i18n('Yes') : t_i18n('No')}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Restrict delete to created entities')}
                 </Typography>
@@ -285,14 +277,14 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
             {t_i18n('Markings')}
           </Typography>
           <div className="clearfix" />
           <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
             <Grid container={true} spacing={3}>
-              <Grid item xs={4}>
+              <Grid size={4}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Default markings')}
                   <Tooltip
@@ -327,7 +319,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   </List>
                 </FieldOrEmpty>
               </Grid>
-              <Grid item xs={4}>
+              <Grid size={4}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Allowed markings')}
                 </Typography>
@@ -351,7 +343,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
                   </List>
                 </FieldOrEmpty>
               </Grid>
-              <Grid item xs={4}>
+              <Grid size={4}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Maximum shareable markings')}
                 </Typography>

@@ -1,7 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import makeStyles from '@mui/styles/makeStyles';
 import { PreloadedQuery } from 'react-relay';
 import type { Theme } from '../../../../components/Theme';
@@ -13,6 +10,7 @@ import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStora
 import { GroupUsersLinesQuery, GroupUsersLinesQuery$variables } from './__generated__/GroupUsersLinesQuery.graphql';
 import ColumnsLinesTitles from '../../../../components/ColumnsLinesTitles';
 import { UserLineDummy } from './UserLine';
+import { Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -103,7 +101,7 @@ const GroupUsers: FunctionComponent<GroupUsersProps> = ({ groupId }) => {
     },
   };
   return (
-    <Grid item xs={12} style={{ marginTop: 10 }}>
+    <Grid size={12} style={{ marginTop: 10 }}>
       <Typography
         variant="h4"
         gutterBottom={true}

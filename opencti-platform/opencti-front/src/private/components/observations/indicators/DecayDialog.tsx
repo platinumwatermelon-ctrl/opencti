@@ -1,20 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import DialogContent from '@mui/material/DialogContent';
-import Grid from '@mui/material/Grid';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { SxProps } from '@mui/material';
 import { Theme } from '@mui/material/styles/createTheme';
 import { useTheme } from '@mui/styles';
 import { IndicatorDetails_indicator$data } from '@private/components/observations/indicators/__generated__/IndicatorDetails_indicator.graphql';
 import DecayChart, { DecayHistory } from '@private/components/settings/decay/DecayChart';
 import { useFormatter } from '../../../../components/i18n';
-
+import { DialogContent, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@components';
 interface DecayDialogContentProps {
   indicator: IndicatorDetails_indicator$data,
 }
@@ -128,7 +119,7 @@ const DecayDialogContent : FunctionComponent<DecayDialogContentProps> = ({ indic
         spacing={3}
         style={{ borderColor: 'white', borderWidth: 1 }}
       >
-        <Grid item xs={7}>
+        <Grid size={7}>
           <DecayChart
             currentScore={indicator.x_opencti_score || 0}
             revokeScore={indicator.decay_applied_rule?.decay_revoke_score || 0}
@@ -137,7 +128,7 @@ const DecayDialogContent : FunctionComponent<DecayDialogContentProps> = ({ indic
             decayLiveScore={indicator.decayLiveDetails?.live_score}
           />
         </Grid>
-        <Grid item xs={5}>
+        <Grid size={5}>
           <TableContainer component={Paper}>
             <Table sx={{ maxHeight: 440 }} size="small" aria-label="lifecycle history">
               <TableHead>

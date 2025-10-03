@@ -1,13 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/styles';
 import { LocationDetails_location$key } from '@private/components/locations/__generated__/LocationDetails_location.graphql';
 import { graphql, useFragment } from 'react-relay';
 import ExpandableMarkdown from '../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../components/i18n';
 import type { Theme } from '../../../components/Theme';
+import { Grid, Paper, Typography } from '@components';
 
 const locationDetailsFragment = graphql`
   fragment LocationDetails_location on Location {
@@ -38,7 +36,7 @@ const LocationDetails: FunctionComponent<LocationDetailsProps> = ({ locationData
         className={'paper-for-grid'} variant="outlined"
       >
         <Grid container={true} spacing={3}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>

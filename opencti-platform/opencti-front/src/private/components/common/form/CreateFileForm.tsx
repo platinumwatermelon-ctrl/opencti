@@ -1,13 +1,13 @@
 import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
 import { Field, Form, Formik } from 'formik';
-import { Dialog, DialogTitle, DialogContent, MenuItem, DialogActions, Button } from '@mui/material';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import React from 'react';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import SelectField from '../../../../components/fields/SelectField';
 import TextField from '../../../../components/TextField';
 import { useFormatter } from '../../../../components/i18n';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem } from '@components';
 
 export interface CreateFileFormInputs {
   name: string

@@ -1,7 +1,4 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
 import { ThreatActorIndividualCardFragment } from '@private/components/threats/threat_actors_individual/ThreatActorIndividualCard';
 import { ThreatActorsIndividualCards_data$data } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorsIndividualCards_data.graphql';
@@ -27,6 +24,7 @@ import DataTable from '../../../components/dataGrid/DataTable';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';
 import Security from '../../../utils/Security';
+import { Grid, ToggleButton, Tooltip } from '@components';
 
 const LOCAL_STORAGE_KEY_THREAT_ACTORS_INDIVIDUAL = 'threatActorsIndividuals';
 
@@ -115,8 +113,7 @@ const ThreatActorsIndividual = () => {
                   .fill(0)
                   .map((_, idx) => (
                     <Grid
-                      item
-                      xs={3}
+                      size={3}
                       key={idx}
                     >
                       <GenericAttackCardDummy />

@@ -1,22 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
-import Tooltip from '@mui/material/Tooltip';
 import { makeStyles } from '@mui/styles';
-import { ListItemButton } from '@mui/material';
 import { QueryRenderer } from '../../../../relay/environment';
 import ItemIcon from '../../../../components/ItemIcon';
 import ItemMarkings from '../../../../components/ItemMarkings';
 import { resolveLink } from '../../../../utils/Entity';
 import ItemEntityType from '../../../../components/ItemEntityType';
 import { useFormatter } from '../../../../components/i18n';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Skeleton, Tooltip, Typography } from '@components';
 
 const useStyles = makeStyles((theme) => ({
   paper: {

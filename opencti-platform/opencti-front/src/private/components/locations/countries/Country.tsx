@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import LocationDetails from '@private/components/locations/LocationDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
@@ -11,6 +10,7 @@ import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../commo
 import LocationMiniMap from '../../common/location/LocationMiniMap';
 import { Country_country$key } from './__generated__/Country_country.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
+import { Grid } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -104,10 +104,10 @@ const CountryComponent = ({
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={4}>
+        <Grid size={4}>
           <LocationDetails locationData={country} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <LocationMiniMap
             center={
               country.latitude && country.longitude
@@ -118,26 +118,26 @@ const CountryComponent = ({
             zoom={4}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <StixDomainObjectOverview
             stixDomainObject={country}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <SimpleStixObjectOrStixRelationshipStixCoreRelationships
             stixObjectOrStixRelationshipId={country.id}
             stixObjectOrStixRelationshipLink={`/dashboard/locations/countries/${country.id}/knowledge`}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectOrStixRelationshipLastContainers
             stixCoreObjectOrStixRelationshipId={country.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences stixCoreObjectId={country.id} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory stixCoreObjectId={country.id} />
         </Grid>
       </Grid>

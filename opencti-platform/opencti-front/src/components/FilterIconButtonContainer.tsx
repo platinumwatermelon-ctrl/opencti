@@ -1,10 +1,7 @@
-import Chip from '@mui/material/Chip';
-import Tooltip from '@mui/material/Tooltip';
 import React, { Fragment, FunctionComponent, useContext, useEffect, useRef, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { ChipOwnProps } from '@mui/material/Chip/Chip';
-import Box from '@mui/material/Box';
 import { truncate } from '../utils/String';
 import { DataColumns } from './list_lines';
 import { useFormatter } from './i18n';
@@ -20,6 +17,7 @@ import { filterValuesContentQuery } from './FilterValuesContent';
 import { FilterRepresentative } from './filters/FiltersModel';
 import { Filter, FilterGroup, handleFilterHelpers } from '../utils/filters/filtersHelpers-types';
 import { PageContainerContext } from './PageContainer';
+import { Box, Chip, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,19 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
 import { AccountBalanceOutlined } from '@mui/icons-material';
 import { BankPlus } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import type { FormikHelpers } from 'formik/dist/types';
 import { Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import ObjectOrganizationField from '../form/ObjectOrganizationField';
@@ -25,6 +16,7 @@ import useGranted, { KNOWLEDGE_KNUPDATE_KNORGARESTRICT } from '../../../../utils
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import type { Theme } from '../../../../components/Theme';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Tooltip, Typography } from '@components';
 
 // region types
 interface ContainerHeaderSharedProps {

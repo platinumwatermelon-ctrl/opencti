@@ -4,9 +4,6 @@ import * as Yup from 'yup';
 import { FormikConfig } from 'formik/dist/types';
 import { ExternalReferencesValues } from '@private/components/common/form/ExternalReferencesField';
 import { Field, Form, Formik, FormikErrors } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
 import CreatorField from '@private/components/common/form/CreatorField';
 import CommitMessage from '@private/components/common/form/CommitMessage';
 import {
@@ -14,13 +11,10 @@ import {
   IngestionCsvEditionFragment_ingestionCsv$key,
 } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvEditionFragment_ingestionCsv.graphql';
 import CsvMapperField, { CsvMapperFieldOption, csvMapperQuery } from '@private/components/common/form/CsvMapperField';
-import Button from '@mui/material/Button';
 import IngestionCsvFeedTestDialog from '@private/components/data/ingestionCsv/IngestionCsvFeedTestDialog';
 import { CsvMapperFieldSearchQuery } from '@private/components/common/form/__generated__/CsvMapperFieldSearchQuery.graphql';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import IngestionSchedulingField from '@private/components/data/IngestionSchedulingField';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import IngestionCsvInlineMapperForm from '@private/components/data/ingestionCsv/IngestionCsvInlineMapperForm';
 import { CsvMapperAddInput } from '@private/components/data/csvMapper/CsvMapperUtils';
 import IngestionCsvEditionUserHandling from '@private/components/data/ingestionCsv/IngestionCsvEditionUserHandling';
@@ -55,6 +49,7 @@ import PasswordTextField from '../../../../components/PasswordTextField';
 import SwitchField from '../../../../components/fields/SwitchField';
 import { RootMe_data$data } from '../../../__generated__/RootMe_data.graphql';
 import IngestionCsvInlineWrapper from './IngestionCsvInlineWrapper';
+import { Alert, Box, Button, MenuItem, Tab, Tabs } from '@components';
 
 export const initIngestionValue = (ingestionCsvData: IngestionCsvEditionFragment_ingestionCsv$data, me : RootMe_data$data) => {
   return {

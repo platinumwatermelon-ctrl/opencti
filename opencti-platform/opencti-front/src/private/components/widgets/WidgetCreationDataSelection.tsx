@@ -1,10 +1,6 @@
-import IconButton from '@mui/material/IconButton';
 import { AddOutlined, CancelOutlined } from '@mui/icons-material';
-import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import WidgetFilters from '@private/components/widgets/WidgetFilters';
-import Button from '@mui/material/Button';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { emptyFilterGroup } from '../../../utils/filters/filtersUtils';
@@ -13,6 +9,7 @@ import type { Theme } from '../../../components/Theme';
 import type { WidgetPerspective } from '../../../utils/widget/widget';
 import { getCurrentCategory, getCurrentDataSelectionLimit } from '../../../utils/widget/widgetUtils';
 import { useWidgetConfigContext } from './WidgetConfigContext';
+import { Button, IconButton, TextField, Tooltip } from '@components';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   step_entity: {

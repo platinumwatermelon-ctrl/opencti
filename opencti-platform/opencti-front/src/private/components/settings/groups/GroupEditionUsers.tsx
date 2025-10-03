@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Checkbox from '@mui/material/Checkbox';
 import { GroupEditionContainer_group$data } from '@private/components/settings/groups/__generated__/GroupEditionContainer_group.graphql';
 import { GroupUsersLinesQuery$variables } from '@private/components/settings/users/__generated__/GroupUsersLinesQuery.graphql';
 import { toolBarUsersLinesSearchQuery } from '@private/components/data/DataTableToolBar';
@@ -9,6 +8,7 @@ import { deleteNodeFromId, insertNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DataTableWithoutFragment from '../../../../components/dataGrid/DataTableWithoutFragment';
 import { DataTableVariant } from '../../../../components/dataGrid/dataTableTypes';
+import { Checkbox } from '@components';
 
 const userMutationRelationAdd = graphql`
   mutation GroupEditionUsersRelationAddMutation(

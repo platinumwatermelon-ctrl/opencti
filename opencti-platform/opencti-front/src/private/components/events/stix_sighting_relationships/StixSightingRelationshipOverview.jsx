@@ -5,18 +5,7 @@ import * as R from 'ramda';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Grid from '@mui/material/Grid';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Dialog from '@mui/material/Dialog';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import { ArrowRightAlt } from '@mui/icons-material';
-import Chip from '@mui/material/Chip';
-import Divider from '@mui/material/Divider';
-import Button from '@mui/material/Button';
-import DialogTitle from '@mui/material/DialogTitle';
 import StixCoreRelationshipInference from '../../common/stix_core_relationships/StixCoreRelationshipInference';
 import withRouter from '../../../../utils/compat_router/withRouter';
 import { itemColor } from '../../../../utils/Colors';
@@ -40,6 +29,7 @@ import StixSightingRelationshipLabelsView from './StixSightingRelationshipLabels
 import Transition from '../../../../components/Transition';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import { stixSightingRelationshipEditionDeleteMutation } from './StixSightingRelationshipEdition';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   container: {
@@ -236,7 +226,7 @@ class StixSightingRelationshipContainer extends Component {
           spacing={3}
           classes={{ container: classes.gridContainer }}
         >
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h4" gutterBottom={true}>
               {t('Relationship')}
             </Typography>
@@ -365,7 +355,7 @@ class StixSightingRelationshipContainer extends Component {
               <Divider style={{ marginTop: 30 }} />
               <div style={{ padding: 15 }}>
                 <Grid container={true} spacing={3}>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t('Marking')}
                     </Typography>
@@ -389,7 +379,7 @@ class StixSightingRelationshipContainer extends Component {
                     </Typography>
                     {nsdt(stixSightingRelationship.last_seen)}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <div>
                       <StixSightingRelationshipSharing
                         elementId={stixSightingRelationship.id}
@@ -444,13 +434,13 @@ class StixSightingRelationshipContainer extends Component {
               </div>
             </Paper>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h4" gutterBottom={true}>
               {t('Details')}
             </Typography>
             <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
               <Grid container={true} spacing={3}>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t('Confidence level')}
                   </Typography>
@@ -493,7 +483,7 @@ class StixSightingRelationshipContainer extends Component {
                   </Typography>
                   {nsdt(stixSightingRelationship.updated_at)}
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t('Processing status')}
                   </Typography>
@@ -529,7 +519,7 @@ class StixSightingRelationshipContainer extends Component {
             </Paper>
           </Grid>
           {stixSightingRelationship.x_opencti_inferences !== null ? (
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="h4" gutterBottom={true}>
                 {t('Inference explanation')}
               </Typography>
@@ -545,24 +535,24 @@ class StixSightingRelationshipContainer extends Component {
             </Grid>
           ) : (
             <>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <StixCoreObjectOrStixRelationshipLastContainers
                   stixCoreObjectOrStixRelationshipId={
                     stixSightingRelationship.id
                   }
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <StixSightingRelationshipExternalReferences
                   stixSightingRelationshipId={stixSightingRelationship.id}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <StixSightingRelationshipLatestHistory
                   stixSightingRelationshipId={stixSightingRelationship.id}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <StixCoreObjectOrStixCoreRelationshipNotes
                   stixCoreObjectOrStixCoreRelationshipId={stixSightingRelationship.id}
                   isRelationship

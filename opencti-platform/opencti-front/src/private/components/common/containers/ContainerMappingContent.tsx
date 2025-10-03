@@ -1,8 +1,6 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery, useQueryLoader, UseQueryLoaderLoadQueryOptions } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import StixCoreObjectMappableContent from '@private/components/common/stix_core_objects/StixCoreObjectMappableContent';
-import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 import ContainerStixCoreObjectsSuggestedMapping, { containerStixCoreObjectsSuggestedMappingQuery } from '@private/components/common/containers/ContainerStixCoreObjectsSuggestedMapping';
 import {
@@ -37,6 +35,7 @@ import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import { emptyFilterGroup } from '../../../../utils/filters/filtersUtils';
 import { deserializeObjectB64, serializeObjectB64 } from '../../../../utils/object';
+import { Grid, Paper } from '@components';
 
 const OPEN$ = new Subject().pipe(debounce(() => timer(500)));
 
@@ -441,7 +440,7 @@ ContainerMappingContentComponentProps
         alignItems="stretch"
         columnSpacing={2}
       >
-        <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Grid size={6} sx={{ display: 'flex', flexDirection: 'column' }}>
           <StixCoreObjectMappableContent
             containerData={containerData}
             handleTextSelection={handleTextSelection}
@@ -453,7 +452,7 @@ ContainerMappingContentComponentProps
           />
         </Grid>
 
-        <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Grid size={6} sx={{ display: 'flex', flexDirection: 'column' }}>
           <Paper
             variant="outlined"
             style={{

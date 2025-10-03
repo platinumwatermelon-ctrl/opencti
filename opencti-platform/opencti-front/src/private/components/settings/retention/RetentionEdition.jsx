@@ -5,12 +5,7 @@ import { Field, Form, Formik } from 'formik';
 import withStyles from '@mui/styles/withStyles';
 import * as Yup from 'yup';
 import * as R from 'ramda';
-import InputAdornment from '@mui/material/InputAdornment';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import MenuItem from '@mui/material/MenuItem';
 import inject18n from '../../../../components/i18n';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
 import TextField from '../../../../components/TextField';
@@ -22,6 +17,7 @@ import Drawer from '../../common/drawer/Drawer';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
 import SelectField from '../../../../components/fields/SelectField';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
+import { Box, Button, InputAdornment, MenuItem, Tooltip } from '@components';
 
 const styles = (theme) => ({
   header: {

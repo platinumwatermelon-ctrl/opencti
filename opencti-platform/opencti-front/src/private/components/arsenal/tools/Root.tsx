@@ -2,9 +2,6 @@ import React, { useMemo, Suspense } from 'react';
 import { Route, Routes, Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
 import ToolEdition from '@private/components/arsenal/tools/ToolEdition';
@@ -26,6 +23,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import ToolKnowledge from './ToolKnowledge';
 import ToolDeletion from './ToolDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootToolSubscription($id: ID!) {

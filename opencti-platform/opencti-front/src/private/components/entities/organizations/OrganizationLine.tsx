@@ -1,21 +1,17 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles/createTheme';
 import { OrganizationLine_node$key } from '@private/components/entities/organizations/__generated__/OrganizationLine_node.graphql';
 import { DraftChip } from '@private/components/common/draft/DraftChip';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectLabels from '../../common/stix_core_objects/StixCoreObjectLabels';
 import ItemIcon from '../../../../components/ItemIcon';
 import { DataColumns } from '../../../../components/list_lines';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'react-relay';
-import ToggleButton from '@mui/material/ToggleButton';
 import { SendOutline, Send } from 'mdi-material-ui';
-import Dialog from '@mui/material/Dialog';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
 import { Form, Formik } from 'formik';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import EmailTemplateField, { EmailTemplate, EmailTemplateFieldOption } from '@private/components/common/form/EmailTemplateField';
 import { FormikConfig } from 'formik/dist/types';
-import IconButton from '@mui/material/IconButton';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { handleError, MESSAGING$ } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, ToggleButton } from '@components';
 
 const userEmailSendMutation = graphql`
   mutation UserEmailSendMutation($input: SendUserMailInput!) {

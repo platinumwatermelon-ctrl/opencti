@@ -2,9 +2,6 @@ import React, { Suspense, useMemo } from 'react';
 import { Link, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, PreloadedQuery, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { RootIndicatorQuery } from '@private/components/observations/indicators/__generated__/RootIndicatorQuery.graphql';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import { RootIndicatorSubscription } from '@private/components/observations/indicators/__generated__/RootIndicatorSubscription.graphql';
@@ -28,6 +25,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import IndicatorEdition from './IndicatorEdition';
 import IndicatorDeletion from './IndicatorDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootIndicatorSubscription($id: ID!) {

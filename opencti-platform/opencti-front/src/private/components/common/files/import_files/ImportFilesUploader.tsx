@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Grid } from '@mui/material';
 import ImportFilesDropzone from '@private/components/common/files/import_files/ImportFilesDropzone';
 import ImportFilesFreeText from '@private/components/common/files/import_files/ImportFilesFreeText';
 import ImportFilesList from '@private/components/common/files/import_files/ImportFilesList';
 import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import { ImportFilesContextQuery$data } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
+import { Grid } from '@components';
 
 export type FileWithConnectors = {
   file: File;
@@ -37,7 +37,7 @@ const ImportFilesUploader = ({ connectorsForImport }: ImportFilesUploaderProps) 
 
   return (
     <Grid container>
-      <Grid item xs={12}>
+      <Grid size={12}>
         { !isTextView ? (
           <ImportFilesDropzone
             fullSize={files.length === 0}
@@ -54,7 +54,7 @@ const ImportFilesUploader = ({ connectorsForImport }: ImportFilesUploaderProps) 
         )}
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid size={12}>
         <ImportFilesList connectorsForImport={connectorsForImport}/>
       </Grid>
     </Grid>

@@ -1,7 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useFragment } from 'react-relay';
 import TableViewIcon from '@mui/icons-material/TableView';
@@ -11,6 +8,7 @@ import { csvMappers_MappersQuery$variables } from '@private/components/data/csvM
 import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import ErrorNotFound from '../../../../components/ErrorNotFound';
+import { ListItem, ListItemIcon, ListItemText } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

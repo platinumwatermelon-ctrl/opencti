@@ -1,4 +1,4 @@
-import { Drawer, SxProps, Toolbar } from '@mui/material';
+import { SxProps, Toolbar } from '@mui/material';
 import React, { FunctionComponent, useMemo, useState } from 'react';
 import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
 import { useTheme } from '@mui/styles';
@@ -18,6 +18,7 @@ import { deserializeFilterGroupForFrontend, emptyFilterGroup, removeIdFromFilter
 import DeleteDialog from '../../../../../components/DeleteDialog';
 import useDeletion from '../../../../../utils/hooks/useDeletion';
 import { toCamelCase } from '../../../../../utils/String';
+import { Drawer } from '@components';
 
 export const FINTEL_TEMPLATE_SIDEBAR_WIDTH = 350;
 

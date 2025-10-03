@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import { hexToRGB, itemColor } from '../../../utils/Colors';
 import RelationShipFromAndTo from './RelationShipFromAndTo';
 import ItemMarkings from '../../ItemMarkings';
 import { useFormatter } from '../../i18n';
 import { GraphLink } from '../graph.types';
+import { Chip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

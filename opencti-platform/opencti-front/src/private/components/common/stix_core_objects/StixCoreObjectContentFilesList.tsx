@@ -1,18 +1,13 @@
-import Tooltip from '@mui/material/Tooltip';
-import { IconButton, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import moment from 'moment/moment';
 import { MoreVert, SendOutlined } from '@mui/icons-material';
 import React, { Fragment, MouseEvent, useState } from 'react';
 import { FileOutline, FilePdfBox, LanguageHtml5, LanguageMarkdownOutline, NoteTextOutline } from 'mdi-material-ui';
 import { FileLineDeleteMutation as deleteMutation } from '@private/components/common/files/FileLine';
 import { FileLineDeleteMutation } from '@private/components/common/files/__generated__/FileLineDeleteMutation.graphql';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
 import { Link } from 'react-router-dom';
 import useDeletion from 'src/utils/hooks/useDeletion';
 import DeleteDialog from 'src/components/DeleteDialog';
 import StixCoreObjectFileExport, { BUILT_IN_HTML_TO_PDF } from '@private/components/common/stix_core_objects/StixCoreObjectFileExport';
-import ListItem from '@mui/material/ListItem';
 import { useTheme } from '@mui/styles';
 import Drawer from '@private/components/common/drawer/Drawer';
 import StixCoreObjectContentFilesDissemination from '@private/components/common/stix_core_objects/StixCoreObjectContentFilesDissemination';
@@ -26,6 +21,7 @@ import Security from '../../../../utils/Security';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import EETooltip from '../entreprise_edition/EETooltip';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@components';
 
 const renderIcon = (mimeType: string) => {
   switch (mimeType) {

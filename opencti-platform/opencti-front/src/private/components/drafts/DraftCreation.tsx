@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { DraftCreationMutation, DraftCreationMutation$variables } from '@private/components/drafts/__generated__/DraftCreationMutation.graphql';
@@ -14,6 +13,7 @@ import { handleErrorInForm } from '../../../relay/environment';
 import TextField from '../../../components/TextField';
 import { useFormatter } from '../../../components/i18n';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
+import { Button } from '@components';
 
 export const draftCreationMutation = graphql`
     mutation DraftCreationMutation($input: DraftWorkspaceAddInput!) {

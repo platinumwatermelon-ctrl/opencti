@@ -4,13 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { graphql, usePreloadedQuery } from 'react-relay';
 import * as R from 'ramda';
 import * as Yup from 'yup';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
 import { Add, ArrowRightAlt, ChevronRightOutlined, Close } from '@mui/icons-material';
-import Fab from '@mui/material/Fab';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ConnectionHandler } from 'relay-runtime';
 import SpeedDial from '@mui/material/SpeedDial';
@@ -35,6 +29,7 @@ import ListLines from '../../../../components/list_lines/ListLines';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
 import { emptyFilterGroup, removeIdFromFilterGroupObject } from '../../../../utils/filters/filtersUtils';
 import useEntityToggle from '../../../../utils/hooks/useEntityToggle';
+import { Button, Drawer, Fab, IconButton, MenuItem, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

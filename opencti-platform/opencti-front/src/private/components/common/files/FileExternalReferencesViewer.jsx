@@ -3,14 +3,11 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { graphql, createRefetchContainer } from 'react-relay';
 import { interval } from 'rxjs';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import withStyles from '@mui/styles/withStyles';
-import List from '@mui/material/List';
 import FileLine from './FileLine';
 import { TEN_SECONDS } from '../../../../utils/Time';
 import inject18n from '../../../../components/i18n';
+import { Grid, List, Paper, Typography } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 
@@ -51,7 +48,7 @@ const FileExternalReferencesViewerBase = ({
     };
   });
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
         {t('External references files')}
       </Typography>

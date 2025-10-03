@@ -5,9 +5,6 @@
 import React, { useMemo } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, useSubscription } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import { RootReportSubscription } from '@private/components/analyses/reports/__generated__/RootReportSubscription.graphql';
 import StixCoreObjectSimulationResultContainer from '@private/components/common/stix_core_objects/StixCoreObjectSimulationResultContainer';
@@ -30,6 +27,7 @@ import useGranted, { KNOWLEDGE_KNUPDATE_KNBYPASSREFERENCE, KNOWLEDGE_KNUPDATE, K
 import { getCurrentTab, getPaddingRight } from '../../../../utils/utils';
 import GroupingEdition from './GroupingEdition';
 import { useGetCurrentUserAccessRight } from '../../../../utils/authorizedMembers';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootGroupingSubscription($id: ID!) {

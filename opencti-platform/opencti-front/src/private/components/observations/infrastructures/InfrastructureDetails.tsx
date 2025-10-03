@@ -1,10 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
-import { List } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import StixCoreObjectsDonut from '../../common/stix_core_objects/StixCoreObjectsDonut';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
@@ -12,6 +7,7 @@ import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectKillChainPhasesView from '../../common/stix_core_objects/StixCoreObjectKillChainPhasesView';
 import type { Theme } from '../../../../components/Theme';
 import { InfrastructureDetails_infrastructure$data, InfrastructureDetails_infrastructure$key } from './__generated__/InfrastructureDetails_infrastructure.graphql';
+import { Chip, Grid, List, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -99,7 +95,7 @@ const InfrastructureDetails: FunctionComponent<InfrastructureDetailsProps> = ({
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Infrastructure types')}
             </Typography>
@@ -118,25 +114,25 @@ const InfrastructureDetails: FunctionComponent<InfrastructureDetailsProps> = ({
                 '-'
               )}
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
             <ExpandableMarkdown source={data.description} limit={400} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('First seen')}
             </Typography>
             {data.first_seen ? fldt(data.first_seen) : '-'}
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Last seen')}
             </Typography>
             {data.last_seen ? fldt(data.last_seen) : '-'}
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <StixCoreObjectKillChainPhasesView killChainPhases={killChainPhases}/>
           </Grid>
         </Grid>

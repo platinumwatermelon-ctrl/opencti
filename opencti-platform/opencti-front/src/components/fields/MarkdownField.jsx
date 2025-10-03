@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import ReactMde from 'react-mde';
 import { useField } from 'formik';
-import InputLabel from '@mui/material/InputLabel';
-import FormHelperText from '@mui/material/FormHelperText';
 import { isNil } from 'ramda';
 import useAI from '../../utils/hooks/useAI';
 import TextFieldAskAI from '../../private/components/common/form/TextFieldAskAI';
 import { useFormatter } from '../i18n';
 import MarkdownDisplay from '../MarkdownDisplay';
+import { FormHelperText, InputLabel } from '@components';
 
 const MarkdownField = (props) => {
   const {

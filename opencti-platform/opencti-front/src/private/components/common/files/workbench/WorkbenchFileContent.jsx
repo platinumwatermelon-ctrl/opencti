@@ -1,21 +1,4 @@
 import { Add, ArrowDropDown, ArrowDropUp, DeleteOutlined, DoubleArrow } from '@mui/icons-material';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Fab from '@mui/material/Fab';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import Axios from 'axios';
 import { Field, Form, Formik } from 'formik';
@@ -25,9 +8,6 @@ import { createFragmentContainer, graphql } from 'react-relay';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import * as Yup from 'yup';
-import Alert from '@mui/material/Alert';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import DateTimePickerField from '../../../../../components/DateTimePickerField';
 import { useFormatter } from '../../../../../components/i18n';
 import ItemBoolean from '../../../../../components/ItemBoolean';
@@ -66,6 +46,7 @@ import Security from '../../../../../utils/Security';
 import DeleteDialog from '../../../../../components/DeleteDialog';
 import useDeletion from '../../../../../utils/hooks/useDeletion';
 import Breadcrumbs from '../../../../../components/Breadcrumbs';
+import { Alert, Box, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, Fab, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Select, Tab, Tabs, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

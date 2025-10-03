@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import inject18n from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
+import { Grid, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {
@@ -28,7 +26,7 @@ class CampaignDetailsComponent extends Component {
         </Typography>
         <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
           <Grid container={true} spacing={3}>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('Description')}
               </Typography>
@@ -46,7 +44,7 @@ class CampaignDetailsComponent extends Component {
                 commonmark={true}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('First seen')}
               </Typography>

@@ -1,21 +1,8 @@
 import makeStyles from '@mui/styles/makeStyles';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
 import { ClearOutlined, FileOpenOutlined, LocalOfferOutlined, VisibilityOffOutlined } from '@mui/icons-material';
-import Typography from '@mui/material/Typography';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
-import Alert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
-import Switch from '@mui/material/Switch';
 import * as R from 'ramda';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
 import { entitySettingPatch } from './entity_setting/EntitySettingSettings';
@@ -24,6 +11,7 @@ import type { EntitySetting } from '../../../../utils/hooks/useEntitySettings';
 import { MESSAGING$ } from '../../../../relay/environment';
 import useAuth from '../../../../utils/hooks/useAuth';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, FormControlLabel, FormGroup, IconButton, Switch, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

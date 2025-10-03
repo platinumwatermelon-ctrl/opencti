@@ -1,14 +1,8 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Checkbox from '@mui/material/Checkbox';
 import Alert from '@mui/lab/Alert';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
-import Typography from '@mui/material/Typography';
 import MaxShareableMarkingsSelectField from '@private/components/common/form/MaxShareableMarkingsSelectField';
 import { MarkingDefinitionsQuerySearchQuery$data } from '@private/components/settings/__generated__/MarkingDefinitionsQuerySearchQuery.graphql';
 import { useTheme } from '@mui/material/styles';
@@ -23,6 +17,7 @@ import { checkIsMarkingAllowed } from '../../../../utils/markings/markingsFilter
 import { markingDefinitionsLinesSearchQuery } from '../MarkingDefinitionsQuery';
 import type { Theme } from '../../../../components/Theme';
 import MarkingIcon from '../../../../utils/MarkingIcon';
+import { Checkbox, List, ListItem, ListItemIcon, ListItemText, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

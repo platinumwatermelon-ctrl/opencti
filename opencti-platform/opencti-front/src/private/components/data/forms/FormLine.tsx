@@ -1,11 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { MoreVert } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import { graphql, useFragment } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
 import { DataColumns } from '../../../../components/list_lines';
@@ -16,6 +11,7 @@ import { useFormatter } from '../../../../components/i18n';
 import FormPopover from './FormPopover';
 import ItemBoolean from '../../../../components/ItemBoolean';
 import ItemIcon from '../../../../components/ItemIcon';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Styles
 const useStyles = makeStyles<Theme>((theme) => ({

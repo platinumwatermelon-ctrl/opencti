@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { ExpandMore, ExpandLess } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
 import { truncate } from '../utils/String';
+import { IconButton } from '@components';
 
 const ExpandablePre = (props) => {
   const [expand, setExpand] = useState(false);

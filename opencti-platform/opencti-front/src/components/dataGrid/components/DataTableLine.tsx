@@ -1,5 +1,4 @@
 import React, { CSSProperties, useMemo } from 'react';
-import { Skeleton, Checkbox, IconButton, Box } from '@mui/material';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +8,7 @@ import type { Theme } from '../../Theme';
 import { getMainRepresentative } from '../../../utils/defaultRepresentatives';
 import { SELECT_COLUMN_SIZE } from './DataTableHeader';
 import { useDataTableContext } from './DataTableContext';
+import { Box, Checkbox, IconButton, Skeleton } from '@components';
 
 const cellContainerStyle = (theme: Theme) => ({
   display: 'flex',

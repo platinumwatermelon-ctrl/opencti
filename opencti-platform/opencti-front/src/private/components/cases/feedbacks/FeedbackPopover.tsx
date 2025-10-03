@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ToggleButton from '@mui/material/ToggleButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
@@ -17,6 +14,7 @@ import FeedbackEditionContainer, { feedbackEditionQuery } from './FeedbackEditio
 import { FeedbackEditionContainerQuery } from './__generated__/FeedbackEditionContainerQuery.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DeleteDialog from '../../../../components/DeleteDialog';
+import { Menu, MenuItem, ToggleButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

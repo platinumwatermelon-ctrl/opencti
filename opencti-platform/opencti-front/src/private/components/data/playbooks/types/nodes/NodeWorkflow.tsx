@@ -1,14 +1,11 @@
 import React, { memo, useState } from 'react';
 import { Handle, Position, NodeProps, useReactFlow } from 'reactflow';
 import { makeStyles } from '@mui/styles';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import { MoreVert, LoginOutlined } from '@mui/icons-material';
 import ItemIcon from '../../../../../../components/ItemIcon';
 import type { Theme } from '../../../../../../components/Theme';
 import { useFormatter } from '../../../../../../components/i18n';
+import { IconButton, Menu, MenuItem, Tooltip } from '@components';
 
 type node = {
   id: string;

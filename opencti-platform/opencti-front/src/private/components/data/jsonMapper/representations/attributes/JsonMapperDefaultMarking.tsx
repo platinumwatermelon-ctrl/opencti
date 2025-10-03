@@ -1,11 +1,9 @@
-import MenuItem from '@mui/material/MenuItem';
 import { Field } from 'formik';
 import React from 'react';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import SelectField from '../../../../../../components/fields/SelectField';
 import { useFormatter } from '../../../../../../components/i18n';
-
+import { MenuItem, Tooltip } from '@components';
 interface JsonMapperDefaultMarkingProps {
   name: string
 }

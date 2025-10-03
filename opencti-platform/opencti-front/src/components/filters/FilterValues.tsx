@@ -1,9 +1,6 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { last } from 'ramda';
 import makeStyles from '@mui/styles/makeStyles';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
 import { ChipOwnProps } from '@mui/material/Chip/Chip';
 import { WarningOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
@@ -16,6 +13,7 @@ import { FilterRepresentative } from './FiltersModel';
 import { Filter } from '../../utils/filters/filtersHelpers-types';
 import useSchema from '../../utils/hooks/useSchema';
 import FilterValuesForDynamicSubKey from './FilterValuesForDynamicSubKey';
+import { Box, Chip, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

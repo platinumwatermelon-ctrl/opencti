@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import UserEditionConfidence from './edition/UserEditionConfidence';
@@ -16,6 +13,7 @@ import useGranted, { SETTINGS_SETACCESSES } from '../../../../utils/hooks/useGra
 import { RootUserEditionQuery$data } from './__generated__/RootUserEditionQuery.graphql';
 import Loader from '../../../../components/Loader';
 import EditEntityControlledDial from '../../../../components/EditEntityControlledDial';
+import { Box, Tab, Tabs } from '@components';
 
 const UserEditionFragment = graphql`
   fragment UserEdition_user on User

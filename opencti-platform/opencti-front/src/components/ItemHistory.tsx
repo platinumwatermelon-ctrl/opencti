@@ -1,7 +1,6 @@
-import { Tooltip } from '@mui/material';
 import React, { FunctionComponent } from 'react';
 import MarkdownDisplay from './MarkdownDisplay';
-
+import { Tooltip } from '@components';
 interface ItemHistoryProps {
   username: string,
   message: string,

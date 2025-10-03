@@ -2,16 +2,11 @@ import { useReactFlow } from 'reactflow';
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { graphql } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import DialogTitle from '@mui/material/DialogTitle';
 import { commitMutation } from '../../../../../relay/environment';
 import PlaybookAddComponents from '../PlaybookAddComponents';
 import Transition from '../../../../../components/Transition';
 import { useFormatter } from '../../../../../components/i18n';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 
 export const useManipulateComponentsPlaybookUpdatePositionsMutation = graphql`
   mutation useManipulateComponentsPlaybookUpdatePositionsMutation(

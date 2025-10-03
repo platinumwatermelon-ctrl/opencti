@@ -3,12 +3,11 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
-import Chip from '@mui/material/Chip';
 import Slide from '@mui/material/Slide';
-import Tooltip from '@mui/material/Tooltip';
 import inject18n from './i18n';
 import { hexToRGB, stringToColour } from '../utils/Colors';
 import { truncate } from '../utils/String';
+import { Chip, Tooltip } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />

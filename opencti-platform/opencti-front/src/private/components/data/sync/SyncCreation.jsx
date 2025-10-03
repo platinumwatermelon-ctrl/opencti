@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
-import MenuItem from '@mui/material/MenuItem';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
-import Grid from '@mui/material/Grid';
 import Drawer from '../../common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import { commitMutation, fetchQuery, handleErrorInForm, MESSAGING$ } from '../../../../relay/environment';
@@ -30,6 +22,7 @@ import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import { deserializeFilterGroupForFrontend } from '../../../../utils/filters/filtersUtils';
 import PasswordTextField from '../../../../components/PasswordTextField';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { AccordionDetails, Alert, AlertTitle, Button, Grid, MenuItem, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -290,13 +283,13 @@ const SyncCreation = ({ paginationOptions }) => {
                                   spacing={1}
                                   style={{ overflow: 'hidden' }}
                                 >
-                                  <Grid key={name} item xs={12}>
+                                  <Grid key={name} size={12}>
                                     <Typography>{name}</Typography>
                                   </Grid>
-                                  <Grid key={description} item xs={12}>
+                                  <Grid key={description} size={12}>
                                     <Typography>{description}</Typography>
                                   </Grid>
-                                  <Grid key={filters} item xs={12}>
+                                  <Grid key={filters} size={12}>
                                     <FilterIconButton
                                       filters={streamsFilters}
                                       styleNumber={3}

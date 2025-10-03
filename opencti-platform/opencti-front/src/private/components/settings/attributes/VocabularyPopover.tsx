@@ -1,7 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
 import { MoreVertOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
 import { PopoverProps } from '@mui/material/Popover';
@@ -15,6 +12,7 @@ import useDeletion from '../../../../utils/hooks/useDeletion';
 import { deleteNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DeleteDialog from '../../../../components/DeleteDialog';
+import { IconButton, Menu, MenuItem } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

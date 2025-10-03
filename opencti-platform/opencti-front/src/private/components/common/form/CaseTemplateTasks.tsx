@@ -1,8 +1,3 @@
-import { DialogContent } from '@mui/material';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
@@ -19,6 +14,7 @@ import { CaseTemplateTasksCreationMutation, TaskTemplateAddInput } from './__gen
 import { CaseTemplateTasksSearchQuery$data } from './__generated__/CaseTemplateTasksSearchQuery.graphql';
 import ItemIcon from '../../../../components/ItemIcon';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

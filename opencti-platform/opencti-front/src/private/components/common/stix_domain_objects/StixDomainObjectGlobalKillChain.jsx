@@ -3,16 +3,9 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { Link } from 'react-router-dom';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Collapse from '@mui/material/Collapse';
 import { Launch } from 'mdi-material-ui';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { createRefetchContainer, graphql } from 'react-relay';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { yearFormat } from '../../../../utils/Time';
 import inject18n from '../../../../components/i18n';
 import StixCoreRelationshipPopover from '../stix_core_relationships/StixCoreRelationshipPopover';
@@ -21,6 +14,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import { stixDomainObjectThreatKnowledgeStixRelationshipsQuery } from './StixDomainObjectThreatKnowledgeQuery';
 import ItemMarkings from '../../../../components/ItemMarkings';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
+import { Collapse, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 const styles = (theme) => ({
   itemIcon: {

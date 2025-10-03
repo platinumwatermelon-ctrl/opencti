@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -30,6 +29,7 @@ import useBulkCommit from '../../../../utils/hooks/useBulkCommit';
 import { splitMultilines } from '../../../../utils/String';
 import ProgressBar from '../../../../components/ProgressBar';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 const channelMutation = graphql`
   mutation ChannelCreationMutation($input: ChannelAddInput!) {

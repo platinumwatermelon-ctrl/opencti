@@ -1,6 +1,5 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import ContainerHeader from '../../common/containers/ContainerHeader';
 import OpinionDetails from './OpinionDetails';
@@ -11,6 +10,7 @@ import { CollaborativeSecurity } from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import ContainerStixObjectsOrStixRelationships from '../../common/containers/ContainerStixObjectsOrStixRelationships';
+import { Grid } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -44,23 +44,23 @@ const OpinionComponent = ({ opinion, enableReferences }) => {
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <OpinionDetails opinion={opinion} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixDomainObjectOverview stixDomainObject={opinion} displayOpinions={false} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <ContainerStixObjectsOrStixRelationships
             container={opinion}
             isSupportParticipation={true}
             enableReferences={enableReferences}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences stixCoreObjectId={opinion.id} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory
             stixCoreObjectId={opinion.id}
             isSupportParticipation={true}

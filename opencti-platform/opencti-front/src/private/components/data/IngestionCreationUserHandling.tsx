@@ -1,22 +1,19 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { Field, useFormikContext } from 'formik';
-import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
-import Alert from '@mui/material/Alert';
 import CreatorField from '@private/components/common/form/CreatorField';
 import ConfidenceField from '@private/components/common/form/ConfidenceField';
 import {
   IngestionCreationUserHandlingDefaultGroupForIngestionUsersQuery,
 } from '@private/components/data/__generated__/IngestionCreationUserHandlingDefaultGroupForIngestionUsersQuery.graphql';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { type FieldOption, fieldSpacingContainerStyle } from '../../../utils/field';
 import SwitchField from '../../../components/fields/SwitchField';
 import useGranted, { SETTINGS_SETACCESSES } from '../../../utils/hooks/useGranted';
 import { useFormatter } from '../../../components/i18n';
 import Loader from '../../../components/Loader';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
+import { Alert, Box, FormControlLabel, Switch } from '@components';
 
 const ingestionCreationUserHandlingDefaultGroupForIngestionUsersQuery = graphql`
   query IngestionCreationUserHandlingDefaultGroupForIngestionUsersQuery {

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { List, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import ItemIcon from 'src/components/ItemIcon';
 import { CheckCircle } from '@mui/icons-material';
 import useApiMutation from 'src/utils/hooks/useApiMutation';
@@ -9,6 +9,7 @@ import { scoRelationshipAdd, scoRelationshipDelete } from '@private/components/t
 import { ThreatActorIndividualDetails_ThreatActorIndividual$data } from './__generated__/ThreatActorIndividualDetails_ThreatActorIndividual.graphql';
 import { AddPersonasThreatActorIndividualLines_data$key } from './__generated__/AddPersonasThreatActorIndividualLines_data.graphql';
 import { deleteNodeFromEdge } from '../../../../utils/store';
+import { List, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 export const addPersonasThreatActorIndividualLinesQuery = graphql`
   query AddPersonasThreatActorIndividualLinesQuery(

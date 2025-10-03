@@ -1,14 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { ConnectionHandler, RecordProxy, RecordSourceSelectorProxy } from 'relay-runtime';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Box from '@mui/material/Box';
 import makeStyles from '@mui/styles/makeStyles';
 import { FormikConfig } from 'formik/dist/types';
 import { commitMutation } from '../../../../relay/environment';
@@ -24,7 +18,7 @@ import { PaginationOptions } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
-
+import { Alert, AlertTitle, Box, Button, FormControlLabel, Switch } from '@components';
 interface StreamCollectionCreationProps {
   paginationOptions: PaginationOptions
 }

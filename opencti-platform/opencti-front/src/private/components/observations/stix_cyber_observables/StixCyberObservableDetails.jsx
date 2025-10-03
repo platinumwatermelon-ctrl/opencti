@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import { dissoc, filter, includes, map, pipe, toPairs } from 'ramda';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid2';
 import { GetAppOutlined } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
 import { useTheme } from '@mui/styles';
 import StixCyberObservableNestedEntities from './StixCyberObservableNestedEntities';
 import { useFormatter } from '../../../../components/i18n';
@@ -21,6 +14,7 @@ import ItemCopy from '../../../../components/ItemCopy';
 import useVocabularyCategory from '../../../../utils/hooks/useVocabularyCategory';
 import StixCyberObservableMalwareAnalyses from './StixCyberObservableMalwareAnalyses';
 import useAttributes from '../../../../utils/hooks/useAttributes';
+import { Box, Button, Divider, Menu, MenuItem, Paper, Typography } from '@components';
 
 const reorderMediaContentObservablesAttributes = (data) => {
   const desiredOrder = ['content', 'title', 'media_category', 'url', 'publication_date'];

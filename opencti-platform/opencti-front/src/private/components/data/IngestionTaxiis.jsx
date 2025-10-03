@@ -1,5 +1,4 @@
 import React from 'react';
-import Alert from '@mui/material/Alert';
 import makeStyles from '@mui/styles/makeStyles';
 import { QueryRenderer } from '../../../relay/environment';
 import ListLines from '../../../components/list_lines/ListLines';
@@ -14,6 +13,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import Security from '../../../utils/Security';
 import { INGESTION_SETINGESTIONS } from '../../../utils/hooks/useGranted';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { Alert } from '@components';
 
 const LOCAL_STORAGE_KEY = 'ingestionTaxii';
 

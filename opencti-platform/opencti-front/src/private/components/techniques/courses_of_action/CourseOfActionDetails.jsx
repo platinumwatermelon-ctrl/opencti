@@ -3,19 +3,12 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { graphql, createFragmentContainer } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { PostOutline } from 'mdi-material-ui';
-import ListItemText from '@mui/material/ListItemText';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import CoursesOfActionAttackPatterns from './CourseOfActionAttackPatterns';
 import inject18n from '../../../../components/i18n';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Chip, Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {
@@ -42,7 +35,7 @@ class CourseOfActionDetailsComponent extends Component {
         </Typography>
         <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
           <Grid container={true} spacing={3}>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('Description')}
               </Typography>
@@ -70,7 +63,7 @@ class CourseOfActionDetailsComponent extends Component {
                 </List>
               </FieldOrEmpty>
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('External ID')}
               </Typography>

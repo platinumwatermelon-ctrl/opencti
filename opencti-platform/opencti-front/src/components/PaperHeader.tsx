@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react';
-import { Typography } from '@mui/material';
+import React, { ReactNode } from 'react';import { Typography } from '@components';
 
 export interface PaperHeaderProps {
   title?: ReactNode

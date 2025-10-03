@@ -1,12 +1,4 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Avatar from '@mui/material/Avatar';
-import Paper from '@mui/material/Paper';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import { useTheme } from '@mui/material/styles';
 import {
   StixCoreObjectHistoryLinesQuery,
@@ -15,6 +7,7 @@ import {
 import StixCoreObjectHistoryLines, { stixCoreObjectHistoryLinesQuery } from './StixCoreObjectHistoryLines';
 import { useFormatter } from '../../../../components/i18n';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
+import { Avatar, List, ListItem, ListItemIcon, ListItemText, Paper, Skeleton, Typography } from '@components';
 
 type StixCoreObjectLatestHistoryProps = {
   stixCoreObjectId: string;

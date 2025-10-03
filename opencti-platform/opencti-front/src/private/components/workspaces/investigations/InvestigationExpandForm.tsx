@@ -1,8 +1,4 @@
 import { Field, Form, Formik } from 'formik';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import React, { Suspense, useEffect, useState } from 'react';
 import { FormikHelpers } from 'formik/dist/types';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
@@ -17,6 +13,7 @@ import Loader, { LoaderVariant } from '../../../../components/Loader';
 import useAuth from '../../../../utils/hooks/useAuth';
 import { GraphLink, GraphNode } from '../../../../components/graph/graph.types';
 import { FieldOption } from '../../../../utils/field';
+import { Button, DialogActions, DialogContent, DialogTitle } from '@components';
 
 // The number of elements targeted by the given
 // entities ids, sorted by type of entity.

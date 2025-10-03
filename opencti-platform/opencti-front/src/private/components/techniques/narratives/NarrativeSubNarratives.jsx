@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose, filter } from 'ramda';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
 import { SpeakerNotesOutlined, LinkOff } from '@mui/icons-material';
 import { graphql, createFragmentContainer } from 'react-relay';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import AddSubNarrative from './AddSubNarrative';
 import { addSubNarrativesMutationRelationDelete } from './AddSubNarrativesLines';
 import { commitMutation } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 class NarrativeSubNarrativesComponent extends Component {
   removeSubNarrative(subNarrativeEdge) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'react-relay';
-import { Box } from '@mui/material';
 import {
   StixCyberObservableNestedEntitiesTablePaginationQuery,
 } from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservableNestedEntitiesTablePaginationQuery.graphql';
@@ -19,6 +18,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import { StixCyberObservableNestedEntitiesTable_node$data } from './__generated__/StixCyberObservableNestedEntitiesTable_node.graphql';
 import { useBuildEntityTypeBasedFilterContext } from '../../../../utils/filters/filtersUtils';
 import stopEvent from '../../../../utils/domEvent';
+import { Box } from '@components';
 
 const LOCAL_STORAGE_KEY = 'StixCyberObservableNestedEntitiesTable';
 

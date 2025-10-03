@@ -1,7 +1,6 @@
 import React, { CSSProperties, FunctionComponent, ReactNode } from 'react';
-import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-
+import { Typography } from '@components';
 interface CardLabelProps {
   children: ReactNode,
   action?: ReactNode,

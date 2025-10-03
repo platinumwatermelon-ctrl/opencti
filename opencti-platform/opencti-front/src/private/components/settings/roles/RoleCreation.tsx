@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { TextField } from 'formik-mui';
-import { Button, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import * as Yup from 'yup';
 import { ConnectionHandler, graphql } from 'react-relay';
 import { DataID, RecordProxy, RecordSourceSelectorProxy } from 'relay-runtime';
@@ -11,6 +11,7 @@ import { PaginationOptions } from '../../../../components/list_lines';
 import Drawer, { DrawerControlledDialProps } from '../../common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 const roleMutation = graphql`
   mutation RoleCreationMutation($input: RoleAddInput!) {

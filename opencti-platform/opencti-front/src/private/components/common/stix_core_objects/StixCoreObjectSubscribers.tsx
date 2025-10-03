@@ -1,8 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import Button from '@mui/material/Button';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
@@ -13,13 +9,13 @@ import {
 import { stixCoreObjectTriggersFragment } from '@private/components/common/stix_core_objects/stixCoreObjectTriggersUtils';
 import { useRefetchableFragment } from 'react-relay';
 import { stixCoreObjectTriggersUtils_triggers$key as FragmentKey } from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtils_triggers.graphql';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import useGranted, { SETTINGS_SETACCESSES } from '../../../../utils/hooks/useGranted';
 import ItemIcon from '../../../../components/ItemIcon';
 import Drawer from '../drawer/Drawer';
 import { computeLink } from '../../../../utils/Entity';
 import type { Theme } from '../../../../components/Theme';
+import { Button, List, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 // region types
 interface ContainerHeaderSharedProps {

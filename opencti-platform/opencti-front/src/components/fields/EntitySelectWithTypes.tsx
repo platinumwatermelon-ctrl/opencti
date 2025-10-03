@@ -1,13 +1,10 @@
-import { Autocomplete } from '@mui/material';
-import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
 import React, { FunctionComponent, useState } from 'react';
 import SearchScopeElement from '@private/components/common/lists/SearchScopeElement';
 import ItemIcon from '../ItemIcon';
 import { useFormatter } from '../i18n';
 import useSearchEntities, { EntityValue } from '../../utils/filters/useSearchEntities';
 import { getOptionsFromEntities } from '../../utils/filters/SearchEntitiesUtil';
-
+import { Autocomplete, TextField, Tooltip } from '@components';
 interface EntitySelectWithTypesProps {
   label?: string,
   handleChange: (value: EntityValue) => void,

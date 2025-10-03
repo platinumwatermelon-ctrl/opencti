@@ -4,11 +4,6 @@ import { v4 as uuid } from 'uuid';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import { WorkbenchFileCreatorStixCoreObjectQuery$data } from '@private/components/common/files/workbench/__generated__/WorkbenchFileCreatorStixCoreObjectQuery.graphql';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
@@ -22,6 +17,7 @@ import { WorkbenchFileCreatorMutation } from './__generated__/WorkbenchFileCreat
 import { fetchQuery } from '../../../../../relay/environment';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../../utils/field';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

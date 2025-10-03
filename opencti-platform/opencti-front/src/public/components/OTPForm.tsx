@@ -1,13 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
-import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../components/i18n';
 import type { Theme } from '../../components/Theme';
 import OtpInputField, { OTP_CODE_SIZE } from './OtpInputField';
 import useApiMutation from '../../utils/hooks/useApiMutation';
 import { APP_BASE_PATH } from '../../relay/environment';
-
+import { Alert } from '@components';
 interface OTPFormProps {
   variant?: 'login' | 'resetPassword',
   transactionId?: string,

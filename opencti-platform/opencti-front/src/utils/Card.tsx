@@ -1,8 +1,8 @@
-import Tooltip from '@mui/material/Tooltip';
 import React from 'react';
 import { DraftChip } from '@private/components/common/draft/DraftChip';
 import { DraftVersion } from '@private/components/common/cards/GenericAttackCard';
 import { APP_BASE_PATH } from '../relay/environment';
+import { Tooltip } from '@components';
 
 export interface toEdgesLocated {
   edges: ReadonlyArray<{ node: { to: { x_opencti_aliases?: ReadonlyArray<string | null> | null; name?: string } | null } }>;

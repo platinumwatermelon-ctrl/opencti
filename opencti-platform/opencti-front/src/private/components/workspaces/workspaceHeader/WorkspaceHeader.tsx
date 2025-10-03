@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import fileDownload from 'js-file-download';
 import { graphql, useFragment } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
 import handleExportJson from 'src/private/components/workspaces/workspaceExportHandler';
 import { fetchQuery } from 'src/relay/environment';
 import Security from 'src/utils/Security';
@@ -15,10 +13,10 @@ import WorkspaceWidgetConfig from 'src/private/components/workspaces/dashboards/
 import { WorkspaceHeaderToStixReportBundleQuery$data } from '@private/components/workspaces/workspaceHeader/__generated__/WorkspaceHeaderToStixReportBundleQuery.graphql';
 import WorkspaceKebabMenu from '@private/components/workspaces/WorkspaceKebabMenu';
 import WorkspaceHeaderTagManager from '@private/components/workspaces/workspaceHeader/WorkspaceHeaderTagManager';
-import Button from '@mui/material/Button';
 import WorkspaceEditionContainer from '@private/components/workspaces/WorkspaceEditionContainer';
 import { WorkspaceHeaderFragment$key } from '@private/components/workspaces/workspaceHeader/__generated__/WorkspaceHeaderFragment.graphql';
 import { useFormatter } from '../../../../components/i18n';
+import { Button, Tooltip, Typography } from '@components';
 
 const workspaceHeaderFragment = graphql`
   fragment WorkspaceHeaderFragment on Workspace {

@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose, toPairs } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import { ArrowDownward, ArrowUpward, FileDownloadOutlined, ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ToggleButton from '@mui/material/ToggleButton';
 import { UserContext } from '../../utils/hooks/useAuth';
 import Filters from '../../private/components/common/lists/Filters';
 import SearchInput from '../SearchInput';
@@ -20,6 +12,7 @@ import Security from '../../utils/Security';
 import { KNOWLEDGE_KNGETEXPORT } from '../../utils/hooks/useGranted';
 import FilterIconButton from '../FilterIconButton';
 import { export_max_size } from '../../utils/utils';
+import { FormControl, IconButton, InputLabel, MenuItem, Select, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 const styles = (theme) => ({
   parameters: {

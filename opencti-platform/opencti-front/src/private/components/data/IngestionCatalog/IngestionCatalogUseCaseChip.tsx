@@ -1,9 +1,7 @@
-import { Tooltip } from '@mui/material';
-import Chip from '@mui/material/Chip';
 import React from 'react';
 import { useTheme } from '@mui/styles';
 import type { Theme } from '../../../../components/Theme';
-
+import { Chip, Tooltip } from '@components';
 interface IngestionCatalogChipProps {
   label: string;
   variant?: 'outlined' | 'filled';

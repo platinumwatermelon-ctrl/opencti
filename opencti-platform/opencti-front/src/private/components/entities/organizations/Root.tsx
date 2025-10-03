@@ -2,9 +2,6 @@ import React, { useMemo, Suspense, useState } from 'react';
 import { Route, Routes, Link, Navigate, useLocation, useParams, useNavigate } from 'react-router-dom';
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { RootOrganizationQuery } from '@private/components/entities/organizations/__generated__/RootOrganizationQuery.graphql';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
@@ -29,6 +26,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import OrganizationEdition from './OrganizationEdition';
 import OrganizationDeletion from './OrganizationDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootOrganizationSubscription($id: ID!) {

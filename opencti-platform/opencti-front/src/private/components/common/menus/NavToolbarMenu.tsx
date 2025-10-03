@@ -1,18 +1,13 @@
 import React, { FunctionComponent, ReactElement, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Drawer from '@mui/material/Drawer';
 import MenuList from '@mui/material/MenuList';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { styled } from '@mui/material/styles';
-import Tooltip from '@mui/material/Tooltip';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import { Stack } from '@mui/material';
-import Box from '@mui/material/Box';
 import { useFormatter } from '../../../../components/i18n';
 import useAuth from '../../../../utils/hooks/useAuth';
 import { useSettingsMessagesBannerHeight } from '../../settings/settings_messages/SettingsMessagesBanner';
+import { Box, Drawer, ListItemIcon, ListItemText, MenuItem, Tooltip } from '@components';
 
 const StyledDrawer = styled(Drawer)(() => ({
   '& .MuiDrawer-paper': {

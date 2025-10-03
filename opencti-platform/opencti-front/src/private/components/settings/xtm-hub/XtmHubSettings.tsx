@@ -1,7 +1,5 @@
 import { graphql, useLazyLoadQuery } from 'react-relay';
 import React, { useEffect, useState, useContext } from 'react';
-import Paper from '@mui/material/Paper';
-import { List, ListItem, ListItemText, Typography } from '@mui/material';
 import { Theme } from '@mui/material/styles/createTheme';
 import XtmHubTab from '@private/components/settings/xtm-hub/XtmHubTab';
 import makeStyles from '@mui/styles/makeStyles';
@@ -13,6 +11,7 @@ import GradientButton from '../../../../components/GradientButton';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { UserContext } from '../../../../utils/hooks/useAuth';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
+import { List, ListItem, ListItemText, Paper, Typography } from '@components';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   paper: {

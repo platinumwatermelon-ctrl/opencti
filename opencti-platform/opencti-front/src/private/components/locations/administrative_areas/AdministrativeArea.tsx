@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import LocationDetails from '@private/components/locations/LocationDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
@@ -11,6 +10,7 @@ import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../commo
 import LocationMiniMap from '../../common/location/LocationMiniMap';
 import { AdministrativeArea_administrativeArea$key } from './__generated__/AdministrativeArea_administrativeArea.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
+import { Grid } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -91,10 +91,10 @@ const AdministrativeArea = ({
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={4}>
+        <Grid size={4}>
           <LocationDetails locationData={administrativeArea} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <LocationMiniMap
             center={
               administrativeArea.latitude && administrativeArea.longitude
@@ -105,28 +105,28 @@ const AdministrativeArea = ({
             zoom={5}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <StixDomainObjectOverview
             stixDomainObject={administrativeArea}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <SimpleStixObjectOrStixRelationshipStixCoreRelationships
             stixObjectOrStixRelationshipId={administrativeArea.id}
             stixObjectOrStixRelationshipLink={`/dashboard/locations/administrative_areas/${administrativeArea.id}/knowledge`}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectOrStixRelationshipLastContainers
             stixCoreObjectOrStixRelationshipId={administrativeArea.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences
             stixCoreObjectId={administrativeArea.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory
             stixCoreObjectId={administrativeArea.id}
           />

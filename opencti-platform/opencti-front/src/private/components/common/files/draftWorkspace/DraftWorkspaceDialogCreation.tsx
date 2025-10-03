@@ -1,10 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { graphql } from 'react-relay';
 import * as Yup from 'yup';
 import { FormikConfig } from 'formik/dist/types';
@@ -16,6 +11,7 @@ import useApiMutation from '../../../../../utils/hooks/useApiMutation';
 import { handleErrorInForm } from '../../../../../relay/environment';
 import { insertNode } from '../../../../../utils/store';
 import { DraftWorkspaceDialogCreationMutation, DraftWorkspaceDialogCreationMutation$variables } from './__generated__/DraftWorkspaceDialogCreationMutation.graphql';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 const draftWorkspaceDialogCreationMutation = graphql`
   mutation DraftWorkspaceDialogCreationMutation($input: DraftWorkspaceAddInput!) {

@@ -1,8 +1,7 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
-import MUIAutocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import { createFilterOptions } from '@mui/material/Autocomplete';
+import { Autocomplete as MUIAutocomplete, IconButton, TextField } from '@components';
 import { fieldToTextField } from 'formik-mui';
 import { useField } from 'formik';
 import { isNil } from 'ramda';

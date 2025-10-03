@@ -1,23 +1,9 @@
 import React, { useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import { AddOutlined, CancelOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
-import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
 import * as R from 'ramda';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
-import { ListItemButton } from '@mui/material';
 import AuthorizedMembersField from '../../common/form/AuthorizedMembersField';
 import CaseTemplateField from '../../common/form/CaseTemplateField';
 import KillChainPhasesField from '../../common/form/KillChainPhasesField';
@@ -54,6 +40,7 @@ import SelectField from '../../../../components/fields/SelectField';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import TimePickerField from '../../../../components/TimePickerField';
 import { parse } from '../../../../utils/Time';
+import { Alert, Box, Button, FormControl, Grid, IconButton, InputLabel, List, ListItemButton, ListItemIcon, ListItemText, MenuItem, Select, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -787,7 +774,7 @@ const PlaybookAddComponentsContent = ({
                                   <CancelOutlined fontSize="small" />
                                 </IconButton>
                                 <Grid container={true} spacing={3}>
-                                  <Grid item xs={3}>
+                                  <Grid size={3}>
                                     <FormControl className={classes.formControl}>
                                       <InputLabel>{t_i18n('Action type')}</InputLabel>
                                       <Select
@@ -803,13 +790,13 @@ const PlaybookAddComponentsContent = ({
                                       </Select>
                                     </FormControl>
                                   </Grid>
-                                  <Grid item xs={3}>
+                                  <Grid size={3}>
                                     <FormControl className={classes.formControl}>
                                       <InputLabel>{t_i18n('Field')}</InputLabel>
                                       {renderFieldOptions(i, values, setValues)}
                                     </FormControl>
                                   </Grid>
-                                  <Grid item xs={6}>
+                                  <Grid size={6}>
                                     {renderValuesOptions(i, setFieldValue)}
                                   </Grid>
                                 </Grid>

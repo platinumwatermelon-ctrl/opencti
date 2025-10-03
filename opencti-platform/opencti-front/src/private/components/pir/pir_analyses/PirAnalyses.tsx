@@ -15,7 +15,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import { graphql, useFragment } from 'react-relay';
 import React, { useState } from 'react';
-import { Chip, Tooltip, Alert } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { PirAnalysesContainersListQuery, PirAnalysesContainersListQuery$variables } from './__generated__/PirAnalysesContainersListQuery.graphql';
 import { PirAnalyses_ContainersFragment$data } from './__generated__/PirAnalyses_ContainersFragment.graphql';
@@ -30,6 +29,7 @@ import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import { itemColor } from '../../../../utils/Colors';
 import { FilterGroup } from '../../../../utils/filters/filtersHelpers-types';
+import { Alert, Chip, Tooltip } from '@components';
 
 const pirAnalysesContainerFragment = graphql`
   fragment PirAnalyses_ContainerFragment on Container

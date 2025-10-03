@@ -5,7 +5,6 @@ import Axios from 'axios';
 import { createRefetchContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
-import TextField from '@mui/material/TextField';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -26,6 +25,7 @@ import withRouter from '../../../../utils/compat_router/withRouter';
 import CKEditor from '../../../../components/CKEditor';
 import { htmlToPdf } from '../../../../utils/htmlToPdf/htmlToPdf';
 import HtmlDisplay from '../../../../components/HtmlDisplay';
+import { TextField } from '@components';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `${APP_BASE_PATH}/static/ext/pdf.worker.mjs`;
 

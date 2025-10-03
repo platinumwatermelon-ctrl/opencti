@@ -1,15 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
 import { ExpandLessOutlined, ExpandMoreOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Button from '@mui/material/Button';
-import { ListItemButton } from '@mui/material';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../Loader';
 import { useFormatter } from '../../i18n';
@@ -25,6 +18,7 @@ import ItemCreators from '../../ItemCreators';
 import { RelationshipDetailsQuery } from './__generated__/RelationshipDetailsQuery.graphql';
 import ItemEntityType from '../../ItemEntityType';
 import { GraphLink } from '../graph.types';
+import { Button, List, ListItemButton, ListItemIcon, ListItemText, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

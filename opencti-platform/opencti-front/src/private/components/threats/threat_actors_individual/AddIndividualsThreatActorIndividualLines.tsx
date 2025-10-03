@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { List, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 import ItemIcon from 'src/components/ItemIcon';
 import useApiMutation from 'src/utils/hooks/useApiMutation';
@@ -8,6 +8,7 @@ import { defaultCommitMutation } from 'src/relay/environment';
 import { ThreatActorIndividualDetails_ThreatActorIndividual$data } from './__generated__/ThreatActorIndividualDetails_ThreatActorIndividual.graphql';
 import { AddIndividualsThreatActorIndividualLines_data$key } from './__generated__/AddIndividualsThreatActorIndividualLines_data.graphql';
 import { deleteNodeFromEdge } from '../../../../utils/store';
+import { List, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 export const scoRelationshipAdd = graphql`
   mutation AddIndividualsThreatActorIndividualLinesRelationAddMutation(

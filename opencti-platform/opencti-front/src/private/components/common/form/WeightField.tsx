@@ -1,13 +1,11 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { Field, FieldArray } from 'formik';
-import { IconButton } from '@mui/material';
 import { AddOutlined, DeleteOutlined } from '@mui/icons-material';
 import { graphql } from 'react-relay';
 import { MeasureInput } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualCreationMutation.graphql';
 import {
   ThreatActorIndividualEditionBiographics_ThreatActorIndividual$data,
 } from '@private/components/threats/threat_actors_individual/__generated__/ThreatActorIndividualEditionBiographics_ThreatActorIndividual.graphql';
-import Button from '@mui/material/Button';
 import { useFormatter } from '../../../../components/i18n';
 import { SubscriptionFocus } from '../../../../components/Subscription';
 import TextField from '../../../../components/TextField';
@@ -16,6 +14,7 @@ import useUserMetric from '../../../../utils/hooks/useUserMetric';
 import DateTimePickerField from '../../../../components/DateTimePickerField';
 import { GenericContext } from '../model/GenericContextModel';
 import { isNotEmptyField } from '../../../../utils/utils';
+import { Button, IconButton } from '@components';
 
 export const individualWeightMutation = graphql`
   mutation WeightFieldIndividualMutation($id: ID!, $input: [EditInput]!) {

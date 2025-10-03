@@ -13,9 +13,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
@@ -29,6 +26,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import { PirOverviewHistoryPirFragment$key } from './__generated__/PirOverviewHistoryPirFragment.graphql';
 import { PirOverviewHistoryFragment$key } from './__generated__/PirOverviewHistoryFragment.graphql';
 import Paper from '../../../../components/Paper';
+import { Box, Tooltip, Typography } from '@components';
 
 const pirFragment = graphql`
   fragment PirOverviewHistoryPirFragment on Pir {

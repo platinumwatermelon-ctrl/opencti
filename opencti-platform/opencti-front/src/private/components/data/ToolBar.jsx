@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Drawer from '@mui/material/Drawer';
 import Slide from '@mui/material/Slide';
 import DataTableToolBar from './DataTableToolBar';
 import { UserContext } from '../../../utils/hooks/useAuth';
+import { Drawer } from '@components';
 
 const styles = () => ({
   bottomNav: {

@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { createFragmentContainer, graphql, useLazyLoadQuery } from 'react-relay';
-import Typography from '@mui/material/Typography';
 import { Link, useNavigate } from 'react-router-dom';
-import Tooltip from '@mui/material/Tooltip';
 import { ChartTimeline, VectorLink, VectorPolygon } from 'mdi-material-ui';
 import { ViewColumnOutlined } from '@mui/icons-material';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useTheme } from '@mui/styles';
-import { Box } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import StixCoreObjectMenuItemUnderEE from '../stix_core_objects/StixCoreObjectMenuItemUnderEE';
 import StixCoreObjectSharingList from '../stix_core_objects/StixCoreObjectSharingList';
 import StixCoreObjectBackgroundTasks from '../stix_core_objects/StixCoreObjectActiveBackgroundTasks';
@@ -41,6 +35,7 @@ import StixCoreObjectEnrichment from '../stix_core_objects/StixCoreObjectEnrichm
 import { resolveLink } from '../../../../utils/Entity';
 import PopoverMenu from '../../../../components/PopoverMenu';
 import useAuth from '../../../../utils/hooks/useAuth';
+import { Box, MenuItem, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@components';
 
 export const containerHeaderObjectsQuery = graphql`
   query ContainerHeaderObjectsQuery($id: String!) {

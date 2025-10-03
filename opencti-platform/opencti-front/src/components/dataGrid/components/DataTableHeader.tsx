@@ -1,13 +1,12 @@
 import React, { FunctionComponent, MouseEvent, RefObject, useRef } from 'react';
 import { ArrowDropDown, ArrowDropUp, MoreVert } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
 import SimpleDraggrable from 'react-draggable';
 import makeStyles from '@mui/styles/makeStyles';
 import { createStyles } from '@mui/styles';
 import { Theme as MuiTheme } from '@mui/material/styles/createTheme';
-import Tooltip from '@mui/material/Tooltip';
 import { DataTableColumn, DataTableHeaderProps, DataTableVariant } from '../dataTableTypes';
 import { useDataTableContext } from './DataTableContext';
+import { IconButton, Tooltip } from '@components';
 
 export const SELECT_COLUMN_SIZE = 42;
 export const ICON_COLUMN_SIZE = 56;

@@ -1,10 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { NarrativeWithSubnarrativeLineDummy } from '@private/components/techniques/narratives/NarrativeWithSubnarrativeLine';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import FiligranIcon from '@private/components/common/FiligranIcon';
 import { SublistViewIcon } from 'filigran-icon';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { NarrativesLines_data$data } from '@private/components/techniques/narratives/__generated__/NarrativesLines_data.graphql';
 import { ViewListOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
@@ -27,6 +24,7 @@ import DataTable from '../../../components/dataGrid/DataTable';
 import { UsePreloadedPaginationFragment } from '../../../utils/hooks/usePreloadedPaginationFragment';
 import type { Theme } from '../../../components/Theme';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 const LOCAL_STORAGE_KEY = 'narratives';
 

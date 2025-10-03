@@ -1,15 +1,11 @@
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import React from 'react';
 import { FormikHelpers } from 'formik/dist/types';
 import AuthorizedMembersField, { AuthorizedMembersFieldValue } from '@private/components/common/form/AuthorizedMembersField';
 import Transition from '../../../../components/Transition';
 import { useFormatter } from '../../../../components/i18n';
 import { Creator } from '../../../../utils/authorizedMembers';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 export interface FormAuthorizedMembersInputs {
   authorizedMembers: AuthorizedMembersFieldValue;

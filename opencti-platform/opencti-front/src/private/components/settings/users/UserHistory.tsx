@@ -1,10 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import Typography from '@mui/material/Typography';
 import { useQueryLoader } from 'react-relay';
 import { LogsOrdering, OrderingMode, UserHistoryLinesQuery, UserHistoryLinesQuery$variables } from '@private/components/settings/users/__generated__/UserHistoryLinesQuery.graphql';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { StorageOutlined } from '@mui/icons-material';
 import { VectorRadius } from 'mdi-material-ui';
 import { Link } from 'react-router-dom';
@@ -14,6 +11,7 @@ import Loader, { LoaderVariant } from '../../../../components/Loader';
 import SearchInput from '../../../../components/SearchInput';
 import UserHistoryLines, { userHistoryLinesQuery } from './UserHistoryLines';
 import useGranted, { KNOWLEDGE, SETTINGS_SECURITYACTIVITY } from '../../../../utils/hooks/useGranted';
+import { IconButton, Tooltip, Typography } from '@components';
 
 const createdByUserRedirectButton = {
   float: 'left',

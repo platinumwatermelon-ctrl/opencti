@@ -15,11 +15,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import { Field, useFormikContext } from 'formik';
 import React from 'react';
-import MenuItem from '@mui/material/MenuItem';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { PirCreationFormData } from '@private/components/pir/pir_form/pir-form-utils';
-import Alert from '@mui/material/Alert';
-import { AlertTitle } from '@mui/material';
 import MarkdownField from '../../../../components/fields/MarkdownField';
 import { useFormatter } from '../../../../components/i18n';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
@@ -27,6 +24,7 @@ import TextField from '../../../../components/TextField';
 import SelectField from '../../../../components/fields/SelectField';
 import { PirCreationFormGeneralSettingsRedisStreamQuery } from './__generated__/PirCreationFormGeneralSettingsRedisStreamQuery.graphql';
 import { daysAgo, minutesBetweenDates } from '../../../../utils/Time';
+import { Alert, AlertTitle, MenuItem } from '@components';
 
 export const redisStreamQuery = graphql`
   query PirCreationFormGeneralSettingsRedisStreamQuery {

@@ -1,6 +1,4 @@
-import IconButton from '@mui/material/IconButton';
 import { DotsHorizontalCircleOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import { CloseOutlined, Delete, AddOutlined } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { useFormatter } from 'src/components/i18n';
@@ -10,21 +8,12 @@ import { graphql } from 'react-relay';
 import { SelectChangeEvent } from '@mui/material/Select';
 import Slide from '@mui/material/Slide';
 import { Field, Form, Formik } from 'formik';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
 import Transition from 'src/components/Transition';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
 import { EXPLORE_EXUPDATE, INVESTIGATION_INUPDATE } from 'src/utils/hooks/useGranted';
 import Security from 'src/utils/Security';
 import useApiMutation from 'src/utils/hooks/useApiMutation';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemText, TextField, Tooltip } from '@components';
 
 const workspaceMutation = graphql`
   mutation WorkspaceHeaderTagManagerFieldMutation($id: ID!, $input: [EditInput!]!) {

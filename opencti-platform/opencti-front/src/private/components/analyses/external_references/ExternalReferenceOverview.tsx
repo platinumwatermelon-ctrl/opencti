@@ -1,14 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import { useFormatter } from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { truncate } from '../../../../utils/String';
 import { ExternalReferenceOverview_externalReference$data } from './__generated__/ExternalReferenceOverview_externalReference.graphql';
 import type { Theme } from '../../../../components/Theme';
+import { Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -37,7 +35,7 @@ ExternalReferenceOverviewComponentProps
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Source name')}
             </Typography>
@@ -54,7 +52,7 @@ ExternalReferenceOverviewComponentProps
               limit={400}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Original creation date')}
             </Typography>

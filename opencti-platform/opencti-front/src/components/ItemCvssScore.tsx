@@ -1,7 +1,7 @@
-import Chip from '@mui/material/Chip';
 import React, { CSSProperties } from 'react';
 import { useTheme } from '@mui/styles';
 import type { Theme } from './Theme';
+import { Chip } from '@components';
 
 const inlineStyles = {
   whiteDark: {

@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import DialogContentText from '@mui/material/DialogContentText';
 import { Field, FormikProps } from 'formik';
 import DefaultValueField from '@private/components/common/form/DefaultValueField';
 import { JsonMapperFormData } from '@private/components/data/jsonMapper/JsonMapper';
@@ -7,7 +6,7 @@ import { SchemaAttribute } from '@private/components/data/jsonMapper/representat
 import JsonMapperDefaultMarking from '@private/components/data/jsonMapper/representations/attributes/JsonMapperDefaultMarking';
 import JsonMapperRepresentationAttributeOption from './JsonMapperRepresentationAttributeOption';
 import { useFormatter } from '../../../../../../components/i18n';
-
+import { DialogContentText } from '@components';
 interface JsonMapperRepresentationAttributeOptionsProps {
   schemaAttribute: SchemaAttribute;
   baseAttributeName: string;

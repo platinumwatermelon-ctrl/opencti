@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import * as R from 'ramda';
 import { graphql, useFragment } from 'react-relay';
 import RGL, { WidthProvider } from 'react-grid-layout';
-import Paper from '@mui/material/Paper';
 import { v4 as uuid } from 'uuid';
 import { useTheme } from '@mui/material/styles';
 import DashboardRawViz from './DashboardRawViz';
@@ -19,6 +18,7 @@ import { fromB64, toB64 } from '../../../../utils/String';
 import { ErrorBoundary } from '../../Error';
 import { deserializeDashboardManifestForFrontend, serializeDashboardManifestForBackend } from '../../../../utils/filters/filtersUtils';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Paper } from '@components';
 
 const dashboardLayoutMutation = graphql`
   mutation DashboardLayoutMutation($id: ID!, $input: [EditInput!]!) {

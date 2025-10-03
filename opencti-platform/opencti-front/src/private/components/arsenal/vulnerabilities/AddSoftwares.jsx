@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import inject18n from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';
@@ -10,6 +9,7 @@ import { QueryRenderer } from '../../../../relay/environment';
 import AddSoftwaresLines, { addSoftwaresLinesQuery } from './AddSoftwaresLines';
 import StixCyberObservableCreation from '../../observations/stix_cyber_observables/StixCyberObservableCreation';
 import Drawer from '../../common/drawer/Drawer';
+import { IconButton } from '@components';
 
 const styles = (theme) => ({
   createButton: {

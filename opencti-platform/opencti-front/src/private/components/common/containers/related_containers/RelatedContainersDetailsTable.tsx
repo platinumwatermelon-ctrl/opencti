@@ -1,5 +1,4 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
 import { graphql } from 'react-relay';
 import {
   RelatedContainersDetailsTableLinesPaginationQuery,
@@ -15,6 +14,7 @@ import { useBuildEntityTypeBasedFilterContext } from '../../../../../utils/filte
 import { FilterGroup } from '../../../../../utils/filters/filtersHelpers-types';
 import { resolveLink } from '../../../../../utils/Entity';
 import { DataTableVariant } from '../../../../../components/dataGrid/dataTableTypes';
+import { Typography } from '@components';
 
 const LOCAL_STORAGE_KEY = 'RelatedContainersDetailsTable';
 

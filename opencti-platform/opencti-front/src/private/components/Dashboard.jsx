@@ -1,9 +1,4 @@
 import { DescriptionOutlined, DiamondOutlined } from '@mui/icons-material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import { Biohazard, ShieldSearch } from 'mdi-material-ui';
 import { assoc, head, last, map, pluck } from 'ramda';
@@ -28,6 +23,7 @@ import StixRelationshipsHorizontalBars from './common/stix_relationships/StixRel
 import DashboardView from './workspaces/dashboards/Dashboard';
 import useQueryLoading from '../../utils/hooks/useQueryLoading';
 import useConnectedDocumentModifier from '../../utils/hooks/useConnectedDocumentModifier';
+import { Card, CardContent, Grid, Paper, Typography } from '@components';
 
 // region styles
 // Deprecated - https://mui.com/system/styles/basics/
@@ -182,7 +178,7 @@ const DefaultDashboard = ({ timeField }) => {
       )}
     >
       <Grid container={true} spacing={3}>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Card
             classes={{ root: classes.card }}
             style={{ height: 110 }}
@@ -213,7 +209,7 @@ const DefaultDashboard = ({ timeField }) => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Card
             classes={{ root: classes.card }}
             style={{ height: 110 }}
@@ -244,7 +240,7 @@ const DefaultDashboard = ({ timeField }) => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Card
             classes={{ root: classes.card }}
             style={{ height: 110 }}
@@ -275,7 +271,7 @@ const DefaultDashboard = ({ timeField }) => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Card
             classes={{ root: classes.card }}
             style={{ height: 110 }}
@@ -306,7 +302,7 @@ const DefaultDashboard = ({ timeField }) => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <StixRelationshipsHorizontalBars
             title={t_i18n('Most active threats (Last 3 months)')}
             height={300}
@@ -333,7 +329,7 @@ const DefaultDashboard = ({ timeField }) => {
             }]}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <StixRelationshipsHorizontalBars
             title={t_i18n('Most targeted victims (Last 3 months)')}
             height={300}
@@ -360,7 +356,7 @@ const DefaultDashboard = ({ timeField }) => {
             }]}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixRelationshipsMultiAreaChart
             title={t_i18n('Relationships created')}
             height={300}
@@ -386,7 +382,7 @@ const DefaultDashboard = ({ timeField }) => {
             }]}
           />
         </Grid>
-        <Grid item xs={3} style={{ marginTop: 25 }}>
+        <Grid size={3} style={{ marginTop: 25 }}>
           <StixRelationshipsPolarArea
             title={t_i18n('Most active malware (Last 3 months)')}
             height={400}
@@ -412,7 +408,7 @@ const DefaultDashboard = ({ timeField }) => {
             }]}
           />
         </Grid>
-        <Grid item xs={3} style={{ marginTop: 25 }}>
+        <Grid size={3} style={{ marginTop: 25 }}>
           <StixRelationshipsDistributionList
             overflow="hidden"
             title={t_i18n('Most active vulnerabilities (Last 3 months)')}
@@ -440,7 +436,7 @@ const DefaultDashboard = ({ timeField }) => {
             }]}
           />
         </Grid>
-        <Grid item xs={6} style={{ marginTop: 25 }}>
+        <Grid size={6} style={{ marginTop: 25 }}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Targeted countries (Last 3 months)')}
           </Typography>
@@ -461,7 +457,7 @@ const DefaultDashboard = ({ timeField }) => {
             </Suspense>
           </Paper>
         </Grid>
-        <Grid item xs={8}>
+        <Grid size={8}>
           <StixCoreObjectsList
             title={t_i18n('Latest reports')}
             height={410}
@@ -482,7 +478,7 @@ const DefaultDashboard = ({ timeField }) => {
             }]}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <StixRelationshipsHorizontalBars
             title={t_i18n('Most active labels (Last 3 months)')}
             height={410}

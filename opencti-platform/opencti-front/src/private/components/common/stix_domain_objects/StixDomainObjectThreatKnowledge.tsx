@@ -1,21 +1,9 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
 import CircularProgress from '@mui/material/CircularProgress';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import { HexagonMultipleOutline, ShieldSearch } from 'mdi-material-ui';
 import { DescriptionOutlined, DeviceHubOutlined, SettingsOutlined } from '@mui/icons-material';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import IconButton from '@mui/material/IconButton';
-import Popover from '@mui/material/Popover';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 import makeStyles from '@mui/styles/makeStyles';
 import {
   StixDomainObjectThreatKnowledgeContainersNumberQuery$data,
@@ -53,6 +41,7 @@ import {
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { FilterGroup } from '../../../../utils/filters/filtersHelpers-types';
 import StixCoreObjectReportsHorizontalBar from '../../analyses/reports/StixCoreObjectReportsHorizontalBar';
+import { Card, CardContent, FormControl, FormControlLabel, Grid, IconButton, InputLabel, MenuItem, Popover, Switch, Tab, Tabs } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -275,7 +264,7 @@ StixDomainObjectThreatKnowledgeProps
   return (
     <>
       <Grid container={true} spacing={3}>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <Card
             variant="outlined"
             classes={{ root: classes.card }}
@@ -318,7 +307,7 @@ StixDomainObjectThreatKnowledgeProps
             />
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <Card
             variant="outlined"
             classes={{ root: classes.card }}
@@ -377,7 +366,7 @@ StixDomainObjectThreatKnowledgeProps
             />
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <Card
             variant="outlined"
             classes={{ root: classes.card }}

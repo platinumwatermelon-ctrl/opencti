@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/material/styles';
-import LinearProgress from '@mui/material/LinearProgress';
-import Typography from '@mui/material/Typography';
 import type { Theme } from '../../Theme';
 import { useFormatter } from '../../i18n';
 import { useGraphContext } from '../GraphContext';
+import { Alert, LinearProgress, Typography } from '@components';
 
 const MIN_DISPLAY_MS = 1500;
 

@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
 import { QueryRenderer } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
@@ -16,6 +10,7 @@ import StixCoreRelationshipCreationFromEntity from '../../common/stix_core_relat
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import SearchInput from '../../../../components/SearchInput';
+import { List, ListItem, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {

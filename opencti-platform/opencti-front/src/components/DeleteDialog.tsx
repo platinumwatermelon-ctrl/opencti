@@ -1,15 +1,8 @@
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React, { UIEvent } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import Alert from '@mui/material/Alert';
-import { AlertTitle } from '@mui/material';
 import Transition from './Transition';
 import { useFormatter } from './i18n';
 import { Deletion } from '../utils/hooks/useDeletion';
+import { Alert, AlertTitle, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 
 type DeleteDialogProps = {
   deletion: Deletion

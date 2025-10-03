@@ -1,16 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql } from 'react-relay';
-import ToggleButton from '@mui/material/ToggleButton';
-import IconButton from '@mui/material/IconButton';
 import { Formik } from 'formik';
 import { PopoverProps } from '@mui/material/Popover';
 import { OpinionEditionContainerQuery$data } from '@private/components/analyses/opinions/__generated__/OpinionEditionContainerQuery.graphql';
@@ -22,6 +13,7 @@ import { KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted'
 import OpinionEditionContainer from './OpinionEditionContainer';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import Transition from '../../../../components/Transition';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, Menu, MenuItem, ToggleButton } from '@components';
 
 const OpinionPopoverDeletionMutation = graphql`
   mutation OpinionPopoverDeletionMutation($id: ID!) {

@@ -1,7 +1,6 @@
 import { graphql } from 'relay-runtime';
 import React from 'react';
 import { useFragment } from 'react-relay';
-import { Grid } from '@mui/material';
 import { Indicator_indicator$key } from './__generated__/Indicator_indicator.graphql';
 import IndicatorDetails from './IndicatorDetails';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
@@ -10,6 +9,7 @@ import StixCoreObjectOrStixRelationshipLastContainers from '../../common/contain
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
+import { Grid } from '@components';
 
 const indicatorFragment = graphql`
   fragment Indicator_indicator on Indicator {
@@ -79,33 +79,33 @@ const Indicator: React.FC<IndicatorProps> = ({ indicatorData }) => {
         spacing={3}
         style={{ marginBottom: 20 }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <IndicatorDetails indicator={indicator} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixDomainObjectOverview
             stixDomainObject={indicator}
             withPattern={true}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <SimpleStixObjectOrStixRelationshipStixCoreRelationships
             stixObjectOrStixRelationshipId={indicator.id}
             stixObjectOrStixRelationshipLink={`/dashboard/observations/indicators/${indicator.id}/knowledge`}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectOrStixRelationshipLastContainers
             stixCoreObjectOrStixRelationshipId={indicator.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences stixCoreObjectId={indicator.id} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory stixCoreObjectId={indicator.id} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <StixCoreObjectOrStixCoreRelationshipNotes
             stixCoreObjectOrStixCoreRelationshipId={indicator.id}
             defaultMarkings={indicator.objectMarking ?? []}

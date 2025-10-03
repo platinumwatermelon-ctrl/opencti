@@ -1,8 +1,4 @@
 import React, { UIEvent, useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { useNavigate } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
@@ -24,6 +20,7 @@ import useDeletion from '../../../utils/hooks/useDeletion';
 import WorkspacePopoverDeletionMutation from './WorkspacePopoverDeletionMutation';
 import { WorkspacesLinesPaginationQuery$variables } from './__generated__/WorkspacesLinesPaginationQuery.graphql';
 import { WorkspacePopoverFragment$key } from './__generated__/WorkspacePopoverFragment.graphql';
+import { Box, IconButton, Menu, MenuItem } from '@components';
 
 const workspacePopoverFragment = graphql`
   fragment WorkspacePopoverFragment on Workspace {

@@ -1,11 +1,10 @@
 import React, { FunctionComponent, Suspense, useEffect, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import { StixCoreObjectFormsFormsQuery, StixCoreObjectFormsFormsQuery$variables } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectFormsFormsQuery.graphql';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { AssignmentOutlined } from '@mui/icons-material';
 import StixCoreObjectFormSelector from '@private/components/common/stix_core_objects/StixCoreObjectFormSelector';
 import { useFormatter } from '../../../../components/i18n';
+import { IconButton, Tooltip } from '@components';
 
 // region types
 interface StixCoreObjectFormsProps {

@@ -1,20 +1,15 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { graphql, useSubscription } from 'react-relay';
-import Alert from '@mui/material/Alert';
 import parse from 'html-react-parser';
-import AlertTitle from '@mui/material/AlertTitle';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { AutoModeOutlined, ContentCopyOutlined, HistoryOutlined } from '@mui/icons-material';
 import { AISummaryActivityStixCoreObjectAskAiActivityQuery$data } from '@private/components/common/ai/__generated__/AISummaryActivityStixCoreObjectAskAiActivityQuery.graphql';
-import Tooltip from '@mui/material/Tooltip';
 import { AISummaryActivitySubscription, AISummaryActivitySubscription$data } from './__generated__/AISummaryActivitySubscription.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { getDefaultAiLanguage } from '../../../../utils/ai/Common';
 import { fetchQuery } from '../../../../relay/environment';
 import { copyToClipboard, cleanHtmlTags } from '../../../../utils/utils';
+import { Alert, AlertTitle, Divider, IconButton, Tooltip, Typography } from '@components';
 
 const subscription = graphql`
   subscription AISummaryActivitySubscription($id: ID!) {

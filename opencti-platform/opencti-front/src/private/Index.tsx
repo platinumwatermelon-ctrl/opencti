@@ -1,6 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useTheme } from '@mui/styles';
 import { boundaryWrapper, NoMatch } from '@private/components/Error';
@@ -17,6 +16,7 @@ import type { Theme } from '../components/Theme';
 import { RootSettings$data } from './__generated__/RootSettings.graphql';
 import Loader from '../components/Loader';
 import useDraftContext from '../utils/hooks/useDraftContext';
+import { Box } from '@components';
 
 const Dashboard = lazy(() => import('./components/Dashboard'));
 const StixObjectOrStixRelationship = lazy(() => import('./components/StixObjectOrStixRelationship'));

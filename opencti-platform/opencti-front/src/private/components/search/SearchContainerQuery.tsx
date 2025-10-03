@@ -1,11 +1,7 @@
 import React, { FunctionComponent, ReactNode, Suspense, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import Badge from '@mui/material/Badge';
 import { useTheme } from '@mui/styles';
 import ExportContextProvider from '../../../utils/ExportContextProvider';
 import { useFormatter } from '../../../components/i18n';
@@ -15,6 +11,7 @@ import { SearchContainerQueryFilesCountQuery } from './__generated__/SearchConta
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import type { Theme } from '../../../components/Theme';
 import Loader from '../../../components/Loader';
+import { Badge, Box, Tab, Tabs } from '@components';
 
 const searchContainerQueryFilesCountQuery = graphql`
   query SearchContainerQueryFilesCountQuery($search: String) {

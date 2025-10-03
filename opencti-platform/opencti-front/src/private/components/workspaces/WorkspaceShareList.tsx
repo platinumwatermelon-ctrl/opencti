@@ -1,11 +1,6 @@
 import React from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { WorkspaceShareListQuery } from '@private/components/workspaces/__generated__/WorkspaceShareListQuery.graphql';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { ContentCopy, Delete, DoNotDisturbAlt, Done, ReportGmailerrorred } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../../components/i18n';
@@ -14,6 +9,7 @@ import ItemMarkings from '../../../components/ItemMarkings';
 import ItemBoolean from '../../../components/ItemBoolean';
 import useAuth from '../../../utils/hooks/useAuth';
 import { copyPublicLinkUrl } from '../../../utils/dashboard';
+import { Paper, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@components';
 
 export const workspaceShareListQuery = graphql`
   query WorkspaceShareListQuery($filters: FilterGroup) {

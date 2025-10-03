@@ -1,10 +1,7 @@
-import MuiTextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import React from 'react';
-import Alert from '@mui/material/Alert';
 import { FieldProps } from 'formik';
-
+import { Alert, TextField as MuiTextField, Tooltip } from '@components';
 interface CsvMapperRepresentationAttributeOptionProps extends FieldProps<string> {
   placeholder: string
   info?: string

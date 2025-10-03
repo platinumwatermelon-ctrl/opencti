@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
-import Skeleton from '@mui/material/Skeleton';
 import inject18n from '../../../../components/i18n';
 import { QueryRenderer } from '../../../../relay/environment';
 import StixCoreRelationshipExternalReferencesLines, { stixCoreRelationshipExternalReferencesLinesQuery } from './StixCoreRelationshipExternalReferencesLines';
+import { Avatar, List, ListItem, ListItemIcon, ListItemText, Paper, Skeleton, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {

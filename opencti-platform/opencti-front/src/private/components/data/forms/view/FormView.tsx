@@ -1,19 +1,11 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchQuery, graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Alert from '@mui/material/Alert';
 import CircularProgress from '@mui/material/CircularProgress';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, FieldArray, Form, Formik, FormikHelpers } from 'formik';
-import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Divider from '@mui/material/Divider';
 import TextField from '../../../../../components/TextField';
 import { useFormatter } from '../../../../../components/i18n';
 import { FormViewQuery } from './__generated__/FormViewQuery.graphql';
@@ -28,6 +20,7 @@ import { convertFormSchemaToYupSchema, formatFormDataForSubmission } from './For
 import { environment } from '../../../../../relay/environment';
 import StixCoreObjectsField from '../../../common/form/StixCoreObjectsField';
 import useGranted, { INGESTION, MODULES } from '../../../../../utils/hooks/useGranted';
+import { Alert, Button, Checkbox, Divider, FormControlLabel, IconButton, Paper, Typography } from '@components';
 
 // Styles
 const useStyles = makeStyles<Theme>(() => ({

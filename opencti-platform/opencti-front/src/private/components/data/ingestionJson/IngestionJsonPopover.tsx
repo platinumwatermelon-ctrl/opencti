@@ -1,15 +1,7 @@
 import { graphql, useQueryLoader } from 'react-relay';
 import React, { FunctionComponent, useState } from 'react';
 import { PopoverProps } from '@mui/material/Popover';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import { Button } from '@mui/material';
-import DialogActions from '@mui/material/DialogActions';
 import IngestionJsonEditionContainer, { ingestionJsonEditionContainerQuery } from '@private/components/data/ingestionJson/IngestionJsonEditionContainer';
 import { IngestionJsonCreationContainer } from '@private/components/data/ingestionJson/IngestionJsonCreation';
 import { IngestionJsonLinesPaginationQuery$variables } from '@private/components/data/ingestionJson/__generated__/IngestionJsonLinesPaginationQuery.graphql';
@@ -19,6 +11,7 @@ import { deleteNode } from '../../../../utils/store';
 import { useFormatter } from '../../../../components/i18n';
 import Transition from '../../../../components/Transition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, Menu, MenuItem } from '@components';
 
 export const ingestionJsonPopoverEditionPatch = graphql`
   mutation IngestionJsonPopoverPatchMutation($id: ID!, $input: [EditInput!]!) {

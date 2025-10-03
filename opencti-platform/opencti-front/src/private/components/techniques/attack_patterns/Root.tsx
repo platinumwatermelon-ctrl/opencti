@@ -2,9 +2,6 @@ import React, { useMemo, Suspense } from 'react';
 import { Route, Routes, Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import { RootAttackPatternQuery } from '@private/components/techniques/attack_patterns/__generated__/RootAttackPatternQuery.graphql';
 import { RootAttackPatternSubscription } from '@private/components/techniques/attack_patterns/__generated__/RootAttackPatternSubscription.graphql';
@@ -26,6 +23,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import AttackPatternEdition from './AttackPatternEdition';
 import AttackPatternDeletion from './AttackPatternDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootAttackPatternSubscription($id: ID!) {

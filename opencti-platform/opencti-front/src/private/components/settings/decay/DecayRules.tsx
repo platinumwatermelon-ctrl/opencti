@@ -1,6 +1,5 @@
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Alert from '@mui/material/Alert';
 import { emptyFilterGroup, useBuildEntityTypeBasedFilterContext } from '../../../../utils/filters/filtersUtils';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
@@ -18,6 +17,7 @@ import useAuth from '../../../../utils/hooks/useAuth';
 import { INDICATOR_DECAY_MANAGER } from '../../../../utils/platformModulesHelper';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import useConnectedDocumentModifier from '../../../../utils/hooks/useConnectedDocumentModifier';
+import { Alert } from '@components';
 
 const LOCAL_STORAGE_KEY = 'view-decay-rules';
 

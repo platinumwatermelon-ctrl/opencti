@@ -1,15 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import * as R from 'ramda';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
 import { Link } from 'react-router-dom';
-import CardHeader from '@mui/material/CardHeader';
-import IconButton from '@mui/material/IconButton';
 import { StarBorderOutlined } from '@mui/icons-material';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
-import Skeleton from '@mui/material/Skeleton';
 import { getFileUri } from '../../../../utils/utils';
 import ItemIcon from '../../../../components/ItemIcon';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
@@ -19,6 +12,7 @@ import StixCoreObjectLabels from '../stix_core_objects/StixCoreObjectLabels';
 import { addBookmark, deleteBookMark } from '../stix_domain_objects/StixDomainObjectBookmark';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
+import { Card, CardActionArea, CardContent, CardHeader, IconButton, Skeleton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

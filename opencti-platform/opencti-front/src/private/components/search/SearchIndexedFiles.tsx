@@ -22,9 +22,6 @@ import {
 import { SearchIndexedFileLine_node$data } from '@private/components/search/__generated__/SearchIndexedFileLine_node.graphql';
 import { Link, useParams } from 'react-router-dom';
 import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Button from '@mui/material/Button';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import Loader from '../../../components/Loader';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
@@ -40,6 +37,7 @@ import useManagerConfiguration from '../../../utils/hooks/useManagerConfiguratio
 import Security from '../../../utils/Security';
 import { SETTINGS_FILEINDEXING } from '../../../utils/hooks/useGranted';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { Alert, AlertTitle, Button } from '@components';
 
 const LOCAL_STORAGE_KEY = 'view-files';
 const SearchIndexedFilesComponent = () => {

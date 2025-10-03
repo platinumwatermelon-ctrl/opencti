@@ -14,17 +14,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React, { FunctionComponent } from 'react';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import makeStyles from '@mui/styles/makeStyles';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import { Field, Form, Formik } from 'formik';
 import { FileIndexingConfigurationQuery$data } from '@private/components/settings/file_indexing/__generated__/FileIndexingConfigurationQuery.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import { fileIndexingConfigurationFieldPatch } from '@private/components/settings/file_indexing/FileIndexing';
-import Checkbox from '@mui/material/Checkbox';
 import * as Yup from 'yup';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
@@ -35,6 +29,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import TextField from '../../../../components/TextField';
 import useAttributes from '../../../../utils/hooks/useAttributes';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Checkbox, List, ListItem, ListItemText, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

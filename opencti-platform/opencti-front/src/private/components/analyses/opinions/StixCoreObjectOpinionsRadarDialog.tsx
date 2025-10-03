@@ -1,13 +1,6 @@
 import React, { FunctionComponent, useCallback, useEffect, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import * as Yup from 'yup';
-import Slider from '@mui/material/Slider';
 import { ThumbsUpDownOutlined } from '@mui/icons-material';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import { Field, Form, Formik } from 'formik';
 import { graphql, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import { PreloadedQuery } from 'react-relay/relay-hooks/EntryPointTypes';
@@ -30,6 +23,7 @@ import { MESSAGING$ } from '../../../../relay/environment';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { yupShapeConditionalRequired, useDynamicSchemaCreationValidation, useIsMandatoryAttribute } from '../../../../utils/hooks/useEntitySettings';
 import useDefaultValues from '../../../../utils/hooks/useDefaultValues';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Slider } from '@components';
 
 export const stixCoreObjectOpinionsRadarDialogMyOpinionQuery = graphql`
   query StixCoreObjectOpinionsRadarDialogMyOpinionQuery($id: String!) {

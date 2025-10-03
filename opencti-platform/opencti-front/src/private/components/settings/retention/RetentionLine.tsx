@@ -1,25 +1,19 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { LayersClearOutlined, MoreVert } from '@mui/icons-material';
 import Slide, { SlideProps } from '@mui/material/Slide';
-import Skeleton from '@mui/material/Skeleton';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles/createTheme';
 import { RetentionLinesPaginationQuery$variables } from '@private/components/settings/retention/__generated__/RetentionLinesPaginationQuery.graphql';
 import { RetentionLine_node$key } from '@private/components/settings/retention/__generated__/RetentionLine_node.graphql';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
 import { useFormatter } from '../../../../components/i18n';
 import RetentionPopover from './RetentionPopover';
 import { deserializeFilterGroupForFrontend, isFilterGroupNotEmpty } from '../../../../utils/filters/filtersUtils';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { DataColumns } from '../../../../components/list_lines';
 import { chipInListBasicStyle } from '../../../../utils/chipStyle';
+import { Box, Chip, ListItem, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 const Transition = React.forwardRef((props: SlideProps, ref) => (
   <Slide direction="up" ref={ref} {...props} />

@@ -1,16 +1,10 @@
 import React, { FunctionComponent, useRef, useState } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import Typography from '@mui/material/Typography';
 import { FormikConfig } from 'formik/dist/types';
 import makeStyles from '@mui/styles/makeStyles';
 import * as Yup from 'yup';
-import IconButton from '@mui/material/IconButton';
 import { EditOutlined, ExpandLessOutlined, ExpandMoreOutlined, RateReviewOutlined } from '@mui/icons-material';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import { NOTE_TYPE, noteCreationUserMutation } from './NoteCreation';
 import { insertNode } from '../../../../utils/store';
 import usePreloadedFragment from '../../../../utils/hooks/usePreloadedFragment';
@@ -37,6 +31,7 @@ import { convertMarking } from '../../../../utils/edition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import AddNotesFunctionalComponent from './AddNotesFunctionalComponent';
 import { yupShapeConditionalRequired, useDynamicSchemaCreationValidation, useIsMandatoryAttribute } from '../../../../utils/hooks/useEntitySettings';
+import { Accordion, AccordionDetails, AccordionSummary, Button, IconButton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

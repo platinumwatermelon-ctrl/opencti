@@ -1,17 +1,14 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, FieldArray, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { IconButton, Radio, RadioGroup, Typography } from '@mui/material';
+import { RadioGroup } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import { FormikHelpers } from 'formik/dist/types';
 import { SelectChangeEvent } from '@mui/material/Select';
 import CsvMapperRepresentationForm, { RepresentationFormEntityOption } from '@private/components/data/csvMapper/representations/CsvMapperRepresentationForm';
 import { CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { CsvMapperProvider } from '@private/components/data/csvMapper/CsvMapperContext';
-import Box from '@mui/material/Box';
 import { csvFeedCsvMapperToFormData } from '@private/components/data/ingestionCsv/IngestionCSVFeedUtils';
 import { useFormatter } from '../../../../components/i18n';
 import TextField from '../../../../components/TextField';
@@ -19,6 +16,7 @@ import SwitchField from '../../../../components/fields/SwitchField';
 import useAuth from '../../../../utils/hooks/useAuth';
 import { representationInitialization } from '../csvMapper/representations/RepresentationUtils';
 import { CsvMapperAddInput, formDataToCsvMapper } from '../csvMapper/CsvMapperUtils';
+import { Box, FormControlLabel, IconButton, Radio, Tooltip, Typography } from '@components';
 
 const csvMapperValidation = (t_i18n: (s: string) => string) => Yup.object().shape({
   has_header: Yup.boolean().required(t_i18n('This field is required')),

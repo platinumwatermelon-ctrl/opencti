@@ -1,11 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Switch from '@mui/material/Switch';
-import Grid from '@mui/material/Grid';
-import { Tooltip } from '@mui/material';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import { InformationOutline } from 'mdi-material-ui';
 import { useFormatter } from '../../../../../components/i18n';
 import ErrorNotFound from '../../../../../components/ErrorNotFound';
@@ -15,6 +9,7 @@ import Security from '../../../../../utils/Security';
 import { EntitySettingSettings_entitySetting$key } from './__generated__/EntitySettingSettings_entitySetting.graphql';
 import SettingsOrganizationEntitySettingHiddenTypesList from '../../organizations/SettingsOrganizationEntitySettingHiddenTypesList';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
+import { FormControlLabel, FormGroup, Grid, Switch, Tooltip, Typography } from '@components';
 
 export const entitySettingFragment = graphql`
   fragment EntitySettingSettings_entitySetting on EntitySetting {
@@ -101,7 +96,7 @@ const EntitySettingSettings = ({ entitySettingsData }: EntitySettingSettingsProp
   };
   return (
     <Grid container={true} spacing={3}>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <div>
           <Typography
             variant="h3"
@@ -154,7 +149,7 @@ const EntitySettingSettings = ({ entitySettingsData }: EntitySettingSettingsProp
           </>
         </Security>
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <div>
           <Typography
             variant="h3"

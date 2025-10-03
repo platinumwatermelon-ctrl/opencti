@@ -4,14 +4,7 @@ import * as R from 'ramda';
 import { Link } from 'react-router-dom';
 import { graphql, createFragmentContainer } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
 import { StarBorderOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Skeleton from '@mui/material/Skeleton';
 import withTheme from '@mui/styles/withTheme';
 import inject18n from '../../../../components/i18n';
 import { resolveLink } from '../../../../utils/Entity';
@@ -20,6 +13,7 @@ import { deleteNode, insertNode } from '../../../../utils/store';
 import ItemIcon from '../../../../components/ItemIcon';
 import { getFileUri } from '../../../../utils/utils';
 import { renderCardTitle } from '../../../../utils/Card';
+import { Avatar, Card, CardActionArea, CardContent, CardHeader, IconButton, Skeleton } from '@components';
 
 const stixDomainObjectBookmarkCreateMutation = graphql`
   mutation StixDomainObjectBookmarkreateMutation($id: ID!, $type: String!) {

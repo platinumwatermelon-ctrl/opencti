@@ -1,8 +1,3 @@
-import Grid from '@mui/material/Grid';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import React from 'react';
 import { declineRequestAccessMutation, validateRequestAccessMutation } from '@private/components/cases/CaseUtils';
 import ItemStatus from '../../../../components/ItemStatus';
@@ -10,7 +5,7 @@ import { useFormatter } from '../../../../components/i18n';
 import { CaseRfi_caseRfi$data } from './__generated__/CaseRfi_caseRfi.graphql';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
-
+import { Button, Divider, Grid, Tooltip, Typography } from '@components';
 interface CaseRfiRequestAccessOverviewProps {
   data: CaseRfi_caseRfi$data;
 }
@@ -67,7 +62,7 @@ const ProcessingStatusOverview = ({ data }: CaseRfiRequestAccessOverviewProps) =
 
   const userCanAction = data.requestAccessConfiguration?.isUserCanAction;
   const disabledTooltip = draftContext ? t_i18n('Not available in draft') : t_i18n('You need to be able to edit the RFI and share knowledge');
-  return <Grid item xs={12} style={{ marginBottom: 20 }}>
+  return <Grid size={12} style={{ marginBottom: 20 }}>
     <Typography
       variant="h3"
       gutterBottom={true}

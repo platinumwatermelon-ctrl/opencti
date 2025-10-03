@@ -3,11 +3,11 @@ import * as PropTypes from 'prop-types';
 import { compose, pathOr } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
 import { graphql, createRefetchContainer } from 'react-relay';
-import Paper from '@mui/material/Paper';
 import { interval } from 'rxjs';
 import inject18n from '../../../../components/i18n';
 import StixCoreRelationshipHistoryLine from './StixCoreRelationshipHistoryLine';
 import { FIVE_SECONDS } from '../../../../utils/Time';
+import { Paper } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

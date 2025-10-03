@@ -6,9 +6,6 @@ import React, { useMemo } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import StixCoreObjectContentRoot from '@private/components/common/stix_core_objects/StixCoreObjectContentRoot';
 import Security from 'src/utils/Security';
 import AIInsights from '@private/components/common/ai/AIInsights';
@@ -33,6 +30,7 @@ import CaseRfiEdition from './CaseRfiEdition';
 import { useGetCurrentUserAccessRight } from '../../../../utils/authorizedMembers';
 import StixCoreObjectSimulationResultContainer from '../../common/stix_core_objects/StixCoreObjectSimulationResultContainer';
 import CaseRfiDeletion from './CaseRfiDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootCaseRfiCaseSubscription($id: ID!) {

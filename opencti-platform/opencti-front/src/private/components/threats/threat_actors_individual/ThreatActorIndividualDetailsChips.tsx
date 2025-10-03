@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Security from 'src/utils/Security';
 import { KNOWLEDGE_KNUPDATE } from 'src/utils/hooks/useGranted';
@@ -7,6 +6,7 @@ import AddPersonaThreatActorIndividual from './AddPersonasThreatActorIndividual'
 import AddIndividualsThreatActorIndividual from './AddIndividualsThreatActorIndividual';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import CardLabel from '../../../../components/CardLabel';
+import { Button } from '@components';
 
 type SupportedTypes = 'known-as' | 'impersonates';
 type SupportedFields = 'observable_value' | 'name';

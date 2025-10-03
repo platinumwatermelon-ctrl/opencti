@@ -1,19 +1,15 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { graphql, useSubscription } from 'react-relay';
-import Alert from '@mui/material/Alert';
 import parse from 'html-react-parser';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { AutoModeOutlined, ContentCopyOutlined } from '@mui/icons-material';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import { AISummaryForecastStixCoreObjectAskAiForecastQuery$data } from '@private/components/common/ai/__generated__/AISummaryForecastStixCoreObjectAskAiForecastQuery.graphql';
-import Tooltip from '@mui/material/Tooltip';
 import { AISummaryForecastSubscription, AISummaryForecastSubscription$data } from './__generated__/AISummaryForecastSubscription.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { fetchQuery } from '../../../../relay/environment';
 import { getDefaultAiLanguage } from '../../../../utils/ai/Common';
 import { copyToClipboard, cleanHtmlTags } from '../../../../utils/utils';
+import { Alert, Divider, IconButton, Tooltip, Typography } from '@components';
 
 const subscription = graphql`
     subscription AISummaryForecastSubscription($id: ID!) {

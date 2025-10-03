@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import MoreVert from '@mui/icons-material/MoreVert';
-import ToggleButton from '@mui/material/ToggleButton';
 import { useNavigate } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
 import WorkspaceManageAccessDialog from '@private/components/workspaces/WorkspaceManageAccessDialog';
@@ -16,6 +13,7 @@ import { useGetCurrentUserAccessRight } from '../../../utils/authorizedMembers';
 import Security from '../../../utils/Security';
 import useGranted, { EXPLORE_EXUPDATE, EXPLORE_EXUPDATE_EXDELETE, EXPLORE_EXUPDATE_PUBLISH, INVESTIGATION_INUPDATE } from '../../../utils/hooks/useGranted';
 import { useFormatter } from '../../../components/i18n';
+import { Menu, MenuItem, ToggleButton } from '@components';
 
 const kebabMenuFragment = graphql`
   fragment WorkspaceKebabMenuFragment on Workspace {

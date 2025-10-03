@@ -3,11 +3,7 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { SettingsInputComponent } from '@mui/icons-material';
-import Grid from '@mui/material/Grid';
 import { QueryRenderer } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
 import Security from '../../../../utils/Security';
@@ -15,6 +11,7 @@ import { EXPLORE_EXUPDATE } from '../../../../utils/hooks/useGranted';
 import Loader from '../../../../components/Loader';
 import { hexToRGB, itemColor } from '../../../../utils/Colors';
 import { NO_DATA_WIDGET_MESSAGE } from '../../../../components/dashboard/WidgetNoData';
+import { Grid, IconButton, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {
@@ -135,8 +132,7 @@ class StixCoreObjectStixCoreRelationshipsCloud extends Component {
                     return (
                       <Grid
                         key={line.label}
-                        item
-                        xs={4}
+                        size={4}
                         style={{ padding: 0 }}
                       >
                         <div

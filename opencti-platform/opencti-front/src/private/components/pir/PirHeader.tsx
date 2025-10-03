@@ -15,7 +15,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import { graphql, useFragment } from 'react-relay';
 import React, { useState } from 'react';
-import { Box, Button, Typography } from '@mui/material';
 import FormAuthorizedMembersDialog from '@private/components/common/form/FormAuthorizedMembersDialog';
 import PirPopover from './PirPopover';
 import PirEdition from './pir_form/PirEdition';
@@ -26,6 +25,7 @@ import { PirEditionFragment$key } from './pir_form/__generated__/PirEditionFragm
 import { authorizedMembersToOptions, useGetCurrentUserAccessRight } from '../../../utils/authorizedMembers';
 import { PIRAPI_PIRUPDATE, SETTINGS_SETACCESSES } from '../../../utils/hooks/useGranted';
 import Security from '../../../utils/Security';
+import { Box, Button, Typography } from '@components';
 
 const headerFragment = graphql`
   fragment PirHeaderFragment on Pir {

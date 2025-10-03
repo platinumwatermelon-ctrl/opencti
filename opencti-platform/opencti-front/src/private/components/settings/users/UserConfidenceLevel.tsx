@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReportGmailerrorred } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
-import Box from '@mui/material/Box';
 import { User_user$data } from '@private/components/settings/users/__generated__/User_user.graphql';
 import UserConfidenceOverrides from '@private/components/settings/users/UserConfidenceOverrides';
 import { useFormatter } from '../../../../components/i18n';
+import { Box, Tooltip } from '@components';
 
 type UserConfidenceLevelProps = {
   user: Pick<User_user$data, 'effective_confidence_level'>

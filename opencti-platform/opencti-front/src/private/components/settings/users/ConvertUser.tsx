@@ -1,17 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
-import Dialog from '@mui/material/Dialog';
-import Alert from '@mui/material/Alert';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { graphql } from 'react-relay';
-import DialogContentText from '@mui/material/DialogContentText';
 import { useTheme } from '@mui/styles';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import Transition from '../../../../components/Transition';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 
 const convertUserMutation = graphql`
   mutation ConvertUserMutation(

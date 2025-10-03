@@ -1,16 +1,9 @@
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import FormGroup from '@mui/material/FormGroup';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
-import TextField from '@mui/material/TextField';
-import Alert from '@mui/material/Alert';
 import { useFormatter } from '../../../../components/i18n';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { isEmptyField } from '../../../../utils/utils';
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormGroup, TextField } from '@components';
 
 const EnterpriseEditionAgreementMutationFieldPatch = graphql`
   mutation EnterpriseEditionAgreementMutation($id: ID!, $input: [EditInput]!) {

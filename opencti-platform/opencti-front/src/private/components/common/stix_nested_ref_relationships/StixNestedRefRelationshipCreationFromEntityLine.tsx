@@ -1,12 +1,7 @@
 import { graphql, useFragment } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Checkbox from '@mui/material/Checkbox';
-import ListItemText from '@mui/material/ListItemText';
-import ListItem from '@mui/material/ListItem';
 import React, { FunctionComponent } from 'react';
 import { CircleOutlined } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import {
   StixNestedRefRelationshipCreationFromEntityLine_node$data,
   StixNestedRefRelationshipCreationFromEntityLine_node$key,
@@ -21,6 +16,7 @@ import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import { HandleAddFilter } from '../../../../utils/hooks/useLocalStorage';
 import ItemEntityType from '../../../../components/ItemEntityType';
+import { Checkbox, ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import * as Yup from 'yup';
 import { useTheme } from '@mui/styles';
@@ -19,6 +17,7 @@ import DateTimePickerField from '../../../../components/DateTimePickerField';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { useSchemaEditionValidation } from '../../../../utils/hooks/useEntitySettings';
 import type { Theme } from '../../../../components/Theme';
+import { IconButton, Typography } from '@components';
 
 const StixNestedRefRelationshipEditionFragment = graphql`
   fragment StixNestedRefRelationshipEditionOverview_stixRefRelationship on StixRefRelationship {

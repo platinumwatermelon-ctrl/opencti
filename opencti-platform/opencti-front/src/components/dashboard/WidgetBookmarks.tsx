@@ -1,16 +1,11 @@
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
 import { Link } from 'react-router-dom';
-import CardHeader from '@mui/material/CardHeader';
-import Avatar from '@mui/material/Avatar';
 import React from 'react';
 import { useTheme } from '@mui/styles';
 import ItemIcon from '../ItemIcon';
 import { resolveLink } from '../../utils/Entity';
 import { useFormatter } from '../i18n';
 import type { Theme } from '../Theme';
-
+import { Avatar, Card, CardActionArea, CardHeader, Grid } from '@components';
 interface WidgetBookmarksProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   bookmarks: any[]
@@ -36,7 +31,7 @@ const WidgetBookmarks = ({ bookmarks }: WidgetBookmarksProps) => {
           const bookmark = bookmarkEdge.node;
           const link = resolveLink(bookmark.entity_type);
           return (
-            <Grid item xs={4} key={bookmark.id}>
+            <Grid size={4} key={bookmark.id}>
               <Card
                 variant="outlined"
                 style={{

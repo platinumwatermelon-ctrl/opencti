@@ -1,19 +1,11 @@
 import React, { Fragment, FunctionComponent, useState } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
 import { InformationOutline } from 'mdi-material-ui';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import Box from '@mui/material/Box';
 import { Stack } from '@mui/material';
 import CodeBlock from '@private/components/common/CodeBlock';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
 import { useFormatter } from '../i18n';
 import { FilterRepresentative } from './FiltersModel';
 import { Filter, FilterGroup } from '../../utils/filters/filtersHelpers-types';
-
+import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@components';
 interface DisplayFiltersValuesProps {
   filtersRepresentativesMap: Map<string, FilterRepresentative>,
   values: string[],

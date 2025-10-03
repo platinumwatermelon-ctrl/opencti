@@ -1,7 +1,6 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, LinearProgress, Typography } from '@mui/material';
 import React, { ReactNode } from 'react';
 import { useFormatter } from './i18n';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, LinearProgress, Typography } from '@components';
 interface ProgressBarProps {
   open: boolean
   value: number

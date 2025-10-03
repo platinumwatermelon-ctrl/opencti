@@ -2,8 +2,6 @@ import React, { FunctionComponent, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { graphql } from 'react-relay';
 import { CloudUploadOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import CircularProgress from '@mui/material/CircularProgress';
 import { resolveLink } from 'src/utils/Entity';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
@@ -11,6 +9,7 @@ import { useFormatter } from '../../../../components/i18n';
 import { FileUploaderEntityMutation$data } from './__generated__/FileUploaderEntityMutation.graphql';
 import { FileUploaderGlobalMutation$data } from './__generated__/FileUploaderGlobalMutation.graphql';
 import FileImportMarkingSelectionPopup from './FileImportMarkingSelectionPopup';
+import { IconButton, Tooltip } from '@components';
 
 const fileUploaderGlobalMutation = graphql`
   mutation FileUploaderGlobalMutation($file: Upload!, $fileMarkings: [String]) {

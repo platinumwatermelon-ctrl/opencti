@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Alert, Button } from '@mui/material';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { FormikConfig } from 'formik/dist/types';
@@ -16,7 +15,7 @@ import OTPForm from './OTPForm';
 import { ResetPasswordVerifyOtpMutation, ResetPasswordVerifyOtpMutation$data } from './__generated__/ResetPasswordVerifyOtpMutation.graphql';
 import { ResetPasswordAskSendOtpMutation } from './__generated__/ResetPasswordAskSendOtpMutation.graphql';
 import { ResetPasswordChangePasswordMutation } from './__generated__/ResetPasswordChangePasswordMutation.graphql';
-
+import { Alert, Button } from '@components';
 interface ResetProps {
   onCancel: () => void;
   email: string;

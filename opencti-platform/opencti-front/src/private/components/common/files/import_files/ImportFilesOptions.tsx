@@ -1,9 +1,7 @@
 import React from 'react';
-import { Box, Tooltip } from '@mui/material';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import { OptionsFormValues } from '@private/components/common/files/import_files/ImportFilesDialog';
 import { Field, FormikContextType, FormikProvider } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import StixCoreObjectsField from '@private/components/common/form/StixCoreObjectsField';
 import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import { InformationOutline } from 'mdi-material-ui';
@@ -12,7 +10,7 @@ import { fieldSpacingContainerStyle } from '../../../../../utils/field';
 import TextField from '../../../../../components/TextField';
 import SelectField from '../../../../../components/fields/SelectField';
 import { DraftContext } from '../../../../../utils/hooks/useDraftContext';
-
+import { Box, MenuItem, Tooltip } from '@components';
 interface ImportFilesOptionsProps {
   optionsFormikContext: FormikContextType<OptionsFormValues>;
   draftContext?: DraftContext | null;

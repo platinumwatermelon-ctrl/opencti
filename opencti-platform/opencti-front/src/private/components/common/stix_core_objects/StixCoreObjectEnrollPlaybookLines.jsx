@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import * as R from 'ramda';
 import { createRefetchContainer, graphql } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { PlayCircleOutlined } from '@mui/icons-material';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
-import Alert from '@mui/material/Alert';
 import inject18n, { useFormatter } from '../../../../components/i18n';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNENRICHMENT } from '../../../../utils/hooks/useGranted';
 import ItemIcon from '../../../../components/ItemIcon';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
+import { Alert, IconButton, List, ListItem, ListItemIcon, ListItemText, Tooltip } from '@components';
 
 export const stixCoreObjectEnrollPlaybookLinesQuery = graphql`
   query StixCoreObjectEnrollPlaybookLinesQuery($id: String!) {

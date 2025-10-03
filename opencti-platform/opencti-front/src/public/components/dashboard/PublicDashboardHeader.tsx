@@ -1,14 +1,9 @@
-import Typography from '@mui/material/Typography';
 import React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useFormatter } from '../../../components/i18n';
 import type { PublicManifestConfig } from './PublicManifest';
 import { buildDate } from '../../../utils/Time';
-
+import { FormControl, InputLabel, MenuItem, Select, Typography } from '@components';
 interface PublicDashboardHeaderProps {
   title: string
   manifestConfig: PublicManifestConfig

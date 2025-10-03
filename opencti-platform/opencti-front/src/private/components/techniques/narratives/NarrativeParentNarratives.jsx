@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import { SpeakerNotesOutlined } from '@mui/icons-material';
 import { graphql, createFragmentContainer } from 'react-relay';
-import { ListItemButton } from '@mui/material';
 import { truncate } from '../../../../utils/String';
 import inject18n from '../../../../components/i18n';
+import { List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 class NarrativeParentNarrativesComponent extends Component {
   render() {

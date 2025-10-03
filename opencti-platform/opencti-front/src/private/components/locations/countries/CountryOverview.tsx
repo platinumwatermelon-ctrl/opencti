@@ -3,13 +3,12 @@
 // @ts-nocheck
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { useFormatter } from '../../../../components/i18n';
 import ItemAuthor from '../../../../components/ItemAuthor';
 import { CountryOverview_country$key } from './__generated__/CountryOverview_country.graphql';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
+import { Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

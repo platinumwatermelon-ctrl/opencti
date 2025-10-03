@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { Box, Button } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
-
+import { Box, Button } from '@components';
 interface ProcessInstructionsProps {
   onContinue: () => void;
   instructionKey: string;

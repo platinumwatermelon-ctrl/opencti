@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import Drawer from '../../common/drawer/Drawer';
 import inject18n from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';
 import { QueryRenderer } from '../../../../relay/environment';
 import AddAttackPatternsLines, { addAttackPatternsLinesQuery } from './AddAttackPatternsLines';
+import { IconButton } from '@components';
 
 const styles = () => ({
   search: {

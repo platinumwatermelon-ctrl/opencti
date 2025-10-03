@@ -1,20 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Close } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig, FormikHelpers } from 'formik/dist/types';
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
 import * as Yup from 'yup';
-import Box from '@mui/material/Box';
 import FilterIconButton from '../../../../../components/FilterIconButton';
 import { useFormatter } from '../../../../../components/i18n';
 import MarkdownField from '../../../../../components/fields/MarkdownField';
@@ -31,6 +22,7 @@ import { TriggersLinesPaginationQuery$variables } from '../../../profile/trigger
 import { AlertLiveCreationActivityMutation, AlertLiveCreationActivityMutation$data } from './__generated__/AlertLiveCreationActivityMutation.graphql';
 import useFiltersState from '../../../../../utils/filters/useFiltersState';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, IconButton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

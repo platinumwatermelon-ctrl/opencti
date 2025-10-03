@@ -15,7 +15,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { CSSProperties, Suspense } from 'react';
 import Grid from '@mui/material/Grid2';
-import Typography from '@mui/material/Typography';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { useTheme } from '@mui/material/styles';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
@@ -27,6 +26,7 @@ import { dayAgo } from '../../../../utils/Time';
 import NumberDifference from '../../../../components/NumberDifference';
 import type { Theme } from '../../../../components/Theme';
 import ItemIcon from '../../../../components/ItemIcon';
+import { Typography } from '@components';
 
 const PirOverviewCountsDummy = () => {
   const theme = useTheme<Theme>();

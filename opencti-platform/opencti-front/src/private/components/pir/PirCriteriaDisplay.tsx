@@ -16,7 +16,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import React, { PropsWithChildren } from 'react';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import Chip, { ChipProps } from '@mui/material/Chip';
-import Tooltip from '@mui/material/Tooltip';
 import { useTheme } from '@mui/material/styles';
 import { FilterGroup } from '../../../utils/filters/filtersHelpers-types';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
@@ -25,7 +24,7 @@ import { filterValuesContentQuery } from '../../../components/FilterValuesConten
 import { GqlFilterGroup, removeIdFromFilterGroupObject } from '../../../utils/filters/filtersUtils';
 import { useFormatter } from '../../../components/i18n';
 import type { Theme } from '../../../components/Theme';
-
+import { Tooltip } from '@components';
 interface PirFiltersDisplayComponentProps extends PropsWithChildren {
   size?: ChipProps['size']
   full?: boolean

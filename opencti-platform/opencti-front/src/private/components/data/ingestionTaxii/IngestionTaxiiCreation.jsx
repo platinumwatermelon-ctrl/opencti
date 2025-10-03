@@ -2,11 +2,9 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import { Field, Form, Formik } from 'formik';
 import withStyles from '@mui/styles/withStyles';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
-import MenuItem from '@mui/material/MenuItem';
 import { BASIC_AUTH, BEARER_AUTH, CERT_AUTH, getAuthenticationValue } from '../../../../utils/ingestionAuthentificationUtils';
 import Drawer from '../../common/drawer/Drawer';
 import inject18n from '../../../../components/i18n';
@@ -20,6 +18,7 @@ import DateTimePickerField from '../../../../components/DateTimePickerField';
 import SwitchField from '../../../../components/fields/SwitchField';
 import PasswordTextField from '../../../../components/PasswordTextField';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button, MenuItem } from '@components';
 
 const styles = (theme) => ({
   buttons: {

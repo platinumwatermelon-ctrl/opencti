@@ -4,7 +4,6 @@ import DraftCreation from '@private/components/drafts/DraftCreation';
 import { graphql } from 'react-relay';
 import { DraftsLines_data$data } from '@private/components/drafts/__generated__/DraftsLines_data.graphql';
 import { Drafts_node$data } from '@private/components/drafts/__generated__/Drafts_node.graphql';
-import Chip from '@mui/material/Chip';
 import { useTheme } from '@mui/styles';
 import { getDraftModeColor } from '@private/components/common/draft/DraftChip';
 import ImportMenu from '@private/components/data/ImportMenu';
@@ -23,6 +22,7 @@ import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocum
 import { defaultRender } from '../../../components/dataGrid/dataTableUtils';
 import { hexToRGB } from '../../../utils/Colors';
 import type { Theme } from '../../../components/Theme';
+import { Chip } from '@components';
 
 const DraftLineFragment = graphql`
     fragment Drafts_node on DraftWorkspace {

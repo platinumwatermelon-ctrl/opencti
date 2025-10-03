@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql, useQueryLoader } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
@@ -15,6 +11,7 @@ import { TriggerEditionContainerKnowledgeQuery } from './__generated__/TriggerEd
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
+import { IconButton, Menu, MenuItem, Tooltip } from '@components';
 
 export const TriggerPopoverDeletionMutation = graphql`
   mutation TriggerPopoverDeletionMutation($id: ID!) {

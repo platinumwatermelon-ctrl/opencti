@@ -1,8 +1,7 @@
-import Alert from '@mui/material/Alert';
-import Typography from '@mui/material/Typography';
 import React, { CSSProperties, ReactNode } from 'react';
 import { useTheme } from '@mui/styles';
 import type { Theme } from './Theme';
+import { Alert, Typography } from '@components';
 
 type AlertInfoProps = {
   content: string | ReactNode

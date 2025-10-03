@@ -1,7 +1,4 @@
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import React, { useState } from 'react';
 import { PopoverProps } from '@mui/material/Popover';
 import { graphql } from 'react-relay';
@@ -11,6 +8,7 @@ import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import { SettingsMessagesLine_settingsMessage$data } from './__generated__/SettingsMessagesLine_settingsMessage.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { IconButton, Menu, MenuItem } from '@components';
 
 const settingsMessagesPopoverPatch = graphql`
   mutation SettingsMessagesPopoverPatchMutation(

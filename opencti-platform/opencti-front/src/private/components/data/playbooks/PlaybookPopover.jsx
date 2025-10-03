@@ -15,17 +15,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { useState } from 'react';
 import { graphql } from 'react-relay';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import MoreVert from '@mui/icons-material/MoreVert';
-import DialogTitle from '@mui/material/DialogTitle';
-import ToggleButton from '@mui/material/ToggleButton';
 import { useNavigate } from 'react-router-dom';
 import fileDownload from 'js-file-download';
 import { commitMutation, fetchQuery } from '../../../../relay/environment';
@@ -38,6 +28,7 @@ import useDeletion from '../../../../utils/hooks/useDeletion';
 import stopEvent from '../../../../utils/domEvent';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { resolveLink } from '../../../../utils/Entity';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Menu, MenuItem, ToggleButton } from '@components';
 
 const playbookPopoverDeletionMutation = graphql`
   mutation PlaybookPopoverDeletionMutation($id: ID!) {

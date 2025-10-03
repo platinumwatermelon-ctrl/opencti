@@ -1,29 +1,13 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Grid from '@mui/material/Grid';
-import Tooltip from '@mui/material/Tooltip';
 import XtmHubSettings from '@private/components/settings/xtm-hub/XtmHubSettings';
 import SupportPackages from '@private/components/settings/support/SupportPackages';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { Experience$key } from '@private/components/settings/__generated__/Experience.graphql';
-import Typography from '@mui/material/Typography';
 import DangerZoneBlock from '@private/components/common/danger_zone/DangerZoneBlock';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Paper from '@mui/material/Paper';
-import Alert from '@mui/material/Alert';
 import EnterpriseEditionButton from '@private/components/common/entreprise_edition/EnterpriseEditionButton';
-import List from '@mui/material/List';
 import { useTheme } from '@mui/styles';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import * as Yup from 'yup';
-import Box from '@mui/material/Box';
-import { Switch } from '@mui/material';
-import Chip from '@mui/material/Chip';
 import { ExperienceQuery } from './__generated__/ExperienceQuery.graphql';
 import Transition from '../../../components/Transition';
 import useSensitiveModifications from '../../../utils/hooks/useSensitiveModifications';
@@ -39,6 +23,7 @@ import useApiMutation from '../../../utils/hooks/useApiMutation';
 import useGranted, { SETTINGS_SETPARAMETERS, SETTINGS_SUPPORT } from '../../../utils/hooks/useGranted';
 import ValidateTermsOfUseDialog from './ValidateTermsOfUseDialog';
 import useAuth from '../../../utils/hooks/useAuth';
+import { Alert, Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, List, ListItem, ListItemText, Paper, Switch, Tooltip, Typography } from '@components';
 
 export enum CGUStatus {
   pending = 'pending',
@@ -163,7 +148,7 @@ const ExperienceComponent: FunctionComponent<ExperienceComponentProps> = ({ quer
       <Breadcrumbs elements={[{ label: t_i18n('Settings') }, { label: t_i18n('Filigran Experience'), current: true }]} />
       <Grid container={true} spacing={3} style={{ marginBottom: 23 }}>
         {isEnterpriseEditionActivated ? (
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
               {t_i18n('Enterprise Edition')}
             </Typography>
@@ -360,7 +345,7 @@ const ExperienceComponent: FunctionComponent<ExperienceComponentProps> = ({ quer
             </Paper>
           </Grid>
         ) : (
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
               {t_i18n('Enterprise Edition')}
             </Typography>
@@ -394,13 +379,13 @@ const ExperienceComponent: FunctionComponent<ExperienceComponentProps> = ({ quer
           </Grid>
         )}
         {
-          <Grid item xs={6}>
+          <Grid size={6}>
             <XtmHubSettings />
           </Grid>
         }
 
         {isGrantedToSupport && (
-          <Grid item xs={12} style={{ marginTop: 15 }}>
+          <Grid size={12} style={{ marginTop: 15 }}>
             <SupportPackages />
           </Grid>
         )}

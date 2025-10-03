@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import Dialog from '@mui/material/Dialog';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-
-import DialogActions from '@mui/material/DialogActions';
 import { useFormatter } from '../../../components/i18n';
 import Transition from '../../../components/Transition';
+import { Alert, AlertTitle, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Typography } from '@components';
 
 const ProfileLocalStorage: React.FC = () => {
   const { t_i18n } = useFormatter();

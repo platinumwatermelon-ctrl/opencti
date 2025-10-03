@@ -1,15 +1,8 @@
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Checkbox from '@mui/material/Checkbox';
 import { Link } from 'react-router-dom';
-import Skeleton from '@mui/material/Skeleton';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
-import { ListItemButton } from '@mui/material';
 import ItemIcon from '../../../../components/ItemIcon';
 import type { Theme } from '../../../../components/Theme';
 import { TasksLine_node$data, TasksLine_node$key } from './__generated__/TasksLine_node.graphql';
@@ -18,6 +11,7 @@ import { DataColumns } from '../../../../components/list_lines';
 import StixCoreObjectLabels from '../../common/stix_core_objects/StixCoreObjectLabels';
 import ItemStatus from '../../../../components/ItemStatus';
 import ItemDueDate from '../../../../components/ItemDueDate';
+import { Checkbox, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

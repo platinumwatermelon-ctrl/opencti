@@ -1,18 +1,15 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, FieldArray, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import * as Yup from 'yup';
-import { IconButton, Radio, RadioGroup, Typography } from '@mui/material';
+import { RadioGroup } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import { FormikHelpers } from 'formik/dist/types';
 import { SelectChangeEvent } from '@mui/material/Select';
 import CsvMapperRepresentationForm, { RepresentationFormEntityOption } from '@private/components/data/csvMapper/representations/CsvMapperRepresentationForm';
 import { CsvMapperFormData } from '@private/components/data/csvMapper/CsvMapper';
 import classNames from 'classnames';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { formDataToCsvMapper } from '@private/components/data/csvMapper/CsvMapperUtils';
 import { CsvMapperProvider } from '@private/components/data/csvMapper/CsvMapperContext';
 import type { Theme } from '../../../../components/Theme';
@@ -22,6 +19,7 @@ import SwitchField from '../../../../components/fields/SwitchField';
 import useAuth from '../../../../utils/hooks/useAuth';
 import { representationInitialization } from './representations/RepresentationUtils';
 import CsvMapperTestDialog from './CsvMapperTestDialog';
+import { Button, FormControlLabel, IconButton, Radio, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

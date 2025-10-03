@@ -1,12 +1,6 @@
 import { graphql } from 'react-relay';
 import React, { FunctionComponent, useState } from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import CodeBlock from '@private/components/common/CodeBlock';
-import Alert from '@mui/material/Alert';
 import { IngestionCsvFeedTestDialogMutation$data } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvFeedTestDialogMutation.graphql';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { useFormatter } from '../../../../components/i18n';
@@ -15,6 +9,7 @@ import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { getAuthenticationValue } from '../../../../utils/ingestionAuthentificationUtils';
 import { FieldOption } from '../../../../utils/field';
 import { CsvMapperAddInput } from '../csvMapper/CsvMapperUtils';
+import { Alert, Box, Button, Dialog, DialogContent, DialogTitle } from '@components';
 
 const ingestionCsvFeedTestMutation = graphql`
   mutation IngestionCsvFeedTestDialogMutation($input: IngestionCsvAddInput!) {

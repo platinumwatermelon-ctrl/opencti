@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -30,6 +29,7 @@ import ProgressBar from '../../../../components/ProgressBar';
 import BulkTextModal from '../../../../components/fields/BulkTextField/BulkTextModal';
 import BulkTextField from '../../../../components/fields/BulkTextField/BulkTextField';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 const ThreatActorGroupMutation = graphql`
   mutation ThreatActorGroupCreationMutation($input: ThreatActorGroupAddInput!) {

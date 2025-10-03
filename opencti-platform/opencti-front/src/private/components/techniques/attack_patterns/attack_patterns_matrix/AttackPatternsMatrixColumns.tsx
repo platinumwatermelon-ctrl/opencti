@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Box, ListItemIcon, ListItemText, Menu, MenuItem, Typography } from '@mui/material';
 import { AddCircleOutlineOutlined, InfoOutlined } from '@mui/icons-material';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { Link } from 'react-router-dom';
@@ -18,6 +17,7 @@ import { UserContext } from '../../../../../utils/hooks/useAuth';
 import { hexToRGB } from '../../../../../utils/Colors';
 import type { Theme } from '../../../../../components/Theme';
 import { containerTypes } from '../../../../../utils/hooks/useAttributes';
+import { Box, ListItemIcon, ListItemText, Menu, MenuItem, Typography } from '@components';
 
 export type AttackPatternsOfPhase = NonNullable<NonNullable<AttackPatternsMatrixColumns_data$data['attackPatternsMatrix']>['attackPatternsOfPhases']>[number];
 export type AttackPattern = NonNullable<AttackPatternsOfPhase['attackPatterns']>[number];

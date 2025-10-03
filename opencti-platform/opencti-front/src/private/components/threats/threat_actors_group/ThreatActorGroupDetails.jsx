@@ -3,16 +3,7 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { graphql, createFragmentContainer } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { BullseyeArrow, ArmFlexOutline, DramaMasks } from 'mdi-material-ui';
-import ListItemText from '@mui/material/ListItemText';
-import Tooltip from '@mui/material/Tooltip';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import inject18n from '../../../../components/i18n';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
@@ -20,6 +11,7 @@ import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import ImageCarousel from '../../../../components/ImageCarousel';
 import ThreatActorGroupLocation from './ThreatActorGroupLocation';
 import { truncate } from '../../../../utils/String';
+import { Chip, Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {
@@ -57,14 +49,14 @@ class ThreatActorGroupDetailsComponent extends Component {
         </Typography>
         <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
           <Grid container={true} spacing={3}>
-            <Grid item xs={hasImages ? 7 : 6}>
+            <Grid size={hasImages ? 7 : 6}>
               <Grid container={true} spacing={3}>
                 {hasImages && (
-                  <Grid item xs={4}>
+                  <Grid size={4}>
                     <ImageCarousel data={threatActorGroup} />
                   </Grid>
                 )}
-                <Grid item xs={hasImages ? 8 : 12}>
+                <Grid size={hasImages ? 8 : 12}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t('Threat actor types')}
                   </Typography>
@@ -94,7 +86,7 @@ class ThreatActorGroupDetailsComponent extends Component {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={hasImages ? 5 : 6}>
+            <Grid size={hasImages ? 5 : 6}>
               <ThreatActorGroupLocation threatActorGroup={threatActorGroup} />
               <Typography
                 variant="h3"
@@ -115,7 +107,7 @@ class ThreatActorGroupDetailsComponent extends Component {
             </Grid>
           </Grid>
           <Grid container={true} spacing={3}>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -130,7 +122,7 @@ class ThreatActorGroupDetailsComponent extends Component {
                 />
               </FieldOrEmpty>
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -145,7 +137,7 @@ class ThreatActorGroupDetailsComponent extends Component {
                 />
               </FieldOrEmpty>
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -160,7 +152,7 @@ class ThreatActorGroupDetailsComponent extends Component {
                 />
               </FieldOrEmpty>
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -190,7 +182,7 @@ class ThreatActorGroupDetailsComponent extends Component {
                 )}
               </FieldOrEmpty>
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -221,7 +213,7 @@ class ThreatActorGroupDetailsComponent extends Component {
                 )}
               </FieldOrEmpty>
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}

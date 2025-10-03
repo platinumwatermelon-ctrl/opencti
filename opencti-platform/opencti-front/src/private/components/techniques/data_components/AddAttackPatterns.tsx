@@ -1,6 +1,5 @@
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
@@ -13,6 +12,7 @@ import {
   AddAttackPatternsLinesToDataComponentQuery$variables,
 } from './__generated__/AddAttackPatternsLinesToDataComponentQuery.graphql';
 import AddAttackPatternsLines, { addAttackPatternsLinesQuery } from './AddAttackPatternsLines';
+import { IconButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

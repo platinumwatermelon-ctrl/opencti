@@ -1,13 +1,8 @@
 import React from 'react';
 import { graphql, createFragmentContainer } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import { CheckCircleOutlined, CircleOutlined } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
 import { InvestigationAddStixCoreObjectsLine_node$data } from '@private/components/workspaces/investigations/__generated__/InvestigationAddStixCoreObjectsLine_node.graphql';
-import { ListItemButton } from '@mui/material';
 import StixCoreObjectLabels from '../../common/stix_core_objects/StixCoreObjectLabels';
 import ItemIcon from '../../../../components/ItemIcon';
 import ItemMarkings from '../../../../components/ItemMarkings';
@@ -15,6 +10,7 @@ import { getMainRepresentative } from '../../../../utils/defaultRepresentatives'
 import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import ItemEntityType from '../../../../components/ItemEntityType';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

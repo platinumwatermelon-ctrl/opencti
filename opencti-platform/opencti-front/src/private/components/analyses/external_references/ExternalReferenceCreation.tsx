@@ -3,11 +3,6 @@ import { Field, Form, Formik } from 'formik';
 import * as R from 'ramda';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
@@ -22,6 +17,7 @@ import { insertNode } from '../../../../utils/store';
 import { ExternalReferenceAddInput, ExternalReferenceCreationMutation, ExternalReferenceCreationMutation$data } from './__generated__/ExternalReferenceCreationMutation.graphql';
 import CustomFileUploader from '../../common/files/CustomFileUploader';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 const externalReferenceCreationMutation = graphql`
   mutation ExternalReferenceCreationMutation(

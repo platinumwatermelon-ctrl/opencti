@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
@@ -12,6 +11,7 @@ import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { DataSourceDataComponents_dataSource$data } from './__generated__/DataSourceDataComponents_dataSource.graphql';
 import { AddDataComponentsLinesToDataSourceQuery } from './__generated__/AddDataComponentsLinesToDataSourceQuery.graphql';
 import DataComponentCreation from '../data_components/DataComponentCreation';
+import { IconButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

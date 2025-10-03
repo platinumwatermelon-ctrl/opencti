@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Drawer, { DrawerControlledDialType } from '@private/components/common/drawer/Drawer';
 import {
   ThreatActorIndividualEditionOverview_ThreatActorIndividual$key,
@@ -24,7 +21,7 @@ import ThreatActorIndividualEditionDemographics from './ThreatActorIndividualEdi
 import ThreatActorIndividualEditionBiographics from './ThreatActorIndividualEditionBiographics';
 import { ThreatActorIndividualEditionContainerQuery } from './__generated__/ThreatActorIndividualEditionContainerQuery.graphql';
 import ThreatActorIndividualEditionDetails from './ThreatActorIndividualEditionDetails';
-
+import { Box, Tab, Tabs } from '@components';
 interface ThreatActorIndividualEditionContainerProps {
   queryRef: PreloadedQuery<ThreatActorIndividualEditionContainerQuery>;
   handleClose: () => void;

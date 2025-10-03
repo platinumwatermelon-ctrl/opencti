@@ -2,21 +2,8 @@ import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
 import { OpenInNewOutlined } from '@mui/icons-material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import makeStyles from '@mui/styles/makeStyles';
 import { useTheme } from '@mui/styles';
-import Chip from '@mui/material/Chip';
-import DialogTitle from '@mui/material/DialogTitle';
 import { useFormatter } from '../../../../components/i18n';
 import { noteMutationRelationDelete } from './AddNotesLines';
 import NotePopover from './NotePopover';
@@ -34,6 +21,7 @@ import ItemLikelihood from '../../../../components/ItemLikelihood';
 import ItemMarkings from '../../../../components/ItemMarkings';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button, Card, CardContent, CardHeader, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, IconButton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -219,7 +207,7 @@ StixCoreObjectOrStixCoreRelationshipNoteCardComponentProps
       />
       <CardContent>
         <Grid container={true} spacing={3}>
-          <Grid item xs={9}>
+          <Grid size={9}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Abstract')}
             </Typography>
@@ -240,14 +228,14 @@ StixCoreObjectOrStixCoreRelationshipNoteCardComponentProps
               <MarkdownDisplay content={note.content} remarkGfmPlugin={true} />
             )}
           </Grid>
-          <Grid item xs={3}>
+          <Grid size={3}>
             <StixCoreObjectLabelsView
               labels={note.objectLabel}
               id={note.id}
               entity_type={note.entity_type}
             />
             <Grid container={true} spacing={3}>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}
@@ -260,7 +248,7 @@ StixCoreObjectOrStixCoreRelationshipNoteCardComponentProps
                   entityType={note.entity_type}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}

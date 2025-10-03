@@ -1,8 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 import inject18n from './i18n';
+import { Alert, AlertTitle } from '@components';
 
 const ErrorNotFound = (props) => {
   const { t } = props;

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Button, Dialog, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { useFormatter } from 'src/components/i18n';
@@ -12,7 +11,7 @@ import AddNotesLines, { addNotesLinesQuery } from './AddNotesLines';
 import { AddNotesLinesQuery$data } from './__generated__/AddNotesLinesQuery.graphql';
 import { NoteCreationForm } from './NoteCreation';
 import { StixCoreObjectOrStixCoreRelationshipNotesCards_data$data } from './__generated__/StixCoreObjectOrStixCoreRelationshipNotesCards_data.graphql';
-
+import { Button, Dialog, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 interface AddNotesFunctionalComponentProps {
   stixCoreObjectOrStixCoreRelationshipId: string,
   stixCoreObjectOrStixCoreRelationshipNotes: StixCoreObjectOrStixCoreRelationshipNotesCards_data$data,

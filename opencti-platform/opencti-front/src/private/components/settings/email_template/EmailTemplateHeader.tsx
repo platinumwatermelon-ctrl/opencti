@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
-import { Typography, Button } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { Theme } from '@mui/material/styles/createTheme';
 import useEmailTemplateEdit from '@private/components/settings/email_template/useEmailTemplateEdit';
@@ -12,6 +11,7 @@ import EmailTemplateTestSend from '@private/components/settings/email_template/E
 import { useFormatter } from '../../../../components/i18n';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import { EmailTemplateHeader_template$key } from './__generated__/EmailTemplateHeader_template.graphql';
+import { Button, Typography } from '@components';
 
 const headerFragment = graphql`
     fragment EmailTemplateHeader_template on EmailTemplate {

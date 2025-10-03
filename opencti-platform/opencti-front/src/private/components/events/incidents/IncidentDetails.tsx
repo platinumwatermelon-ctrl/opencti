@@ -1,16 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { makeStyles } from '@mui/styles';
-import Chip from '@mui/material/Chip';
 import { useFormatter } from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import type { Theme } from '../../../../components/Theme';
 import { IncidentDetails_incident$data, IncidentDetails_incident$key } from './__generated__/IncidentDetails_incident.graphql';
 import StixCoreObjectsDonut from '../../common/stix_core_objects/StixCoreObjectsDonut';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
+import { Chip, Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -127,7 +124,7 @@ const IncidentDetails: FunctionComponent<IncidentDetailsProps> = ({
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Incident type')}
             </Typography>
@@ -152,7 +149,7 @@ const IncidentDetails: FunctionComponent<IncidentDetailsProps> = ({
             </Typography>
             <ExpandableMarkdown source={incident.description} limit={400} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Severity')}
             </Typography>
@@ -193,7 +190,7 @@ const IncidentDetails: FunctionComponent<IncidentDetailsProps> = ({
             </Typography>
             <ExpandableMarkdown source={incident.objective} limit={100} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <StixCoreObjectsDonut
               dataSelection={entitiesDataSelection}
               parameters={{ title: t_i18n('Entities distribution') }}
@@ -203,7 +200,7 @@ const IncidentDetails: FunctionComponent<IncidentDetailsProps> = ({
               endDate={undefined}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <StixCoreObjectsDonut
               dataSelection={observablesDataSelection}
               parameters={{ title: t_i18n('Observables distribution') }}

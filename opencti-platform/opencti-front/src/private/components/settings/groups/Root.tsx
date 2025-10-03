@@ -5,9 +5,7 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import { graphql, PreloadedQuery, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import AccessesMenu from '@private/components/settings/AccessesMenu';
-import Typography from '@mui/material/Typography';
-import { Box, styled } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
+import { styled } from '@mui/material';
 import GroupDeletionDialog from '@private/components/settings/groups/GroupDeletionDialog';
 import GroupEdition from '@private/components/settings/groups/GroupEdition';
 import { useTheme } from '@mui/styles';
@@ -23,6 +21,7 @@ import { useFormatter } from '../../../../components/i18n';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
 import PopoverMenu from '../../../../components/PopoverMenu';
 import type { Theme } from '../../../../components/Theme';
+import { Box, MenuItem, Typography } from '@components';
 
 const subscription = graphql`
     subscription RootGroupsSubscription($id: ID!) {

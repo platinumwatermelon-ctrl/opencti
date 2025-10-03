@@ -1,13 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import MoreVert from '@mui/icons-material/MoreVert';
 
 import { PopoverProps } from '@mui/material/Popover';
@@ -23,6 +15,7 @@ import Transition from '../../../../components/Transition';
 import IngestionTaxiiCollectionEdition, { ingestionTaxiiCollectionMutationFieldPatch } from './IngestionTaxiiCollectionEdition';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, Menu, MenuItem } from '@components';
 
 const ingestionTaxiiPopoverDeletionMutation = graphql`
   mutation IngestionTaxiiCollectionPopoverDeletionMutation($id: ID!) {

@@ -1,12 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { createRefetchContainer, graphql, RelayRefetchProp } from 'react-relay';
 import { interval } from 'rxjs';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { FileExportOutline } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
 import { FIVE_SECONDS } from '../../../../utils/Time';
@@ -14,6 +8,7 @@ import FileLine from './FileLine';
 import { useFormatter } from '../../../../components/i18n';
 import { FileExportViewer_entity$data } from './__generated__/FileExportViewer_entity.graphql';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { Grid, IconButton, List, Paper, Tooltip, Typography } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 
@@ -56,7 +51,7 @@ const FileExportViewerComponent: FunctionComponent<FileExportViewerComponentProp
   }, []);
 
   return (
-    <Grid item xs={6}>
+    <Grid size={6}>
       <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
         {t_i18n('Exported files')}
       </Typography>

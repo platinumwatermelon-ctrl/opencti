@@ -1,17 +1,12 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
-import { ListItemButton } from '@mui/material';
 import { truncate } from '../../../../utils/String';
 import ItemIcon from '../../../../components/ItemIcon';
 import { useFormatter } from '../../../../components/i18n';
 import { computeLink } from '../../../../utils/Entity';
+import { List, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

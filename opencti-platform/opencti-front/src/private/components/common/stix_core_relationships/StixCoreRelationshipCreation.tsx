@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ArrowRightAlt, Close } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
@@ -27,6 +23,7 @@ import { ObjectToParse } from '../../../../components/graph/utils/useGraphParser
 import { FieldOption } from '../../../../utils/field';
 import type { Theme } from '../../../../components/Theme';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Drawer, IconButton, Tooltip, Typography } from '@components';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   drawerPaper: {

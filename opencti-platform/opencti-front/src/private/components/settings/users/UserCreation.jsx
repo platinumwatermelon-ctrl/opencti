@@ -1,13 +1,9 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { useTheme } from '@mui/styles';
 import { graphql, usePreloadedQuery } from 'react-relay';
-import Alert from '@mui/material/Alert';
-import MenuItem from '@mui/material/MenuItem';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import EmailTemplateField from '../../common/form/EmailTemplateField';
 import GroupField, { groupsQuery } from '../../common/form/GroupField';
 import UserConfidenceLevelField from './edition/UserConfidenceLevelField';
@@ -26,6 +22,7 @@ import { insertNode } from '../../../../utils/store';
 import useGranted, { SETTINGS_SETACCESSES } from '../../../../utils/hooks/useGranted';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
 import SwitchField from '../../../../components/fields/SwitchField';
+import { Alert, Button, MenuItem, Tooltip } from '@components';
 
 const userMutation = graphql`
   mutation UserCreationMutation($input: UserAddInput!) {

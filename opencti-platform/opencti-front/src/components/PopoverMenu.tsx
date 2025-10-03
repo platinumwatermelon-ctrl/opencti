@@ -1,11 +1,9 @@
 import React, { ReactNode, UIEvent, useState } from 'react';
 import { PopoverProps } from '@mui/material/Popover/Popover';
 import { MoreVert } from '@mui/icons-material';
-import ToggleButton from '@mui/material/ToggleButton';
-import Menu from '@mui/material/Menu';
 import { useFormatter } from './i18n';
 import stopEvent from '../utils/domEvent';
-
+import { Menu, ToggleButton } from '@components';
 interface ChildrenProps {
   closeMenu: () => void
 }

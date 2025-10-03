@@ -1,17 +1,11 @@
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Skeleton from '@mui/material/Skeleton';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import Drawer from '@private/components/common/drawer/Drawer';
 import CaseTaskOverview from '@private/components/cases/tasks/CaseTaskOverview';
 import { NorthEastOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import { ListItemButton } from '@mui/material';
 import ItemIcon from '../../../../components/ItemIcon';
 import type { Theme } from '../../../../components/Theme';
 import { tasksDataColumns } from './TasksLine';
@@ -19,6 +13,7 @@ import { useFormatter } from '../../../../components/i18n';
 import { CaseTasksLine_data$key } from './__generated__/CaseTasksLine_data.graphql';
 import TaskPopover from './TaskPopover';
 import { CaseTasksLinesQuery$variables } from './__generated__/CaseTasksLinesQuery.graphql';
+import { IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

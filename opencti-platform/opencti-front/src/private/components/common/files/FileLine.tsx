@@ -1,31 +1,17 @@
 import React, { FunctionComponent, useState } from 'react';
 import { isEmpty } from 'ramda';
 import moment from 'moment';
-import Alert from '@mui/material/Alert';
 import { createFragmentContainer, graphql, GraphQLTaggedNode } from 'react-relay';
-import IconButton from '@mui/material/IconButton';
 import { FileOutline, ProgressUpload } from 'mdi-material-ui';
 import { DeleteOutlined, DocumentScannerOutlined, GetAppOutlined, WarningOutlined } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import CircularProgress from '@mui/material/CircularProgress';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import Slide, { SlideProps } from '@mui/material/Slide';
 import makeStyles from '@mui/styles/makeStyles';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { PopoverProps } from '@mui/material/Popover';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import { ListItem, ListItemButton } from '@mui/material';
 import { getDraftModeColor } from '@private/components/common/draft/DraftChip';
 import { useTheme } from '@mui/styles';
 import type { OverridableStringUnion } from '@mui/types';
-import DialogTitle from '@mui/material/DialogTitle';
 import useAuth from '../../../../utils/hooks/useAuth';
 import FileWork from './FileWork';
 import { useFormatter } from '../../../../components/i18n';
@@ -40,6 +26,7 @@ import { KNOWLEDGE_KNASKIMPORT } from '../../../../utils/hooks/useGranted';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@components';
 
 const Transition = React.forwardRef(({ children, ...otherProps }: SlideProps, ref) => (
   <Slide direction='up' ref={ref} {...otherProps}>{children}</Slide>

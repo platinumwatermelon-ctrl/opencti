@@ -3,9 +3,6 @@ import { Route, Routes, Link, Navigate, useLocation, useParams, useNavigate } fr
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import { propOr } from 'ramda';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { RootSystemQuery } from '@private/components/entities/systems/__generated__/RootSystemQuery.graphql';
 import { RootSystemsSubscription } from '@private/components/entities/systems/__generated__/RootSystemsSubscription.graphql';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
@@ -29,6 +26,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import SystemEdition from './SystemEdition';
 import SystemDeletion from './SystemDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootSystemsSubscription($id: ID!) {

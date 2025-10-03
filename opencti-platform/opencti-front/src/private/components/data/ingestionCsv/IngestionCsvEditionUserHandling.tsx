@@ -1,23 +1,17 @@
 import React, { FunctionComponent, useState } from 'react';
 import CreatorField from '@private/components/common/form/CreatorField';
-import Button from '@mui/material/Button';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Dialog from '@mui/material/Dialog';
 import ConfidenceField from '@private/components/common/form/ConfidenceField';
-import { Box } from '@mui/material';
 import { graphql } from 'react-relay';
 import { FormikConfig } from 'formik/dist/types';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { IngestionCsvEditionUserHandlingQuery$data } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvEditionUserHandlingQuery.graphql';
-import Alert from '@mui/material/Alert';
 import { fetchQuery } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import Transition from '../../../../components/Transition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 export const ingestionCsvEditionUserHandlingQuery = graphql`
   query IngestionCsvEditionUserHandlingQuery(

@@ -1,15 +1,6 @@
-import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
 import ReactMde from 'react-mde';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { stixCyberObservablesLinesAttributesQuery } from '@private/components/observations/stix_cyber_observables/StixCyberObservablesLines';
 import * as R from 'ramda';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Tooltip from '@mui/material/Tooltip';
-import InputAdornment from '@mui/material/InputAdornment';
 import { InformationOutline } from 'mdi-material-ui';
 import React, { useState } from 'react';
 import { StixCyberObservablesLinesAttributesQuery$data } from '@private/components/observations/stix_cyber_observables/__generated__/StixCyberObservablesLinesAttributesQuery.graphql';
@@ -31,6 +22,7 @@ import { getCurrentAvailableParameters, getCurrentCategory, getCurrentIsRelation
 import EntitySelectWithTypes from '../../../components/fields/EntitySelectWithTypes';
 import { FilterGroup } from '../../../utils/filters/filtersHelpers-types';
 import useAuth from '../../../utils/hooks/useAuth';
+import { FormControl, FormControlLabel, InputAdornment, InputLabel, MenuItem, Select, Switch, TextField, Tooltip } from '@components';
 
 const WidgetCreationParameters = () => {
   const { t_i18n } = useFormatter();

@@ -1,5 +1,4 @@
 import React, { UIEvent, useState } from 'react';
-import { IconButton, Menu, MenuItem } from '@mui/material';
 import { MoreVert } from '@mui/icons-material';
 import { graphql } from 'react-relay';
 import { PopoverProps } from '@mui/material/Popover';
@@ -9,7 +8,6 @@ import { ImportFilesContentFileLine_file$data } from '@private/components/data/i
 import { ImportFilesContentQuery$variables } from '@private/components/data/import/__generated__/ImportFilesContentQuery.graphql';
 import { ImportActionsPopoverDeleteMutation } from '@private/components/common/files/__generated__/ImportActionsPopoverDeleteMutation.graphql';
 import { ProgressUpload } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import ImportWorksDrawer from '@private/components/common/files/ImportWorksDrawer';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { APP_BASE_PATH, MESSAGING$ } from '../../../../relay/environment';
@@ -19,6 +17,7 @@ import { deleteNode } from '../../../../utils/store';
 import { useFormatter } from '../../../../components/i18n';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import DeleteDialog from '../../../../components/DeleteDialog';
+import { IconButton, Menu, MenuItem, Tooltip } from '@components';
 
 export const importActionsPopoverDeleteMutation = graphql`
   mutation ImportActionsPopoverDeleteMutation($fileName: String) {

@@ -6,12 +6,6 @@ import * as R from 'ramda';
 import * as Yup from 'yup';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Tooltip from '@mui/material/Tooltip';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ArrowRightAlt, Close } from '@mui/icons-material';
 import { commitMutation, fetchQuery, QueryRenderer } from '../../../../relay/environment';
@@ -25,6 +19,7 @@ import ObjectMarkingField from '../form/ObjectMarkingField';
 import ConfidenceField from '../form/ConfidenceField';
 import DateTimePickerField from '../../../../components/DateTimePickerField';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
+import { Button, Drawer, IconButton, MenuItem, Tooltip, Typography } from '@components';
 
 const styles = (theme) => ({
   drawerPaper: {

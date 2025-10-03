@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import { TextField } from 'formik-mui';
 import * as Yup from 'yup';
 import makeStyles from '@mui/styles/makeStyles';
@@ -16,6 +15,7 @@ import AutocompleteFreeSoloField from '../../../../components/AutocompleteFreeSo
 import { RelayError } from '../../../../relay/relayTypes';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import SwitchField from '../../../../components/fields/SwitchField';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

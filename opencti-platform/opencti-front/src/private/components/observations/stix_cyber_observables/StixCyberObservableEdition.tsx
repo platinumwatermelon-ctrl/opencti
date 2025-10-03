@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Drawer, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import { graphql } from 'react-relay';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { stixCyberObservableEditionOverviewFocus } from './StixCyberObservableEditionOverview';
@@ -10,6 +10,7 @@ import StixCyberObservableEditionContainer from './StixCyberObservableEditionCon
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import EditEntityControlledDial from '../../../../components/EditEntityControlledDial';
 import { StixCyberObservableEditionContainerQuery$data } from './__generated__/StixCyberObservableEditionContainerQuery.graphql';
+import { Drawer } from '@components';
 
 export const stixCyberObservableEditionQuery = graphql`
   query StixCyberObservableEditionContainerQuery($id: String!) {

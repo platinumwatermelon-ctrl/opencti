@@ -15,7 +15,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import { UserAnalytics_user$key } from '@private/components/settings/users/__generated__/UserAnalytics_user.graphql';
@@ -27,6 +26,7 @@ import AuditsRadar from '@private/components/common/audits/AuditsRadar';
 import AuditsList from '@private/components/common/audits/AuditsList';
 import { useFormatter } from '../../../../components/i18n';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
+import { Grid } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -66,7 +66,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
         columnSpacing={2}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <AuditsMultiVerticalBars
             variant={undefined}
             startDate={undefined}
@@ -96,7 +96,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
             ]}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <AuditsMultiLineChart
             variant={undefined}
             startDate={undefined}
@@ -164,7 +164,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
           />
         </Grid>
         {!userServiceAccount && (
-        <Grid item xs={4}>
+        <Grid size={4}>
           <AuditsHorizontalBars
             variant={undefined}
             startDate={undefined}
@@ -193,7 +193,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
           />
         </Grid>
         )}
-        <Grid item xs={4}>
+        <Grid size={4}>
           <AuditsDonut
             variant={''}
             startDate={undefined}
@@ -227,7 +227,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
         </Grid>
         {!userServiceAccount && (
           <>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <AuditsRadar
                 variant={undefined}
                 startDate={undefined}
@@ -260,7 +260,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
                 ]}
               />
             </Grid>
-            <Grid item xs={8}>
+            <Grid size={8}>
               <AuditsList
                 variant={undefined}
                 startDate={undefined}
@@ -290,7 +290,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
                 ]}
               />
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <AuditsHorizontalBars
                 variant={undefined}
                 startDate={undefined}

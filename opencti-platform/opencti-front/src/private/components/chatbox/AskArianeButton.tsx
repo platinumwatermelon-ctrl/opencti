@@ -2,7 +2,6 @@ import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { OPEN_BAR_WIDTH, SMALL_BAR_WIDTH } from '@private/components/nav/LeftBar';
 import { useTheme } from '@mui/styles';
-import IconButton from '@mui/material/IconButton';
 import { CGUStatus } from '@private/components/settings/Experience';
 import ValidateTermsOfUseDialog from '@private/components/settings/ValidateTermsOfUseDialog';
 import { LogoXtmOneIcon } from 'filigran-icon';
@@ -18,6 +17,7 @@ import embleme from '../../../static/images/embleme_filigran_white.png';
 import useHelper from '../../../utils/hooks/useHelper';
 import useAuth from '../../../utils/hooks/useAuth';
 import useGranted, { SETTINGS_SETPARAMETERS } from '../../../utils/hooks/useGranted';
+import { IconButton } from '@components';
 
 const AskArianeButton = React.forwardRef((props, ref) => {
   const { t_i18n } = useFormatter();

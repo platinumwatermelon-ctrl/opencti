@@ -1,8 +1,6 @@
 import { graphql } from 'react-relay';
 import React, { ChangeEvent, HTMLAttributes, useState } from 'react';
 import { Field } from 'formik';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import EntityTypeSelectAdornment from '@private/components/common/form/EntityTypeSelectAdornment';
 import { useFormatter } from '../../../../components/i18n';
 import { FieldOption } from '../../../../utils/field';
@@ -10,6 +8,7 @@ import { fetchQuery } from '../../../../relay/environment';
 import { LocationFieldSearchQuery$data } from './__generated__/LocationFieldSearchQuery.graphql';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import ItemIcon from '../../../../components/ItemIcon';
+import { ListItem, ListItemText } from '@components';
 
 const locationFieldSearchQuery = graphql`
   query LocationFieldSearchQuery($search: String, $types: [String]) {

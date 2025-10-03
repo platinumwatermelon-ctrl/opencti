@@ -1,8 +1,3 @@
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React, { FunctionComponent } from 'react';
 import WidgetConfigStepper from './WidgetConfigStepper';
 import { useWidgetConfigContext, WidgetConfigType } from './WidgetConfigContext';
@@ -13,7 +8,7 @@ import WidgetCreationPerspective from './WidgetCreationPerspective';
 import WidgetCreationDataSelection from './WidgetCreationDataSelection';
 import WidgetCreationParameters from './WidgetCreationParameters';
 import useWidgetConfigValidateForm from './useWidgetConfigValidateForm';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 interface WidgetUpsertProps {
   open: boolean,
   onCancel: () => void,

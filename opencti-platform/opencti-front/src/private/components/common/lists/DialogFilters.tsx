@@ -1,17 +1,10 @@
 import React, { FunctionComponent, ReactElement } from 'react';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { BiotechOutlined } from '@mui/icons-material';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { useFormatter } from '../../../../components/i18n';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { Filter, FilterGroup } from '../../../../utils/filters/filtersHelpers-types';
 import { FilterSearchContext } from '../../../../utils/filters/filtersUtils';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Tooltip } from '@components';
 interface DialogFiltersProps {
   handleOpenFilters: (event: React.SyntheticEvent) => void;
   disabled?: boolean;

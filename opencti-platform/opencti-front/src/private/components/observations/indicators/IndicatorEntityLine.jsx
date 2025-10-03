@@ -4,13 +4,7 @@ import { compose } from 'ramda';
 import { Link } from 'react-router-dom';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { MoreVert } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
-import { ListItemButton } from '@mui/material';
-import Box from '@mui/material/Box';
 import inject18n from '../../../../components/i18n';
 import ItemConfidence from '../../../../components/ItemConfidence';
 import StixCoreRelationshipPopover from '../../common/stix_core_relationships/StixCoreRelationshipPopover';
@@ -19,6 +13,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import ItemEntityType from '../../../../components/ItemEntityType';
 import { isEmptyField } from '../../../../utils/utils';
+import { Box, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const styles = (theme) => ({
   item: {

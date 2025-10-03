@@ -1,11 +1,4 @@
 import React, { FunctionComponent, useEffect, useRef } from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import MuiTextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import Select from '@mui/material/Select';
-import FormControl from '@mui/material/FormControl';
 import { DeleteOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
 import * as Yup from 'yup';
@@ -13,9 +6,7 @@ import { Field, FieldArray, Form, Formik } from 'formik';
 import { InformationOutline } from 'mdi-material-ui';
 import useWidgetConfigValidateForm, { fintelTemplateVariableNameChecker } from '@private/components/widgets/useWidgetConfigValidateForm';
 import { useWidgetConfigContext } from '@private/components/widgets/WidgetConfigContext';
-import FormHelperText from '@mui/material/FormHelperText';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import InputAdornment from '@mui/material/InputAdornment';
 import { widgetAttributesInputInstanceQuery } from './WidgetAttributesInputContainer';
 import { WidgetAttributesInputContainerInstanceQuery } from './__generated__/WidgetAttributesInputContainerInstanceQuery.graphql';
 import { useFormatter } from '../../../components/i18n';
@@ -25,6 +16,7 @@ import type { Theme } from '../../../components/Theme';
 import { toCamelCase } from '../../../utils/String';
 import DeleteDialog from '../../../components/DeleteDialog';
 import useDeletion from '../../../utils/hooks/useDeletion';
+import { FormControl, FormHelperText, IconButton, InputAdornment, InputLabel, MenuItem, TextField as MuiTextField, Select, Tooltip } from '@components';
 
 const stixCoreObjectsAvailableAttributesColumns: { attribute: string, label: string }[] = [
   { attribute: 'representative.main', label: 'Representative' },

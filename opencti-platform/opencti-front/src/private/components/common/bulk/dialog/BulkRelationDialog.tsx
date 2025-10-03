@@ -1,21 +1,12 @@
 import React, { FunctionComponent, useState, ChangeEvent, useEffect } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import BulkSelectRawLineData from '@private/components/common/bulk/BulkSelectRawLineData';
 import EntityRelationshipCard from '@private/components/common/bulk/EntityRelationshipCard';
 import { stixCoreRelationshipCreationFromEntityFromMutation, TargetEntity } from '@private/components/common/stix_core_relationships/StixCoreRelationshipCreationFromEntity';
 import { commitMutation, fetchQuery, MESSAGING$ } from 'src/relay/environment';
-import Typography from '@mui/material/Typography';
 import { useFormatter } from 'src/components/i18n';
 import useAuth from 'src/utils/hooks/useAuth';
 import { ArrowRightAlt } from '@mui/icons-material';
-import MenuItem from '@mui/material/MenuItem';
-import { Select, SelectChangeEvent } from '@mui/material';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
+import { SelectChangeEvent } from '@mui/material';
 import { StixCoreRelationshipAddInput } from '@private/components/common/stix_core_relationships/__generated__/StixCoreRelationshipCreationMutation.graphql';
 import { RelayError } from 'src/relay/relayTypes';
 import Loader from 'src/components/Loader';
@@ -27,6 +18,7 @@ import { PaginationOptions } from 'src/components/list_lines';
 import StixCyberObservableCreation from '@private/components/observations/stix_cyber_observables/StixCyberObservableCreation';
 import { allEntitiesKeyList, type StixCoreResultsType } from '../utils/querySearchEntityByText';
 import { getRelationsFromOneEntityToAny, RelationsDataFromEntity, RelationsToEntity } from '../../../../../utils/Relation';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem, Select, TextField, Typography } from '@components';
 
 export const searchStixCoreObjectsByRepresentativeQuery = graphql`
   query BulkRelationDialogQuery(

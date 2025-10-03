@@ -1,20 +1,11 @@
 import React, { UIEvent, useState } from 'react';
 import MoreVert from '@mui/icons-material/MoreVert';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import { graphql } from 'react-relay';
 import { PopoverProps } from '@mui/material/Popover';
 import { DraftsLinesPaginationQuery$variables } from '@private/components/drafts/__generated__/DraftsLinesPaginationQuery.graphql';
 import { DraftPopoverDeleteMutation } from '@private/components/drafts/__generated__/DraftPopoverDeleteMutation.graphql';
 import { draftContextBannerMutation } from '@private/components/drafts/DraftContextBanner';
 import { DraftContextBannerMutation, DraftContextBannerMutation$data } from '@private/components/drafts/__generated__/DraftContextBannerMutation.graphql';
-import DialogTitle from '@mui/material/DialogTitle';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
 import Transition from '../../../components/Transition';
@@ -27,6 +18,7 @@ import { RelayError } from '../../../relay/relayTypes';
 import stopEvent from '../../../utils/domEvent';
 import DeleteDialog from '../../../components/DeleteDialog';
 import useDeletion from '../../../utils/hooks/useDeletion';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Menu, MenuItem } from '@components';
 
 const draftPopoverDeleteMutation = graphql`
     mutation DraftPopoverDeleteMutation($id: ID!) {

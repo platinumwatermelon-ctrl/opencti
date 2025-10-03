@@ -1,13 +1,9 @@
 import { Field, Form, Formik } from 'formik';
 import React, { Suspense, useEffect } from 'react';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Button from '@mui/material/Button';
 import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
-import Alert from '@mui/material/Alert';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import MenuItem from '@mui/material/MenuItem';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { PublicDashboardCreationFormDashboardsQuery } from '@private/components/workspaces/dashboards/public_dashboards/__generated__/PublicDashboardCreationFormDashboardsQuery.graphql';
 import { useFormatter } from '../../../../../components/i18n';
@@ -21,6 +17,7 @@ import Loader, { LoaderVariant } from '../../../../../components/Loader';
 import useAuth from '../../../../../utils/hooks/useAuth';
 import { ME_FILTER_VALUE } from '../../../../../utils/filters/filtersUtils';
 import { fromB64 } from '../../../../../utils/String';
+import { Alert, Button, InputAdornment, MenuItem } from '@components';
 
 const publicDashboardCreateMutation = graphql`
   mutation PublicDashboardCreationFormCreateMutation($input: PublicDashboardAddInput!) {

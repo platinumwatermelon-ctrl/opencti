@@ -2,16 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
 import { FormikConfig, FormikHelpers } from 'formik/dist/types';
 import { Field, Form, Formik } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import * as Yup from 'yup';
 import makeStyles from '@mui/styles/makeStyles';
 import MarkdownField from '../../../../../components/fields/MarkdownField';
@@ -29,6 +20,7 @@ import AlertsField from './AlertsField';
 import { AlertingPaginationQuery$variables } from './__generated__/AlertingPaginationQuery.graphql';
 import ObjectMembersField from '../../../common/form/ObjectMembersField';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, IconButton, MenuItem, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

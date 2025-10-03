@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
 import { LinkOff } from '@mui/icons-material';
 import { graphql, createFragmentContainer } from 'react-relay';
 import * as R from 'ramda';
-import { ListItemButton } from '@mui/material';
 import AddLocations from './AddLocations';
 import { addLocationsMutationRelationDelete } from './AddLocationsLines';
 import { APP_BASE_PATH, commitMutation } from '../../../../relay/environment';
@@ -22,6 +15,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 const styles = (theme) => ({
   avatar: {

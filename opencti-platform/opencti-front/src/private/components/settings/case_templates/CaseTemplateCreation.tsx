@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import { Field, Form, Formik } from 'formik';
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'react-relay';
@@ -15,6 +14,7 @@ import CaseTemplateTasks from '../../common/form/CaseTemplateTasks';
 import { CaseTemplateLinesPaginationQuery$variables } from './__generated__/CaseTemplateLinesPaginationQuery.graphql';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
 import { commitMutation, defaultCommitMutation } from '../../../../relay/environment';
+import { Button } from '@components';
 
 const caseTemplateMutation = graphql`
   mutation CaseTemplateCreationMutation($input: CaseTemplateAddInput!) {

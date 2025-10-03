@@ -1,6 +1,5 @@
 import Drawer from '@private/components/common/drawer/Drawer';
 import { Add } from '@mui/icons-material';
-import { IconButton } from '@mui/material';
 import React, { FunctionComponent, useState } from 'react';
 import SearchInput from 'src/components/SearchInput';
 import { useFormatter } from 'src/components/i18n';
@@ -14,7 +13,7 @@ import { ThreatActorIndividualDetails_ThreatActorIndividual$data } from './__gen
 import IndividualCreation from '../../entities/individuals/IndividualCreation';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
-
+import { IconButton } from '@components';
 interface AddIndividualsThreatActorIndividualComponentProps {
   threatActorIndividual: ThreatActorIndividualDetails_ThreatActorIndividual$data,
   queryRef: PreloadedQuery<AddIndividualsThreatActorIndividualLinesQuery>,

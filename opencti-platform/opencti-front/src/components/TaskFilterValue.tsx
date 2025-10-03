@@ -1,10 +1,7 @@
 import * as R from 'ramda';
 import React from 'react';
-import Tooltip from '@mui/material/Tooltip';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
-import Box from '@mui/material/Box';
 import FilterValuesContent, { filterValuesContentQuery } from './FilterValuesContent';
 import { FilterValuesContentQuery } from './__generated__/FilterValuesContentQuery.graphql';
 import { useFormatter } from './i18n';
@@ -13,6 +10,7 @@ import { truncate } from '../utils/String';
 import type { Theme } from './Theme';
 import DisplayFilterGroup from './filters/DisplayFilterGroup';
 import { FilterGroup } from '../utils/filters/filtersHelpers-types';
+import { Box, Chip, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

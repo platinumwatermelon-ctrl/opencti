@@ -1,13 +1,12 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from '@hello-pangea/dnd';
-import { List, ListItem, ListItemIcon, ListItemText, IconButton, Checkbox, Typography, Box, AccordionDetails } from '@mui/material';
 import { Close, DragIndicatorOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
-import Button from '@mui/material/Button';
 import type { Theme } from '../../../components/Theme';
 import { useFormatter } from '../../../components/i18n';
 import type { WidgetColumn } from '../../../utils/widget/widget';
 import { Accordion, AccordionSummary } from '../../../components/Accordion';
+import { AccordionDetails, Box, Button, Checkbox, IconButton, List, ListItem, ListItemIcon, ListItemText, Typography } from '@components';
 
 type WidgetConfigColumnsCustomizationProps = {
   availableColumns: WidgetColumn[];

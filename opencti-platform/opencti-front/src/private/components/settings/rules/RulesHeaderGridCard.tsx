@@ -1,9 +1,7 @@
 import React, { CSSProperties, PropsWithChildren, ReactNode } from 'react';
-import { Card, CardContent } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import type { Theme } from '../../../../components/Theme';
-
+import { Card, CardContent, Typography } from '@components';
 interface RulesHeaderGridCardProps extends PropsWithChildren {
   title: string
   icon: ReactNode

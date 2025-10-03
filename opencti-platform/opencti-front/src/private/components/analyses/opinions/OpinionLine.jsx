@@ -3,19 +3,14 @@ import * as PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
 import { compose } from 'ramda';
-import Skeleton from '@mui/material/Skeleton';
-import Checkbox from '@mui/material/Checkbox';
-import { ListItemButton } from '@mui/material';
 import inject18n from '../../../../components/i18n';
 import StixCoreObjectLabels from '../../common/stix_core_objects/StixCoreObjectLabels';
 import ItemMarkings from '../../../../components/ItemMarkings';
 import ItemIcon from '../../../../components/ItemIcon';
 import ItemStatus from '../../../../components/ItemStatus';
+import { Checkbox, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const styles = (theme) => ({
   item: {

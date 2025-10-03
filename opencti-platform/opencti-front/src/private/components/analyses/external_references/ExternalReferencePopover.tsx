@@ -1,11 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
 import { MoreVertOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import ToggleButton from '@mui/material/ToggleButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { useFormatter } from '../../../../components/i18n';
 import { QueryRenderer } from '../../../../relay/environment';
@@ -15,6 +11,7 @@ import { deleteNodeFromId } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import DeleteDialog from '../../../../components/DeleteDialog';
+import { IconButton, Menu, MenuItem, ToggleButton } from '@components';
 
 export const externalReferencePopoverDeletionMutation = graphql`
   mutation ExternalReferencePopoverDeletionMutation($id: ID!) {

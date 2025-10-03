@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import MuiTextField from '@mui/material/TextField';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { representationLabel } from '@private/components/data/csvMapper/representations/RepresentationUtils';
 import * as R from 'ramda';
 import { getBasedOnRepresentations, getInfoForRef } from '@private/components/data/csvMapper/representations/attributes/AttributeUtils';
@@ -18,6 +16,7 @@ import useAuth from '../../../../../../utils/hooks/useAuth';
 import { resolveTypesForRelationship, resolveTypesForRelationshipRef } from '../../../../../../utils/Relation';
 import { useFormatter } from '../../../../../../components/i18n';
 import { isStixCoreObjects, isStixCoreRelationships } from '../../../../../../utils/stixTypeUtils';
+import { Autocomplete as MUIAutocomplete, TextField as MuiTextField } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

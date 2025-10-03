@@ -1,23 +1,11 @@
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import Button from '@mui/material/Button';
 import React, { FunctionComponent, useState } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Dialog from '@mui/material/Dialog';
-import IconButton from '@mui/material/IconButton';
 import { InfoOutlined } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
 import { ParsedWorkMessage, ResolvedEntity } from '@private/components/data/connectors/parseWorkErrors';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import ItemCopy from '../../../../components/ItemCopy';
 import Transition from '../../../../components/Transition';
 import { useFormatter } from '../../../../components/i18n';
 import { truncate } from '../../../../utils/String';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Paper, TableCell, TableRow, Tooltip, Typography } from '@components';
 interface ConnectorWorksErrorLineProps {
   error: ParsedWorkMessage;
 }

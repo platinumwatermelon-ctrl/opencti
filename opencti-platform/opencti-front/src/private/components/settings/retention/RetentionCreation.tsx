@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
-import InputAdornment from '@mui/material/InputAdornment';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
-import Box from '@mui/material/Box';
 import makeStyles from '@mui/styles/makeStyles';
 import { RetentionLinesPaginationQuery$variables } from '@private/components/settings/retention/__generated__/RetentionLinesPaginationQuery.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import { RetentionCreationCheckMutation$data } from '@private/components/settings/retention/__generated__/RetentionCreationCheckMutation.graphql';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import Alert from '@mui/material/Alert';
-import MenuItem from '@mui/material/MenuItem';
 import Drawer, { DrawerControlledDialProps } from '../../common/drawer/Drawer';
 import { useFormatter } from '../../../../components/i18n';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
@@ -28,6 +22,7 @@ import SelectField from '../../../../components/fields/SelectField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import type { Theme } from '../../../../components/Theme';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Alert, Box, Button, InputAdornment, MenuItem, Tooltip } from '@components';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   buttons: {

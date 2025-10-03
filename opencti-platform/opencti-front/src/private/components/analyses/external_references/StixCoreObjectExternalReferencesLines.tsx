@@ -2,33 +2,17 @@ import React, { FunctionComponent, useState } from 'react';
 import { includes } from 'ramda';
 import { createPaginationContainer, graphql, RelayPaginationProp } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
 import { ExpandLessOutlined, ExpandMoreOutlined, OpenInBrowserOutlined } from '@mui/icons-material';
 import Slide, { SlideProps } from '@mui/material/Slide';
 import { Field, Form, Formik } from 'formik';
-import DialogTitle from '@mui/material/DialogTitle';
-import MenuItem from '@mui/material/MenuItem';
 import * as Yup from 'yup';
 import makeStyles from '@mui/styles/makeStyles';
 import { FormikConfig } from 'formik/dist/types';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import { FileLine_file$data } from '@private/components/common/files/__generated__/FileLine_file.graphql';
 import ManageImportConnectorMessage from '@private/components/data/import/ManageImportConnectorMessage';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import { CsvMapperFieldOption } from '@private/components/common/form/CsvMapperField';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { truncate } from '../../../../utils/String';
 import { commitMutation, MESSAGING$ } from '../../../../relay/environment';
 import AddExternalReferences from './AddExternalReferences';
@@ -52,6 +36,7 @@ import { resolveHasUserChoiceParsedCsvMapper } from '../../../../utils/csvMapper
 import { NO_DATA_WIDGET_MESSAGE } from '../../../../components/dashboard/WidgetNoData';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

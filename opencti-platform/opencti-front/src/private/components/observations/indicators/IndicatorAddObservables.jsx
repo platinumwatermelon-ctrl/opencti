@@ -2,20 +2,13 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
 import { Add, Close } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import { QueryRenderer } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';
 import IndicatorAddObservablesLines, { indicatorAddObservablesLinesQuery } from './IndicatorAddObservablesLines';
 import StixCyberObservableCreation from '../stix_cyber_observables/StixCyberObservableCreation';
+import { Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton, Typography } from '@components';
 
 const styles = (theme) => ({
   drawerPaper: {

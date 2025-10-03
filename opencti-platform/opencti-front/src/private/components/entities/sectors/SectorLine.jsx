@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
 import { compose, map } from 'ramda';
-import List from '@mui/material/List';
-import { ListItemButton } from '@mui/material';
-import Skeleton from '@mui/material/Skeleton';
 import { DraftChip } from '../../common/draft/DraftChip';
 import inject18n from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const styles = (theme) => ({
   item: {},

@@ -1,8 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import ToggleButton from '@mui/material/ToggleButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql } from 'react-relay';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +18,7 @@ import { StixCoreObjectOrStixCoreRelationshipNotesCardsQuery$variables } from '.
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
+import { IconButton, Menu, MenuItem, ToggleButton } from '@components';
 
 const NotePopoverDeletionMutation = graphql`
   mutation NotePopoverDeletionMutation($id: ID!) {

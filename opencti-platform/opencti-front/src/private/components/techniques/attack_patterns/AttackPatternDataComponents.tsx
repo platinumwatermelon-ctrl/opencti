@@ -1,15 +1,7 @@
 import { createFragmentContainer, graphql } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import IconButton from '@mui/material/IconButton';
 import { LinkOff, SourceOutlined } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { useFormatter } from '../../../../components/i18n';
 import { AttackPatternDataComponents_attackPattern$data } from './__generated__/AttackPatternDataComponents_attackPattern.graphql';
 import AddDataComponents from './AddDataComponents';
@@ -17,6 +9,7 @@ import { addDataComponentsMutationRelationDelete } from './AddDataComponentsLine
 import { deleteNodeFromEdge } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Typography } from '@components';
 
 const AttackPatternDataComponentsComponent: FunctionComponent<{
   attackPattern: AttackPatternDataComponents_attackPattern$data;

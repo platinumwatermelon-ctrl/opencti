@@ -3,17 +3,10 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { compose, filter, flatten, fromPairs, includes, map, uniq, zip } from 'ramda';
 import * as Yup from 'yup';
-import Grid from '@mui/material/Grid';
 import withStyles from '@mui/styles/withStyles';
 import { ConnectionHandler } from 'relay-runtime';
-import MenuItem from '@mui/material/MenuItem';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import DraftWorkspaceViewer from './draftWorkspace/DraftWorkspaceViewer';
 import ObjectMarkingField from '../form/ObjectMarkingField';
 import FileExportViewer from './FileExportViewer';
@@ -28,6 +21,7 @@ import WorkbenchFileViewer from './workbench/WorkbenchFileViewer';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import PictureManagementViewer from './PictureManagementViewer';
 import { resolveHasUserChoiceParsedCsvMapper } from '../../../../utils/csvMapperUtils';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, MenuItem } from '@components';
 
 const styles = (theme) => ({
   container: {

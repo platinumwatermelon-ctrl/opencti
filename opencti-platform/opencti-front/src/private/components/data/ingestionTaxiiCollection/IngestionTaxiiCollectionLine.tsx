@@ -1,11 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { MoreVert } from '@mui/icons-material';
 import { AccessPoint } from 'mdi-material-ui';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
 import { IngestionTaxiiCollectionLine_node$key } from '@private/components/data/ingestionTaxiiCollection/__generated__/IngestionTaxiiCollectionLine_node.graphql';
 import {
@@ -20,6 +16,7 @@ import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import IngestionTaxiiCollectionPopover from './IngestionTaxiiCollectionPopover';
 import { APP_BASE_PATH } from '../../../../relay/environment';
+import { ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   item: {

@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery, useRefetchableFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
 import {
   StixCoreObjectHistoryLinesQuery,
   StixCoreObjectHistoryLinesQuery$variables,
@@ -10,6 +9,7 @@ import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectHistoryLine from './StixCoreObjectHistoryLine';
 import { FIVE_SECONDS } from '../../../../utils/Time';
 import useInterval from '../../../../utils/hooks/useInterval';
+import { Paper } from '@components';
 
 export const stixCoreObjectHistoryLinesQuery = graphql`
   query StixCoreObjectHistoryLinesQuery(

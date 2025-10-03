@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Typography from '@mui/material/Typography';
 import RulesListItem from '@private/components/settings/rules/RulesListItem';
 import { useTheme } from '@mui/material/styles';
 import RulesStatusChangeDialog, { RulesStatusChangeDialogProps } from '@private/components/settings/rules/RulesStatusChangeDialog';
@@ -9,6 +8,7 @@ import { RULES_LOCAL_STORAGE_KEY } from './rules-utils';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
+import { Typography } from '@components';
 
 export type Rule = NonNullable<RulesList_data$data['rules']>[number];
 export type Task = NonNullable<NonNullable<NonNullable<RulesList_data$data['backgroundTasks']>['edges']>[number]>['node'];

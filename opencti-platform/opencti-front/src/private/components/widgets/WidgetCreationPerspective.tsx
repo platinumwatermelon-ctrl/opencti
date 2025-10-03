@@ -1,9 +1,4 @@
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
 import { DatabaseOutline, FlaskOutline } from 'mdi-material-ui';
-import Typography from '@mui/material/Typography';
 import { LibraryBooksOutlined } from '@mui/icons-material';
 import React from 'react';
 import { v4 as uuid } from 'uuid';
@@ -13,6 +8,7 @@ import { indexedVisualizationTypes } from '../../../utils/widget/widgetUtils';
 import { useWidgetConfigContext } from './WidgetConfigContext';
 import type { WidgetPerspective } from '../../../utils/widget/widget';
 import { emptyFilterGroup, SELF_ID } from '../../../utils/filters/filtersUtils';
+import { Card, CardActionArea, CardContent, Grid, Typography } from '@components';
 
 const WidgetCreationPerspective = () => {
   const { t_i18n } = useFormatter();
@@ -82,7 +78,7 @@ const WidgetCreationPerspective = () => {
       style={{ marginTop: 20, marginBottom: 20 }}
     >
       {getCurrentIsEntities() && (
-        <Grid item xs={xs}>
+        <Grid size={xs}>
           <Card
             variant="outlined"
             style={{
@@ -114,7 +110,7 @@ const WidgetCreationPerspective = () => {
         </Grid>
       )}
       {getCurrentIsRelationships() && (
-        <Grid item xs={xs}>
+        <Grid size={xs}>
           <Card
             variant="outlined"
             style={{
@@ -148,7 +144,7 @@ const WidgetCreationPerspective = () => {
         </Grid>
       )}
       {getCurrentIsAudits() && (
-        <Grid item xs={xs}>
+        <Grid size={xs}>
           <Card
             variant="outlined"
             style={{

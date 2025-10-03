@@ -2,26 +2,11 @@ import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import Grid from '@mui/material/Grid';
 import { makeStyles, useTheme } from '@mui/styles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Alert from '@mui/material/Alert';
-import MenuItem from '@mui/material/MenuItem';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { VpnKeyOutlined } from '@mui/icons-material';
-import ListItemText from '@mui/material/ListItemText';
 import GroupSetDefaultGroupForIngestionUsers from '@private/components/settings/groups/GroupSetDefaultGroupForIngestionUsers';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import DialogTitle from '@mui/material/DialogTitle';
 import DangerZoneBlock from '../common/danger_zone/DangerZoneBlock';
 import AccessesMenu from './AccessesMenu';
 import ObjectOrganizationField from '../common/form/ObjectOrganizationField';
@@ -42,6 +27,7 @@ import Transition from '../../../components/Transition';
 import type { Theme } from '../../../components/Theme';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
 import { FieldOption } from '../../../utils/field';
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, List, ListItem, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -189,7 +175,7 @@ const PoliciesComponent: FunctionComponent<PoliciesComponentProps> = ({
       <AccessesMenu />
       <Breadcrumbs elements={[{ label: t_i18n('Settings') }, { label: t_i18n('Security') }, { label: t_i18n('Policies'), current: true }]} />
       <Grid container={true} spacing={3}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Formik
             onSubmit={() => {
             }}
@@ -200,7 +186,7 @@ const PoliciesComponent: FunctionComponent<PoliciesComponentProps> = ({
             {({ values, setFieldValue }) => (
               <Form>
                 <Grid container={true} spacing={3}>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <DangerZoneBlock
                       type={'platform_organization'}
                       title={(
@@ -279,7 +265,7 @@ const PoliciesComponent: FunctionComponent<PoliciesComponentProps> = ({
                   </Grid>
                   <GroupSetDefaultGroupForIngestionUsers/>
 
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h4" gutterBottom={true}>
                       {t_i18n('Local password policies')}
                     </Typography>
@@ -404,7 +390,7 @@ const PoliciesComponent: FunctionComponent<PoliciesComponentProps> = ({
                       />
                     </Paper>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h4" gutterBottom={true}>
                       {t_i18n('Authentication strategies')}
                     </Typography>
@@ -444,7 +430,7 @@ const PoliciesComponent: FunctionComponent<PoliciesComponentProps> = ({
                       />
                     </Paper>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h4" gutterBottom={true}>
                       {t_i18n('Login messages')}
                     </Typography>
@@ -480,7 +466,7 @@ const PoliciesComponent: FunctionComponent<PoliciesComponentProps> = ({
                       />
                     </Paper>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h4" gutterBottom={true}>
                       {t_i18n('Platform Banner Configuration')}
                     </Typography>

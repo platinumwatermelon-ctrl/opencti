@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { compose } from 'ramda';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
 import { LinkOff } from '@mui/icons-material';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { AutoFix } from 'mdi-material-ui';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { APP_BASE_PATH, commitMutation } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
 import { resolveLink } from '../../../../utils/Entity';
@@ -22,6 +16,7 @@ import { addLocationsThreatActorMutationRelationDelete } from './AddLocationsThr
 import AddLocationsThreatActorIndividual from './AddLocationsThreatActorIndividual';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import CardLabel from '../../../../components/CardLabel';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 class ThreatActorIndividualLocationsComponent extends Component {
   removeLocation(locationEdge) {

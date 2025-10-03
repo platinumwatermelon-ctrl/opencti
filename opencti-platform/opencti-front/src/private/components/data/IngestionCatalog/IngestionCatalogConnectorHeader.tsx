@@ -1,6 +1,4 @@
-import Typography from '@mui/material/Typography';
 import { VerifiedOutlined } from '@mui/icons-material';
-import Button from '@mui/material/Button';
 import React from 'react';
 import { useTheme } from '@mui/styles';
 import IngestionCatalogChip from '@private/components/data/IngestionCatalog/IngestionCatalogUseCaseChip';
@@ -12,6 +10,7 @@ import type { Theme } from '../../../../components/Theme';
 import { INGESTION_SETINGESTIONS } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import ItemBoolean from '../../../../components/ItemBoolean';
+import { Button, Typography } from '@components';
 
 type IngestionCatalogConnectorHeaderProps = {
   connector: IngestionConnector,

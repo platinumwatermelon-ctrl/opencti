@@ -1,22 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
 import { v4 as uuid } from 'uuid';
 import { graphql } from 'react-relay';
-import { DialogTitle } from '@mui/material';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import Button from '@mui/material/Button';
-import DialogActions from '@mui/material/DialogActions';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Radio from '@mui/material/Radio';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
 import { createSearchParams, useNavigate } from 'react-router-dom';
-import Alert from '@mui/material/Alert';
 import { StixCoreObjectMappableContentFieldPatchMutation } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectMappableContentFieldPatchMutation.graphql';
 import {
   StixCoreObjectAskAIContainerReportMutation,
@@ -38,6 +23,7 @@ import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { MESSAGING$ } from '../../../../relay/environment';
 import { aiLanguage } from '../../../../components/AppIntlProvider';
 import { getDefaultAiLanguage } from '../../../../utils/ai/Common';
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, List, ListItem, ListItemText, MenuItem, Radio, Select, TextField } from '@components';
 
 // region types
 interface StixCoreObjectAskAiProps {

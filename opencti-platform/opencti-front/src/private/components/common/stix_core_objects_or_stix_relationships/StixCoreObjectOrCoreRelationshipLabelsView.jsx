@@ -3,14 +3,6 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { append, filter, map, pathOr, pipe, union } from 'ramda';
 import { Field, Form, Formik } from 'formik';
-import Chip from '@mui/material/Chip';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { Add, CancelOutlined } from '@mui/icons-material';
 import { Label } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
@@ -27,6 +19,7 @@ import CommitMessage from '../form/CommitMessage';
 import Transition from '../../../../components/Transition';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import CardLabel from '../../../../components/CardLabel';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

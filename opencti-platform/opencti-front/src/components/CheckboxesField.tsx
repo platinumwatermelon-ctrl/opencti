@@ -1,13 +1,8 @@
 import React from 'react';
 import { FieldProps } from 'formik';
-import FormControl from '@mui/material/FormControl';
-import { ButtonGroup, FormLabel } from '@mui/material';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
 import { useFormatter } from './i18n';
 import { FieldOption } from '../utils/field';
+import { Button, ButtonGroup, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@components';
 
 type CheckboxesFieldProps = FieldProps<FieldOption[]> & {
   label: string

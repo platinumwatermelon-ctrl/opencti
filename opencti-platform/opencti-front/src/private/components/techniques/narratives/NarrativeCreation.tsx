@@ -1,11 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
@@ -32,6 +28,7 @@ import BulkTextModal from '../../../../components/fields/BulkTextField/BulkTextM
 import ProgressBar from '../../../../components/ProgressBar';
 import BulkTextField from '../../../../components/fields/BulkTextField/BulkTextField';
 import BulkTextModalButton from '../../../../components/fields/BulkTextField/BulkTextModalButton';
+import { Button, Dialog, DialogContent, DialogTitle } from '@components';
 
 const narrativeMutation = graphql`
   mutation NarrativeCreationMutation($input: NarrativeAddInput!) {

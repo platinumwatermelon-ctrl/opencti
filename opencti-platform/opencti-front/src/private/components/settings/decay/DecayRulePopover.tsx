@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
 import DecayRuleDeletion from '@private/components/settings/decay/DecayRuleDeletion';
 import { DecayRule_decayRule$data } from './__generated__/DecayRule_decayRule.graphql';
 import { decayRuleEditionMutation } from './DecayRuleEdition';
@@ -9,7 +7,7 @@ import { handleError } from '../../../../relay/environment';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import PopoverMenu from '../../../../components/PopoverMenu';
 import useGranted, { KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
-
+import { Box, MenuItem } from '@components';
 interface DecayRulePopoverProps {
   decayRule: DecayRule_decayRule$data;
 }

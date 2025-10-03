@@ -3,11 +3,10 @@ import * as PropTypes from 'prop-types';
 import { compose, map, take } from 'ramda';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
-import Chip from '@mui/material/Chip';
-import Tooltip from '@mui/material/Tooltip';
 import inject18n from '../../../../components/i18n';
 import { hexToRGB } from '../../../../utils/Colors';
 import { truncate } from '../../../../utils/String';
+import { Chip, Tooltip } from '@components';
 
 const styles = () => ({
   labels: {

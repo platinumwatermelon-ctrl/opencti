@@ -5,12 +5,9 @@ import { Field, Form, Formik, FormikConfig } from 'formik';
 import Axios from 'axios';
 import ItemIcon from 'src/components/ItemIcon';
 import Loader from 'src/components/Loader';
-import Button from '@mui/material/Button';
 import { ExclusionListsLine_node$data } from '@private/components/settings/exclusion_lists/__generated__/ExclusionListsLine_node.graphql';
 import CustomFileUploader from '@private/components/common/files/CustomFileUploader';
 import { now } from 'src/utils/Time';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { availableEntityTypes, exclusionListUpdateValidator } from '@private/components/settings/exclusion_lists/ExclusionListUtils';
 import { APP_BASE_PATH, handleErrorInForm } from '../../../../relay/environment'; import AutocompleteField from '../../../../components/AutocompleteField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
@@ -19,6 +16,7 @@ import MarkdownField from '../../../../components/fields/MarkdownField';
 import TextField from '../../../../components/TextField';
 import { useFormatter } from '../../../../components/i18n';
 import useSchema from '../../../../utils/hooks/useSchema';
+import { Button, FormControlLabel, Switch } from '@components';
 
 const MAX_FILE_SIZE = 1000000;
 

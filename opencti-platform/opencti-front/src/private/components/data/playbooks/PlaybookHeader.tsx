@@ -14,24 +14,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React, { useEffect, useState } from 'react';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { CheckCircleOutlined, ErrorOutlined, ExpandLessOutlined, ExpandMoreOutlined, ManageHistoryOutlined } from '@mui/icons-material';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
-import Collapse from '@mui/material/Collapse';
-import Badge from '@mui/material/Badge';
 import { createRefetchContainer, graphql, RelayRefetchProp } from 'react-relay';
 import { interval } from 'rxjs';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
 import { useTheme } from '@mui/material';
-import ListItemButton from '@mui/material/ListItemButton';
 import PlaybookEdition from '@private/components/data/playbooks/PlaybookEdition';
 import Drawer from '../../common/drawer/Drawer';
 import { PlaybookHeader_playbook$data } from './__generated__/PlaybookHeader_playbook.graphql';
@@ -40,6 +26,7 @@ import PlaybookPopover from './PlaybookPopover';
 import { FIVE_SECONDS } from '../../../../utils/Time';
 import Transition from '../../../../components/Transition';
 import ItemIcon from '../../../../components/ItemIcon';
+import { Badge, Chip, Collapse, Dialog, DialogContent, DialogTitle, List, ListItemButton, ListItemIcon, ListItemText, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

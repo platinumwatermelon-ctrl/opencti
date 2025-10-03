@@ -1,25 +1,15 @@
 import { graphql } from 'react-relay';
-import DialogContent from '@mui/material/DialogContent';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React, { FunctionComponent, useState } from 'react';
 import { useTheme } from '@mui/styles';
 import { useNavigate } from 'react-router-dom';
-import DialogContentText from '@mui/material/DialogContentText';
 import { ReportPopoverDeletionQuery$data } from '@private/components/analyses/reports/__generated__/ReportPopoverDeletionQuery.graphql';
-import DialogTitle from '@mui/material/DialogTitle';
 import { QueryRenderer } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 
 import type { Theme } from '../../../../components/Theme';
 import Transition from '../../../../components/Transition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Alert, AlertTitle, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControlLabel, FormGroup } from '@components';
 
 const reportPopoverDeletionQuery = graphql`
   query ReportPopoverDeletionQuery($id: String) {

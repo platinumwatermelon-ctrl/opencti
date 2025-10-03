@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { Field, FieldArray, Form, Formik } from 'formik';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import * as Yup from 'yup';
 import ConfidenceOverrideField from '@private/components/settings/users/edition/ConfidenceOverrideField';
@@ -12,6 +10,7 @@ import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import { useFormatter } from '../../../../components/i18n';
 import { isEmptyField, isNotEmptyField } from '../../../../utils/utils';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { IconButton, Typography } from '@components';
 
 export const groupConfidenceMutationFieldPatch = graphql`
   mutation GroupEditionConfidenceFieldPatchMutation(

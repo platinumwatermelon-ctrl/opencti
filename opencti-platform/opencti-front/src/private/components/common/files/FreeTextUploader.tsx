@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'react-relay';
 import IconButton, { type IconButtonOwnProps } from '@mui/material/IconButton';
 import { TextFieldsOutlined } from '@mui/icons-material';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import Tooltip from '@mui/material/Tooltip';
 import { Field, Formik, FormikHelpers } from 'formik';
-import DialogTitle from '@mui/material/DialogTitle';
 import * as Yup from 'yup';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
@@ -19,6 +13,7 @@ import { now } from '../../../../utils/Time';
 import { isValidStixBundle } from '../../../../utils/String';
 import { KNOWLEDGE_KNUPLOAD } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from '@components';
 
 const freeTextUploaderGlobalMutation = graphql`
   mutation FreeTextUploaderGlobalMutation($file: Upload!, $fileMarkings: [String]) {

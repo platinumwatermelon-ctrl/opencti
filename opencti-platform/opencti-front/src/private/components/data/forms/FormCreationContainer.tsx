@@ -1,7 +1,6 @@
 import { PreloadedQuery, useFragment, usePreloadedQuery, useQueryLoader, graphql } from 'react-relay';
 import React, { FunctionComponent, useRef } from 'react';
 import { useTheme } from '@mui/styles';
-import ToggleButton from '@mui/material/ToggleButton';
 import { FileUploadOutlined } from '@mui/icons-material';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { FormEditionContainerQuery } from './__generated__/FormEditionContainerQuery.graphql';
@@ -20,6 +19,7 @@ import VisuallyHiddenInput from '../../common/VisuallyHiddenInput';
 import type { FormCreationContainerImportMutation } from './__generated__/FormCreationContainerImportMutation.graphql';
 import type { Theme } from '../../../../components/Theme';
 import { insertNode } from '../../../../utils/store';
+import { ToggleButton } from '@components';
 
 const formImportMutation = graphql`
   mutation FormCreationContainerImportMutation($file: Upload!) {

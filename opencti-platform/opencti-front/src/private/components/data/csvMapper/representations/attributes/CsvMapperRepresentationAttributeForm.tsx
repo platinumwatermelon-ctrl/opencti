@@ -1,6 +1,4 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import MUIAutocomplete from '@mui/material/Autocomplete';
-import MuiTextField from '@mui/material/TextField';
 import classNames from 'classnames';
 import CsvMapperRepresentationAttributeOptions from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributeOptions';
 import { alphabet } from '@private/components/data/csvMapper/representations/attributes/AttributeUtils';
@@ -12,6 +10,7 @@ import { CsvMapperRepresentationAttributeFormData } from '@private/components/da
 import { SchemaAttribute } from '@private/components/data/csvMapper/representations/attributes/CsvMapperRepresentationAttributesForm';
 import { useFormatter } from '../../../../../../components/i18n';
 import { isEmptyField } from '../../../../../../utils/utils';
+import { Autocomplete as MUIAutocomplete, TextField as MuiTextField } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

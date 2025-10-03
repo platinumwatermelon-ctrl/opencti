@@ -1,4 +1,3 @@
-import { Button, IconButton, Tooltip, Typography } from '@mui/material';
 import React, { FunctionComponent, Suspense, useState } from 'react';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { Add } from '@mui/icons-material';
@@ -19,7 +18,7 @@ import StixCyberObservableCreation from '../../observations/stix_cyber_observabl
 import type { Theme } from '../../../../components/Theme';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { DataColumns } from '../../../../components/list_lines';
-
+import { Button, IconButton, Tooltip, Typography } from '@components';
 interface ControlledDialProps {
   onOpen: () => void
   title: string

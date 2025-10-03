@@ -1,18 +1,13 @@
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import React, { FunctionComponent, useState } from 'react';
-import DialogContent from '@mui/material/DialogContent';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import { graphql } from 'react-relay';
 import CustomFileUploader from '@private/components/common/files/CustomFileUploader';
 import CodeBlock from '@private/components/common/CodeBlock';
 import { InformationOutline } from 'mdi-material-ui';
-import Box from '@mui/material/Box';
 import { JsonMapperTestDialogMutation$data } from '@private/components/data/jsonMapper/__generated__/JsonMapperTestDialogMutation.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { commitMutation, handleError } from '../../../../relay/environment';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
+import { Box, Button, Dialog, DialogContent, DialogTitle, Tooltip } from '@components';
 
 const jsonMapperTestQuery = graphql`
   mutation JsonMapperTestDialogMutation($configuration: String!, $file: Upload!) {

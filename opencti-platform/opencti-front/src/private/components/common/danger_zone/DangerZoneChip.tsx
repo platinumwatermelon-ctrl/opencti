@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTheme } from '@mui/styles';
-import Tooltip from '@mui/material/Tooltip';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
+import { Tooltip } from '@components';
 
 const DangerZoneChip = ({ style }: { style?: React.CSSProperties }) => {
   const { t_i18n } = useFormatter();

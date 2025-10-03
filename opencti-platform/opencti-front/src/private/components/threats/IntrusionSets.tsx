@@ -1,8 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import { GenericAttackCardDummy } from '@private/components/common/cards/GenericAttackCard';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
 import { IntrusionSetCardFragment } from '@private/components/threats/intrusion_sets/IntrusionSetCard';
 import { IntrusionSetsCards_data$data } from '@private/components/threats/intrusion_sets/__generated__/IntrusionSetsCards_data.graphql';
@@ -21,6 +18,7 @@ import DataTable from '../../../components/dataGrid/DataTable';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';
 import Security from '../../../utils/Security';
+import { Grid, ToggleButton, Tooltip } from '@components';
 
 const LOCAL_STORAGE_KEY = 'intrusionSets';
 
@@ -110,8 +108,7 @@ const IntrusionSets = () => {
                   .fill(0)
                   .map((_, idx) => (
                     <Grid
-                      item
-                      xs={3}
+                      size={3}
                       key={idx}
                     >
                       <GenericAttackCardDummy />

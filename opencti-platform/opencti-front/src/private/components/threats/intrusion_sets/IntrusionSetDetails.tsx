@@ -1,13 +1,6 @@
 import React from 'react';
 import { graphql, createFragmentContainer } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { BullseyeArrow, ArmFlexOutline } from 'mdi-material-ui';
-import ListItemText from '@mui/material/ListItemText';
 import { useTheme } from '@mui/material/styles';
 import { IntrusionSetDetails_intrusionSet$data } from '@private/components/threats/intrusion_sets/__generated__/IntrusionSetDetails_intrusionSet.graphql';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
@@ -16,6 +9,7 @@ import IntrusionSetLocations from './IntrusionSetLocations';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
 import ImageCarousel, { ImagesData } from '../../../../components/ImageCarousel';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 type IntrusionSetDetailsProps = {
   intrusionSet: IntrusionSetDetails_intrusionSet$data
@@ -50,14 +44,14 @@ const IntrusionSetDetailsComponent = ({ intrusionSet }: IntrusionSetDetailsProps
         variant="outlined"
       >
         <Grid container spacing={3}>
-          <Grid item xs={hasImages ? 7 : 6}>
+          <Grid size={hasImages ? 7 : 6}>
             <Grid container spacing={3}>
               {hasImages && (
-                <Grid item xs={4}>
+                <Grid size={4}>
                   <ImageCarousel data={imagesCarousel} />
                 </Grid>
               )}
-              <Grid item xs={hasImages ? 8 : 12}>
+              <Grid size={hasImages ? 8 : 12}>
                 <Typography variant="h3" gutterBottom>
                   {t_i18n('Description')}
                 </Typography>
@@ -68,7 +62,7 @@ const IntrusionSetDetailsComponent = ({ intrusionSet }: IntrusionSetDetailsProps
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={hasImages ? 5 : 6}>
+          <Grid size={hasImages ? 5 : 6}>
             <IntrusionSetLocations intrusionSet={intrusionSet} />
             <Typography
               variant="h3"
@@ -89,7 +83,7 @@ const IntrusionSetDetailsComponent = ({ intrusionSet }: IntrusionSetDetailsProps
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography
               variant="h3"
               gutterBottom
@@ -104,7 +98,7 @@ const IntrusionSetDetailsComponent = ({ intrusionSet }: IntrusionSetDetailsProps
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography
               variant="h3"
               gutterBottom
@@ -119,7 +113,7 @@ const IntrusionSetDetailsComponent = ({ intrusionSet }: IntrusionSetDetailsProps
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography
               variant="h3"
               gutterBottom
@@ -154,7 +148,7 @@ const IntrusionSetDetailsComponent = ({ intrusionSet }: IntrusionSetDetailsProps
               )}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography
               variant="h3"
               gutterBottom

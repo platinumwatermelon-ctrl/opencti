@@ -4,20 +4,14 @@ import * as Yup from 'yup';
 import { FormikConfig } from 'formik/dist/types';
 import { ExternalReferencesValues } from '@private/components/common/form/ExternalReferencesField';
 import { Field, Form, Formik, FormikErrors } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
 import CreatorField from '@private/components/common/form/CreatorField';
 import CommitMessage from '@private/components/common/form/CommitMessage';
 import JsonMapperField, { JsonMapperFieldOption, jsonMapperQuery } from '@private/components/common/form/JsonMapperField';
-import Button from '@mui/material/Button';
 import IngestionJsonMapperTestDialog from '@private/components/data/ingestionJson/IngestionJsonMapperTestDialog';
 import { IngestionJsonEditionFragment_ingestionJson$key } from '@private/components/data/ingestionJson/__generated__/IngestionJsonEditionFragment_ingestionJson.graphql';
 import { JsonMapperFieldSearchQuery } from '@private/components/common/form/__generated__/JsonMapperFieldSearchQuery.graphql';
 import { QueryAttributeFieldAdd } from '@private/components/common/form/QueryAttributeField';
 import { HeaderFieldAdd } from '@private/components/common/form/HeaderField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 import { IngestionJsonAttributes, IngestionJsonHeader } from '@private/components/data/ingestionJson/IngestionJsonCreation';
 import IngestionSchedulingField from '@private/components/data/IngestionSchedulingField';
 import { useTheme } from '@mui/styles';
@@ -46,6 +40,7 @@ import {
   updateAuthenticationFields,
 } from '../../../../utils/ingestionAuthentificationUtils';
 import PasswordTextField from '../../../../components/PasswordTextField';
+import { Alert, Box, Button, FormControlLabel, MenuItem, Switch } from '@components';
 
 const ingestionJsonEditionPatch = graphql`
   mutation IngestionJsonEditionPatchMutation($id: ID!, $input: IngestionJsonAddInput!) {

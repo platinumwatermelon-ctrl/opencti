@@ -1,10 +1,4 @@
 import React, { FunctionComponent, UIEvent, useMemo, useState } from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
-import TextField from '@mui/material/TextField';
 import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -19,6 +13,7 @@ import Transition from '../../../components/Transition';
 import { handleError, MESSAGING$ } from '../../../relay/environment';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
 import stopEvent from '../../../utils/domEvent';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@components';
 
 const workspaceDuplicationFragment = graphql`
   fragment WorkspaceDuplicationDialogFragment on Workspace {

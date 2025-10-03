@@ -1,9 +1,6 @@
 import React, { Suspense, useMemo } from 'react';
 import { Route, Routes, Link, Navigate, useParams, useLocation } from 'react-router-dom';
 import { graphql, PreloadedQuery, useSubscription, usePreloadedQuery } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import { RootCampaignSubscription } from '@private/components/threats/campaigns/__generated__/RootCampaignSubscription.graphql';
@@ -28,6 +25,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import CampaignEdition from './CampaignEdition';
 import CampaignDeletion from './CampaignDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootCampaignSubscription($id: ID!) {

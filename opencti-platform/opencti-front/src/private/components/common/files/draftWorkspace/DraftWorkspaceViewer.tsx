@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import Drafts from '@private/components/drafts/Drafts';
 import { KNOWLEDGE_KNASKIMPORT } from '../../../../../utils/hooks/useGranted';
@@ -8,7 +6,7 @@ import Security from '../../../../../utils/Security';
 import useDraftContext from '../../../../../utils/hooks/useDraftContext';
 import { useFormatter } from '../../../../../components/i18n';
 import Paper from '../../../../../components/Paper';
-
+import { Grid, IconButton } from '@components';
 interface DraftWorkspaceViewerProps {
   entityId: string
 }
@@ -19,7 +17,7 @@ const DraftWorkspaceViewer = ({ entityId }: DraftWorkspaceViewerProps) => {
   const [openCreate, setOpenCreate] = useState(false);
 
   return (
-    <Grid item xs={6}>
+    <Grid size={6}>
       <Paper
         title={t_i18n('Drafts')}
         actions={draftContext ? undefined : (

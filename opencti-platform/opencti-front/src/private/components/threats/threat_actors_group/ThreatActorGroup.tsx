@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import { ThreatActorGroup_ThreatActorGroup$key } from '@private/components/threats/threat_actors_group/__generated__/ThreatActorGroup_ThreatActorGroup.graphql';
 import ThreatActorGroupDetails from './ThreatActorGroupDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
@@ -10,6 +9,7 @@ import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCore
 import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../common/stix_core_relationships/SimpleStixObjectOrStixRelationshipStixCoreRelationships';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 const threatActorGroupFragment = graphql`
   fragment ThreatActorGroup_ThreatActorGroup on ThreatActorGroup {
@@ -87,19 +87,19 @@ const ThreatActorGroup: React.FC<ThreatActorGroupProps> = ({ threatActorGroupDat
             switch (key) {
               case 'details':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <ThreatActorGroupDetails threatActorGroup={threatActorGroup} />
                   </Grid>
                 );
               case 'basicInformation':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixDomainObjectOverview stixDomainObject={threatActorGroup} />
                   </Grid>
                 );
               case 'latestCreatedRelationships':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <SimpleStixObjectOrStixRelationshipStixCoreRelationships
                       stixObjectOrStixRelationshipId={threatActorGroup.id}
                       stixObjectOrStixRelationshipLink={`/dashboard/threats/threat_actors_group/${threatActorGroup.id}/knowledge`}
@@ -108,7 +108,7 @@ const ThreatActorGroup: React.FC<ThreatActorGroupProps> = ({ threatActorGroupDat
                 );
               case 'latestContainers':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixRelationshipLastContainers
                       stixCoreObjectOrStixRelationshipId={threatActorGroup.id}
                     />
@@ -116,7 +116,7 @@ const ThreatActorGroup: React.FC<ThreatActorGroupProps> = ({ threatActorGroupDat
                 );
               case 'externalReferences':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectExternalReferences
                       stixCoreObjectId={threatActorGroup.id}
                     />
@@ -124,7 +124,7 @@ const ThreatActorGroup: React.FC<ThreatActorGroupProps> = ({ threatActorGroupDat
                 );
               case 'mostRecentHistory':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectLatestHistory
                       stixCoreObjectId={threatActorGroup.id}
                     />
@@ -132,7 +132,7 @@ const ThreatActorGroup: React.FC<ThreatActorGroupProps> = ({ threatActorGroupDat
                 );
               case 'notes':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixCoreRelationshipNotes
                       stixCoreObjectOrStixCoreRelationshipId={threatActorGroup.id}
                       defaultMarkings={threatActorGroup.objectMarking ?? []}

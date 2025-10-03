@@ -3,16 +3,8 @@ import * as PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import * as R from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Collapse from '@mui/material/Collapse';
 import { ExpandLess, ExpandMore, Flag, LocalPlayOutlined } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
 import { AutoFix } from 'mdi-material-ui';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { yearFormat } from '../../../../utils/Time';
 import inject18n from '../../../../components/i18n';
 import StixCoreRelationshipPopover from '../stix_core_relationships/StixCoreRelationshipPopover';
@@ -20,6 +12,7 @@ import ItemYears from '../../../../components/ItemYears';
 import ItemIcon from '../../../../components/ItemIcon';
 import ItemMarkings from '../../../../components/ItemMarkings';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
+import { Collapse, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Tooltip } from '@components';
 
 const styles = (theme) => ({
   container: {

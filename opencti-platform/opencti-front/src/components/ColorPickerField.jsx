@@ -1,13 +1,10 @@
 import React from 'react';
-import MuiTextField from '@mui/material/TextField';
 import { SketchPicker } from 'react-color';
-import IconButton from '@mui/material/IconButton';
-import Popover from '@mui/material/Popover';
-import InputAdornment from '@mui/material/InputAdornment';
 import { useField } from 'formik';
 import { fieldToTextField } from 'formik-mui';
 import { ColorLens } from '@mui/icons-material';
 import { isNil } from 'ramda';
+import { IconButton, InputAdornment, TextField as MuiTextField, Popover } from '@components';
 
 const ColorPickerField = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);

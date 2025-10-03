@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Typography from '@mui/material/Typography';
 import { CheckCircleOutlined, WarningOutlined } from '@mui/icons-material';
 import * as Yup from 'yup';
-import Button from '@mui/material/Button';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import { useFormatter } from '../../../../components/i18n';
 import { commitMutation, fetchQuery, MESSAGING$ } from '../../../../relay/environment';
 import TextField from '../../../../components/TextField';
@@ -24,6 +18,7 @@ import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import PasswordTextField from '../../../../components/PasswordTextField';
 import { extractToken } from '../../../../utils/ingestionAuthentificationUtils';
+import { AccordionDetails, Alert, AlertTitle, Button, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

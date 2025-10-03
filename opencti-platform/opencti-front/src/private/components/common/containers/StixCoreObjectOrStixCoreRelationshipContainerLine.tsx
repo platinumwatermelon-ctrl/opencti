@@ -1,13 +1,8 @@
 import React, { FunctionComponent, SyntheticEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { createFragmentContainer, graphql } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
-import { ListItemButton } from '@mui/material';
 import { typesWithFintelTemplates } from 'src/utils/hooks/useAttributes';
 import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectLabels from '../stix_core_objects/StixCoreObjectLabels';
@@ -20,6 +15,7 @@ import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import { StixCoreObjectOrStixCoreRelationshipContainerLine_node$data } from './__generated__/StixCoreObjectOrStixCoreRelationshipContainerLine_node.graphql';
 import ItemEntityType from '../../../../components/ItemEntityType';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

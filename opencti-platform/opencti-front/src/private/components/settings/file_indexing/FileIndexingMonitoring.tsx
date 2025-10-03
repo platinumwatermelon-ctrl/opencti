@@ -15,10 +15,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { FunctionComponent, useEffect } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import { ClearOutlined, FolderOutlined, PauseOutlined, PlayArrowOutlined, StorageOutlined, SyncDisabledOutlined, SyncOutlined } from '@mui/icons-material';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import { fileIndexingConfigurationFieldPatch, fileIndexingResetMutation } from '@private/components/settings/file_indexing/FileIndexing';
@@ -28,9 +24,6 @@ import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgr
 import { FileIndexingConfigurationAndMonitoringQuery$data } from '@private/components/settings/file_indexing/__generated__/FileIndexingConfigurationAndMonitoringQuery.graphql';
 import { styled } from '@mui/material/styles';
 import FileIndexingConfiguration from '@private/components/settings/file_indexing/FileIndexingConfiguration';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import { FileIndexingConfigurationQuery$data } from '@private/components/settings/file_indexing/__generated__/FileIndexingConfigurationQuery.graphql';
 import DangerZoneBlock from '@private/components/common/danger_zone/DangerZoneBlock';
 import { useTheme } from '@mui/styles';
@@ -41,6 +34,7 @@ import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { TEN_SECONDS } from '../../../../utils/Time';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import ItemBoolean from '../../../../components/ItemBoolean';
+import { Button, Grid, List, ListItem, ListItemText, Paper, Typography } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 
@@ -164,7 +158,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
   };
   return (
     <Grid container={true} spacing={3}>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Typography variant={'h4'}>{t_i18n('Status')}</Typography>
         <Paper
           variant="outlined"
@@ -196,7 +190,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
           )}
         </Paper>
       </Grid>
-      <Grid item xs={3}>
+      <Grid size={3}>
         <Typography variant={'h4'}>{t_i18n('Indexed files')}</Typography>
         <Paper
           variant="outlined"
@@ -214,7 +208,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
           <FolderOutlined color="primary" sx={{ fontSize: 40 }} />
         </Paper>
       </Grid>
-      <Grid item xs={3}>
+      <Grid size={3}>
         <Typography variant={'h4'}>{t_i18n('Volume indexed')}</Typography>
         <Paper
           variant="outlined"
@@ -232,14 +226,14 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
           <StorageOutlined color="primary" sx={{ fontSize: 40 }} />
         </Paper>
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <DangerZoneBlock
           type={'file_indexing'}
           title={t_i18n('Control')}
           component={({ disabled, style }) => (
             <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined" style={style}>
               <Grid container={true} spacing={3}>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Engine')}
                   </Typography>
@@ -267,7 +261,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
                     </Button>
                   )}
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Indexing')}
                   </Typography>
@@ -282,13 +276,13 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
                     {t_i18n('Reset')}
                   </Button>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Indexing manager start')}
                   </Typography>
                   {fldt(managerConfiguration?.last_run_start_date)}
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Last indexation')}
                   </Typography>
@@ -299,13 +293,13 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
           )}
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <Typography variant="h4" gutterBottom={true}>
           {t_i18n('Information')}
         </Typography>
         <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
           <Grid container={true} spacing={3}>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Total files in S3')}
               </Typography>
@@ -313,7 +307,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
                 {n(totalFiles)}
               </span>
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Files volumes in S3')}
               </Typography>
@@ -321,7 +315,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
                 {b(dataToIndex)}
               </span>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('S3 volume by file type')}
               </Typography>
@@ -376,7 +370,7 @@ const FileIndexingMonitoringComponent: FunctionComponent<FileIndexingMonitoringC
           </Grid>
         </Paper>
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <FileIndexingConfiguration
           managerConfiguration={managerConfiguration}
         />

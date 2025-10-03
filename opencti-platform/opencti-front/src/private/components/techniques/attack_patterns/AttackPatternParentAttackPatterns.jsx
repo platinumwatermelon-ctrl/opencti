@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import { LockPattern } from 'mdi-material-ui';
 import { graphql, createFragmentContainer } from 'react-relay';
-import { ListItemButton } from '@mui/material';
 import inject18n from '../../../../components/i18n';
+import { List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 class AttackPatternParentAttackPatternsComponent extends Component {
   render() {

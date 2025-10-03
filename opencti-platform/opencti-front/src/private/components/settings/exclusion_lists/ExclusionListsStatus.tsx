@@ -1,19 +1,17 @@
 import { graphql, PreloadedQuery, usePreloadedQuery, UseQueryLoaderLoadQueryOptions } from 'react-relay';
 import { ExclusionListsStatusQuery, ExclusionListsStatusQuery$variables } from '@private/components/settings/exclusion_lists/__generated__/ExclusionListsStatusQuery.graphql';
-import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/styles';
 import React, { FunctionComponent, useEffect } from 'react';
 import { EventRepeatOutlined, UpdateOutlined } from '@mui/icons-material';
-import Grid from '@mui/material/Grid';
 import type { Theme } from 'src/components/Theme';
 import { interval } from 'rxjs';
 import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
 import { useFormatter } from '../../../../components/i18n';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import { TEN_SECONDS } from '../../../../utils/Time';
 import useConnectedDocumentModifier from '../../../../utils/hooks/useConnectedDocumentModifier';
 import ItemBoolean from '../../../../components/ItemBoolean';
+import { Grid, Paper, Typography } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 
@@ -58,7 +56,7 @@ const ExclusionListsStatusComponent: FunctionComponent<ExclusionListsStatusCompo
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <Typography variant={'h4'}>
           {t_i18n('Status')}
         </Typography>
@@ -86,7 +84,7 @@ const ExclusionListsStatusComponent: FunctionComponent<ExclusionListsStatusCompo
           )}
         </Paper>
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <Typography variant={'h4'}>
           {t_i18n('Last modification date')}
         </Typography>
@@ -104,7 +102,7 @@ const ExclusionListsStatusComponent: FunctionComponent<ExclusionListsStatusCompo
           <UpdateOutlined color="primary" style={{ fontSize: 40 }} />
         </Paper>
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <Typography variant={'h4'}>
           {t_i18n('Current cache version date')}
         </Typography>

@@ -1,12 +1,8 @@
-import Checkbox from '@mui/material/Checkbox';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
 import React, { FunctionComponent, useEffect } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import * as Yup from 'yup';
-import { Box } from '@mui/material';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { useFormatter } from '../../../../components/i18n';
@@ -26,6 +22,7 @@ import { TriggersLinesPaginationQuery$variables } from './__generated__/Triggers
 import TriggersField from './TriggersField';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Box, Checkbox, ListItemText, MenuItem } from '@components';
 
 export const triggerMutationFieldPatch = graphql`
   mutation TriggerEditionOverviewFieldPatchMutation(

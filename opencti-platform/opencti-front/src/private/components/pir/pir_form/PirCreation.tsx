@@ -14,7 +14,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import React, { useState } from 'react';
-import { Dialog } from '@mui/material';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { PirsListQuery$variables } from '../__generated__/PirsListQuery.graphql';
@@ -26,6 +25,7 @@ import PirCreationForm from './PirCreationForm';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { useFormatter } from '../../../../components/i18n';
 import { insertNode } from '../../../../utils/store';
+import { Dialog } from '@components';
 
 const pirCreateMutation = graphql`
   mutation PirCreationMutation($input: PirAddInput!) {

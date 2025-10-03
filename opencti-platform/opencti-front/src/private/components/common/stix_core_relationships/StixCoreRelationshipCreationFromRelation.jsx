@@ -3,18 +3,9 @@ import * as PropTypes from 'prop-types';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Add, Close } from '@mui/icons-material';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Fab from '@mui/material/Fab';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ConnectionHandler } from 'relay-runtime';
-import Skeleton from '@mui/material/Skeleton';
 import { commitMutation, QueryRenderer } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
 import { formatDate } from '../../../../utils/Time';
@@ -29,6 +20,7 @@ import StixDomainObjectCreation from '../stix_domain_objects/StixDomainObjectCre
 import SearchInput from '../../../../components/SearchInput';
 import StixCoreRelationshipCreationForm from './StixCoreRelationshipCreationForm';
 import { UserContext } from '../../../../utils/hooks/useAuth';
+import { Drawer, Fab, IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton, Typography } from '@components';
 
 const styles = (theme) => ({
   drawerPaper: {

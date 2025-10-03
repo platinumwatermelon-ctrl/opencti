@@ -1,12 +1,9 @@
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Skeleton from '@mui/material/Skeleton';
-import ListItemText from '@mui/material/ListItemText';
 import { MoreVertOutlined } from '@mui/icons-material';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { DataColumns } from '../../../components/list_lines';
 import type { Theme } from '../../../components/Theme';
+import { ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

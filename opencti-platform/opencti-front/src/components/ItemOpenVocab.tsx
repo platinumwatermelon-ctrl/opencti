@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Chip from '@mui/material/Chip';
 import { InformationOutline } from 'mdi-material-ui';
 import { useFormatter } from './i18n';
 import type { Theme } from './Theme';
 import ItemSeverity from './ItemSeverity';
 import ItemPriority from './ItemPriority';
+import { Chip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

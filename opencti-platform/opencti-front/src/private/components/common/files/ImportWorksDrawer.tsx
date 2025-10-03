@@ -1,16 +1,8 @@
 import React, { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
-import Alert from '@mui/material/Alert';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { useTheme } from '@mui/styles';
-import Chip from '@mui/material/Chip';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import { DrawerProps, Tooltip } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
+import { DrawerProps } from '@mui/material';
 import { ArchitectureOutlined, DeleteOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import LaunchImportDialog from '@private/components/common/files/LaunchImportDialog';
@@ -27,6 +19,7 @@ import { ImportWorksDrawerQuery, ImportWorksDrawerQuery$variables } from './__ge
 import { commitMutation, defaultCommitMutation } from '../../../../relay/environment';
 import Transition from '../../../../components/Transition';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { Alert, Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, Tooltip } from '@components';
 
 export const importConnectorsFragment = graphql`
   fragment ImportWorksDrawer_connectorsImport on Connector

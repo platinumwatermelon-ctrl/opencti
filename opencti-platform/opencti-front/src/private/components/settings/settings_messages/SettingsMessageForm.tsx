@@ -4,7 +4,6 @@ import { graphql } from 'react-relay';
 import { FormikConfig } from 'formik/dist/types';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import Button from '@mui/material/Button';
 import Drawer from '@private/components/common/drawer/Drawer';
 import ObjectMembersField from '@private/components/common/form/ObjectMembersField';
 import ColorPickerField from '../../../../components/ColorPickerField';
@@ -15,6 +14,7 @@ import SwitchField from '../../../../components/fields/SwitchField';
 import { SettingsMessagesLine_settingsMessage$data } from './__generated__/SettingsMessagesLine_settingsMessage.graphql';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

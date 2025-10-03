@@ -1,11 +1,10 @@
-import MenuItem from '@mui/material/MenuItem';
 import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import React, { FunctionComponent } from 'react';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import { useFormatter } from '../../../../components/i18n';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import Security from '../../../../utils/Security';
-
+import { MenuItem } from '@components';
 interface StixCoreObjectMenuItemUnderEEProps {
   setOpen: (v: boolean) => void,
   handleCloseMenu?: () => void,

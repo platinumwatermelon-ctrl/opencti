@@ -1,9 +1,4 @@
-import Card from '@mui/material/Card';
 import React from 'react';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import { Badge, CardActions, Grid, Tooltip } from '@mui/material';
-import Button from '@mui/material/Button';
 import { VerifiedOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import IngestionCatalogChip from '@private/components/data/IngestionCatalog/IngestionCatalogUseCaseChip';
@@ -12,12 +7,12 @@ import { IngestionConnector } from '@private/components/data/IngestionCatalog';
 import EnterpriseEditionButton from '@private/components/common/entreprise_edition/EnterpriseEditionButton';
 import { truncate } from 'src/utils/String';
 import { getConnectorMetadata } from '@private/components/data/IngestionCatalog/utils/ingestionConnectorTypeMetadata';
-import Box from '@mui/material/Box';
 import { useFormatter } from '../../../../components/i18n';
 import EnrichedTooltip from '../../../../components/EnrichedTooltip';
 import { INGESTION_SETINGESTIONS } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import type { Theme } from '../../../../components/Theme';
+import { Badge, Box, Button, Card, CardActions, CardContent, CardHeader, Grid, Tooltip } from '@components';
 
 export interface IngestionCatalogCardProps {
   node: IngestionConnector;
@@ -79,7 +74,7 @@ const IngestionCatalogCard = ({
     return (
       <Grid container spacing={1}>
         {useCases.map((useCase: string, index: number) => (
-          <Grid key={useCase} item xs={6}>
+          <Grid key={useCase} size={6}>
             {withBadge && index === 1 ? (
               renderUseCaseWithBadge(useCase)
             ) : (

@@ -2,19 +2,14 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Add } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import inject18n from '../../../../components/i18n';
 import SearchInput from '../../../../components/SearchInput';
 import { QueryRenderer } from '../../../../relay/environment';
 import AddNotesLines, { addNotesLinesQuery } from './AddNotesLines';
 import NoteCreation from './NoteCreation';
 import Drawer from '../../common/drawer/Drawer';
+import { IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const styles = () => ({
   createButton: {

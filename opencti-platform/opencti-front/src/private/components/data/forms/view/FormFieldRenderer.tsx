@@ -1,14 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Field } from 'formik';
-import Chip from '@mui/material/Chip';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import { CloudUpload } from '@mui/icons-material';
-import MenuItem from '@mui/material/MenuItem';
-import InputLabel from '@mui/material/InputLabel';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import makeStyles from '@mui/styles/makeStyles';
 // Custom field components
 import TextField from '../../../../../components/TextField';
@@ -23,6 +15,7 @@ import { FormFieldDefinition } from '../Form.d';
 import { useFormatter } from '../../../../../components/i18n';
 import type { Theme } from '../../../../../components/Theme';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../../utils/field';
+import { Box, Checkbox, Chip, FormControlLabel, FormHelperText, IconButton, InputLabel, MenuItem } from '@components';
 
 // Styles
 const useStyles = makeStyles<Theme>(() => ({

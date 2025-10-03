@@ -1,13 +1,12 @@
 import MoreVert from '@mui/icons-material/MoreVert';
 import React, { UIEvent, useState } from 'react';
-import { IconButton, Menu, MenuItem, PopoverProps } from '@mui/material';
-import Button from '@mui/material/Button';
+import { PopoverProps } from '@mui/material';
 import useEmailTemplateDelete from '@private/components/settings/email_template/useEmailTemplateDelete';
 import { useFormatter } from '../../../../components/i18n';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import stopEvent from '../../../../utils/domEvent';
 import DeleteDialog from '../../../../components/DeleteDialog';
-
+import { Button, IconButton, Menu, MenuItem } from '@components';
 interface EmailTemplatePopoverProps {
   onUpdate: () => void,
   onDeleteComplete?: () => void,

@@ -3,18 +3,11 @@ import * as PropTypes from 'prop-types';
 import { graphql, createPaginationContainer } from 'react-relay';
 import { map, keys, groupBy, assoc, compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
 import { ExpandMore } from '@mui/icons-material';
-import { ListItemButton } from '@mui/material';
 import { truncate } from '../../../../utils/String';
 import ItemIcon from '../../../../components/ItemIcon';
 import inject18n from '../../../../components/i18n';
+import { Accordion, AccordionDetails, AccordionSummary, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 const styles = (theme) => ({
   container: {

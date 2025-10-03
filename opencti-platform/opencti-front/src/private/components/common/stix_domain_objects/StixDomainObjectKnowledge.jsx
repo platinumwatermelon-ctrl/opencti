@@ -3,9 +3,6 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { graphql } from 'react-relay';
 import CircularProgress from '@mui/material/CircularProgress';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import withStyles from '@mui/styles/withStyles';
 import { DescriptionOutlined, DeviceHubOutlined } from '@mui/icons-material';
 import { HexagonMultipleOutline } from 'mdi-material-ui';
@@ -16,6 +13,7 @@ import inject18n from '../../../../components/i18n';
 import ItemNumberDifference from '../../../../components/ItemNumberDifference';
 import EntityStixCoreRelationshipsHorizontalBars from '../stix_core_relationships/EntityStixCoreRelationshipsHorizontalBars';
 import EntityStixSightingRelationshipsDonut from '../../events/stix_sighting_relationships/EntityStixSightingRelationshipsDonut';
+import { Card, CardContent, Grid } from '@components';
 
 const styles = (theme) => ({
   card: {
@@ -97,7 +95,7 @@ class StixDomainObjectKnowledge extends Component {
     return (
       <>
         <Grid container={true} spacing={3}>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Card
               variant="outlined"
               classes={{ root: classes.card }}
@@ -138,7 +136,7 @@ class StixDomainObjectKnowledge extends Component {
               />
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Card
               variant="outlined"
               classes={{ root: classes.card }}
@@ -182,7 +180,7 @@ class StixDomainObjectKnowledge extends Component {
               />
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Card
               variant="outlined"
               classes={{ root: classes.card }}
@@ -229,7 +227,7 @@ class StixDomainObjectKnowledge extends Component {
           title={t('Distribution of reports')}
         />
         <Grid container={true} spacing={3} style={{ marginBottom: 20 }}>
-          <Grid item xs={6} style={{ height: 350 }}>
+          <Grid size={6} style={{ height: 350 }}>
             <EntityStixCoreRelationshipsHorizontalBars
               toId={stixDomainObjectId}
               fromTypes={[
@@ -243,7 +241,7 @@ class StixDomainObjectKnowledge extends Component {
               field="internal_id"
             />
           </Grid>
-          <Grid item xs={6} style={{ height: 350 }}>
+          <Grid size={6} style={{ height: 350 }}>
             <EntityStixSightingRelationshipsDonut
               entityId={stixDomainObjectId}
               title={t('Sightings distribution')}

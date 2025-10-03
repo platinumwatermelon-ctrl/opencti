@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { useFormatter } from '../../i18n';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
@@ -14,6 +12,7 @@ import { StixMetaObjectDetailsQuery } from './__generated__/StixMetaObjectDetail
 import ItemMarkings from '../../ItemMarkings';
 import ItemEntityType from '../../ItemEntityType';
 import { GraphNode } from '../graph.types';
+import { Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

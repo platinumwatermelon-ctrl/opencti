@@ -16,17 +16,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { createFragmentContainer, graphql } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
 import { SearchIndexedFileLine_node$data } from '@private/components/search/__generated__/SearchIndexedFileLine_node.graphql';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { MoreVertOutlined, OpenInNewOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import Skeleton from '@mui/material/Skeleton';
-import Box from '@mui/material/Box';
-import { ListItemButton } from '@mui/material';
 import { DataColumns } from '../../../components/list_lines';
 import type { Theme } from '../../../components/Theme';
 import { useFormatter } from '../../../components/i18n';
@@ -34,6 +26,7 @@ import ItemIcon from '../../../components/ItemIcon';
 import { getFileUri } from '../../../utils/utils';
 import { resolveLink } from '../../../utils/Entity';
 import useGranted, { KNOWLEDGE_KNGETEXPORT, KNOWLEDGE_KNUPLOAD } from '../../../utils/hooks/useGranted';
+import { Box, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

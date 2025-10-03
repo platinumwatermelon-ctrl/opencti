@@ -5,9 +5,6 @@ import React, { useMemo } from 'react';
 import { Link, Route, Routes, useParams, useLocation, Navigate } from 'react-router-dom';
 import { graphql, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import StixCoreObjectSimulationResultContainer from '@private/components/common/stix_core_objects/StixCoreObjectSimulationResultContainer';
 import StixCoreObjectContentRoot from '@private/components/common/stix_core_objects/StixCoreObjectContentRoot';
 import Security from 'src/utils/Security';
@@ -30,6 +27,7 @@ import Breadcrumbs from '../../../../components/Breadcrumbs';
 import { getCurrentTab } from '../../../../utils/utils';
 import IncidentEdition from './IncidentEdition';
 import IncidentDeletion from './IncidentDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootIncidentSubscription($id: ID!) {

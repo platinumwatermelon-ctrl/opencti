@@ -1,4 +1,3 @@
-import { Box, Typography } from '@mui/material';
 import AttackPatternsMatrixShouldCoverIcon from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixShouldCoverIcon';
 import React, { useState } from 'react';
 import {
@@ -9,7 +8,7 @@ import {
 } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumns';
 import { useTheme } from '@mui/material/styles';
 import type { Theme } from '../../../../../components/Theme';
-
+import { Box, Typography } from '@components';
 interface AttackPatternsMatrixColumnsElementProps {
   attackPattern: FilteredAttackPattern | FilteredSubAttackPattern;
   handleOpen: (element: MinimalAttackPattern, event: React.MouseEvent) => void;

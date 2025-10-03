@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import Drawer from '../../common/drawer/Drawer';
 import inject18n from '../../../../components/i18n';
@@ -10,6 +9,7 @@ import { QueryRenderer } from '../../../../relay/environment';
 import AddSubSectorsLines, { addSubSectorsLinesQuery } from './AddSubSectorsLines';
 import SectorCreation from './SectorCreation';
 import SearchInput from '../../../../components/SearchInput';
+import { IconButton } from '@components';
 
 const styles = (theme) => ({
   drawerPaper: {

@@ -13,7 +13,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
-import { Button, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import React, { useState } from 'react';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
@@ -25,7 +24,7 @@ import PirCreationFormCriteria from './PirCreationFormCriteria';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { PirCreationFormGeneralSettingsRedisStreamQuery } from './__generated__/PirCreationFormGeneralSettingsRedisStreamQuery.graphql';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
-
+import { Button, DialogActions, DialogContent, DialogTitle } from '@components';
 interface PirCreationFormProps {
   onCancel: () => void
   onSubmit: (data: PirCreationFormData) => void

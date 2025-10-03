@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, ButtonProps } from '@mui/material';
+import { ButtonProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import type { Theme } from './Theme';
+import { Button } from '@components';
 
 export enum GradientVariant {
   default = 'default',

@@ -1,20 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import { ListItemButton } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 import { LinkOff, StreamOutlined } from '@mui/icons-material';
-import ListItem from '@mui/material/ListItem';
 import { useFormatter } from '../../../../components/i18n';
 import AddDataSources from './AddDataSources';
 import { DataComponentDataSources_dataComponent$data, DataComponentDataSources_dataComponent$key } from './__generated__/DataComponentDataSources_dataComponent.graphql';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 const dataComponentDataSourcesRemoveMutation = graphql`
   mutation DataComponentDataSourcesRemoveMutation(

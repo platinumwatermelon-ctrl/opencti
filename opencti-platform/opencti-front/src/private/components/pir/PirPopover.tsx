@@ -15,14 +15,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { UIEvent, useState } from 'react';
 import MoreVert from '@mui/icons-material/MoreVert';
-import Button from '@mui/material/Button';
-import { Menu, MenuItem, PopoverProps } from '@mui/material';
+import { PopoverProps } from '@mui/material';
 import { graphql, useFragment } from 'react-relay';
 import { useNavigate } from 'react-router-dom';
 import { PirPopoverFragment$key } from './__generated__/PirPopoverFragment.graphql';
 import { useFormatter } from '../../../components/i18n';
 import stopEvent from '../../../utils/domEvent';
 import PirDeletion from './PirDeletion';
+import { Button, Menu, MenuItem } from '@components';
 
 const popoverFragment = graphql`
   fragment PirPopoverFragment on Pir {

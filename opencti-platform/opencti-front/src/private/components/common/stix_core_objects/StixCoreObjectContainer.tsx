@@ -1,20 +1,7 @@
 import React, { useEffect, useState, ChangeEvent, SyntheticEvent } from 'react';
 import { graphql } from 'react-relay';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { AddOutlined, MoveToInboxOutlined } from '@mui/icons-material';
-import ToggleButton from '@mui/material/ToggleButton';
-import Dialog from '@mui/material/Dialog';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import IconButton from '@mui/material/IconButton';
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
-import InputAdornment from '@mui/material/InputAdornment';
 import useApiMutation from 'src/utils/hooks/useApiMutation';
 import {
   type BackgroundTaskActionInput,
@@ -28,6 +15,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import Transition from '../../../../components/Transition';
 import { fetchQuery, MESSAGING$ } from '../../../../relay/environment';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { Autocomplete, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, FormControlLabel, IconButton, InputAdornment, TextField, ToggleButton, Tooltip } from '@components';
 
 const stixCoreObjectContainerTaskAddMutation = graphql`
   mutation StixCoreObjectContainerTaskAddMutation($input: ListTaskAddInput!) {

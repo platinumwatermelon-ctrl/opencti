@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
@@ -11,8 +10,6 @@ import { useNavigate } from 'react-router-dom';
 import { handleErrorInForm } from 'src/relay/environment';
 import { CaseRftsLinesCasesPaginationQuery$variables } from '@private/components/cases/__generated__/CaseRftsLinesCasesPaginationQuery.graphql';
 import AuthorizedMembersField from '@private/components/common/form/AuthorizedMembersField';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import DateTimePickerField from '../../../../components/DateTimePickerField';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownField from '../../../../components/fields/MarkdownField';
@@ -40,6 +37,7 @@ import Security from '../../../../utils/Security';
 import useGranted, { KNOWLEDGE_KNUPDATE_KNMANAGEAUTHMEMBERS } from '../../../../utils/hooks/useGranted';
 import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
+import { AccordionDetails, Button, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

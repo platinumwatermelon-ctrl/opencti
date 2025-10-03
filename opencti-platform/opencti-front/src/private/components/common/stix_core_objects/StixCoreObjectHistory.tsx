@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import {
   StixCoreObjectHistoryLinesQuery,
@@ -12,6 +10,7 @@ import SearchInput from '../../../../components/SearchInput';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import type { Theme } from '../../../../components/Theme';
+import { Grid, Typography } from '@components';
 
 type StixCoreObjectHistoryProps = {
   stixCoreObjectId: string;
@@ -112,8 +111,7 @@ const StixCoreObjectHistory = ({ stixCoreObjectId, withoutRelations }: StixCoreO
         }}
       >
         <Grid
-          item
-          xs={withoutRelations ? 12 : 6}
+          size={withoutRelations ? 12 : 6}
         >
           <Typography
             variant="h4"
@@ -143,7 +141,7 @@ const StixCoreObjectHistory = ({ stixCoreObjectId, withoutRelations }: StixCoreO
             }
         </Grid>
         {!withoutRelations && (
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography
               variant="h4"
               gutterBottom

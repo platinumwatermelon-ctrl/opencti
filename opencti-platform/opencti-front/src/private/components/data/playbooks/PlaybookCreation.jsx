@@ -15,12 +15,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { useRef } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
 import { useNavigate } from 'react-router-dom';
-import ToggleButton from '@mui/material/ToggleButton';
 import { FileUploadOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
 import VisuallyHiddenInput from '../../common/VisuallyHiddenInput';
@@ -32,6 +30,7 @@ import { useFormatter } from '../../../../components/i18n';
 import { resolveLink } from '../../../../utils/Entity';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button, ToggleButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

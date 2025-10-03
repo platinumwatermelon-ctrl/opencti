@@ -2,7 +2,6 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import { Field, Form, Formik } from 'formik';
 import withStyles from '@mui/styles/withStyles';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
@@ -16,6 +15,7 @@ import { insertNode } from '../../../../utils/store';
 import ObjectMembersField from '../../common/form/ObjectMembersField';
 import SwitchField from '../../../../components/fields/SwitchField';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 const styles = (theme) => ({
   buttons: {

@@ -1,8 +1,7 @@
 import React, { CSSProperties, PropsWithChildren } from 'react';
 import { useTheme } from '@mui/material/styles';
-import Tooltip from '@mui/material/Tooltip';
 import type { Theme } from '../../../../components/Theme';
-
+import { Tooltip } from '@components';
 interface RulesListItemTagProps extends PropsWithChildren {
   variant?: 'if' | 'then' | 'action'
   color?: string | null

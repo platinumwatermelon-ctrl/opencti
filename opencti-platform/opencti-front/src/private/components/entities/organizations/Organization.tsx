@@ -1,7 +1,6 @@
 import { graphql } from 'relay-runtime';
 import React from 'react';
 import { useFragment } from 'react-relay';
-import { Grid } from '@mui/material';
 import { Organization_organization$key } from './__generated__/Organization_organization.graphql';
 import OrganizationDetails from './OrganizationDetails';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
@@ -10,6 +9,7 @@ import StixCoreObjectOrStixRelationshipLastContainers from '../../common/contain
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
+import { Grid } from '@components';
 
 const organizationFragment = graphql`
   fragment Organization_organization on Organization {
@@ -84,16 +84,16 @@ const Organization: React.FC<OrganizationProps> = ({ organizationData, viewAs })
         spacing={3}
         style={{ marginBottom: 20 }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <OrganizationDetails organization={organization} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixDomainObjectOverview
             stixDomainObject={organization}
           />
         </Grid>
         {viewAs === 'knowledge' && (
-          <Grid item xs={6}>
+          <Grid size={6}>
             <SimpleStixObjectOrStixRelationshipStixCoreRelationships
               stixObjectOrStixRelationshipId={organization.id}
               stixObjectOrStixRelationshipLink={`/dashboard/entities/organizations/${organization.id}/knowledge`}
@@ -101,19 +101,18 @@ const Organization: React.FC<OrganizationProps> = ({ organizationData, viewAs })
           </Grid>
         )}
         <Grid
-          item
-          xs={viewAs === 'knowledge' ? 6 : 12}
+          size={viewAs === 'knowledge' ? 6 : 12}
         >
           <StixCoreObjectOrStixRelationshipLastContainers
             {...lastReportsProps}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences
             stixCoreObjectId={organization.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory stixCoreObjectId={organization.id} />
         </Grid>
       </Grid>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { PaperProps as MuiPaperProps, Paper as MuiPaper } from '@mui/material';
+import { PaperProps as MuiPaperProps } from '@mui/material';
+import { Paper as MuiPaper } from '@components';
 import PaperHeader, { PaperHeaderProps } from './PaperHeader';
 
 interface PaperProps extends PaperHeaderProps, Omit<MuiPaperProps, 'title'> {}

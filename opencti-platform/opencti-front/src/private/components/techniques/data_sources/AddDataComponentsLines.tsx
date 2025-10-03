@@ -1,12 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
 import { CheckCircle, SourceOutlined } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
-import { ListItemButton } from '@mui/material';
 import { truncate } from '../../../../utils/String';
 import type { Theme } from '../../../../components/Theme';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';
@@ -14,6 +9,7 @@ import { DataSourceDataComponents_dataSource$data } from './__generated__/DataSo
 import { AddDataComponentsLinesToDataSourceQuery } from './__generated__/AddDataComponentsLinesToDataSourceQuery.graphql';
 import { AddDataComponentsLinesToDataSource_data$key } from './__generated__/AddDataComponentsLinesToDataSource_data.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { List, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { CloudRefreshOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import ToggleButton from '@mui/material/ToggleButton';
 import Drawer from '../drawer/Drawer';
 import { QueryRenderer } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import StixCoreObjectEnrichmentLines, { stixCoreObjectEnrichmentLinesQuery } from './StixCoreObjectEnrichmentLines';
+import { ToggleButton, Tooltip } from '@components';
 
 const StixCoreObjectEnrichment = ({ stixCoreObjectId, onClose, isOpen }) => {
   // otherwise, a button + internal state allow to open and close

@@ -1,17 +1,13 @@
-import Chip from '@mui/material/Chip';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import RelatedContainers from '@private/components/common/containers/related_containers/RelatedContainers';
-import Divider from '@mui/material/Divider';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
 import type { Theme } from '../../../../components/Theme';
 import { CaseRftDetails_case$key } from './__generated__/CaseRftDetails_case.graphql';
+import { Chip, Divider, Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -94,7 +90,7 @@ const CaseRftDetails: FunctionComponent<CaseRftDetailsProps> = ({
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3} style={{ marginBottom: 20 }}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Takedown type')}
             </Typography>
@@ -108,7 +104,7 @@ const CaseRftDetails: FunctionComponent<CaseRftDetailsProps> = ({
               ))
               : '-'}
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Priority')}
             </Typography>
@@ -120,7 +116,7 @@ const CaseRftDetails: FunctionComponent<CaseRftDetailsProps> = ({
               displayMode="chip"
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Severity')}
             </Typography>
@@ -132,7 +128,7 @@ const CaseRftDetails: FunctionComponent<CaseRftDetailsProps> = ({
               displayMode="chip"
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>

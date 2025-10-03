@@ -1,5 +1,4 @@
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { securityPlatformCreationMutation } from '@private/components/entities/securityPlatforms/SecurityPlatformCreation';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -25,7 +24,7 @@ import ProgressBar from '../../../../components/ProgressBar';
 import BulkTextField from '../../../../components/fields/BulkTextField/BulkTextField';
 import MarkdownField from '../../../../components/fields/MarkdownField';
 import { useIsMandatoryAttribute } from '../../../../utils/hooks/useEntitySettings';
-
+import { Button } from '@components';
 interface SecurityPlatformCreationFormData {
   name: string;
   description: string

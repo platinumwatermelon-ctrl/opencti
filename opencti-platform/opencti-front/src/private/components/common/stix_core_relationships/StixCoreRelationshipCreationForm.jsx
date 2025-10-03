@@ -1,9 +1,7 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import { ArrowRightAlt } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import * as R from 'ramda';
 import SelectField from '../../../../components/fields/SelectField';
@@ -23,6 +21,7 @@ import { useSchemaCreationValidation } from '../../../../utils/hooks/useEntitySe
 import useDefaultValues from '../../../../utils/hooks/useDefaultValues';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import { minutesBefore, now } from '../../../../utils/Time';
+import { Button, MenuItem } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

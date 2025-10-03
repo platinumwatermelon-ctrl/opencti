@@ -2,9 +2,7 @@ import React from 'react';
 import DeleteOperationsLines, { deleteOperationsLinesQuery } from '@private/components/trash/all/DeleteOperationsLines';
 import { DeleteOperationLineDummy } from '@private/components/trash/all/DeleteOperationLine';
 import ToolBar from '@private/components/data/ToolBar';
-import Box from '@mui/material/Box';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import { DeleteOperationLine_node$data } from './all/__generated__/DeleteOperationLine_node.graphql';
 import ListLines from '../../../components/list_lines/ListLines';
 import ExportContextProvider from '../../../utils/ExportContextProvider';
@@ -19,6 +17,7 @@ import useEntityToggle from '../../../utils/hooks/useEntityToggle';
 import useHelper from '../../../utils/hooks/useHelper';
 import { GARBAGE_COLLECTION_MANAGER } from '../../../utils/platformModulesHelper';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { Box, Tooltip } from '@components';
 
 const LOCAL_STORAGE_KEY = 'trash';
 

@@ -1,5 +1,5 @@
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
+import { IconButtonProps } from '@mui/material/IconButton';
+import { IconButton, Tooltip } from '@components';
 import React, { ReactNode } from 'react';
 
 interface GraphToolbarItemProps {

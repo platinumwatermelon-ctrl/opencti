@@ -1,24 +1,10 @@
 import React, { FunctionComponent, useCallback, useEffect, useMemo, useState } from 'react';
 import { interval } from 'rxjs';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { useQueryLoader } from 'react-relay';
 import { DeleteOutlined, DeveloperBoardOutlined, ExtensionOutlined, HubOutlined, PlaylistRemoveOutlined } from '@mui/icons-material';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
-import DialogTitle from '@mui/material/DialogTitle';
-import { ListItemButton, Stack } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
+import { Stack } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import useConnectorsStatusFilters from '@private/components/data/connectors/hooks/useConnectorsStatusFilters';
 import ConnectorsStatusFilters from '@private/components/data/connectors/ConnectorsStatusFilters';
@@ -41,6 +27,7 @@ import type { Theme } from '../../../../components/Theme';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import SortConnectorsHeader from './SortConnectorsHeader';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

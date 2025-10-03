@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { NotificationsLine_node$data } from '@private/components/profile/__generated__/NotificationsLine_node.graphql';
-import Chip from '@mui/material/Chip';
 import { deepPurple, green, red } from '@mui/material/colors';
 import { iconSelector } from './notificationUtils';
 import { DataTableProps, DataTableVariant } from '../../../../components/dataGrid/dataTableTypes';
@@ -8,6 +7,7 @@ import DataTableWithoutFragment from '../../../../components/dataGrid/DataTableW
 import { defaultRender } from '../../../../components/dataGrid/dataTableUtils';
 import { hexToRGB } from '../../../../utils/Colors';
 import { useFormatter } from '../../../../components/i18n';
+import { Chip } from '@components';
 
 const LOCAL_STORAGE_KEY = 'digest_notification';
 

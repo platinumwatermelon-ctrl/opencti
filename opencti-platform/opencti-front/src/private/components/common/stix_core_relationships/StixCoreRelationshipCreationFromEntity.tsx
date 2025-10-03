@@ -1,9 +1,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState, Suspense } from 'react';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
-import IconButton from '@mui/material/IconButton';
 import { Add, ChevronRightOutlined } from '@mui/icons-material';
-import Fab from '@mui/material/Fab';
 import CircularProgress from '@mui/material/CircularProgress';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import makeStyles from '@mui/styles/makeStyles';
@@ -46,6 +44,7 @@ import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import DataTable from '../../../../components/dataGrid/DataTable';
 import { DataTableVariant } from '../../../../components/dataGrid/dataTableTypes';
 import { FieldOption } from '../../../../utils/field';
+import { Fab, IconButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

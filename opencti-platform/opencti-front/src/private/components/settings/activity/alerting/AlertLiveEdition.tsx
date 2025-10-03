@@ -1,12 +1,9 @@
 import { Close } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
 import React, { FunctionComponent, useEffect } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import Box from '@mui/material/Box';
 import FilterIconButton from '../../../../../components/FilterIconButton';
 import { useFormatter } from '../../../../../components/i18n';
 import MarkdownField from '../../../../../components/fields/MarkdownField';
@@ -25,7 +22,7 @@ import { alertEditionQuery } from './AlertEditionQuery';
 import { liveActivityTriggerValidation } from './AlertLiveCreation';
 import useFiltersState from '../../../../../utils/filters/useFiltersState';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
-
+import { Box, IconButton, Typography } from '@components';
 interface AlertLiveEditionProps {
   handleClose: () => void;
   queryRef: PreloadedQuery<AlertEditionQuery>;

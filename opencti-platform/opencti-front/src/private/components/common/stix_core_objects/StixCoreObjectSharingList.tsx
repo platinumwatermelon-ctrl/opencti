@@ -1,6 +1,4 @@
 import { graphql, useFragment } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
-import Chip from '@mui/material/Chip';
 import { AccountBalanceOutlined } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -10,6 +8,7 @@ import { StixCoreObjectSharingListDeleteMutation } from './__generated__/StixCor
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { useFormatter } from '../../../../components/i18n';
+import { Chip, Tooltip } from '@components';
 
 const objectOrganizationFragment = graphql`
   fragment StixCoreObjectSharingListFragment on StixCoreObject {

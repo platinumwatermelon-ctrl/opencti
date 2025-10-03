@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import ToggleButton from '@mui/material/ToggleButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
@@ -20,6 +16,7 @@ import { deleteNode } from '../../../../utils/store';
 import { CaseTasksLinesQuery$variables } from './__generated__/CaseTasksLinesQuery.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DeleteDialog from '../../../../components/DeleteDialog';
+import { IconButton, Menu, MenuItem, ToggleButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

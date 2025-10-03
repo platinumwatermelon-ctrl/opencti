@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState, useMemo } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -17,6 +16,7 @@ import type { Theme } from '../../../../components/Theme';
 import { convertFormBuilderDataToSchema } from './FormUtils';
 import FormSchemaEditor from './FormSchemaEditor';
 import type { FormBuilderData, FormAddInput } from './Form.d';
+import { Button } from '@components';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   buttons: {

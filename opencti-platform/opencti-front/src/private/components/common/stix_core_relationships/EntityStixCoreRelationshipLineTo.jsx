@@ -4,16 +4,8 @@ import * as R from 'ramda';
 import { Link } from 'react-router-dom';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/Box';
 import { MoreVertOutlined } from '@mui/icons-material';
 import { AutoFix } from 'mdi-material-ui';
-import Skeleton from '@mui/material/Skeleton';
-import Tooltip from '@mui/material/Tooltip';
-import Checkbox from '@mui/material/Checkbox';
-import { ListItemButton } from '@mui/material';
 import withTheme from '@mui/styles/withTheme';
 import inject18n from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
@@ -23,6 +15,7 @@ import { getMainRepresentative } from '../../../../utils/defaultRepresentatives'
 import ItemMarkings from '../../../../components/ItemMarkings';
 import ItemEntityType from '../../../../components/ItemEntityType';
 import { DraftChip, getDraftModeColor } from '../draft/DraftChip';
+import { Box, Checkbox, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 const styles = (theme) => ({
   item: {

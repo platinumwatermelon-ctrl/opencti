@@ -1,16 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import Chip from '@mui/material/Chip';
 import { BulkEntityTypeInfo, entityNameHeaderWidth, entityTypeHeaderWidth, matchHeaderWidth } from '@private/components/common/bulk/dialog/BulkRelationDialog';
 import { DeleteOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import { Autocomplete } from '@mui/material';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import { truncate } from 'src/utils/String';
 import { useFormatter } from '../../../../components/i18n';
 import { RelationsToEntity } from '../../../../utils/Relation';
-
+import { Autocomplete, Box, Chip, IconButton, TextField, Typography } from '@components';
 interface BulkSelectRawLineDataProps {
   entity: BulkEntityTypeInfo;
   entityIndex: number;

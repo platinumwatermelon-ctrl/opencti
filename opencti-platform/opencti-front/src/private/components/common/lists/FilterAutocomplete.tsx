@@ -1,6 +1,4 @@
 import React, { Dispatch, FunctionComponent, SyntheticEvent, useState } from 'react';
-import TextField from '@mui/material/TextField';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { useTheme } from '@mui/styles';
 import ItemIcon from '../../../../components/ItemIcon';
 import { useFormatter } from '../../../../components/i18n';
@@ -8,6 +6,7 @@ import useSearchEntities from '../../../../utils/filters/useSearchEntities';
 import type { Theme } from '../../../../components/Theme';
 import SearchScopeElement from './SearchScopeElement';
 import { HandleAddFilter } from '../../../../utils/hooks/useLocalStorage';
+import { Autocomplete as MUIAutocomplete, TextField } from '@components';
 
 export interface FilterOption {
   id?: string;

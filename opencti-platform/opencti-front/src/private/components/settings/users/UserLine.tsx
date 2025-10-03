@@ -1,19 +1,14 @@
 import React from 'react';
 import { graphql, createFragmentContainer } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import Tooltip from '@mui/material/Tooltip';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import { PersonOutlined, AccountCircleOutlined, KeyboardArrowRightOutlined, HorizontalRule, Security, ReportGmailerrorred, ManageAccountsOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
 import { UserLine_node$data } from '@private/components/settings/users/__generated__/UserLine_node.graphql';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import { DataColumns } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

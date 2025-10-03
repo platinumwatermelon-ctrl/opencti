@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FunctionComponent, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { Button } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../../../../components/i18n';
 import type { Theme } from '../../../../../components/Theme';
@@ -9,7 +8,7 @@ import AlertLiveCreation from './AlertLiveCreation';
 import { AlertingPaginationQuery$variables } from './__generated__/AlertingPaginationQuery.graphql';
 import { AlertLiveCreationActivityMutation$data } from './__generated__/AlertLiveCreationActivityMutation.graphql';
 import AlertDigestCreation from './AlertDigestCreation';
-
+import { Button } from '@components';
 interface TriggerCreationProps {
   contextual?: boolean;
   hideSpeedDial?: boolean;

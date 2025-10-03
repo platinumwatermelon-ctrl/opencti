@@ -2,22 +2,8 @@ import React, { ChangeEvent, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import Grid from '@mui/material/Grid2';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import MenuItem from '@mui/material/MenuItem';
 import * as Yup from 'yup';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import { useTheme } from '@mui/styles';
-import { Switch, Box } from '@mui/material';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import Alert from '@mui/material/Alert';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DangerZoneBlock from '../common/danger_zone/DangerZoneBlock';
 import EEChip from '../common/entreprise_edition/EEChip';
 import EnterpriseEditionButton from '../common/entreprise_edition/EnterpriseEditionButton';
@@ -42,6 +28,7 @@ import { SettingsQuery } from './__generated__/SettingsQuery.graphql';
 import type { Theme } from '../../../components/Theme';
 import useQueryLoading from '../../../utils/hooks/useQueryLoading';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, List, ListItem, ListItemText, MenuItem, Paper, Switch, Typography } from '@components';
 
 const settingsQuery = graphql`
   query SettingsQuery {

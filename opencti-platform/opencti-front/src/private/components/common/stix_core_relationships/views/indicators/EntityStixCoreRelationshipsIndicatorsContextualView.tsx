@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
 import { Link } from 'react-router-dom';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import {
   EntityStixCoreRelationshipsIndicatorsContextualViewLinesQuery$variables,
@@ -32,6 +31,7 @@ import { resolveLink } from '../../../../../../utils/Entity';
 import type { Theme } from '../../../../../../components/Theme';
 import { isFilterGroupNotEmpty, useRemoveIdAndIncorrectKeysFromFilterGroupObject } from '../../../../../../utils/filters/filtersUtils';
 import { FilterGroup } from '../../../../../../utils/filters/filtersHelpers-types';
+import { Chip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

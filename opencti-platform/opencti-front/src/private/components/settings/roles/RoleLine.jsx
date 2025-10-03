@@ -2,21 +2,16 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRightOutlined } from '@mui/icons-material';
 import { compose } from 'ramda';
-import Skeleton from '@mui/material/Skeleton';
 import { Link } from 'react-router-dom';
-import { ListItemButton } from '@mui/material';
-import Box from '@mui/material/Box';
 import inject18n from '../../../../components/i18n';
 import { groupsSearchQuery } from '../Groups';
 import { QueryRenderer } from '../../../../relay/environment';
 import ItemIcon from '../../../../components/ItemIcon';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
 import DangerZoneChip from '../../common/danger_zone/DangerZoneChip';
+import { Box, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const styles = (theme) => ({
   item: {

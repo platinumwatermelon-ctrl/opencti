@@ -3,9 +3,6 @@
 // @ts-nocheck
 import React, { Suspense, useEffect } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import DraftEntities from '@private/components/drafts/DraftEntities';
 import { DraftContextBannerMutation } from '@private/components/drafts/__generated__/DraftContextBannerMutation.graphql';
 import { draftContextBannerMutation } from '@private/components/drafts/DraftContextBanner';
@@ -15,7 +12,6 @@ import { DraftRootQuery } from '@private/components/drafts/__generated__/DraftRo
 import { graphql, useFragment, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import { interval } from 'rxjs';
 import ConnectorWorkLine from '@private/components/data/connectors/ConnectorWorkLine';
-import Paper from '@mui/material/Paper';
 import ImportFilesContent from '@private/components/data/import/ImportFilesContent';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
 import useDraftContext from '../../../utils/hooks/useDraftContext';
@@ -27,6 +23,7 @@ import { MESSAGING$ } from '../../../relay/environment';
 import { RelayError } from '../../../relay/relayTypes';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import { TEN_SECONDS } from '../../../utils/Time';
+import { Box, Paper, Tab, Tabs } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 

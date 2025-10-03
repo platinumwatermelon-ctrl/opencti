@@ -1,6 +1,4 @@
-import React, { FunctionComponent } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
-
+import React, { FunctionComponent } from 'react';import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 interface ConfirmationDialogProps {
   open: boolean;
   title: string;

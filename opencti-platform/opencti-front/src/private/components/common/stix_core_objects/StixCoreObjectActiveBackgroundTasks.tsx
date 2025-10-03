@@ -1,11 +1,10 @@
 import React, { FunctionComponent, Suspense, useEffect } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery, useQueryLoader } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
-import { Badge } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { interval } from 'rxjs';
 import { StixCoreObjectActiveBackgroundTasksQuery } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectActiveBackgroundTasksQuery.graphql';
 import { TEN_SECONDS } from '../../../../utils/Time';
+import { Badge, Tooltip } from '@components';
 
 const stixCoreObjectActiveBackgroundTasksQuery = graphql`
   query StixCoreObjectActiveBackgroundTasksQuery($id: ID!) {

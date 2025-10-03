@@ -1,6 +1,5 @@
 import React from 'react';
 import { WarningAmber, ContentCopy, Edit, DeleteOutline } from '@mui/icons-material';
-import { Tooltip, IconButton, ListItemText, ListItem, Typography } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { useFintelTemplateContext } from './FintelTemplateContext';
 import { renderWidgetIcon } from '../../../../../utils/widget/widgetUtils';
@@ -8,7 +7,7 @@ import type { Widget } from '../../../../../utils/widget/widget';
 import type { Theme } from '../../../../../components/Theme';
 import { useFormatter } from '../../../../../components/i18n';
 import { MESSAGING$ } from '../../../../../relay/environment';
-
+import { IconButton, ListItem, ListItemText, Tooltip, Typography } from '@components';
 interface FintelTemplateWidgetAttributeProps {
   widget: Widget
   variableName: string

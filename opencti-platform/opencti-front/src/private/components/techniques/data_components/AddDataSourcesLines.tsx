@@ -1,16 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery } from 'react-relay';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import { StreamOutlined } from '@mui/icons-material';
-import { ListItemButton } from '@mui/material';
 import { truncate } from '../../../../utils/String';
 import { AddDataSourcesLines_data$key } from './__generated__/AddDataSourcesLines_data.graphql';
 import { AddDataSourcesLinesQuery } from './__generated__/AddDataSourcesLinesQuery.graphql';
 import usePreloadedPaginationFragment from '../../../../utils/hooks/usePreloadedPaginationFragment';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { List, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 export const addDataSourcesLinesMutationAdd = graphql`
   mutation AddDataSourcesLinesAddMutation($id: ID!, $input: [EditInput]!) {

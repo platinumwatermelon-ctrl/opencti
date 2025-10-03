@@ -1,15 +1,8 @@
 import React, { FunctionComponent, ReactNode, useMemo } from 'react';
-import Dialog from '@mui/material/Dialog';
-import Button from '@mui/material/Button';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import { CogOutline } from 'mdi-material-ui';
-import IconButton from '@mui/material/IconButton';
-import { Badge } from '@mui/material';
 import { CsvMapperRepresentationAttributeFormData } from '@private/components/data/csvMapper/representations/attributes/Attribute';
 import { useFormatter } from '../../../../../../components/i18n';
-
+import { Badge, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from '@components';
 interface CsvMapperRepresentationDialogOptionProps {
   children: ReactNode
   configuration?: CsvMapperRepresentationAttributeFormData

@@ -1,12 +1,8 @@
 import React from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
 import { useInvestigationState } from '../utils/useInvestigationState';
 import { useFormatter } from '../../../../../components/i18n';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 type InvestigationRollBackExpandDialogProps = {
   closeDialog: () => void;

@@ -1,16 +1,11 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import { graphql } from 'react-relay';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import {
   SupportPackageLinesPaginationQuery,
   SupportPackageLinesPaginationQuery$variables,
 } from '@private/components/settings/support/__generated__/SupportPackageLinesPaginationQuery.graphql';
 import SupportPackageLines, { supportPackageLinesQuery } from '@private/components/settings/support/SupportPackageLines';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
-import Alert from '@mui/material/Alert';
-import Tooltip from '@mui/material/Tooltip';
 import { useFormatter } from '../../../../components/i18n';
 import { handleError, MESSAGING$ } from '../../../../relay/environment';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
@@ -18,6 +13,7 @@ import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import ListLines from '../../../../components/list_lines/ListLines';
 import { insertNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Alert, Button, Paper, Tooltip, Typography } from '@components';
 
 const LOCAL_STORAGE_KEY = 'support-packages';
 

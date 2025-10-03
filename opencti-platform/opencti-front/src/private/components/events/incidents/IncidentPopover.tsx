@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ToggleButton from '@mui/material/ToggleButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql } from 'react-relay';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +12,7 @@ import useDeletion from '../../../../utils/hooks/useDeletion';
 import { IncidentEditionContainerQuery } from './__generated__/IncidentEditionContainerQuery.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import DeleteDialog from '../../../../components/DeleteDialog';
+import { Menu, MenuItem, ToggleButton } from '@components';
 
 const IncidentPopoverDeletionMutation = graphql`
   mutation IncidentPopoverDeletionMutation($id: ID!) {

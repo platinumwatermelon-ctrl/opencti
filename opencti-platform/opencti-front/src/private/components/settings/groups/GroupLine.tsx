@@ -1,22 +1,16 @@
 import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/Box';
 import { CheckCircleOutlined, DoNotDisturbOnOutlined, KeyboardArrowRightOutlined, ReportGmailerrorred } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import { Link } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
 import { GroupLine_node$data } from '@private/components/settings/groups/__generated__/GroupLine_node.graphql';
-import Tooltip from '@mui/material/Tooltip';
 import DangerZoneChip from '@private/components/common/danger_zone/DangerZoneChip';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
 import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
+import { Box, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -2,7 +2,6 @@ import { graphql, useFragment } from 'react-relay';
 import React, { FunctionComponent, useMemo } from 'react';
 import * as Yup from 'yup';
 import { Field, Form, Formik } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import { FormikConfig } from 'formik/dist/types';
 import { ExternalReferencesValues } from '@private/components/common/form/ExternalReferencesField';
 import { IngestionTaxiiEditionFragment_ingestionTaxii$data } from '@private/components/data/ingestionTaxii/__generated__/IngestionTaxiiEditionFragment_ingestionTaxii.graphql';
@@ -32,6 +31,7 @@ import { IngestionTaxiiEditionFragment_ingestionTaxii$key } from './__generated_
 import { useSchemaEditionValidation } from '../../../../utils/hooks/useEntitySettings';
 import { adaptFieldValue } from '../../../../utils/String';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { MenuItem } from '@components';
 
 export const initIngestionValue = (ingestionTaxiiData: IngestionTaxiiEditionFragment_ingestionTaxii$data) => {
   return {

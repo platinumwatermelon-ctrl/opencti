@@ -1,18 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createFragmentContainer, graphql } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { MoreVert } from '@mui/icons-material';
 import { AutoFix } from 'mdi-material-ui';
-import Checkbox from '@mui/material/Checkbox';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
-import Tooltip from '@mui/material/Tooltip';
-import Chip from '@mui/material/Chip';
-import IconButton from '@mui/material/IconButton';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import ContainerStixCoreObjectPopover from './ContainerStixCoreObjectPopover';
 import StixCoreObjectLabels from '../stix_core_objects/StixCoreObjectLabels';
@@ -23,6 +14,7 @@ import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import ItemEntityType from '../../../../components/ItemEntityType';
 import { DraftChip } from '../draft/DraftChip';
+import { Checkbox, Chip, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,12 +1,10 @@
 import React, { BaseSyntheticEvent, useContext, useRef } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { FileUploadOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
-import ToggleButton from '@mui/material/ToggleButton';
 import { FormikConfig } from 'formik/dist/types';
 import { WorkspacesLinesPaginationQuery$variables } from './__generated__/WorkspacesLinesPaginationQuery.graphql';
 import { WorkspaceCreationImportMutation } from './__generated__/WorkspaceCreationImportMutation.graphql';
@@ -26,6 +24,7 @@ import { UserContext } from '../../../utils/hooks/useAuth';
 import Security from '../../../utils/Security';
 import { EXPLORE_EXUPDATE, INVESTIGATION_INUPDATE } from '../../../utils/hooks/useGranted';
 import type { Theme } from '../../../components/Theme';
+import { Button, ToggleButton } from '@components';
 
 const workspaceMutation = graphql`
   mutation WorkspaceCreationMutation($input: WorkspaceAddInput!) {

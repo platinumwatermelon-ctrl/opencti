@@ -1,15 +1,12 @@
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { Launch } from 'mdi-material-ui';
 import React from 'react';
 import { useTheme } from '@mui/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import { IngestionConnector } from '@private/components/data/IngestionCatalog';
 import { LibraryBooksOutlined } from '@mui/icons-material';
 import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
+import { Button, Grid, Paper, Typography } from '@components';
 
 const IngestionCatalogConnectorOverview = ({ connector }: { connector: IngestionConnector }) => {
   const { t_i18n } = useFormatter();
@@ -18,7 +15,7 @@ const IngestionCatalogConnectorOverview = ({ connector }: { connector: Ingestion
   return (
     <Grid container={true} spacing={3} style={{ marginBottom: 20 }}>
 
-      <Grid item xs={8}>
+      <Grid size={8}>
         <Typography variant="h4" gutterBottom={true}>{t_i18n('Overview')}</Typography>
         <Paper
           style={{ marginTop: theme.spacing(1), padding: '15px', borderRadius: 4 }}
@@ -28,13 +25,13 @@ const IngestionCatalogConnectorOverview = ({ connector }: { connector: Ingestion
         </Paper>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid size={4}>
         <Typography variant="h4" gutterBottom={true}>{t_i18n('Basic information')}</Typography>
         <Paper
           style={{ marginTop: theme.spacing(1), padding: '15px', borderRadius: 4 }}
           variant="outlined"
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h3" gutterBottom={true}>{t_i18n('Integration documentation and code')}</Typography>
             <Button
               size="large"
@@ -46,7 +43,7 @@ const IngestionCatalogConnectorOverview = ({ connector }: { connector: Ingestion
               {connector.title}
             </Button>
           </Grid>
-          <Grid item xs={12} style={{ marginTop: 20 }}>
+          <Grid size={12} style={{ marginTop: 20 }}>
             <Typography variant="h3" gutterBottom={true}>{t_i18n('Visit the vendor\'s page to learn more and get in touch')}</Typography>
             <Button
               size="large"
@@ -59,7 +56,7 @@ const IngestionCatalogConnectorOverview = ({ connector }: { connector: Ingestion
               {t_i18n('Vendor contact')}
             </Button>
           </Grid>
-          <Grid item xs={12} style={{ marginTop: 20 }}>
+          <Grid size={12} style={{ marginTop: 20 }}>
             <Typography variant="h3" gutterBottom={true}>{t_i18n('Last verified')}</Typography>
             {connector.last_verified_date || '-' }
           </Grid>

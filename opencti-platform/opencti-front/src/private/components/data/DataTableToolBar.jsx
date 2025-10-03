@@ -7,25 +7,6 @@ import { graphql } from 'react-relay';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
 import Toolbar from '@mui/material/Toolbar';
-import MuiSwitch from '@mui/material/Switch';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import List from '@mui/material/List';
-import Radio from '@mui/material/Radio';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Table from '@mui/material/Table';
-import TableHead from '@mui/material/TableHead';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableRow from '@mui/material/TableRow';
-import IconButton from '@mui/material/IconButton';
 import {
   AddOutlined,
   AutoFixHighOutlined,
@@ -48,21 +29,7 @@ import {
   UnpublishedOutlined,
 } from '@mui/icons-material';
 import { BankMinus, BankPlus, CloudRefreshOutline, LabelOutline } from 'mdi-material-ui';
-import Autocomplete from '@mui/material/Autocomplete';
-import Drawer from '@mui/material/Drawer';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
-import Chip from '@mui/material/Chip';
-import DialogTitle from '@mui/material/DialogTitle';
-import Alert from '@mui/material/Alert';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
-import { FormControlLabel, Switch } from '@mui/material';
-import Checkbox from '@mui/material/Checkbox';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import UserEmailSend from '../settings/users/UserEmailSend';
 import { objectParticipantFieldMembersSearchQuery } from '../common/form/ObjectParticipantField';
@@ -98,6 +65,7 @@ import { getEntityTypeTwoFirstLevelsFilterValues, removeIdAndIncorrectKeysFromFi
 import { getMainRepresentative } from '../../../utils/defaultRepresentatives';
 import EETooltip from '../common/entreprise_edition/EETooltip';
 import { killChainPhasesSearchQuery } from '../settings/KillChainPhases';
+import { Alert, Autocomplete, Avatar, Button, Checkbox, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, FormControl, FormControlLabel, Grid, IconButton, InputLabel, List, ListItem, ListItemIcon, ListItemText, MenuItem, Switch as MuiSwitch, Radio, Select, Switch, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Tooltip, Typography } from '@components';
 
 const styles = (theme) => ({
   drawerPaper: {
@@ -2804,7 +2772,7 @@ class DataTableToolBar extends Component {
                           <CancelOutlined fontSize="small" />
                         </IconButton>
                         <Grid container={true} spacing={3}>
-                          <Grid item xs={3}>
+                          <Grid size={3}>
                             <FormControl className={classes.formControl}>
                               <InputLabel>{t('Action type')}</InputLabel>
                               <Select
@@ -2824,13 +2792,13 @@ class DataTableToolBar extends Component {
                               </Select>
                             </FormControl>
                           </Grid>
-                          <Grid item xs={3}>
+                          <Grid size={3}>
                             <FormControl className={classes.formControl}>
                               <InputLabel>{t('Field')}</InputLabel>
                               {this.renderFieldOptions(i, selectedTypes, entityTypeFilterValues, isAdmin)}
                             </FormControl>
                           </Grid>
-                          <Grid item xs={6} style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+                          <Grid size={6} style={{ display: 'flex', flexDirection: 'column-reverse' }}>
                             {this.renderValuesOptions(i, selectedTypes, settings.platform_user_statuses)}
                           </Grid>
                         </Grid>

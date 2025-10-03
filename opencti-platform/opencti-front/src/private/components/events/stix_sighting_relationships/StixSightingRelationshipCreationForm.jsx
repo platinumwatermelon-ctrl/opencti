@@ -1,10 +1,8 @@
 import React from 'react';
 import { ArrowRightAlt } from '@mui/icons-material';
-import Button from '@mui/material/Button';
 import { Field, Form, Formik } from 'formik';
 import makeStyles from '@mui/styles/makeStyles';
 import * as Yup from 'yup';
-import Tooltip from '@mui/material/Tooltip';
 import { itemColor } from '../../../../utils/Colors';
 import ItemIcon from '../../../../components/ItemIcon';
 import { useFormatter } from '../../../../components/i18n';
@@ -20,6 +18,7 @@ import { useDynamicSchemaCreationValidation, useIsMandatoryAttribute, yupShapeCo
 import { ExternalReferencesField } from '../../common/form/ExternalReferencesField';
 import useDefaultValues from '../../../../utils/hooks/useDefaultValues';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
+import { Button, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

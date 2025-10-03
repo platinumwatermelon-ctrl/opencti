@@ -2,12 +2,7 @@ import React, { FunctionComponent, useEffect } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import AlertTitle from '@mui/material/AlertTitle';
-import Alert from '@mui/material/Alert';
 import makeStyles from '@mui/styles/makeStyles';
-import Box from '@mui/material/Box';
 import { StreamCollectionEdition_streamCollection$data } from '@private/components/data/stream/__generated__/StreamCollectionEdition_streamCollection.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import ObjectMembersField from '../../common/form/ObjectMembersField';
@@ -20,6 +15,7 @@ import FilterIconButton from '../../../../components/FilterIconButton';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field';
 import { convertAuthorizedMembers } from '../../../../utils/edition';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
+import { Alert, AlertTitle, Box, FormControlLabel, Switch } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

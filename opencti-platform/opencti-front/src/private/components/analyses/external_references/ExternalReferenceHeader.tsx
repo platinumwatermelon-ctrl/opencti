@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
-import { Box } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import ExternalReferenceDeletion from '@private/components/analyses/external_references/ExternalReferenceDeletion';
 import { truncate } from '../../../../utils/String';
 import { ExternalReferenceHeader_externalReference$data } from './__generated__/ExternalReferenceHeader_externalReference.graphql';
@@ -11,6 +8,7 @@ import PopoverMenu from '../../../../components/PopoverMenu';
 import { useFormatter } from '../../../../components/i18n';
 import useGranted, { KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
+import { Box, MenuItem, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

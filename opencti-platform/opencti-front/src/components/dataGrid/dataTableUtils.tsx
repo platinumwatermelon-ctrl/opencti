@@ -1,8 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import StixCoreObjectLabels from '@private/components/common/stix_core_objects/StixCoreObjectLabels';
-import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
 import { DraftChip } from '@private/components/common/draft/DraftChip';
@@ -32,6 +30,7 @@ import { APP_BASE_PATH } from '../../relay/environment';
 import FieldOrEmpty from '../FieldOrEmpty';
 import ItemHistory from '../ItemHistory';
 import { useFormatter } from '../i18n';
+import { Chip, Tooltip } from '@components';
 
 const chipStyle: CSSProperties = {
   fontSize: '12px',

@@ -1,10 +1,9 @@
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Tooltip, Chip, Grid, Badge } from '@mui/material';
 import type { Theme } from './Theme';
 import stopEvent from '../utils/domEvent';
 import EnrichedTooltip from './EnrichedTooltip';
-
+import { Badge, Chip, Grid, Tooltip } from '@components';
 interface Marking {
   id: string
   definition?: string | null
@@ -156,7 +155,7 @@ const ItemMarkings = ({
       title={(
         <Grid container={true} spacing={3}>
           {markings.map((markingDefinition) => (
-            <Grid key={markingDefinition.id} item xs={6}>
+            <Grid key={markingDefinition.id} size={6}>
               <ChipMarking
                 markingDefinition={markingDefinition}
                 withTooltip

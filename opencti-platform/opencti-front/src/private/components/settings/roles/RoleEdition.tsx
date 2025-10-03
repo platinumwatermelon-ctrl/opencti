@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import RoleEditionOverview from './RoleEditionOverview';
 import RoleEditionCapabilities, { roleEditionCapabilitiesLinesSearch } from './RoleEditionCapabilities';
@@ -13,6 +10,7 @@ import { RoleEditionCapabilitiesLinesSearchQuery } from './__generated__/RoleEdi
 import { RoleEdition_role$key } from './__generated__/RoleEdition_role.graphql';
 import EditEntityControlledDial from '../../../../components/EditEntityControlledDial';
 import { RootRoleEditionQuery$data } from './__generated__/RootRoleEditionQuery.graphql';
+import { Box, Tab, Tabs } from '@components';
 
 const RoleEditionFragment = graphql`
   fragment RoleEdition_role on Role {

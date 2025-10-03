@@ -1,25 +1,9 @@
 import React, { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import { graphql, useLazyLoadQuery } from 'react-relay';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import Slide from '@mui/material/Slide';
-import Tooltip from '@mui/material/Tooltip';
 import { Add, Close, Delete } from '@mui/icons-material';
 import { DotsHorizontalCircleOutline } from 'mdi-material-ui';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import { Box, DialogTitle } from '@mui/material';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import * as R from 'ramda';
 import * as Yup from 'yup';
 import { useTheme } from '@mui/styles';
@@ -58,6 +42,7 @@ import StixCoreObjectEnrichment from '../stix_core_objects/StixCoreObjectEnrichm
 import PopoverMenu from '../../../../components/PopoverMenu';
 import { resolveLink } from '../../../../utils/Entity';
 import { authorizedMembersToOptions, CAN_USE_ENTITY_TYPES, useGetCurrentUserAccessRight } from '../../../../utils/authorizedMembers';
+import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, InputLabel, List, ListItem, ListItemText, MenuItem, Select, Tooltip, Typography } from '@components';
 
 export const stixDomainObjectMutation = graphql`
   mutation StixDomainObjectHeaderFieldMutation(

@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
@@ -21,6 +20,7 @@ import ObjectMarkingField from '../../common/form/ObjectMarkingField';
 import { CaseTasksLinesQuery$variables } from './__generated__/CaseTasksLinesQuery.graphql';
 import ObjectParticipantField from '../../common/form/ObjectParticipantField';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

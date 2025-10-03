@@ -4,23 +4,15 @@ import * as R from 'ramda';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { CenterFocusStrongOutlined, ClearOutlined, DeleteOutlined } from '@mui/icons-material';
-import Drawer from '@mui/material/Drawer';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { Form, Formik } from 'formik';
-import DialogTitle from '@mui/material/DialogTitle';
 import inject18n from '../../../../../components/i18n';
 import ObjectMarkingField from '../../form/ObjectMarkingField';
 import { UserContext } from '../../../../../utils/hooks/useAuth';
 import withHooksSettingsMessagesBannerHeight from '../../../settings/settings_messages/withHooksSettingsMessagesBannerHeight';
 import { MESSAGING$ } from '../../../../../relay/environment';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Drawer, IconButton, Typography } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />

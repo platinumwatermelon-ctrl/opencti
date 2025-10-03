@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
@@ -10,8 +9,6 @@ import { FormikConfig } from 'formik/dist/types';
 import { useNavigate } from 'react-router-dom';
 import { GroupingsLinesPaginationQuery$variables } from '@private/components/analyses/__generated__/GroupingsLinesPaginationQuery.graphql';
 import AuthorizedMembersField from '@private/components/common/form/AuthorizedMembersField';
-import Typography from '@mui/material/Typography';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import { handleErrorInForm } from '../../../../relay/environment';
 import TextField from '../../../../components/TextField';
 import ObjectMarkingField from '../../common/form/ObjectMarkingField';
@@ -36,6 +33,7 @@ import useGranted, { KNOWLEDGE_KNUPDATE_KNMANAGEAUTHMEMBERS } from '../../../../
 import Security from '../../../../utils/Security';
 import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
+import { AccordionDetails, Button, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

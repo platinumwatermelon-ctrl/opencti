@@ -2,16 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { compose, includes } from 'ramda';
 import { createRefetchContainer, graphql, RelayRefetchProp } from 'react-relay';
 import { interval } from 'rxjs';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import MenuItem from '@mui/material/MenuItem';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import makeStyles from '@mui/styles/makeStyles';
 import { FormikConfig } from 'formik/dist/types';
@@ -34,6 +25,7 @@ import { resolveHasUserChoiceParsedCsvMapper } from '../../../../utils/csvMapper
 import { KNOWLEDGE_KNUPLOAD } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import UploadImport from '../../../../components/UploadImport';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, List, MenuItem, Paper, Typography } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 

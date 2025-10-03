@@ -1,10 +1,4 @@
 import React from 'react';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import { Field, Form, Formik, FormikConfig } from 'formik';
 import { graphql } from 'react-relay';
 import { useTheme } from '@mui/styles';
@@ -19,6 +13,7 @@ import { handleErrorInForm } from '../relay/environment';
 import useAuth from '../utils/hooks/useAuth';
 import { FieldOption, fieldSpacingContainerStyle } from '../utils/field';
 import type { Theme } from './Theme';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 
 const requestAccessDialogMutation = graphql`
   mutation RequestAccessDialogMutation($input: RequestAccessAddInput!) {

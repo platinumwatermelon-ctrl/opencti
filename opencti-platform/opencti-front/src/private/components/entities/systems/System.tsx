@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { Grid } from '@mui/material';
 import { System_system$key } from './__generated__/System_system.graphql';
 import SystemDetails from './SystemDetails';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
@@ -9,6 +8,7 @@ import StixCoreObjectOrStixRelationshipLastContainers from '../../common/contain
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
+import { Grid } from '@components';
 
 const systemFragment = graphql`
   fragment System_system on System {
@@ -84,16 +84,16 @@ const System: React.FC<SystemProps> = ({ systemData, viewAs }) => {
         spacing={3}
         style={{ marginBottom: 20 }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <SystemDetails system={system} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixDomainObjectOverview
             stixDomainObject={system}
           />
         </Grid>
         {viewAs === 'knowledge' && (
-          <Grid item xs={6}>
+          <Grid size={6}>
             <SimpleStixObjectOrStixRelationshipStixCoreRelationships
               stixObjectOrStixRelationshipId={system.id}
               stixObjectOrStixRelationshipLink={`/dashboard/entities/systems/${system.id}/knowledge`}
@@ -101,17 +101,16 @@ const System: React.FC<SystemProps> = ({ systemData, viewAs }) => {
           </Grid>
         )}
         <Grid
-          item
-          xs={viewAs === 'knowledge' ? 6 : 12}
+          size={viewAs === 'knowledge' ? 6 : 12}
         >
           <StixCoreObjectOrStixRelationshipLastContainers
             {...lastReportsProps}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences stixCoreObjectId={system.id} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory stixCoreObjectId={system.id} />
         </Grid>
       </Grid>

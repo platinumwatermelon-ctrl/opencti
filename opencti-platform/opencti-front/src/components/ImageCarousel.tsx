@@ -1,15 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import makeStyles from '@mui/styles/makeStyles';
-import { ImageListItem, ImageListItemBar, Modal } from '@mui/material';
-import Skeleton from '@mui/material/Skeleton';
-import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton';
+import { ImageListItem, ImageListItemBar } from '@mui/material';
 import { ZoomOutMapOutlined } from '@mui/icons-material';
-import Box from '@mui/material/Box';
 import { convertImagesToCarousel } from '../utils/edition';
 import type { Theme } from './Theme';
 import { isNotEmptyField } from '../utils/utils';
+import { Box, IconButton, Modal, Paper, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

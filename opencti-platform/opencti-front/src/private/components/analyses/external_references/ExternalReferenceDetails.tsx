@@ -1,23 +1,13 @@
 import React, { useState } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import { OpenInBrowserOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import DialogTitle from '@mui/material/DialogTitle';
 import { ExternalReferenceDetails_externalReference$data } from './__generated__/ExternalReferenceDetails_externalReference.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import ItemCreators from '../../../../components/ItemCreators';
 import Transition from '../../../../components/Transition';
 import type { Theme } from '../../../../components/Theme';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, IconButton, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -65,7 +55,7 @@ const ExternalReferenceDetailsComponent = ({
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('External ID')}
             </Typography>
@@ -79,7 +69,7 @@ const ExternalReferenceDetailsComponent = ({
             </Typography>
             <ItemCreators creators={externalReference.creators ?? []} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('URL')}
             </Typography>

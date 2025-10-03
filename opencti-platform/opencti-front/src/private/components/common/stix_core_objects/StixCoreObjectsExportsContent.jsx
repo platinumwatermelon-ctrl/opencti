@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { createRefetchContainer, graphql } from 'react-relay';
-import List from '@mui/material/List';
 import { interval } from 'rxjs';
 import StixCoreObjectsExportCreation from './StixCoreObjectsExportCreation';
 import { FIVE_SECONDS } from '../../../../utils/Time';
@@ -8,6 +7,7 @@ import FileLine from '../files/FileLine';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNGETEXPORT_KNASKEXPORT } from '../../../../utils/hooks/useGranted';
 import { useFormatter } from '../../../../components/i18n';
+import { List } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

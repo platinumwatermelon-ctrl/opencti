@@ -1,11 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { Grid2 as Grid } from '@mui/material';
 import DangerZoneBlock from '@private/components/common/danger_zone/DangerZoneBlock';
-import Typography from '@mui/material/Typography';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Paper from '@mui/material/Paper';
 import { ArrowRightAlt } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import { useFormatter } from '../../../../components/i18n';
@@ -14,7 +9,7 @@ import useAuth from '../../../../utils/hooks/useAuth';
 import RuleListItemProgressBar from './RulesListItemProgressBar';
 import type { Theme } from '../../../../components/Theme';
 import Tag from './RulesListItemTag';
-
+import { FormControlLabel, FormGroup, Paper, Switch, Typography } from '@components';
 interface RulesListItemProps {
   rule: NonNullable<Rule>
   task: Task

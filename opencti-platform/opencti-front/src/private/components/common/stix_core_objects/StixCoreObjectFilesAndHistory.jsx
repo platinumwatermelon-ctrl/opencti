@@ -2,19 +2,11 @@ import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose, filter, flatten, fromPairs, includes, map, uniq, zip } from 'ramda';
 import * as Yup from 'yup';
-import Grid from '@mui/material/Grid';
 import withStyles from '@mui/styles/withStyles';
 import { ConnectionHandler } from 'relay-runtime';
-import MenuItem from '@mui/material/MenuItem';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { InfoOutlined } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
 import DraftWorkspaceViewer from '../files/draftWorkspace/DraftWorkspaceViewer';
 import { CONTENT_MAX_MARKINGS_HELPERTEXT, CONTENT_MAX_MARKINGS_TITLE } from '../files/FileManager';
 import ManageImportConnectorMessage from '../../data/import/ManageImportConnectorMessage';
@@ -30,6 +22,7 @@ import WorkbenchFileViewer from '../files/workbench/WorkbenchFileViewer';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import { resolveHasUserChoiceParsedCsvMapper } from '../../../../utils/csvMapperUtils';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, MenuItem, Tooltip } from '@components';
 
 const styles = (theme) => ({
   container: {
@@ -281,7 +274,7 @@ const StixCoreObjectFilesAndHistory = ({
           connectors={importConnsPerFormat}
           handleOpenImport={handleOpenImport}
         />
-        <Grid item xs={12}>
+        <Grid size={12}>
           <StixCoreObjectHistory
             stixCoreObjectId={id}
             withoutRelations={withoutRelations}

@@ -1,10 +1,4 @@
-import { Tooltip } from '@mui/material';
 import React, { ReactElement, useState } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import Button from '@mui/material/Button';
-import DialogActions from '@mui/material/DialogActions';
 import { useFormatter } from '../../../../components/i18n';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import FeedbackCreation from '../../cases/feedbacks/FeedbackCreation';
@@ -12,6 +6,7 @@ import EnterpriseEditionAgreement from './EnterpriseEditionAgreement';
 import useAI from '../../../../utils/hooks/useAI';
 import useGranted, { SETTINGS_SETPARAMETERS } from '../../../../utils/hooks/useGranted';
 import useAuth from '../../../../utils/hooks/useAuth';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from '@components';
 
 const EETooltip = ({
   children,

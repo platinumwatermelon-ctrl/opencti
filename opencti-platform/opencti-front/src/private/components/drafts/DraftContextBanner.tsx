@@ -1,16 +1,8 @@
 import React, { FunctionComponent, Suspense, useEffect, useState } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery, useQueryLoader } from 'react-relay';
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
 import DraftBlock from '@private/components/common/draft/DraftBlock';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
 import DraftProcessingStatus from '@private/components/drafts/DraftProcessingStatus';
-import Alert from '@mui/material/Alert';
-import { AlertTitle } from '@mui/material';
 import { interval } from 'rxjs';
 import { DraftContextBannerQuery } from '@private/components/drafts/__generated__/DraftContextBannerQuery.graphql';
 import { DraftContextBanner_data$key } from '@private/components/drafts/__generated__/DraftContextBanner_data.graphql';
@@ -22,6 +14,7 @@ import { MESSAGING$ } from '../../../relay/environment';
 import Transition from '../../../components/Transition';
 import { TEN_SECONDS } from '../../../utils/Time';
 import ErrorNotFound from '../../../components/ErrorNotFound';
+import { Alert, AlertTitle, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 
 const interval$ = interval(TEN_SECONDS * 3);
 

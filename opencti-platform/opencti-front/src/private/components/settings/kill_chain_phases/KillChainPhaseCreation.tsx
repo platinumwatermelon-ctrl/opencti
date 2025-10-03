@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Field, Form, Formik } from 'formik';
 import { TextField } from 'formik-mui';
-import { Button } from '@mui/material';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -13,6 +12,7 @@ import { insertNode } from '../../../../utils/store';
 import { commitMutation, defaultCommitMutation } from '../../../../relay/environment';
 import { PaginationOptions } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
+import { Button } from '@components';
 
 const killChainPhaseMutation = graphql`
   mutation KillChainPhaseCreationMutation($input: KillChainPhaseAddInput!) {

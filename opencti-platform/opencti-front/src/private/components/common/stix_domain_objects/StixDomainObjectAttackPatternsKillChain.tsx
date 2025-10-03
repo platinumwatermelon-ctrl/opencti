@@ -1,14 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, PreloadedQuery, useQueryLoader } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
 import { FileDownloadOutlined, ViewColumnOutlined, VisibilityOutlined } from '@mui/icons-material';
 import { ProgressWrench, RelationManyToMany } from 'mdi-material-ui';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ToggleButton from '@mui/material/ToggleButton';
 import {
   StixDomainObjectAttackPatternsKillChainContainer_data$data,
 } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainContainer_data.graphql';
-import Box from '@mui/material/Box';
 import {
   StixDomainObjectAttackPatternsKillChainQuery,
   StixDomainObjectAttackPatternsKillChainQuery$variables,
@@ -16,10 +12,7 @@ import {
 import StixDomainObjectAttackPatternsKillChainMatrixInline from '@private/components/common/stix_domain_objects/StixDomainObjectAttackPatternsKillChainMatrixInLine';
 import { ListViewIcon, SublistViewIcon } from 'filigran-icon';
 import FiligranIcon from '@private/components/common/FiligranIcon';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { attackPatternsMatrixColumnsFragment } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrixColumns';
 import * as R from 'ramda';
 import { AttackPatternsMatrixColumns_data$key } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixColumns_data.graphql';
@@ -27,7 +20,6 @@ import StixCoreRelationships from '@private/components/common/stix_core_relation
 import { AttackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/__generated__/AttackPatternsMatrixQuery.graphql';
 import { attackPatternsMatrixQuery } from '@private/components/techniques/attack_patterns/attack_patterns_matrix/AttackPatternsMatrix';
 import EntitySelect, { EntityOption } from '@private/components/common/form/EntitySelect';
-import { IconButton } from '@mui/material';
 import {
   StixDomainObjectAttackPatternsKillChainOverlapQuery$data,
 } from '@private/components/common/stix_domain_objects/__generated__/StixDomainObjectAttackPatternsKillChainOverlapQuery.graphql';
@@ -48,6 +40,7 @@ import { UseLocalStorageHelpers } from '../../../../utils/hooks/useLocalStorage'
 import usePreloadedFragment from '../../../../utils/hooks/usePreloadedFragment';
 import { fetchQuery } from '../../../../relay/environment';
 import { containerTypes } from '../../../../utils/hooks/useAttributes';
+import { Box, FormControl, IconButton, InputLabel, MenuItem, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 export const stixDomainObjectAttackPatternsKillChainQuery = graphql`
   query StixDomainObjectAttackPatternsKillChainQuery(

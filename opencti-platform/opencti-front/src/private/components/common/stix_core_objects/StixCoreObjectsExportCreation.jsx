@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import * as R from 'ramda';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { Add, InfoOutlined } from '@mui/icons-material';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import * as Yup from 'yup';
-import Tooltip from '@mui/material/Tooltip';
 import makeStyles from '@mui/styles/makeStyles';
-import Fab from '@mui/material/Fab';
 import { CONTENT_MAX_MARKINGS_HELPERTEXT, CONTENT_MAX_MARKINGS_TITLE } from '../files/FileManager';
 import ObjectMarkingField from '../form/ObjectMarkingField';
 import { useFormatter } from '../../../../components/i18n';
@@ -22,6 +14,7 @@ import SelectField from '../../../../components/fields/SelectField';
 import Loader from '../../../../components/Loader';
 import { ExportContext } from '../../../../utils/ExportContextProvider';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Fab, MenuItem, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

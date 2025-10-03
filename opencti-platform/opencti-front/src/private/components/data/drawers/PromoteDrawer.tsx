@@ -1,12 +1,9 @@
 import React from 'react';
-import Alert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { useTheme } from '@mui/styles';
-import Checkbox from '@mui/material/Checkbox';
-import Typography from '@mui/material/Typography';
 import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
+import { Alert, Button, Checkbox, Typography } from '@components';
 
 type DrawerContainerPropsType = {
   isOpen: boolean;

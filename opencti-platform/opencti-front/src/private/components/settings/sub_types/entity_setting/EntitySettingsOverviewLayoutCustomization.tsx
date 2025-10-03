@@ -1,12 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import { DragDropContext, Draggable, Droppable, DropResult } from '@hello-pangea/dnd';
-import Table from '@mui/material/Table';
-import TableHead from '@mui/material/TableHead';
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
-import TableBody from '@mui/material/TableBody';
-import Switch from '@mui/material/Switch';
 import { DragIndicatorOutlined } from '@mui/icons-material';
 import { Form, Formik } from 'formik';
 import { EntitySettingSettings_entitySetting$data } from '@private/components/settings/sub_types/entity_setting/__generated__/EntitySettingSettings_entitySetting.graphql';
@@ -14,6 +8,7 @@ import { useTheme } from '@mui/styles';
 import { useFormatter } from '../../../../../components/i18n';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
 import type { Theme } from '../../../../../components/Theme';
+import { Switch, Table, TableBody, TableCell, TableHead, TableRow } from '@components';
 
 export const entitySettingsOverviewLayoutCustomizationFragment = graphql`
   fragment EntitySettingsOverviewLayoutCustomization_entitySetting on EntitySetting {

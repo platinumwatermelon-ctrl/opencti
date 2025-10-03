@@ -1,5 +1,6 @@
 import React from 'react';
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { tooltipClasses } from '@mui/material/Tooltip';
+import { Tooltip } from '@components';
 import { styled } from '@mui/material/styles';
 
 const EnrichedTooltip = styled(({ className, ...props }) => (

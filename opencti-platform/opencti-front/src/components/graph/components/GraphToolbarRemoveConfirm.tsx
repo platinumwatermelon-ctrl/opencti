@@ -1,20 +1,9 @@
-import DialogContent from '@mui/material/DialogContent';
-import Typography from '@mui/material/Typography';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import React, { useState } from 'react';
 import { Form, Formik } from 'formik';
 import CommitMessage from '@private/components/common/form/CommitMessage';
 import type { FormikConfig } from 'formik/dist/types';
 import { knowledgeGraphQueryCheckObjectQuery } from '@private/components/common/containers/KnowledgeGraphQuery';
 import { KnowledgeGraphQueryCheckObjectQuery$data } from '@private/components/common/containers/__generated__/KnowledgeGraphQueryCheckObjectQuery.graphql';
-import { LinearProgress } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Transition from '../../Transition';
 import { useFormatter } from '../../i18n';
@@ -27,7 +16,7 @@ import useKnowledgeGraphDeleteObject from '../utils/useKnowledgeGraphDeleteObjec
 import { FieldOption } from '../../../utils/field';
 import type { Theme } from '../../Theme';
 import { isGraphNode } from '../graph.types';
-
+import { Alert, AlertTitle, Button, Checkbox, Dialog, DialogActions, DialogContent, FormControlLabel, FormGroup, LinearProgress, Typography } from '@components';
 interface ReferenceFormData {
   message: string,
   references: FieldOption[]

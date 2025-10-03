@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import CoreForm from '@rjsf/core';
 import JsonForm from '@rjsf/mui';
@@ -23,6 +22,7 @@ import notifierValidator from './NotifierValidator';
 import { handleErrorInForm } from '../../../../relay/environment';
 import { convertAuthorizedMembers } from '../../../../utils/edition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

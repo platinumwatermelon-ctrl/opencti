@@ -1,11 +1,5 @@
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Field } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import { Delete, InfoOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import { Tooltip } from '@mui/material';
 import React from 'react';
 import { isGenericOption } from '@private/components/common/form/AuthorizedMembersField';
 import SelectField from '../../../../components/fields/SelectField';
@@ -13,6 +7,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import useAuth from '../../../../utils/hooks/useAuth';
 import { useFormatter } from '../../../../components/i18n';
 import { AccessRight, AuthorizedMemberOption } from '../../../../utils/authorizedMembers';
+import { IconButton, ListItem, ListItemIcon, ListItemText, MenuItem, Tooltip } from '@components';
 
 // Common style applied in JSX.
 const smallText = {

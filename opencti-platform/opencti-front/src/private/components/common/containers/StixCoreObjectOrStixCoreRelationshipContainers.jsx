@@ -1,9 +1,5 @@
 import React, { Suspense } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Box from '@mui/material/Box';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { FileDownloadOutlined, ViewListOutlined } from '@mui/icons-material';
 import { VectorPolygon } from 'mdi-material-ui';
 import { QueryRenderer } from '../../../../relay/environment';
@@ -20,6 +16,7 @@ import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStora
 import { emptyFilterGroup, isFilterGroupNotEmpty, useRemoveIdAndIncorrectKeysFromFilterGroupObject } from '../../../../utils/filters/filtersUtils';
 import { useFormatter } from '../../../../components/i18n';
 import { deserializeObjectB64 } from '../../../../utils/object';
+import { Box, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

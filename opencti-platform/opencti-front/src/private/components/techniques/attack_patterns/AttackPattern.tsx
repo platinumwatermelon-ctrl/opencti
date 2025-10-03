@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import { AttackPattern_attackPattern$key } from '@private/components/techniques/attack_patterns/__generated__/AttackPattern_attackPattern.graphql';
 import AttackPatternDetails from './AttackPatternDetails';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
@@ -10,6 +9,7 @@ import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCore
 import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../common/stix_core_relationships/SimpleStixObjectOrStixRelationshipStixCoreRelationships';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 export const attackPatternFragment = graphql`
   fragment AttackPattern_attackPattern on AttackPattern {
@@ -83,19 +83,19 @@ const AttackPattern: React.FC<AttackPatternProps> = ({ attackPatternData }) => {
             switch (key) {
               case 'details':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <AttackPatternDetails attackPattern={attackPattern} />
                   </Grid>
                 );
               case 'basicInformation':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixDomainObjectOverview stixDomainObject={attackPattern} />
                   </Grid>
                 );
               case 'latestCreatedRelationships':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <SimpleStixObjectOrStixRelationshipStixCoreRelationships
                       stixObjectOrStixRelationshipId={attackPattern.id}
                       stixObjectOrStixRelationshipLink={`/dashboard/techniques/attack_patterns/${attackPattern.id}/knowledge`}
@@ -104,7 +104,7 @@ const AttackPattern: React.FC<AttackPatternProps> = ({ attackPatternData }) => {
                 );
               case 'latestContainers':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixRelationshipLastContainers
                       stixCoreObjectOrStixRelationshipId={attackPattern.id}
                     />
@@ -112,7 +112,7 @@ const AttackPattern: React.FC<AttackPatternProps> = ({ attackPatternData }) => {
                 );
               case 'externalReferences':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectExternalReferences
                       stixCoreObjectId={attackPattern.id}
                     />
@@ -120,7 +120,7 @@ const AttackPattern: React.FC<AttackPatternProps> = ({ attackPatternData }) => {
                 );
               case 'mostRecentHistory':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectLatestHistory
                       stixCoreObjectId={attackPattern.id}
                     />
@@ -128,7 +128,7 @@ const AttackPattern: React.FC<AttackPatternProps> = ({ attackPatternData }) => {
                 );
               case 'notes':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixCoreRelationshipNotes
                       stixCoreObjectOrStixCoreRelationshipId={attackPattern.id}
                       defaultMarkings={attackPattern.objectMarking ?? []}

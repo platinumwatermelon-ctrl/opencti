@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { graphql } from 'react-relay';
 import { ExclusionListsLine_node$data } from '@private/components/settings/exclusion_lists/__generated__/ExclusionListsLine_node.graphql';
 import { ExclusionListsLinesPaginationQuery$variables } from '@private/components/settings/exclusion_lists/__generated__/ExclusionListsLinesPaginationQuery.graphql';
@@ -14,6 +11,7 @@ import { useFormatter } from '../../../../components/i18n';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import { deleteNode } from '../../../../utils/store';
+import { IconButton, Menu, MenuItem } from '@components';
 
 export const exclusionListPopoverDeletionMutation = graphql`
   mutation ExclusionListPopoverDeletionMutation($id: ID!) {

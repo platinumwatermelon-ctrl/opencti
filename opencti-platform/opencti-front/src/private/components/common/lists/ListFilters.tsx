@@ -1,19 +1,14 @@
 import React, { useState, SyntheticEvent, ReactNode } from 'react';
-import Button from '@mui/material/Button';
 import { FilterListOffOutlined, FilterListOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import Popover from '@mui/material/Popover';
-import Tooltip from '@mui/material/Tooltip';
 import { RayEndArrow, RayStartArrow } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
-import TextField from '@mui/material/TextField';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { type handleFilterHelpers } from 'src/utils/filters/filtersHelpers-types';
 import { type SavedFiltersSelectionData } from 'src/components/saved_filters/SavedFilterSelection';
 import { useFormatter } from '../../../../components/i18n';
 import { useBuildFilterKeysMapFromEntityType, getDefaultFilterObject, getFilterDefinitionFromFilterKeysMap } from '../../../../utils/filters/filtersUtils';
 import SavedFilters from '../../../../components/saved_filters/SavedFilters';
 import SavedFilterButton from '../../../../components/saved_filters/SavedFilterButton';
+import { Button, IconButton, Autocomplete as MUIAutocomplete, Popover, TextField, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

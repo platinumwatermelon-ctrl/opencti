@@ -1,16 +1,12 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, Form, Formik, FormikErrors } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import { FormikConfig } from 'formik/dist/types';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { styled } from '@mui/material/styles';
-import { Badge, BadgeProps } from '@mui/material';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { BadgeProps } from '@mui/material';
 import CountryField from '@private/components/common/form/CountryField';
 import { useFormatter } from '../../../../components/i18n';
 import { handleErrorInForm } from '../../../../relay/environment';
@@ -45,7 +41,7 @@ import BulkTextModal from '../../../../components/fields/BulkTextField/BulkTextM
 import BulkTextModalButton from '../../../../components/fields/BulkTextField/BulkTextModalButton';
 import BulkTextField from '../../../../components/fields/BulkTextField/BulkTextField';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
-
+import { Badge, Box, Button, Tab, Tabs } from '@components';
 interface ErrorBadgeProps extends BadgeProps {
   errors?: FormikErrors<ThreatActorIndividualAddInput>;
   width?: number;

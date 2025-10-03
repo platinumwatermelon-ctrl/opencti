@@ -1,13 +1,7 @@
 import React, { Dispatch, FunctionComponent, ReactNode, SyntheticEvent, useState } from 'react';
-import Popover from '@mui/material/Popover';
-import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
-import Tooltip from '@mui/material/Tooltip';
 import FilterDate from '@private/components/common/lists/FilterDate';
-import { Autocomplete, MenuItem, Select } from '@mui/material';
 import { SelectChangeEvent } from '@mui/material/Select';
 import SearchScopeElement from '@private/components/common/lists/SearchScopeElement';
-import Chip from '@mui/material/Chip';
 import { FilterOptionValue } from '@private/components/common/lists/FilterAutocomplete';
 import { addDays, subDays } from 'date-fns';
 import { useTheme } from '@mui/material/styles';
@@ -38,7 +32,7 @@ import DateRangeFilter from './DateRangeFilter';
 // eslint-disable-next-line import/no-cycle
 import FilterFiltersInput from './FilterFiltersInput';
 import stopEvent from '../../utils/domEvent';
-
+import { Autocomplete, Checkbox, Chip, MenuItem, Popover, Select, TextField, Tooltip } from '@components';
 interface FilterChipMenuProps {
   handleClose: () => void;
   open: boolean;

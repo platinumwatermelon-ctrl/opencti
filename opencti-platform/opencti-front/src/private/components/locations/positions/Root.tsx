@@ -2,9 +2,6 @@ import React, { useMemo, Suspense } from 'react';
 import { Route, Routes, Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { RootPositionQuery } from '@private/components/locations/positions/__generated__/RootPositionQuery.graphql';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import { RootPositionsSubscription } from '@private/components/locations/positions/__generated__/RootPositionsSubscription.graphql';
@@ -27,6 +24,7 @@ import PositionEdition from './PositionEdition';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import PositionDeletion from './PositionDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootPositionsSubscription($id: ID!) {

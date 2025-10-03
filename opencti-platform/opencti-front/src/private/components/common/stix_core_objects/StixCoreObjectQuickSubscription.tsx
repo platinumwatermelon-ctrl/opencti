@@ -1,15 +1,5 @@
 import { ExpandLess, ExpandMore, NotificationsOutlined } from '@mui/icons-material';
-import Alert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
 import type { OverridableStringUnion } from '@mui/types';
-import Checkbox from '@mui/material/Checkbox';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import ToggleButton from '@mui/material/ToggleButton';
-import Tooltip from '@mui/material/Tooltip';
 import { makeStyles, useTheme } from '@mui/styles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
@@ -25,8 +15,7 @@ import {
   stixCoreObjectTriggersUtilsPaginationQuery$variables,
 } from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtilsPaginationQuery.graphql';
 import { stixCoreObjectTriggersUtils_triggers$key as FragmentKey } from '@private/components/common/stix_core_objects/__generated__/stixCoreObjectTriggersUtils_triggers.graphql';
-import { ListItemButton, SvgIconPropsColorOverrides } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
+import { SvgIconPropsColorOverrides } from '@mui/material';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { useFormatter } from '../../../../components/i18n';
@@ -45,7 +34,7 @@ import NotifierField from '../form/NotifierField';
 import { deserializeFilterGroupForFrontend, findFilterFromKey, serializeFilterGroupForBackend } from '../../../../utils/filters/filtersUtils';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
-
+import { Alert, Button, Checkbox, Collapse, IconButton, List, ListItem, ListItemButton, ListItemText, MenuItem, ToggleButton, Tooltip } from '@components';
 interface InstanceTriggerEditionFormValues {
   id: string;
   name: string;

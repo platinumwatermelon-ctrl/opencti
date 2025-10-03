@@ -1,18 +1,9 @@
 import { WarningOutlined } from '@mui/icons-material';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
 import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
-import { ListItemButton } from '@mui/material';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
@@ -30,6 +21,7 @@ import useGranted, { BYPASS, SETTINGS_SETACCESSES } from '../../../../utils/hook
 import Security from '../../../../utils/Security';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import type { Theme } from '../../../../components/Theme';
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -163,22 +155,22 @@ const SettingsOrganization = ({
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <SettingsOrganizationDetails settingsOrganization={organization} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <div style={{ height: '100%' }}>
             <Typography variant="h4" gutterBottom={true}>
               {t_i18n('More information')}
             </Typography>
             <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
               <Grid container={true} spacing={3}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <SettingsOrganizationHiddenTypesChipList
                     organizationData={organization}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Parent organizations')}
                   </Typography>
@@ -203,7 +195,7 @@ const SettingsOrganization = ({
                     </List>
                   </FieldOrEmpty>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Child organizations')}
                   </Typography>
@@ -226,7 +218,7 @@ const SettingsOrganization = ({
                     </List>
                   </FieldOrEmpty>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Default dashboard')}
                   </Typography>
@@ -263,7 +255,7 @@ const SettingsOrganization = ({
                     </List>
                   </FieldOrEmpty>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Grantable groups by organization administrators')}
                   </Typography>
@@ -331,7 +323,7 @@ const SettingsOrganization = ({
             <SettingsOrganizationUsers organization={organization} />
           </>
         ) : (
-          <Grid item xs={12}>
+          <Grid size={12}>
             <EnterpriseEdition
               feature={t_i18n('Organization sharing')}
             />

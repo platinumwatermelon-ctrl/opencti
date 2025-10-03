@@ -1,12 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
 import Drawer, { DrawerVariant } from '@private/components/common/drawer/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
@@ -14,7 +6,6 @@ import { FormikConfig, FormikHelpers } from 'formik/dist/types';
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
 import * as Yup from 'yup';
-import { Box } from '@mui/material';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { useFormatter } from '../../../../components/i18n';
@@ -32,6 +23,7 @@ import { TriggerEventType, TriggerLiveCreationKnowledgeMutation, TriggerLiveCrea
 import { TriggersLinesPaginationQuery$variables } from './__generated__/TriggersLinesPaginationQuery.graphql';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Box, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, ListItemText, MenuItem } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

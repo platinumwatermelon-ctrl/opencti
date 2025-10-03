@@ -1,9 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field, FieldArray, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import * as Yup from 'yup';
-import { IconButton, Typography } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import { FormikHelpers } from 'formik/dist/types';
 import JsonMapperRepresentationForm, { RepresentationFormEntityOption } from '@private/components/data/jsonMapper/representations/JsonMapperRepresentationForm';
@@ -16,7 +14,7 @@ import type { Theme } from '../../../../components/Theme';
 import { useFormatter } from '../../../../components/i18n';
 import TextField from '../../../../components/TextField';
 import useAuth from '../../../../utils/hooks/useAuth';
-import { representationInitialization } from './representations/RepresentationUtils';
+import { representationInitialization } from './representations/RepresentationUtils';import { Button, IconButton, Typography } from '@components';
 import {
   JsonMapperRepresentationAttributesForm_allSchemaAttributes$data,
 } from './representations/attributes/__generated__/JsonMapperRepresentationAttributesForm_allSchemaAttributes.graphql';

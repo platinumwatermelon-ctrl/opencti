@@ -1,11 +1,7 @@
 import React from 'react';
 import { isNil } from 'ramda';
 import { getIn, useField } from 'formik';
-import { v4 as uuid } from 'uuid';
-import MuiSelect from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
+import { v4 as uuid } from 'uuid';import { FormControl, FormHelperText, InputLabel, Select as MuiSelect } from '@components';
 
 const fieldToSelect = ({
   disabled,

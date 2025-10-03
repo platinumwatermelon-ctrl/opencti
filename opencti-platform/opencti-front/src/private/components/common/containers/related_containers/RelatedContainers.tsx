@@ -2,10 +2,7 @@ import React, { useMemo, useState, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { NorthEastOutlined, LoupeOutlined } from '@mui/icons-material';
 import { VectorLink } from 'mdi-material-ui';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import { graphql, useFragment } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
 import RelatedContainersDetails from '@private/components/common/containers/related_containers/RelatedContainersDetails';
 import Drawer from '@private/components/common/drawer/Drawer';
 import {
@@ -19,6 +16,7 @@ import { resolveLink } from '../../../../../utils/Entity';
 import { useFormatter } from '../../../../../components/i18n';
 import DataTableWithoutFragment from '../../../../../components/dataGrid/DataTableWithoutFragment';
 import { DataTableVariant } from '../../../../../components/dataGrid/dataTableTypes';
+import { IconButton, Tooltip, Typography } from '@components';
 
 export const RelatedContainersFragment = graphql`
   fragment RelatedContainersFragment_container_connection on ContainerConnection {

@@ -1,12 +1,9 @@
 import React, { FunctionComponent } from 'react';
-import Tooltip from '@mui/material/Tooltip';
-import ToggleButton from '@mui/material/ToggleButton';
 import { Link } from 'react-router-dom';
 import { DifferenceOutlined, DriveFileRenameOutlineOutlined, NewspaperOutlined } from '@mui/icons-material';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useFormatter } from '../../../../components/i18n';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
-
+import { ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 interface StixCoreObjectContentHeaderProps {
   currentMode?: string;
   modes: string[];

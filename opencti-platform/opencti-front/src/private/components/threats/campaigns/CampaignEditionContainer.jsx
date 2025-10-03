@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { useFormatter } from '../../../../components/i18n';
 import CampaignEditionOverview from './CampaignEditionOverview';
 import CampaignEditionDetails from './CampaignEditionDetails';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
 import Drawer from '../../common/drawer/Drawer';
+import { Box, Tab, Tabs } from '@components';
 
 const CampaignEditionContainer = (props) => {
   const { t_i18n } = useFormatter();

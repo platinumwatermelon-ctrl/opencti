@@ -1,13 +1,7 @@
 import React from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import { Role_role$data, Role_role$key } from './__generated__/Role_role.graphql';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
@@ -19,6 +13,7 @@ import { GroupsSearchQuery } from '../__generated__/GroupsSearchQuery.graphql';
 import ItemIcon from '../../../../components/ItemIcon';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import type { Theme } from '../../../../components/Theme';
+import { Grid, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -84,13 +79,13 @@ const Role = ({
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Basic information')}
           </Typography>
           <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
             <Grid container={true} spacing={3}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Description')}
                 </Typography>
@@ -99,7 +94,7 @@ const Role = ({
                   limit={400}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Groups using this role')}
                 </Typography>
@@ -123,13 +118,13 @@ const Role = ({
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Capabilities')}
           </Typography>
           <Paper classes={{ root: classes.paper }} variant="outlined">
             <Grid container={true} spacing={3}>
-              <Grid item xs={12} style={{ paddingTop: 10 }}>
+              <Grid size={12} style={{ paddingTop: 10 }}>
                 {queryRef && (
                   <React.Suspense>
                     <CapabilitiesList queryRef={queryRef} role={role} />

@@ -1,19 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import { DeleteForeverOutlined, DeleteOutlined, RefreshOutlined, Visibility, VisibilityOff } from '@mui/icons-material';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import IconButton from '@mui/material/IconButton';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
 import makeStyles from '@mui/styles/makeStyles';
@@ -21,10 +8,6 @@ import { ApexOptions } from 'apexcharts';
 import { SimplePaletteColorOptions } from '@mui/material/styles/createPalette';
 import UserConfidenceLevel from '@private/components/settings/users/UserConfidenceLevel';
 import { UserUserRenewTokenMutation } from '@private/components/settings/users/__generated__/UserUserRenewTokenMutation.graphql';
-import Tooltip from '@mui/material/Tooltip';
-import DialogTitle from '@mui/material/DialogTitle';
-import { ListItemButton } from '@mui/material';
-import Chip from '@mui/material/Chip';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';
 import { handleError, QueryRenderer } from '../../../../relay/environment';
@@ -52,6 +35,7 @@ import type { Theme } from '../../../../components/Theme';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import ItemCopy from '../../../../components/ItemCopy';
 import { maskString } from '../../../../utils/String';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const startDate = yearsAgo(1);
 const endDate = now();
@@ -370,7 +354,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
         spacing={3}
         classes={{ container: classes.gridContainer }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Basic information')}
           </Typography>
@@ -378,7 +362,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
             <Grid container={true} spacing={3}>
               {!isServiceAccount && (
                 <>
-                  <Grid item xs={8}>
+                  <Grid size={8}>
                     <Typography
                       variant="h3"
                       gutterBottom={true}
@@ -388,7 +372,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                     </Typography>
                     <pre style={{ margin: 0 }}>{user.user_email}</pre>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid size={4}>
                     <Typography
                       variant="h3"
                       gutterBottom={true}
@@ -416,7 +400,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
               )}
               {isServiceAccount && (
                 <>
-                  <Grid item xs={4}>
+                  <Grid size={4}>
                     <Typography variant="h3" gutterBottom={true} style={{ marginBottom: 5 }}>
                       {t_i18n('Account type')}
                     </Typography>
@@ -430,7 +414,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                         />
                       : '-'}
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid size={4}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Account status')}
                     </Typography>
@@ -440,7 +424,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                       variant="outlined"
                     />
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid size={4}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Account expiration date')}
                     </Typography>
@@ -448,7 +432,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                   </Grid>
                 </>
               )}
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3" gutterBottom={true} style={{ float: 'left' }}>
                   {t_i18n('Token')}
                 </Typography>
@@ -498,19 +482,19 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
               </Grid>
               {!isServiceAccount && (
                 <>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Firstname')}
                     </Typography>
                     {user.firstname || '-'}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Lastname')}
                     </Typography>
                     {user.lastname || '-'}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Account status')}
                     </Typography>
@@ -520,7 +504,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                       variant="outlined"
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Account expiration date')}
                     </Typography>
@@ -530,13 +514,13 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
               )}
               {isServiceAccount && (
               <>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Created by')}
                   </Typography>
                   { creatorName }
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Creation date')}
                   </Typography>
@@ -547,13 +531,13 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Permissions')}
           </Typography>
           <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
             <Grid container={true} spacing={3}>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Roles')}
                 </Typography>
@@ -583,7 +567,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                   </List>
                 </FieldOrEmpty>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Groups')}
                 </Typography>
@@ -617,7 +601,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                   </List>
                 </FieldOrEmpty>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Organizations')}
                 </Typography>
@@ -653,7 +637,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                   </List>
                 </FieldOrEmpty>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}
@@ -717,13 +701,13 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
                 </FieldOrEmpty>
               </Grid>
               {!isServiceAccount && (
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <HiddenTypesChipList
                   hiddenTypes={user.default_hidden_types ?? []}
                 />
               </Grid>
               )}
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}
@@ -740,7 +724,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
         {!isServiceAccount && (
         <Triggers recipientId={user.id} filterKey="authorized_members.id" />
         )}
-        <Grid item xs={6} style={{ marginTop: 10 }}>
+        <Grid size={6} style={{ marginTop: 10 }}>
           <Typography variant="h4" gutterBottom={true} style={{ paddingBottom: '21px' }}>
             {t_i18n('Operations')}
           </Typography>
@@ -821,7 +805,7 @@ const User: FunctionComponent<UserProps> = ({ data, refetch }) => {
             )}
           </Paper>
         </Grid>
-        <Grid item xs={6} style={{ marginTop: 10 }}>
+        <Grid size={6} style={{ marginTop: 10 }}>
           {isGrantedToAudit ? (
             <UserHistory userId={user.id} />
           ) : (

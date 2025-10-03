@@ -1,12 +1,8 @@
 import React, { FunctionComponent, useState, useMemo } from 'react';
 import { graphql, useFragment, useQueryLoader, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import Button from '@mui/material/Button';
 import { FormEditionFragment_form$key } from '@private/components/data/forms/__generated__/FormEditionFragment_form.graphql';
 import { FormCreationQuery } from '@private/components/data/forms/__generated__/FormCreationQuery.graphql';
-import TextField from '@mui/material/TextField';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { useFormatter } from '../../../../components/i18n';
 import { commitMutation, handleError } from '../../../../relay/environment';
 import type { Theme } from '../../../../components/Theme';
@@ -15,6 +11,7 @@ import { formCreationQuery } from './FormCreation';
 import type { FormBuilderData, FormFieldAttribute } from './Form.d';
 import { convertFormBuilderDataToSchema } from './FormUtils';
 import Loader from '../../../../components/Loader';
+import { Button, FormControlLabel, Switch, TextField } from '@components';
 
 const useStyles = makeStyles<Theme>(() => ({
   container: {

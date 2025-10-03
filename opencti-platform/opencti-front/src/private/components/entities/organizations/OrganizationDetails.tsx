@@ -1,9 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
-import Grid from '@mui/material/Grid';
 import makeStyles from '@mui/styles/makeStyles';
 import { OrganizationDetails_organization$data } from '@private/components/entities/organizations/__generated__/OrganizationDetails_organization.graphql';
 import { useFormatter } from '../../../../components/i18n';
@@ -13,6 +9,7 @@ import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import type { Theme } from '../../../../components/Theme';
 import ItemScore from '../../../../components/ItemScore';
+import { Chip, Grid, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -48,7 +45,7 @@ const OrganizationDetailsComponent: FunctionComponent<OrganizationDetailsCompone
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Organization type')}
             </Typography>
@@ -76,7 +73,7 @@ const OrganizationDetailsComponent: FunctionComponent<OrganizationDetailsCompone
             </Typography>
             <ItemScore score={organization.x_opencti_score} />
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Reliability')}
             </Typography>

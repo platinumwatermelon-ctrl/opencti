@@ -1,16 +1,13 @@
 import React, { CSSProperties, FunctionComponent, useMemo, useRef, useState } from 'react';
-import Checkbox from '@mui/material/Checkbox';
 import { DragIndicatorOutlined } from '@mui/icons-material';
-import Menu from '@mui/material/Menu';
 import { DragDropContext, Draggable, DraggableLocation, Droppable } from '@hello-pangea/dnd';
-import MenuItem from '@mui/material/MenuItem';
 import { PopoverProps } from '@mui/material/Popover/Popover';
 import { useTheme } from '@mui/styles';
-import Box from '@mui/material/Box';
 import { DataTableColumn, DataTableColumns, DataTableHeadersProps } from '../dataTableTypes';
 import DataTableHeader, { SELECT_COLUMN_SIZE } from './DataTableHeader';
 import type { Theme } from '../../Theme';
 import { useDataTableContext } from './DataTableContext';
+import { Box, Checkbox, Menu, MenuItem } from '@components';
 
 const DataTableHeaders: FunctionComponent<DataTableHeadersProps> = ({
   dataTableToolBarComponent,

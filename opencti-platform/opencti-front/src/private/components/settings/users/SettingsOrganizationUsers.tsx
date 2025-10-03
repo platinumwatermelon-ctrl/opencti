@@ -1,7 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import { AccountCircleOutlined, AdminPanelSettingsOutlined, ManageAccountsOutlined, PersonOutlined } from '@mui/icons-material';
 import SettingsOrganizationUserCreation from '@private/components/settings/users/SettingsOrganizationUserCreation';
 import { SettingsOrganization_organization$data } from '@private/components/settings/organizations/__generated__/SettingsOrganization_organization.graphql';
@@ -19,6 +16,7 @@ import { DataTableProps } from '../../../../components/dataGrid/dataTableTypes';
 import { UsePreloadedPaginationFragment } from '../../../../utils/hooks/usePreloadedPaginationFragment';
 import DataTable from '../../../../components/dataGrid/DataTable';
 import useGranted, { SETTINGS_SETACCESSES, VIRTUAL_ORGANIZATION_ADMIN } from '../../../../utils/hooks/useGranted';
+import { Grid, Paper, Typography } from '@components';
 
 export const settingsOrganizationUsersQuery = graphql`
   query SettingsOrganizationUsersPaginationQuery(
@@ -203,7 +201,7 @@ const SettingsOrganizationUsers: FunctionComponent<MembersListContainerProps> = 
   } as UsePreloadedPaginationFragment<SettingsOrganizationUsersPaginationQuery>;
 
   return (
-    <Grid item xs={12} style={{ marginTop: 0 }}>
+    <Grid size={12} style={{ marginTop: 0 }}>
       <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
         {t_i18n('Users')}
       </Typography>

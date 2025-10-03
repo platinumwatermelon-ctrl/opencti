@@ -1,7 +1,7 @@
-import { Step, StepButton, Stepper } from '@mui/material';
 import React from 'react';
 import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import { useFormatter } from '../../../../../components/i18n';
+import { Step, StepButton, Stepper } from '@components';
 
 const ImportFilesStepper = () => {
   const { t_i18n } = useFormatter();

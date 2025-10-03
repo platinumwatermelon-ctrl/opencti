@@ -1,12 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import Avatar from '@mui/material/Avatar';
-import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
 import makeStyles from '@mui/styles/makeStyles';
-import Skeleton from '@mui/material/Skeleton';
 import Drawer from '@private/components/common/drawer/Drawer';
 import SubTypeWorkflowStatusAdd from './SubTypeWorkflowStatusAdd';
 import { hexToRGB } from '../../../../utils/Colors';
@@ -16,6 +11,7 @@ import { SubTypeWorkflow_subType$data } from './__generated__/SubTypeWorkflow_su
 import ItemCopy from '../../../../components/ItemCopy';
 import { useFormatter } from '../../../../components/i18n';
 import { StatusScopeEnum } from '../../../../utils/statusConstants';
+import { Avatar, List, ListItem, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

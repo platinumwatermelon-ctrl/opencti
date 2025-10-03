@@ -1,7 +1,6 @@
 import { graphql } from 'relay-runtime';
 import React from 'react';
 import { useFragment } from 'react-relay';
-import { Grid } from '@mui/material';
 import { Individual_individual$key } from './__generated__/Individual_individual.graphql';
 import IndividualDetails from './IndividualDetails';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
@@ -10,6 +9,7 @@ import StixCoreObjectOrStixRelationshipLastContainers from '../../common/contain
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
+import { Grid } from '@components';
 
 const individualFragment = graphql`
   fragment Individual_individual on Individual {
@@ -85,16 +85,16 @@ const Individual: React.FC<IndividualProps> = ({ individualData, viewAs }) => {
         spacing={3}
         style={{ marginBottom: 20 }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <IndividualDetails individual={individual} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixDomainObjectOverview
             stixDomainObject={individual}
           />
         </Grid>
         {viewAs === 'knowledge' && (
-          <Grid item xs={6}>
+          <Grid size={6}>
             <SimpleStixObjectOrStixRelationshipStixCoreRelationships
               stixObjectOrStixRelationshipId={individual.id}
               stixObjectOrStixRelationshipLink={`/dashboard/entities/individuals/${individual.id}/knowledge`}
@@ -102,19 +102,18 @@ const Individual: React.FC<IndividualProps> = ({ individualData, viewAs }) => {
           </Grid>
         )}
         <Grid
-          item
-          xs={viewAs === 'knowledge' ? 6 : 12}
+          size={viewAs === 'knowledge' ? 6 : 12}
         >
           <StixCoreObjectOrStixRelationshipLastContainers
             {...lastReportsProps}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences
             stixCoreObjectId={individual.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory stixCoreObjectId={individual.id} />
         </Grid>
       </Grid>

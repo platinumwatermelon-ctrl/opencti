@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Field } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
 import { SubscriptionFocus } from '../../../../components/Subscription';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import { OpenVocabFieldQuery } from './__generated__/OpenVocabFieldQuery.graphql';
@@ -10,7 +8,7 @@ import useVocabularyCategory from '../../../../utils/hooks/useVocabularyCategory
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import { RenderOption } from '../../../../components/list_lines';
 import { FieldOption } from '../../../../utils/field';
-
+import { MenuItem, Tooltip } from '@components';
 interface OpenVocabProps {
   type: string;
   name: string;

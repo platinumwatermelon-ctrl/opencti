@@ -2,27 +2,8 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose, toPairs, uniq } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import List from '@mui/material/List';
-import Tooltip from '@mui/material/Tooltip';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { ArrowDropDown, ArrowDropUp, FileDownloadOutlined, LibraryBooksOutlined, SettingsOutlined, ViewModuleOutlined } from '@mui/icons-material';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import Checkbox from '@mui/material/Checkbox';
-import Alert from '@mui/material/Alert';
 import { FileDelimitedOutline, FormatListGroup, Group, RelationManyToMany, VectorPolygon } from 'mdi-material-ui';
-import DialogTitle from '@mui/material/DialogTitle';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import { ListViewIcon, SublistViewIcon } from 'filigran-icon';
 import FiligranIcon from '../../private/components/common/FiligranIcon';
 import { ErrorBoundary } from '../../private/components/Error';
@@ -40,6 +21,7 @@ import FilterIconButton from '../FilterIconButton';
 import { ExportContext } from '../../utils/ExportContextProvider';
 import { export_max_size } from '../../utils/utils';
 import Transition from '../Transition';
+import { Alert, Box, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, List, ListItem, ListItemIcon, ListItemText, MenuItem, Select, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 const styles = (theme) => ({
   container: {

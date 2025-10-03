@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { DataSourcesLinesPaginationQuery$variables } from '@private/components/techniques/__generated__/DataSourcesLinesPaginationQuery.graphql';
@@ -11,6 +10,7 @@ import AddDataSourcesLines, { addDataSourcesLinesQuery } from './AddDataSourcesL
 import { AddDataSourcesLinesQuery } from './__generated__/AddDataSourcesLinesQuery.graphql';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
+import { IconButton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

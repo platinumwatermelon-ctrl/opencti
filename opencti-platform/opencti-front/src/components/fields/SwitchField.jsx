@@ -1,12 +1,8 @@
 import React, { useCallback, useEffect } from 'react';
-import MuiSwitch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
-import FormHelperText from '@mui/material/FormHelperText';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import { fieldToSwitch } from 'formik-mui';
 import { useFormatter } from '../i18n';
+import { FormControlLabel, FormGroup, FormHelperText, Switch as MuiSwitch, Tooltip } from '@components';
 
 const SwitchField = (props) => {
   const {

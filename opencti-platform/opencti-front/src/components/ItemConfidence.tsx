@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Chip from '@mui/material/Chip';
-import Tooltip from '@mui/material/Tooltip';
 import { useLevel } from '../utils/hooks/useScale';
 import { hexToRGB } from '../utils/Colors';
 import { chipInListBasicStyle } from '../utils/chipStyle';
+import { Chip, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

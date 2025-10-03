@@ -1,15 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { Field, Form, Formik, FormikConfig } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { useTheme } from '@mui/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import makeStyles from '@mui/styles/makeStyles';
 import TextField from '../../../../components/TextField';
 import ColorPickerField from '../../../../components/ColorPickerField';
@@ -20,6 +15,7 @@ import CreateEntityControlledDial from '../../../../components/CreateEntityContr
 import type { Theme } from '../../../../components/Theme';
 import { StatusTemplatesLinesPaginationQuery$variables } from './__generated__/StatusTemplatesLinesPaginationQuery.graphql';
 import { StatusTemplateAddInput, StatusTemplateCreationContextualMutation$data } from './__generated__/StatusTemplateCreationContextualMutation.graphql';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

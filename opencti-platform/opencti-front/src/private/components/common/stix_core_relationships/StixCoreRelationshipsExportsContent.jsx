@@ -4,17 +4,15 @@ import { compose, pathOr } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
 import Slide from '@mui/material/Slide';
 import { graphql, createRefetchContainer } from 'react-relay';
-import List from '@mui/material/List';
 import { interval } from 'rxjs';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
-import Typography from '@mui/material/Typography';
 import StixCoreRelationshipsExportCreation from './StixCoreRelationshipsExportCreation';
 import { FIVE_SECONDS } from '../../../../utils/Time';
 import FileLine from '../files/FileLine';
 import inject18n from '../../../../components/i18n';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNGETEXPORT_KNASKEXPORT } from '../../../../utils/hooks/useGranted';
+import { IconButton, List, Typography } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

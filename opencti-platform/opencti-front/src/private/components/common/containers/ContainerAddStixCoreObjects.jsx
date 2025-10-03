@@ -1,8 +1,5 @@
 import React, { useRef, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
-import Fab from '@mui/material/Fab';
 import { Add } from '@mui/icons-material';
-import Tooltip from '@mui/material/Tooltip';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
@@ -20,6 +17,7 @@ import Drawer from '../drawer/Drawer';
 import useAttributes from '../../../../utils/hooks/useAttributes';
 import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStorage';
 import { removeEmptyFields } from '../../../../utils/utils';
+import { Fab, IconButton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -3,14 +3,11 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { createFragmentContainer, graphql } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
 import inject18n from '../../../../components/i18n';
 import ItemLikelihood from '../../../../components/ItemLikelihood';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Chip, Grid, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {
@@ -39,7 +36,7 @@ class NoteDetailsComponent extends Component {
         </Typography>
         <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
           <Grid container={true} spacing={3}>
-            <Grid item xs={9}>
+            <Grid size={9}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('Abstract')}
               </Typography>
@@ -60,7 +57,7 @@ class NoteDetailsComponent extends Component {
                 commonmark={true}
               />
             </Grid>
-            <Grid item xs={3}>
+            <Grid size={3}>
               <Typography variant="h3" gutterBottom={true}>
                 {t('Note types')}
               </Typography>

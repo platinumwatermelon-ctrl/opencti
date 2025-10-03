@@ -1,17 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Checkbox from '@mui/material/Checkbox';
-import ListItemText from '@mui/material/ListItemText';
 import { KeyboardArrowRight } from '@mui/icons-material';
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useFragment } from 'react-relay';
-import { ListItemButton } from '@mui/material';
 import type { Theme } from '../../../../../components/Theme';
 import { UseEntityToggle } from '../../../../../utils/hooks/useEntityToggle';
 import { DataColumns } from '../../../../../components/list_lines';
 import { resolveLink } from '../../../../../utils/Entity';
-import ItemIcon from '../../../../../components/ItemIcon';
+import ItemIcon from '../../../../../components/ItemIcon';import { Checkbox, ListItemButton, ListItemIcon, ListItemText } from '@components';
 import {
   EntityStixCoreRelationshipsContextualViewLine_node$data,
   EntityStixCoreRelationshipsContextualViewLine_node$key,

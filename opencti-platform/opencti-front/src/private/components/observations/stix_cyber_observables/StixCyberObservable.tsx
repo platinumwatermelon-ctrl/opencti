@@ -1,7 +1,6 @@
 import { graphql } from 'relay-runtime';
 import React from 'react';
 import { useFragment } from 'react-relay';
-import { Grid } from '@mui/material';
 import { StixCyberObservable_stixCyberObservable$key } from './__generated__/StixCyberObservable_stixCyberObservable.graphql';
 import StixCyberObservableDetails from './StixCyberObservableDetails';
 import StixCyberObservableOverview from './StixCyberObservableOverview';
@@ -10,6 +9,7 @@ import StixCoreObjectOrStixRelationshipLastContainers from '../../common/contain
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
+import { Grid } from '@components';
 
 const stixCyberObservableFragment = graphql`
   fragment StixCyberObservable_stixCyberObservable on StixCyberObservable {
@@ -68,38 +68,38 @@ const StixCyberObservable: React.FC<StixCyberObservableProps> = ({
         spacing={3}
         style={{ marginBottom: 20 }}
       >
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCyberObservableDetails
             stixCyberObservable={stixCyberObservable}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCyberObservableOverview
             stixCyberObservable={stixCyberObservable}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <SimpleStixObjectOrStixRelationshipStixCoreRelationships
             stixObjectOrStixRelationshipId={stixCyberObservable.id}
             stixObjectOrStixRelationshipLink={`/dashboard/observations/observables/${stixCyberObservable.id}/knowledge`}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectOrStixRelationshipLastContainers
             stixCoreObjectOrStixRelationshipId={stixCyberObservable.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectExternalReferences
             stixCoreObjectId={stixCyberObservable.id}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <StixCoreObjectLatestHistory
             stixCoreObjectId={stixCyberObservable.id}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <StixCoreObjectOrStixCoreRelationshipNotes
             stixCoreObjectOrStixCoreRelationshipId={stixCyberObservable.id}
             defaultMarkings={stixCyberObservable.objectMarking ?? []}

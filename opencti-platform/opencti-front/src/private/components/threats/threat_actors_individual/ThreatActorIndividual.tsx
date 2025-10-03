@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
@@ -15,6 +14,7 @@ import {
   ThreatActorIndividual_ThreatActorIndividual$key,
 } from './__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 export const threatActorIndividualFragment = graphql`
   fragment ThreatActorIndividual_ThreatActorIndividual on ThreatActorIndividual {
@@ -159,7 +159,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
             switch (key) {
               case 'details':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <ThreatActorIndividualDetails
                       threatActorIndividualData={threatActorIndividual}
                     />
@@ -167,14 +167,14 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
                 );
               case 'basicInformation':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixDomainObjectOverview stixDomainObject={threatActorIndividual} />
                   </Grid>
                 );
               case 'demographics':
                 if (hasDemographicsOrBiographics(threatActorIndividual)) {
                   return (
-                    <Grid key={key} item xs={width}>
+                    <Grid key={key} size={width}>
                       <ThreatActorIndividualDemographics
                         threatActorIndividual={threatActorIndividual}
                       />
@@ -185,7 +185,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
               case 'biographics':
                 if (hasDemographicsOrBiographics(threatActorIndividual)) {
                   return (
-                    <Grid key={key} item xs={width}>
+                    <Grid key={key} size={width}>
                       <ThreatActorIndividualBiographics
                         threatActorIndividual={threatActorIndividual}
                       />
@@ -195,7 +195,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
                 return undefined;
               case 'latestCreatedRelationships':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <SimpleStixObjectOrStixRelationshipStixCoreRelationships
                       stixObjectOrStixRelationshipId={threatActorIndividual.id}
                       stixObjectOrStixRelationshipLink={`/dashboard/threats/threat_actors_individual/${threatActorIndividual.id}/knowledge`}
@@ -204,7 +204,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
                 );
               case 'latestContainers':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixRelationshipLastContainers
                       stixCoreObjectOrStixRelationshipId={threatActorIndividual.id}
                     />
@@ -212,7 +212,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
                 );
               case 'externalReferences':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectExternalReferences
                       stixCoreObjectId={threatActorIndividual.id}
                     />
@@ -220,7 +220,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
                 );
               case 'mostRecentHistory':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectLatestHistory
                       stixCoreObjectId={threatActorIndividual.id}
                     />
@@ -228,7 +228,7 @@ const ThreatActorIndividual: React.FC<ThreatActorIndividualProps> = ({ threatAct
                 );
               case 'notes':
                 return (
-                  <Grid key={key} item xs={width}>
+                  <Grid key={key} size={width}>
                     <StixCoreObjectOrStixCoreRelationshipNotes
                       stixCoreObjectOrStixCoreRelationshipId={threatActorIndividual.id}
                       defaultMarkings={threatActorIndividual.objectMarking ?? []}

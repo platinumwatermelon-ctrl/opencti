@@ -5,9 +5,6 @@ import React, { useMemo } from 'react';
 import { Route, Routes, useParams, Link, useLocation, Navigate } from 'react-router-dom';
 import { graphql, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import StixCoreObjectContentRoot from '@private/components/common/stix_core_objects/StixCoreObjectContentRoot';
 import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
 import AIInsights from '@private/components/common/ai/AIInsights';
@@ -31,6 +28,7 @@ import CountryEdition from './CountryEdition';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import CountryDeletion from './CountryDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootCountriesSubscription($id: ID!) {

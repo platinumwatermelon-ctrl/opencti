@@ -1,21 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Link } from 'react-router-dom';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
-import { ListItem, ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
 import StixCyberObservableAddIndicators from './StixCyberObservableAddIndicators';
@@ -26,6 +13,7 @@ import { commitMutation } from '../../../../relay/environment';
 import ItemPatternType from '../../../../components/ItemPatternType';
 import Transition from '../../../../components/Transition';
 import { insertNode } from '../../../../utils/store';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Typography } from '@components';
 
 const inlineStyles = {
   pattern_type: {

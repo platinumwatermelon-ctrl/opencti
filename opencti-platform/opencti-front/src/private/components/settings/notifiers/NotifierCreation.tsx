@@ -3,7 +3,6 @@ import { Field, Form, Formik } from 'formik';
 import CoreForm from '@rjsf/core';
 import * as Yup from 'yup';
 import JsonForm from '@rjsf/mui';
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useQueryLoader } from 'react-relay';
 import { RecordSourceSelectorProxy } from 'relay-runtime';
@@ -24,6 +23,7 @@ import { NotifierTestDialogQuery } from './__generated__/NotifierTestDialogQuery
 import notifierValidator from './NotifierValidator';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

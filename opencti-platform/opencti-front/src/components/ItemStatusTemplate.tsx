@@ -1,9 +1,8 @@
 import React from 'react';
-import Chip from '@mui/material/Chip';
 import { ArrowRightAltOutlined } from '@mui/icons-material';
-import Box from '@mui/material/Box';
 import { useFormatter } from './i18n';
 import { hexToRGB } from '../utils/Colors';
+import { Box, Chip } from '@components';
 
 export interface StatusTemplateType {
   id: string,

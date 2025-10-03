@@ -1,13 +1,4 @@
 import { Close } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig, FormikHelpers } from 'formik/dist/types';
@@ -28,6 +19,7 @@ import NotifierField from '../../common/form/NotifierField';
 import { TriggersLinesPaginationQuery$variables } from './__generated__/TriggersLinesPaginationQuery.graphql';
 import TriggersField from './TriggersField';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, IconButton, MenuItem, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

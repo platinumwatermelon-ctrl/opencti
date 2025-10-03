@@ -1,20 +1,7 @@
 import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import Dialog from '@mui/material/Dialog';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import IconButton from '@mui/material/IconButton';
 import { Add, BrushOutlined, Delete } from '@mui/icons-material';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { Formik } from 'formik';
 import { useTheme } from '@mui/material/styles';
 import ProcessingStatusOverview from '../../cases/case_rfis/ProcessingStatusOverview';
@@ -40,6 +27,7 @@ import ItemOpenVocab from '../../../../components/ItemOpenVocab';
 import ItemParticipants from '../../../../components/ItemParticipants';
 import Transition from '../../../../components/Transition';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, IconButton, List, ListItem, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const StixDomainObjectOverview = ({
   stixDomainObject,
@@ -156,7 +144,7 @@ const StixDomainObjectOverview = ({
           )}
         </Grid>
         <Grid container={true} spacing={3}>
-          <Grid item xs={6}>
+          <Grid size={6}>
             {stixDomainObject.objectMarking && (
             <>
               <Typography variant="h3" gutterBottom={true}>
@@ -188,7 +176,7 @@ const StixDomainObjectOverview = ({
             {(displayConfidence || displayReliability) && (
             <Grid container={true} columnSpacing={1}>
               {displayReliability && (
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}
@@ -210,7 +198,7 @@ const StixDomainObjectOverview = ({
               </Grid>
               )}
               {displayConfidence && (
-              <Grid item xs={6}>
+              <Grid size={6}>
                 <Typography
                   variant="h3"
                   gutterBottom={true}
@@ -244,7 +232,7 @@ const StixDomainObjectOverview = ({
             </Typography>
             {fldt(stixDomainObject.modified)}
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             {withPattern && (
               <>
                 <Typography variant="h3" gutterBottom={true}>

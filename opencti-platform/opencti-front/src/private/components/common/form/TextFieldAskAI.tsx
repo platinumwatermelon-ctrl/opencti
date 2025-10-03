@@ -1,19 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { LogoXtmOneIcon } from 'filigran-icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
 import { v4 as uuid } from 'uuid';
 import { graphql } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import { DialogTitle } from '@mui/material';
-import DialogContent from '@mui/material/DialogContent';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { TextFieldAskAIFixSpellingMutation, TextFieldAskAIFixSpellingMutation$data } from '@private/components/common/form/__generated__/TextFieldAskAIFixSpellingMutation.graphql';
 import { TextFieldAskAIMakeShorterMutation, TextFieldAskAIMakeShorterMutation$data } from '@private/components/common/form/__generated__/TextFieldAskAIMakeShorterMutation.graphql';
 import { TextFieldAskAIMakeLongerMutation, TextFieldAskAIMakeLongerMutation$data } from '@private/components/common/form/__generated__/TextFieldAskAIMakeLongerMutation.graphql';
@@ -30,6 +18,7 @@ import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import type { Theme } from '../../../../components/Theme';
 import useAI from '../../../../utils/hooks/useAI';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, InputAdornment, InputLabel, Menu, MenuItem, Select } from '@components';
 
 // region types
 interface TextFieldAskAiProps {

@@ -1,14 +1,6 @@
 import React, { Dispatch, FunctionComponent, SyntheticEvent, useState } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
 import StixDomainObjectCreation from '@private/components/common/stix_domain_objects/StixDomainObjectCreation';
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
 import { AddOutlined } from '@mui/icons-material';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import { graphql } from 'react-relay';
 import { useNavigate } from 'react-router-dom';
 import { WorkspaceTurnToContainerDialogMutation } from '@private/components/workspaces/__generated__/WorkspaceTurnToContainerDialogMutation.graphql';
@@ -22,7 +14,7 @@ import { handleError } from '../../../relay/environment';
 import useSearchEntities, { EntityValue } from '../../../utils/filters/useSearchEntities';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
 import type { Theme } from '../../../components/Theme';
-
+import { Autocomplete, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, TextField } from '@components';
 interface WorkspaceTurnToContainerDialogProps {
   workspace: { id: string | null };
   open: boolean;

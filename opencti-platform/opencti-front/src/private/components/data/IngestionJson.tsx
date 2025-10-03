@@ -14,7 +14,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
 import makeStyles from '@mui/styles/makeStyles';
-import Alert from '@mui/material/Alert';
 import React from 'react';
 import IngestionMenu from '@private/components/data/IngestionMenu';
 import IngestionJsonLines, { ingestionJsonLinesQuery } from '@private/components/data/ingestionJson/IngestionJsonLines';
@@ -34,6 +33,7 @@ import { INGESTION_SETINGESTIONS } from '../../../utils/hooks/useGranted';
 import Security from '../../../utils/Security';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
+import { Alert } from '@components';
 
 const LOCAL_STORAGE_KEY = 'ingestionJsons';
 

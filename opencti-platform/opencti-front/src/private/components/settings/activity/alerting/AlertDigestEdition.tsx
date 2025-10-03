@@ -1,7 +1,4 @@
 import { Close } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { Field, Form, Formik } from 'formik';
 import { FormikConfig } from 'formik/dist/types';
@@ -25,7 +22,7 @@ import { digestTriggerValidation } from './AlertDigestCreation';
 import { alertEditionQuery } from './AlertEditionQuery';
 import AlertsField from './AlertsField';
 import useApiMutation from '../../../../../utils/hooks/useApiMutation';
-
+import { IconButton, MenuItem, Typography } from '@components';
 interface AlertDigestEditionProps {
   handleClose: () => void
   paginationOptions?: AlertingPaginationQuery$variables

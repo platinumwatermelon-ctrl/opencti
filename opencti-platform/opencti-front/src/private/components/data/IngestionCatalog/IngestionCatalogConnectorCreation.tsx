@@ -1,5 +1,4 @@
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import Drawer from '@private/components/common/drawer/Drawer';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTheme } from '@mui/styles';
@@ -11,10 +10,7 @@ import { JsonForms } from '@jsonforms/react';
 import { Schema, Validator } from '@cfworker/json-schema';
 import { Link } from 'react-router-dom';
 import { JsonSchema } from '@jsonforms/core';
-import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import {
   IngestionCatalogConnectorCreationMutation,
   IngestionCatalogConnectorCreationMutation$data,
@@ -22,10 +18,8 @@ import {
 import IngestionCreationUserHandling, { BasicUserHandlingValues } from '@private/components/data/IngestionCreationUserHandling';
 import { IngestionConnector, IngestionTypedProperty } from '@private/components/data/IngestionCatalog';
 import { Launch } from 'mdi-material-ui';
-import IconButton from '@mui/material/IconButton';
 import { HubOutlined, LibraryBooksOutlined } from '@mui/icons-material';
 import ConnectorDeploymentBanner from '@private/components/data/connectors/ConnectorDeploymentBanner';
-import Tooltip from '@mui/material/Tooltip';
 import JsonFormArrayRenderer, { jsonFormArrayTester } from '@private/components/data/IngestionCatalog/utils/JsonFormArrayRenderer';
 import buildContractConfiguration from '@private/components/data/connectors/utils/buildContractConfiguration';
 import JsonFormUnsupportedType, { jsonFormUnsupportedTypeTester } from '@private/components/data/IngestionCatalog/utils/JsonFormUnsupportedType';
@@ -38,6 +32,7 @@ import { type FieldOption, fieldSpacingContainerStyle } from '../../../../utils/
 import TextField from '../../../../components/TextField';
 import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import { resolveLink } from '../../../../utils/Entity';
+import { AccordionDetails, Alert, Button, IconButton, Tooltip, Typography } from '@components';
 
 const ingestionCatalogConnectorCreationMutation = graphql`
   mutation IngestionCatalogConnectorCreationMutation($input: AddManagedConnectorInput) {

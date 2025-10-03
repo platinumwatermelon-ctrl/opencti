@@ -1,7 +1,7 @@
-import { Button, ButtonProps, Tooltip, Box } from '@mui/material';
+import { ButtonProps } from '@mui/material';
 import React from 'react';
 import { useFormatter } from '../../i18n';
-
+import { Box, Button, Tooltip } from '@components';
 interface BulkTextModalButtonProps {
   onClick: ButtonProps['onClick']
   disabled?: ButtonProps['disabled']

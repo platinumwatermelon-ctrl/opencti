@@ -1,18 +1,10 @@
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 import ObjectMembersField, { OptionMember } from '@private/components/common/form/ObjectMembersField';
-import FormHelperText from '@mui/material/FormHelperText';
 import { Field, FieldArray, FieldProps, Formik } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { FormikHelpers } from 'formik/dist/types';
 import AuthorizedMembersFieldListItem from '@private/components/common/form/AuthorizedMembersFieldListItem';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import SelectField from '../../../../components/fields/SelectField';
 import { useFormatter } from '../../../../components/i18n';
 import { AccessRight, ALL_MEMBERS_AUTHORIZED_CONFIG, AuthorizedMemberOption, Creator, CREATOR_AUTHORIZED_CONFIG } from '../../../../utils/authorizedMembers';
@@ -23,6 +15,7 @@ import { FieldOption, fieldSpacingContainerStyle } from '../../../../utils/field
 import { Accordion, AccordionSummary } from '../../../../components/Accordion';
 import { OPENCTI_ADMIN_UUID } from '../../../../utils/hooks/useGranted';
 import useHelper from '../../../../utils/hooks/useHelper';
+import { AccordionDetails, Alert, AlertTitle, FormHelperText, IconButton, List, MenuItem, Typography } from '@components';
 
 /**
  * Returns true if the authorized member option is generic.

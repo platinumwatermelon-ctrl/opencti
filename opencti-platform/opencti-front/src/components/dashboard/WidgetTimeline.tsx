@@ -6,15 +6,13 @@ import { Link } from 'react-router-dom';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import React from 'react';
 import { getSecondaryRepresentative, getMainRepresentative } from '../../utils/defaultRepresentatives';
 import MarkdownDisplay from '../MarkdownDisplay';
 import ItemIcon from '../ItemIcon';
 import { itemColor } from '../../utils/Colors';
 import { useFormatter } from '../i18n';
-
+import { Paper, Typography } from '@components';
 interface WidgetTimelineProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: { value: any, link?: string }[]

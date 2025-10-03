@@ -2,23 +2,16 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose, filter } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
 import { ExpandLessOutlined, ExpandMoreOutlined, LinkOff } from '@mui/icons-material';
 import { graphql, createFragmentContainer } from 'react-relay';
 import * as R from 'ramda';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { truncate } from '../../../../utils/String';
 import AddAttackPatterns from './AddAttackPatterns';
 import { addAttackPatternsLinesMutationRelationDelete } from './AddAttackPatternsLines';
 import { commitMutation } from '../../../../relay/environment';
 import inject18n from '../../../../components/i18n';
+import { Avatar, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@components';
 
 const styles = (theme) => ({
   avatar: {

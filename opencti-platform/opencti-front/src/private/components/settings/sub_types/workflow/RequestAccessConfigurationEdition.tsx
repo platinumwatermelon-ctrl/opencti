@@ -2,7 +2,6 @@ import { graphql, useFragment } from 'react-relay';
 import React, { FunctionComponent } from 'react';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import { FormikConfig } from 'formik/dist/types';
 import StatusTemplateFieldScoped from '@private/components/settings/sub_types/workflow/StatusTemplateFieldScoped';
 import GroupField, { GroupFieldOption } from '@private/components/common/form/GroupField';
@@ -12,6 +11,7 @@ import { handleErrorInForm } from '../../../../../relay/environment';
 import { FieldOption, fieldSpacingContainerStyle } from '../../../../../utils/field';
 import { RequestAccessConfigurationEdition_requestAccess$key } from './__generated__/RequestAccessConfigurationEdition_requestAccess.graphql';
 import { RequestAccessConfigurationEditionMutation, RequestAccessConfigureInput } from './__generated__/RequestAccessConfigurationEditionMutation.graphql';
+import { Button } from '@components';
 
 const requestAccessConfigurationMutation = graphql`
     mutation RequestAccessConfigurationEditionMutation($input: RequestAccessConfigureInput!) {

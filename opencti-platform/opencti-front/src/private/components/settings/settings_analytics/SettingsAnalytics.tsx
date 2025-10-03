@@ -1,18 +1,16 @@
 import React, { FunctionComponent } from 'react';
-import Typography from '@mui/material/Typography';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import { makeStyles } from '@mui/styles';
-import Paper from '@mui/material/Paper';
 import { SettingsQuery$data } from '../__generated__/SettingsQuery.graphql';
 import { useFormatter } from '../../../../components/i18n';
 import { SubscriptionFocus } from '../../../../components/Subscription';
 import TextField from '../../../../components/TextField';
+import { Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

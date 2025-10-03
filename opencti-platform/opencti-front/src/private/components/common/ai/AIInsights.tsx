@@ -1,20 +1,8 @@
 import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import { createStyles } from '@mui/styles';
-import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import { LogoXtmOneIcon } from 'filigran-icon';
-import Typography from '@mui/material/Typography';
-import Drawer from '@mui/material/Drawer';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import AISummaryActivity from '@private/components/common/ai/AISummaryActivity';
 import AISummaryContainers from '@private/components/common/ai/AISummaryContainers';
 import AISummaryHistory from '@private/components/common/ai/AISummaryHistory';
@@ -31,6 +19,7 @@ import useFiltersState from '../../../../utils/filters/useFiltersState';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import useGranted, { SETTINGS_SETPARAMETERS } from '../../../../utils/hooks/useGranted';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, IconButton, Tab, Tabs, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

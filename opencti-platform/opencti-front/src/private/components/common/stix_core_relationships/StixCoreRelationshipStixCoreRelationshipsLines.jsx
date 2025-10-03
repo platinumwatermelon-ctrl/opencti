@@ -2,18 +2,10 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { graphql, createPaginationContainer } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { compose } from 'ramda';
 import { Link } from 'react-router-dom';
-import Tooltip from '@mui/material/Tooltip';
 import * as R from 'ramda';
 import { AutoFix } from 'mdi-material-ui';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import inject18n from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
 import StixCoreRelationshipPopover from './StixCoreRelationshipPopover';
@@ -21,6 +13,7 @@ import { resolveLink } from '../../../../utils/Entity';
 import StixCoreRelationshipCreationFromRelation from './StixCoreRelationshipCreationFromRelation';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 const styles = (theme) => ({
   paper: {

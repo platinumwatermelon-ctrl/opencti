@@ -1,4 +1,3 @@
-import { Box, Tab, Tabs } from '@mui/material';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { useTheme } from '@mui/styles';
@@ -8,6 +7,7 @@ import { FintelTemplateTabs_template$key } from './__generated__/FintelTemplateT
 import type { Theme } from '../../../../../components/Theme';
 import { KNOWLEDGE } from '../../../../../utils/hooks/useGranted';
 import Security from '../../../../../utils/Security';
+import { Box, Tab, Tabs } from '@components';
 
 const tabsFragment = graphql`
   fragment FintelTemplateTabs_template on FintelTemplate {

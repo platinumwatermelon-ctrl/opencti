@@ -1,11 +1,8 @@
-import Step from '@mui/material/Step';
-import StepButton from '@mui/material/StepButton';
-import StepLabel from '@mui/material/StepLabel';
-import Stepper from '@mui/material/Stepper';
 import React from 'react';
 import { getCurrentCategory } from '../../../utils/widget/widgetUtils';
 import { useFormatter } from '../../../components/i18n';
 import { useWidgetConfigContext } from './WidgetConfigContext';
+import { Step, StepButton, StepLabel, Stepper } from '@components';
 
 const WidgetConfigStepper = () => {
   const { t_i18n } = useFormatter();

@@ -1,25 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { SettingsApplications, TroubleshootOutlined } from '@mui/icons-material';
-import ListItemText from '@mui/material/ListItemText';
-import Chip from '@mui/material/Chip';
-import Divider from '@mui/material/Divider';
 import makeStyles from '@mui/styles/makeStyles';
 import { IndicatorDetails_indicator$data } from '@private/components/observations/indicators/__generated__/IndicatorDetails_indicator.graphql';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import DecayDialogContent from '@private/components/observations/indicators/DecayDialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
-import Box from '@mui/material/Box';
 import ItemScore from '../../../../components/ItemScore';
 import IndicatorObservables from './IndicatorObservables';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
@@ -30,6 +15,7 @@ import { useFormatter } from '../../../../components/i18n';
 import type { Theme } from '../../../../components/Theme';
 import Transition from '../../../../components/Transition';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Box, Button, Chip, Dialog, DialogActions, DialogTitle, Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -82,7 +68,7 @@ const IndicatorDetailsComponent: FunctionComponent<IndicatorDetailsComponentProp
           spacing={3}
           sx={{ marginTop: '10px', marginBottom: '10px' }}
         >
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Valid from')}
             </Typography>
@@ -90,7 +76,7 @@ const IndicatorDetailsComponent: FunctionComponent<IndicatorDetailsComponentProp
               label={fldt(indicator.valid_from)}
             />
             <Grid container columnSpacing={1} sx={{ marginTop: '20px' }}>
-              <Grid item xs={4}>
+              <Grid size={4}>
                 <Typography variant="h3" gutterBottom={true}>
                   <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                     <span>{t_i18n('Score')}</span>
@@ -104,7 +90,7 @@ const IndicatorDetailsComponent: FunctionComponent<IndicatorDetailsComponentProp
                 <ItemScore score={indicator.x_opencti_score} />
               </Grid>
               {indicator.decay_applied_rule && (
-              <Grid item xs={8}>
+              <Grid size={8}>
                 <Button
                   size="small"
                   variant="outlined"
@@ -159,7 +145,7 @@ const IndicatorDetailsComponent: FunctionComponent<IndicatorDetailsComponentProp
               ))}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Valid until')}
             </Typography>

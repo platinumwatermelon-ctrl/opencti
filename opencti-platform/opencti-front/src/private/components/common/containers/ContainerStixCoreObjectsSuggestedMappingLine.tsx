@@ -1,27 +1,21 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { graphql, useFragment } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { CloseOutlined, MoreVert } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
-import Chip from '@mui/material/Chip';
-import IconButton from '@mui/material/IconButton';
 import {
   ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity$data,
   ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity$key,
 } from '@private/components/common/containers/__generated__/ContainerStixCoreObjectsSuggestedMappingLine_mappedEntity.graphql';
 import { Theme } from '@mui/material/styles/createTheme';
 import { DraftChip } from '@private/components/common/draft/DraftChip';
-import { ListItemButton } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import ItemIcon from '../../../../components/ItemIcon';
 import { resolveLink } from '../../../../utils/Entity';
 import ItemMarkings from '../../../../components/ItemMarkings';
 import { hexToRGB, itemColor } from '../../../../utils/Colors';
 import { DataColumns } from '../../../../components/list_lines';
+import { Chip, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

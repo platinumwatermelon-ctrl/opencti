@@ -15,9 +15,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import React, { useRef, useState, useEffect } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Alert from '@mui/material/Alert';
 import { CSVLink } from 'react-csv';
 import { graphql } from 'react-relay';
 import ActivityMenu from '../../ActivityMenu';
@@ -37,6 +34,7 @@ import { fetchQuery } from '../../../../../relay/environment';
 import Breadcrumbs from '../../../../../components/Breadcrumbs';
 import useGranted, { KNOWLEDGE, SETTINGS_SECURITYACTIVITY } from '../../../../../utils/hooks/useGranted';
 import useConnectedDocumentModifier from '../../../../../utils/hooks/useConnectedDocumentModifier';
+import { Alert, Checkbox, FormControlLabel } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -3,12 +3,7 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { createRefetchContainer, graphql } from 'react-relay';
 import { interval } from 'rxjs';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import withStyles from '@mui/styles/withStyles';
-import List from '@mui/material/List';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import { TEN_SECONDS } from '../../../../../utils/Time';
 import inject18n from '../../../../../components/i18n';
@@ -17,6 +12,7 @@ import WorkbenchFileCreator from './WorkbenchFileCreator';
 import { KNOWLEDGE_KNASKIMPORT } from '../../../../../utils/hooks/useGranted';
 import Security from '../../../../../utils/Security';
 import useDraftContext from '../../../../../utils/hooks/useDraftContext';
+import { Grid, IconButton, List, Paper, Typography } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 
@@ -59,7 +55,7 @@ const WorkbenchFileViewerBase = ({
   };
 
   return (
-    <Grid item xs={6}>
+    <Grid size={6}>
       <div style={{ height: '100%' }}>
         <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
           {t('Analyst workbenches')}

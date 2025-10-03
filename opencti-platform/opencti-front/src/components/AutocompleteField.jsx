@@ -1,13 +1,11 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { fieldToAutocomplete } from 'formik-mui';
 import { useField } from 'formik';
 import { isNil } from 'ramda';
 import { truncate } from '../utils/String';
 import { useFormatter } from './i18n';
+import { IconButton, Autocomplete as MUIAutocomplete, TextField } from '@components';
 
 const AutocompleteField = (props) => {
   // Separate props used only for this component

@@ -1,6 +1,5 @@
 import { OpenWithOutlined, Undo } from '@mui/icons-material';
 import React, { useState } from 'react';
-import Dialog from '@mui/material/Dialog';
 import { graphql } from 'react-relay';
 import { useParams } from 'react-router-dom';
 import InvestigationExpandForm, { InvestigationExpandFormProps } from '@private/components/workspaces/investigations/InvestigationExpandForm';
@@ -13,6 +12,7 @@ import useGraphInteractions from '../utils/useGraphInteractions';
 import { fetchQuery } from '../../../relay/environment';
 import { GraphToolbarExpandToolsRelationshipsQuery$data } from './__generated__/GraphToolbarExpandToolsRelationshipsQuery.graphql';
 import { ObjectToParse } from '../utils/useGraphParser';
+import { Dialog } from '@components';
 
 const expandRelationshipsQuery = graphql`
   query GraphToolbarExpandToolsRelationshipsQuery($filters: FilterGroup) {

@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { graphql, createFragmentContainer } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { MoreVert } from '@mui/icons-material';
 import { RssBox } from 'mdi-material-ui';
 import { compose } from 'ramda';
 import Slide from '@mui/material/Slide';
-import Skeleton from '@mui/material/Skeleton';
 import IngestionRssPopover from './IngestionRssPopover';
 import inject18n from '../../../../components/i18n';
 import ItemBoolean from '../../../../components/ItemBoolean';
 import Security from '../../../../utils/Security';
 import { INGESTION_SETINGESTIONS } from '../../../../utils/hooks/useGranted';
+import { ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />

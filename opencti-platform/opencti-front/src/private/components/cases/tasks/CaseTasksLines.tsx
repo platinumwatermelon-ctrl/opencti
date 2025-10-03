@@ -1,12 +1,4 @@
 import { AddOutlined, ContentPasteGoOutlined } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import IconButton from '@mui/material/IconButton';
-import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import { Form, Formik } from 'formik';
 import React, { FunctionComponent, MutableRefObject, useState } from 'react';
@@ -28,6 +20,7 @@ import { CaseTasksLines_data$key } from './__generated__/CaseTasksLines_data.gra
 import { CaseTasksLinesQuery, CaseTasksLinesQuery$variables } from './__generated__/CaseTasksLinesQuery.graphql';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { FieldOption } from '../../../../utils/field';
+import { Button, Dialog, DialogContent, DialogTitle, IconButton, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

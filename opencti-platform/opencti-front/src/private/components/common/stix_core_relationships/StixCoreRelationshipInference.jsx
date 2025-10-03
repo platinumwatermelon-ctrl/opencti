@@ -1,5 +1,4 @@
 import React, { useMemo, useRef } from 'react';
-import { Typography, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useFormatter } from '../../../../components/i18n';
 import { isEmptyField } from '../../../../utils/utils';
@@ -7,6 +6,7 @@ import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import useGraphParser from '../../../../components/graph/utils/useGraphParser';
 import SimpleGraph2D from '../../../../components/graph/SimpleGraph2D';
 import { resolveLink } from '../../../../utils/Entity';
+import { Paper, Typography } from '@components';
 
 const StixCoreRelationshipInference = ({ stixRelationship, inference }) => {
   const navigate = useNavigate();

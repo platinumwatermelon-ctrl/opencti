@@ -2,14 +2,8 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Field } from 'formik';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import { ObjectMarkingFieldAllowedMarkingQuery$data } from '@private/components/common/form/__generated__/ObjectMarkingFieldAllowedMarkingQuery.graphql';
 import { ObjectMarkingFieldOtherUserAllowedMarkingsQuery$data } from '@private/components/common/form/__generated__/ObjectMarkingFieldOtherUserAllowedMarkingsQuery.graphql';
-import DialogTitle from '@mui/material/DialogTitle';
 import { useTheme } from '@mui/material/styles';
 import useAuth from '../../../../utils/hooks/useAuth';
 import Transition from '../../../../components/Transition';
@@ -23,6 +17,7 @@ import { fetchQuery } from '../../../../relay/environment';
 import { FieldOption } from '../../../../utils/field';
 import type { Theme } from '../../../../components/Theme';
 import MarkingIcon from '../../../../utils/MarkingIcon';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

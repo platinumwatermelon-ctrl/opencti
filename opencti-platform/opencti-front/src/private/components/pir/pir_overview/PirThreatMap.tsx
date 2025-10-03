@@ -18,8 +18,7 @@
 // import Grid from '@mui/material/Grid2';
 // import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 // import { InfoOutlined } from '@mui/icons-material';
-// import Tooltip from '@mui/material/Tooltip';
-// import WidgetScatter from '../../../../components/dashboard/WidgetScatter';
+// // import WidgetScatter from '../../../../components/dashboard/WidgetScatter';
 // import type { Theme } from '../../../../components/Theme';
 // import Paper from '../../../../components/Paper';
 // import { useFormatter } from '../../../../components/i18n';
@@ -29,7 +28,8 @@
 // import { minutesBetweenDates } from '../../../../utils/Time';
 // import PirThreatMapLegend from './PirThreatMapLegend';
 // import { uniqueArray } from '../../../../utils/utils';
-// import { PirThreatMapQuery } from './__generated__/PirThreatMapQuery.graphql';
+// import { PirThreatMapQuery } from './__generated__/PirThreatMapQuery.graphql';import { Tooltip } from '@components';
+
 //
 // const pirThreatMapFragment = graphql`
 //   fragment PirThreatMapFragment on Query {

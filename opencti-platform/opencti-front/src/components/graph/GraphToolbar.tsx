@@ -1,8 +1,5 @@
-import Drawer from '@mui/material/Drawer';
 import React from 'react';
-import Divider from '@mui/material/Divider';
 import { useTheme } from '@mui/material/styles';
-import LinearProgress from '@mui/material/LinearProgress';
 import useGraphInteractions from './utils/useGraphInteractions';
 import SearchInput from '../SearchInput';
 import type { Theme } from '../Theme';
@@ -15,6 +12,7 @@ import { useGraphContext } from './GraphContext';
 import GraphToolbarCorrelationTools from './components/GraphToolbarCorrelationTools';
 import GraphToolbarExpandTools, { GraphToolbarExpandToolsProps } from './components/GraphToolbarExpandTools';
 import useAuth from '../../utils/hooks/useAuth';
+import { Divider, Drawer, LinearProgress } from '@components';
 
 export type GraphToolbarProps = GraphToolbarContentToolsProps & GraphToolbarExpandToolsProps & GraphToolbarDisplayToolsProps;
 

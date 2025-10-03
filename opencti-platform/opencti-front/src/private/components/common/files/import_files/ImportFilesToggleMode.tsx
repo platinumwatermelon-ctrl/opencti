@@ -1,9 +1,8 @@
 import React from 'react';
 import { ImportMode, useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
-import { Box, Card, CardActionArea, CardContent } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import { RouteOutlined, UploadFileOutlined, DescriptionOutlined } from '@mui/icons-material';
 import { useFormatter } from '../../../../../components/i18n';
+import { Box, Card, CardActionArea, CardContent, Typography } from '@components';
 
 const CARD_WIDTH = 450;
 const CARD_HEIGHT = 300;

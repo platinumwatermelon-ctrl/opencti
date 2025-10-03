@@ -3,15 +3,10 @@ import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import { graphql } from 'react-relay';
 import CircularProgress from '@mui/material/CircularProgress';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
 import { DescriptionOutlined, DeviceHubOutlined } from '@mui/icons-material';
 import { HexagonMultipleOutline } from 'mdi-material-ui';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import Chart from '../charts/Chart';
 import { QueryRenderer } from '../../../../relay/environment';
 import { monthsAgo, now, yearsAgo } from '../../../../utils/Time';
@@ -20,6 +15,7 @@ import ItemNumberDifference from '../../../../components/ItemNumberDifference';
 import Loader from '../../../../components/Loader';
 import { areaChartOptions } from '../../../../utils/Charts';
 import { simpleNumberFormat } from '../../../../utils/Number';
+import { Card, CardContent, Grid, Paper, Typography } from '@components';
 
 const styles = (theme) => ({
   card: {
@@ -120,7 +116,7 @@ class StixDomainObjectAuthorKnowledge extends Component {
     return (
       <div>
         <Grid container={true} spacing={3}>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Card
               variant="outlined"
               classes={{ root: classes.card }}
@@ -161,7 +157,7 @@ class StixDomainObjectAuthorKnowledge extends Component {
               />
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Card
               variant="outlined"
               classes={{ root: classes.card }}
@@ -205,7 +201,7 @@ class StixDomainObjectAuthorKnowledge extends Component {
               />
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Card
               variant="outlined"
               classes={{ root: classes.card }}
@@ -247,7 +243,7 @@ class StixDomainObjectAuthorKnowledge extends Component {
           </Grid>
         </Grid>
         <Grid container={true} spacing={3} style={{ marginBottom: 20 }}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h4" gutterBottom={true}>
               {t('Created entities')}
             </Typography>

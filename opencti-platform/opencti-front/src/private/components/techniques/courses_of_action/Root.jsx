@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { Link, Route, Routes } from 'react-router-dom';
 import { graphql } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import * as R from 'ramda';
 import StixCoreObjectContentRoot from '../../common/stix_core_objects/StixCoreObjectContentRoot';
 import withRouter from '../../../../utils/compat_router/withRouter';
@@ -23,6 +20,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import CourseOfActionEdition from './CourseOfActionEdition';
 import CourseOfActionDeletion from './CouseOfActionDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootCoursesOfActionSubscription($id: ID!) {

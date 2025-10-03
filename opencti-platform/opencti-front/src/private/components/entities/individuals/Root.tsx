@@ -3,9 +3,6 @@ import { Route, Routes, Link, Navigate, useLocation, useParams, useNavigate } fr
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
 import { propOr } from 'ramda';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { RootIndividualQuery } from '@private/components/entities/individuals/__generated__/RootIndividualQuery.graphql';
 import { RootIndicatorSubscription } from '@private/components/observations/indicators/__generated__/RootIndicatorSubscription.graphql';
 import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
@@ -29,6 +26,7 @@ import IndividualEdition from './IndividualEdition';
 import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import IndividualDeletion from './IndividualDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootIndividualsSubscription($id: ID!) {

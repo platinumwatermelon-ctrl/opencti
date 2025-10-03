@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import { GenericAttackCardDummy } from '@private/components/common/cards/GenericAttackCard';
 import {
   ThreatActorsGroupCardsPaginationQuery,
@@ -7,9 +6,7 @@ import {
 } from '@private/components/threats/threat_actors_group/__generated__/ThreatActorsGroupCardsPaginationQuery.graphql';
 import { ThreatActorGroupCardFragment } from '@private/components/threats/threat_actors_group/ThreatActorGroupCard';
 import { ThreatActorsGroupCards_data$data } from '@private/components/threats/threat_actors_group/__generated__/ThreatActorsGroupCards_data.graphql';
-import Tooltip from '@mui/material/Tooltip';
 import { ViewListOutlined, ViewModuleOutlined } from '@mui/icons-material';
-import ToggleButton from '@mui/material/ToggleButton';
 import StixCoreObjectForms from '@private/components/common/stix_core_objects/StixCoreObjectForms';
 import ListCards from '../../../components/list_cards/ListCards';
 import ThreatActorsGroupCards, { ThreatActorsGroupCardsFragment, threatActorsGroupCardsQuery } from './threat_actors_group/ThreatActorsGroupCards';
@@ -24,6 +21,7 @@ import { UsePreloadedPaginationFragment } from '../../../utils/hooks/usePreloade
 import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocumentModifier';
 import { KNOWLEDGE_KNUPDATE } from '../../../utils/hooks/useGranted';
 import Security from '../../../utils/Security';
+import { Grid, ToggleButton, Tooltip } from '@components';
 
 const LOCAL_STORAGE_KEY = 'threatActorsGroups';
 
@@ -112,8 +110,7 @@ const ThreatActorsGroup = () => {
                   .fill(0)
                   .map((_, idx) => (
                     <Grid
-                      item
-                      xs={3}
+                      size={3}
                       key={idx}
                     >
                       <GenericAttackCardDummy />

@@ -2,24 +2,11 @@ import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { Field, Form, Formik } from 'formik';
 import withStyles from '@mui/styles/withStyles';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import { AddOutlined, CancelOutlined } from '@mui/icons-material';
 import * as Yup from 'yup';
 import { createFragmentContainer, graphql } from 'react-relay';
 import * as R from 'ramda';
-import MenuItem from '@mui/material/MenuItem';
-import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MuiTextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Box from '@mui/material/Box';
 import Drawer from '../../common/drawer/Drawer';
 import inject18n from '../../../../components/i18n';
 import { commitMutation, QueryRenderer } from '../../../../relay/environment';
@@ -43,6 +30,7 @@ import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import { convertAuthorizedMembers } from '../../../../utils/edition';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
 import useAttributes from '../../../../utils/hooks/useAttributes';
+import { Alert, AlertTitle, Box, Button, FormControl, Grid, IconButton, InputAdornment, InputLabel, MenuItem, TextField as MuiTextField, Select, Tooltip } from '@components';
 
 const styles = (theme) => ({
   header: {

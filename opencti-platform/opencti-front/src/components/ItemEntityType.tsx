@@ -1,14 +1,13 @@
-import Chip from '@mui/material/Chip';
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { useTheme } from '@mui/material';
-import Tooltip from '@mui/material/Tooltip';
 import { itemColor } from '../utils/Colors';
 import { useFormatter } from './i18n';
 import ThemeLight from './ThemeLight';
 import ThemeDark from './ThemeDark';
 import ItemIcon from './ItemIcon';
 import { chipInListBasicStyle } from '../utils/chipStyle';
+import { Chip, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

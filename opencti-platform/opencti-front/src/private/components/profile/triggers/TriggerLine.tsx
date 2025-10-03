@@ -1,14 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { BackupTableOutlined, AlarmOnOutlined, MoreVert } from '@mui/icons-material';
-import Skeleton from '@mui/material/Skeleton';
 import { graphql, useFragment } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles/createTheme';
-import Chip from '@mui/material/Chip';
-import Box from '@mui/material/Box';
 import { DataColumns } from '../../../../components/list_lines';
 import { TriggerLine_node$key } from './__generated__/TriggerLine_node.graphql';
 import FilterIconButton from '../../../../components/FilterIconButton';
@@ -18,6 +12,7 @@ import { dayStartDate, formatTimeForToday } from '../../../../utils/Time';
 import { TriggersLinesPaginationQuery$variables } from './__generated__/TriggersLinesPaginationQuery.graphql';
 import { deserializeFilterGroupForFrontend, isFilterGroupNotEmpty } from '../../../../utils/filters/filtersUtils';
 import { chipInListBasicStyle } from '../../../../utils/chipStyle';
+import { Box, Chip, ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

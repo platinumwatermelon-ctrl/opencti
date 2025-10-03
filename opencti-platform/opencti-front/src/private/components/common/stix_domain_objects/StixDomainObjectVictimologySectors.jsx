@@ -3,19 +3,9 @@ import * as PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import * as R from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Collapse from '@mui/material/Collapse';
 import { Domain, ExpandLess, ExpandMore, FileDownloadOutlined } from '@mui/icons-material';
 import { AutoFix, FormatListGroup, RelationManyToMany } from 'mdi-material-ui';
 import { createRefetchContainer, graphql } from 'react-relay';
-import Tooltip from '@mui/material/Tooltip';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ToggleButton from '@mui/material/ToggleButton';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { yearFormat } from '../../../../utils/Time';
 import inject18n from '../../../../components/i18n';
 import StixCoreRelationshipPopover from '../stix_core_relationships/StixCoreRelationshipPopover';
@@ -31,6 +21,7 @@ import ItemMarkings from '../../../../components/ItemMarkings';
 import { export_max_size } from '../../../../utils/utils';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import withRouter from '../../../../utils/compat_router/withRouter';
+import { Collapse, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 const styles = (theme) => ({
   container: {

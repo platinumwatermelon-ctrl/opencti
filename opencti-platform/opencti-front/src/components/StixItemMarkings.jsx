@@ -3,9 +3,9 @@ import * as R from 'ramda';
 import * as PropTypes from 'prop-types';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
-import Chip from '@mui/material/Chip';
 import { compose } from 'ramda';
 import { truncate } from '../utils/String';
+import { Chip } from '@components';
 
 const styles = () => ({
   chip: {

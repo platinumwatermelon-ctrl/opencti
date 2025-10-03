@@ -1,14 +1,6 @@
-import { Accordion, AccordionDetails } from '@mui/material';
 import React, { FunctionComponent, useState } from 'react';
 import { DeleteOutlined, ExpandMoreOutlined } from '@mui/icons-material';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 import { SelectChangeEvent } from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
-import MUIAutocomplete from '@mui/material/Autocomplete';
 import { FieldProps } from 'formik';
 import { OverrideFormData } from '@private/components/settings/users/edition/UserEditionConfidence';
 import ConfidenceField from '@private/components/common/form/ConfidenceField';
@@ -20,7 +12,7 @@ import ItemIcon from '../../../../../components/ItemIcon';
 import type { Theme } from '../../../../../components/Theme';
 import { isEmptyField } from '../../../../../utils/utils';
 import useSchema, { AvailableEntityOption } from '../../../../../utils/hooks/useSchema';
-
+import { Accordion, AccordionDetails, AccordionSummary, Button, IconButton, Autocomplete as MUIAutocomplete, TextField, Tooltip, Typography } from '@components';
 interface UserConfidenceOverridesFieldComponentProps
   extends FieldProps<OverrideFormData> {
   index: number;

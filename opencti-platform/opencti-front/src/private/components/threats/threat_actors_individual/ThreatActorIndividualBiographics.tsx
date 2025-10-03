@@ -1,9 +1,5 @@
 import React from 'react';
-import { Box, Grid, IconButton, Paper, Tooltip, Typography } from '@mui/material';
 import { InformationOutline } from 'mdi-material-ui';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import { makeStyles } from '@mui/styles';
 import { useFormatter } from '../../../../components/i18n';
 import { ThreatActorIndividual_ThreatActorIndividual$data } from './__generated__/ThreatActorIndividual_ThreatActorIndividual.graphql';
@@ -13,6 +9,7 @@ import useUserMetric from '../../../../utils/hooks/useUserMetric';
 import type { Theme } from '../../../../components/Theme';
 import CardLabel from '../../../../components/CardLabel';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
+import { Box, Grid, IconButton, List, ListItem, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -83,7 +80,7 @@ const InfoTooltip = ({ text }: { text: string }) => (
 );
 
 const DetailGrid = ({ title, tooltip, children, extra }: DetailValue) => (
-  <Grid item xs={3} sx={{ mt: -1 }}>
+  <Grid size={3} sx={{ mt: -1 }}>
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
       <CardLabel action={(
         <InfoTooltip text={tooltip} />

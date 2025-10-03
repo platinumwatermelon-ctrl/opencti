@@ -4,10 +4,8 @@ import { createFragmentContainer, graphql } from 'react-relay';
 import * as Yup from 'yup';
 import { ObjectShape } from 'yup';
 import { GenericContext } from '@private/components/common/model/GenericContextModel';
-import FormHelperText from '@mui/material/FormHelperText';
 import { useTheme } from '@mui/styles';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import { useFormatter } from '../../../../components/i18n';
 import MarkdownField from '../../../../components/fields/MarkdownField';
 import { SubscriptionFocus } from '../../../../components/Subscription';
@@ -18,6 +16,7 @@ import { GroupEditionOverview_group$data } from './__generated__/GroupEditionOve
 import GroupHiddenTypesField from './GroupHiddenTypesField';
 import useFormEditor, { GenericData } from '../../../../utils/hooks/useFormEditor';
 import type { Theme } from '../../../../components/Theme';
+import { FormHelperText, Tooltip } from '@components';
 
 export const groupMutationFieldPatch = graphql`
   mutation GroupEditionOverviewFieldPatchMutation(

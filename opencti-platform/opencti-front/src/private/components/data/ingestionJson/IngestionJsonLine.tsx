@@ -1,10 +1,6 @@
 import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useFragment } from 'react-relay';
 import React, { FunctionComponent } from 'react';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Skeleton from '@mui/material/Skeleton';
 import { MoreVert } from '@mui/icons-material';
 import IngestionJsonPopover from '@private/components/data/ingestionJson/IngestionJsonPopover';
 import TableViewIcon from '@mui/icons-material/TableView';
@@ -17,6 +13,7 @@ import { DataColumns } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
 import { INGESTION_SETINGESTIONS } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
+import { ListItem, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

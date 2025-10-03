@@ -1,12 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik, FormikErrors } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
-import MenuItem from '@mui/material/MenuItem';
 import makeStyles from '@mui/styles/makeStyles';
-import Alert from '@mui/material/Alert';
-import Box from '@mui/material/Box';
 import { IngestionCsvLinesPaginationQuery$variables } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvLinesPaginationQuery.graphql';
 import { FormikConfig } from 'formik/dist/types';
 import { IngestionAuthType } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvCreationMutation.graphql';
@@ -23,8 +19,6 @@ import {
 import { IngestionCsvEditionContainerQuery } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvEditionContainerQuery.graphql';
 import { ExternalReferencesValues } from '@private/components/common/form/ExternalReferencesField';
 import IngestionSchedulingField from '@private/components/data/IngestionSchedulingField';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import IngestionCsvInlineMapperForm from '@private/components/data/ingestionCsv/IngestionCsvInlineMapperForm';
 import { IngestionCsvCreationUsersQuery$data } from '@private/components/data/ingestionCsv/__generated__/IngestionCsvCreationUsersQuery.graphql';
 import IngestionCreationUserHandling, { BasicUserHandlingValues } from '@private/components/data/IngestionCreationUserHandling';
@@ -49,6 +43,7 @@ import SwitchField from '../../../../components/fields/SwitchField';
 import { fetchQuery } from '../../../../relay/environment';
 import { CsvMapperAddInput } from '../csvMapper/CsvMapperUtils';
 import IngestionCsvInlineWrapper from './IngestionCsvInlineWrapper';
+import { Alert, Box, Button, MenuItem, Tab, Tabs } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import IconButton from '@mui/material/IconButton';
 import { Add } from '@mui/icons-material';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import {
@@ -16,7 +15,7 @@ import LocationCreation from '../../common/location/LocationCreation';
 import { insertNode } from '../../../../utils/store';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader, { LoaderVariant } from '../../../../components/Loader';
-
+import { IconButton } from '@components';
 interface AddLocationsThreatActorIndividualComponentProps {
   threatActorIndividual: ThreatActorIndividualLocations_locations$data,
   queryRef: PreloadedQuery<AddLocationsThreatActorIndividualLinesQuery>,

@@ -3,15 +3,10 @@ import * as PropTypes from 'prop-types';
 import { interval } from 'rxjs';
 import { createPaginationContainer, graphql } from 'react-relay';
 import { Link } from 'react-router-dom';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import * as R from 'ramda';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Tooltip from '@mui/material/Tooltip';
 import { AutoFix } from 'mdi-material-ui';
-import { ListItemButton } from '@mui/material';
 import ItemIcon from '../../../../components/ItemIcon';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import inject18n from '../../../../components/i18n';
@@ -22,6 +17,7 @@ import { KNOWLEDGE_KNUPDATE } from '../../../../utils/hooks/useGranted';
 import StixCoreRelationshipPopover from '../../common/stix_core_relationships/StixCoreRelationshipPopover';
 import ItemConfidence from '../../../../components/ItemConfidence';
 import ItemEntityType from '../../../../components/ItemEntityType';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Tooltip } from '@components';
 
 const interval$ = interval(TEN_SECONDS);
 

@@ -1,11 +1,5 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import MenuItem from '@mui/material/MenuItem';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
 import ManageImportConnectorMessage from '@private/components/data/import/ManageImportConnectorMessage';
@@ -21,7 +15,7 @@ import { resolveHasUserChoiceParsedCsvMapper } from '../../../../utils/csvMapper
 import SelectField from '../../../../components/fields/SelectField';
 import { useFormatter } from '../../../../components/i18n';
 import stopEvent from '../../../../utils/domEvent';
-
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem } from '@components';
 interface LaunchImportDialogProps {
   file: ImportWorkbenchesContentFileLine_file$data | ImportFilesContentFileLine_file$data;
   open: boolean;

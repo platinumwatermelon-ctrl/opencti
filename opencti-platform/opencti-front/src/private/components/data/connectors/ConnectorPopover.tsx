@@ -1,20 +1,10 @@
 import MoreVert from '@mui/icons-material/MoreVert';
 import React, { useState } from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
-import MenuItem from '@mui/material/MenuItem';
 import { PopoverProps } from '@mui/material/Popover';
-import Menu from '@mui/material/Menu';
 import { connectorDeletionMutation, connectorResetStateMutation, connectorWorkDeleteMutation } from '@private/components/data/connectors/Connector';
 import { Connector_connector$data } from '@private/components/data/connectors/__generated__/Connector_connector.graphql';
 import { useNavigate } from 'react-router-dom';
 import ManagedConnectorEdition from '@private/components/data/connectors/ManagedConnectorEdition';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/styles';
 import DangerZoneChip from '@private/components/common/danger_zone/DangerZoneChip';
 import DangerZoneBlock from '@private/components/common/danger_zone/DangerZoneBlock';
@@ -27,7 +17,7 @@ import DeleteDialog from '../../../../components/DeleteDialog';
 import { useFormatter } from '../../../../components/i18n';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import stopEvent from '../../../../utils/domEvent';
-
+import { Alert, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Menu, MenuItem, ToggleButton } from '@components';
 interface ConnectorPopoverProps {
   connector: Connector_connector$data;
   onRefreshData?: () => void;

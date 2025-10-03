@@ -1,16 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { deepOrange, deepPurple, green, indigo, lightGreen, orange, pink, red, teal, yellow } from '@mui/material/colors';
-import Paper from '@mui/material/Paper';
-import Avatar from '@mui/material/Avatar';
 import { DeleteOutlined, LinkOffOutlined, LinkOutlined } from '@mui/icons-material';
 import { LinkVariantPlus, LinkVariantRemove, Merge } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
 import { UserHistoryLine_node$key } from '@private/components/settings/users/__generated__/UserHistoryLine_node.graphql';
 import { useTheme } from '@mui/styles';
@@ -18,6 +10,7 @@ import { useFormatter } from '../../../../components/i18n';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import type { Theme } from '../../../../components/Theme';
 import ItemIcon from '../../../../components/ItemIcon';
+import { Avatar, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

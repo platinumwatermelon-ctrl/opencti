@@ -1,14 +1,11 @@
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { KeyboardArrowRightOutlined, ShortTextOutlined } from '@mui/icons-material';
-import ListItemText from '@mui/material/ListItemText';
 import React, { FunctionComponent } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { ListItem, ListItemButton } from '@mui/material';
-import Skeleton from '@mui/material/Skeleton';
 import { Link } from 'react-router-dom';
 import type { Theme } from '../../../../components/Theme';
 import { DataColumns } from '../../../../components/list_lines';
 import { VocabularyDefinition } from '../../../../utils/hooks/useVocabularyCategory';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

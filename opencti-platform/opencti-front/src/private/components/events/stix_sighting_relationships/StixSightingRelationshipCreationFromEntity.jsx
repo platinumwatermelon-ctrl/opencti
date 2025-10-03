@@ -2,18 +2,8 @@ import React, { useState } from 'react';
 import { graphql } from 'react-relay';
 import * as R from 'ramda';
 import { assoc, pipe, pluck } from 'ramda';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import { Add, Close } from '@mui/icons-material';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Fab from '@mui/material/Fab';
 import CircularProgress from '@mui/material/CircularProgress';
-import Alert from '@mui/material/Alert';
-import Skeleton from '@mui/material/Skeleton';
 import makeStyles from '@mui/styles/makeStyles';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { QueryRenderer } from '../../../../relay/environment';
@@ -30,6 +20,7 @@ import StixSightingRelationshipCreationForm from './StixSightingRelationshipCrea
 import { useFormatter } from '../../../../components/i18n';
 import { insertNode } from '../../../../utils/store';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Alert, Drawer, Fab, IconButton, List, ListItem, ListItemIcon, ListItemText, Skeleton, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

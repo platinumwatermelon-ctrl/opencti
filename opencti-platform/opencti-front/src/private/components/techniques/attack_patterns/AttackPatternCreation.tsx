@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
@@ -9,7 +8,6 @@ import { FormikConfig } from 'formik/dist/types';
 import Drawer, { DrawerControlledDialProps } from '@private/components/common/drawer/Drawer';
 import { AttackPatternsLinesPaginationQuery$variables } from '@private/components/techniques/__generated__/AttackPatternsLinesPaginationQuery.graphql';
 import ConfidenceField from '@private/components/common/form/ConfidenceField';
-import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useFormatter } from '../../../../components/i18n';
 import { handleErrorInForm } from '../../../../relay/environment';
 import TextField from '../../../../components/TextField';
@@ -28,6 +26,7 @@ import useDefaultValues from '../../../../utils/hooks/useDefaultValues';
 import CustomFileUploader from '../../common/files/CustomFileUploader';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import CreateEntityControlledDial from '../../../../components/CreateEntityControlledDial';
+import { Button, Dialog, DialogContent, DialogTitle } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

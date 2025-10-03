@@ -1,8 +1,5 @@
 import React from 'react';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { parse } from 'src/utils/Time';
 import { InvestigationGraph_fragment$data } from '@private/components/workspaces/investigations/__generated__/InvestigationGraph_fragment.graphql';
@@ -12,7 +9,7 @@ import { useFormatter } from '../../../../components/i18n';
 import { useGetCurrentUserAccessRight } from '../../../../utils/authorizedMembers';
 import { Dashboard_workspace$data } from './__generated__/Dashboard_workspace.graphql';
 import { buildDate } from '../../../../utils/Time';
-
+import { FormControl, InputLabel, MenuItem } from '@components';
 interface DashboardTimeFiltersProps {
   workspace: Dashboard_workspace$data | InvestigationGraph_fragment$data;
   config?: {

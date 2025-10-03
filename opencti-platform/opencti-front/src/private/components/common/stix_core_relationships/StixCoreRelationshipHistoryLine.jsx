@@ -4,31 +4,16 @@ import { compose } from 'ramda';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { deepOrange, deepPurple, green, indigo, pink, red, teal, yellow } from '@mui/material/colors';
 import withStyles from '@mui/styles/withStyles';
-import Paper from '@mui/material/Paper';
-import Avatar from '@mui/material/Avatar';
 import { AddOutlined, DeleteOutlined, EditOutlined, HelpOutlined, LinkOffOutlined, LinkOutlined, OpenInBrowserOutlined } from '@mui/icons-material';
 import { LinkVariantPlus, LinkVariantRemove, Merge } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Badge from '@mui/material/Badge';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import DialogContentText from '@mui/material/DialogContentText';
-import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import withTheme from '@mui/styles/withTheme';
-import { ListItemButton } from '@mui/material';
-import ListItem from '@mui/material/ListItem';
 import { truncate } from '../../../../utils/String';
 import inject18n from '../../../../components/i18n';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
 import ItemIcon from '../../../../components/ItemIcon';
 import Transition from '../../../../components/Transition';
+import { Avatar, Badge, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip } from '@components';
 
 const styles = () => ({
   container: {

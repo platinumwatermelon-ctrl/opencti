@@ -1,16 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import * as R from 'ramda';
 import { graphql, useFragment } from 'react-relay';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { HelpOutlined, MoreVertOutlined } from '@mui/icons-material';
-import Chip from '@mui/material/Chip';
 import { Link } from 'react-router-dom';
-import Skeleton from '@mui/material/Skeleton';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
 import { AutoFix } from 'mdi-material-ui';
 import makeStyles from '@mui/styles/makeStyles';
 import { EntityStixSightingRelationshipLine_node$key } from '@private/components/events/stix_sighting_relationships/__generated__/EntityStixSightingRelationshipLine_node.graphql';
@@ -24,6 +16,7 @@ import StixSightingRelationshipPopover from './StixSightingRelationshipPopover';
 import { resolveLink } from '../../../../utils/Entity';
 import { DataColumns } from '../../../../components/list_lines';
 import type { Theme } from '../../../../components/Theme';
+import { Box, Chip, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tooltip } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

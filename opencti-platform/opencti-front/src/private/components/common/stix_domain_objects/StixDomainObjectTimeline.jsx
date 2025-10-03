@@ -3,15 +3,12 @@ import * as PropTypes from 'prop-types';
 import { compose, pipe, map, assoc } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import Tooltip from '@mui/material/Tooltip';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { graphql, createRefetchContainer } from 'react-relay';
 import { Link } from 'react-router-dom';
@@ -22,6 +19,7 @@ import { stixDomainObjectThreatKnowledgeStixRelationshipsQuery } from './StixDom
 import { truncate } from '../../../../utils/String';
 import { getSecondaryRepresentative, getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import { itemColor } from '../../../../utils/Colors';
+import { Paper, Tooltip, Typography } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />

@@ -1,15 +1,11 @@
-import Typography from '@mui/material/Typography';
 import React, { CSSProperties, Suspense, useMemo } from 'react';
-import Paper from '@mui/material/Paper';
 import { graphql, PreloadedQuery, usePreloadedQuery, useSubscription } from 'react-relay';
-import Grid from '@mui/material/Grid';
 import EntitySettingCustomOverview from '@private/components/settings/sub_types/entity_setting/EntitySettingCustomOverview';
 import { useTheme } from '@mui/styles';
 import { SubTypeQuery, SubTypeQuery$variables } from '@private/components/settings/sub_types/__generated__/SubTypeQuery.graphql';
 import { useParams } from 'react-router-dom';
 import GlobalWorkflowSettings from '@private/components/settings/sub_types/workflow/GlobalWorkflowSettings';
 import RequestAccessSettings from '@private/components/settings/sub_types/workflow/RequestAccessSettings';
-import Divider from '@mui/material/Divider';
 import { useFormatter } from '../../../../components/i18n';
 import EntitySettingSettings from './entity_setting/EntitySettingSettings';
 import EntitySettingAttributes from './entity_setting/EntitySettingAttributes';
@@ -23,6 +19,7 @@ import ErrorNotFound from '../../../../components/ErrorNotFound';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader from '../../../../components/Loader';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
+import { Divider, Grid, Paper, Typography } from '@components';
 
 const entitySettingSubscription = graphql`
   subscription SubTypeEntitySettingSubscription($id: ID!) {
@@ -115,7 +112,7 @@ const SubTypeComponent: React.FC<SubTypeProps> = ({ queryRef }) => {
       </Typography>
 
       <Grid container spacing={3}>
-        <Grid item xs={hasTemplates ? 6 : 12}>
+        <Grid size={hasTemplates ? 6 : 12}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Configuration')}
           </Typography>
@@ -130,7 +127,7 @@ const SubTypeComponent: React.FC<SubTypeProps> = ({ queryRef }) => {
 
         {hasTemplates && <FintelTemplatesGrid data={subType.settings} />}
 
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography variant="h4" gutterBottom={true}>
             {t_i18n('Workflow')}
           </Typography>
@@ -140,7 +137,7 @@ const SubTypeComponent: React.FC<SubTypeProps> = ({ queryRef }) => {
             className={'paper-for-grid'}
           >
             <div style={{ display: 'flex', marginTop: theme.spacing(1) }}>
-              <Grid item xs={hasRequestAccessConfig ? 6 : 12}>
+              <Grid size={hasRequestAccessConfig ? 6 : 12}>
                 {subType.settings?.availableSettings.includes('workflow_configuration')
                   && <GlobalWorkflowSettings data={subType} subTypeId={subType.id} workflowEnabled={subType.workflowEnabled ?? false}/>
                 }
@@ -156,7 +153,7 @@ const SubTypeComponent: React.FC<SubTypeProps> = ({ queryRef }) => {
                     }}
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid size={6}>
                     <RequestAccessSettings data={subType} subTypeId={subType.id} dataConfiguration={subType.settings.requestAccessConfiguration}/>
                   </Grid>
                 </>
@@ -166,7 +163,7 @@ const SubTypeComponent: React.FC<SubTypeProps> = ({ queryRef }) => {
         </Grid>
 
         {subType.settings?.availableSettings.includes('attributes_configuration') && (
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
               {t_i18n('Attributes')}
             </Typography>

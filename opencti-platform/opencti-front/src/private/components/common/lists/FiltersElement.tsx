@@ -1,5 +1,3 @@
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import React, { FunctionComponent } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { useFormatter } from '../../../../components/i18n';
@@ -7,6 +5,7 @@ import { FiltersVariant, getFilterDefinitionFromFilterKeysMap, useBuildFilterKey
 import FilterDate from './FilterDate';
 import FilterAutocomplete from './FilterAutocomplete';
 import { HandleAddFilter } from '../../../../utils/hooks/useLocalStorage';
+import { Grid, TextField } from '@components';
 
 export type FilterElementsInputValue = {
   key: string;
@@ -81,7 +80,7 @@ const FiltersElement: FunctionComponent<FiltersElementProps> = ({
     <>
       <Grid container={true} spacing={2}>
         {variant === FiltersVariant.dialog && (
-          <Grid item xs={12}>
+          <Grid size={12}>
             <TextField
               label={t_i18n('Global keyword')}
               variant="outlined"
@@ -102,8 +101,7 @@ const FiltersElement: FunctionComponent<FiltersElementProps> = ({
             return (
               <Grid
                 key={`${filterKey}_${index}`}
-                item
-                xs={6}
+                size={6}
               >
                 <FilterDate
                   defaultHandleAddFilter={defaultHandleAddFilter}
@@ -115,7 +113,7 @@ const FiltersElement: FunctionComponent<FiltersElementProps> = ({
               </Grid>);
           }
           return (
-            <Grid key={filterKey} item xs={6}>
+            <Grid key={filterKey} size={6}>
               <FilterAutocomplete
                 filterKey={filterKey}
                 searchContext={searchContext}

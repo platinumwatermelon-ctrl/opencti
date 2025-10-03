@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
 import Slide from '@mui/material/Slide';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { VisibilityOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { stixDomainObjectsLinesSearchQuery } from './StixDomainObjectsLines';
@@ -20,6 +12,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import { truncate } from '../../../../utils/String';
 import { resolveLink } from '../../../../utils/Entity';
 import ItemMarkings from '../../../../components/ItemMarkings';
+import { Dialog, DialogContent, DialogTitle, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@components';
 
 const styles = () => ({
   dialogPaper: {

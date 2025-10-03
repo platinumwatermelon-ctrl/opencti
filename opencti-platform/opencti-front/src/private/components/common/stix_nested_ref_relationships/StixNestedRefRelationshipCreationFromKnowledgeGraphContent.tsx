@@ -1,4 +1,3 @@
-import { IconButton, Tooltip } from '@mui/material';
 import { ReadMoreOutlined } from '@mui/icons-material';
 import { PreloadedQuery, usePreloadedQuery } from 'react-relay';
 import { stixNestedRefRelationshipCreationResolveQuery } from '@private/components/common/stix_nested_ref_relationships/StixNestedRefRelationshipCreation';
@@ -7,7 +6,7 @@ import {
 } from '@private/components/common/stix_nested_ref_relationships/__generated__/StixNestedRefRelationshipCreationResolveQuery.graphql';
 import React, { FunctionComponent } from 'react';
 import { useFormatter } from '../../../../components/i18n';
-
+import { IconButton, Tooltip } from '@components';
 interface StixNestedRefRelationshipCreationFromKnowledgeGraphContentProps {
   queryRef: PreloadedQuery<StixNestedRefRelationshipCreationResolveQuery>,
   nestedRelationExist: boolean,

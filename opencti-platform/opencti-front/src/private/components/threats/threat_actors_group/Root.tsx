@@ -1,9 +1,6 @@
 import React, { Suspense, useMemo } from 'react';
 import { Route, Routes, Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { graphql, useSubscription, usePreloadedQuery, PreloadedQuery } from 'react-relay';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import { RootThreatActorGroupQuery } from '@private/components/threats/threat_actors_group/__generated__/RootThreatActorGroupQuery.graphql';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
@@ -28,6 +25,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import ThreatActorGroupEdition from './ThreatActorGroupEdition';
 import ThreatActorGroupDeletion from './ThreatActorGroupDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootThreatActorsGroupSubscription($id: ID!) {

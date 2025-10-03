@@ -2,12 +2,6 @@ import React, { FunctionComponent, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { graphql } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Fab from '@mui/material/Fab';
 import { Add } from '@mui/icons-material';
 import Drawer, { DrawerVariant } from '@private/components/common/drawer/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
@@ -26,6 +20,7 @@ import MarkdownField from '../../../../components/fields/MarkdownField';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import type { Theme } from '../../../../components/Theme';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
+import { Button, Dialog, DialogContent, DialogTitle, Fab, MenuItem } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.

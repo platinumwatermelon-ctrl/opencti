@@ -3,12 +3,11 @@ import * as PropTypes from 'prop-types';
 import * as R from 'ramda';
 import { graphql, createPaginationContainer } from 'react-relay';
 import withStyles from '@mui/styles/withStyles';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
 import { InformationOutline } from 'mdi-material-ui';
 import { StixDomainObjectBookmark, StixDomainObjectBookmarkDummy } from './StixDomainObjectBookmark';
 import inject18n from '../../../../components/i18n';
 import ListCardsContent from '../../../../components/list_cards/ListCardsContent';
+import { Tooltip, Typography } from '@components';
 
 const styles = () => ({
   container: {

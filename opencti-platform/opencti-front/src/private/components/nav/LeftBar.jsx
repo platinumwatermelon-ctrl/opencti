@@ -2,11 +2,6 @@ import React, { useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createStyles, makeStyles, styled, useTheme } from '@mui/styles';
 import MenuList from '@mui/material/MenuList';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import {
   AccountBalanceOutlined,
@@ -74,8 +69,6 @@ import {
   ShieldSearch,
   Timetable,
 } from 'mdi-material-ui';
-import Popover from '@mui/material/Popover';
-import Collapse from '@mui/material/Collapse';
 import { CGUStatus } from '../settings/Experience';
 import AskArianeButton from '../chatbox/AskArianeButton';
 import { useFormatter } from '../../../components/i18n';
@@ -116,6 +109,7 @@ import useHelper from '../../../utils/hooks/useHelper';
 import { useSettingsMessagesBannerHeight } from '../settings/settings_messages/SettingsMessagesBanner';
 import useEnterpriseEdition from '../../../utils/hooks/useEnterpriseEdition';
 import useDimensions from '../../../utils/hooks/useDimensions';
+import { Collapse, Divider, Drawer, ListItemIcon, ListItemText, MenuItem, Popover } from '@components';
 
 export const SMALL_BAR_WIDTH = 55;
 export const OPEN_BAR_WIDTH = 180;

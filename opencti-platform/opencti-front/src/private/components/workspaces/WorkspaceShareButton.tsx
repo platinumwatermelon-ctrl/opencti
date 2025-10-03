@@ -1,20 +1,16 @@
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import ToggleButton from '@mui/material/ToggleButton';
 import ShareIcon from '@mui/icons-material/Share';
-import Tooltip from '@mui/material/Tooltip';
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import Drawer from '@private/components/common/drawer/Drawer';
-import Typography from '@mui/material/Typography';
 import PublicDashboardCreationForm from '@private/components/workspaces/dashboards/public_dashboards/PublicDashboardCreationForm';
 import WorkspaceShareList, { workspaceShareListQuery } from '@private/components/workspaces/WorkspaceShareList';
 import { WorkspaceShareListQuery } from '@private/components/workspaces/__generated__/WorkspaceShareListQuery.graphql';
 import { graphql, useQueryLoader } from 'react-relay';
-import Alert from '@mui/material/Alert';
 import { useFormatter } from '../../../components/i18n';
 import Loader, { LoaderVariant } from '../../../components/Loader';
 import DeleteDialog from '../../../components/DeleteDialog';
 import useDeletion from '../../../utils/hooks/useDeletion';
 import useApiMutation from '../../../utils/hooks/useApiMutation';
+import { Alert, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@components';
 
 const workspaceShareButtonDeleteMutation = graphql`
   mutation WorkspaceShareButtonDeleteMutation($id: ID!) {

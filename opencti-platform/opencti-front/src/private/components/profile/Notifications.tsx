@@ -1,15 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Badge, Tooltip } from '@mui/material';
-import Chip from '@mui/material/Chip';
 import { indigo } from '@mui/material/colors';
-import IconButton from '@mui/material/IconButton';
 import { CheckCircleOutlined, DeleteOutlined, UnpublishedOutlined } from '@mui/icons-material';
 import { graphql } from 'react-relay';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import Button from '@mui/material/Button';
-import DialogActions from '@mui/material/DialogActions';
 import { NotificationsLine_node$data } from '@private/components/profile/__generated__/NotificationsLine_node.graphql';
 import { NotificationsLinesPaginationQuery, NotificationsLinesPaginationQuery$variables } from '@private/components/profile/__generated__/NotificationsLinesPaginationQuery.graphql';
 import { NotificationsLines_data$data } from '@private/components/profile/__generated__/NotificationsLines_data.graphql';
@@ -34,6 +26,7 @@ import { isNotEmptyField } from '../../../utils/utils';
 import { defaultRender } from '../../../components/dataGrid/dataTableUtils';
 import { colors, getFirstOperation, iconSelector } from './notifications/notificationUtils';
 import { chipInListBasicStyle } from '../../../utils/chipStyle';
+import { Badge, Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, Tooltip } from '@components';
 
 export const LOCAL_STORAGE_KEY = 'notifiers';
 

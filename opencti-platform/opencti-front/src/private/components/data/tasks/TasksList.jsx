@@ -1,25 +1,8 @@
 import React, { useState } from 'react';
 import * as R from 'ramda';
 import { graphql, useFragment } from 'react-relay';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import LinearProgress from '@mui/material/LinearProgress';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import Slide from '@mui/material/Slide';
 import { Delete } from 'mdi-material-ui';
-import Chip from '@mui/material/Chip';
 import makeStyles from '@mui/styles/makeStyles';
 import TasksFilterValueContainer from '../../../../components/TasksFilterValueContainer';
 import TaskStatus from '../../../../components/TaskStatus';
@@ -32,6 +15,7 @@ import TaskScope from '../../../../components/TaskScope';
 import { deserializeFilterGroupForFrontend, isFilterFormatCorrect, isFilterGroupNotEmpty } from '../../../../utils/filters/filtersUtils';
 import { convertFiltersFromOldFormat } from '../../../../utils/filters/filtersFromOldFormat';
 import { deleteNode } from '../../../../utils/store';
+import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, Grid, LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -291,16 +275,16 @@ const TasksList = ({ data, options }) => {
             style={{ marginBottom: 20 }}
           >
             <Grid container={true} spacing={3}>
-              <Grid item xs={5}>
+              <Grid size={5}>
                 <Grid container={true} spacing={1}>
                   {task.description && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Typography variant="h3" gutterBottom={true}>
                       {`${t_i18n('Description')}: ${task.description}`}
                     </Typography>
                   </Grid>
                   )}
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Targeted entities')} ({n(task.task_expected_number)})
                     </Typography>
@@ -347,7 +331,7 @@ const TasksList = ({ data, options }) => {
                     />
                     )}
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Actions')}
                     </Typography>
@@ -396,9 +380,9 @@ const TasksList = ({ data, options }) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={7}>
+              <Grid size={7}>
                 <Grid container={true} spacing={3}>
-                  <Grid item xs={2}>
+                  <Grid size={2}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Initiator')}
                     </Typography>
@@ -406,13 +390,13 @@ const TasksList = ({ data, options }) => {
                       {truncate(task.initiator?.name, 15)}
                     </Tooltip>
                   </Grid>
-                  <Grid item xs={2}>
+                  <Grid size={2}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Task start time')}
                     </Typography>
                     {nsdt(task.created_at)}
                   </Grid>
-                  <Grid item xs={2}>
+                  <Grid size={2}>
                     <Typography variant="h3" gutterBottom={true}>
                       {task.completed
                         ? t_i18n('Task end time')
@@ -421,20 +405,20 @@ const TasksList = ({ data, options }) => {
                     {nsdt(lastTaskExecutionDate)}
                   </Grid>
                   {(task.scope ?? task.type)
-                      && <Grid item xs={2}>
+                      && <Grid size={2}>
                         <Typography variant="h3" gutterBottom={true}>
                           {t_i18n('Scope')}
                         </Typography>
                         <TaskScope scope={task.scope ?? task.type} label={t_i18n(task.scope ?? task.type)} />
                       </Grid>
                   }
-                  <Grid item xs={2}>
+                  <Grid size={2}>
                     <Typography variant="h3" gutterBottom={true}>
                       {t_i18n('Status')}
                     </Typography>
                     <TaskStatus status={status} label={t_i18n(status)} />
                   </Grid>
-                  <Grid item xs={10}>
+                  <Grid size={10}>
                     <Typography variant="h3" gutterBottom={true}>
                       {progressFullText}
                     </Typography>

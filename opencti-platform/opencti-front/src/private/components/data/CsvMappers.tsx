@@ -11,8 +11,6 @@ import { csvMappers_SchemaAttributesQuery } from '@private/components/data/csvMa
 import VisuallyHiddenInput from '@private/components/common/VisuallyHiddenInput';
 import { graphql } from 'react-relay';
 import { CsvMappersImportQuery$data } from '@private/components/data/__generated__/CsvMappersImportQuery.graphql';
-import Button from '@mui/material/Button';
-import ToggleButton from '@mui/material/ToggleButton';
 import ListLines from '../../../components/list_lines/ListLines';
 import { usePaginationLocalStorage } from '../../../utils/hooks/useLocalStorage';
 import Loader, { LoaderVariant } from '../../../components/Loader';
@@ -23,6 +21,7 @@ import useConnectedDocumentModifier from '../../../utils/hooks/useConnectedDocum
 import type { Theme } from '../../../components/Theme';
 import { fetchQuery, MESSAGING$ } from '../../../relay/environment';
 import { RelayError } from '../../../relay/relayTypes';
+import { Button, ToggleButton } from '@components';
 
 export const LOCAL_STORAGE_KEY_CSV_MAPPERS = 'csvMappers';
 

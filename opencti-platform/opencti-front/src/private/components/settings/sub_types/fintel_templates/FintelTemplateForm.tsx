@@ -2,16 +2,15 @@ import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import Button from '@mui/material/Button';
 import { useTheme } from '@mui/styles';
 import { InformationOutline } from 'mdi-material-ui';
-import Tooltip from '@mui/material/Tooltip';
 import { useFormatter } from '../../../../../components/i18n';
 import TextField from '../../../../../components/TextField';
 import MarkdownField from '../../../../../components/fields/MarkdownField';
 import { fieldSpacingContainerStyle } from '../../../../../utils/field';
 import type { Theme } from '../../../../../components/Theme';
 import SwitchField from '../../../../../components/fields/SwitchField';
+import { Button, Tooltip } from '@components';
 
 export interface FintelTemplateFormInputs {
   name: string

@@ -1,16 +1,7 @@
 import React, { FunctionComponent, ReactNode, useState } from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Drawer from '@mui/material/Drawer';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { FileExportOutline, FileOutline, InformationOutline } from 'mdi-material-ui';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import { AddOutlined, MoreVert } from '@mui/icons-material';
 import { graphql } from 'react-relay';
-import ListItemButton from '@mui/material/ListItemButton';
-import Typography from '@mui/material/Typography';
 import EEChip from '@private/components/common/entreprise_edition/EEChip';
 import { StixCoreObjectContent_stixCoreObject$data } from '@private/components/common/stix_core_objects/__generated__/StixCoreObjectContent_stixCoreObject.graphql';
 import { FormikConfig } from 'formik/dist/types';
@@ -21,8 +12,6 @@ import CreateFileForm, { CreateFileFormInputs } from '@private/components/common
 import StixCoreObjectContentFilesList from '@private/components/common/stix_core_objects/StixCoreObjectContentFilesList';
 import { useSettingsMessagesBannerHeight } from '@private/components/settings/settings_messages/SettingsMessagesBanner';
 import StixCoreObjectFileExport, { BUILT_IN_FROM_TEMPLATE, BUILT_IN_HTML_TO_PDF } from '@private/components/common/stix_core_objects/StixCoreObjectFileExport';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
 import { useFormatter } from '../../../../components/i18n';
 import FileUploader from '../files/FileUploader';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
@@ -31,7 +20,7 @@ import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { KNOWLEDGE_KNGETEXPORT, KNOWLEDGE_KNUPLOAD } from '../../../../utils/hooks/useGranted';
 import Security from '../../../../utils/Security';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
-
+import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip, Typography } from '@components';
 interface ContentBlocProps {
   title: ReactNode
   children: ReactNode

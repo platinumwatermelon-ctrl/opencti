@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'relay-runtime';
-import { Grid } from '@mui/material';
 import { useFragment } from 'react-relay';
 import ContainerStixObjectsOrStixRelationships from '@private/components/common/containers/ContainerStixObjectsOrStixRelationships';
 import StixCoreObjectLatestHistory from '@private/components/common/stix_core_objects/StixCoreObjectLatestHistory';
@@ -9,6 +8,7 @@ import StixCoreObjectExternalReferences from '../external_references/StixCoreObj
 import { Note_note$key } from './__generated__/Note_note.graphql';
 import NoteDetails from './NoteDetails';
 import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import { Grid } from '@components';
 
 const NoteComponentFragment = graphql`
   fragment Note_note on Note {
@@ -86,19 +86,19 @@ const NoteComponent: FunctionComponent<NoteComponentProps> = ({
           switch (key) {
             case 'details':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <NoteDetails note={note} />
                 </Grid>
               );
             case 'basicInformation':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <StixDomainObjectOverview stixDomainObject={note} />
                 </Grid>
               );
             case 'relatedEntities':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <ContainerStixObjectsOrStixRelationships
                     isSupportParticipation={true}
                     container={note}
@@ -108,7 +108,7 @@ const NoteComponent: FunctionComponent<NoteComponentProps> = ({
               );
             case 'externalReferences':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <StixCoreObjectExternalReferences
                     stixCoreObjectId={note.id}
                   />
@@ -116,7 +116,7 @@ const NoteComponent: FunctionComponent<NoteComponentProps> = ({
               );
             case 'mostRecentHistory':
               return (
-                <Grid key={key} item xs={width}>
+                <Grid key={key} size={width}>
                   <StixCoreObjectLatestHistory
                     stixCoreObjectId={note.id}
                   />

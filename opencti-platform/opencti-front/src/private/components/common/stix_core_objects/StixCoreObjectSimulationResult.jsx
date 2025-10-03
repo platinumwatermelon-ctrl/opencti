@@ -1,18 +1,8 @@
 import { Field, Form, Formik } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
-import Alert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
 import React, { useState } from 'react';
-import Tooltip from '@mui/material/Tooltip';
 import { CheckOutlined, ErrorOutlined, LaunchOutlined, OpenInNewOutlined, SensorOccupiedOutlined, ShieldOutlined, TrackChangesOutlined } from '@mui/icons-material';
-import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
 import { graphql, usePreloadedQuery } from 'react-relay';
 import * as Yup from 'yup';
 import { useTheme } from '@mui/styles';
@@ -38,6 +28,7 @@ import { emptyFilterGroup } from '../../../../utils/filters/filtersUtils';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
 import useXTM from '../../../../utils/hooks/useXTM';
 import useAI from '../../../../utils/hooks/useAI';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem, Tooltip, Typography } from '@components';
 
 const stixCoreObjectSimulationResultObasStixCoreObjectSimulationsResultQuery = graphql`
   query StixCoreObjectSimulationResultObasStixCoreObjectSimulationsResultQuery($id: ID!) {

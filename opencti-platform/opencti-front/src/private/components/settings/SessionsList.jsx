@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { DeleteOutlined } from '@mui/icons-material';
-import ListItemText from '@mui/material/ListItemText';
 import { interval } from 'rxjs';
-import IconButton from '@mui/material/IconButton';
 import { createRefetchContainer, graphql } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
-import { ListItemButton } from '@mui/material';
 import { commitMutation } from '../../../relay/environment';
 import { FIVE_SECONDS, timestamp } from '../../../utils/Time';
 import { userSessionKillMutation } from './users/User';
@@ -17,6 +11,7 @@ import ItemIcon from '../../../components/ItemIcon';
 import { useFormatter } from '../../../components/i18n';
 import DeleteDialog from '../../../components/DeleteDialog';
 import useDeletion from '../../../utils/hooks/useDeletion';
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@components';
 
 const interval$ = interval(FIVE_SECONDS);
 

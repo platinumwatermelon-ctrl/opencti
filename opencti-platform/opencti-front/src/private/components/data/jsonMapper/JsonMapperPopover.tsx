@@ -1,7 +1,4 @@
 import React, { FunctionComponent, UIEvent, useState } from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
 import MoreVert from '@mui/icons-material/MoreVert';
 import { graphql, useQueryLoader } from 'react-relay';
 import { PopoverProps } from '@mui/material/Popover';
@@ -18,6 +15,7 @@ import { deleteNode } from '../../../../utils/store';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import stopEvent from '../../../../utils/domEvent';
 import { fetchQuery } from '../../../../relay/environment';
+import { IconButton, Menu, MenuItem } from '@components';
 
 const jsonMapperPopoverDelete = graphql`
   mutation JsonMapperPopoverDeleteMutation($id: ID!) {

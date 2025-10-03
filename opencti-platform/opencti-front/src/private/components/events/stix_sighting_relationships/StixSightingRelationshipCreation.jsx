@@ -4,10 +4,6 @@ import { graphql } from 'react-relay';
 import * as R from 'ramda';
 import withTheme from '@mui/styles/withTheme';
 import withStyles from '@mui/styles/withStyles';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ArrowRightAlt, Close } from '@mui/icons-material';
 import { MESSAGING$, commitMutation, fetchQuery } from '../../../../relay/environment';
@@ -18,6 +14,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import { truncate } from '../../../../utils/String';
 import { getMainRepresentative } from '../../../../utils/defaultRepresentatives';
 import StixSightingRelationshipCreationForm from './StixSightingRelationshipCreationForm';
+import { Drawer, IconButton, Tooltip, Typography } from '@components';
 
 const styles = (theme) => ({
   drawerPaper: {

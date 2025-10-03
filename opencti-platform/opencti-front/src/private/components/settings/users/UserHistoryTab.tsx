@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import { Avatar, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Tooltip } from '@mui/material';
 import { DeleteOutlined, StorageOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { LinkVariantPlus, LinkVariantRemove, Merge, VectorRadius } from 'mdi-material-ui';
@@ -24,6 +23,7 @@ import ItemIcon from '../../../../components/ItemIcon';
 import type { Theme } from '../../../../components/Theme';
 import { UserHistoryLine_node$data } from './__generated__/UserHistoryLine_node.graphql';
 import MarkdownDisplay from '../../../../components/MarkdownDisplay';
+import { Avatar, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Tooltip } from '@components';
 
 const LOCAL_STORAGE_KEY = 'audits';
 

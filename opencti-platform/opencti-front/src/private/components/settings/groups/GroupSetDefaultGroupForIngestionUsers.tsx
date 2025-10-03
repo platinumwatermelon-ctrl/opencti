@@ -1,9 +1,5 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Alert from '@mui/material/Alert';
 import GroupField from '@private/components/common/form/GroupField';
 import { GroupSetDefaultGroupForIngestionUsersQuery } from '@private/components/settings/groups/__generated__/GroupSetDefaultGroupForIngestionUsersQuery.graphql';
 import { useFormikContext } from 'formik';
@@ -11,6 +7,7 @@ import { useFormatter } from '../../../../components/i18n';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
 import Loader from '../../../../components/Loader';
+import { Alert, Grid, Paper, Typography } from '@components';
 
 export const groupSetDefaultGroupForIngestionUsersFragment = graphql`
   fragment GroupSetDefaultGroupForIngestionUsersFragment on Group {
@@ -94,7 +91,7 @@ const GroupSetDefaultGroupForIngestionUsersComponent = ({ queryRef }: GroupSetDe
     setCurrentGroupForAutoIntegrationAssignation({ id: value.value, name: value.label });
   };
 
-  return <Grid item xs={6}>
+  return <Grid size={6}>
     <Typography variant="h4" gutterBottom={true}>
       { t_i18n('Service account policy')}
     </Typography>

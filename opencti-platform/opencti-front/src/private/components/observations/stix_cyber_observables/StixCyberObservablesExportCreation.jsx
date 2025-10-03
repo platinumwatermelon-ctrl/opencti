@@ -2,19 +2,11 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import { compose, filter, flatten, fromPairs, includes, map, propOr, uniq, zip } from 'ramda';
 import withStyles from '@mui/styles/withStyles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import { Add, InfoOutlined } from '@mui/icons-material';
 import { graphql, createFragmentContainer } from 'react-relay';
 import { Form, Formik, Field } from 'formik';
-import MenuItem from '@mui/material/MenuItem';
 import * as Yup from 'yup';
-import Tooltip from '@mui/material/Tooltip';
-import Fab from '@mui/material/Fab';
 import { CONTENT_MAX_MARKINGS_HELPERTEXT, CONTENT_MAX_MARKINGS_TITLE } from '../../common/files/FileManager';
 import ObjectMarkingField from '../../common/form/ObjectMarkingField';
 import inject18n from '../../../../components/i18n';
@@ -24,6 +16,7 @@ import SelectField from '../../../../components/fields/SelectField';
 import Loader from '../../../../components/Loader';
 import { ExportContext } from '../../../../utils/ExportContextProvider';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Fab, MenuItem, Tooltip } from '@components';
 
 const Transition = React.forwardRef((props, ref) => (
   <Slide direction="up" ref={ref} {...props} />

@@ -2,9 +2,6 @@ import React, { Suspense, useMemo } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { graphql, PreloadedQuery, usePreloadedQuery, useSubscription } from 'react-relay';
 import { GraphQLSubscriptionConfig } from 'relay-runtime';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import useQueryLoading from 'src/utils/hooks/useQueryLoading';
 import useForceUpdate from '@private/components/common/bulk/useForceUpdate';
 import AIInsights from '@private/components/common/ai/AIInsights';
@@ -28,6 +25,7 @@ import Security from '../../../../utils/Security';
 import { KNOWLEDGE_KNUPDATE, KNOWLEDGE_KNUPDATE_KNDELETE } from '../../../../utils/hooks/useGranted';
 import IntrusionSetEdition from './IntrusionSetEdition';
 import IntrusionSetDeletion from './IntrusionSetDeletion';
+import { Box, Tab, Tabs } from '@components';
 
 const subscription = graphql`
   subscription RootIntrusionSetSubscription($id: ID!) {

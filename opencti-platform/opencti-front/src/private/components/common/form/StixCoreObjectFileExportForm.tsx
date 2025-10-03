@@ -1,29 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import Tooltip from '@mui/material/Tooltip';
 import { AbcOutlined, DataObjectOutlined, HtmlOutlined, NumbersOutlined } from '@mui/icons-material';
 import { LogoXtmOneIcon } from 'filigran-icon';
-import DialogContent from '@mui/material/DialogContent';
-import MenuItem from '@mui/material/MenuItem';
 import ObjectMarkingField from '@private/components/common/form/ObjectMarkingField';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 import { FormikConfig } from 'formik/dist/types';
 import * as Yup from 'yup';
 import { BUILT_IN_FROM_TEMPLATE, BUILT_IN_HTML_TO_PDF } from '@private/components/common/stix_core_objects/StixCoreObjectFileExport';
 import { CONTENT_MAX_MARKINGS_HELPERTEXT, CONTENT_MAX_MARKINGS_TITLE } from '@private/components/common/files/FileManager';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepButton from '@mui/material/StepButton';
-import StepLabel from '@mui/material/StepLabel';
-import Typography from '@mui/material/Typography';
 import { FileExportOutline, FilePdfBox, InformationOutline, LanguageMarkdownOutline } from 'mdi-material-ui';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
 import EETooltip from '@private/components/common/entreprise_edition/EETooltip';
 import FiligranIcon from '@private/components/common/FiligranIcon';
 import { useFormatter } from '../../../../components/i18n';
@@ -35,6 +19,7 @@ import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import useAI from '../../../../utils/hooks/useAI';
 import { now } from '../../../../utils/Time';
 import FintelDesignField, { FintelDesignFieldOption } from './FintelDesignField';
+import { Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, Grid, MenuItem, Step, StepButton, StepLabel, Stepper, Tooltip, Typography } from '@components';
 
 export type FileOption = Pick<FieldOption, 'label' | 'value'> & {
   fileMarkings: {
@@ -286,7 +271,7 @@ const StixCoreObjectFileExportForm = ({
                   style={{ marginTop: 0, marginBottom: 0 }}
                 >
                   {connectorScopes.map((scope) => (
-                    <Grid key={scope} item xs={4}>
+                    <Grid key={scope} size={4}>
                       <Card
                         variant="outlined"
                         style={{
@@ -314,7 +299,7 @@ const StixCoreObjectFileExportForm = ({
                     </Grid>
                   ))}
                   {isContainer && fullyActive && (
-                    <Grid item xs={4}>
+                    <Grid size={4}>
                       <Card
                         variant="outlined"
                         style={{

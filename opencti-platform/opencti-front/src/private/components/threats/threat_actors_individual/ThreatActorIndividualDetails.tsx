@@ -1,15 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useFragment } from 'react-relay';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { BullseyeArrow, ArmFlexOutline, DramaMasks } from 'mdi-material-ui';
-import ListItemText from '@mui/material/ListItemText';
 import makeStyles from '@mui/styles/makeStyles';
-import Typography from '@mui/material/Typography';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { useFormatter } from '../../../../components/i18n';
 import ItemOpenVocab from '../../../../components/ItemOpenVocab';
@@ -23,6 +15,7 @@ import ImageCarousel, { ImagesData } from '../../../../components/ImageCarousel'
 import ThreatActorIndividualLocation from './ThreatActorIndividualLocation';
 import ThreatActorIndividualDetailsChips from './ThreatActorIndividualDetailsChips';
 import CardLabel from '../../../../components/CardLabel';
+import { Chip, Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -129,14 +122,14 @@ ThreatActorIndividualDetailsProps
       </Typography>
       <Paper classes={{ root: classes.paper }} className={'paper-for-grid'} variant="outlined">
         <Grid container={true} spacing={3}>
-          <Grid item xs={hasImages ? 7 : 6}>
+          <Grid size={hasImages ? 7 : 6}>
             <Grid container={true} spacing={3}>
               {hasImages && (
-                <Grid item xs={4}>
+                <Grid size={4}>
                   <ImageCarousel data={imagesCarousel} />
                 </Grid>
               )}
-              <Grid item xs={hasImages ? 8 : 12}>
+              <Grid size={hasImages ? 8 : 12}>
                 <Typography variant="h3" gutterBottom={true}>
                   {t_i18n('Threat actor types')}
                 </Typography>
@@ -163,7 +156,7 @@ ThreatActorIndividualDetailsProps
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={hasImages ? 5 : 6}>
+          <Grid size={hasImages ? 5 : 6}>
             <ThreatActorIndividualDetailsChips
               data={data}
               relType='known-as'
@@ -184,7 +177,7 @@ ThreatActorIndividualDetailsProps
           </Grid>
         </Grid>
         <Grid container={true} spacing={3}>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Typography
               variant="h3"
               gutterBottom={true}
@@ -200,7 +193,7 @@ ThreatActorIndividualDetailsProps
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Typography
               variant="h3"
               gutterBottom={true}
@@ -216,7 +209,7 @@ ThreatActorIndividualDetailsProps
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <Typography
               variant="h3"
               gutterBottom={true}
@@ -232,7 +225,7 @@ ThreatActorIndividualDetailsProps
               />
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <CardLabel style={{ marginTop: 20 }}>
               {t_i18n('Roles')}
             </CardLabel>
@@ -259,7 +252,7 @@ ThreatActorIndividualDetailsProps
               )}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <CardLabel style={{ marginTop: 20 }}>
               {t_i18n('Goals')}
             </CardLabel>
@@ -280,7 +273,7 @@ ThreatActorIndividualDetailsProps
               )}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <CardLabel style={{ marginTop: 20 }}>
               {t_i18n('Secondary motivations')}
             </CardLabel>
@@ -311,7 +304,7 @@ ThreatActorIndividualDetailsProps
               )}
             </FieldOrEmpty>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={4}>
             <CardLabel style={{ marginTop: 20 }}>
               {t_i18n('Personal motivations')}
             </CardLabel>

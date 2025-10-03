@@ -1,12 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { createFragmentContainer, graphql, usePreloadedQuery } from 'react-relay';
 import * as R from 'ramda';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import List from '@mui/material/List';
 import { PreloadedQuery } from 'react-relay/relay-hooks/EntryPointTypes';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import LocalPoliceOutlined from '@mui/icons-material/LocalPoliceOutlined';
 import { useTheme } from '@mui/styles';
 import DangerZoneChip from '@private/components/common/danger_zone/DangerZoneChip';
@@ -18,6 +13,7 @@ import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { SETTINGS } from '../../../../utils/hooks/useGranted';
 import useSensitiveModifications from '../../../../utils/hooks/useSensitiveModifications';
 import type { Theme } from '../../../../components/Theme';
+import { Checkbox, List, ListItem, ListItemIcon, ListItemText } from '@components';
 
 const roleEditionAddCapability = graphql`
   mutation RoleEditionCapabilitiesAddCapabilityMutation(

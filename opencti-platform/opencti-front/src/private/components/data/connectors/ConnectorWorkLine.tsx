@@ -1,20 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import LinearProgress from '@mui/material/LinearProgress';
-import Button from '@mui/material/Button';
 import { Delete } from 'mdi-material-ui';
-import Paper from '@mui/material/Paper';
-import Alert from '@mui/material/Alert';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import TableContainer from '@mui/material/TableContainer';
-import Table from '@mui/material/Table';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import TableBody from '@mui/material/TableBody';
 import ConnectorWorksErrorLine from '@private/components/data/connectors/ConnectorWorksErrorLine';
 import Drawer from '@private/components/common/drawer/Drawer';
 import { ConnectorWorks_data$data, State } from '@private/components/data/connectors/__generated__/ConnectorWorks_data.graphql';
@@ -26,6 +11,7 @@ import TaskStatus from '../../../../components/TaskStatus';
 import { useFormatter } from '../../../../components/i18n';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
 import { MESSAGING$ } from '../../../../relay/environment';
+import { Alert, Button, Grid, LinearProgress, Paper, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tabs, Tooltip, Typography } from '@components';
 
 type WorkMessages = NonNullable<NonNullable<NonNullable<ConnectorWorks_data$data['works']>['edges']>[0]>['node']['errors'];
 interface ConnectorWorkLineProps {
@@ -80,9 +66,9 @@ ConnectorWorkLineProps
   return (
     <>
       <Grid container={true} spacing={3}>
-        <Grid item xs={7}>
+        <Grid size={7}>
           <Grid container={true} spacing={1}>
-            <Grid item xs={8}>
+            <Grid size={8}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Name')}
               </Typography>
@@ -92,13 +78,13 @@ ConnectorWorkLineProps
                 </Typography>
               </Tooltip>
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Status')}
               </Typography>
               <TaskStatus status={workStatus} label={t_i18n(workStatus)} />
             </Grid>
-            <Grid item xs={8}>
+            <Grid size={8}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -108,7 +94,7 @@ ConnectorWorkLineProps
               </Typography>
               {nsdt(workReceivedTime)}
             </Grid>
-            <Grid item xs={4}>
+            <Grid size={4}>
               <Typography
                 variant="h3"
                 gutterBottom={true}
@@ -120,9 +106,9 @@ ConnectorWorkLineProps
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={4}>
+        <Grid size={4}>
           <Grid container={true} spacing={3}>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Operations completed')}
               </Typography>
@@ -132,7 +118,7 @@ ConnectorWorkLineProps
                   : workProcessedNumber ?? '-'}
               </span>
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Total number of operations')}
               </Typography>
@@ -140,7 +126,7 @@ ConnectorWorkLineProps
                 {workExpectedNumber ?? '-'}
               </span>
             </Grid>
-            <Grid item xs={11}>
+            <Grid size={11}>
               <Typography variant="h3" gutterBottom={true}>
                 {t_i18n('Progress')}
               </Typography>

@@ -1,9 +1,4 @@
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import { BackupTableOutlined, CampaignOutlined } from '@mui/icons-material';
-import Paper from '@mui/material/Paper';
 import React, { FunctionComponent, useRef, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import TriggerLiveCreation from '../../profile/triggers/TriggerLiveCreation';
@@ -18,6 +13,7 @@ import { usePaginationLocalStorage } from '../../../../utils/hooks/useLocalStora
 import { LOCAL_STORAGE_KEY_TRIGGERS } from '../../profile/Triggers';
 import { TriggerLineDummy } from '../../profile/triggers/TriggerLine';
 import { GqlFilterGroup, emptyFilterGroup } from '../../../../utils/filters/filtersUtils';
+import { Grid, IconButton, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -112,7 +108,7 @@ const Triggers: FunctionComponent<TriggersProps> = ({
   const [openLive, setOpenLive] = useState(false);
   const [openDigest, setOpenDigest] = useState(false);
   return (
-    <Grid item xs={12} style={{ marginTop: 10 }}>
+    <Grid size={12} style={{ marginTop: 10 }}>
       <Typography variant="h4" gutterBottom={true} style={{ float: 'left' }}>
         {t_i18n('Triggers and Digests')}
       </Typography>
