@@ -11,6 +11,11 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      typescript: {
+        project: './tsconfig.json',
+      },
+    },
   },
   parserOptions: {
     ecmaVersion: 2020,
@@ -104,5 +109,6 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-closing-bracket-location': 'error',
+    'import/no-cycle': 'off',
   },
 };
