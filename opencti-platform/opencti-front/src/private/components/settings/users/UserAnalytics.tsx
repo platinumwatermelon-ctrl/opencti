@@ -13,28 +13,19 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 */
 
-import React, { FunctionComponent } from 'react';
-import { graphql, useFragment } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
+import { Grid } from '@components';
+import AuditsDonut from '@private/components/common/audits/AuditsDonut';
+import AuditsHorizontalBars from '@private/components/common/audits/AuditsHorizontalBars';
+import AuditsList from '@private/components/common/audits/AuditsList';
+import AuditsMultiLineChart from '@private/components/common/audits/AuditsMultiLineChart';
+import AuditsMultiVerticalBars from '@private/components/common/audits/AuditsMultiVerticalBars';
+import AuditsRadar from '@private/components/common/audits/AuditsRadar';
 import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
 import { UserAnalytics_user$key } from '@private/components/settings/users/__generated__/UserAnalytics_user.graphql';
-import AuditsMultiVerticalBars from '@private/components/common/audits/AuditsMultiVerticalBars';
-import AuditsMultiLineChart from '@private/components/common/audits/AuditsMultiLineChart';
-import AuditsHorizontalBars from '@private/components/common/audits/AuditsHorizontalBars';
-import AuditsDonut from '@private/components/common/audits/AuditsDonut';
-import AuditsRadar from '@private/components/common/audits/AuditsRadar';
-import AuditsList from '@private/components/common/audits/AuditsList';
+import { FunctionComponent } from 'react';
+import { graphql, useFragment } from 'react-relay';
 import { useFormatter } from '../../../../components/i18n';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
-import { Grid } from '@components';
-
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles(() => ({
-  gridContainer: {
-    marginBottom: 20,
-  },
-}));
 
 const UserFragment = graphql`
   fragment UserAnalytics_user on User {
@@ -50,7 +41,6 @@ interface UserAnalyticsProps {
 }
 
 const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
-  const classes = useStyles();
   const { t_i18n } = useFormatter();
   const user = useFragment(UserFragment, data);
   const userServiceAccount = user.user_service_account;
@@ -64,7 +54,7 @@ const UserAnalytics: FunctionComponent<UserAnalyticsProps> = ({ data }) => {
         container
         rowSpacing={5}
         columnSpacing={2}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 50 }}
       >
         <Grid size={6}>
           <AuditsMultiVerticalBars

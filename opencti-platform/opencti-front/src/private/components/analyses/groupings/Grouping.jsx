@@ -1,25 +1,13 @@
-import React from 'react';
-import { graphql, createFragmentContainer } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
-import GroupingDetails from './GroupingDetails';
+import { Grid } from '@components';
+import { createFragmentContainer, graphql } from 'react-relay';
+import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
+import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import StixCoreObjectExternalReferences from '../external_references/StixCoreObjectExternalReferences';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../notes/StixCoreObjectOrStixCoreRelationshipNotes';
-import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
-import useOverviewLayoutCustomization from '../../../../utils/hooks/useOverviewLayoutCustomization';
-import { Grid } from '@components';
-
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles(() => ({
-  gridContainer: {
-    marginBottom: 20,
-  },
-}));
+import GroupingDetails from './GroupingDetails';
 
 const GroupingComponent = ({ grouping }) => {
-  const classes = useStyles();
-
   const overviewLayoutCustomization = useOverviewLayoutCustomization(grouping.entity_type);
 
   return (
@@ -27,7 +15,7 @@ const GroupingComponent = ({ grouping }) => {
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         {
           overviewLayoutCustomization.map(({ key, width }) => {

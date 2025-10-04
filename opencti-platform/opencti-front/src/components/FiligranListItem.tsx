@@ -1,7 +1,8 @@
-import React from 'react';
 import ListItem, { ListItemProps } from '@mui/material/ListItem';
 
-type FiligranListItemProps = ListItemProps;
+type FiligranListItemProps = ListItemProps & {
+  to?: string;
+};
 
 const FiligranListItem = (props: FiligranListItemProps) => <ListItem {...props} />;
 

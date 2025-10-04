@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
 import LocationDetails from '@private/components/locations/LocationDetails';
+import { Grid } from '@components';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
@@ -10,15 +10,6 @@ import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../commo
 import LocationMiniMap from '../../common/location/LocationMiniMap';
 import { Region_region$key } from './__generated__/Region_region.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
-import { Grid } from '@components';
-
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles(() => ({
-  gridContainer: {
-    marginBottom: 20,
-  },
-}));
 
 const regionFragment = graphql`
   fragment Region_region on Region {
@@ -83,7 +74,6 @@ const regionFragment = graphql`
 `;
 
 const RegionComponent = ({ regionData }: { regionData: Region_region$key }) => {
-  const classes = useStyles();
   const region = useFragment<Region_region$key>(regionFragment, regionData);
   const countries = region.countries?.edges.map(
     (countryEdge) => countryEdge.node,
@@ -93,7 +83,7 @@ const RegionComponent = ({ regionData }: { regionData: Region_region$key }) => {
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={4}>
           <LocationDetails locationData={region} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
 import LocationDetails from '@private/components/locations/LocationDetails';
+import { Grid } from '@components';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
@@ -10,15 +10,6 @@ import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../commo
 import LocationMiniMap from '../../common/location/LocationMiniMap';
 import { Country_country$key } from './__generated__/Country_country.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
-import { Grid } from '@components';
-
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles(() => ({
-  gridContainer: {
-    marginBottom: 20,
-  },
-}));
 
 export const getCountriesQuery = graphql`
   query CountryGetAllQuery {
@@ -92,7 +83,6 @@ const CountryComponent = ({
 }: {
   countryData: Country_country$key;
 }) => {
-  const classes = useStyles();
   const country = useFragment<Country_country$key>(
     countryFragment,
     countryData,
@@ -102,7 +92,7 @@ const CountryComponent = ({
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={4}>
           <LocationDetails locationData={country} />

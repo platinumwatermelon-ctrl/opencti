@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import GroupConfidenceLevel from '@private/components/settings/groups/GroupConfidenceLevel';
 import { uniq } from 'ramda';
 import { useTheme } from '@mui/material/styles';
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';
 import ItemBoolean from '../../../../components/ItemBoolean';
@@ -21,7 +22,6 @@ import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import { checkIsMarkingAllowed } from '../../../../utils/markings/markingsFiltering';
 import type { Theme } from '../../../../components/Theme';
 import MarkingIcon from '../../../../utils/MarkingIcon';
-import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -30,9 +30,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     margin: 0,
     padding: '0 200px 0 0',
   },
-  gridContainer: {
-    marginBottom: 20,
-  },
+
   paper: {
     marginTop: theme.spacing(1),
     padding: '15px',
@@ -141,7 +139,7 @@ const Group = ({ groupData }: { groupData: Group_group$key }) => {
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>

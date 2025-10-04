@@ -222,7 +222,7 @@ const NestedMenuButton: React.FC<NestedMenuProps> = ({
       <Button
         ref={buttonRef}
         onClick={(event) => {
-          handleOpen(event);
+          handleOpen(event as React.MouseEvent<HTMLElement>);
         }}
         {...menuButtonProps}
       >

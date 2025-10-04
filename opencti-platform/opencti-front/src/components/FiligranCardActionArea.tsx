@@ -1,7 +1,9 @@
 import React from 'react';
 import CardActionArea, { CardActionAreaProps } from '@mui/material/CardActionArea';
 
-type FiligranCardActionAreaProps = CardActionAreaProps;
+type FiligranCardActionAreaProps = CardActionAreaProps & {
+  to?: string;
+};
 
 const FiligranCardActionArea = (props: FiligranCardActionAreaProps) => <CardActionArea {...props} />;
 

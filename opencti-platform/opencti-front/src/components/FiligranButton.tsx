@@ -1,9 +1,11 @@
-import React, { UIEvent } from 'react';
+import { ButtonOwnProps, ButtonProps } from '@mui/material';
 import Button from '@mui/material/Button';
-import { ButtonProps, ButtonOwnProps } from '@mui/material';
-import { LinkProps } from 'react-router-dom';
+import React from 'react';
 
-type FiligranButtonProps = (ButtonProps & Partial<LinkProps> & ButtonOwnProps) & { onClick?: (e: UIEvent | React.MouseEvent) => void };
+export type FiligranButtonProps = (ButtonProps & ButtonOwnProps) & { onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void } & {
+  to?: string;
+  target?: string;
+};
 
 const FiligranButton = (props: FiligranButtonProps) => <Button {...props} />;
 

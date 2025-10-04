@@ -4,6 +4,7 @@ import React from 'react';
 import { graphql, useFragment } from 'react-relay';
 import { Link } from 'react-router-dom';
 import EnterpriseEdition from '@private/components/common/entreprise_edition/EnterpriseEdition';
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 import FieldOrEmpty from '../../../../components/FieldOrEmpty';
 import { useFormatter } from '../../../../components/i18n';
 import { useIsEnforceReference } from '../../../../utils/hooks/useEntitySettings';
@@ -21,7 +22,6 @@ import useGranted, { BYPASS, SETTINGS_SETACCESSES } from '../../../../utils/hook
 import Security from '../../../../utils/Security';
 import useEnterpriseEdition from '../../../../utils/hooks/useEnterpriseEdition';
 import type { Theme } from '../../../../components/Theme';
-import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -29,9 +29,6 @@ const useStyles = makeStyles<Theme>((theme) => ({
   container: {
     margin: 0,
     padding: '0 200px 0 0',
-  },
-  gridContainer: {
-    marginBottom: 20,
   },
   paper: {
     marginTop: theme.spacing(1),
@@ -153,7 +150,7 @@ const SettingsOrganization = ({
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={6}>
           <SettingsOrganizationDetails settingsOrganization={organization} />

@@ -6,6 +6,8 @@ import { DeleteOutlined, DownloadingOutlined, GetAppOutlined } from '@mui/icons-
 import { RecordSourceSelectorProxy } from 'relay-runtime';
 import CircularProgress from '@mui/material/CircularProgress';
 import { SupportPackageLineForceZipMutation$data } from '@private/components/settings/support/__generated__/SupportPackageLineForceZipMutation.graphql';
+import { Chip, ListItem, ListItemIcon, ListItemText, Tooltip } from '@components';
+import IconButton from '@mui/material/IconButton';
 import { APP_BASE_PATH, handleError, MESSAGING$ } from '../../../../relay/environment';
 import { useFormatter } from '../../../../components/i18n';
 import { deleteNode } from '../../../../utils/store';
@@ -16,7 +18,6 @@ import { minutesBetweenDates, now } from '../../../../utils/Time';
 import DeleteDialog from '../../../../components/DeleteDialog';
 import useDeletion from '../../../../utils/hooks/useDeletion';
 import { chipInListBasicStyle } from '../../../../utils/chipStyle';
-import { Chip, IconButton, ListItem, ListItemIcon, ListItemText, Tooltip } from '@components';
 
 const styles = {
   bodyItem: {
@@ -47,7 +48,7 @@ const styles = {
 type PackageStatus = 'IN_PROGRESS' | 'READY' | 'IN_ERROR' | 'TIMEOUT' | '%future added value';
 
 const SupportPackageLineForceZipMutation = graphql`
-  mutation SupportPackageLineForceZipMutation(    
+  mutation SupportPackageLineForceZipMutation(
     $input: SupportPackageForceZipInput!
   ) {
       supportPackageForceZip(input: $input) {

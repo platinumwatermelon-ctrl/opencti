@@ -1,8 +1,8 @@
 import React from 'react';
-import Select, { SelectProps } from '@mui/material/Select';
+import Select, { SelectProps, StandardSelectProps, OutlinedSelectProps, FilledSelectProps } from '@mui/material/Select';
 
-type FiligranSelectProps = SelectProps;
+type FiligranSelectProps<T> = SelectProps<T> & (StandardSelectProps | OutlinedSelectProps | FilledSelectProps);
 
-const FiligranSelect = (props: FiligranSelectProps) => <Select {...props} />;
+const FiligranSelect = <T = string>(props: FiligranSelectProps<T>) => <Select<T> {...props} />;
 
 export default FiligranSelect;

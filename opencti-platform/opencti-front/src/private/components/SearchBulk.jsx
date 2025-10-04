@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Subject, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { graphql } from 'react-relay';
+import { Box, Chip, Grid, LinearProgress, List, ListItem, ListItemButton, ListItemIcon, ListItemText, TextField, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 import { allEntitiesKeyList } from './common/bulk/utils/querySearchEntityByText';
 import ItemIcon from '../../components/ItemIcon';
 import { fetchQuery } from '../../relay/environment';
@@ -21,7 +22,6 @@ import { export_max_size } from '../../utils/utils';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import useConnectedDocumentModifier from '../../utils/hooks/useConnectedDocumentModifier';
 import { chipInListBasicStyle } from '../../utils/chipStyle';
-import { Box, Chip, Grid, LinearProgress, List, ListItem, ListItemButton, ListItemIcon, ListItemText, TextField, ToggleButton, ToggleButtonGroup, Tooltip } from '@components';
 
 const SEARCH$ = new Subject().pipe(debounce(() => timer(500)));
 
@@ -35,9 +35,7 @@ const useStyles = makeStyles((theme) => ({
     }),
     padding: '0 0 0 0',
   },
-  gridContainer: {
-    marginBottom: 20,
-  },
+
   linesContainer: {
     margin: 0,
   },
@@ -250,7 +248,7 @@ const inlineStyles = {
 };
 
 export const searchBulkQuery = graphql`
-  query SearchBulkQuery(    
+  query SearchBulkQuery(
     $types: [String]
     $filters: FilterGroup
     $search: String
@@ -535,7 +533,7 @@ const SearchBulk = () => {
         <Grid
           container={true}
           spacing={3}
-          classes={{ container: classes.gridContainer }}
+          style={{ marginBottom: 20 }}
         >
           <Grid size={2} style={{ marginTop: -20 }}>
             <TextField

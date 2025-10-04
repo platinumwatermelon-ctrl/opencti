@@ -1,24 +1,14 @@
-import React from 'react';
-import { graphql, useFragment } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
+import { Grid } from '@components';
 import LocationDetails from '@private/components/locations/LocationDetails';
-import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
-import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
+import { graphql, useFragment } from 'react-relay';
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
+import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
+import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
+import LocationMiniMap from '../../common/location/LocationMiniMap';
 import StixCoreObjectLatestHistory from '../../common/stix_core_objects/StixCoreObjectLatestHistory';
 import SimpleStixObjectOrStixRelationshipStixCoreRelationships from '../../common/stix_core_relationships/SimpleStixObjectOrStixRelationshipStixCoreRelationships';
-import LocationMiniMap from '../../common/location/LocationMiniMap';
+import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import { AdministrativeArea_administrativeArea$key } from './__generated__/AdministrativeArea_administrativeArea.graphql';
-import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
-import { Grid } from '@components';
-
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles(() => ({
-  gridContainer: {
-    marginBottom: 20,
-  },
-}));
 
 const administrativeAreaFragment = graphql`
   fragment AdministrativeArea_administrativeArea on AdministrativeArea {
@@ -79,7 +69,6 @@ const AdministrativeArea = ({
 }: {
   administrativeAreaData: AdministrativeArea_administrativeArea$key;
 }) => {
-  const classes = useStyles();
   const administrativeArea = useFragment<AdministrativeArea_administrativeArea$key>(
     administrativeAreaFragment,
     administrativeAreaData,
@@ -89,7 +78,7 @@ const AdministrativeArea = ({
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={4}>
           <LocationDetails locationData={administrativeArea} />

@@ -4,6 +4,7 @@ import { createFragmentContainer, graphql } from 'react-relay';
 import Grid from '@mui/material/Grid2';
 import { GetAppOutlined } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
+import { Box, Button, Divider, Menu, MenuItem, Paper, Typography } from '@components';
 import StixCyberObservableNestedEntities from './StixCyberObservableNestedEntities';
 import { useFormatter } from '../../../../components/i18n';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
@@ -14,7 +15,6 @@ import ItemCopy from '../../../../components/ItemCopy';
 import useVocabularyCategory from '../../../../utils/hooks/useVocabularyCategory';
 import StixCyberObservableMalwareAnalyses from './StixCyberObservableMalwareAnalyses';
 import useAttributes from '../../../../utils/hooks/useAttributes';
-import { Box, Button, Divider, Menu, MenuItem, Paper, Typography } from '@components';
 
 const reorderMediaContentObservablesAttributes = (data) => {
   const desiredOrder = ['content', 'title', 'media_category', 'url', 'publication_date'];
@@ -156,12 +156,12 @@ const StixCyberObservableDetailsComponent = ({ stixCyberObservable }) => {
       >
         <Grid container={true} spacing={3} style={{ marginBottom: 10 }}>
           {file && (
-            <Grid item size={6}>
+            <Grid size={6}>
               <DownloadFileButtonMenu file={file} encodedFilePath={encodedFilePath} />
             </Grid>
           )}
 
-          <Grid item size={6}>
+          <Grid size={6}>
             <Typography variant="h3" gutterBottom={true}>
               {t_i18n('Description')}
             </Typography>
@@ -176,7 +176,7 @@ const StixCyberObservableDetailsComponent = ({ stixCyberObservable }) => {
 
             if (key === 'hashes') {
               return value.filter(({ hash }) => hash !== '').map((hash) => (
-                <Grid key={hash.algorithm} item size={6}>
+                <Grid key={hash.algorithm} size={6}>
                   <LabelItemCopy label={`${hash.algorithm} - hashes`} value={hash.hash} />
                 </Grid>
               ));
@@ -184,7 +184,7 @@ const StixCyberObservableDetailsComponent = ({ stixCyberObservable }) => {
 
             if (key === 'startup_info') {
               return value.map((hash) => (
-                <Grid key={hash.key} item size={6}>
+                <Grid key={hash.key} size={6}>
                   <LabelItemCopy label={`${hash.key} - startup_info`} value={hash.value} />
                 </Grid>
               ));
@@ -192,7 +192,7 @@ const StixCyberObservableDetailsComponent = ({ stixCyberObservable }) => {
 
             if (isVocabularyField(stixCyberObservable.entity_type, key)) {
               return (
-                <Grid key={key} item size={6}>
+                <Grid key={key} size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n(key)}
                   </Typography>
@@ -210,7 +210,7 @@ const StixCyberObservableDetailsComponent = ({ stixCyberObservable }) => {
 
             if (key === 'content') {
               return (
-                <Grid key={key} item size={6}>
+                <Grid key={key} size={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     {t_i18n('Content')}
                   </Typography>
@@ -225,7 +225,7 @@ const StixCyberObservableDetailsComponent = ({ stixCyberObservable }) => {
             const finalValue = transformValue(value, key, dateAttributes, fldt);
 
             return (
-              <Grid key={key} item size={6}>
+              <Grid key={key} size={6}>
                 <LabelItemCopy label={t_i18n(key.replace('attribute_', ''))} value={finalValue} />
               </Grid>
             );

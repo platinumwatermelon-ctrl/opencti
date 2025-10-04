@@ -6,6 +6,7 @@ import { FormikConfig, FormikHelpers } from 'formik/dist/types';
 import React, { FunctionComponent, useState } from 'react';
 import { graphql } from 'react-relay';
 import * as Yup from 'yup';
+import { Box, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, ListItemText, MenuItem } from '@components';
 import AutocompleteField from '../../../../components/AutocompleteField';
 import FilterIconButton from '../../../../components/FilterIconButton';
 import { useFormatter } from '../../../../components/i18n';
@@ -23,7 +24,6 @@ import { TriggerEventType, TriggerLiveCreationKnowledgeMutation, TriggerLiveCrea
 import { TriggersLinesPaginationQuery$variables } from './__generated__/TriggersLinesPaginationQuery.graphql';
 import useFiltersState from '../../../../utils/filters/useFiltersState';
 import useApiMutation from '../../../../utils/hooks/useApiMutation';
-import { Box, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogTitle, ListItemText, MenuItem } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -208,7 +208,7 @@ const TriggerLiveCreation: FunctionComponent<TriggerLiveCreationProps> = ({
             props: React.HTMLAttributes<HTMLLIElement>,
             option: { value: TriggerEventType; label: string },
           ) => (
-            <MenuItem value={option.value} {...props}>
+            <MenuItem value={option.value as string} {...props}>
               <Checkbox
                 checked={values.event_types
                   .map((n) => n.value)

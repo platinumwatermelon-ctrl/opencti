@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useFragment } from 'react-relay';
-import makeStyles from '@mui/styles/makeStyles';
+import { Grid } from '@components';
 import StixCoreObjectOrStixCoreRelationshipNotes from '../../analyses/notes/StixCoreObjectOrStixCoreRelationshipNotes';
 import StixDomainObjectOverview from '../../common/stix_domain_objects/StixDomainObjectOverview';
 import StixCoreObjectExternalReferences from '../../analyses/external_references/StixCoreObjectExternalReferences';
@@ -10,15 +10,6 @@ import LocationMiniMap from '../../common/location/LocationMiniMap';
 import { City_city$key } from './__generated__/City_city.graphql';
 import StixCoreObjectOrStixRelationshipLastContainers from '../../common/containers/StixCoreObjectOrStixRelationshipLastContainers';
 import LocationDetails from '../LocationDetails';
-import { Grid } from '@components';
-
-// Deprecated - https://mui.com/system/styles/basics/
-// Do not use it for new code.
-const useStyles = makeStyles(() => ({
-  gridContainer: {
-    marginBottom: 20,
-  },
-}));
 
 const cityFragment = graphql`
   fragment City_city on City {
@@ -75,14 +66,13 @@ const cityFragment = graphql`
 `;
 
 const City = ({ cityData }: { cityData: City_city$key }) => {
-  const classes = useStyles();
   const city = useFragment<City_city$key>(cityFragment, cityData);
   return (
     <div data-testid="city-details-page">
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={4}>
           <LocationDetails locationData={city} />

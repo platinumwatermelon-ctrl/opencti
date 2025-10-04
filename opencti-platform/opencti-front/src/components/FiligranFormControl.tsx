@@ -1,7 +1,7 @@
 import React from 'react';
 import FormControl, { FormControlProps } from '@mui/material/FormControl';
 
-type FiligranFormControlProps = FormControlProps;
+type FiligranFormControlProps = FormControlProps & { name?: string };
 
 const FiligranFormControl = (props: FiligranFormControlProps) => <FormControl {...props} />;
 

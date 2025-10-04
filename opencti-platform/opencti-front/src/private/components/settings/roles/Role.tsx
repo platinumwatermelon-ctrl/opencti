@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, PreloadedQuery, useFragment, usePreloadedQuery } from 'react-relay';
 import makeStyles from '@mui/styles/makeStyles';
 import { Link } from 'react-router-dom';
+import { Grid, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 import { useFormatter } from '../../../../components/i18n';
 import { Role_role$data, Role_role$key } from './__generated__/Role_role.graphql';
 import useQueryLoading from '../../../../utils/hooks/useQueryLoading';
@@ -13,7 +14,6 @@ import { GroupsSearchQuery } from '../__generated__/GroupsSearchQuery.graphql';
 import ItemIcon from '../../../../components/ItemIcon';
 import ExpandableMarkdown from '../../../../components/ExpandableMarkdown';
 import type { Theme } from '../../../../components/Theme';
-import { Grid, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from '@components';
 
 // Deprecated - https://mui.com/system/styles/basics/
 // Do not use it for new code.
@@ -21,9 +21,6 @@ const useStyles = makeStyles<Theme>((theme) => ({
   container: {
     margin: 0,
     padding: '0 200px 0 0',
-  },
-  gridContainer: {
-    marginBottom: 20,
   },
   paper: {
     marginTop: theme.spacing(1),
@@ -77,7 +74,7 @@ const Role = ({
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <Grid size={6}>
           <Typography variant="h4" gutterBottom={true}>

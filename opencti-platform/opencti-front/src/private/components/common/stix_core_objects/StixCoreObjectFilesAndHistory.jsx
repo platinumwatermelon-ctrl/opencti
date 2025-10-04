@@ -7,6 +7,7 @@ import { ConnectionHandler } from 'relay-runtime';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Field, Form, Formik } from 'formik';
 import { InfoOutlined } from '@mui/icons-material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, MenuItem, Tooltip } from '@components';
 import DraftWorkspaceViewer from '../files/draftWorkspace/DraftWorkspaceViewer';
 import { CONTENT_MAX_MARKINGS_HELPERTEXT, CONTENT_MAX_MARKINGS_TITLE } from '../files/FileManager';
 import ManageImportConnectorMessage from '../../data/import/ManageImportConnectorMessage';
@@ -22,15 +23,12 @@ import WorkbenchFileViewer from '../files/workbench/WorkbenchFileViewer';
 import { fieldSpacingContainerStyle } from '../../../../utils/field';
 import { resolveHasUserChoiceParsedCsvMapper } from '../../../../utils/csvMapperUtils';
 import useDraftContext from '../../../../utils/hooks/useDraftContext';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, MenuItem, Tooltip } from '@components';
 
 const styles = (theme) => ({
   container: {
     margin: 0,
   },
-  gridContainer: {
-    marginBottom: 20,
-  },
+
   paper: {
     marginTop: theme.spacing(1),
     padding: '15px',
@@ -252,7 +250,7 @@ const StixCoreObjectFilesAndHistory = ({
       <Grid
         container={true}
         spacing={3}
-        classes={{ container: classes.gridContainer }}
+        style={{ marginBottom: 20 }}
       >
         <FileImportViewer
           entity={entity}

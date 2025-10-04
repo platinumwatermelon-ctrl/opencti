@@ -5,9 +5,10 @@ import { CSV_MAPPER_NAME } from '@private/components/common/files/import_files/I
 import { useTheme } from '@mui/styles';
 import { useImportFilesContext } from '@private/components/common/files/import_files/ImportFilesContext';
 import { ImportFilesContextQuery$data } from '@private/components/common/files/import_files/__generated__/ImportFilesContextQuery.graphql';
+import { Alert, Box, Collapse, Grid, IconButton, List, ListItem, MenuItem, Select, Tooltip, Typography } from '@components';
 import { useFormatter } from '../../../../../components/i18n';
 import type { Theme } from '../../../../../components/Theme';
-import { Alert, Box, Collapse, Grid, IconButton, List, ListItem, MenuItem, Select, Tooltip, Typography } from '@components';
+
 interface ImportFilesListProps {
   connectorsForImport: ImportFilesContextQuery$data['connectorsForImport'];
 }
@@ -132,12 +133,12 @@ const ImportFilesList: React.FC<ImportFilesListProps> = ({ connectorsForImport }
                                 multiple
                                 displayEmpty
                                 renderValue={(selectedIds) => {
-                                  if (selectedIds.length === 0) {
+                                  if ((selectedIds as string[]).length === 0) {
                                     return canSelectConnectors ? t_i18n('No active connectors') : t_i18n('Select a connector');
                                   }
 
                                   // Displays connectors name
-                                  return selectedIds
+                                  return (selectedIds as string[])
                                     .map((id) => connectorsForImport?.find((c) => c?.id === id)?.name)
                                     .join(', ');
                                 }}
