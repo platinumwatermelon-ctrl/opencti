@@ -498,9 +498,9 @@ export const uploadJobImport = async (context, user, file, entityId, opts = {}) 
 export const upload = async (context, user, filePath, fileUpload, opts) => {
   const { entity, meta = {}, noTriggerImport = false, errorOnExisting = false, file_markings = [], importContextEntities = [] } = opts;
   const markings = await getEntitiesMapFromCache(context, SYSTEM_USER, ENTITY_TYPE_MARKING_DEFINITION);
-  const normalized_file_markings = file_markings.map((m) => (markings.get(m) ? markings.get(m).internal_id : m));
+  const normalized_file_markings = file_markings?.map((m) => (markings.get(m) ? markings.get(m).internal_id : m)) ?? [];
   // Verify markings
-  for (let index = 0; index < (normalized_file_markings ?? []).length; index += 1) {
+  for (let index = 0; index < normalized_file_markings.length; index += 1) {
     const markingId = normalized_file_markings[index];
     await validateMarking(context, user, markingId, markings);
   }
