@@ -4,7 +4,6 @@
 .clinic
 build
 dist
-node_modules
 public
 config/ssl
 config/demo.json

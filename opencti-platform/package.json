@@ -1,0 +1,61 @@
+{
+  "name": "opencti-platform",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "eslint-plugin-custom-rules",
+    "opencti-front",
+    "opencti-graphql"
+  ],
+  "packageManager": "yarn@4.10.3+sha512.c38cafb5c7bb273f3926d04e55e1d8c9dfa7d9c3ea1f36a4868fa028b9e5f72298f0b7f401ad5eb921749eb012eb1c3bb74bf7503df3ee43fd600d14a018266f",
+  "engines": {
+    "node": ">=20.*"
+  },
+  "resolutions": {
+    "axios": "1.12.0",
+    "chokidar": "4.0.3",
+    "cookie": "1.0.2",
+    "cross-spawn": "7.0.6",
+    "eslint-plugin-custom-rules": "0.0.1",
+    "json5": "2.2.3",
+    "glob-parent": "6.0.2",
+    "webpack": "5.101.3",
+    "d3-color": "3.1.0",
+    "@types/react": "19.1.8",
+    "@types/relay-runtime": "19.0.2",
+    "react": "19.1.0",
+    "body-parser": "2.2.0",
+    "cross-fetch": "4.1.0",
+    "jose": "5.10.0",
+    "source-map": "0.7.4",
+    "lodash": "4.17.21",
+    "@xmldom/xmldom": "0.8.10",
+    "eventsource": "patch:eventsource@2.0.2#./patch/eventsource-2.0.2.patch",
+    "ldap-filter": "patch:ldap-filter@0.3.3#./patch/ldap-filter-0.3.3.patch",
+    "node-calls-python": "patch:node-calls-python@1.9.1#./patch/node-calls-python-1.9.1.patch",
+    "graphql": "patch:graphql@16.11.0#./patch/graphql-16.8.1.patch",
+    "openid-client": "patch:openid-client@5.6.5#./patch/openid-client-5.6.5.patch",
+    "@datadog/pprof": "patch:@datadog/pprof@5.8.2#./patch/@datadog-pprof-5.4.1.patch",
+    "path-to-regexp": "0.1.12"
+  },
+  "dependenciesMeta": {
+    "canvas": {
+      "built": false
+    },
+    "core-js": {
+      "built": false
+    },
+    "es5-ext": {
+      "built": false
+    },
+    "esbuild": {
+      "built": false
+    },
+    "node-calls-python": {
+      "built": true
+    },
+    "protobufjs": {
+      "built": false
+    }
+  }
+}
