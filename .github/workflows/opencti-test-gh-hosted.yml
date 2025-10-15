@@ -80,41 +80,6 @@ jobs:
           docker run --rm --network runner-docker-network curlimages/curl curl http://rabbitmq:5672
           docker run --rm --network runner-docker-network curlimages/curl curl http://elasticsearch:9200
 
-#
-#    - name: Start OpenCTI sync instances
-#      run: |
-#        docker run -d \
-#          --name opencti-raw-start \
-#          -v "${{ github.workspace }}:/home/workspace" \
-#          -p 4100:4100 \
-#          --network runner-docker-network \
-#          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-#          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
-#        sleep 5
-#        docker run -d \
-#          --name opencti-live-start \
-#          -v "${{ github.workspace }}:/home/workspace" \
-#          -p 4200:4100 \
-#          --network runner-docker-network \
-#          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-#          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh live'
-#        sleep 5
-#        docker run -d \
-#          --name opencti-direct-start \
-#          -v "${{ github.workspace }}:/home/workspace" \
-#          -p 4300:4100 \
-#          --network runner-docker-network \
-#          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-#          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh direct'
-#        sleep 5
-#        docker run -d \
-#          --name opencti-restore-start \
-#          -v "${{ github.workspace }}:/home/workspace" \
-#          -p 4400:4100 \
-#          --network runner-docker-network \
-#          nikolaik/python-nodejs:python3.11-nodejs22-alpine \
-#          sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh restore'
-
     - name: Memory, container and process infos
       continue-on-error: true
       run: |
@@ -122,8 +87,6 @@ jobs:
           docker ps -a
           echo -e "\n *********\n ********* docker stat"
           docker stats --no-stream        
-#          echo -e "\n *********\n ********* docker network"
-#          docker network inspect runner-docker-network
           echo -e "\n *********\n ********* ps"
             ps aux | sort -nk +4 | tail -10
           echo -e "\n *********\n ********* free memory"
