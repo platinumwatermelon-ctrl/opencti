@@ -55,6 +55,52 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+  opencti-raw-start:
+    container_name: opencti-raw-start
+    imgage: nikolaik/python-nodejs:python3.11-nodejs22-alpine
+    restart: unless-stopped
+    command: sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh raw'
+    volumes:
+      - /home/runner/work/opencti/opencti:/home/workspace
+    networks:
+      - runner-docker-network
+    ports:
+      - 4100:4100
+  opencti-live-start:
+    container_name: opencti-live-start
+    imgage: nikolaik/python-nodejs:python3.11-nodejs22-alpine
+    restart: unless-stopped
+    command: sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh live'
+    volumes:
+      - /home/runner/work/opencti/opencti:/home/workspace
+    networks:
+      - runner-docker-network
+    ports:
+      - 4200:4100
+  opencti-direct-start:
+    container_name: opencti-direct-start
+    imgage: nikolaik/python-nodejs:python3.11-nodejs22-alpine
+    restart: unless-stopped
+    command: sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh direct'
+    volumes:
+      - /home/runner/work/opencti/opencti:/home/workspace
+    networks:
+      - runner-docker-network
+    ports:
+      - 4300:4100
+  opencti-restore-start:
+    container_name: opencti-restore-start
+    imgage: nikolaik/python-nodejs:python3.11-nodejs22-alpine
+    restart: unless-stopped
+    command: sh -c '/home/workspace/opencti-platform/opencti-ci/start-opencti-instance.sh restore'
+    volumes:
+      - /home/runner/work/opencti/opencti:/home/workspace
+    networks:
+      - runner-docker-network
+    ports:
+      - 4300:4100
+
+
 
 networks:
   runner-docker-network:
