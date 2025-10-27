@@ -1,21 +1,19 @@
 import { parentPort, workerData } from 'worker_threads';
 import type { Data } from 'ejs';
-import { safeRenderCore, type SafeRenderOptions } from './safeEjsCore';
+import { safeRender } from './safeEjs';
+import type { SafeRenderOptions } from './safeEjs';
 
-export interface WorkerData {
+export interface WorkerRequest {
   template: string;
   data: Data;
   options?: SafeRenderOptions;
 }
 
-export interface WorkerMessage {
+export interface WorkerReply {
   success: boolean;
   result?: string;
   error?: string;
 }
-
-// Re-export types for backward compatibility
-export type { SafeRenderOptions } from './safeEjs';
 
 // Helper to reconstruct functions from serialized data
 const reconstructData = (obj: any): any => {
@@ -44,34 +42,25 @@ const reconstructData = (obj: any): any => {
 
 // Main worker execution
 const executeWorker = async () => {
-  try {
-    const { template, data, options } = workerData as WorkerData;
+  const { template, data, options } = workerData as WorkerRequest;
 
-    // Reconstruct functions from serialized data
-    const reconstructedData = reconstructData(data);
+  // Reconstruct functions from serialized data
+  const reconstructedData = reconstructData(data);
 
-    // Use the core logic from safeEjs (await in case it returns a Promise)
-    const result = await safeRenderCore(template, reconstructedData, options);
+  // Use the core logic from safeEjs (await in case it returns a Promise)
+  const result = await safeRender(template, reconstructedData, options);
 
-    // Send result back to main thread
-    const message: WorkerMessage = {
-      success: true,
-      result
-    };
-    parentPort?.postMessage(message);
-  } catch (error) {
-    // Send error back to main thread
-    const message: WorkerMessage = {
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error'
-    };
-    parentPort?.postMessage(message);
-  }
+  // Send result back to main thread
+  const message: WorkerReply = {
+    success: true,
+    result
+  };
+  parentPort?.postMessage(message);
 };
 
 executeWorker().catch((error) => {
-  // Error is already handled inside executeWorker, this is just to satisfy ESLint
-  const message: WorkerMessage = {
+  // Send error back to main thread
+  const message: WorkerReply = {
     success: false,
     error: error instanceof Error ? error.message : 'Unknown error'
   };

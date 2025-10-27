@@ -28,7 +28,7 @@ esbuild.build({
         'src/back.js',
         'src/lock/child-lock.manager.ts',
         'script/script-clean-relations.js',
-        'src/utils/ejsWorker.ts'
+        'src/utils/safeEjs.worker.ts'
     ],
     entryNames: "[name]",
     bundle: true,

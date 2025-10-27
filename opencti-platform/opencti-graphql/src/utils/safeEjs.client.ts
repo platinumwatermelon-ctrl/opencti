@@ -1,7 +1,18 @@
 import { Worker } from 'worker_threads';
 import * as path from 'path';
 import type { Data } from 'ejs';
-import type { SafeRenderOptions, WorkerMessage } from './ejsWorker';
+import type { SafeRenderOptions } from './safeEjs';
+import type { WorkerReply } from './safeEjs.worker';
+
+export type WorkerOptions = {
+  timeout?: number,
+  resourceLimits?: {
+    maxOldGenerationSizeMb?: number
+    maxYoungGenerationSizeMb: number,
+    codeRangeSizeMb: number,
+    stackSizeMb: number,
+  }
+};
 
 // Helper to serialize functions and validate data
 const prepareDataForWorker = (data: Data): Data => {
@@ -50,7 +61,7 @@ const prepareDataForWorker = (data: Data): Data => {
   return serialize(data);
 };
 
-export const safeRender = async (template: string, data: Data, options?: SafeRenderOptions): Promise<string> => {
+export const safeRender = async (template: string, data: Data, options?: SafeRenderOptions & WorkerOptions): Promise<string> => {
   // Handle empty template directly without worker
   if (!template || template.length === 0) {
     return '';
@@ -65,14 +76,6 @@ export const safeRender = async (template: string, data: Data, options?: SafeRen
   }
 
   const timeout = options?.timeout ?? 5000; // Default 5 seconds
-
-  // Default resource limits (restrictive for security)
-  const resourceLimits = {
-    maxOldGenerationSizeMb: options?.resourceLimits?.maxOldGenerationSizeMb ?? 50, // 50 MB heap
-    maxYoungGenerationSizeMb: options?.resourceLimits?.maxYoungGenerationSizeMb ?? 10, // 10 MB new space
-    codeRangeSizeMb: options?.resourceLimits?.codeRangeSizeMb ?? 10, // 10 MB JIT code
-    stackSizeMb: options?.resourceLimits?.stackSizeMb ?? 4, // 4 MB stack
-  };
 
   // Determine the correct worker path based on the environment
   let workerPath: string;
@@ -90,7 +93,12 @@ export const safeRender = async (template: string, data: Data, options?: SafeRen
 
   const worker = new Worker(workerPath, {
     workerData: { template, data: serializedData, options },
-    resourceLimits
+    resourceLimits: {
+      maxOldGenerationSizeMb: options?.resourceLimits?.maxOldGenerationSizeMb ?? 50, // 50 MB heap
+      maxYoungGenerationSizeMb: options?.resourceLimits?.maxYoungGenerationSizeMb ?? 10, // 10 MB new space
+      codeRangeSizeMb: options?.resourceLimits?.codeRangeSizeMb ?? 10, // 10 MB JIT code
+      stackSizeMb: options?.resourceLimits?.stackSizeMb ?? 4, // 4 MB stack
+    },
   });
 
   try {
@@ -98,7 +106,7 @@ export const safeRender = async (template: string, data: Data, options?: SafeRen
     const result = await Promise.race([
       // Rendering promise
       new Promise<string>((resolve, reject) => {
-        worker.on('message', (message: WorkerMessage) => {
+        worker.on('message', (message: WorkerReply) => {
           if (message.success && message.result !== undefined) {
             resolve(message.result);
           } else {
@@ -125,13 +133,8 @@ export const safeRender = async (template: string, data: Data, options?: SafeRen
       })
     ]);
 
-    // Clean termination
-    await worker.terminate();
     return result;
   } catch (error) {
-    // Force terminate worker on error
-    await worker.terminate();
-
     // Enhance error messages
     if (error instanceof Error) {
       if (error.message.includes('Worker terminated')) {
@@ -140,5 +143,8 @@ export const safeRender = async (template: string, data: Data, options?: SafeRen
       throw error;
     }
     throw new Error('Unknown rendering error');
+  } finally {
+    // Clean termination
+    await worker.terminate();
   }
 };
