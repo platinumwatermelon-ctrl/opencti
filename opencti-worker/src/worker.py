@@ -42,6 +42,10 @@ running_ingestion_units_gauge = meter.create_gauge(
 )
 
 
+def is_priority_connector(connector_priority_group: str) -> bool:
+    return connector_priority_group == "REALTIME"
+
+
 @dataclass(unsafe_hash=True)
 class Worker:  # pylint: disable=too-few-public-methods, too-many-instance-attributes
     consumers: Dict[str, MessageQueueConsumer] = field(default_factory=dict, hash=False)
@@ -75,6 +79,13 @@ class Worker:  # pylint: disable=too-few-public-methods, too-many-instance-attri
         self.opencti_pool_size = get_config_variable(
             "OPENCTI_EXECUTION_POOL_SIZE",
             ["opencti", "execution_pool_size"],
+            config,
+            True,
+            default=5,
+        )
+        self.opencti_realtime_pool_size = get_config_variable(
+            "OPENCTI_REALTIME_EXECUTION_POOL_SIZE",
+            ["opencti", "realtime_execution_pool_size"],
             config,
             True,
             default=5,
@@ -206,6 +217,9 @@ class Worker:  # pylint: disable=too-few-public-methods, too-many-instance-attri
     # Start the main loop
     def start(self) -> None:
         push_execution_pool = ThreadPoolExecutor(max_workers=self.opencti_pool_size)
+        realtime_push_execution_pool = ThreadPoolExecutor(
+            max_workers=self.opencti_realtime_pool_size
+        )
         listen_execution_pool = ThreadPoolExecutor(max_workers=self.listen_pool_size)
 
         while not self.exit_event.is_set():
@@ -250,12 +264,16 @@ class Worker:  # pylint: disable=too-few-public-methods, too-many-instance-attri
                             bundles_processing_time_gauge,
                             self.objects_max_refs,
                         )
+                        execution_pool = push_execution_pool
+                        # TODO to be reactivate until global thread pool size remain the same, so we avoid unexpected platform overloading
+                        # if is_priority_connector(connector["connector_priority_group"]):
+                        #     execution_pool = realtime_push_execution_pool
                         self.consumers[push_queue] = MessageQueueConsumer(
                             self.worker_logger,
                             "push",
                             push_queue,
                             pika_parameters,
-                            push_execution_pool,
+                            execution_pool,
                             push_handler.handle_message,
                         )
 
@@ -283,8 +301,9 @@ class Worker:  # pylint: disable=too-few-public-methods, too-many-instance-attri
                                 listen_handler.handle_message,
                             )
 
-                # Check if some consumer must be stopped
-                for consumer_queue in self.consumers:
+                # Stop consumers whose queues no longer exist
+                # Iterate over a copy since self.consumers may be modified during iteration
+                for consumer_queue in list(self.consumers):
                     if consumer_queue not in queues:
                         self.worker_logger.info(
                             "Queue no longer exists, killing thread...",
