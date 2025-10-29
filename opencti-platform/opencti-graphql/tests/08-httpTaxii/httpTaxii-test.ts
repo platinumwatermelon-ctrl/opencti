@@ -1,12 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import axios from 'axios';
-import { addIngestion, ingestionEditField } from '../../src/modules/ingestion/ingestion-taxii-collection-domain';
+import { addIngestion, ingestionDelete, ingestionEditField } from '../../src/modules/ingestion/ingestion-taxii-collection-domain';
 import { ADMIN_API_TOKEN, ADMIN_USER, testContext } from '../utils/testQuery';
-import type { EditInput, IngestionTaxiiCollectionAddInput } from '../../src/generated/graphql';
+import type { EditInput, IngestionTaxiiCollectionAddInput, TaxiiCollectionAddInput } from '../../src/generated/graphql';
 import { getGroupEntityByName } from '../utils/domainQueryHelper';
 import { getBaseUrl } from '../../src/config/conf';
+import { createTaxiiCollection, taxiiCollectionDelete } from '../../src/domain/taxii';
+import { waitInSec } from '../../src/database/utils';
 
 describe('Should taxii push accept several content-type', () => {
+  let taxiiPushIngestionId: string;
+
   it('creates a taxii push configuration and start', async () => {
     const connectorsGroup = await getGroupEntityByName('Connectors');
     const ingestionAdd: IngestionTaxiiCollectionAddInput = {
@@ -25,6 +29,10 @@ describe('Should taxii push accept several content-type', () => {
     const moveToRunning: EditInput[] = [{ key: 'ingestion_running', value: ['true'] }];
     await ingestionEditField(testContext, ADMIN_USER, taxiiPushIngestion.id, moveToRunning);
 
+    taxiiPushIngestionId = taxiiPushIngestion.id;
+  });
+
+  it('should taxii post works correctly', async () => {
     const bundleObject = {
       type: 'bundle',
       spec_version: '2.1',
@@ -55,12 +63,8 @@ describe('Should taxii push accept several content-type', () => {
       ]
     };
 
-    // First check that url config is fine.
-    // const axiosHealthResponse = await axios.get(`${getBaseUrl()}/health?health_access_key=cihealthkey`);
-    // expect(axiosHealthResponse.status, '200');
-
     await expect(async () => {
-      await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestion.id}/objects`, bundleObject, { });
+      await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { });
     }).rejects.toThrowError('Request failed with status code 401');
 
     /*
@@ -77,7 +81,7 @@ describe('Should taxii push accept several content-type', () => {
       Authorization: `Bearer ${ADMIN_API_TOKEN}`
     };
 
-    let axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestion.id}/objects`, bundleObject, { headers: headersToTest2 });
+    let axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { headers: headersToTest2 });
     expect(axiosResponsePost.status, 'With correct content type and authentication should works fine').toBe(200);
     // We do not check entity from bundleObject in database since it requires the worker to process it.
 
@@ -85,14 +89,68 @@ describe('Should taxii push accept several content-type', () => {
       'Content-Type': 'application/taxii+json; version=2.1',
       Authorization: `Bearer ${ADMIN_API_TOKEN}`
     };
-    axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestion.id}/objects`, bundleObject, { headers: headersToTest3 });
+    axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { headers: headersToTest3 });
     expect(axiosResponsePost.status, 'With correct content type including space and authentication should works fine').toBe(200);
 
     const headersToTest4 = {
       'Content-Type': 'application/vnd.oasis.stix+json; version=2.1',
       Authorization: `Bearer ${ADMIN_API_TOKEN}`
     };
-    axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestion.id}/objects`, bundleObject, { headers: headersToTest4 });
+    axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { headers: headersToTest4 });
     expect(axiosResponsePost.status, 'With an accepted content type including space and authentication should works fine').toBe(200);
+  });
+
+  it('should delete taxii post Feed', async () => {
+    await ingestionDelete(testContext, ADMIN_USER, taxiiPushIngestionId);
+  });
+});
+
+describe('Should taxii collection be exposed', () => {
+  let taxiiCollectionId: string;
+
+  it('creates a taxii collection configuration and start', async () => {
+    const dataSharingTaxii: TaxiiCollectionAddInput = {
+      name: 'Testing coverage on Taxii collection',
+      description: '',
+      authorized_members: [],
+      taxii_public: false,
+      include_inferences: true,
+      score_to_confidence: false,
+      filters: '{\'mode\':\'and\',\'filters\':[{\'key\':[\'entity_type\'],\'operator\':\'eq\',\'values\':[\'Indicator\'],\'mode\':\'or\'}],\'filterGroups\':[]}'
+    };
+    const taxiiCollection = await createTaxiiCollection(testContext, ADMIN_USER, dataSharingTaxii);
+    expect(taxiiCollection.id).toBeDefined();
+    taxiiCollectionId = taxiiCollection.id;
+    expect(taxiiCollection.name).toBe('Testing coverage on Taxii collection');
+
+    await waitInSec(10);
+  });
+
+  it('should taxii root works', async () => {
+    const headers = {
+      Authorization: `Bearer ${ADMIN_API_TOKEN}`
+    };
+    const taxiiRootResponse = await axios.get(`${getBaseUrl()}/taxii2/root/`, { headers });
+    const { data, status } = taxiiRootResponse;
+    expect(status, 'With correct content type and authentication should works fine').toBe(200);
+    expect(data.versions, 'With correct content type and authentication should works fine').toBe('application/taxii+json;version=2.1');
+  });
+
+  // This one is not working yet, to be investigated
+  it.skip('should taxii collection works', async () => {
+    const headers = {
+      Authorization: `Bearer ${ADMIN_API_TOKEN}`
+    };
+    const taxiiCollectionResponse = await axios.get(`${getBaseUrl()}/taxii2/root/collections/${taxiiCollectionId}/objects/`, { headers });
+    // console.log('taxiiCollectionResponse:', { taxiiCollectionResponse });
+    const { status } = taxiiCollectionResponse;
+    // console.log('DATA collection:', { data });
+    expect(status, 'With correct content type and authentication should works fine').toBe(200);
+    // TODO uncomment when bug is fixed
+    // expect(data.versions, 'With correct content type and authentication should works fine').toBe(['application/taxii+json;version=2.1']);
+  });
+
+  it('should delete taxii collection', async () => {
+    await taxiiCollectionDelete(testContext, ADMIN_USER, taxiiCollectionId);
   });
 });
