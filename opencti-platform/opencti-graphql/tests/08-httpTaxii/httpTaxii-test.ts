@@ -133,7 +133,7 @@ describe('Should taxii collection be exposed', () => {
     const taxiiRootResponse = await axios.get(`${getBaseUrl()}/taxii2/root/`, { headers });
     const { data, status } = taxiiRootResponse;
     expect(status, 'With correct content type and authentication should works fine').toBe(200);
-    expect(data.versions, 'With correct content type and authentication should works fine').toBe('application/taxii+json;version=2.1');
+    expect(data.versions, 'With correct content type and authentication should works fine').toStrictEqual(['application/taxii+json;version=2.1']);
   });
 
   // This one is not working yet, to be investigated
@@ -146,8 +146,6 @@ describe('Should taxii collection be exposed', () => {
     const { status } = taxiiCollectionResponse;
     // console.log('DATA collection:', { data });
     expect(status, 'With correct content type and authentication should works fine').toBe(200);
-    // TODO uncomment when bug is fixed
-    // expect(data.versions, 'With correct content type and authentication should works fine').toBe(['application/taxii+json;version=2.1']);
   });
 
   it('should delete taxii collection', async () => {
