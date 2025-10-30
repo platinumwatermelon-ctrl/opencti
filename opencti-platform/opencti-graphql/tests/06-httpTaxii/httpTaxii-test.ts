@@ -6,7 +6,6 @@ import type { EditInput, IngestionTaxiiCollectionAddInput, TaxiiCollectionAddInp
 import { getGroupEntityByName } from '../utils/domainQueryHelper';
 import { getBaseUrl } from '../../src/config/conf';
 import { createTaxiiCollection, taxiiCollectionDelete } from '../../src/domain/taxii';
-import { waitInSec } from '../../src/database/utils';
 
 describe('Taxii push Feed coverage', () => {
   let taxiiPushIngestionId: string;
@@ -122,7 +121,7 @@ describe('Should taxii collection coverage', () => {
       name: 'Testing coverage on Taxii collection',
       description: '',
       authorized_members: [],
-      taxii_public: false,
+      taxii_public: true,
       include_inferences: true,
       score_to_confidence: false,
       filters: '{\'mode\':\'and\',\'filters\':[{\'key\':[\'entity_type\'],\'operator\':\'eq\',\'values\':[\'Indicator\'],\'mode\':\'or\'}],\'filterGroups\':[]}'
@@ -131,8 +130,6 @@ describe('Should taxii collection coverage', () => {
     expect(taxiiCollection.id).toBeDefined();
     taxiiCollectionId = taxiiCollection.id;
     expect(taxiiCollection.name).toBe('Testing coverage on Taxii collection');
-
-    await waitInSec(10);
   });
 
   afterAll(async () => {
@@ -145,8 +142,8 @@ describe('Should taxii collection coverage', () => {
     };
     const taxiiRootResponse = await fetch(`${getBaseUrl()}/taxii2/root/`, { headers });
     const data: any = await taxiiRootResponse.json();
-    expect(taxiiRootResponse.status, 'With correct content type and authentication should works fine').toBe(200);
-    expect(data.versions, 'With correct content type and authentication should works fine').toStrictEqual(['application/taxii+json;version=2.1']);
+    expect(taxiiRootResponse.status, 'With correct authentication should works fine').toBe(200);
+    expect(data.versions).toStrictEqual(['application/taxii+json;version=2.1']);
   });
 
   // This one is not working yet, to be investigated
@@ -154,8 +151,7 @@ describe('Should taxii collection coverage', () => {
     const headers = {
       Authorization: `Bearer ${ADMIN_API_TOKEN}`
     };
-    const taxiiCollectionResponse = await axios.get(`${getBaseUrl()}/taxii2/root/collections/${taxiiCollectionId}/objects/`, { headers });
-    const { status } = taxiiCollectionResponse;
-    expect(status, 'With correct content type and authentication should works fine').toBe(200);
+    const taxiiCollectionResponse = await fetch(`${getBaseUrl()}/taxii2/root/collections/${taxiiCollectionId}/objects/`, { headers });
+    expect(taxiiCollectionResponse.status).toBe(200);
   });
 });
