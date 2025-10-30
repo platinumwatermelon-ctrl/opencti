@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import axios from 'axios';
 import { addIngestion, ingestionDelete, ingestionEditField } from '../../src/modules/ingestion/ingestion-taxii-collection-domain';
 import { ADMIN_API_TOKEN, ADMIN_USER, testContext } from '../utils/testQuery';
@@ -8,10 +8,10 @@ import { getBaseUrl } from '../../src/config/conf';
 import { createTaxiiCollection, taxiiCollectionDelete } from '../../src/domain/taxii';
 import { waitInSec } from '../../src/database/utils';
 
-describe('Should taxii push accept several content-type', () => {
+describe('Taxii push Feed coverage', () => {
   let taxiiPushIngestionId: string;
-
-  it('creates a taxii push configuration and start', async () => {
+  beforeAll(async () => {
+    // Creates an Taxii push configuration
     const connectorsGroup = await getGroupEntityByName('Connectors');
     const ingestionAdd: IngestionTaxiiCollectionAddInput = {
       name: 'Taxii push test ingestion',
@@ -32,83 +32,92 @@ describe('Should taxii push accept several content-type', () => {
     taxiiPushIngestionId = taxiiPushIngestion.id;
   });
 
-  it('should taxii post works correctly', async () => {
-    const bundleObject = {
-      type: 'bundle',
-      spec_version: '2.1',
-      id: 'bundle--cb13d683-9173-46bc-a947-47fb7936bb52',
-      objects: [
-        {
-          id: 'email-addr--20e5acb1-ab1e-5f49-89e1-3348fb2a4590',
-          spec_version: '2.1',
-          type: 'email-addr',
-          extensions: {
-            'extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba': {
-              extension_type: 'property-extension',
-              id: 'fb96642f-cdbd-4d39-8237-96077ed80677',
-              type: 'Email-Addr',
-              created_at: '2025-10-08T06: 17: 24.882Z',
-              updated_at: '2025-10-08T06: 17: 24.882Z',
-              creator_ids: [
-                '88ec0c6a-13ce-5e39-b486-354fe4a7084f'
-              ]
-            },
-            'extension-definition--f93e2c80-4231-4f9a-af8b-95c9bd566a82': {
-              extension_type: 'property-extension',
-              score: 50
-            }
-          },
-          value: 'patate@truc.fr'
-        }
-      ]
-    };
-
-    await expect(async () => {
-      await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { });
-    }).rejects.toThrowError('Request failed with status code 401');
-
-    /*
-    UNCOMMENT THIS CODE when fixing taxii2 push server behavior on no content type or bad content type
-        const headersToTest1 = {
-      Authorization: `Bearer ${ADMIN_API_TOKEN}`
-    };
-    await expect(async () => {
-      await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestion.id}/objects`, bundleObject, { headers: headersToTest1 });
-    }).rejects.toThrowError('????');
-    */
-    const headersToTest2 = {
-      'Content-Type': 'application/taxii+json;version=2.1',
-      Authorization: `Bearer ${ADMIN_API_TOKEN}`
-    };
-
-    let axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { headers: headersToTest2 });
-    expect(axiosResponsePost.status, 'With correct content type and authentication should works fine').toBe(200);
-    // We do not check entity from bundleObject in database since it requires the worker to process it.
-
-    const headersToTest3 = {
-      'Content-Type': 'application/taxii+json; version=2.1',
-      Authorization: `Bearer ${ADMIN_API_TOKEN}`
-    };
-    axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { headers: headersToTest3 });
-    expect(axiosResponsePost.status, 'With correct content type including space and authentication should works fine').toBe(200);
-
-    const headersToTest4 = {
-      'Content-Type': 'application/vnd.oasis.stix+json; version=2.1',
-      Authorization: `Bearer ${ADMIN_API_TOKEN}`
-    };
-    axiosResponsePost = await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, { headers: headersToTest4 });
-    expect(axiosResponsePost.status, 'With an accepted content type including space and authentication should works fine').toBe(200);
+  afterAll(async () => {
+    await ingestionDelete(testContext, ADMIN_USER, taxiiPushIngestionId);
   });
 
-  it('should delete taxii post Feed', async () => {
-    await ingestionDelete(testContext, ADMIN_USER, taxiiPushIngestionId);
+  const bundleObject = {
+    type: 'bundle',
+    spec_version: '2.1',
+    id: 'bundle--cb13d683-9173-46bc-a947-47fb7936bb52',
+    objects: [
+      {
+        id: 'email-addr--20e5acb1-ab1e-5f49-89e1-3348fb2a4590',
+        spec_version: '2.1',
+        type: 'email-addr',
+        extensions: {
+          'extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba': {
+            extension_type: 'property-extension',
+            id: 'fb96642f-cdbd-4d39-8237-96077ed80677',
+            type: 'Email-Addr',
+            created_at: '2025-10-08T06: 17: 24.882Z',
+            updated_at: '2025-10-08T06: 17: 24.882Z',
+            creator_ids: [
+              '88ec0c6a-13ce-5e39-b486-354fe4a7084f'
+            ]
+          },
+          'extension-definition--f93e2c80-4231-4f9a-af8b-95c9bd566a82': {
+            extension_type: 'property-extension',
+            score: 50
+          }
+        },
+        value: 'patate@truc.fr'
+      }
+    ]
+  };
+
+  it('should taxii post standard behavior works correctly', async () => {
+    // Testing the content type with no space inside
+    const postResponse = await fetch(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/taxii+json;version=2.1',
+        Authorization: `Bearer ${ADMIN_API_TOKEN}`
+      },
+      body: JSON.stringify(bundleObject),
+    });
+    const data: any = await postResponse.json();
+    expect(postResponse.status, 'With correct content type and authentication should works fine').toBe(200);
+    expect(data.status).toBe('pending');
+    // We do not check entity from bundleObject in database since it requires the worker to process it.
+
+    // Testing the content type with space inside
+    const postResponse2 = await fetch(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/taxii+json; version=2.1',
+        Authorization: `Bearer ${ADMIN_API_TOKEN}`
+      },
+      body: JSON.stringify(bundleObject),
+    });
+    const data2: any = await postResponse2.json();
+    expect(postResponse2.status, 'With correct content type including space and authentication should works fine').toBe(200);
+    expect(data2.status).toBe('pending');
+
+    // Allow some other header with stix
+    const postResponse3 = await fetch(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/vnd.oasis.stix+json; version=2.1',
+        Authorization: `Bearer ${ADMIN_API_TOKEN}`
+      },
+      body: JSON.stringify(bundleObject),
+    });
+    const data3: any = await postResponse3.json();
+    expect(postResponse3.status, 'With correct content type including space and authentication should works fine').toBe(200);
+    expect(data3.status).toBe('pending');
+  });
+
+  it('should taxii post be refused without authenticated user', async () => {
+    await expect(async () => {
+      await axios.post(`${getBaseUrl()}/taxii2/root/collections/${taxiiPushIngestionId}/objects`, bundleObject, {});
+    }).rejects.toThrowError('Request failed with status code 401');
   });
 });
 
-describe('Should taxii collection be exposed', () => {
+describe('Should taxii collection coverage', () => {
   let taxiiCollectionId: string;
-
-  it('creates a taxii collection configuration and start', async () => {
+  beforeAll(async () => {
     const dataSharingTaxii: TaxiiCollectionAddInput = {
       name: 'Testing coverage on Taxii collection',
       description: '',
@@ -126,13 +135,17 @@ describe('Should taxii collection be exposed', () => {
     await waitInSec(10);
   });
 
+  afterAll(async () => {
+    await taxiiCollectionDelete(testContext, ADMIN_USER, taxiiCollectionId);
+  });
+
   it('should taxii root works', async () => {
     const headers = {
       Authorization: `Bearer ${ADMIN_API_TOKEN}`
     };
-    const taxiiRootResponse = await axios.get(`${getBaseUrl()}/taxii2/root/`, { headers });
-    const { data, status } = taxiiRootResponse;
-    expect(status, 'With correct content type and authentication should works fine').toBe(200);
+    const taxiiRootResponse = await fetch(`${getBaseUrl()}/taxii2/root/`, { headers });
+    const data: any = await taxiiRootResponse.json();
+    expect(taxiiRootResponse.status, 'With correct content type and authentication should works fine').toBe(200);
     expect(data.versions, 'With correct content type and authentication should works fine').toStrictEqual(['application/taxii+json;version=2.1']);
   });
 
@@ -142,13 +155,7 @@ describe('Should taxii collection be exposed', () => {
       Authorization: `Bearer ${ADMIN_API_TOKEN}`
     };
     const taxiiCollectionResponse = await axios.get(`${getBaseUrl()}/taxii2/root/collections/${taxiiCollectionId}/objects/`, { headers });
-    // console.log('taxiiCollectionResponse:', { taxiiCollectionResponse });
     const { status } = taxiiCollectionResponse;
-    // console.log('DATA collection:', { data });
     expect(status, 'With correct content type and authentication should works fine').toBe(200);
-  });
-
-  it('should delete taxii collection', async () => {
-    await taxiiCollectionDelete(testContext, ADMIN_USER, taxiiCollectionId);
   });
 });
