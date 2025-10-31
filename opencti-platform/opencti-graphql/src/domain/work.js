@@ -265,7 +265,7 @@ export const reportExpectation = async (context, user, workId, errorData) => {
   const workAlive = await isWorkAlive(context, user, workId);
   if (!workAlive) {
     await redisDeleteWorks(workId);
-    return workId;
+    return undefined;
   }
   if (isComplete || errorData) {
     const params = { now: timestamp };
@@ -293,6 +293,7 @@ export const reportExpectation = async (context, user, workId, errorData) => {
       }
     } else {
       logApp.warn('The work cannot be found in database, report expectation cannot be updated.', { workId });
+      return undefined;
     }
   }
   return workId;
@@ -310,7 +311,7 @@ export const updateExpectationsNumber = async (context, user, workId, expectatio
   const currentWork = await loadWorkById(context, user, workId);
   if (!currentWork) { // work is no longer exists
     logApp.warn('The work cannot be found in database, expectation cannot be updated.', { workId, expectations });
-    return workId;
+    return undefined;
   }
   const params = { updated_at: now(), import_expected_number: expectations };
   let source = 'ctx._source.updated_at = params.updated_at;';
@@ -321,6 +322,7 @@ export const updateExpectationsNumber = async (context, user, workId, expectatio
   const workAlive = await isWorkAlive(context, user, workId);
   if (!workAlive) {
     await redisDeleteWorks(workId);
+    return undefined;
   }
   return workId;
 };

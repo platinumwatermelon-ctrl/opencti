@@ -74,6 +74,7 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
             return "nack"
 
         imported_items = []
+        too_large_items_bundles = []
         start_processing = datetime.datetime.now()
         try:
             # Set the API headers
@@ -84,12 +85,6 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
             self.api.set_synchronized_upsert_header(data.get("synchronized", False))
             self.api.set_previous_standard_header(data.get("previous_standard"))
             work_id = data.get("work_id")
-            # Check if work is still valid
-            if work_id is not None:
-                is_work_alive = self.api.work.get_is_work_alive(work_id)
-                # If work no longer exists, bundle can be acked without doing anything
-                if not is_work_alive:
-                    return "ack"
             # Execute the import
             types = (
                 data["entities_types"]
@@ -111,33 +106,6 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
                             raw_content, update, types, work_id, self.objects_max_refs
                         )
                     )
-                    if len(too_large_items_bundles) > 0:
-                        with pika.BlockingConnection(
-                            self.pika_parameters
-                        ) as push_pika_connection:
-                            with push_pika_connection.channel() as push_channel:
-                                try:
-                                    push_channel.confirm_delivery()
-                                except Exception as err:  # pylint: disable=broad-except
-                                    self.logger.warning(str(err))
-                                for too_large_item_bundle in too_large_items_bundles:
-                                    too_large_item_bundle["original_connector_id"] = (
-                                        self.connector_id
-                                    )
-                                    self.logger.warning(
-                                        "Detected a bundle too large, sending it to dead letter queue...",
-                                        {
-                                            "bundle_id": too_large_item_bundle["id"],
-                                            "connector_id": self.connector_id,
-                                        },
-                                    )
-                                    self.send_bundle_to_specific_queue(
-                                        push_channel,
-                                        self.listen_exchange,
-                                        self.dead_letter_routing,
-                                        data,
-                                        too_large_item_bundle,
-                                    )
                 else:
                     # As bundle is received as complete, split and requeue
                     # Create a specific channel to push the split bundles
@@ -157,18 +125,20 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
                                     content, False, event_version
                                 )
                             )
+                            send_bundles = True
                             # Add expectations to the work
                             if work_id is not None:
-                                self.api.work.add_expectations(work_id, expectations)
+                                send_bundles = self.api.work.add_expectations(work_id, expectations) is not None
                             # For each split bundle, send it to the same queue
-                            for bundle in bundles:
-                                self.send_bundle_to_specific_queue(
-                                    push_channel,
-                                    self.push_exchange,
-                                    self.push_routing,
-                                    data,
-                                    bundle,
-                                )
+                            if send_bundles:
+                                for bundle in bundles:
+                                    self.send_bundle_to_specific_queue(
+                                        push_channel,
+                                        self.push_exchange,
+                                        self.push_routing,
+                                        data,
+                                        bundle,
+                                    )
             # Event type event
             # Specific OpenCTI event operation with specific operation
             elif event_type == "event":
@@ -179,7 +149,7 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
                             "type": "bundle",
                             "objects": [content["data"]],
                         }
-                        imported_items = self.api.stix2.import_bundle(
+                        imported_items, too_large_items_bundles = self.api.stix2.import_bundle(
                             bundle, True, types, work_id
                         )
                     # Specific knowledge merge
@@ -200,7 +170,7 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
                             "type": "bundle",
                             "objects": [merge_object],
                         }
-                        imported_items = self.api.stix2.import_bundle(
+                        imported_items, too_large_items_bundles = self.api.stix2.import_bundle(
                             bundle, True, types, work_id
                         )
                     # All standard operations
@@ -223,7 +193,7 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
                             "type": "bundle",
                             "objects": [data_object],
                         }
-                        imported_items = self.api.stix2.import_bundle(
+                        imported_items, too_large_items_bundles = self.api.stix2.import_bundle(
                             bundle, True, types, work_id
                         )
                     case _:
@@ -232,6 +202,34 @@ class PushHandler:  # pylint: disable=too-many-instance-attributes
                         )
             else:
                 raise ValueError("Unsupported event type", {"event_type": event_type})
+
+            if len(too_large_items_bundles) > 0:
+                with pika.BlockingConnection(
+                        self.pika_parameters
+                ) as push_pika_connection:
+                    with push_pika_connection.channel() as push_channel:
+                        try:
+                            push_channel.confirm_delivery()
+                        except Exception as err:  # pylint: disable=broad-except
+                            self.logger.warning(str(err))
+                        for too_large_item_bundle in too_large_items_bundles:
+                            too_large_item_bundle["original_connector_id"] = (
+                                self.connector_id
+                            )
+                            self.logger.warning(
+                                "Detected a bundle too large, sending it to dead letter queue...",
+                                {
+                                    "bundle_id": too_large_item_bundle["id"],
+                                    "connector_id": self.connector_id,
+                                },
+                            )
+                            self.send_bundle_to_specific_queue(
+                                push_channel,
+                                self.listen_exchange,
+                                self.dead_letter_routing,
+                                data,
+                                too_large_item_bundle,
+                            )
 
             return "ack"
         except Exception as ex:
