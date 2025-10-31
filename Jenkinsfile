@@ -5,7 +5,7 @@ pipeline {
     // The name 'NodeJS-22' MUST exactly match the name you gave the tool in the Jenkins UI.
     agent any
     tools {
-        nodejs 'NodeJS-22'
+        nodejs 'node22'
     }
 
     stages {
