@@ -1,7 +1,12 @@
-// Jenkinsfile (Updated)
+// Jenkinsfile (Updated for NodeJS Tool)
 
 pipeline {
+    // Tell Jenkins which tools this pipeline needs.
+    // The name 'NodeJS-22' MUST exactly match the name you gave the tool in the Jenkins UI.
     agent any
+    tools {
+        nodejs 'NodeJS-22'
+    }
 
     stages {
         stage('Checkout') {
@@ -15,10 +20,9 @@ pipeline {
             steps {
                 script {
                     echo "Preparing frontend build environment..."
-                    // ** NEW STEP ADDED HERE **
-                    // This command reads the project's configuration and creates
-                    // the required `.yarn` directory that the Dockerfile needs.
-                    sh 'yarn install'
+                    // This command now runs using the NodeJS tool we defined.
+                    // 'corepack enable' makes sure the correct version of yarn is used.
+                    sh 'corepack enable && yarn install'
 
                     echo 'Building the OpenCTI Platform image...'
                     docker.build('opencti-platform:local-build', './opencti-platform')
